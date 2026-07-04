@@ -5,4 +5,5 @@
 
 [resource]
 script = ExtResource("2_8u4te")
+name_ = "攻击"
 metadata/_custom_type_script = "uid://bj8vuop3720um"
