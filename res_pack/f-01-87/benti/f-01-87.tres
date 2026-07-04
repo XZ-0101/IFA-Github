@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://bh53n7wea5ag6"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_od5pm"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_s78cw"]
+[ext_resource type="Texture2D" uid="uid://buyqaxj04hydp" path="res://res_pack/f-01-87/benti/img/I-1514217151.webp" id="3_s5rw0"]
+[ext_resource type="Resource" uid="uid://dwb6c0gjtnfhd" path="res://res_pack/f-01-87/benti/f-01-87-j.tres" id="4_3tr5k"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_u5e35"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_od5pm")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_od5pm")
+level = {
+"L1": 50,
+"L2": 60,
+"L3": 70,
+"L4": 80,
+"L5": 90
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_od5pm")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_od5pm")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_s78cw")
+Probabilities = Array[ExtResource("1_od5pm")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_u5e35")
+Attack_Type = 2
+acctak_Damage = "2-6"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "18"
+good_Mood_Range = "15-18"
+bad_Mood_Range = "0-8"
+Norm_Mood_Range = "9-14"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+red_def = 0.8
+white_def = 0.5
+black_def = 1.2
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 谨慎等级高于2级的员工完成了对“索求智慧的稻草人”的工作后，“索求智慧的稻草人”会在倒计时结束后突破收容。", "Ⅱ. 当工作结果为差时，“索求智慧的稻草人”会在倒计时结束后突破收容。", "Ⅲ. 突破收容后，“索求智慧的稻草人”每杀死一名职员，就会吸走这名职员的大脑并恢复一定的生命值。"])
+story = "从外表上看，这个异想体是一个沾满血迹的稻草人。
+
+稻草人的头部是中空的，疑似被人强行撕开过。它会袭击在IQ测试中获取优秀成绩的员工，然后夺走他们的大脑。
+
+每一座城市都需要一项只属于自己的科技，而这就是复兴城市的关键。在那数不胜数的科技中，有这么一项神奇的技术，其名为“身体置换术”。这项技术能够修复，改造，甚至替换那些已经开始衰竭的，或是不再想要的身体部件。每一位居住在城市里的人都能得到这种治疗。然而有传言说，如果某个穷人的内脏开始衰竭，而此时某个富人想要拥有更好的视力，那么他们就会夺走穷人的双眼交于富人。之后，穷人的尸体会被随意地扔到郊区，任由其腐烂。
+
+城市的发言人向民众保证，那不过是毫无根据的造谣罢了。为了平息谣言，发言人宣布他们将从郊区中选出几名病人，并承诺会帮助他们修复任何想要修复的身体部件。
+
+过了好几天后，某个被选中的幸运儿终于回来了。他的头上有一道明显的长疤。人们问他感觉如何，他回答说感觉自己的脑袋轻飘飘的。由于他曾经是个成天痛哭流涕，郁郁寡欢的人，所以大家都相信手术非常成功。
+
+然而，当他被问及“和你一起被选中的其他人怎么样了？”的时候，他只是微微一笑，然后就陷入了沉默。后来，他去参加父母的葬礼，可他脸上什么表情也没有。在接受治疗后，他终日碌碌无为，只会盯着窗外自言自语。最后，他在他家门口上吊自杀了。人们认为他的不幸都是那手术所引起的，可没过几天，这件事就被所有人忘记了。
+
+那座城市依然美丽，翡翠所铺就的道路比以往更加闪耀。"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4、解锁E.G.O护甲、武器Ⅳ. 成功率 + 4%"
+flavour_text = Array[String](["我们仍在旅途当中，为了实现各自的梦想，我们会沿着黄砖路继续走下去。", "这种疗法迫使每个人沉默不语，包括那些不顾自身安危拒绝沉默的人。", "“索求智慧的稻草人”不再恐吓田中的鸟儿，而是向人索求充满智慧的大脑。"])
+other_info = "索求智慧的稻草人（F-01-87）是一个形似稻草人的异想体。它穿着一件红白格子衫，一件蓝色的工作裤，领口戴有一个有着白斑的橙色蝴蝶结。稻草人还戴着一顶完全遮住脸的帽子，它的左手是一把镰刀，右手是一把耙子，这两把农具上都沾有血迹。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-01-87/benti/img/ScarecrowSearchingforWisdomCloseUp.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "出逃信息
+
+出逃的“索求智慧的稻草人”的生命值为500，基础移动速度为3单位。
+
+索求智慧的稻草人出逃后，会在设施内游荡，并在同房间20单位距离内存在职员时靠近职员并在与其距离至少为3.73时进行攻击。稻草人只拥有一种攻击方式，即用它双臂上的耙子和铲子进行近战攻击，对4.27单位距离内一名距离最近的职员造成3-7点侵蚀伤害。
+
+如果稻草人的攻击导致了某名职员的死亡，则它会从头部伸出一条稻草直接插到被击杀的职员头上以吸取他的大脑，并为自己回复13点生命值，共回复7次，这个过程持续约5秒。在稻草人吸取职员的大脑时，它会免疫一切伤害，且吸食过程无法被打断。
+
+镇压建议
+因为稻草人会主动寻找职员进行攻击，加上它的攻击速度不慢，它很可能会对主管低侵蚀抗性低生命值的员工造成一定威胁。如果主管对其进行远程消耗，又免不了会有前来送血包的文职给稻草人提供回复。如果稻草人击杀的文职过多，可能会引起其余更麻烦的异想体出逃。所以建议主管派遣高侵蚀抗性近战员工抗伤，其余员工尽力输出。
+
+因为总是有胆大的文职拿着他们的小手枪来给稻草人送脑子，建议在他们送脑子之前先处决他们，或是让抗伤员工尽量离稻草人近一点以免稻草人转移仇恨目标。
+
+[img]res://res_pack/f-01-87/benti/img/QQ3F20180320183432.webp[/img]
+出逃的稻草人
+[img]res://res_pack/f-01-87/benti/img/QQ3F20180320183524.webp[/img]
+被吸干的员工
+[img]res://res_pack/f-01-87/benti/img/QQ3F20180320185001.webp[/img]
+正在吸食
+[img]res://res_pack/f-01-87/benti/img/20180321171949_1.webp[/img]
+出逃的稻草人的尸体"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条6点
+工作偏好：每条5点"
+jump_ego = Array[String](["pres://res_pack/f-01-87/ego/f-01-87-g-j.tres", "pres://res_pack/f-01-87/ego/f-01-87-s-j.tres", "pres://res_pack/f-01-87/ego/f-01-87-w-j.tres"])
+name_ = "索求智慧的稻草人"
+icon = ExtResource("3_s5rw0")
+info_ = "资料类型：异想体
+
+那座城市依然美丽，翡翠所铺就的道路比以往更加闪耀。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "F-01-87"
+level = "h"
+jumper = ExtResource("4_3tr5k")
+jump = Array[String](["pres://res_pack/f-05-32/f-05-32-j.tres"])
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

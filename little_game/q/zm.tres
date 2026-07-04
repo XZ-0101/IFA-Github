@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://dogmqp6tn5e62"]
+
+[ext_resource type="Texture2D" uid="uid://43yjnx35mjdb" path="res://img2/TEST/04/img.webp" id="1_8tis6"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_qxj0d"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_fjy35"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="3_t6n6g"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_5fmi7"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_xf6pc"]
+
+[sub_resource type="Resource" id="Resource_tvsk3"]
+script = ExtResource("4_5fmi7")
+value_object = 5
+add_valua = -999
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_t65j8"]
+script = ExtResource("5_xf6pc")
+"介绍" = "结束"
+win_text = "死亡莅临了你"
+gift = SubResource("Resource_tvsk3")
+name_ = "结束了"
+"结果" = "恐怖的激光瞬间使你汽化。"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("3_t6n6g")
+img = ExtResource("1_8tis6")
+name_ = "终末"
+subject = "-"
+"问题" = "直指天穹的时针，划开大地的分针，默数着终末的倒计时。$s"
+item = Array[ExtResource("2_qxj0d")]([SubResource("Resource_t65j8")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

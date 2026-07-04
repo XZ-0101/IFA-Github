@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://b1dnuydswu54d"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_yb70l"]
+[ext_resource type="Texture2D" uid="uid://cid62uqjis3hb" path="res://img2/LCA/O-04-08/I-1513156783.webp" id="2_xq1sb"]
+
+[resource]
+script = ExtResource("1_yb70l")
+name_ = "红舞鞋"
+s = "O-04-08"
+level = "H"
+texture = ExtResource("2_xq1sb")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/O-04-08.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

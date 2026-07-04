@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=5 format=3 uid="uid://bwbdegiw7pqa6"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_301un"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="2_1jrko"]
+[ext_resource type="SpriteFrames" uid="uid://dn3ccpnyakidp" path="res://img/gif/at7ed-zmcbl.gif" id="2_g1pjg"]
+
+[sub_resource type="Resource" id="Resource_b7vlx"]
+script = ExtResource("1_301un")
+texture = ExtResource("2_g1pjg")
+size = Vector2(0.3, 0.3)
+name_ = "以爱与恨之名攻击动画"
+index = 1
+back = Color(0.49411765, 0.49411765, 0.49411765, 1)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("2_1jrko")
+array = Array[ExtResource("1_301un")]([SubResource("Resource_b7vlx")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

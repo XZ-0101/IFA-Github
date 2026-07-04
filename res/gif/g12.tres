@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=7 format=3 uid="uid://c347ayit1a670"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_hwo0w"]
+[ext_resource type="SpriteFrames" uid="uid://cfpvs6mndm42d" path="res://img2/GIF/LC/gy01.gif" id="2_8mnp2"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="3_f2wbp"]
+[ext_resource type="SpriteFrames" uid="uid://dmbm3y3ch1ri1" path="res://img2/GIF/LC/gy02.gif" id="3_vv53l"]
+
+[sub_resource type="Resource" id="Resource_gm85t"]
+script = ExtResource("1_hwo0w")
+texture = ExtResource("2_8mnp2")
+size = Vector2(0.5, 0.5)
+name_ = "泣婴起手动画"
+index = 1
+back = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[sub_resource type="Resource" id="Resource_01m2m"]
+script = ExtResource("1_hwo0w")
+texture = ExtResource("3_vv53l")
+size = Vector2(0.5, 0.5)
+name_ = "泣婴攻击动画"
+index = 2
+back = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("3_f2wbp")
+array = Array[ExtResource("1_hwo0w")]([SubResource("Resource_gm85t"), SubResource("Resource_01m2m")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

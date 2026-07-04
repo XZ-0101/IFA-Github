@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://dhgsmlckmcn73"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_vaylx"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_hgl7v"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="3_hgl7v"]
+[ext_resource type="Resource" uid="uid://ew3asm3r4dxf" path="res://res/jumper/O-00-00.tres" id="4_2jar0"]
+[ext_resource type="Texture2D" uid="uid://bdo2ypt0vlst6" path="res://img/lc-a/o-00-00/3F-0.webp" id="4_hgl7v"]
+
+[sub_resource type="Resource" id="Resource_2jar0"]
+script = ExtResource("1_vaylx")
+level = {
+"L1": 65,
+"L2": 65,
+"L3": 65,
+"L4": 65,
+"L5": 65
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_phj2w"]
+script = ExtResource("1_vaylx")
+level = {
+"L1": 65,
+"L2": 65,
+"L3": 65,
+"L4": 65,
+"L5": 65
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_iapmb"]
+script = ExtResource("1_vaylx")
+level = {
+"L1": 100,
+"L2": 100,
+"L3": 100,
+"L4": 100,
+"L5": 100
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_qypt5"]
+script = ExtResource("1_vaylx")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ncdl6"]
+script = ExtResource("2_hgl7v")
+Probabilities = Array[ExtResource("1_vaylx")]([SubResource("Resource_2jar0"), SubResource("Resource_phj2w"), SubResource("Resource_iapmb"), SubResource("Resource_qypt5")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("3_hgl7v")
+Attack_Type = 1
+acctak_Damage = "1-2"
+Probabilities_ = SubResource("Resource_ncdl6")
+most_pe_box = "10"
+good_Mood_Range = "7-10"
+bad_Mood_Range = "0-3"
+Norm_Mood_Range = "4-6"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+red_def = 0.5
+white_def = 1.5
+black_def = 1.0
+pale_def = 1.0
+Upgrades = Array[String](["Ⅰ. 对“教学兔兔“Dummy””完成压迫工作后，它的逆卡巴拉计数器会在倒计时结束后减少。"])
+story = "这是一只用来协助主管进行教学工作的异想体，它的名字叫做Dummy。
+Dummy平时很听员工们的话，有人说，它可能是公司里最温顺的异想体了。
+Dummy确实是一只兔子，可它并不喜欢吃胡萝卜。
+Dummy很喜欢大家，尽管有时会突破收容，但其实它只是想和员工们一起玩儿。"
+Observation_level = "Ⅰ. 成功率 + 5%Ⅱ. 工作速度 + 5Ⅲ. 成功率 + 5%Ⅳ. 工作速度 + 5、解锁E.G.O饰品、护甲、武器。"
+flavour_text = Array[String](["“教学兔兔“Dummy””似乎会把自己当成这家公司的员工。", "“教学兔兔“Dummy””非常非常喜欢大家。", "“教学兔兔“Dummy””正在员工的面前摇来晃去，但员工只专注于手头的工作。", "“教学兔兔“Dummy””正在思考世界有没有中心。", "在知道员工即将离开自己时，“教学兔兔“Dummy””难过极了，它真想和员工一起走呀。"])
+other_info = "教学兔兔“Dummy”（O-00-00）是一只用来协助主管进行教学工作的异想体
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]/[/cell][cell border=#ffffa1]/[/cell]
+[/table]
+[/center]
+
+[img]res://img/Dummy.webp[color=red]
+收容单元监控画面
+-- 不要把Dummy倒过来看。。。
+[/color]
+
+。教学兔兔“Dummy”只会在教学中出现，这意味着您无法在正常游戏流程中选择并管理教学兔兔“Dummy”该异想体不会被计入真结局所需的图鉴中。
+
+
+"
+other_info_act = "出逃信息
+出逃的“教学兔兔‘Dummy’”的生命值为100。出逃期间，“教学兔兔‘Dummy’”会出现在收容单元所在的走廊，且不会进行任何攻击或移动，主管可以很轻松地镇压“教学兔兔‘Dummy’”。"
+price = "基础信息：1点
+敏感信息：1点
+管理须知：每条1点
+工作偏好：每条1点"
+jump_ego = Array[String](["LbEgo0", "LbEgo1", "LbEgo2"])
+name_ = "教学兔兔“Dummy”"
+icon = ExtResource("4_hgl7v")
+info_ = "*资料类型：异想体
+
+Dummy爱你哟！
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/O-00-00_%E6%95%99%E5%AD%A6%E5%85%94%E5%85%94%E3%80%8CDummy%E3%80%8D]脑叶公司Wiki[/url],脑叶公司情报部"
+subject = "O-00-00"
+level = "t"
+jumper = ExtResource("4_2jar0")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Documentation_class" load_steps=3 format=3 uid="uid://b7iibjakk2e5o"]
+
+[ext_resource type="Texture2D" uid="uid://ndmteyqra6q4" path="res://img/lc-a/o-03-03/I.webp" id="1_fniux"]
+[ext_resource type="Script" uid="uid://brdh4hpbn0703" path="res://script/Documentation_class.gd" id="2_w7wlu"]
+
+[resource]
+script = ExtResource("2_w7wlu")
+name_ = "一罪与百善-XZ观察记录"
+icon = ExtResource("1_fniux")
+str_ = "[img,size=550]res://img/artbook/屏幕截图 2026-01-02 174110.png[color=red]
+设定集01
+[/color]
+
+[img,size=550]res://img/artbook/屏幕截图 2025-11-30 205535.png[color=red]
+设定集02
+[/color]
+
+[center]记录S-0303[/center]
+据说有一个僧人，他瞥见人间疾苦，心生恻隐，决定以苦行找到解救尘世之法。
+他虔心修行，不惜踏上修罗之道，跋涉千山万水，只为找到救世解药。在此途中，他亦帮助天下苍生，世人尊其为救世主。佛祖为他所动，决定告知他解救尘世的方法。
+“如没有无私的牺牲，此尘世以何撬动？”
+牺牲？牺牲谁？僧人决定将自己的生命献上，可世人求他不要离去啊，僧人不忍世人恳求于他，又因理想需要牺牲自己而矛盾着。
+“我愿献身！”一名世人叫道。
+...
+他死了。
+而痛苦未曾消失，他白死了。
+“对不起...”负罪感在僧人心中肆虐。
+“骗子！你害死了他！”负罪感是僧人应得的惩罚。
+负罪感是锁链，会捆绑每位有心的人，将他们拖向死亡。
+“我是罪人。谁人可赦免我？原谅我...”
+一个圆圈可以，可以赦免任何罪。
+僧人死了。
+
+[center]记录O-0303[/center]
+那么...先就那名字说说。
+一罪是因，百善为果——是因一罪的负罪感做了百善。
+或者是百善是因，一罪是果——是为百善而行一罪。
+无论那种，人们总是对所行之罪心有余悸。即使是做了百善，那一罪的负罪感也永不消散。倘使，是为了百善，所行之罪也无法赦免。最终，负罪感会将你压垮。届时，你会多希望有一位救世主可以赦免你的罪，只需向他忏悔，向他吐露真相，这位至高者可以宽恕你，心魔也就此告别你身。所以，一罪与百善诞生了。
+所有人都是罪人，我们都沾满鲜血。所有对于纯洁之物才会产生敬畏感吧"
+by = "xz"
+metadata/_custom_type_script = "uid://brdh4hpbn0703"

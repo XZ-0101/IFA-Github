@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://djv5k76hxexqm"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_yajrn"]
+[ext_resource type="Texture2D" uid="uid://c0lrie4t6va41" path="res://res_pack/t-05-51/ego/img/A-1513168214.webp" id="2_07v5q"]
+
+[resource]
+script = ExtResource("1_yajrn")
+name_ = "割腕者"
+level = "T"
+texture = ExtResource("2_07v5q")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-05-51/ego/t-05-51-s.tres"
+mode = "lobotomyS"
+type = Array[String](["脑叶公司EGO", "EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

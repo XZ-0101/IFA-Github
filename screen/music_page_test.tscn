@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://bgfv5j0orx3f6"]
+
+[ext_resource type="Script" uid="uid://cyjubmv4p7ote" path="res://script/music_page_test.gd" id="1_8swco"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_75miy"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_s35mh"]
+[ext_resource type="Resource" uid="uid://c4v7malkm5bw1" path="res://res/music/e1.tres" id="3_qh51l"]
+[ext_resource type="Resource" uid="uid://nqpg2trb1wk0" path="res://res/music/Hero.tres" id="4_dlbhp"]
+[ext_resource type="Resource" uid="uid://bei1ss55c37y0" path="res://res/music/tpov.tres" id="5_fp1yv"]
+[ext_resource type="Resource" uid="uid://bfemosa86efuc" path="res://res/music/ga.tres" id="6_75miy"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="6_vbnl4"]
+[ext_resource type="Resource" uid="uid://bqml7otgigd13" path="res://res/music/ihwll.tres" id="7_qh51l"]
+[ext_resource type="Resource" uid="uid://c5viofugweefx" path="res://res/music/e2.tres" id="8_dlbhp"]
+[ext_resource type="Resource" uid="uid://dddmsqfnjjre4" path="res://res/music/e3.tres" id="9_fp1yv"]
+[ext_resource type="Texture2D" uid="uid://dswlmv06ppyp2" path="res://img/music/3F3F%3F.webp" id="10_2vt0g"]
+[ext_resource type="Resource" uid="uid://dcyngv3b3xyad" path="res://res/music/tiantian.tres" id="12_5n8uu"]
+[ext_resource type="Resource" uid="uid://do0pg215dpbuh" path="res://res/music/btw.tres" id="13_vcd5a"]
+[ext_resource type="Texture2D" uid="uid://b8b8v36pr6mfr" path="res://img/music/PlayerAlbumCover_-2230653811764957858975.jpg" id="14_8131a"]
+[ext_resource type="PackedScene" uid="uid://wgpftignoqxd" path="res://screen/s.tscn" id="14_e82bw"]
+[ext_resource type="Resource" uid="uid://cjxbtb38rx278" path="res://res/music/rose1.tres" id="14_k24gh"]
+[ext_resource type="Texture2D" uid="uid://c7jfqqy1iswqr" path="res://img/music/PlayerAlbumCover_13288927061764958374968.webp" id="15_eb3n3"]
+[ext_resource type="Resource" uid="uid://blbfqqy7cwxv8" path="res://res/music/rose2.tres" id="15_t3jj0"]
+[ext_resource type="Theme" uid="uid://d1d0dsxu3p1hr" path="res://res/HUAKUAI.tres" id="16_1y6it"]
+[ext_resource type="Texture2D" uid="uid://fbvudynec8ii" path="res://img/music/Battle_depths_heart_light.webp" id="16_atn8b"]
+[ext_resource type="Resource" uid="uid://oth2glq85y53" path="res://res/music/jiaqu.tres" id="16_ncrfh"]
+[ext_resource type="Resource" uid="uid://ce01ct8brmdam" path="res://res/music/jiaqu2.tres" id="17_sariu"]
+[ext_resource type="Texture2D" uid="uid://bvvd2ctmdd67" path="res://img/music/ga.jpg" id="18_tpd7s"]
+[ext_resource type="Texture2D" uid="uid://cus52wfdc7q7k" path="res://img/music/3F3F3F3F2.webp" id="19_vhlxt"]
+[ext_resource type="Texture2D" uid="uid://b523m64t1gtbn" path="res://img/100px-Logo_Limbus.png" id="20_y2prv"]
+[ext_resource type="Texture2D" uid="uid://btav8mdbpvgyr" path="res://img/music/1100px-ChoiceEvent_971079.webp" id="21_6dmg2"]
+[ext_resource type="Texture2D" uid="uid://cnhctprv7es1e" path="res://img/Rnfmabj3F3F.webp" id="22_6dmg2"]
+[ext_resource type="Resource" uid="uid://cc4q6abutidxt" path="res://res/music/saikai.tres" id="25_eb3n3"]
+[ext_resource type="Resource" uid="uid://chs8yv1hyrcl8" path="res://res/music/aly.tres" id="26_atn8b"]
+
+[sub_resource type="Resource" id="Resource_5n8uu"]
+script = ExtResource("2_75miy")
+name_ = "Mili - String Theocracy"
+zuo_zhe = "Mili (ミリー) "
+texture = ExtResource("18_tpd7s")
+music_path = "res://mus/Mili - String Theocracy.ogg"
+ge_ci_path = "res://res/music/l7_st.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_y2prv"]
+script = ExtResource("2_75miy")
+name_ = "And Then is Heard No More"
+zuo_zhe = "Mili"
+texture = ExtResource("18_tpd7s")
+texture1 = ExtResource("19_vhlxt")
+music_path = "res://mus/Mili (ミリー) - And Then is Heard No More.ogg"
+ge_ci_path = "res://res/music/atihnm.tres"
+wait_time = 3.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_8131a"]
+script = ExtResource("2_75miy")
+name_ = "Children of the City"
+zuo_zhe = "Mili"
+texture = ExtResource("18_tpd7s")
+texture1 = ExtResource("22_6dmg2")
+music_path = "res://mus/Mili (ミリー) - Children of the City.ogg"
+ge_ci_path = "res://res/music/cotc.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_e82bw"]
+script = ExtResource("2_75miy")
+name_ = "Mili - Iron Lotus"
+zuo_zhe = "Mili (ミリー) "
+texture = ExtResource("18_tpd7s")
+texture1 = ExtResource("10_2vt0g")
+music_path = "res://mus/Mili - Iron Lotus.ogg"
+ge_ci_path = "res://res/music/l6_rl.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_dbfbh"]
+script = ExtResource("2_75miy")
+name_ = "Mili - Fly, My Wings"
+zuo_zhe = "mili"
+texture = ExtResource("14_8131a")
+texture1 = ExtResource("14_8131a")
+music_path = "res://mus/Mili - Fly, My Wings.ogg"
+ge_ci_path = "res://res/music/l5_fmbw.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_vcd5a"]
+script = ExtResource("2_75miy")
+name_ = "Mili - Compass"
+zuo_zhe = "mili"
+texture = ExtResource("15_eb3n3")
+texture1 = ExtResource("16_atn8b")
+texture_array = Array[Texture2D]([ExtResource("15_eb3n3")])
+music_path = "res://mus/Mili - Compass.ogg"
+ge_ci_path = "res://res/music/l8_compass.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_2vt0g"]
+script = ExtResource("2_75miy")
+name_ = "梅厄斯，羡望漂流"
+zuo_zhe = "StudioEIM"
+texture = ExtResource("20_y2prv")
+texture1 = ExtResource("21_6dmg2")
+music_path = "res://mus/Battle_Cp8_5_Pilgrimage_Boss_3.ogg.mp3"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[node name="music" type="Control" unique_id=488029785]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8swco")
+music_array = Array[ExtResource("2_75miy")]([ExtResource("3_qh51l"), ExtResource("8_dlbhp"), ExtResource("9_fp1yv"), SubResource("Resource_5n8uu"), SubResource("Resource_y2prv"), SubResource("Resource_8131a"), SubResource("Resource_e82bw"), ExtResource("6_75miy"), ExtResource("7_qh51l"), ExtResource("13_vcd5a"), SubResource("Resource_dbfbh"), SubResource("Resource_vcd5a"), ExtResource("5_fp1yv"), ExtResource("4_dlbhp"), ExtResource("12_5n8uu"), ExtResource("14_k24gh"), ExtResource("15_t3jj0"), ExtResource("16_ncrfh"), ExtResource("17_sariu"), SubResource("Resource_2vt0g"), ExtResource("25_eb3n3"), ExtResource("26_atn8b")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=443524011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="." unique_id=105801870]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control" unique_id=1445012737]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control" unique_id=56137252]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=158416070]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1212733579]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect3" unique_id=1572116908]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("6_vbnl4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ColorRect3" unique_id=177635459]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 21.0
+offset_right = 389.0
+offset_bottom = 63.0
+theme = ExtResource("2_s35mh")
+text = "我还想听！！！"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=332879655]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 68.0
+offset_right = 642.0
+offset_bottom = 1060.0
+theme = ExtResource("16_1y6it")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1160386629]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=409164975]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 1091.0
+offset_right = 336.0
+offset_bottom = 1141.0
+theme = ExtResource("2_s35mh")
+theme_override_colors/font_color = Color(0.921569, 0.921569, 0.580392, 1)
+text = "搜索"
+
+[node name="CanvasLayer" parent="." unique_id=1042919173 instance=ExtResource("14_e82bw")]
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

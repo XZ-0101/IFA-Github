@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="shou_cang_jia" format=3 uid="uid://c74si1658srni"]
+
+[ext_resource type="Script" uid="uid://c5wxrxi63wrwl" path="res://script/sc_saver.gd" id="1_h5n8i"]
+
+[resource]
+script = ExtResource("1_h5n8i")
+array = null
+metadata/_custom_type_script = "uid://c5wxrxi63wrwl"

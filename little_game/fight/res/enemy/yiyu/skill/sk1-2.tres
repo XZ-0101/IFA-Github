@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://b3hjk1anyy2o1"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_k1ew5"]
+[ext_resource type="Texture2D" uid="uid://c62a31x1mb5s3" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image (1).png" id="2_k1ew5"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_fsq2c"]
+
+[sub_resource type="Resource" id="Resource_i4us4"]
+script = ExtResource("1_k1ew5")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",3,get_enemy(team))
+sp-=5
+esp-=10"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_fsq2c")
+name_ = "灭人器"
+icon = ExtResource("2_k1ew5")
+level = 1
+change_Point = -3
+coin_n = 3
+base_point = 16
+at = 10
+def = 20
+description = Array[String](["【命中时】施加三层流血
+自己失去5SP
+敌方失去10SP"])
+eff_arr = Array[ExtResource("1_k1ew5")]([SubResource("Resource_i4us4")])
+sin_color = Color(0.81960785, 0.23137255, 0.22745098, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

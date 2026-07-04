@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://cdigurtpmb5dg"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_b4f58"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_puhuq"]
+[ext_resource type="Resource" uid="uid://cp62iqfibud4t" path="res://res/jumper/o-01-12-g-j.tres" id="3_oyk7v"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_q2vul"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_ng4f6"]
+[ext_resource type="Resource" uid="uid://pwbcuesn8o1w" path="res://res/jumper/o-01-04-g-jumper.tres" id="6_sepvu"]
+[ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="7_q7up8"]
+[ext_resource type="Resource" uid="uid://cf11fc45im0ir" path="res://res_pack/O-02-40/ego/0-02-04-g-j.tres" id="8_puhuq"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="8_sxfil"]
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("4_q2vul")
+value_object = 3
+add_valua = -10
+get_gift = Array[ExtResource("2_puhuq")]([ExtResource("3_oyk7v")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_esvqd"]
+script = ExtResource("5_ng4f6")
+"介绍" = "需要10等级"
+mode = 1
+is_shop = true
+check_object = 3
+value = 10
+win_text = "好耶！"
+lose_text = "没足够的等级啊"
+gift = SubResource("Resource_wowwi")
+name_ = "孤独"
+"结果" = "“那么，付款吧”"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_2rdt5"]
+script = ExtResource("4_q2vul")
+value_object = 3
+add_valua = -20
+get_gift = Array[ExtResource("2_puhuq")]([ExtResource("6_sepvu")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_bmcaw"]
+script = ExtResource("5_ng4f6")
+"介绍" = "需要20等级"
+mode = 1
+is_shop = true
+check_object = 3
+value = 20
+win_text = "好耶！"
+lose_text = "没足够的等级啊"
+gift = SubResource("Resource_2rdt5")
+name_ = "以爱与恨之名"
+"结果" = "“那么，付款吧”"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_fg48g"]
+script = ExtResource("4_q2vul")
+value_object = 3
+add_valua = -5
+get_gift = Array[ExtResource("2_puhuq")]([ExtResource("7_q7up8")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_wm022"]
+script = ExtResource("5_ng4f6")
+"介绍" = "需要5等级"
+mode = 1
+is_shop = true
+check_object = 3
+value = 5
+win_text = "好耶！"
+lose_text = "没足够的等级啊"
+gift = SubResource("Resource_fg48g")
+name_ = "忏悔"
+"结果" = "“那么，付款吧”"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_oyk7v"]
+script = ExtResource("4_q2vul")
+value_object = 3
+add_valua = -30
+get_gift = Array[ExtResource("2_puhuq")]([ExtResource("8_puhuq")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_q2vul"]
+script = ExtResource("5_ng4f6")
+"介绍" = "需要30等级"
+mode = 1
+is_shop = true
+check_object = 3
+value = 30
+win_text = "好耶！"
+lose_text = "没足够的等级啊"
+gift = SubResource("Resource_oyk7v")
+name_ = "目灯"
+"结果" = "“那么，付款吧”"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_lefht"]
+script = ExtResource("8_sxfil")
+"问题" = "你逛起了商店$s老板为你展示了一些商品$s“吾猜此物汝定喜欢！”$s买哪个呢"
+item = Array[ExtResource("1_b4f58")]([SubResource("Resource_esvqd"), SubResource("Resource_bmcaw"), SubResource("Resource_wm022"), SubResource("Resource_q2vul")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"
+
+[sub_resource type="Resource" id="Resource_o15j3"]
+script = ExtResource("1_b4f58")
+name_ = "为什么不呢"
+"分支问题" = SubResource("Resource_lefht")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_3suwh"]
+script = ExtResource("1_b4f58")
+name_ = "还是离开吧"
+"结果" = "你离开了"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("8_sxfil")
+"问题" = "“正义收尾人商店”$s招牌上如此写道$s也许可以通过消耗正义等级来购买东西？$s要买吗"
+item = Array[ExtResource("1_b4f58")]([SubResource("Resource_o15j3"), SubResource("Resource_3suwh")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bhfa1jgbnci33"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_5cv06"]
+[ext_resource type="Texture2D" uid="uid://baenart2xgclo" path="res://img2/TEST/06/06.jpg" id="2_qp8ji"]
+
+[resource]
+script = ExtResource("1_5cv06")
+name_ = "请给我们爱！！！"
+s = "紫罗兰的正午"
+level = "H"
+texture = ExtResource("2_qp8ji")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/test/test6.tres"
+mode = "TEST"
+type = Array[String](["考验", "群星"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

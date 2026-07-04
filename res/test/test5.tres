@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="test" format=3 uid="uid://cloir87itof87"]
+
+[ext_resource type="Texture2D" uid="uid://ur65144qyhpm" path="res://img2/TEST/05/05.jpg" id="1_sa1ps"]
+[ext_resource type="Resource" uid="uid://bsr3n87t35stk" path="res://res/test/test5-j.tres" id="2_v5a7u"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_v5a7u"]
+
+[resource]
+script = ExtResource("3_v5a7u")
+red_def = 0.8
+white_def = 2.0
+black_def = 0.8
+pale_def = 1.0
+other_info = "“理解的果实”（紫罗兰的黎明）会在每个部门的随机一条走廊中生成一只长有触手的紫色球形生物。它们的体内嵌有一块散发着诡异紫光的石板，石板上刻印的文字类似古老的楔形文字。
+
+[img]res://img2/TEST/05/img.webp[color=red]
+果实[/color]
+
+"
+other_info_act = "考验能力
+“理解的果实”有着中等的生命值和较低的移动速度。它们初始不对任何单位具有仇恨。被职员攻击时，它们会在接下来的10-15秒内以较慢的速度向攻击者移动。因为理解的果实攻击范围极近，只有2，它几乎只能在完全覆盖到目标身上之后才能对目标造成伤害。
+
+在成功的移动到攻击者所在的位置后，“理解的果实”会慢慢闪烁微光。每次闪烁都会对攻击范围内的单位造成1-3点侵蚀伤害。如果主管没能在它们生成后的60-70秒内击杀它们，它们会自行死去并散发出剧烈的紫色辉光。辉光会对在一天开始时部署在其所在部门内所有的职员造成10-15点精神伤害，并导致该部门所有异想体的逆卡巴拉计数器归零。
+
+当所有生成的“理解的果实”都被镇压或自爆后，击败提示将出现，紫罗兰的黎明将被判定结束。
+
+镇压建议
+存活着的“理解的果实”将带来一定的风险，如果未能及时击杀，它们会自行死去并将所在部门的所有异常的逆卡巴拉计数器降至0，从而引起更多的混乱。
+
+“理解的果实”移动速度极慢，且攻击距离极近。即使员工只有正义1，主管也可以轻松操控他们来躲避它的伤害。如果主管的主力员工集结起来对付一个“理解的果实”，可以很轻松的在它对员工造成过多伤害之前将其快速击杀。即使只有几名仅仅拥有勇气2谨慎2且的员工，主管也可以用轮流抗伤的方式来快速击杀“理解的果实”。
+
+提前安排战斗力较高的员工在走廊等待并快速清理掉所有“理解的果实”也是不错的选择。
+
+注释
+[1] 被此伤害杀死的职员不会留下尸体。
+
+[img]res://img2/TEST/05/img1.webp[color=red]
+告知[/color]
+
+[img]res://img2/TEST/05/img2.webp[color=red]
+死亡[/color]
+
+
+"
+place = "随机走廊"
+count = "每个部门一个"
+health = 190
+speed = "1.5单位"
+ob_name = "理解的果实"
+color = "紫罗兰"
+time = "黎明"
+name_ = "理解的果实"
+icon = ExtResource("1_sa1ps")
+info_ = "*资料类型：考验
+
+有朝一日，我们必将理解那些不能理解的东西。
+
+为了理解，我们只能这么做。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%B4%AB%E7%BD%97%E5%85%B0%E7%9A%84%E6%AD%A3%E5%8D%88_%E8%AF%B7%E7%BB%99%E6%88%91%E4%BB%AC%E7%88%B1%EF%BC%81%EF%BC%81%EF%BC%81]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的黎明"
+level = "t"
+jumper = ExtResource("2_v5a7u")
+jump = Array[String](["pres://res/test/test6-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_sa1ps")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

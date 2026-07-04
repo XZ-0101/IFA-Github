@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://bbm2le6gnusfp"]
+
+[ext_resource type="Resource" uid="uid://caewrev3pgilw" path="res://res_pack/o-01-67/ego/o-01-67-w-j.tres" id="1_1xd2w"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_j1gu8"]
+[ext_resource type="Texture2D" uid="uid://bxhmheio6n6p5" path="res://res_pack/o-01-67/ego/img/W-1513352787.webp" id="3_5di6e"]
+
+[resource]
+script = ExtResource("2_j1gu8")
+Cost = "40"
+Max_Amount = "2"
+Damage_type = 3
+Damage = "5-6"
+Attack_Speed = "极快（1s）"
+Range_ = "极远（25）"
+dps = "5.5"
+m_ban = "来复枪"
+Observation_Level = "4"
+Requirements = "[color=purple]自律[/color]II"
+other = "无"
+name_ = "蕾蒂希娅"
+texture = ExtResource("3_5di6e")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+掌握并使用这杆步枪需要时间的磨合，
+
+粗糙的结构设计令它的外表有些老旧，可它仍有不可忽视的威力。
+
+枪上那些小巧的配件就如同少女心中对幸福的憧憬。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-67_%E8%95%BE%E8%92%82%E5%B8%8C%E5%A8%85]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["o-01-67"])
+jumper = ExtResource("1_1xd2w")
+gif = "g15"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

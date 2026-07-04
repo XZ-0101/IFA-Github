@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0kiyuk4fd611"]
+
+[ext_resource type="Texture2D" uid="uid://b5chh82fj5qmf" path="res://img/music/OIP-C.webp" id="1_admy2"]
+[ext_resource type="Shader" uid="uid://uw7of852s2qj" path="res://res/TX5.gdshader" id="1_je2e7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08xv6"]
+shader = ExtResource("1_je2e7")
+shader_parameter/brightness_threshold = 0.85
+shader_parameter/smoothness = 0.1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.16700001)
+material = SubResource("ShaderMaterial_08xv6")
+layout_mode = 0
+offset_left = 331.0
+offset_top = 714.00006
+offset_right = 576.6983
+offset_bottom = 950.20544
+rotation = -0.34859186
+mouse_filter = 2
+texture = ExtResource("1_admy2")
+expand_mode = 1
+stretch_mode = 5

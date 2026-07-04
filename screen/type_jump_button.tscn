@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bse4s8825dh3h"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_kt3tm"]
+[ext_resource type="StyleBox" uid="uid://b1j34rt1at8ph" path="res://res/new_style_box_texture.tres" id="2_gj4se"]
+
+[node name="Button" type="Button"]
+z_index = 1
+offset_right = 97.0
+offset_bottom = 49.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kt3tm")
+text = "家人"
+flat = true
+icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = ExtResource("2_gj4se")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -20.5
+offset_right = -4.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "家人"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

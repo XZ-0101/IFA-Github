@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://l2jtlgvf2yec"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_bqqjt"]
+[ext_resource type="Script" uid="uid://cosg6mnb0kva1" path="res://script/loading.gd" id="1_ehyoy"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_ehyoy"]
+
+[node name="Control" type="CanvasLayer" unique_id=438396080 node_paths=PackedStringArray("bar")]
+layer = 128
+script = ExtResource("1_ehyoy")
+bar = NodePath("ProgressBar")
+loading_text = Array[String](["[wave][b]Loading...[/b][/wave]", "[wave]正在跟赛博女鬼做心理辅导...[/wave]", "[wave]大风车吱呀吱呦呦地转，游乐园风景啊真好看[/wave]", "[wave]正在重新开始这一天...[/wave]", "[wave]sogi sogi sogi sogi...[/wave]", "[wave]入此门者，当舍弃一切希望...[/wave]", "[wave]但丁 真去过地狱，但 丁真没去过地狱[/wave]", "[wave]正在跟堂吉诃德解释那不是城堡，而是客店...[/wave]", "[wave]叫我以实马丽吧...", "[wave]正在帮小堂买十二收尾人的手办...", "[wave]他出了一个起司回生！！！", "[wave]伊莎多拉可爱捏！我说的对不对...", "[wave]这都是以实玛丽的错...", "[wave]程序又出格里高尔了...", "[wave]是我们高贵的蓝伤口牙...", "[wave]我的1300狂气 っ °Д °;)っ[img，size=50]res://img/kq.png", "[wave]我家小堂想要阿拉斯工坊[img,size=100]res://img/qiqiang.webp[color=]的周边,可以给我927.51元帮我家小堂买一个吗", "[wave]正在连接浮务器...", "[wave]边.强.怪", "[wave]◻◻◻是谁...", "[wave]幸灾乐祸正在视奸你...", "[wave]快点写完这个loading文本,要去上学了...", "[wave]正在看噬梦的浊流穿耐克..", "[wave]恭喜你获得了进入世界之翼的资格！明天来L巢报道吧...", "[wave]正在覆盖人格...", "[wave]大概率发生小概率事件中...", "[wave]劲啊！", "[wave]二五仔正在偷光...", "[wave]以实玛丽，你赢了", "[wave]都是以实玛丽设的局", "[wave]正在施加99层麻痹...", "[wave]踏入wiki！", "[wave]不分黑白的复制", "[wave]超绝哈基米哈气乱挠！", "[wave]马猴烧酒小唐...嘿嘿", "[wave]什么？跟我的被粉碎的过去说去吧...", "[wave]魔法罗佳！稳啦！", "[wave]家主梦工厂...", "[wave]h公司的丹？妈妈的味道！", "[wave]食指堂...长筒袜...jk...绝对领域...嘿嘿...", "[wave]遵循指令之意...", "[wave]马顿啊啊啊...真是美丽的青光", "[wave]那是我们084康破尼的制服...", "[wave]Sora，指令让你人物躺在床中央，两个膝关节分别弯曲到左右胸前，两个小腿分别往各自外侧弯曲，不是左右手分别抓住两个小腿，呈现N字岔开。面容羞涩长虹，眼神直视镜头，原画风、服饰和发型特征不变，一个光滑细腻。眼部两个角部细节不能减少，头部微微倾斜，近大远小的透视镜头，焦点聚焦于腹部，并使脚部尽可能完整出现在镜头内，脚步精美且完全符合人类脚底3比4比例。", "[wave]比正义更为湛蓝者、比爱更为殷红者,以埋葬于命运之人的名义,我于此光芒中起誓,向阻于我们身前的可憎之存在们,集合你我之力，展现伟大的爱之力吧……Explosion!", "[wave]执行方法world.execute(me);", "[wave]虽然我知道这是月计的图鉴，但是阿梓喵真的超TM可爱！", "[wave]虽然我知道这是月计的图鉴，但是惠惠真的超TM可爱", "[wave]惜春妹妹...嘿嘿...傲娇...喜欢", "[wave]什么叫作宅女中指子辈，什么叫作胶老中指护父", "[wave]大脑在颤抖！", "[wave]其实，我能死亡回...", "[wave]阿赖耶没有在等任何人"])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1287495636]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="." unique_id=13554044]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control" unique_id=309464658]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control" unique_id=403651952]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=304617310]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1264238997]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect3" unique_id=1556299529]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 1.0
+offset_right = 649.0
+offset_bottom = 83.0
+texture = ExtResource("1_bqqjt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ColorRect3" unique_id=1193266762]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 21.0
+offset_right = 389.0
+offset_bottom = 63.0
+theme = ExtResource("2_ehyoy")
+text = "loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2036156848]
+offset_left = 92.0
+offset_top = 685.0
+offset_right = 575.0
+offset_bottom = 735.0
+theme = ExtResource("2_ehyoy")
+max_value = 1.0
+step = 0.0
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
+
+[node name="Label" type="RichTextLabel" parent="ProgressBar" unique_id=1674567080]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 57.0
+offset_right = 556.0
+offset_bottom = 126.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave][b]Loading...[/b][/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1949363959]
+offset_left = -19.0
+offset_top = 109.0
+offset_right = 651.0
+offset_bottom = 702.0
+texture = ExtResource("1_bqqjt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2129743341]
+
+[node name="Timer" type="Timer" parent="." unique_id=79505814]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

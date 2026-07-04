@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cs56o8dewwmuh"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_2rdfy"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_no18u"]
+[ext_resource type="Texture2D" uid="uid://brk62rpblx5" path="res://little_game/fight/res/buff/Fire_Resistance_JE2_BE2.webp" id="2_6n6vu"]
+
+[sub_resource type="Resource" id="Resource_rxe5j"]
+script = ExtResource("1_2rdfy")
+most_x = 3
+code = "var num=Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/buff/new_resource.tres\")
+if num!=0:
+	Fight.remove_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",team)
+	Fight.minus_buff_path(\"res://little_game/fight/res/buff/Fire_Resistance-mc.tres\",team,1)"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_no18u")
+eff = SubResource("Resource_rxe5j")
+icon = ExtResource("2_6n6vu")
+id = "Fire_Resistance-mc"
+type = Array[String](["buff", "MC"])
+name_ = "抗火"
+description = "[回合开始时]清除所有烧伤层数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

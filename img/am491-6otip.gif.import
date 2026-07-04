@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cxrktb6dgv2o3"
+path="res://.godot/imported/am491-6otip.gif-4377bcf6839947ccb275ec3f8f3e1a7d.tres"
+
+[deps]
+
+source_file="res://img/am491-6otip.gif"
+dest_files=["res://.godot/imported/am491-6otip.gif-4377bcf6839947ccb275ec3f8f3e1a7d.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://bxsccr2wqptv4"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_2huo8"]
+[ext_resource type="Texture2D" uid="uid://d4af4h37cxvm5" path="res://little_game/fight/res/skill/skill_img/hunluan.png" id="2_crwsp"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_v2krw"]
+
+[resource]
+script = ExtResource("2_v2krw")
+name_ = "混乱+"
+icon = ExtResource("2_crwsp")
+level = 1
+coin_n = 1
+def = -10
+sin_color = Color(0.96862745, 0.80784315, 0.2, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

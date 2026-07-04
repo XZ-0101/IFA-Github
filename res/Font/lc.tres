@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=3 format=3 uid="uid://dnojd7vr1nj1p"]
+
+[ext_resource type="FontFile" uid="uid://dyd87mrxaiwdu" path="res://res/Font/Mikodacs.otf" id="1_jr86n"]
+[ext_resource type="FontFile" uid="uid://d0u1y6316cb0n" path="res://res/Font/ChineseFont.ttf" id="2_kvqoa"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_kvqoa")])
+base_font = ExtResource("1_jr86n")

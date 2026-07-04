@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bkyp6wwsm234t"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_1p3oh"]
+[ext_resource type="Texture2D" uid="uid://ctupj2msj071x" path="res://img/I-1513167768.webp" id="2_6pltm"]
+
+[resource]
+script = ExtResource("1_1p3oh")
+name_ = "焦化少女"
+s = "F-01-02"
+level = "T"
+texture = ExtResource("2_6pltm")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/F-01-02.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "童话相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

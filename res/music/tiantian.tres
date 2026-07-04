@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=5 format=3 uid="uid://dcyngv3b3xyad"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_svril"]
+[ext_resource type="Texture2D" uid="uid://uptj8qyyaad8" path="res://img/music/PlayerAlbumCover_11377987271764953738395.webp" id="2_j2xr5"]
+[ext_resource type="Texture2D" uid="uid://0f3yl0pgqwy6" path="res://img2/mus/13c8214ba40bf4b10071a77f6d92bd648876aef3.jpg" id="3_j2xr5"]
+[ext_resource type="Texture2D" uid="uid://bsu24k3x4q7p4" path="res://img/music/太虚幻境new.webp" id="4_2wnn3"]
+
+[resource]
+script = ExtResource("1_svril")
+name_ = "天天(TIANTIAN)"
+zuo_zhe = "Mili"
+texture = ExtResource("2_j2xr5")
+texture1 = ExtResource("3_j2xr5")
+texture_array = Array[Texture2D]([ExtResource("4_2wnn3")])
+music_path = "res://mus/Mili - TIAN TIAN.ogg"
+ge_ci_path = "res://res/music/l9_tian.tres"
+wait_time = 3.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1un8oyc6mcol"]
+
+[ext_resource type="SpriteFrames" uid="uid://dbolpeffwj0hx" path="res://img/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif" id="1_yjwj3"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(300, 300)
+sprite_frames = ExtResource("1_yjwj3")
+animation = &"gif"
+frame_progress = 0.0650264

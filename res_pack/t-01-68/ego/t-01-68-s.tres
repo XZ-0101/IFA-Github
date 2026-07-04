@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://cvsqnvh1p5p6w"]
+
+[ext_resource type="Resource" uid="uid://cqqtuorl4ijsb" path="res://res_pack/t-01-68/ego/t-01-68-s-j.tres" id="1_t8mb8"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_r1gaw"]
+[ext_resource type="Texture2D" uid="uid://bpe1qabttv6pm" path="res://res_pack/t-01-68/ego/img/A-1513356086.webp" id="3_mfw83"]
+
+[resource]
+script = ExtResource("2_r1gaw")
+Cost = "45"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "无"
+red_def = 1.2
+white_def = 0.8
+black_def = 0.5
+pale_def = 1.5
+Requirements = "[color=3fcdbd]正义[/color]III"
+name_ = "圣宣"
+texture = ExtResource("3_mfw83")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+黑色的丧服是为哀悼死者的人准备的。
+
+葬礼上需要的是严肃，不需要那些色彩斑斓的配饰。
+
+用蝴蝶为那些长眠于不毛之地的人们献上哀悼吧。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-68_%E4%BA%A1%E8%9D%B6%E8%91%AC%E4%BB%AA]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["t-01-68"])
+jumper = ExtResource("1_t8mb8")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

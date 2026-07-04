@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ie8t5q367mct"
+path="res://.godot/imported/Studio EIM - Theme (Inst_).ogg-ed43f609e7547c29d25f86a61a6f9ccf.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Studio EIM - Theme (Inst_).ogg"
+dest_files=["res://.godot/imported/Studio EIM - Theme (Inst_).ogg-ed43f609e7547c29d25f86a61a6f9ccf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://dm3uca33rkcya"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_pehb5"]
+
+[resource]
+script = ExtResource("1_pehb5")
+lyc = "[00:00.00]Iron Lotus - Mili
+[00:00.57]Lyrics by：Cassie Wei
+[00:01.15]Composed by：Cassie Wei/Yamato Kasai
+[00:02.25]
+[00:13.62]Frozen stairs carpet in blood red
+[00:17.11]Seating goodbyes left unsaid goodbyes left unsaid
+[00:21.09]Despite our promises here I am following your steps
+[00:26.50]I'm following your steps
+[00:27.85]
+[00:28.42]Drop by drop
+[00:30.19]
+[00:31.57]As your unchanging reality dampen my sleeve
+[00:35.34]You kissed them off
+[00:37.21]
+[00:38.02]Through the fibers of my handkerchief
+[00:40.95]
+[00:41.53]I am fire
+[00:44.93]Burn those who dare to care for me
+[00:47.87]
+[00:48.77]And my fuel are memories fuel are memories of you
+[00:52.79]They perish with the heat perish with the heat
+[00:55.64]So I can move on
+[00:58.71]Flower of iron
+[01:02.38]Shrivelled up to hide the imposter in me
+[01:06.70]Hey why did you leave why did you leave
+[01:09.87]Don't let those words out of me
+[01:11.50]Imposter's about to speak
+[01:13.13]So I chewed on huameitang（话梅糖）
+[01:18.52]For whom the shelves hold on
+[01:21.28]To the pages hold on to the pages
+[01:23.88]Their pain their joy were given value as they were rated
+[01:30.15]Isn't it ironic
+[01:34.56]Greed is unlimited freedom is a limited resource
+[01:39.54]Extra large for you means less for me
+[01:42.92]There'll be less for me
+[01:44.39]
+[01:45.33]I banged the drums weiwu（威武）
+[01:48.86]Court of hell weiwu（威武）
+[01:49.91]Demanding a new trial weiwu（威武）
+[01:53.63]You got the wrong head
+[01:55.00]Would you take mine instead take mine instead
+[01:58.32]Stop leading me on
+[02:01.24]World of titan allows me to live
+[02:06.79]Only in the mud down it's feet
+[02:09.28]Though you're not with me you're not with me
+[02:12.37]I'll never admit defeat
+[02:14.11]'Cause when I thought that
+[02:15.48]Every nice thing about me has become canxiang（残香）
+[02:21.14]You showed me I still had an umbrella
+[02:23.77]Full of love inside me
+[02:25.63]
+[02:26.21]Without you I could never be
+[02:28.00]So sincerely thank you for everything
+[02:30.93]It pains me to think
+[02:32.26]
+[02:33.25]That my happiness turned out to be one of those
+[02:36.56]Fingers that strangled you until you couldn't breathe
+[02:39.69]
+[02:40.46]Not ashamed to go this way
+[02:42.54]I just want to choose my fate
+[02:43.92]I'm on my last white rabbit naitang（奶糖）
+[02:47.48]
+[02:48.44]I am iron
+[02:51.85]In my blood it streams roots deep
+[02:56.28]With bruises on my knees bruises on my knees
+[02:59.53]And ribs crushed down to pieces crushed down to pieces
+[03:02.72]Nothing left to hold on
+[03:05.43]Actually wait
+[03:08.23]I do have one regret
+[03:09.73]
+[03:10.43]That day before you left me
+[03:15.46]You're my everything
+[03:16.61]Before my thoughts began to speak
+[03:18.56]I bit my lip said nothing
+[03:20.63]And just sucked on maiyatang（麦芽糖）"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

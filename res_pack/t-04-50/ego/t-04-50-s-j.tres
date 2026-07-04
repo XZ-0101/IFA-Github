@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://ddaltfih820i1"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_2e50s"]
+[ext_resource type="Texture2D" uid="uid://j63m2e542yxo" path="res://res_pack/t-04-50/ego/img/A-1513271779.webp" id="2_hb11d"]
+
+[resource]
+script = ExtResource("1_2e50s")
+name_ = "黄蜂"
+level = "W"
+texture = ExtResource("2_hb11d")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-04-50/ego/t-04-50-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO护甲", "脑叶公司EGO", "EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

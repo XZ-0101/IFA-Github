@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="deck_box" format=3 uid="uid://b0cll1vd06fn1"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_cknxi"]
+[ext_resource type="Resource" uid="uid://eqgyvqfnwh0m" path="res://little_game/q/t0001q.tres" id="2_oj0ux"]
+[ext_resource type="Texture2D" uid="uid://dcum284tmo537" path="res://img/Magic3.webp" id="3_esdpb"]
+[ext_resource type="Resource" uid="uid://cv68kau4mygrs" path="res://little_game/q/v.tres" id="3_rni80"]
+[ext_resource type="Resource" uid="uid://byohjh88ahfco" path="res://little_game/q/h.tres" id="4_mu1a2"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="4_rni80"]
+
+[resource]
+script = ExtResource("4_rni80")
+name_ = "[color=pink]MAGIC GRIL[/color]"
+type = Array[String](["脑叶公司", "异想体", "魔法少女"])
+card = Array[ExtResource("1_cknxi")]([ExtResource("2_oj0ux"), ExtResource("3_rni80"), ExtResource("4_mu1a2")])
+img = ExtResource("3_esdpb")
+metadata/_custom_type_script = "uid://b8rki7fa01jly"

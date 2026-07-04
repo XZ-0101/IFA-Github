@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://dv0op8qnkdb6o"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_71fgq"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_ckfws"]
+[ext_resource type="Texture2D" uid="uid://ca55fc8lgj0k" path="res://little_game/fight/res/buff/震颤引爆.webp" id="1_muuiu"]
+
+[sub_resource type="Resource" id="Resource_aa3tt"]
+script = ExtResource("1_ckfws")
+most_x = 1
+code = "var zc=\"res://little_game/fight/res/buff/zhenchan.tres\"
+var zc_x=Fight.get_buff_x_with_res(team,zc)
+var num= floor(zc_x/3)
+var card=load(\"res://little_game/fight/res/skill/hunluan.tres\")
+if num>0:
+	Fight.play_anima(\"text\",team,\"do_buff,震颤引爆!!!,震颤,\"+str(num*3))
+	for i in range(0,num):
+		print(\"震颤\",num)
+		Fight.add_skill_inpool(card,team)
+		Fight.minus_buff_path(zc,team,3)"
+exe_time = "turn_strat"
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_71fgq")
+eff = SubResource("Resource_aa3tt")
+icon = ExtResource("1_muuiu")
+id = "zcyb"
+name_ = "震颤引爆"
+description = "[回合开始时]每带有3层震颤，则消耗这些震颤，在卡组中加入1张\"混乱+\""
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

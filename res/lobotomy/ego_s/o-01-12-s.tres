@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://6m0ak1xewppi"]
+
+[ext_resource type="Resource" uid="uid://c53qpete85vt5" path="res://res/jumper/o-01-12-s-j.tres" id="1_7hqjr"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_45x4s"]
+[ext_resource type="Texture2D" uid="uid://fgrxif4f6aek" path="res://img2/LCA/O-01-12/A-1513150321.webp" id="3_7hqjr"]
+
+[resource]
+script = ExtResource("2_45x4s")
+Cost = "20"
+Max_Amount = "3"
+Observation_Level = "2"
+other = "[暂无资料]"
+red_def = 1.5
+white_def = 0.8
+black_def = 0.8
+pale_def = 2.0
+Requirements = "无"
+name_ = "孤独"
+texture = ExtResource("3_7hqjr")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+如果你想隐藏内心中的想法，那就用孤独掩盖他们。
+
+如果你不愿分享自身的全部，那就将与分享相反的意图置于内心的首位。
+
+这件护甲能够保护穿戴者脆弱的心灵。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-12_%E8%80%81%E5%A6%87%E4%BA%BA]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "t"
+jump = Array[String](["o-01-12"])
+jumper = ExtResource("1_7hqjr")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

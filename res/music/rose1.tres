@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=4 format=3 uid="uid://cjxbtb38rx278"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_ajlfa"]
+[ext_resource type="Texture2D" uid="uid://b523m64t1gtbn" path="res://img/100px-Logo_Limbus.png" id="2_r148o"]
+[ext_resource type="Texture2D" uid="uid://dwl8wlu6mudf4" path="res://img/music/1200px-渴望-蜜卡拉-背景.webp" id="3_d0eyt"]
+
+[resource]
+script = ExtResource("1_ajlfa")
+name_ = "ME RELINQUE"
+zuo_zhe = "StudioEIM"
+texture = ExtResource("2_r148o")
+texture1 = ExtResource("3_d0eyt")
+music_path = "res://mus/月计人 - Project Moon - (四百朵玫瑰 Ⅰ) –Limbuscompany.ogg"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

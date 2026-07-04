@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dp2tb1148v1tp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_73lou"]
+[ext_resource type="Texture2D" uid="uid://buxbday817iqf" path="res://res_pack/o-01-67/ego/img/3F3F3F.webp" id="2_73lou"]
+
+[resource]
+script = ExtResource("1_73lou")
+name_ = "蕾蒂希娅"
+texture = ExtResource("2_73lou")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-67/ego/o-01-67-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO饰品/礼物"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

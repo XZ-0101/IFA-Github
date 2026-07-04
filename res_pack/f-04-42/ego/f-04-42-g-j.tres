@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://pqoop4cpxy6s"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_k7ye4"]
+[ext_resource type="Texture2D" uid="uid://di7govl1hruqv" path="res://res_pack/f-04-42/ego/img/3F-0.webp" id="2_ps5t8"]
+
+[resource]
+script = ExtResource("1_k7ye4")
+name_ = "绿色枝干"
+texture = ExtResource("2_ps5t8")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-04-42/ego/f-04-42-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "脑叶EGO", "EGO饰品/礼物"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

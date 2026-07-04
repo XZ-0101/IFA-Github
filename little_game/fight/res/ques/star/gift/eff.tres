@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="gift_value" format=3 uid="uid://clgcnddaegmjb"]
+
+[ext_resource type="Script" uid="uid://dsc5rk3jx627s" path="res://little_game/fight/CLASS/gift_value.gd" id="1_8mfuo"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_xj5ij"]
+[ext_resource type="Resource" uid="uid://coaya3kynfrjw" path="res://little_game/fight/res/ques/star/gift/jump.tres" id="2_8pqg0"]
+
+[sub_resource type="Resource" id="Resource_xj5ij"]
+script = ExtResource("1_xj5ij")
+code = "max_point+=1"
+exe_time = "when_point"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("1_8mfuo")
+gift_jumper = ExtResource("2_8pqg0")
+gift_eff = SubResource("Resource_xj5ij")
+gift_price = 20
+lv = 2
+de = "[拼点时]最终威力+1"
+metadata/_custom_type_script = "uid://dsc5rk3jx627s"

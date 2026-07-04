@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://bx3rnyxq2avfm"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_yobw1"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_3qcui"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_ixwtb"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_qu8fu"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="4_aa33k"]
+
+[sub_resource type="Resource" id="Resource_ixwtb"]
+script = ExtResource("3_qu8fu")
+to_fight = "res://little_game/fight/res/enemy/yiyu/yiyu.tres"
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_ekm5i"]
+script = ExtResource("4_aa33k")
+"介绍" = "遭遇战"
+win_text = "你回应了她"
+gift = SubResource("Resource_ixwtb")
+name_ = "前去"
+"结果" = "可以"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_3qcui")
+"问题" = "一个女孩平静地站在你目前$s\"警告！代理人设置错误！\"$s那个女孩突然看向你$s她拿着刀..."
+item = Array[ExtResource("1_yobw1")]([SubResource("Resource_ekm5i")])
+with_fight = true
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

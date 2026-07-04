@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://0laekaxyuqo4"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_g04px"]
+[ext_resource type="Texture2D" uid="uid://b6p2otytiyygt" path="res://res_pack/o-04-100/benti/img/Sakura3.webp" id="2_wlvck"]
+
+[resource]
+script = ExtResource("1_g04px")
+name_ = "樱下墓"
+s = "O-04-100"
+level = "T"
+texture = ExtResource("2_wlvck")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-04-100/benti/o-04-100.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

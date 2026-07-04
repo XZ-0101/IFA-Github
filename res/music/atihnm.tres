@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://3ffdb5j1xeye"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_sp1sp"]
+
+[resource]
+script = ExtResource("1_sp1sp")
+lyc = "[00:00.00]And Then is Heard No More - Mili
+[00:00.36]Lyrics by：Cassie Wei
+[00:00.73]Composed by：Yamato Kasai
+[00:01.10]Do the candles look forward to being used
+[00:06.42]
+[00:07.45]Enjoy bidding adieu adieu
+[00:12.77]
+[00:13.79]Every word I have saved for you came out wrong afterwards
+[00:20.62]So I spoke no more
+[00:26.65]Would you say
+[00:28.64]
+[00:29.16]That someone who had every intention to be brave
+[00:33.71]
+[00:34.22]Was a coward
+[00:40.06]
+[00:48.44]Must be great being you
+[00:51.18]Power comes as second nature
+[00:53.93]
+[00:55.05]Must feel amazing to be longed for longed for
+[01:00.14]
+[01:00.65]I opened my eyes
+[01:03.68]Cemented excuses to my lash-line
+[01:07.41]So I could see no more
+[01:14.47]
+[01:33.04]So which home should someone as weak as I go
+[01:40.12]And which sky should I aim for when I've only been low
+[01:46.27]
+[01:46.80]Day and night your ghosts continue to haunt me
+[01:56.07]Tell me who to be
+[02:00.36]If I went with you
+[02:02.79]Will there be happily-ever-afters
+[02:05.78]
+[02:06.96]Sipping on tea I steeped together together
+[02:12.12]
+[02:13.06]Read me a story
+[02:15.02]Read me a story of a hero born knowing the all
+[02:18.84]
+[02:19.57]So I could hear no more"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

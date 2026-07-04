@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://dw230sj1tk0x8"]
+
+[ext_resource type="Resource" uid="uid://cg3kjud2jwk7b" path="res://res_pack/o-02-98/ego/o-02-98-w-j.tres" id="1_2g0a8"]
+[ext_resource type="Texture2D" uid="uid://dqvwiboulmr38" path="res://res_pack/o-02-98/ego/img/W-1513274089.webp" id="2_do8e1"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_nlo70"]
+
+[resource]
+script = ExtResource("2_nlo70")
+Cost = "45"
+Max_Amount = "1"
+Damage_type = 3
+Damage = "1-4"
+Attack_Speed = "快（1.67s）"
+Range_ = "一般（5）"
+dps = "1.51+2"
+m_ban = "特殊"
+Observation_Level = "4"
+Requirements = "自律III"
+other = "※这把武器击中目标时，会给目标附加每秒受到2点精神伤害的dot，持续5秒，不可叠加。"
+name_ = "因乐颠狂"
+texture = ExtResource("2_do8e1")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+※持有者攻击时会附加额外的精神伤害。
+
+寻求常人无法承受的快感通常会使人丧失自我。
+如果那些荆棘上落下的粉末散播到了尘世，那么人们恐怕此生都将像陷入泥沼一般难以求生。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "h"
+jump = Array[String](["pres://res_pack/o-02-98/benti/o-02-98-j.tres"])
+jumper = ExtResource("1_2g0a8")
+gif = "null"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

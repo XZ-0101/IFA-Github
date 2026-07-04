@@ -1,0 +1,605 @@
+[gd_scene format=3 uid="uid://be6muku224j6t"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_okhpl"]
+[ext_resource type="Script" uid="uid://bu3rrplcehsf0" path="res://script/mod.gd" id="1_rcy75"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="3_388nu"]
+
+[node name="DIY_Maker" type="Control" unique_id=1144628578 node_paths=PackedStringArray("preview_area", "ready_res_shower", "StringEdit", "value_choice_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_okhpl")
+script = ExtResource("1_rcy75")
+preview_area = NodePath("预览")
+ready_res_shower = NodePath("sc_panel/ScrollContainer/ready_res")
+StringEdit = NodePath("writer/VBoxContainer/text_input")
+value_choice_node = NodePath("writer/VBoxContainer/OptionButton")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1785965280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control2" type="Control" parent="." unique_id=1442948297]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control2" unique_id=1857420450]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control2" unique_id=772472532]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control2" unique_id=190391098]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control2" unique_id=2050965003]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control2/ColorRect3" unique_id=1441831204]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("3_388nu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control2/ColorRect3" unique_id=214719644]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 24.0
+offset_right = 444.0
+offset_bottom = 66.0
+theme = ExtResource("1_okhpl")
+text = "提取中...."
+
+[node name="writer" type="Control" parent="." unique_id=1092071169]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="writer" unique_id=1644584686]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 1154.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="writer/VBoxContainer" unique_id=1572393835]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+autowrap_mode = 3
+allow_reselect = true
+
+[node name="text_input" type="TextEdit" parent="writer/VBoxContainer" unique_id=2037278590]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 2
+placeholder_text = "输入文本..."
+caret_blink = true
+
+[node name="sc" type="Button" parent="writer/VBoxContainer" unique_id=1508683741]
+layout_mode = 2
+text = "选择素材"
+
+[node name="sc_res_text" type="RichTextLabel" parent="writer/VBoxContainer" unique_id=670360165]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "已选择资源："
+vertical_alignment = 1
+
+[node name="input" type="Button" parent="writer/VBoxContainer" unique_id=1145228213]
+layout_mode = 2
+text = "导入素材"
+
+[node name="FileDialog" type="FileDialog" parent="writer/VBoxContainer/input" unique_id=1675258946]
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.txt", "*.mp3", "*.ogg", "*.wav", "*.png", "*.jpg", "*.jpeg", "*.webp")
+use_native_dialog = true
+
+[node name="text_button" type="Button" parent="writer/VBoxContainer" unique_id=1784786516]
+layout_mode = 2
+text = "确定"
+
+[node name="preview" type="Button" parent="writer/VBoxContainer" unique_id=1032187793]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "预览"
+
+[node name="output" type="Button" parent="writer/VBoxContainer" unique_id=176866564]
+layout_mode = 2
+text = "导出"
+
+[node name="FileDialog" type="FileDialog" parent="writer/VBoxContainer/output" unique_id=73582219]
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="Control" type="Control" parent="writer/VBoxContainer" unique_id=1762834788]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="writer/VBoxContainer" unique_id=1700173573]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "清空"
+
+[node name="预览" type="RichTextLabel" parent="." unique_id=597699363]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = 175.0
+offset_bottom = -87.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+
+[node name="sc_panel" type="Panel" parent="." unique_id=548896820]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = 50.0
+offset_top = 147.0
+offset_right = 600.0
+offset_bottom = 1013.0
+theme = ExtResource("1_okhpl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="sc_panel" unique_id=1517241742]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 71.0
+offset_right = 498.0
+offset_bottom = 819.0
+mouse_filter = 0
+
+[node name="ready_res" type="VBoxContainer" parent="sc_panel/ScrollContainer" unique_id=1825771716]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="sc_panel_exit" type="Button" parent="sc_panel" unique_id=563486098]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 134.0
+offset_bottom = 63.0
+theme = ExtResource("1_okhpl")
+text = "退出"
+
+[node name="Panel" type="Panel" parent="." unique_id=2037497881]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 66.0
+offset_right = 659.0
+offset_bottom = 1069.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1418115685]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 21.0
+offset_right = 553.0
+offset_bottom = 764.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=610230721]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "类型"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1587661443]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "音乐"
+popup/item_0/id = 0
+popup/item_1/text = "异想体"
+popup/item_1/id = 1
+popup/item_2/text = "文档"
+popup/item_2/id = 2
+popup/item_3/text = "EGO饰品"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "EGO武器"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+popup/item_5/text = "EGO护甲"
+popup/item_5/id = 5
+popup/item_5/disabled = true
+
+[node name="Container" type="Container" parent="Panel/VBoxContainer" unique_id=939169701]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=824945608]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "项目名称
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer" unique_id=880093292]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Container2" type="Container" parent="Panel/VBoxContainer" unique_id=1338954002]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=1573804978]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "创建
+"
+
+[node name="help" type="Button" parent="." unique_id=2016491700]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 362.0
+offset_top = 90.0
+offset_right = 596.0
+offset_bottom = 140.0
+text = "帮助"
+
+[node name="TabContainer" type="TabContainer" parent="help" unique_id=885245416]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = -313.0
+offset_top = -1.0
+offset_right = 241.0
+offset_bottom = 954.0
+theme = ExtResource("1_okhpl")
+current_tab = 0
+
+[node name="介绍" type="Panel" parent="help/TabContainer" unique_id=1354457739]
+layout_mode = 2
+theme = ExtResource("1_okhpl")
+metadata/_tab_index = 0
+
+[node name="Button" type="Button" parent="help/TabContainer/介绍" unique_id=2103715304]
+layout_mode = 1
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 107.0
+offset_bottom = 67.0
+text = "退出"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help/TabContainer/介绍" unique_id=181527512]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 93.0
+offset_right = 523.0
+offset_bottom = 862.0
+bbcode_enabled = true
+text = "欢迎使用内置资源编辑器
+在这可以diy异想体资料或其他类型资料！
+
+请严格按照手册进行操作，违规操作可能导致软件崩溃
+"
+
+[node name="基本操作" type="Panel" parent="help/TabContainer" unique_id=1004675696]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_okhpl")
+metadata/_tab_index = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help/TabContainer/基本操作" unique_id=916604059]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 523.0
+offset_bottom = 862.0
+theme = ExtResource("1_okhpl")
+bbcode_enabled = true
+text = "[center]1.创建[/center]
+TIP:本教程中不同颜色的文字对应界面上的不同功能区域
+
+若想创建一个资源项目，就需要填写资源类型和项目名称。
+[center]----------------------------------[/center]
+[img]res://img2/diy/diy1.png[/img]
+[center]----------------------------------[/center]
+[color=red]这里更改类型[/color]
+
+[color=yellow]这里命名项目
+如果弹出提示窗口代表命名成功
+[/color]
+[color=green]两项均填写完成后就可以点击创建项目进行编辑[/color]
+
+[center]2.项目文件的操作[/center]
+你可以保存项目文件以便下次编辑
+找到\"打开项目列表\"按钮打开项目列表界面
+[center]----------------------------------[/center]
+[img]res://img2/diy/diy2.png[/img]
+[center]----------------------------------[/center]
+[color=red]这里可以保存一个新项目文件，它会保存到本地，下次打开项目列表界面可以对其进行读取和更改[/color]
+
+你保存过的项目会形式在面板上，你可以进行覆盖，读取，删除三个操作。
+
+[color=yellow]这里是项目的名称[/color]
+
+[color=green]这里是项目保存时的时间，和资源类型[/color]
+[center]----------------------------------[/center]
+[img]res://img2/diy/diy2.png[/img]
+[center]----------------------------------[/center]
+[color=cyan]这里可以读取之前保存的项目，你可以继续编辑之前编辑的项目，读取之后，正编辑的项目会被覆盖[/color]
+
+[color=purple]这里可以用现在编辑的项目覆盖选中的项目，原项目的所有数据将被替换为现在项目的数据。
+一般用于更新旧项目——读取之前的旧项目进行修改后覆盖旧项目的文件[/color]
+
+[color=white]这里会永久删除选中的项目，谨慎选择[/color]
+
+[center]3.如何编辑[/center]
+现在为你讲解各个按钮的功能，怎么编辑数据
+[center]----------------------------------[/center]
+[img，size=400]res://img2/diy/diy3.png[color=white][/color]
+[center]----------------------------------[/center]
+[color=red]下拉菜单，可以看到该资源类型中所有可编辑的属性，请选择要编辑的属性之后，再开始编辑[/color]
+
+[color=yellow]这是输入框，大部分属性需要通过输入框输入，请将要写入的文本写入输入框[/color]
+
+[color=green]这是资源选择按钮，可以选择需要写入的资源，详细见下文[/color]
+
+[color=cyan]这是导入按钮，可以将本地的图片，音乐，文本文档导入。可以通过点击资源选择按钮，打开资源选择面板查看导入的资源(注意:文本文档导入后不会资源选择面板，无法进行选择，请在导入后立刻写入)[/color]
+
+[color=blue]这里可以写入数据
+如果正在编辑的属性是纯文字的，那么点击该按钮，将会把输入框中的文本写入
+如果是图片或者音乐资源，将会把选择的资源写入
+如果是文本文档，会直接把最后读取的文本文档写入[/color]
+
+[color=purple]这是预览按钮，点击后会将现在的数据以文本的形式显示在预览区(每次点击确定按钮时，都会自动预览)[/color]
+
+[color=orange]这是预览区，所有属性的当前数据都会显示在这里
+如果该属性没有任何数据，将显示\"null\"(空)[/color]
+
+[color=white]这里可以导出项目为一个ires文件(一个可以被该软件读取资源包文件，实际上是一个压缩包)可以用DIY加载器加载
+非WINDOWS平台无法自定义导出路径，统一导出到\"DOWNLOAD\"目录(下载目录)
+DIY加载器可能无法读取安卓系统的下载目录，请将资源包文件移动到其他文件夹之后读取[/color]
+
+[color=pink]这个会清空正在编辑的项目的所有数据[/color]
+
+[center]----------------------------------[/center]
+[img，size=400]res://img2/diy/diy4.png[color=white][/color]
+[center]----------------------------------[/center]
+部分属性不能依靠文本框写入，比如图片，音乐文件，它们需要进行\"资源选择\"后才可以通过\"确定\"按钮写入
+
+[color=red]这是一个图片资源，导入的图片资源会显示在这里[/color]
+
+[color=yellow]这是一个音乐资源，导入音乐片资源会显示在这里[/color]
+
+[color=green]这是播放按钮，如果该资源是一个音乐资源，那么点击该按钮会播放该音乐，再次点击暂停。非音乐资源点击此按钮无效[/color]
+
+[color=cyan]点击后，该资源会被选中，选中的资源会显示在\"选择资源\"的下方，这时点击确定，该资源就会被写入属性了。[/color]
+
+[hint=李箱(]以上[/hint]，是基本操作。关于各资源类型的注意事项，请移步至其他教程
+作者语文不好，如果讲不明白或者教程有错误，请到作者B站账号进行反馈，非常抱歉
+
+"
+
+[node name="音乐" type="Panel" parent="help/TabContainer" unique_id=109424988]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_okhpl")
+metadata/_tab_index = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help/TabContainer/音乐" unique_id=1999411282]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 526.0
+offset_bottom = 884.0
+bbcode_enabled = true
+text = "你可以编辑音乐资源，用内置的播放器播放，支持显示歌词
+
+[center]1.编辑歌词[/center]
+你需要导入一个txt文件
+如何制作这个txt文件呢？你需要进行以下准备工作。
+[1].下载音乐时，一同下载歌词文件（lrc文件）
+[2].用记事本打开歌词文件（安卓端可用内置的文本阅读器）
+打开后会得到类似下面的文本（拿ローリンガール举例）
+[center]
+“
+[ti:ローリンガール]
+[ar:初音未来]
+[al:初音ミク Thank you 1826 Days~SEGA feat.HATSUNE MIKU Project 5th Anniversary Selection~]
+[by:]
+[offset:0]
+[00:00.00]ローリンガール - wowaka/初音未来
+[00:10.04]詞：wowaka（現実逃避P）
+[00:20.08]曲：wowaka（現実逃避P）
+[00:30.12]ロンリーガールはいつまでも
+[00:34.58]届かない夢見て
+......
+”
+[/center]
+新建一个TXT文件
+一般从第6行开始复制，将文本复制到TXT文件中
+TXT文件就制作好了，此后直接导入就可以用了
+
+注意：该软件实际判定歌词的出现时间的精度到1/10秒，所以可能导致播放歌词没有显示
+请到TXT文件中，修改方括号中的出现时间，将其稍微调后，如果实在无法将时间调后，比如出现多句歌词时间太贴近的情况，可以把两句歌词合并为一句
+改完之后重新导入便好
+若无需歌词，可以导入一个空txt，或者干脆不添此项。
+
+[center]2.歌词显示时间[/center]
+该歌词将在屏幕上留存多久
+一般添2秒
+
+[center]3.需要导入的属性[/center]
+音乐文件需要导入一个ogg，mp3或wav文件
+背景，图标需要导入一个jpg，jpeg，png或webp文件
+
+[center]4.需要通过输入框写入的属性[/center]
+作者，歌名均需要输入框输入
+
+以上，现在快去试试创建一个音乐资源吧！
+
+
+"
+
+[node name="异想体" type="Panel" parent="help/TabContainer" unique_id=1470031563]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_okhpl")
+metadata/_tab_index = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help/TabContainer/异想体" unique_id=275901009]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 526.0
+offset_bottom = 884.0
+bbcode_enabled = true
+text = "[center]1.需要导入的属性[/center]
+图标需要导入一个jpg，jpeg，png或webp文件
+
+[center]2.需要通过输入框写入的属性[/center]
+除图标在之外的属性均需要输入框写入，这里提几个注意事项
+I.等级
+等级使用首字母小写
+ZAYIN-z
+TETH-t
+HE-h
+WAW-w
+ALEPH-a
+
+II.伤害类型
+伤害类型用数字代替
+红色-0
+白色-1
+黑色-2
+蓝色-3
+
+III.工作偏好
+工作偏好格式如下
+(I级员工成功率)&(II级员工成功率)&(III级员工成功率)&(IV级员工成功率)&(V级员工成功率）
+填入一个百分数，不写百分号
+
+IV.敏感信息
+异想体是否会突破收容 如果是添T，否则添F
+如果不会，可以不填抗性
+抗性直接添具体数值
+
+V.其他信息
+异想体行为和异想体解析
+异想体行为填写异想体的机制
+异想体解析写原型，考据之类
+
+VI.管理须知和工作日志
+每条之间用\"&\"连接
+
+VII.图册
+正常导入图片，记住图片编号
+（在选择资源的菜单查看）
+将要写入的图片的编号用\"&\"连接在一期
+
+
+"
+
+[node name="Panel2" type="Panel" parent="." unique_id=634133213]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 63.0
+offset_right = 633.0
+offset_bottom = 1051.0
+
+[node name="Button" type="Button" parent="Panel2" unique_id=1726724944]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 33.0
+offset_right = 582.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 60
+text = "另存"
+
+[node name="project_list_exit" type="Button" parent="Panel2" unique_id=1951181485]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 37.0
+offset_right = 109.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+text = "退出"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2" unique_id=1473351334]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 146.0
+offset_right = 567.0
+offset_bottom = 953.0
+
+[node name="project_List_here" type="VBoxContainer" parent="Panel2/ScrollContainer" unique_id=499328461]
+layout_mode = 2
+
+[node name="open_project_list" type="Button" parent="." unique_id=1988762122]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1094.0
+offset_right = 206.0
+offset_bottom = 1142.0
+text = "打开项目列表"
+
+[connection signal="item_selected" from="writer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="button_down" from="writer/VBoxContainer/sc" to="." method="_on_sc_button_down"]
+[connection signal="button_down" from="writer/VBoxContainer/input" to="." method="_on_button_2_button_down"]
+[connection signal="file_selected" from="writer/VBoxContainer/input/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="button_down" from="writer/VBoxContainer/text_button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="writer/VBoxContainer/preview" to="." method="_on_preview_button_down"]
+[connection signal="button_down" from="writer/VBoxContainer/output" to="." method="_on_button_3_button_down"]
+[connection signal="dir_selected" from="writer/VBoxContainer/output/FileDialog" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="writer/VBoxContainer/output/FileDialog" to="." method="_on_output_file_selected"]
+[connection signal="button_down" from="writer/VBoxContainer/Button2" to="." method="_on_clear_button_down"]
+[connection signal="button_down" from="sc_panel/sc_panel_exit" to="." method="_on_sc_panel_exit_button_down"]
+[connection signal="item_selected" from="Panel/VBoxContainer/OptionButton" to="." method="_on_option_type_selected"]
+[connection signal="text_submitted" from="Panel/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="button_down" from="Panel/VBoxContainer/Button" to="." method="_on_bulid_button_down"]
+[connection signal="button_down" from="help" to="." method="_on_help_button_down"]
+[connection signal="button_down" from="help/TabContainer/介绍/Button" to="." method="_on_help_exit_button_down"]
+[connection signal="button_down" from="Panel2/Button" to="." method="_on_write_button_down"]
+[connection signal="button_down" from="Panel2/project_list_exit" to="." method="_on_project_list_exit_button_down"]
+[connection signal="button_down" from="open_project_list" to="." method="_on_open_project_list_button_down"]

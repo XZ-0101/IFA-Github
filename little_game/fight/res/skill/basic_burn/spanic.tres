@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://dilfhtpamcm3t"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_287wn"]
+[ext_resource type="Texture2D" uid="uid://bb4af7u1lly1k" path="res://little_game/fight/res/skill/skill_img/exported_image (21).png" id="2_287wn"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_d0ool"]
+
+[resource]
+script = ExtResource("3_d0ool")
+name_ = "余灰"
+icon = ExtResource("2_287wn")
+level = 1
+change_Point = 1
+coin_n = 1
+base_point = 1
+def = 10
+type = Array[String](["恐慌"])
+sin_color = Color(0.5686275, 0.36078432, 0.20784314, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

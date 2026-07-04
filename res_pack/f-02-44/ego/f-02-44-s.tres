@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://duwqygbsu12xs"]
+
+[ext_resource type="Resource" uid="uid://bajhu0bdvi1cn" path="res://res_pack/f-02-44/ego/f-02-44-s-j.tres" id="1_t18ii"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_es0c3"]
+[ext_resource type="Texture2D" uid="uid://d4iwq7bh8on5f" path="res://res_pack/f-02-44/ego/img/A-1513168124.webp" id="3_6lm3l"]
+
+[resource]
+script = ExtResource("2_es0c3")
+Cost = "20"
+Max_Amount = "3"
+Observation_Level = "2"
+other = "无"
+red_def = 0.8
+white_def = 0.8
+black_def = 1.5
+pale_def = 2.0
+Requirements = "无"
+name_ = "犄角"
+texture = ExtResource("3_6lm3l")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+仇恨伴随着那令人惊骇的犄角，从她的头上蔓生而出，
+
+她开始为她与大丽花的誓言而付出代价。
+
+花朵们诉说着悲欢离合的故事，
+
+但在文字的终末却只有生命的凋零。
+
+绽放的花朵因为仇恨而将永远绽放。
+
+可花朵的芬芳早已消失，
+
+正如她的故事早已结束那般...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/f-02-44/benti/f-02-44-j.tres"])
+jumper = ExtResource("1_t18ii")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

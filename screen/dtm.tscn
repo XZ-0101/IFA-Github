@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cyqxua41eyxln"]
+
+[ext_resource type="Texture2D" uid="uid://dqr0qrpe52veh" path="res://img2/CFX2_T_Decal_ShatteredGround.png" id="1_slkl8"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_tjnu3"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="3_axv4s"]
+[ext_resource type="Shader" uid="uid://vu38nqyljhc4" path="res://b.gdshader" id="4_m132j"]
+[ext_resource type="AudioStream" uid="uid://ndx5n385lk7n" path="res://res/SOUND/touch_shout.wav" id="5_tjnu3"]
+
+[sub_resource type="GDScript" id="GDScript_gui7b"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func play():
+	show()
+	$AudioStreamPlayer.play()
+
+func _on_audio_stream_player_finished() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oucu"]
+atlas = ExtResource("3_axv4s")
+region = Rect2(76, 34.000034, 247, 219.05515)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh0xj"]
+atlas = ExtResource("3_axv4s")
+region = Rect2(76, 256.34076, 247, 42.24948)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bse32"]
+shader = ExtResource("4_m132j")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=927602683]
+layer = 2048
+script = SubResource("GDScript_gui7b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=494296557]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="icons" type="Control" parent="." unique_id=222723416]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 647.0
+offset_top = 1104.0
+offset_right = 687.0
+offset_bottom = 1144.0
+rotation = -3.1415927
+
+[node name="RichTextLabel" type="RichTextLabel" parent="icons" unique_id=571253864]
+layout_mode = 0
+offset_left = 229.99994
+offset_top = 477.0
+offset_right = 883.99994
+offset_bottom = 722.0
+theme = ExtResource("2_tjnu3")
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "都市[color=red]异想[/color]图鉴"
+fit_content = true
+autowrap_mode = 2
+
+[node name="屏幕截图20-2-2025232010" type="TextureRect" parent="icons" unique_id=14776078]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 373.0
+offset_right = 294.0
+offset_bottom = 605.0
+texture = SubResource("AtlasTexture_5oucu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="icons" unique_id=966336502]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 463.0
+offset_right = 697.0
+offset_bottom = 505.0
+theme = ExtResource("2_tjnu3")
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Ignorance the [color=red]fear[/color]，write the [color=red]illustrated[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="屏幕截图20-2-2025232011" type="TextureRect" parent="icons" unique_id=937493023]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 569.0
+offset_right = 517.0
+offset_bottom = 596.0
+texture = SubResource("AtlasTexture_gh0xj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=40934789]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -39.0
+offset_right = 113.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_slkl8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1745351751]
+material = SubResource("ShaderMaterial_bse32")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1735624425]
+stream = ExtResource("5_tjnu3")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

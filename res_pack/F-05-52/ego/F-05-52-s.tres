@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://x44avumcqsle"]
+
+[ext_resource type="Resource" uid="uid://clevc4o004cli" path="res://res_pack/F-05-52/ego/F-05-52-s-j.tres" id="1_7bb4c"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_yimxw"]
+[ext_resource type="Texture2D" uid="uid://d2d4gdjlomwau" path="res://res_pack/F-05-52/ego/img/A-1513154498.webp" id="3_apudg"]
+
+[resource]
+script = ExtResource("2_yimxw")
+Cost = "10"
+Max_Amount = "5"
+Observation_Level = "3"
+other = "无"
+red_def = 0.8
+white_def = 1.0
+black_def = 1.0
+pale_def = 2.0
+Requirements = "无"
+name_ = "美味苏打"
+texture = ExtResource("3_apudg")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：这件护甲的触感就像易拉罐的铝皮一样，作为护甲而言有些过于轻巧了。
+
+据说，长时间穿戴这件护甲的人身上会有一股咸味。
+
+
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-05-52_%E9%9F%A6%E5%B0%94%E5%A5%87%E4%B9%90%E7%89%8C%E6%B1%BD%E6%B0%B4]脑叶公司Wiki[/url] "
+level = "z"
+jump = Array[String](["pres://res_pack/F-05-52/benti/F-05-52-j.tres"])
+jumper = ExtResource("1_7bb4c")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

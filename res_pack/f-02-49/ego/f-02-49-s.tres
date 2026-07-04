@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://drpro4n6q05ck"]
+
+[ext_resource type="Resource" uid="uid://8hfof1yp8urn" path="res://res_pack/f-02-49/ego/f-02-49-s-j.tres" id="1_mmtcd"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_kuyv0"]
+[ext_resource type="Texture2D" uid="uid://cvkkreec77ell" path="res://res_pack/f-02-49/ego/img/A-1513270093.webp" id="3_jfl6r"]
+
+[resource]
+script = ExtResource("2_kuyv0")
+Cost = "40"
+Max_Amount = "2"
+Observation_Level = "3"
+other = "无"
+red_def = 0.8
+white_def = 0.6
+black_def = 1.3
+pale_def = 1.5
+Requirements = "[color=red]勇气[/color]II"
+name_ = "悲惨圣诞"
+texture = ExtResource("3_jfl6r")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+这些色彩斑斓的皮能唤起人们对某些事物的悠远记忆...那是某个早就被忘却的喜庆节日。
+
+这件护甲的原材料不得透露给未经授权的人士。
+
+穿戴者时刻都会有向周围的人赠送小礼物的冲动。
+
+曾经想成为一个好孩子的小小梦想...现在仍在你心中吗？
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["f-02-49"])
+jumper = ExtResource("1_mmtcd")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://cob6vl0i34wfs"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_dd34f"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_w2wq1"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_l6faw"]
+[ext_resource type="Texture2D" uid="uid://vb7m1ytbl7kf" path="res://img2/LCA/T-04-06/I-1513169944.webp" id="3_4etkd"]
+[ext_resource type="Resource" uid="uid://blwwv7tpjg2bx" path="res://res/jumper/t-04-06.tres" id="4_3sslq"]
+
+[sub_resource type="Resource" id="Resource_0ilw1"]
+script = ExtResource("1_dd34f")
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_4il8i"]
+script = ExtResource("1_dd34f")
+level = {
+"L1": 40,
+"L2": 45,
+"L3": 45,
+"L4": 35,
+"L5": 35
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_mix8u"]
+script = ExtResource("1_dd34f")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 60,
+"L4": 50,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_utoxc"]
+script = ExtResource("1_dd34f")
+level = {
+"L1": 40,
+"L2": 45,
+"L3": 45,
+"L4": 40,
+"L5": 35
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ujflc"]
+script = ExtResource("2_l6faw")
+Probabilities = Array[ExtResource("1_dd34f")]([SubResource("Resource_0ilw1"), SubResource("Resource_4il8i"), SubResource("Resource_mix8u"), SubResource("Resource_utoxc")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("1_w2wq1")
+Attack_Type = 2
+acctak_Damage = "2-4"
+Probabilities_ = SubResource("Resource_ujflc")
+most_pe_box = "15"
+good_Mood_Range = "11-15"
+bad_Mood_Range = "0-5"
+Norm_Mood_Range = "6-10"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 某个对“快乐泰迪”连续进行多次工作的员工死在了它的怀里，死因是窒息。", "Ⅱ. 某个员工被“快乐泰迪”折断了脖子。我们认为这是由于该员工进入其收容单元的频率过于频繁所导致的。（翻译少了一句“参考文件：《一封标有“不可寄出”的旧信封》”。）"])
+story = "这个异想体的外形如同一只大而破旧的泰迪熊，它缺失了一些皮毛并且只剩下一颗黑色的塑料眼睛。
+
+泰迪熊的脖子上系有一条写了名字的缎带，依此能判断出它曾被自己的主人深深喜爱过。只不过缎带磨损得非常严重，上面的名字已经无法辨认。它似乎明白自己已经被抛弃了，所以看上去非常沮丧。
+
+<咨询记录#2-356>
+员工代号M2434
+那天正轮到我做夜班执勤。泰迪熊并不需要太多的关注，通常情况下它都是无害的。只是为了检查一下，我探头看向收容单元内部。非常意外的是，我发现它正抱着一个人。一开始我以为是负责管理泰迪熊的████还在加班，但情况看起来不大对劲。我走进房间喊了████的名字，想叫他休息一下，可是他并没有回应。我赶快按下紧急情况按钮请求援助。
+████已经死了有七，八个小时了。从开始工作的时候起，一直到我们发现他，这段时间里████一直被泰迪熊抱在怀中。
+
+<一封标有“不可寄出”的旧信封>
+你还记得《员工手册》上的第3条吗？
+“永远不要对异想体发展出私人感情。”
+起初我还不明白那是什么意思。
+我是说，对那些“怪物”产生感情？怎么可能？
+这完全没问题，它们本来就是怪物，我们私底下都是这么称呼的。
+“快乐泰迪”是你管理的第二只异想体，对吧？
+看到它之后，你可能会觉得并非所有的异想体都是既猎奇又恐怖的。
+一只遭人遗弃的泰迪熊也许还会激起你以往的某些记忆，这点我能理解。
+不管怎么说，我猜它喜欢你的拥抱，
+是啊，当你在“快乐泰迪”身边的时候，它总是会产出更多的能源。
+之后他们就让你负责管理它了，是吗？
+你也许感受到了某种类似“责任”的东西。
+随着你陪伴在“快乐泰迪”身边的时间越来越长...越来越长...我也开始越来越担心你了...
+因为，对我而言，你看上去就是一个去孤儿院帮忙的志愿者...
+......[color=#f6986f]
+“快乐泰迪”可能把你认作它的新主人了。
+听到这个，你也许会很开心。
+可你得知道...它再也不想失去自己的主人了...[/color]
+我知道你每次完成工作后都会向它保证，说你还会再回来。
+但是它听不懂，它也不可能听懂...
+我听说你奇迹般地生还了...
+虽然他们花了一个多小时才把你和那致命的拥抱分开...
+不管别人是否会忘了你，
+我发誓我会永远记住你。
+愿你一切安好。
+——K.H."
+Observation_level = "Ⅰ. 成功率 + 3%Ⅱ. 工作速度 + 5、解锁E.G.O饰品Ⅲ. 成功率 + 5%、解锁E.G.O护甲Ⅳ. 工作速度 + 3、解锁E.G.O武器"
+flavour_text = Array[String](["“快乐泰迪”看起来就像一只每个人小时候都有抱过的泰迪熊。", "“快乐泰迪”总是想着拥抱孩子们。", "“快乐泰迪”喜欢拥抱，它的记忆始于温暖的怀抱。", "一只泰迪熊在幸福中诞生，所以它每时每刻都一定是快乐的", "“快乐泰迪”似乎沉浸在自己的思绪之中，茫然地凝视着从它的接缝中伸出来的棉花。", "“快乐泰迪”脖子上那条脏兮兮的缎带正在空中摆动着，然而密闭的收容单元里不可能有风。缎带上写着的名字早已褪色，一点也看不到了。", "“快乐泰迪”正盯着稀薄的空气...等等，它在看一幅少女的画像。", "“快乐泰迪”的黑色塑料眼睛被线头挂在它左侧的脸上。", "当员工忙着工作时，“快乐泰迪”依旧盯着画框看。", "即使有骚动，“快乐泰迪”也仍然凝视着画像。", "“快乐泰迪”面前的画像似乎是它唯一重视的东西。", "员工无法引起“快乐泰迪”的注意。", "员工靠近“快乐泰迪”并将那条磨损的缎带重新系好。", "员工放下了手头的工作去清理“快乐泰迪”一直注视着的画框。", "员工在工作时试着修补“快乐泰迪”的裂口。可是“快乐泰迪”没有反应。", "员工正在清理“快乐泰迪”，但是它没有任何反应。", "“快乐泰迪”还记得那个七岁的生日派对，那时的它被包装在一个精美的大盒子里...", "“快乐泰迪”还记得和那个孩子一同度过的美妙假期，小主人给自己取了个名字...叫做“小熊熊”...", "“快乐泰迪”想起了和那个孩子一同度过的无数个夜晚，她一直依偎在自己的怀里...", "“快乐泰迪”想起了她，那个孩子，长得越发高挑。在梳妆台下的某个角落，“快乐泰迪”默默地蒙上了灰尘...", "“快乐泰迪”伸出手臂将员工拽向自己。员工感到自己快要窒息了，拼命挣扎着试图逃开。", "员工的骨头在“快乐泰迪”的拥抱下嘎吱作响，“快乐泰迪”的皮毛散发出一股名为“渴望”的味道。", "“快乐泰迪”不肯松开自己的手臂，它不想让员工离开它。员工的挣扎变得越来越虚弱，然而“快乐泰迪”仍没有放开员工的意思。", "员工现在陷入了痛苦的沮丧之中。生命毫无意义，自己不过是茫茫宇宙中的一粒尘埃罢了。"])
+other_info = "快乐泰迪（T-04-06）又称泰迪熊，是一只巨大且破烂的泰迪熊异想体。“快乐泰迪”全身呈暗棕色，只有口鼻部分呈白色。它有着两个似乎是被咬坏的耳朵，一只眼睛被挖去了，而另一只眼睛由一颗白色纽扣充当，它的颈部还系有一条淡绿色的丝带。一些棉花从撕裂的布料口子中暴露出来。
+
+观察等级为1时，该异想体的名称为“泰迪熊”，在观察等级达到2级或更高时，该异想体的名称会变更为“快乐泰迪”。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.25[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://img2/LCA/T-04-06/XX.webp[color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+快乐泰迪特殊能力
+被“快乐泰迪”掐住脖子的员工
+被“快乐泰迪”掐住脖子的员工
+1/2
+当同一个员工连续两次进入快乐泰迪的收容室时，这名员工将立刻结束工作并尝试拥抱快乐泰迪，然后播放一段被快乐泰迪掐住脖子的动画，此时这名员工会进入被控制状态。动画结束后，这名员工会被判定为死亡。
+
+如果主管在这名员工被判定死亡之前选择结束这一天，则这名员工仍然可以存活。
+
+因此建议派两个员工轮流对快乐泰迪工作。
+
+[img]res://img2/LCA/T-04-06/3F3F-3F3F1.webp[color=red]
+x月x日-监控画面T1X67-副本
+-- 员工的喉管在温暖的拥抱中封闭[/color]
+
+[img]res://img2/LCA/T-04-06/3F3F-3F3F2.webp[color=red]
+x月x日-监控画面T1X68-副本
+-- 温暖来得太强烈，我们的员工无法承受...[/color]"
+price = "解锁信息所需独立PE-BOX
+基础信息：16点
+敏感信息：16点
+管理须知：每条9点
+工作偏好：每条5点"
+jump_ego = Array[String](["t-04-06-g", "t-04-06-s", "t-04-06-w"])
+name_ = "快乐泰迪"
+icon = ExtResource("3_4etkd")
+info_ = "*资料类型：异想体
+
+它的记忆始于温暖的怀抱。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-04-06_%E5%BF%AB%E4%B9%90%E6%B3%B0%E8%BF%AA]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "T-04-06"
+level = "h"
+jumper = ExtResource("4_3sslq")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

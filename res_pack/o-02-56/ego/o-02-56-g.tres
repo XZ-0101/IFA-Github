@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://sib6xm8810pm"]
+
+[ext_resource type="Resource" uid="uid://chu2uoae3iq5c" path="res://res_pack/o-02-56/ego/o-02-56-g-j.tres" id="1_scq6f"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_jhmbi"]
+[ext_resource type="Texture2D" uid="uid://bu5n8866h3yln" path="res://res_pack/o-02-56/ego/img/QQ3F20180423025418.webp" id="3_2rdfw"]
+
+[resource]
+script = ExtResource("2_jhmbi")
+name_ = "小喙"
+texture = ExtResource("3_2rdfw")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：5%
+饰品位置：颈部
+移动速度+2
+攻击速度+2
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/o-02-56/benti/o-02-56-j.tres"])
+jumper = ExtResource("1_scq6f")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

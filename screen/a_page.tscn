@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dwlkyl15c11hv"]
+
+[ext_resource type="Script" uid="uid://b2huvr32akuv6" path="res://script/a_page.gd" id="1_e5htb"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="4_7hj5n"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="5_7hj5n"]
+
+[node name="PAGE" type="Control" unique_id=324714382]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5htb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=328324611]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control2" type="Control" parent="." unique_id=1918333725]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="." unique_id=973265810]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control" unique_id=213106477]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control" unique_id=128975589]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=1751580574]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1156494984]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="Button3" type="Button" parent="Control/ColorRect3" unique_id=1851100068]
+visible = false
+layout_mode = 0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 133.0
+offset_bottom = 70.0
+tooltip_text = "这个按钮没用
+sb作者怎么还没删？"
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_7hj5n")
+theme_override_colors/font_color = Color(0.984314, 0.984314, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "返回"
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect3" unique_id=267649259]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("5_7hj5n")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ColorRect3" unique_id=933784191]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 20.0
+offset_right = 470.0
+offset_bottom = 62.0
+theme = ExtResource("4_7hj5n")
+text = "已给予最高访问权限"
+horizontal_alignment = 1

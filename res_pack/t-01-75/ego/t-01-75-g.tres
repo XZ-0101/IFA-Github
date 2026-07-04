@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://b53bqb7tkq2lp"]
+
+[ext_resource type="Resource" uid="uid://dt2ojhq0dyk6v" path="res://res_pack/t-01-75/ego/t-01-75-g-j.tres" id="1_r2x2a"]
+[ext_resource type="Texture2D" uid="uid://bescnby74dgir" path="res://res_pack/t-01-75/ego/img/G-1514534970.webp" id="2_r2x2a"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="3_7h3oj"]
+
+[resource]
+script = ExtResource("3_7h3oj")
+name_ = "笑靥"
+texture = ExtResource("2_r2x2a")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：1%
+饰品位置：眼部
+最大生命值+5
+最大精神值+5
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["t-01-75"])
+jumper = ExtResource("1_r2x2a")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

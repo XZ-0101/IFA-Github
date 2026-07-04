@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="test" format=3 uid="uid://luon488ijqpj"]
+
+[ext_resource type="Texture2D" uid="uid://baenart2xgclo" path="res://img2/TEST/06/06.jpg" id="1_pr4gb"]
+[ext_resource type="Resource" uid="uid://bwsbldv0lnno8" path="res://res/test/test7-01-j.tres" id="2_gkf2n"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_mysnh"]
+[ext_resource type="Texture2D" uid="uid://cgpuneor31prj" path="res://img2/TEST/07/TEST7-01.png" id="4_mysnh"]
+
+[resource]
+script = ExtResource("3_mysnh")
+red_def = 0.8
+white_def = 2.0
+black_def = 0.8
+pale_def = 1.0
+other_info = "“请给我们爱！！！”（紫罗兰色的正午）会生成刻有未知符号的紫色黑曜石石碑，石碑两侧长有触手，会攻击附近敌人。
+
+[img]res://img2/TEST/06/img.webp[color=red]
+石碑[/color]
+
+出现地点：控制部，情报部的随机大房间。安保部，培训部，中央本部一区的主休息室"
+other_info_act = "考验能力
+“请给我们爱！！！”会在即将出现的房间天花板上生成一扇紫色的传送门，石碑会从传送门中降下，并对处于坠落房间内且在准备阶段时就安排在该房间所属部门内的职员造成100点物理伤害[1]，足以秒杀文职人员和绝大部分物理抗性较低的员工。（很难懂是不是，实际上举个例子就是安保部的石碑只对一天开始时放在安保部的员工有伤害，对这个房间里的其余部门员工没伤害）
+
+之后，“请给我们爱！！！”不会移动，并会伸出黑色的触手拍击周围的单位，对它们造成1点侵蚀伤害。如果长时间不被镇压的话，它会每30秒停止攻击一段时间，收起触须并发出紫色荧光。在动画完成后使所在部门内一个随机异想体的逆卡巴拉计数器下降1点，随后伸出触手继续攻击。
+
+当所有生成的“请给我们爱！！！”都被镇压，击败提示将出现，紫罗兰的正午将被判定结束。
+
+镇压建议
+“请给我们爱！！！”只有落地的伤害能给主管的员工造成较大的威胁，且它落地的位置是可以被预知的。在该考验开始前，提前将所有部门的员工移动到走廊中可以有效避免员工在休息室内被石塔砸死的风险。主管也可以将员工调去其余部门可能会出现“请给我们爱！！！”的房间，从而让这些员工在传送门打开时时就能对其造成一定伤害，加快镇压的进度。
+
+“请给我们爱！！！”本身的伤害能力较为有限，其抗性也较为平庸，因此对其本体进行镇压工作是较为容易的。即使员工等级较低，也能在人多势众的情况下也能轻松取胜。
+
+但要注意的是，一旦一座石碑存留的时间太长，其导致设施内其他异想体的逆卡巴拉计数器下降的特殊能力可能会导致一系列因异想体出逃而引起的连锁效应，从而引发相当严重的次生灾害。因此，主管应在其生成后，调动员工迅速镇压“请给我们爱！！！”。
+
+如果主管收容了那些会响应职员死亡而出逃的异想体，务必在“请给我们爱！！！”落地之前处理掉那些可能会出现“请给我们爱！！！”的部门的文职。否则，石碑落地时的伤害会导致大量的文职伤亡，这可能会导致响应职员死亡的异想体直接出逃。装备不足的主管又经常会因为忙于处理这些异想体而导致“请给我们爱！！！”存活时间过长，这可能会引起极为严重的连锁反应，甚至导致主管重新开始这一天，请主管尽量避免。
+
+注释
+[1] 被此伤害杀死的职员不会留下尸体。
+
+[img]res://img2/TEST/06/img1.webp[color=red]
+降临[/color]
+
+[img]res://img2/TEST/06/img2.webp[color=red]
+给予[/color]
+
+[img]res://img2/TEST/06/img3.webp[color=red]
+结束[/color]
+
+"
+place = "请见考验解析"
+count = "至多5个"
+health = 350
+speed = "该单位无法运动"
+ob_name = "请给我们爱！！！"
+color = "紫罗兰"
+time = "正午"
+name_ = "请给我们爱！！！"
+icon = ExtResource("1_pr4gb")
+info_ = "*资料类型：考验
+
+我们听见了弱者的挣扎与悲鸣，向它们乞求爱与慈悲吧。
+
+我们不能理解它们，它们更不会理解我们
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%B4%AB%E7%BD%97%E5%85%B0%E7%9A%84%E6%AD%A3%E5%8D%88_%E8%AF%B7%E7%BB%99%E6%88%91%E4%BB%AC%E7%88%B1%EF%BC%81%EF%BC%81%EF%BC%81]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的正午"
+level = "h"
+jumper = ExtResource("2_gkf2n")
+jump = Array[String](["pres://res/test/test5-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("4_mysnh")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dy0v03ku6msvl"]
+
+[ext_resource type="Resource" uid="uid://72ykwerynb6r" path="res://res_pack/f-01-69/ego/f-01-69-g-j.tres" id="1_ktvnp"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_t0tq0"]
+[ext_resource type="Texture2D" uid="uid://fsd76omrj0mb" path="res://res_pack/f-01-69/ego/img/QQ3F20180429154311.webp" id="3_4e6nd"]
+
+[resource]
+script = ExtResource("2_t0tq0")
+name_ = "魔弹"
+texture = ExtResource("3_4e6nd")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：4%
+位置：口部
+最大生命值-5
+最大精神值-5
+移动速度+10
+攻击速度+10
+持有“魔弹”时，提高3点最大与最小攻击力。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/f-01-69/benti/f-01-69-j.tres"])
+jumper = ExtResource("1_ktvnp")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

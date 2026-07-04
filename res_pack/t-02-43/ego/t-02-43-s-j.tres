@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cy7v7an6ruy3w"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_cjc7v"]
+[ext_resource type="Texture2D" uid="uid://jk5sdk6b5t1u" path="res://res_pack/t-02-43/ego/img/A-1513167945.webp" id="2_xlxce"]
+
+[resource]
+script = ExtResource("1_cjc7v")
+name_ = "赤瞳"
+level = "T"
+texture = ExtResource("2_xlxce")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-02-43/ego/t-02-43-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://b26wrhvo0rjbw"]
+
+[ext_resource type="Resource" uid="uid://cwy25sclyrd6c" path="res://res_pack/o-04-100/ego/o-04-100-s-j.tres" id="1_x0vun"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_33ce2"]
+[ext_resource type="Texture2D" uid="uid://bplhq4mttvq88" path="res://res_pack/o-04-100/ego/img/Sakura2.webp" id="3_lxa7d"]
+
+[resource]
+script = ExtResource("2_33ce2")
+Cost = "30"
+Max_Amount = "1"
+Observation_Level = "3"
+other = "无"
+red_def = 1.2
+white_def = 0.6
+black_def = 0.7
+pale_def = 2.0
+Requirements = "自律II"
+name_ = "落樱"
+texture = ExtResource("3_lxa7d")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+这件E.G.O会令注视着它的人下意识地心神不安。
+
+让我们摆脱这些痛苦的工作，暂且休息一下，观赏那些美丽的樱花吧。
+
+在这树荫下，那痛苦的现实仿佛只不过是你神智中的幻象。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/o-04-100/benti/o-04-100-j.tres"])
+jumper = ExtResource("1_x0vun")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

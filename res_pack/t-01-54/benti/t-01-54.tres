@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://d4cq16ude4mi"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_marxa"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_h84l2"]
+[ext_resource type="Texture2D" uid="uid://dbxorht4mvt4x" path="res://res_pack/t-01-54/benti/img/I-2.webp" id="3_4kgew"]
+[ext_resource type="Resource" uid="uid://dciksr42tbf6t" path="res://res_pack/t-01-54/benti/t-01-54-j.tres" id="4_708sp"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_v88il"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_marxa")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_marxa")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 30,
+"L4": 30,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_marxa")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_marxa")
+level = {
+"L1": 30,
+"L2": 20,
+"L3": 0,
+"L4": -80,
+"L5": -80
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_h84l2")
+Probabilities = Array[ExtResource("1_marxa")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_v88il")
+Attack_Type = 1
+acctak_Damage = "2-3"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "14"
+good_Mood_Range = "11-14"
+bad_Mood_Range = "0-6"
+Norm_Mood_Range = "7-10"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+red_def = 1.0
+white_def = 1.0
+black_def = 1.5
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 当工作结果为差时，“被遗弃的杀人魔”的逆卡巴拉计数器会在倒计时结束后减少。"])
+story = "这个异想体本是一名人类，由于脑损伤所引起的病症使他一直在啜泣和辱骂员工。
+他的额上有一道从未愈合的创口。这个异想体憎恨着一切，尽管整个身体都被束身衣束缚着，可实际上他和任何人一样自由，因为那些锁和链条并不牢靠到能完全阻止他施暴。
+
+有人说他曾是一名被关押在联邦监狱里的死囚，所以他总是被一件束身衣牢牢束缚着。研究员们靠近他的时候总是特别小心，因为他们认为那件束身衣不能完全限制住他。
+研究员们想要研究一个杀手的大脑，以证明邪恶先天就存在。一个滥杀无辜的恶魔与一群因好奇而窥伺他大脑的人相比，很难界定这两者究竟谁更恶劣。
+
+各种各样的药物和化学试剂被注射进他的体内。一些是为了人类的未来而用作实验的，另一些则是为了促进医学研究的发展，它们都有着改变世界的潜力。
+研究员们非常兴奋。他们虽然没有直接表露出来，但兴奋之情几乎是显而易见的。某个研究员说他们找到了治疗方法，但具体是治疗什么的，他并没有透露。
+随着时间的推移，死囚渐渐变得寡言少语。他的攻击性被药物抑制了，可他同时也丧失了自我。经过一番严密的审查之后，研究员们解开了他的束缚。
+
+“我的头...变成金属了？我听到...脑子里...有金属的声音...”他有一次这么问我。
+日子一天天过去，他开始自残，他会把头撞向墙壁或是其他硬物的表面，因为他想知道自己的头是否真的变成了金属。
+某一天，研究员们决定不再管他。他们认为，等他看到自己流出几滴血后就会停下来的。然而，即使已经血流满面，他也从未停止过撞击。直到他的伤口已经很深，连头骨都暴露了出来。研究员们不得不再次给他套上束身衣，可他已经不像以前那样害怕被束缚和监视了。
+
+某个研究员死了，如果没有员工证的话，他们根本就辨识不出他的身份，因为他的整张脸都被砸了个稀巴烂。更少的监视意味着更多逃脱的机会。研究员们以为束身衣足以限制住现在的他，可他却能跪在地上四处移动。
+“头...金属...脑子...光滑...像金属...”他开始反复咕哝奇怪的话。
+在那之后，他们采取了紧急措施，有关他的治疗全部终止，最后他的大脑还被挖走一块送去解剖。
+你问我为什么会知道这一切？因为我一直负责对他进行麻醉工作。直到最后一刻他还在不停低语着：
+“结束...开始...结束...开始...一切...结束了...”"
+Observation_level = "Ⅰ. 工作速度 + 5Ⅱ. 成功率 + 5%、解锁E.G.O饰品Ⅲ. 工作速度 + 5、解锁E.G.O护甲Ⅳ. 成功率 + 5%、解锁E.G.O武器"
+flavour_text = Array[String](["“被遗弃的杀人魔”如同雕塑一般静静地跪在收容单元的角落。", "“被遗弃的杀人魔”有时会一边发抖一边自言自语。", "“被遗弃的杀人魔”会时不时地发出尖叫，但既然它被绑得死死的，所以不必太过担心。", "员工感到绝望。", "员工在绝望的氛围中呼吸着。", "这里为什么总是又黑又冷？", "“被遗弃的杀人魔”的大脑正在黑暗中糜烂。", "连“死亡”都抛弃了他，“被遗弃的杀人魔”将被永远囚禁在这里。", "这已不仅仅是愤怒，而是一种更加深沉，更加扭曲，更加疯狂的憎恨。"])
+other_info = "被遗弃的杀人魔（T-01-54）是一个肤色苍白，几近秃头的男子。它的颈部几乎完全折断，可它仍然活着。它一直被一件束身衣束缚住身体，当情绪状态低落的时候，它的头部会变成一块形似贝壳的巨大金属物质，作用类似于头槌。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-01-54/benti/img/Qq.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "出逃信息
+
+出逃的“被遗弃的杀人魔”的生命值为270，基础移动速度为4单位。
+
+出逃的杀人魔拥有270点生命值。它只对职员有仇恨，且会在接近职员后用头变成的铁块砸向地面，对3单位范围内的所有职员造成2-4点物理伤害。
+
+镇压建议
+
+虽然这是个会出逃的TETH级异想体，但它的低额中等攻速红伤对三四级勇气且物理抗性较高的员工实在是没法造成什么威胁，甚至在安保部抑制后，它在走廊打文职的速度还没有反应堆提供回复的速度快。大多数情况下是出逃一路走一路锤文职，然后走进员工主休息室被蒸发。
+
+如果主管实在是装备不足，则建议让员工对它攻击两下后和他赛跑以争取回复的时间。此时慢慢消耗是要优于所有员工一起冲的。主管也可以选择用远程武器放它风筝，又或是让物理抗性较高且有较高勇气的员工抗住它的伤害，其余员工在它的背后输出。
+
+[img]res://res_pack/t-01-54/benti/img/20180216202447_1.webp[/img]
+出逃的被遗弃的杀人魔"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条12点
+工作偏好：每条4点"
+jump_ego = Array[String](["pres://res_pack/t-01-54/ego/t-01-54-g-j.tres", "pres://res_pack/t-01-54/ego/t-01-54-w-j.tres", "pres://res_pack/t-01-54/ego/t-01-54-s-j.tres"])
+name_ = "被遗弃的杀人魔"
+icon = ExtResource("3_4kgew")
+info_ = "资料类型：异想体
+
+真正可悲的，是那些死在我手里的人，那些像你一样的人。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "T-01-54"
+level = "t"
+jumper = ExtResource("4_708sp")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

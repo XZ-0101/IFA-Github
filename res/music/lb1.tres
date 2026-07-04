@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=3 format=3 uid="uid://5gfe67jmogjt"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_80baf"]
+[ext_resource type="Texture2D" uid="uid://cdh8wsm6um13v" path="res://img/SteamIcon_Unity_Big.webp" id="2_ce5un"]
+
+[resource]
+script = ExtResource("1_80baf")
+name_ = "Emergency1"
+zuo_zhe = "project moon"
+texture = ExtResource("2_ce5un")
+texture1 = ExtResource("2_ce5un")
+music_path = "res://mus/09_Emergency1.wav"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

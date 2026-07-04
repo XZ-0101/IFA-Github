@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://i3juv7evvriw"]
+
+[ext_resource type="Resource" uid="uid://c2pl8d0g0polq" path="res://res_pack/o-01-55/ego/o-01-55-s-j.tres" id="1_komed"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_ae6ga"]
+[ext_resource type="Texture2D" uid="uid://bfgyf7ugwa24n" path="res://res_pack/o-01-55/ego/img/A-1513616406.webp" id="3_cvudd"]
+
+[resource]
+script = ExtResource("2_ae6ga")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "1"
+other = "※实际上这件护甲并不能让穿戴者从鹅卵石中得到更多的回复。"
+red_def = 0.8
+white_def = 0.8
+black_def = 1.2
+pale_def = 1.5
+Requirements = "无"
+name_ = "小小银河"
+texture = ExtResource("3_cvudd")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+※穿戴者能从银河之子的“友情象征”中恢复更多的生命值与精神值。
+
+你手中的鹅卵石闪耀着，摇曳着，抖动着。
+
+在那之后，它便成了整个银河。
+
+“一个藏在鹅卵石中的小小银河。”
+
+当男孩哭泣时，一颗闪亮的新星会诞生于其中。
+
+我在你的小小银河中吗？
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-55_%E9%93%B6%E6%B2%B3%E4%B9%8B%E5%AD%90]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["o-01-55"])
+jumper = ExtResource("1_komed")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

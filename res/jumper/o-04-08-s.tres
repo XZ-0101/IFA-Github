@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://6gvl5rj1kceq"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_m6inf"]
+[ext_resource type="Texture2D" uid="uid://pcuo6r521ejk" path="res://img2/LCA/O-04-08/A-1513156904.webp" id="2_ls1fd"]
+
+[resource]
+script = ExtResource("1_m6inf")
+name_ = "血之渴望"
+level = "H"
+texture = ExtResource("2_ls1fd")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_s/o-04-08-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

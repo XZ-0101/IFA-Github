@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://yhlj1q7wevde"]
+
+[ext_resource type="Resource" uid="uid://bb5n3i3ivdgwl" path="res://res_pack/o-01-67/ego/o-01-67-s-j.tres" id="1_kfc7x"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_6k1nh"]
+[ext_resource type="Texture2D" uid="uid://dq2rx7ta2ch55" path="res://res_pack/o-01-67/ego/img/A-1513352796.webp" id="3_u7o5e"]
+
+[resource]
+script = ExtResource("2_6k1nh")
+Cost = "45"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "无"
+red_def = 0.7
+white_def = 0.7
+black_def = 0.7
+pale_def = 1.5
+Requirements = "等级III"
+name_ = "蕾蒂希娅"
+texture = ExtResource("3_u7o5e")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往，
+
+那个小孩不愿撇下她的朋友，所以，她想出了这个绝妙的主意！
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-67_%E8%95%BE%E8%92%82%E5%B8%8C%E5%A8%85]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["o-01-67"])
+jumper = ExtResource("1_kfc7x")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bkle0yvvqnh58"
+path="res://.godot/imported/kn1.gif-ba2e7752f8a873f0916a3f722399c0e0.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/kn1.gif"
+dest_files=["res://.godot/imported/kn1.gif-ba2e7752f8a873f0916a3f722399c0e0.tres"]
+
+[params]
+
+frames_per_second=30

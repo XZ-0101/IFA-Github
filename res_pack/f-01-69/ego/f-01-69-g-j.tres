@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://72ykwerynb6r"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_wf05l"]
+[ext_resource type="Texture2D" uid="uid://fsd76omrj0mb" path="res://res_pack/f-01-69/ego/img/QQ3F20180429154311.webp" id="2_jbs4k"]
+
+[resource]
+script = ExtResource("1_wf05l")
+name_ = "魔弹"
+texture = ExtResource("2_jbs4k")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-69/ego/f-01-69-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "EGO饰品", "脑叶公司EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

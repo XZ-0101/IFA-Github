@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bbmnx770cjgdp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_g47wf"]
+[ext_resource type="Texture2D" uid="uid://cvmqs853kn02u" path="res://res_pack/f-02-49/img/I-1513270053.webp" id="2_16yfb"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_g47wf")
+name_ = "雪橇鲁道夫"
+s = "F-02-49"
+level = "H"
+texture = ExtResource("2_16yfb")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-02-49/f-02-49.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "圣诞节"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

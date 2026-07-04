@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://c3do51yorjdtx"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_cyur8"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_0faao"]
+[ext_resource type="Texture2D" uid="uid://cu73vgo5qx3jq" path="res://little_game/fight/res/skill/skill_img/exported_image.png" id="2_3vqps"]
+
+[sub_resource type="Resource" id="Resource_hufsq"]
+script = ExtResource("1_cyur8")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_0faao")
+name_ = "燃烧"
+icon = ExtResource("2_3vqps")
+level = 1
+change_Point = 2
+coin_n = 3
+base_point = 5
+at = 3
+def = 20
+description = Array[String](["[命中时]施加2层烧伤"])
+eff_arr = Array[ExtResource("1_cyur8")]([SubResource("Resource_hufsq")])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

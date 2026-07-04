@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://d4e1k6psvd8wl"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_vpm35"]
+[ext_resource type="Texture2D" uid="uid://b2eoq417t442n" path="res://res_pack/o-05-30/img/SingingMachinePortrait.webp" id="2_sj0wo"]
+
+[resource]
+script = ExtResource("1_vpm35")
+name_ = "歌唱机"
+s = "O-05-30"
+level = "H"
+texture = ExtResource("2_sj0wo")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-05-30/o-05-30.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

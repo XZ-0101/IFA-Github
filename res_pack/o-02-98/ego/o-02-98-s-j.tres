@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bj5pw0xxytimp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_nsnh1"]
+[ext_resource type="Texture2D" uid="uid://da85daohqsorr" path="res://res_pack/o-02-98/ego/img/QQ3F20180429162005.webp" id="2_lu607"]
+
+[resource]
+script = ExtResource("1_nsnh1")
+name_ = "因乐颠狂"
+level = "H"
+texture = ExtResource("2_lu607")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-98/ego/o-02-98-s.tres"
+mode = "lobotomyS"
+type = Array[String](["脑叶公司EGO", "EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

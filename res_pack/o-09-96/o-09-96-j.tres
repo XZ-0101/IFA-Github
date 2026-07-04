@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bsge6psd06aj"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_mc1uc"]
+[ext_resource type="Texture2D" uid="uid://d1p18l3s4qpmg" path="res://res_pack/o-09-96/img/3F-0.webp" id="2_wr1de"]
+
+[resource]
+script = ExtResource("1_mc1uc")
+name_ = "行为矫正仪"
+s = "O-09-96"
+level = "T"
+texture = ExtResource("2_wr1de")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-09-96/o-09-96.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

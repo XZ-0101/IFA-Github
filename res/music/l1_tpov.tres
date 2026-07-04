@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://b5jnwap2nich8"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_6pfwu"]
+
+[resource]
+script = ExtResource("1_6pfwu")
+lyc = "[00:00.00]Through Patches of Violet - Mili
+[00:00.69]Lyrics by：Cassie Wei
+[00:01.39]Composed by：Cassie Wei/Yamato Kasai
+[00:02.08] [color=purple]How much I wished for another
+[00:07.90] [color=purple]Better happier brighter future
+[00:13.93] [color=purple]Here I am at the gate I stand
+[00:17.07] [color=purple]Dear old times
+[00:18.67] [color=purple]I've made up my mind
+[00:21.65] [color=purple]How much you must have suffered through my anger [color=white](overlooked your wonder)
+[00:29.42] [color=purple]Vulgar awkward composure [color=white](Forward sincere manners)
+[00:33.92] [color=purple]Here we are a[color=white]t the fated land
+[00:36.94]  [color=white]Will you watch me end [color=purple](I shall make it end)
+[00:42.88] [color=purple]O[color=white]h
+[00:44.48] [color=purple]Round and ro[color=white]und we go
+[00:47.35] [color=purple]Holding o[color=white]n to pain
+[00:50.13] [color=purple]Driven by ou[color=white]r egos
+[00:52.99] [color=purple]Feelings [color=white]untold
+[00:56.58] [color=purple]Spinning our own ver[color=white]sions of the past
+[01:02.30] [color=purple]That you cou[color=white]ld never know
+[01:05.30] [color=purple]Cause [color=white]I know
+[01:07.27] [color=purple]I must be [color=white]the reason why
+[01:10.90] [color=purple]You have given  [color=white]up your smiles
+[01:14.00] [color=purple]And the hope inside your  [color=white]eyes have been stolen
+[01:19.32] [color=purple]I must be  [color=white]the reason why
+[01:23.07] [color=purple]You must tell me  [color=white]all these lies
+[01:26.03] [color=purple]Wishing you a better life  [color=white]without me by your side
+[01:32.82]  [color=white]The message has already been said [color=purple]through patches of violet
+[01:45.25] [color=purple]How much we must  [color=white]have diverged
+[01:51.34] [color=purple]Hello
+[01:52.24] [color=white]Goodnight
+[01:52.79] [color=purple]Goodbye
+[01:53.55] [color=white]Hello
+[01:54.30] [color=purple]Goodnight
+[01:55.10] [color=white]I'm here
+[01:55.87] [color=purple]Goodbye
+[01:56.67] [color=white]Waiting
+[01:57.32] [color=purple]Here we are  [color=white]it's our final chance
+[02:00.27] [color=purple]With [color=white]your hand
+[02:01.54] [color=purple]Do what must[color=white] be done
+[02:06.35] [color=white]Delete
+[02:09.18] [color=purple]Delete
+[02:12.21] [color=white]Delete
+[02:15.24] [color=purple]Delete
+[02:17.65] [color=white]Delete
+[02:18.54] [color=purple]Delete
+[02:19.10] [color=white]Delete
+[02:19.76] [color=purple]Delete
+[02:20.56] [color=white]Delete
+[02:21.18] [color=purple]Delete
+[02:22.03] [color=white]Delete
+[02:22.62] [color=purple]Delete
+[02:23.30] [color=white]Delete
+[02:24.27] [color=purple]Delete
+[02:25.07] [color=white]Delete
+[02:25.73] [color=purple]Delete
+[02:26.48] [color=white]Delete
+[02:27.21] [color=purple]Delete
+[02:28.02] [color=white]Delete
+[02:28.74] [color=purple]Delete
+[02:43.00] [color=purple]O[color=white]h
+[02:44.57] [color=purple]Round and ro[color=white]und we go
+[02:47.48] [color=purple]Holding o[color=white]n to pain
+[02:50.01] [color=purple]Driven by ou[color=white]r egos
+[02:53.37] [color=purple]Feelings [color=white]untold
+[02:56.42] [color=purple]Spinning our own ver[color=white]sions of the past
+[03:02.27] [color=purple]That you could[color=white] never know
+[03:04.73] [color=purple]How would[color=white] I know
+[03:07.15] [color=purple]I could be[color=white] the reason why
+[03:10.96] [color=purple]You were able[color=white] to be kind
+[03:13.92] [color=purple]And the hearts we held [color=white]so tight won't stay broken
+[03:19.33] [color=purple]Love must be[color=white] the reason why
+[03:23.03] [color=purple]I still believe[color=white] in this lie
+[03:26.10] [color=purple]That you'll live a better life[color=white] without me by your side
+[03:32.97]  [color=white]The message has already been said [color=purple]through patches of violet
+"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

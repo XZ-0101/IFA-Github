@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="basic_class" format=3 uid="uid://b1x7lkbcyf7fs"]
+
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="1_yc7lb"]
+[ext_resource type="Resource" uid="uid://1ek67van4ml1" path="res://res/all-class/tset-j.tres" id="2_yc7lb"]
+[ext_resource type="Script" uid="uid://lqalg5rb7ad6" path="res://script/class/all_class.gd" id="3_olftp"]
+
+[resource]
+script = ExtResource("3_olftp")
+d_text = "a"
+ego_jump = Array[String](["pres://res/test/test4-j.tres", "pres://res/test/test3-j.tres"])
+lca_jump = Array[String](["pres://res/Unreleased/test-j.tres", "pres://res/legacy-j.tres"])
+lor_jump = Array[String](["pres://res_pack/f-01-37/ego/f-01-37-g-j.tres", "pres://res_pack/f-01-37/ego/f-01-37-s-j.tres"])
+lcb_jump = Array[String](["pres://res_pack/f-01-37/f-01-37-j.tres", "pres://res_pack/f-01-69/benti/f-01-69-j.tres"])
+child_jump = Array[String](["pres://res_pack/D-01-110/d-01-110-j.tres", "pres://res_pack/D-01-110/EGO/D-01-110-g-j.tres"])
+q_jump = Array[String](["pres://res_pack/t-09-90/t-09-90-j.tres"])
+name_ = "aaa"
+icon = ExtResource("1_yc7lb")
+info_ = "abcdef"
+subject = "77888"
+jumper = ExtResource("2_yc7lb")
+jump = Array[String](["pres://little_game/gift/milk_coffe-j.tres"])
+gif = "g7"
+metadata/_custom_type_script = "uid://lqalg5rb7ad6"

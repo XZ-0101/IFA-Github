@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=6 format=3 uid="uid://c4v7malkm5bw1"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_r722h"]
+[ext_resource type="Texture2D" uid="uid://cdh8wsm6um13v" path="res://img/SteamIcon_Unity_Big.webp" id="2_7fvxr"]
+[ext_resource type="Texture2D" uid="uid://nrkdp2ll8xh2" path="res://img2/mus/3F-Day10-2.jpg" id="3_nctnw"]
+[ext_resource type="Texture2D" uid="uid://b6oduqxhu2i5c" path="res://img2/mus/1200px-Story_corridor_lobo.webp" id="4_dcs78"]
+[ext_resource type="Texture2D" uid="uid://dkaqppr5olgdq" path="res://img2/mus/1200px-Story_information_corridor_siren.webp" id="5_a33yj"]
+
+[resource]
+script = ExtResource("1_r722h")
+name_ = "Emergency1"
+zuo_zhe = "project moon"
+texture = ExtResource("2_7fvxr")
+texture1 = ExtResource("2_7fvxr")
+texture_array = Array[Texture2D]([ExtResource("3_nctnw"), ExtResource("4_dcs78"), ExtResource("5_a33yj")])
+music_path = "res://mus/09_Emergency1.wav"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

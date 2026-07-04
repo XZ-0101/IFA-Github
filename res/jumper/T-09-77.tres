@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bwwmud6x43jlh"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_mshpf"]
+[ext_resource type="Texture2D" uid="uid://c0x0w0f0mv2qu" path="res://img/DesireHeart_-1101976.webp" id="2_mshpf"]
+
+[resource]
+script = ExtResource("1_mshpf")
+name_ = "渴望之心"
+s = "T-09-77"
+level = "T"
+texture = ExtResource("2_mshpf")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/tool/dh.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

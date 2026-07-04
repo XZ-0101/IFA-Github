@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://bxw4vqvcupcob"]
+
+[ext_resource type="Texture2D" uid="uid://10xkdnkeeuv0" path="res://little_game/Texture2D/MainUI_MirrorDungeon7_1.png" id="1_1so3g"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="2_mhnu1"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="3_eg0qw"]
+[ext_resource type="PackedScene" uid="uid://bjjtedjetu08s" path="res://little_game/button.tscn" id="4_87bc8"]
+[ext_resource type="Texture2D" uid="uid://dggp6d61ewif2" path="res://little_game/Texture2D/MainUI_BattleSelection_7.png" id="4_mhnu1"]
+[ext_resource type="PackedScene" uid="uid://dee8jpba81w8a" path="res://little_game/panel.tscn" id="6_eg0qw"]
+[ext_resource type="PackedScene" uid="uid://lilepq8qiek4" path="res://screen/TX6.tscn" id="7_87bc8"]
+[ext_resource type="AudioStream" uid="uid://brfh6xg7m40iw" path="res://little_game/AudioClip/Anxiety.ogg.mp3" id="8_ourt7"]
+
+[sub_resource type="GDScript" id="GDScript_mhnu1"]
+script/source = "extends Control
+@export var deck:deck_box
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	if LittleGameCtrl.n_hp<=0:
+		var a = preload(\"res://little_game/over.tscn\")
+		LittleGameCtrl.over_mode=1
+		jumper.jump_to_without_await(a)
+	
+	$Control5.visible=LittleGameCtrl.panic
+	deck=LittleGameCtrl.now_card
+	$level.text=str(LittleGameCtrl.now_point)+\"/\"+str(LittleGameCtrl.max_point)
+	if LittleGameCtrl.now_point == LittleGameCtrl.max_point:
+		
+		jumper.jump_to_without_await(load(\"res://little_game/choose_deck.tscn\"))
+	else :
+	
+		if deck.is_trun:
+			
+			$points/p1.q=deck.card[LittleGameCtrl.now_point]
+			$points/p2.q=deck.card[LittleGameCtrl.now_point]
+			$points/p3.q=deck.card[LittleGameCtrl.now_point]
+		elif  deck.fate_points:
+			var found = false
+			for i in deck.fate_points:
+				var entry =i.split(\",\")
+				if LittleGameCtrl.now_point == int(entry[0]):
+					print(int(entry[1]))
+					var card = deck.fate_cards[int(entry[1])]
+					$points/p1.q = card
+					$points/p2.q = card
+					$points/p3.q = card
+					found = true
+					break
+
+			if not found:
+				$points/p1.q = deck.card.pick_random()
+				$points/p2.q = deck.card.pick_random()
+				$points/p3.q = deck.card.pick_random()
+			
+			
+		else :
+			
+			$points/p1.q=deck.card.pick_random()
+			$points/p2.q=deck.card.pick_random()
+			$points/p3.q=deck.card.pick_random()
+		for i in $points.get_children():
+			i.show_()
+	if  (not LittleGameCtrl.n_hp<=0 and not LittleGameCtrl.now_point == LittleGameCtrl.max_point) or ( not LittleGameCtrl.now_point == LittleGameCtrl.max_point ):
+		print(\"need_hide\")
+		jumper.hide_()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()
+	pass # Replace with function body.
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg0qw"]
+atlas = ExtResource("4_mhnu1")
+region = Rect2(13, 1282, 1002, 23)
+
+[node name="Control" type="Control" unique_id=1965996826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_mhnu1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=512395561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1so3g")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="level" type="RichTextLabel" parent="." unique_id=949135719]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 480.0
+offset_right = 239.0
+offset_bottom = 600.0
+theme = ExtResource("3_eg0qw")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "0/6"
+fit_content = true
+
+[node name="Control3" type="Control" parent="." unique_id=1829636714]
+z_index = 6
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=235115535]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=699412436]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1590330786]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=1911062571]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1525744088]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("2_mhnu1")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=1368974377]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("3_eg0qw")
+text = "模拟开采中"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=812948243]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 562.0
+offset_top = 271.0
+offset_right = 741.58655
+offset_bottom = 730.62744
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_eg0qw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1778238245]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 558.0
+offset_top = 642.0
+offset_right = 737.58655
+offset_bottom = 1101.6274
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_eg0qw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="points" type="VBoxContainer" parent="." unique_id=1336322824]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 92.0
+offset_right = 519.0
+offset_bottom = 1071.0
+theme_override_constants/separation = 200
+
+[node name="p1" parent="points" unique_id=892490016 instance=ExtResource("4_87bc8")]
+layout_mode = 2
+
+[node name="p2" parent="points" unique_id=935922909 instance=ExtResource("4_87bc8")]
+layout_mode = 2
+
+[node name="p3" parent="points" unique_id=581757046 instance=ExtResource("4_87bc8")]
+layout_mode = 2
+
+[node name="Control" parent="." unique_id=1664364564 instance=ExtResource("6_eg0qw")]
+layout_mode = 1
+
+[node name="Control5" parent="." unique_id=1130632433 instance=ExtResource("7_87bc8")]
+visible = false
+layout_mode = 0
+offset_left = 817.0
+offset_top = 1461.0
+offset_right = 857.0
+offset_bottom = 1501.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1473442320]
+stream = ExtResource("8_ourt7")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

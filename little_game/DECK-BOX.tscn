@@ -1,0 +1,435 @@
+[gd_scene format=3 uid="uid://4nk4jkltw0fk"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_2pted"]
+[ext_resource type="Resource" uid="uid://bqh4vw3nxowuq" path="res://little_game/q/t000777q.tres" id="2_k7q5l"]
+[ext_resource type="Texture2D" uid="uid://che62fj2pg2ln" path="res://img2/UI/MainUI_MirrorDungeon4_4.png" id="3_ct7yv"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="3_hllmn"]
+[ext_resource type="Texture2D" uid="uid://dcum284tmo537" path="res://img/Magic3.webp" id="4_ct7yv"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="4_i5vk4"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="5_i5vk4"]
+[ext_resource type="Texture2D" uid="uid://cft2epmedivip" path="res://img2/UI/ring.png" id="6_insbq"]
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="8_insbq"]
+
+[sub_resource type="GDScript" id="GDScript_ct7yv"]
+script/source = "extends Control
+
+@export var deck:deck_box
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	load_me()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if $Timer2.time_left>=0.01:
+		$TextureProgressBar.value=(1-$Timer2.time_left/$Timer2.wait_time)*100
+	else:
+		$TextureProgressBar.value=100
+	$panic.visible=LittleGameCtrl.panic
+	pass
+
+
+func _on_timer_2_timeout() -> void:
+	print(\"a\")
+	LittleGameCtrl.now_level+=1
+	LittleGameCtrl.now_card=deck
+	LittleGameCtrl.now_point=0
+	LittleGameCtrl.max_point=deck.max_point if not deck.is_trun else deck.card.size()
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/a_point.tscn\"))
+	$TextureProgressBar.hide()
+	if LittleGameCtrl.panic:
+		LittleGameCtrl.n_sp=LittleGameCtrl.sp
+	pass # Replace with function body.
+
+
+func _on_button_button_down() -> void:
+	$Timer2.start()
+	$TextureProgressBar.show()
+	pass # Replace with function body.
+
+
+
+
+
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$Control/TextureRect4/AnimationPlayer.play(\"new_animation\")
+	else :
+		$Control/TextureRect4/AnimationPlayer.play_backwards(\"new_animation\")
+	pass # Replace with function body.
+
+
+func _on_button_button_up() -> void:
+	$Timer2.stop()
+	$TextureProgressBar.hide()
+	pass # Replace with function body.
+func load_me():
+	$Panel/type.text=\"\"
+	$img/name.text=deck.name_
+	
+	var ma = $img.material as ShaderMaterial
+	ma.set_shader_parameter(\"overlay_texture\",deck.img)
+	ma.set_shader_parameter(\"overlay_offset\",deck.img_off)
+	ma.set_shader_parameter(\"scale_y\",deck.img_sy)
+	ma.set_shader_parameter(\"scale_x\",deck.img_sx)
+	
+	if deck.is_trun:
+		$Panel/type.append_text(\"-故事\\n\")
+	for i in deck.type:
+		$Panel/type.append_text(\"-\"+i+\"\\n\")
+"
+
+[sub_resource type="Resource" id="Resource_7ym4s"]
+script = ExtResource("3_hllmn")
+name_ = "MAY GOD SAVE US"
+type = Array[String](["宗教相关", "无限的可能性"])
+card = Array[ExtResource("1_2pted")]([ExtResource("2_k7q5l")])
+metadata/_custom_type_script = "uid://b8rki7fa01jly"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hllmn"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(16, 222, 404, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn4ar"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(1166, 8, 122, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y66a7"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(1894, 408, 108, 106)
+
+[sub_resource type="Animation" id="Animation_0todi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(174, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_gqen6"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(174, 200), Vector2(260, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ay25f"]
+_data = {
+&"RESET": SubResource("Animation_0todi"),
+&"new_animation": SubResource("Animation_gqen6")
+}
+
+[sub_resource type="Shader" id="Shader_ct7yv"]
+code = "shader_type canvas_item;
+
+uniform sampler2D overlay_texture : source_color;
+uniform float white_threshold : hint_range(0.0, 1.0) = 0.9;
+uniform float scale_x : hint_range(0.0, 10.0) = 1.0;
+uniform float scale_y : hint_range(0.0, 10.0) = 1.0;
+uniform vec2 overlay_offset = vec2(0.0, 0.0);
+uniform bool overlay_repeat = true;
+
+void fragment() {
+    // 获取原始像素颜色
+    vec4 original_color = texture(TEXTURE, UV);
+    
+    // 判断是否为白色（RGB 都大于阈值）
+    bool is_white = all(greaterThan(original_color.rgb, vec3(white_threshold)));
+    
+    vec4 final_color = original_color;  // 默认保持原色
+    
+    if (is_white) {
+        // 计算叠加纹理的自定义 UV
+        vec2 overlay_uv = UV * vec2(scale_x, scale_y) + overlay_offset;
+        
+        if (overlay_repeat) {
+            // 平铺模式：取小数部分
+            overlay_uv = fract(overlay_uv);
+            vec4 overlay_color = texture(overlay_texture, overlay_uv);
+            final_color = vec4(overlay_color.rgb, original_color.a);
+        } else {
+            // 非平铺模式：检查 UV 是否在 [0,1] 范围内
+            if (any(greaterThan(overlay_uv, vec2(1.0))) || any(lessThan(overlay_uv, vec2(0.0)))) {
+                // 超出范围，保持原白色区域的颜色
+                final_color = original_color;
+            } else {
+                vec4 overlay_color = texture(overlay_texture, overlay_uv);
+                final_color = vec4(overlay_color.rgb, original_color.a);
+            }
+        }
+    }
+    // 非白色区域保持 original_color（已默认）
+    
+    COLOR = final_color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ct7yv"]
+shader = SubResource("Shader_ct7yv")
+shader_parameter/overlay_texture = ExtResource("4_ct7yv")
+shader_parameter/white_threshold = 0.9
+shader_parameter/scale_x = 3.0000001425
+shader_parameter/scale_y = 3.0000001425
+shader_parameter/overlay_offset = Vector2(-1.625, -0.355)
+shader_parameter/overlay_repeat = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pted"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(1318, 241, 379, 679)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ym4s"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(258, 23, 419, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7q5l"]
+atlas = ExtResource("3_ct7yv")
+region = Rect2(919, 243, 377, 663)
+
+[node name="Control" type="Control" unique_id=1300101847]
+custom_minimum_size = Vector2(341, 572)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 341.0
+offset_bottom = 572.0
+script = SubResource("GDScript_ct7yv")
+deck = SubResource("Resource_7ym4s")
+
+[node name="Panel" type="Panel" parent="." unique_id=956440208]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 200.0
+offset_right = 245.0018
+offset_bottom = 471.0
+theme = ExtResource("4_i5vk4")
+
+[node name="type" type="RichTextLabel" parent="Panel" unique_id=1952646591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_i5vk4")
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+
+[node name="Control" type="Control" parent="." unique_id=896652249]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="Control" unique_id=1356628678]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 85.0
+offset_right = 283.0
+offset_bottom = 491.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hllmn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Control" unique_id=355615196]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 267.0
+offset_top = 465.0
+offset_right = 289.0
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_mn4ar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="Control/TextureRect4" unique_id=557701426]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 19.0
+offset_right = 47.0
+offset_bottom = 54.0
+theme = ExtResource("4_i5vk4")
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_y66a7")
+texture_pressed = SubResource("AtlasTexture_y66a7")
+texture_hover = SubResource("AtlasTexture_y66a7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect4" unique_id=763963869]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_ay25f")
+
+[node name="img" type="TextureRect" parent="." unique_id=1394791726]
+material = SubResource("ShaderMaterial_ct7yv")
+layout_mode = 0
+offset_left = 22.0
+offset_top = 30.0
+offset_right = 250.0
+offset_bottom = 583.0
+texture = SubResource("AtlasTexture_2pted")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="img" unique_id=715399868]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 97.0
+offset_right = 252.0
+offset_bottom = 191.0
+texture = ExtResource("5_i5vk4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="img" unique_id=1886640792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 329.0
+offset_right = -16.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_7ym4s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="name" type="RichTextLabel" parent="img" unique_id=1276546773]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 375.0
+offset_right = 214.0
+offset_bottom = 411.0
+theme = ExtResource("4_i5vk4")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=pink]MAGIC GRIL[/color]
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="img" unique_id=1386955952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 66.0
+offset_right = 1.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_k7q5l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=855276951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 152.0
+offset_right = -107.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_i5vk4")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/font_size = 25
+flat = true
+text_overrun_behavior = 3
+autowrap_mode = 1
+
+[node name="Timer2" type="Timer" parent="." unique_id=1906775744]
+wait_time = 0.8
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1307529933]
+visible = false
+layout_mode = 0
+offset_left = 69.0
+offset_top = 241.0
+offset_right = 329.0
+offset_bottom = 475.0
+scale = Vector2(0.5, 0.5)
+fill_mode = 5
+texture_under = ExtResource("6_insbq")
+texture_progress = ExtResource("6_insbq")
+tint_under = Color(0.1358124, 0.13248262, 0, 1)
+tint_progress = Color(1, 1, 0.6313726, 1)
+
+[node name="panic" type="Control" parent="." unique_id=2037435450]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="panic" unique_id=404981708]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 465.0
+offset_right = 349.0
+offset_bottom = 548.0
+texture = ExtResource("8_insbq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="panic" unique_id=807336341]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 399.0
+offset_right = 238.0
+offset_bottom = 445.0
+color = Color(0.00027054295, 0.044776306, 0.2778127, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="panic/ColorRect" unique_id=1293387826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_i5vk4")
+theme_override_colors/default_color = Color(0.15294118, 0.8784314, 0.9098039, 1)
+bbcode_enabled = true
+text = "PANIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="Control/TextureRect4/TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

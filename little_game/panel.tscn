@@ -1,0 +1,527 @@
+[gd_scene format=3 uid="uid://dee8jpba81w8a"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_xwcpx"]
+[ext_resource type="Texture2D" uid="uid://wt4tx1eulmke" path="res://img2/UI/Texture2D/Icons_7.png" id="2_rmd75"]
+[ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="3_rmd75"]
+[ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="4_oek5l"]
+[ext_resource type="PackedScene" uid="uid://c0pjy48i6yhx" path="res://little_game/fight/scn/skill_show.tscn" id="5_ilkl2"]
+[ext_resource type="Texture2D" uid="uid://boq3ccg55ed4b" path="res://little_game/fight/img/ui/Texture2D/BattleUI_InfoPopup_new_1.png" id="6_nwgp2"]
+[ext_resource type="AudioStream" uid="uid://i2ukcg3sy26m" path="res://res/SOUND/AudioClip/014. Cool Sticky UI Button.wav" id="7_nwgp2"]
+
+[sub_resource type="GDScript" id="GDScript_xwcpx"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	read_v()
+	pass
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	
+	read_v1()
+	read_v2()
+	read_v3()
+	if LittleGameCtrl.in_fight:
+		$\"Panel/TabContainer/基础\".show()
+		$Panel/TabContainer.set_tab_disabled(2,true)
+		$Panel/TabContainer.set_tab_disabled(3,true)
+	else:
+		$Panel/TabContainer.set_tab_disabled(2,false)
+		$Panel/TabContainer.set_tab_disabled(3,false)
+	if toggled_on:
+		$CheckButton/AnimationPlayer.play(\"new_animation\")
+	else :
+		$CheckButton/AnimationPlayer.play_backwards(\"new_animation\")
+	pass # Replace with function body.
+
+func read_v():
+	$\"Panel/TabContainer/基础/HBoxContainer2/sp_/sp_text\".text=str(LittleGameCtrl.n_sp)+\"/\"+str(LittleGameCtrl.sp)
+	$Panel/TabContainer/基础/HBoxContainer/hp_/hp_text.text=str(LittleGameCtrl.n_hp)+\"/\"+str(LittleGameCtrl.hp)
+	$Panel/TabContainer/基础/HBoxContainer2/sp_.max_value=LittleGameCtrl.sp
+	$Panel/TabContainer/基础/HBoxContainer2/sp_.value=LittleGameCtrl.n_sp
+	$Panel/TabContainer/基础/HBoxContainer/hp_.max_value=LittleGameCtrl.hp
+	$Panel/TabContainer/基础/HBoxContainer/hp_.value=LittleGameCtrl.n_hp
+	
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer/v0.text=\"勇气等级\\n\"+str(LittleGameCtrl.n_value_array[0])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer2/v1.text=\"谨慎等级\\n\"+str(LittleGameCtrl.n_value_array[1])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer3/v2.text=\"自律等级\\n\"+str(LittleGameCtrl.n_value_array[2])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer4/v3.text=\"正义等级\\n\"+str(LittleGameCtrl.n_value_array[3])
+	pass
+	$Panel/TabContainer/基础/text_and_texture/gift.text=\"\"#EGO饰品效果\\n
+	for i in LittleGameCtrl.gift_text_arr:
+		$Panel/TabContainer/基础/text_and_texture/gift.append_text(i+\"\\n\")
+func read_v1():
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill\".skill=LittleGameFight.skill_arr[0]
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill\".show_it()
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill2\".skill=LittleGameFight.skill_arr[1]
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill2\".show_it()
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill3\".skill=LittleGameFight.skill_arr[2]
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill3\".show_it()
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill4\".skill=LittleGameFight.skill_arr[3]
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill4\".show_it()
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill5\".skill=LittleGameFight.skill_arr[4]
+	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill5\".show_it()
+	$\"Panel/TabContainer/战斗信息/RichTextLabel\".text=\"\"
+	for i in LittleGameFight.gift_eff_arr:
+		if i.gift_jumper in LittleGameCtrl.gift_array:
+			$\"Panel/TabContainer/战斗信息/RichTextLabel\".text+=i.de+\"\\n\"
+			
+	pass
+func read_v2():
+	
+	var c =$\"Panel/TabContainer/技能/ScrollContainer/box\"
+	var n =preload(\"res://little_game/fight/scn/button.tscn\")
+	for i in c.get_children():
+		i.queue_free()
+	for i in range(1,LittleGameCtrl.skill_arr.size()+1):
+		var n_=n.instantiate()
+		n_.skill=LittleGameCtrl.skill_arr[i-1]
+		n_.ind=i-1
+		n_.skill_choice.connect(take_skill)
+		c.add_child(n_)
+		n_.read()
+		
+		
+func take_skill(ind:int):
+	$\"Panel/TabContainer/技能/014_CoolStickyUiButton\".play()
+	var s=LittleGameCtrl.skill_arr[ind]
+	if \"守备\" in s.type:
+		LittleGameFight.skill_arr[3]=s
+	elif \"恐慌\" in s.type:
+		LittleGameFight.skill_arr[4]=s
+	elif s.level==1:
+		LittleGameFight.skill_arr[0]=s
+	elif s.level==2:
+		LittleGameFight.skill_arr[1]=s
+	elif s.level==3:
+		LittleGameFight.skill_arr[2]=s
+	
+	read_v1()
+	
+	pass
+
+func read_v3():
+	var c =$\"Panel/TabContainer/ITEM/ScrollContainer/box\"
+	var n =preload(\"res://little_game/fight/scn/item.tscn\")
+	for i in c.get_children():
+		i.queue_free()
+	for i in LittleGameCtrl.gift_array:
+		var n_=n.instantiate()
+		n_.gift_=i
+		n_.show_it()
+		c.add_child(n_)
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_rmd75"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-550, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oek5l"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-550, 70), Vector2(10, 70)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1k3q"]
+_data = {
+&"RESET": SubResource("Animation_rmd75"),
+&"new_animation": SubResource("Animation_oek5l")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oek5l"]
+bg_color = Color(0.101960786, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1k3q"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilkl2"]
+bg_color = Color(0, 0.29674956, 0.29674953, 0.16470589)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwgp2"]
+bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go0o5"]
+atlas = ExtResource("2_rmd75")
+region = Rect2(553, 520, 174, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv701"]
+atlas = ExtResource("2_rmd75")
+region = Rect2(776, 530, 240, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v50o"]
+atlas = ExtResource("2_rmd75")
+region = Rect2(31, 776, 194, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqite"]
+atlas = ExtResource("2_rmd75")
+region = Rect2(259, 776, 250, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nl57"]
+atlas = ExtResource("6_nwgp2")
+region = Rect2(657, 737, 153, 160)
+
+[node name="Control" type="Control" unique_id=1664364564]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = SubResource("GDScript_xwcpx")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1624802480]
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -641.0
+offset_top = 1104.0
+offset_right = -493.0
+offset_bottom = 1146.0
+grow_horizontal = 0
+theme = ExtResource("1_xwcpx")
+theme_override_font_sizes/font_size = 25
+text = "打开面板"
+autowrap_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CheckButton" unique_id=1464542372]
+libraries/ = SubResource("AnimationLibrary_m1k3q")
+
+[node name="Panel" type="Panel" parent="." unique_id=361062827]
+z_index = 20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_right = -672.0
+offset_bottom = -443.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xwcpx")
+
+[node name="TabContainer" type="TabContainer" parent="Panel" unique_id=1659351966]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 25.0
+offset_right = 504.0
+offset_bottom = 682.0
+mouse_filter = 0
+current_tab = 0
+
+[node name="基础" type="VBoxContainer" parent="Panel/TabContainer" unique_id=257544649]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/基础" unique_id=1945067884]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/TabContainer/基础/HBoxContainer" unique_id=1431351702]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=red]HP"
+
+[node name="hp_" type="ProgressBar" parent="Panel/TabContainer/基础/HBoxContainer" unique_id=322226218]
+custom_minimum_size = Vector2(400, 35)
+layout_mode = 2
+theme = ExtResource("1_xwcpx")
+theme_override_styles/background = SubResource("StyleBoxFlat_oek5l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1k3q")
+show_percentage = false
+
+[node name="hp_text" type="RichTextLabel" parent="Panel/TabContainer/基础/HBoxContainer/hp_" unique_id=101581618]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/基础" unique_id=1025729125]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/TabContainer/基础/HBoxContainer2" unique_id=1746882235]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=cyan]SP"
+
+[node name="sp_" type="ProgressBar" parent="Panel/TabContainer/基础/HBoxContainer2" unique_id=799311849]
+custom_minimum_size = Vector2(400, 35)
+layout_mode = 2
+theme = ExtResource("1_xwcpx")
+theme_override_styles/background = SubResource("StyleBoxFlat_ilkl2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nwgp2")
+show_percentage = false
+
+[node name="sp_text" type="RichTextLabel" parent="Panel/TabContainer/基础/HBoxContainer2/sp_" unique_id=646552482]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/TabContainer/基础" unique_id=221417623]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/基础/GridContainer" unique_id=1346842108]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer" unique_id=1274899605]
+modulate = Color(0.75686276, 0.14117648, 0.24705882, 1)
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_go0o5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="v0" type="RichTextLabel" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer" unique_id=2130028616]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.75686276, 0.14117648, 0.24705882, 1)
+bbcode_enabled = true
+text = "勇气等级
+30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/基础/GridContainer" unique_id=1021647842]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer2" unique_id=1031526961]
+modulate = Color(0.9411765, 0.92941177, 0.75686276, 1)
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_xv701")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="v1" type="RichTextLabel" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer2" unique_id=1104829648]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9411765, 0.92941177, 0.75686276, 1)
+bbcode_enabled = true
+text = "谨慎等级
+30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/TabContainer/基础/GridContainer" unique_id=590450522]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer3" unique_id=1428987098]
+modulate = Color(0.5019608, 0.2901961, 0.5137255, 1)
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_8v50o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="v2" type="RichTextLabel" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer3" unique_id=1619764142]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.5019608, 0.2901961, 0.5137255, 1)
+bbcode_enabled = true
+text = "自律等级
+30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/TabContainer/基础/GridContainer" unique_id=1009118738]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer4" unique_id=701105939]
+modulate = Color(0.22352941, 0.72156864, 0.67058825, 1)
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_aqite")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="v3" type="RichTextLabel" parent="Panel/TabContainer/基础/GridContainer/HBoxContainer4" unique_id=239878762]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.22352941, 0.72156864, 0.67058825, 1)
+bbcode_enabled = true
+text = "正义等级
+30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gift2" type="RichTextLabel" parent="Panel/TabContainer/基础" unique_id=1373560686]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "EGO饰品效果"
+
+[node name="text_and_texture" type="NinePatchRect" parent="Panel/TabContainer/基础" unique_id=775948082]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_rmd75")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_tab_index = 0
+
+[node name="gift" type="RichTextLabel" parent="Panel/TabContainer/基础/text_and_texture" unique_id=1999143459]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 478.0
+offset_bottom = 193.0
+bbcode_enabled = true
+script = ExtResource("4_oek5l")
+
+[node name="战斗信息" type="VBoxContainer" parent="Panel/TabContainer" unique_id=28217157]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/战斗信息" unique_id=1646547650]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/战斗信息/ScrollContainer" unique_id=1863752443]
+layout_mode = 2
+
+[node name="skill" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer" unique_id=809147387 instance=ExtResource("5_ilkl2")]
+layout_mode = 2
+
+[node name="skill2" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer" unique_id=1169013317 instance=ExtResource("5_ilkl2")]
+layout_mode = 2
+
+[node name="skill3" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer" unique_id=2062687908 instance=ExtResource("5_ilkl2")]
+layout_mode = 2
+
+[node name="skill4" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer" unique_id=180845844 instance=ExtResource("5_ilkl2")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill4" unique_id=400368286]
+self_modulate = Color(1, 1, 1, 0.9019608)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 64.0
+offset_right = 108.0
+offset_bottom = 137.0
+texture = SubResource("AtlasTexture_2nl57")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="skill5" parent="Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer" unique_id=12720665 instance=ExtResource("5_ilkl2")]
+layout_mode = 2
+mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/战斗信息" unique_id=1346559052]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "EGO饰品效果"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/TabContainer/战斗信息" unique_id=1849447868]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="ITEM" type="VBoxContainer" parent="Panel/TabContainer" unique_id=454450351]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/ITEM" unique_id=1633497886]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "拥有的EGO饰品和资料"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/ITEM" unique_id=107736985]
+custom_minimum_size = Vector2(0, 570)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="box" type="GridContainer" parent="Panel/TabContainer/ITEM/ScrollContainer" unique_id=562957892]
+layout_mode = 2
+columns = 3
+
+[node name="技能" type="VBoxContainer" parent="Panel/TabContainer" unique_id=1086203891]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Label" type="Label" parent="Panel/TabContainer/技能" unique_id=1478542431]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "掌握的技能"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/技能" unique_id=1212848199]
+custom_minimum_size = Vector2(0, 570)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="box" type="GridContainer" parent="Panel/TabContainer/技能/ScrollContainer" unique_id=536638326]
+layout_mode = 2
+columns = 3
+
+[node name="014_CoolStickyUiButton" type="AudioStreamPlayer" parent="Panel/TabContainer/技能" unique_id=33447369]
+stream = ExtResource("7_nwgp2")
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

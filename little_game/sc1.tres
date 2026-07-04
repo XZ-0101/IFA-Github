@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://b16btv2np1j04"]
+
+[ext_resource type="Texture2D" uid="uid://bny066k4atjqa" path="res://img/NoData.webp" id="1_8fhkh"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_a054l"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="3_01s4p"]
+
+[sub_resource type="Resource" id="Resource_4d71a"]
+script = ExtResource("2_a054l")
+name_ = "为何我要无视他，明明他很痛苦啊"
+"结果" = "那是一首我曾经会唱的歌，将自己置于高台上，看！我多么光彩夺目！$s底下显得多么黯淡，所以细节都藏在了阴影中，包括台下失败者是表情。$s都太做作了，不是吗？"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_nlaup"]
+script = ExtResource("2_a054l")
+name_ = "你说的对…"
+"结果" = "*滋滋*$s大姐姐！是吗？$s你曾经是这样的人吗？还记得那只小猫吗，你为它哭了整整一个晚上…"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("3_01s4p")
+img = ExtResource("1_8fhkh")
+name_ = "某人心中回荡着的"
+subject = "SC-232.1.1"
+"问题" = "*滋滋*$s是的，没必要为之痛苦。死亡是必然的。"
+item = Array[ExtResource("2_a054l")]([SubResource("Resource_4d71a"), SubResource("Resource_nlaup")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

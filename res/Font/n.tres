@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=3 format=3 uid="uid://7gl0hshi0re2"]
+
+[ext_resource type="FontFile" uid="uid://bl1f4dcjo7ien" path="res://res/Font/norwester.otf" id="1_43e5k"]
+[ext_resource type="FontFile" uid="uid://cjmma2bup0nxv" path="res://res/Font/msyhbd.ttc" id="2_67ies"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_67ies")])
+base_font = ExtResource("1_43e5k")

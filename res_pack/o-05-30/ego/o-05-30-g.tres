@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://vadq4kuboht1"]
+
+[ext_resource type="Resource" uid="uid://bl6okfff0c23q" path="res://res_pack/o-05-30/ego/o-05-30-g-j.tres" id="1_x84ei"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_oqtmn"]
+[ext_resource type="Texture2D" uid="uid://bp0ap500u2nw6" path="res://res_pack/o-05-30/ego/img/1-1524970742.webp" id="3_ow6kr"]
+
+[resource]
+script = ExtResource("2_oqtmn")
+name_ = "谐奏放射器"
+texture = ExtResource("3_ow6kr")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：4%
+位置：脸颊
+最大生命值+8
+最大精神值-4
+受到精神伤害时，恢复伤害值20%的精神值，并暂时提高10点攻击速度。
+※攻击速度加成效果的持续时间为5秒。
+※精神值恢复可适用于恐惧伤害。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-05-30_%E6%AD%8C%E5%94%B1%E6%9C%BA]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-05-30"])
+jumper = ExtResource("1_x84ei")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3n4rw0r3oieo"
+path="res://.godot/imported/月计人 - Project Moon - (四百朵玫瑰 Ⅱ) –Limbuscompany.ogg-b5439e18889bbd72cf6a9ef410041362.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/月计人 - Project Moon - (四百朵玫瑰 Ⅱ) –Limbuscompany.ogg"
+dest_files=["res://.godot/imported/月计人 - Project Moon - (四百朵玫瑰 Ⅱ) –Limbuscompany.ogg-b5439e18889bbd72cf6a9ef410041362.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

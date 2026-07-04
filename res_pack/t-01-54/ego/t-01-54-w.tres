@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://dxqyexyc2pklj"]
+
+[ext_resource type="Resource" uid="uid://gcbsvpegumje" path="res://res_pack/t-01-54/ego/t-01-54-w-j.tres" id="1_3lhlk"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_uopq2"]
+[ext_resource type="Texture2D" uid="uid://dotdt85bw6iam" path="res://res_pack/t-01-54/ego/img/W-1513150760.webp" id="3_ri18b"]
+
+[resource]
+script = ExtResource("2_uopq2")
+Cost = "25"
+Max_Amount = "2"
+Damage_type = 1
+Damage = "12-18"
+Attack_Speed = "慢（3s）"
+Range_ = "一般（5）"
+dps = "5"
+m_ban = "锤"
+Observation_Level = "4"
+Requirements = "无"
+other = "无"
+name_ = "悔恨"
+texture = ExtResource("3_ri18b")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+秘密研究是从一个地下室开始的，而那项研究有着改变人类未来的无限可能。
+
+为了一个更远大的目标，他们放下了道德和尊严。
+
+虽不人道，可没人会感到后悔...除了他们。
+
+看上去连仁慈的Carmen都默许了这一切。
+
+他们再也不能回到正常的生活当中。
+
+对一个连葬礼都没有的人而言，唯有深深的悔恨才是最后的悼唁。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/t-01-54/benti/t-01-54-j.tres"])
+jumper = ExtResource("1_3lhlk")
+gif = "g13"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

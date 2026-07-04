@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dyeblluodvq36"]
+
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_k1ymy"]
+[ext_resource type="Resource" uid="uid://27vedc843xyj" path="res://little_game/gift/kml-g.tres" id="1_xy84q"]
+[ext_resource type="Texture2D" uid="uid://cjnuf1te55bcj" path="res://little_game/Texture2D/150px-饰品-9036.webp" id="3_ik6o6"]
+
+[resource]
+script = ExtResource("1_k1ymy")
+name_ = "卡蜜拉"
+texture = ExtResource("3_ik6o6")
+info = "将勇气等级增加自己最大生命值与生命值之差"
+jumper = ExtResource("1_xy84q")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

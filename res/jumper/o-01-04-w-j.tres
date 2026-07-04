@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://qvtqtpqg7j2i"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_5a2up"]
+[ext_resource type="Texture2D" uid="uid://hk20lrxmsthl" path="res://img/Magic1.webp" id="2_qr51a"]
+
+[resource]
+script = ExtResource("1_5a2up")
+name_ = "以爱与恨之名"
+level = "W"
+texture = ExtResource("2_qr51a")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_w/o-01-04-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

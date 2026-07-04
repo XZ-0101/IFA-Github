@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="lyrics" format=3 uid="uid://b70gkkudr8shh"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_3v3q3"]
+
+[resource]
+script = ExtResource("1_3v3q3")
+lyc = "[00:00.20][color=4839ef]阿赖耶没有在等待任何人[/color]
+[00:11.29][color=4839ef]若记忆消散，时间也会消失[/color]
+[00:22.57][color=4839ef]你回来的日子会是今天，还是明天呢。不，你还会回来吗[/color]
+[00:33.86][color=4839ef]坚信着那一定会回来的约定，我昼夜不忘的等待着[/color]
+[00:45.14][color=4839ef]即便斩去，再度斩去，那一日的怨恨也无法斩断，只会卷土重来。[/color]
+[00:56.43][color=4839ef].......不。现在我......还不想回去[/color]
+[01:07.71][color=4839ef]这里好黑......好安静......[/color]
+[01:19.00][color=4839ef]阿赖耶没有在等待任何人[/color]
+[01:30.29][color=4839ef]若记忆消散，时间也会消失[/color]
+[01:41.57][color=4839ef]你回来的日子会是今天，还是明天呢。不，你还会回来吗[/color]
+[01:52.86][color=4839ef]坚信着那一定会回来的约定，我昼夜不忘的等待着[/color]
+[02:04.14][color=4839ef]即便斩去，再度斩去，那一日的怨恨也无法斩断，只会卷土重来。[/color]
+[02:15.43][color=4839ef].......不。现在我......还不想回去[/color]
+[02:26.71][color=4839ef]这里好黑......好安静......[/color]
+[02:38.00][color=4839ef]阿赖耶没有在等待任何人[/color]
+[02:49.29][color=4839ef]若记忆消散，时间也会消失[/color]
+[03:00.57][color=4839ef]你回来的日子会是今天，还是明天呢。不，你还会回来吗[/color]
+[03:11.86][color=4839ef]坚信着那一定会回来的约定，我昼夜不忘的等待着[/color]
+[03:23.14][color=4839ef]即便斩去，再度斩去，那一日的怨恨也无法斩断，只会卷土重来。[/color]
+[03:34.43][color=4839ef].......不。现在我......还不想回去[/color]
+[03:45.71][color=4839ef]这里好黑......好安静......[/color]"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://d2sf3f0dcmjg4"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ii4gt"]
+[ext_resource type="Texture2D" uid="uid://c2tgrtxu0xe4g" path="res://res_pack/o-05-61/img/I-3.webp" id="2_mq41q"]
+
+[resource]
+script = ExtResource("1_ii4gt")
+name_ = "破裂盔甲"
+s = "O-05-61"
+level = "T"
+texture = ExtResource("2_mq41q")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-05-61/o-05-61.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

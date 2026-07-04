@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://beyhm8fs1yh62"]
+
+[ext_resource type="Resource" uid="uid://bu7nmphnwf28q" path="res://little_game/gift/bstt-g.tres" id="1_7jcge"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_xu30v"]
+[ext_resource type="Texture2D" uid="uid://cng6l1b51qnu1" path="res://little_game/Sprite/Totem_of_Undying_JE2_BE2.png" id="3_xu30v"]
+
+[resource]
+script = ExtResource("2_xu30v")
+name_ = "不死图腾"
+texture = ExtResource("3_xu30v")
+info = "[回合开始时]如果HP小于0，则进行一次复活"
+jumper = ExtResource("1_7jcge")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

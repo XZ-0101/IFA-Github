@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cx8o04xejol7m"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_hjbfx"]
+[ext_resource type="Texture2D" uid="uid://diwgn1akqbupd" path="res://res_pack/F-05-52/ego/img/W-1513154485.webp" id="2_nqtlr"]
+
+[resource]
+script = ExtResource("1_hjbfx")
+name_ = "美味苏打"
+level = "Z"
+texture = ExtResource("2_nqtlr")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/F-05-52/ego/F-05-52-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

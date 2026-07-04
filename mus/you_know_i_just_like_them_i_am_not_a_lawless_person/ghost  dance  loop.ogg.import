@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl03i1qqnithg"
+path="res://.godot/imported/ghost  dance  loop.ogg-2109feea1e9b634d8ad1309036cc6f33.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/you_know_i_just_like_them_i_am_not_a_lawless_person/ghost  dance  loop.ogg"
+dest_files=["res://.godot/imported/ghost  dance  loop.ogg-2109feea1e9b634d8ad1309036cc6f33.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

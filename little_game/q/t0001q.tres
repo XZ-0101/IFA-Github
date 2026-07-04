@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://eqgyvqfnwh0m"]
+
+[ext_resource type="Texture2D" uid="uid://ccb5d4alfmvnn" path="res://img/Magic-1.webp" id="1_wnb6x"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_bws1n"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_1aq8l"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_lj6ev"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="5_pjpm1"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="6_phyre"]
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("4_lj6ev")
+value_object = 3
+add_valua = 5
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_esvqd"]
+script = ExtResource("2_bws1n")
+name_ = "。。。我好像还真不知道"
+"结果" = "果然。。。"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_2rdt5"]
+script = ExtResource("2_bws1n")
+name_ = "意义是自己赋予的！"
+"结果" = "是吗？也许你说得对"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_bmcaw"]
+script = ExtResource("5_pjpm1")
+img = ExtResource("1_wnb6x")
+name_ = "魔法少女"
+subject = "T-00-01-1"
+"问题" = "不是的！$s我会告诉你答案的"
+item = Array[ExtResource("2_bws1n")]([SubResource("Resource_esvqd"), SubResource("Resource_2rdt5")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"
+
+[sub_resource type="Resource" id="Resource_fg48g"]
+script = ExtResource("4_lj6ev")
+value_object = 1
+add_valua = -5
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_wm022"]
+script = ExtResource("6_phyre")
+"介绍" = "需要[color=cyan]正义[/color]判定"
+mode = 1
+check_object = 3
+value = 10
+win_text = "你说得对！$s一个和平的世界不正是我所追求的意义吗"
+lose_text = "呵$s那又有什么用呢$s我终究是不再被需要了"
+lose_question = SubResource("Resource_bmcaw")
+gift = SubResource("Resource_wowwi")
+losegift = SubResource("Resource_fg48g")
+name_ = "去码头整点薯条"
+"结果" = "回答她"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_lefht"]
+script = ExtResource("2_bws1n")
+name_ = "离开"
+"结果" = "她站在那思考$s你迅速地离开了$s你身后似乎有怪物的嘶吼"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("5_pjpm1")
+img = ExtResource("1_wnb6x")
+name_ = "魔法少女"
+subject = "T-00-01"
+"问题" = "今天世界依然美好！$s那我...$s还可以做些什么"
+item = Array[ExtResource("2_bws1n")]([SubResource("Resource_wm022"), SubResource("Resource_lefht")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

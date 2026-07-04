@@ -1,0 +1,134 @@
+[gd_resource type="Resource" script_class="lobotomy" load_steps=11 format=3 uid="uid://detwix7s15a63"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_j3wka"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_ptdey"]
+[ext_resource type="Texture2D" uid="uid://cvmqs853kn02u" path="res://res_pack/f-02-49/img/I-1513270053.webp" id="3_khrk2"]
+[ext_resource type="Resource" uid="uid://bbmnx770cjgdp" path="res://res_pack/f-02-49/f-02-49-j.tres" id="4_mx3js"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_is7s1"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_j3wka")
+level = {
+"L1": 20,
+"L2": 40,
+"L3": 40,
+"L4": 35,
+"L5": 0
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_j3wka")
+level = {
+"L1": 50,
+"L2": 60,
+"L3": 60,
+"L4": 55,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_j3wka")
+level = {
+"L1": 40,
+"L2": 50,
+"L3": 50,
+"L4": 45,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_j3wka")
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_ptdey")
+Probabilities = Array[ExtResource("1_j3wka")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_is7s1")
+Attack_Type = 2
+acctak_Damage = "3-4"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "18"
+good_Mood_Range = "12-18"
+bad_Mood_Range = "0-5"
+Norm_Mood_Range = "6-11"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "2"
+red_def = 1.5
+white_def = 0.5
+black_def = 1.0
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 当工作结果为良时，“雪橇鲁道夫”的逆卡巴拉计数器有小概率在倒计时结束后减少。（该条翻译有误。该句中的“小概率”应为“中等概率”。）", "Ⅱ. 当工作结果为差时，“雪橇鲁道夫”的逆卡巴拉计数器有大概率在倒计时结束后减少。", "Ⅲ. 突破收容后，“雪橇鲁道夫”将会缓慢地在公司中移动，对周围的员工持续造成白色的精神伤害。"])
+story = "————它的身旁附着一张老旧的贺卡：
+【圣诞快乐！圣诞老人翱翔在夜空之中，将礼物送给那些不哭闹的好孩子们。可爱的驯鹿鲁道夫拉着满载礼物的雪橇，用它红红的鼻子照亮夜晚的浓雾。世界上每一个快乐的孩子都有资格拿到礼物！】
+
+在远处观望时，这个异想体看起来就像是坐在雪橇上的圣诞老人。然而走近观察的话，你会意识到它与童话中那位带来快乐的老人截然不同——雪橇拉着鲁道夫和圣诞老人，这与童话中的形象完全相反。
+
+我们将这个异想体分成三个部分。
+
+<鲁道夫>
+一个形似驯鹿的有机实体，它的体色是由绿色，红色和白色混乱地组合在一起的。自从这个异想体被收容以来，我们从未检测到它有过肌肉运动，但有许多员工在报告中提到它的眼珠在转动。更有甚者称，它会用眼神和他们进行交流。鲁道夫的腹部有一个直径约为30厘米的孔洞，我们曾派武装人员对孔洞内部进行观察，结果发现其体内空无一物。
+
+<圣诞老人>
+另一个神秘的有机实体，表现为一个由鲁道夫驮在背上的半透明袋状物。其内部充满了疑似人体器官的物质，这些器官功能完好且都在正常运转。
+
+<雪橇>
+一台大小与儿童尺寸相近的雪橇。雪橇板疑似由缝合的皮肤构成，其底部镶有两块白色的冰刀。雪橇上本应做为装饰的杉柏树枝被两块已经僵硬的绿色断手所取代。一个不明的实体被精心包装成礼物安放在雪橇上。曾有许多员工尝试打开礼物，然而都以失败告终。有传闻说，这个礼物只能在圣诞节被打开。
+
+这三个部分都是由针线粗糙地缝合在一起的。████████博士表示：“这三个部分有极大可能是用同一个活人的部件制成的。先不管它的制作者是何方神圣，这家伙肯定对圣诞节抱有强烈的恨意，或许他从来都没有看到过圣诞老人。”"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 +4、解锁E.G.O护甲、武器Ⅳ. 成功率 + 4%"
+flavour_text = Array[String](["锈钟鸣响，悲惨的圣诞开始了。", "错位的下巴，松软的舌头，诉说着断断续续的话语，没有人能理解它的意图。", "那位象征着不幸的老头，如今在哪里？", "形形色色的彩灯如同圣诞一般明朗，亦如每个孩子的生命一般黯淡。", "缝纫的手法很是糟糕，但你不难看出制作者那病态的痴迷。", "嚯，圣诞节，可怕的狂欢节。真想把每个人的舌头都给拔下来，看你们还拿什么唱颂歌。", "我向你送出了礼物，充斥着无尽憎恨的礼物。", "我们无法确定“雪橇鲁道夫”是否具有生命，它的一切动作可能是由它本身就有的能源所驱使着的。", "“雪橇鲁道夫”漫无目的地游荡着，它想把自己的“礼物”送给大家。"])
+other_info = "雪橇鲁道夫（F-02-49），是一个分为三部分的异想体。它们分别是：鲁道夫，圣诞老人和雪橇。
+
+鲁道夫的外表类似无角的驯鹿，它有着长长的脖子，乌黑的鹿蹄，圆圆的耳朵和鼻子，还有两根把腿拴在一起的银色脚镣。它的身体是由红色、白色和绿色的不明材料缝合而成的，上面点缀着一些红色，绿色和黄色的圣诞灯。鲁道夫的眼睛凸出在外，被粗糙地缝在脸上。根据异想体故事中的记录，它的肚子部分似乎有一个洞。
+
+圣诞老人是鲁道夫背上的一个红色物体，它被装在一个透明的，充满血液和人体器官的袋子里，据说这些器官还在正常工作。它戴着一顶看上去像是由肠子制成的圣诞帽。
+
+一辆棕色的，似乎是被大量针线缝合而成的雪橇连接着鲁道夫脖子上的圣诞灯。雪橇下有两块白色的雪橇板，两只绿色的怪手被立在雪橇的前部。雪橇上还有一个黑色的袋子，上面系着黄色缎带。
+
+突破收容后，雪橇会拉着鲁道夫和圣诞老人在设施内漫无目的地移动。
+
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-02-49/img/Ldf.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "出逃信息
+
+出逃的“雪橇鲁道夫”的生命值为450，基础移动速度为1单位。 出逃后雪橇鲁道夫会标记当前部门的一个随机房间并尝试前往该房间中央，在后面留下一条雪迹，且会以3秒为周期溅出血液，对和它处在同一个房间内的所有单位造成5-7点精神伤害。在到达标记地点后，雪橇鲁道夫会重新标记一个当前部门内的房间；除使用电梯外，雪橇鲁道夫一般不会离开当前部门。
+
+镇压建议
+由于其较短的伤害周期和全房间的伤害范围，通过走位来躲避它的伤害需要极大的操作量，故比较推荐的镇压方式是准备几个最大精神值较高，拥有较高的精神抗性且最好是远程武器的员工对其进行消耗，在员工精神值降低到比较危险的水平后将他们撤出房间进行回复后再让他们加入战斗。
+
+请主管不要让低谨慎或者低精神抗性的员工混进镇压队伍。在员工质量普遍不高时，这样很可能会造成员工的连续恐慌检定导致主力镇压部队直接陷入恐慌。
+
+[img]res://res_pack/f-02-49/img/20180201174339_1.webp[/img]
+出逃中的鲁道夫"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条6点
+工作偏好：每条5点"
+jump_ego = Array[String](["f-02-49-s", "f-02-49-w", "f-02-49-g"])
+name_ = "雪橇鲁道夫"
+icon = ExtResource("3_khrk2")
+info_ = "资料类型：异想体
+
+我向你送出了礼物，充斥着无尽憎恨的礼物。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "F-02-49"
+level = "h"
+jumper = ExtResource("4_mx3js")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=5 format=3 uid="uid://jyn5djyki330"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_jrx5h"]
+[ext_resource type="SpriteFrames" uid="uid://bo3fayy63bpqi" path="res://img/c1.gif" id="2_b64en"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="2_ochxp"]
+
+[sub_resource type="Resource" id="Resource_gx352"]
+script = ExtResource("1_jrx5h")
+texture = ExtResource("2_b64en")
+size = Vector2(0.7, 0.7)
+name_ = "Cannon模板攻击动画"
+index = 1
+back = Color(1, 1, 1, 1)
+pos = Vector2(50, 50)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("2_ochxp")
+array = Array[ExtResource("1_jrx5h")]([SubResource("Resource_gx352")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

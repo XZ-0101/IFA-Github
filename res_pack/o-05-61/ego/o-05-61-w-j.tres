@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://noj5gqu12xb3"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_k28xo"]
+[ext_resource type="Texture2D" uid="uid://7cmvsu4pqk7b" path="res://res_pack/o-05-61/ego/img/W-1513151089.webp" id="2_ao1tx"]
+
+[resource]
+script = ExtResource("1_k28xo")
+name_ = "决死之心"
+level = "H"
+texture = ExtResource("2_ao1tx")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-05-61/ego/o-05-61-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

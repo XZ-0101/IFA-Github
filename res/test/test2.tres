@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="test" load_steps=4 format=3 uid="uid://cr2e8x6s5a02i"]
+
+[ext_resource type="Texture2D" uid="uid://dsm1rt4vemqjh" path="res://img2/TEST/02/02.jpg" id="1_devju"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="1_iykxm"]
+[ext_resource type="Resource" uid="uid://c57xccx245uwc" path="res://res/test/test2-j.tres" id="2_eog0w"]
+
+[resource]
+script = ExtResource("1_iykxm")
+red_def = 0.8
+white_def = 1.3
+black_def = 2.0
+pale_def = 1.0
+other_info = "“理解的过程”（绿色的正午）是数个黑色的傀儡机器人，有着和“疑问”（绿色的黎明）一样的机型，但不同的是它带着一个巨大的灰色头盔，前面只露出了它的红色眼睛。他的左手武装上了黑绿色的电锯，右手武装上了带有红外线制导的机枪。可以隐约看出他身上穿着和“疑问”穿着一样的老旧的衣服。
+
+[img]res://img2/TEST/02/76.webp[color=red]
+理解...[/color]"
+other_info_act = "考验能力
+在考验出现的提示播放后，设施内每个部门内的一个非休息室位置（由于bug，中央本部两个分区的下层休息室，惩戒部和福利部的上层休息室也可能生成）都会生成一个持有电锯和机枪的机器人“理解的过程”。“理解的过程”生成后会在设施里以较慢的速度四处游荡，且对路径上遇到的所有非绿色考验单位都具有仇恨。没有目标时，“理解的过程”会主动追踪同房间20范围内的非绿色考验单位并向他们的位置移动以发起攻击。
+
+“理解的过程”有两种攻击方式。在不宕机且近战范围内没有目标时，它的机枪开火永不间断。当有任何实体和它处于同一个房间内时，它的机枪会以每秒3次的攻击频率对距离它最近的实体造成1点物理伤害。当目标进入了它的攻击范围（4.67范围）时，它会伸出电锯攻击目标，每次攻击都会对范围内的所有非绿色考验单位造成9次1-2点物理伤害，且电锯的伤害范围要略大于它的攻击范围（范围为5.33）。
+
+在攻击动画完成且宕机不在冷却的时候，“理解的过程”会在原地静止不动并进入宕机模式。宕机会持续4-6.5秒，冷却时间为9.5-13.5秒。这个时候“理解的过程”不会攻击，直到它被重新激活。
+
+当所有生成的“理解的过程”都被镇压，击败提示将出现，绿色的正午将被判定结束。
+
+镇压建议
+“理解的过程”的伤害对前中期的员工来说是极其危险的，尤其是对物理抗性较低的员工来说。它的低额高频伤害会在触发这些员工弱抗减速的同时快速削减他们的生命值。因而在员工属性不足时，主管应尽量避免让这些员工和“理解的过程”接触。
+
+在主管的员工质量极差时，主管可以集合所有的员工，然后派遣一名最大生命值和物理抗性均较高的员工吸引单个“理解的过程”的仇恨，并安排其余员工用重火力快速击杀它，直到将所有“理解的过程”逐个击破。因为“理解的过程”的机枪伤害相比电锯伤害来说较低，因此使用远程员工来对理解的过程消耗也是个不错的选择。
+
+如果主管想要通过走位来镇压“理解的过程”，那就只能待其在小房间内宕机时对其进行攻击并在其起身前撤离员工。“理解的过程”宕机时间较短，请主管尽量不要安排物理抗性较低的员工在它宕机时前去镇压。这些员工可能会被它宕机结束后的电锯攻击减速，甚至会被击杀。
+
+E.G.O武器魔弹，蕾蒂西娅，护甲如血之渴望和中央本部的科技“反物理力场盾”都能极大幅度提高员工对抗“理解的过程”的能力，提高主管的容错率。主管也可以选择雇佣魔弹射手来镇压它。魔弹射手两枪就可以将路径上的“理解的过程”尽数蒸发。
+
+[img]res://img2/TEST/02/test_img1.webp[color=red]
+发现[/color]
+
+[img]res://img2/TEST/02/test_img2.webp[color=red]
+射击[/color]
+
+[img]res://img2/TEST/02/test_img3.webp[color=red]
+WARNING...ALERT![/color]
+
+[img]res://img2/TEST/02/test_img4.webp[color=red]
+生命...脆弱...？[/color]"
+place = "随机位置"
+count = "每个部门一个"
+health = 300
+speed = "2单位"
+ob_name = "理解的过程"
+color = "绿色"
+time = "正午"
+name_ = "理解的过程"
+icon = ExtResource("1_devju")
+info_ = "*资料类型：考验
+
+他们，终究是被生命束缚着的存在。而我们，将倾泻绝望与怒火！
+
+我们会用双手，理解生命与灵魂。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%BB%BF%E8%89%B2%E7%9A%84%E9%BB%8E%E6%98%8E_%E7%96%91%E9%97%AE]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "绿色的正午"
+level = "h"
+jumper = ExtResource("2_eog0w")
+jump = Array[String](["pres://res/test/test1-j.tres", "pres://res/test/test3-j.tres", "pres://res/test/test4-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_devju")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

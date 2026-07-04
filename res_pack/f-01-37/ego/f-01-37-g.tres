@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://celumg7cigg4u"]
+
+[ext_resource type="Resource" uid="uid://cl0hikdlyoopp" path="res://res_pack/f-01-37/ego/f-01-37-g-j.tres" id="1_sxjux"]
+[ext_resource type="Texture2D" uid="uid://c232ekl3pilvd" path="res://res_pack/f-01-37/ego/img/SnowQueen_Gift.webp" id="2_bqfy3"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_r1ujk"]
+
+[resource]
+script = ExtResource("2_r1ujk")
+name_ = "我深知严冬的残酷…和玫瑰的芬芳…"
+texture = ExtResource("2_bqfy3")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：在决斗中战胜冰雪女皇后，决斗者和获救者都会获得，该饰品为隐藏饰品，不显示在异想体图鉴内。
+位置：脸颊
+最大生命值+6
+最大精神值+6
+玫瑰盛开...雪宫崩塌...
+欢笑的人们不曾记得...
+在那有位沉睡的美人...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-01-37_%E5%86%B0%E9%9B%AA%E5%A5%B3%E7%9A%87?variant=zh-hans]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["f-01-37"])
+jumper = ExtResource("1_sxjux")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

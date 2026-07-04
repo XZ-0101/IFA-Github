@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://c0gm50u27u20b"]
+
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="1_e68r4"]
+[ext_resource type="Resource" uid="uid://duafr7dnggws8" path="res://res/jumper/t-04-06-s.tres" id="1_hlv6r"]
+[ext_resource type="Texture2D" uid="uid://ctg615r442k2r" path="res://img2/LCA/T-04-06/A-1513169984.webp" id="3_ab3jy"]
+
+[resource]
+script = ExtResource("1_e68r4")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "3"
+other = "无"
+red_def = 0.8
+white_def = 1.0
+black_def = 1.0
+pale_def = 1.5
+Requirements = "等级II"
+name_ = "熊熊抱"
+texture = ExtResource("3_ab3jy")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+或许它的身体曾经是毛茸茸的，但如今却因为破烂而显得寒酸。
+修复它的请求被果断回绝。
+那些在它印象中对拥抱的温暖记忆，伴随着对它的抛弃一并消逝了。
+如果这只熊喜欢你身上被遗忘的童真，那些棉花就会从裂缝中伸出。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-04-06_%E5%BF%AB%E4%B9%90%E6%B3%B0%E8%BF%AA]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "h"
+jump = Array[String](["t-04-06"])
+jumper = ExtResource("1_hlv6r")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

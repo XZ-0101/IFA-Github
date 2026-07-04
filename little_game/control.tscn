@@ -1,0 +1,793 @@
+[gd_scene format=3 uid="uid://bvdb2yl7u3qgq"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_7rm7j"]
+[ext_resource type="Resource" uid="uid://bu244geenprt0" path="res://little_game/q/kml.tres" id="1_nlaup"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_gn1lk"]
+[ext_resource type="PackedScene" uid="uid://lilepq8qiek4" path="res://screen/TX6.tscn" id="3_4d71a"]
+[ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="3_kydav"]
+[ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="4_sm0by"]
+[ext_resource type="Shader" uid="uid://vu38nqyljhc4" path="res://b.gdshader" id="6_sm0by"]
+[ext_resource type="Texture2D" uid="uid://bny066k4atjqa" path="res://img/NoData.webp" id="7_lsk2g"]
+[ext_resource type="Texture2D" uid="uid://bntoqb7fm1hnx" path="res://img/ui/200px-饰品边框.png" id="8_tvciw"]
+[ext_resource type="Texture2D" uid="uid://wt4tx1eulmke" path="res://img2/UI/Texture2D/Icons_7.png" id="9_cf1cw"]
+[ext_resource type="Theme" uid="uid://d1d0dsxu3p1hr" path="res://res/HUAKUAI.tres" id="10_p8foj"]
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="13_ndois"]
+[ext_resource type="AudioStream" uid="uid://bgw6fyn3nvhrm" path="res://res/SOUND/AudioClip/001. Button4.wav" id="15_lsk2g"]
+[ext_resource type="PackedScene" uid="uid://dee8jpba81w8a" path="res://little_game/panel.tscn" id="16_4o82f"]
+[ext_resource type="AudioStream" uid="uid://4lqvjers7g7l" path="res://res/SOUND/AudioClip/FingerSnap.wav" id="18_qkjo7"]
+[ext_resource type="AudioStream" uid="uid://disfcn7smgymw" path="res://res/SOUND/AudioClip/ButterFlyMan_StongAtk_White.wav" id="19_j0p0o"]
+[ext_resource type="AudioStream" uid="uid://rjcxxb4hpsdo" path="res://mus/lb_ost/16_Story5.wav" id="19_ndois"]
+[ext_resource type="AudioStream" uid="uid://d3a8438o7xrj6" path="res://res/SOUND/AudioClip/ButterFlyMan_StongAtk_Black.wav" id="20_n0coi"]
+[ext_resource type="AudioStream" uid="uid://i2ukcg3sy26m" path="res://res/SOUND/AudioClip/014. Cool Sticky UI Button.wav" id="21_ncqpk"]
+
+[sub_resource type="GDScript" id="GDScript_004tw"]
+resource_name = "game"
+script/source = "extends Control
+#region 定义
+@export var question_:question
+@export var icon_array:Array[Texture]
+@export var color_array:Array[Color]
+@export var value_get_text_array:Array[String]
+var is_over:bool=false
+var text:PackedStringArray
+var text_ind:int=0
+var q:question
+var can_next:bool=true
+signal text_over
+signal text_over2
+var f:bool
+#endregion
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	jumper.hide_()
+	question_=LittleGameCtrl.now_q
+	q=question_
+	ask_question()
+	
+	pass # Replace with function body.
+func _physics_process(delta: float) -> void:
+	if LittleGameCtrl.panic:
+		$Control5.show()
+		$panic.show()
+	else :
+		$Control5.hide()
+		$panic.hide()
+		pass
+
+func _a_choiced(index:int):
+	$AudioStreamPlayer2.play()
+	var c
+	print(\"you choiced\",index)
+	for i in $ScrollContainer/VBoxContainer.get_children():
+		i.queue_free()
+	var i=q.item[index]
+	text=i.结果.split(\"$s\")
+	$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+	text_ind=0
+	#if not i is rich_choice :
+		#await text_over
+#region 特殊事件
+#region 直接判赢
+	if i is rich_choice:
+		if i.mode==0:
+			
+			can_next=false
+			c=\"win\"
+			
+#endregion
+#region 数值检查
+		if i.mode==1:
+			c=check(i.check_object,i.value,i.is_shop)
+			can_next=false
+			print(c)
+			$Timer.wait_time=1
+			$Timer.start()
+			await $Timer.timeout
+			#
+#endregion
+#region 携带物品检查
+		if i.mode==2:
+			can_next=false
+			c = check_gift(i.need)
+			print(c)
+			text=[]
+			for i_ in i.need:
+				$text_and_texture/text/RichTextLabel.append_text(\"->  \"+\"你需要携带有[color=yellow]{s}[/color]\".format({\"s\":i_.name_})+'\\n')
+			if c==\"win\":
+				$text_and_texture/text/RichTextLabel.append_text(\"->  [color=green]判定成功[/color]\"+'\\n')
+				
+			else:
+				$text_and_texture/text/RichTextLabel.append_text(\"->  [color=red]判定失败[/color]\"+'\\n')
+				
+			$Timer.wait_time=1
+			$Timer.start()
+			await $Timer.timeout
+#endregion
+		
+#region win
+		if c==\"win\":
+			text=i.win_text.split(\"$s\")
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+			if i.gift:
+#region 物品奖励
+				if i.gift.get_gift:
+					for i_ in i.gift.get_gift:
+						
+						if not i_ in LittleGameCtrl.gift_array:
+							
+						
+						#
+							LittleGameCtrl.gift_array.append(i_)
+							text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+#endregion
+						
+#region 数值奖励
+				if i.gift.add_valua!=0 :
+					if i.gift.value_object>=4:
+						if i.gift.value_object==4:
+							LittleGameCtrl.n_hp+=i.gift.add_valua
+							text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+						if i.gift.value_object==5:
+							LittleGameCtrl.n_sp+=i.gift.add_valua
+							text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+					else :
+						LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
+						text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
+#endregion
+				if i.gift.skill:
+					if not i.gift.skill in LittleGameCtrl.skill_arr:
+						LittleGameCtrl.skill_arr.append(i.gift.skill)
+						text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+				if i.gift.to_fight!=\"\":
+					fight(i.gift.to_fight)
+			can_next=true
+			if text.size() > 1:
+				await text_over
+				$\"判定\".hide()
+			else:
+				can_next=false
+				is_over=true
+				$Timer.wait_time=1
+				$Timer.start()
+				await $Timer.timeout
+				$\"判定\".hide()
+#region 胜利分支
+			if i.分支问题:
+				f=true
+				await text_over2
+				q=i.分支问题
+				ask_question()
+				f=false
+			else	:
+				can_next=false
+				is_over=true
+#endregion
+#endregion
+
+#region lose
+
+		if c==\"lose\":
+			text=i.lose_text.split(\"$s\")
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+			if i.losegift:
+#region 物品奖励
+				if i.losegift.get_gift:
+					for i_ in i.losegift.get_gift:
+						if not i_ in LittleGameCtrl.gift_array:
+							
+							LittleGameCtrl.gift_array.append(i_)
+							text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+#endregion
+#region 数值奖励
+				if i.losegift.add_valua!=0 :
+					if i.losegift.value_object>=4:
+						if i.losegift.value_object==4:
+							LittleGameCtrl.n_hp+=i.losegift.add_valua
+							text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(i.losegift.add_valua)}))
+						if i.losegift.value_object==5:
+							LittleGameCtrl.n_sp+=i.losegift.add_valua
+							text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(i.losegift.add_valua)}))
+					else :
+						LittleGameCtrl.value_array[i.losegift.value_object]+=i.losegift.add_valua
+						text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.losegift.value_object])}))
+#endregion
+				if i.losegift.skill:
+					if not i.losegift.skill in LittleGameCtrl.skill_arr:
+						LittleGameCtrl.skill_arr.append(i.losegift.skill)
+						text.append(\"你获得了[color=red]\"+i.losegift.skill.name_+\"[/color]\")
+				if i.losegift.to_fight!=\"\":
+					fight(i.losegift.to_fight)
+
+			can_next=true
+			if text.size() > 1:
+				await text_over
+			
+				$\"判定\".hide()
+			else:
+				can_next=false
+				is_over=true
+				$Timer.wait_time=1
+				$Timer.start()
+				await $Timer.timeout
+				$\"判定\".hide()
+			
+#region 失败分支
+			if i.lose_question:
+				f=true
+				await text_over2
+				q=i.lose_question
+				ask_question()
+				f=false
+			else	:
+				can_next=false
+				is_over=true
+#endregion
+#endregion
+#endregion
+
+#region 普通事件
+	else:
+		if i.分支问题:
+			q=i.分支问题
+			
+			ask_question()
+		else :
+			if text.size()-1!=0:
+				await  text_over
+			can_next=false
+			is_over=true
+#endregion
+
+
+func _on_button_button_down() -> void:
+	if is_over:
+		end()
+	$AudioStreamPlayer.play()
+	if can_next:
+		if text_ind!=text.size()-1 :
+			
+			if text_ind==text.size()-2:
+				emit_signal(\"text_over\")
+			
+			text_ind+=1
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[text_ind]+'\\n')
+			
+		else :
+			
+			if $ScrollContainer/VBoxContainer.get_children().size()==0:
+				if not f:
+					choice_out()
+			emit_signal(\"text_over2\")
+	
+	pass # Replace with function body.
+func choice_out():
+	for i in q.item.size():
+		
+		var b=preload(\"res://little_game/texture_button.tscn\").instantiate()
+		b.name_=q.item[i].name_
+		if q.item[i] is rich_choice:
+			b.text=q.item[i].介绍
+		b.index=i
+		b.choiced.connect(_a_choiced.bind(b.index))
+		$ScrollContainer/VBoxContainer.add_child(b)
+func ask_question():
+	can_next=true
+	text_ind=0
+	$text_and_texture/text/RichTextLabel.text=\"\"
+	text=q.问题.split(\"$s\")
+	$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+	if q is question_with_img:
+		$text_and_texture/TextureRect.texture=q.img
+		$text_and_texture/TextureRect/RichTextLabel.text=\"事件名称:{name}\\n事件编号:{subject}\".format({\"name\":q.name_,\"subject\":q.subject})
+
+func end():
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/a_point.tscn\"))
+	
+	print(\"end\")
+	pass
+
+func fight(path:String):
+	jumper.show_()
+	LittleGameCtrl.now_f=load(path)
+	jumper.jump_to(load(\"res://little_game/fight/scn/main.tscn\"))
+
+func check(object:int,value:int,is_shop:bool):
+	text=[]
+	var v_
+	if is_shop:
+		v_=value
+	else :
+		v_=value-floor( LittleGameCtrl.n_value_array[2]/2)
+	$\"判定/Control/icon/TextureRect2/TextureRect\".texture=icon_array[object]
+	$\"判定/Control/icon/TextureRect2/TextureRect\".self_modulate=color_array[object]
+	$\"判定/Control/icon/RichTextLabel\".text=str(LittleGameCtrl.value_array[object])
+	if LittleGameCtrl.n_value_array[2]<=1:
+		$\"判定/Control/RichTextLabel3\".text=str(v_)
+	else :
+		$\"判定/Control/RichTextLabel3\".text=\"[color=804a83]\"+str(v_)+\"[/color]\"
+	
+	
+	check_wait()
+	
+	if LittleGameCtrl.n_value_array[object]>=v_:
+		$\"判定/Control/RichTextLabel2\".modulate=Color(\"green\")
+		if LittleGameCtrl.n_value_array[object]>v_:
+			$\"判定/Control/RichTextLabel2\".text=\">\"
+		if LittleGameCtrl.n_value_array[object]==v_:
+			$\"判定/Control/RichTextLabel2\".text=\"=\"
+		
+		check_wait1()
+		return \"win\"
+	else :
+		$\"判定/Control/RichTextLabel2\".modulate=Color(\"red\")
+		$\"判定/Control/RichTextLabel2\".text=\"<\"
+		check_wait2()
+		return \"lose\"
+	pass
+
+func check_wait1():
+	$Timer.start()
+	await $Timer.timeout
+	$\"判定/Control/RichTextLabel2\".show()
+	$\"判定/Control/RichTextLabel3\".show()
+	$win.play()
+	
+	return
+func check_wait():
+	$\"判定\".show()
+	$\"判定/Control/icon\".show()
+	$check.play()
+	
+	return
+func check_wait2():
+	$Timer.start()
+	await $Timer.timeout
+	$\"判定/Control/RichTextLabel2\".show()
+	$\"判定/Control/RichTextLabel3\".show()
+	$lose.play()
+	
+	return
+
+func check_gift(list):
+	var c_=[]
+	for one in list:
+		if one in LittleGameCtrl.gift_array:
+			c_.append(\"win\") 
+		else :
+			c_.append(\"lose\") 
+	if c_.all(func(element): return element ==\"win\"):
+		return \"win\"
+	else :
+		return \"lose\"
+	
+	
+
+
+func _on_audio_stream_player_3_finished() -> void:
+	$AudioStreamPlayer3.play()
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o82f"]
+atlas = ExtResource("9_cf1cw")
+region = Rect2(553, 520, 174, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d71a"]
+atlas = ExtResource("9_cf1cw")
+region = Rect2(776, 530, 240, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlaup"]
+atlas = ExtResource("9_cf1cw")
+region = Rect2(31, 776, 194, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndois"]
+atlas = ExtResource("9_cf1cw")
+region = Rect2(259, 776, 250, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjl3k"]
+shader = ExtResource("6_sm0by")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.2000000095
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsk2g"]
+atlas = ExtResource("9_cf1cw")
+region = Rect2(553, 520, 174, 240)
+
+[sub_resource type="Gradient" id="Gradient_nlaup"]
+offsets = PackedFloat32Array(0, 0.16539924, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndois"]
+gradient = SubResource("Gradient_nlaup")
+fill = 1
+fill_from = Vector2(0.50427353, 0.48290598)
+fill_to = Vector2(0.95726496, 0.19444445)
+
+[node name="Control" type="Control" unique_id=1011338166]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_004tw")
+question_ = ExtResource("1_nlaup")
+icon_array = Array[Texture]([SubResource("AtlasTexture_4o82f"), SubResource("AtlasTexture_4d71a"), SubResource("AtlasTexture_nlaup"), SubResource("AtlasTexture_ndois")])
+color_array = Array[Color]([Color(0.75686276, 0.14117648, 0.24705882, 1), Color(0.9411765, 0.92941177, 0.75686276, 1), Color(0.5019608, 0.2901961, 0.5137255, 1), Color(0.22352941, 0.72156864, 0.67058825, 1)])
+value_get_text_array = Array[String](["[color=c1243f]勇气等级[/color]变为{n}", "[color=f0edc1]谨慎等级[/color]变为{n}", "[color=804a83]自律等级[/color]变为{n}", "[color=39b8ab]正义等级[/color]变为{n}", "[color=red]HP[/color]加{n}", "[color=white]SP[/color]加{n}"])
+
+[node name="Control5" parent="." unique_id=1130632433 instance=ExtResource("3_4d71a")]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 818.0
+offset_top = 1452.0
+offset_right = 858.0
+offset_bottom = 1492.0
+
+[node name="Control3" type="Control" parent="." unique_id=80194018]
+z_index = 1
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=545715500]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=1673679485]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=357752726]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=185077557]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1480879175]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_7rm7j")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=780536284]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("2_gn1lk")
+text = "模拟开采中"
+horizontal_alignment = 1
+
+[node name="text_and_texture" type="NinePatchRect" parent="." unique_id=1359576542]
+texture_filter = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = 78.0
+offset_right = 626.0
+offset_bottom = 601.0
+mouse_filter = 1
+texture = ExtResource("3_kydav")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_tab_index = 0
+
+[node name="text" type="NinePatchRect" parent="text_and_texture" unique_id=536426975]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 269.0
+offset_right = 598.0
+offset_bottom = 500.0
+mouse_filter = 1
+texture = ExtResource("3_kydav")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/text" unique_id=13598750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = -18.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gn1lk")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+scroll_following = true
+script = ExtResource("4_sm0by")
+
+[node name="TextureRect" type="TextureRect" parent="text_and_texture" unique_id=2019314367]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 601.0
+offset_bottom = 263.0
+texture = ExtResource("7_lsk2g")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/TextureRect" unique_id=1660768928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gn1lk")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "事件编号:---
+名称:---
+"
+vertical_alignment = 2
+script = ExtResource("4_sm0by")
+
+[node name="ColorRect" type="ColorRect" parent="text_and_texture/TextureRect" unique_id=378772470]
+material = SubResource("ShaderMaterial_sjl3k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="判定" type="NinePatchRect" parent="." unique_id=524045764]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 878.0
+offset_right = 633.0
+offset_bottom = 1065.0
+mouse_filter = 1
+texture = ExtResource("3_kydav")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_tab_index = 0
+
+[node name="Control" type="Control" parent="判定" unique_id=1422043214]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 632.0
+offset_bottom = 179.0
+
+[node name="icon" type="Control" parent="判定/Control" unique_id=1343642891]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="判定/Control/icon" unique_id=1948439894]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 163.0
+offset_bottom = 168.0
+texture = ExtResource("8_tvciw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="判定/Control/icon/TextureRect2" unique_id=2134891538]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 13.0
+offset_right = 163.0
+offset_bottom = 159.0
+texture = SubResource("AtlasTexture_lsk2g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="判定/Control/icon" unique_id=905670511]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 114.0
+offset_right = 315.0
+offset_bottom = 162.0
+theme = ExtResource("2_gn1lk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "10
+"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="判定/Control" unique_id=1942311062]
+visible = false
+layout_mode = 0
+offset_left = -14.0
+offset_top = -96.0
+offset_right = 381.0
+offset_bottom = 218.0
+pivot_offset = Vector2(322, 183)
+theme = ExtResource("2_gn1lk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 230
+bbcode_enabled = true
+text = "="
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="判定/Control" unique_id=1383988860]
+visible = false
+layout_mode = 0
+offset_left = 389.0
+offset_top = -29.0
+offset_right = 630.0
+offset_bottom = 196.0
+theme = ExtResource("2_gn1lk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "20"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1607612874]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 609.0
+offset_right = 629.0
+offset_bottom = 873.0
+theme = ExtResource("10_p8foj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=601715460]
+layout_mode = 2
+alignment = 1
+
+[node name="panic" type="Control" parent="." unique_id=278469093]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="panic" unique_id=415975465]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 94.0
+offset_right = 618.0
+offset_bottom = 585.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="panic" unique_id=1631710467]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 129.0
+offset_right = 549.0
+offset_bottom = 498.0
+texture = ExtResource("13_ndois")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="panic" unique_id=326207070]
+clip_contents = false
+layout_mode = 0
+offset_left = 115.0
+offset_top = 323.0
+offset_right = 521.0
+offset_bottom = 503.0
+theme = ExtResource("2_gn1lk")
+theme_override_colors/default_color = Color(0.14117648, 0.8784314, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0, 0.50980395, 0.8352941, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[shake level=20 rate=30]PANIC[/shake]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="panic" unique_id=2052869476]
+position = Vector2(314, 301)
+scale = Vector2(10.296875, 8.562501)
+energy = 1.5
+texture = SubResource("GradientTexture2D_ndois")
+
+[node name="Button" type="Button" parent="." unique_id=56934959]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 525.0
+offset_right = 606.0
+offset_bottom = 573.0
+theme = ExtResource("2_gn1lk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = ">"
+alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=647553114]
+stream = ExtResource("15_lsk2g")
+
+[node name="check" type="AudioStreamPlayer" parent="." unique_id=861633478]
+stream = ExtResource("18_qkjo7")
+
+[node name="win" type="AudioStreamPlayer" parent="." unique_id=780432103]
+stream = ExtResource("19_j0p0o")
+pitch_scale = 1.2
+
+[node name="lose" type="AudioStreamPlayer" parent="." unique_id=1924333597]
+stream = ExtResource("20_n0coi")
+pitch_scale = 0.8
+
+[node name="Timer" type="Timer" parent="." unique_id=1835208100]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1026835850]
+stream = ExtResource("21_ncqpk")
+
+[node name="Control" parent="." unique_id=1664364564 instance=ExtResource("16_4o82f")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=455244672]
+stream = ExtResource("19_ndois")
+autoplay = true
+
+[connection signal="meta_clicked" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_clicked"]
+[connection signal="meta_hover_ended" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_clicked" from="text_and_texture/TextureRect/RichTextLabel" to="text_and_texture/TextureRect/RichTextLabel" method="_on_meta_clicked"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="finished" from="AudioStreamPlayer3" to="." method="_on_audio_stream_player_3_finished"]

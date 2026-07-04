@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5eku1onmbghl"
+path="res://.godot/imported/月计人 - Project Moon - (章节8)贾丘Ⅱ–Limbuscompany.ogg-224d3592fa5afa0edbb0b610339fc0e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/月计人 - Project Moon - (章节8)贾丘Ⅱ–Limbuscompany.ogg"
+dest_files=["res://.godot/imported/月计人 - Project Moon - (章节8)贾丘Ⅱ–Limbuscompany.ogg-224d3592fa5afa0edbb0b610339fc0e6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

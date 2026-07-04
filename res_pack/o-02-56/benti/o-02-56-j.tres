@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://mpbipoll2c8e"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_7r51q"]
+[ext_resource type="Texture2D" uid="uid://8jkwg0xolb68" path="res://res_pack/o-02-56/benti/img/I-1513168300.webp" id="2_7r51q"]
+
+[resource]
+script = ExtResource("1_7r51q")
+name_ = "惩戒鸟"
+s = "O-02-56"
+level = "T"
+texture = ExtResource("2_7r51q")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-56/benti/o-02-56.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "黑森林"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://caewrev3pgilw"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_hmafi"]
+[ext_resource type="Texture2D" uid="uid://bxhmheio6n6p5" path="res://res_pack/o-01-67/ego/img/W-1513352787.webp" id="2_hmafi"]
+
+[resource]
+script = ExtResource("1_hmafi")
+name_ = "蕾蒂希娅"
+level = "H"
+texture = ExtResource("2_hmafi")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-67/ego/o-01-67-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

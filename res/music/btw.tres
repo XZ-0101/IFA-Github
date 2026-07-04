@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=3 format=3 uid="uid://do0pg215dpbuh"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_mjih3"]
+[ext_resource type="Texture2D" uid="uid://dxw8dobp3b6r" path="res://img/music/btw.jpg" id="2_lita1"]
+
+[resource]
+script = ExtResource("1_mjih3")
+name_ = "Between Two Worlds"
+zuo_zhe = "Mili"
+texture = ExtResource("2_lita1")
+texture1 = ExtResource("2_lita1")
+music_path = "res://mus/Mili (ミリー) - Between Two Worlds.ogg"
+ge_ci_path = "res://res/music/l10_btw.tres"
+wait_time = 7.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"

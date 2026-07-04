@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bt1ns4llcs5jg"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_yj2d4"]
+[ext_resource type="Texture2D" uid="uid://ndmteyqra6q4" path="res://img/lc-a/o-03-03/I.webp" id="2_ipqki"]
+
+[resource]
+script = ExtResource("1_yj2d4")
+name_ = "设定集与作者记录"
+texture = ExtResource("2_ipqki")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/Documentation/Documentation_o0303.tres"
+mode = "documentation"
+type = Array[String](["XZ观察记录", "文档", "官方设定集"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

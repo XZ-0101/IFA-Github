@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://4g3iojw5f20b"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_4wccq"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_ostv2"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_a7xkg"]
+[ext_resource type="Texture2D" uid="uid://yxb0g5mkiakq" path="res://res_pack/O-05-47/img/DontTouchMe.webp" id="3_wfdry"]
+[ext_resource type="Resource" uid="uid://cxpmn72eusbey" path="res://res_pack/O-05-47/o-05-47-j.tres" id="4_1s18l"]
+
+[sub_resource type="Resource" id="Resource_a08nc"]
+script = ExtResource("1_4wccq")
+level = {
+"L1": -1000,
+"L2": -1000,
+"L3": -1000,
+"L4": -1000,
+"L5": -1000
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_pxlxx"]
+script = ExtResource("2_a7xkg")
+Probabilities = Array[ExtResource("1_4wccq")]([SubResource("Resource_a08nc"), SubResource("Resource_a08nc"), SubResource("Resource_a08nc"), SubResource("Resource_a08nc")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("1_ostv2")
+Attack_Type = 5
+acctak_Damage = "/"
+Probabilities_ = SubResource("Resource_pxlxx")
+most_pe_box = "/"
+good_Mood_Range = "/"
+bad_Mood_Range = "/"
+Norm_Mood_Range = "/"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 按下这个按钮后会发生什么？鬼才知道！", "Ⅱ. 无论收容单元内发生了什么，都绝对不要按下这个按钮。", "Ⅲ. 住手！主管，难道你对那些可怜的职员们就没有一丝一毫的怜悯之心吗？", "Ⅳ. 哦！拜托！我的好主管！请 不 要 碰 那 个 按 钮 ！", "Ⅴ. 你都按了那么多次了，你的好奇心到底还有完没完了？？？"])
+story = "（该故事取自设定集）
+一台箱型机器，机器顶部设有一个硕大的红色按钮。其周围满是老旧的涂鸦，内容大多是“拜托，千万不要按！”诸如此类的警告。
+
+许多投入工作的员工反应，这台机器会使他们产生“想要按下去”的强烈欲望，以至于整夜辗转难眠。起初我们认为他们是在夸大其词，然而声称受其影响的员工日益增多，目前公司正在制定解决方案。
+
+为定义一个异想体，至关重要的因素是其拥有“自由意志”。而这台机器被证实具有强大的意志，能在一定范围影响员工心智，使之产生按下它的意图。因此它被归类为异想体。
+
+据说，按下按钮后，本是无稽之谈的事件将有可能成真——召来世界末日、虹色光芒照耀大地、天降独角兽等等。甚至传出按钮会引爆公司设置在最底层的核弹，重置一切的说法。然而这些说法都没能，也不可能得到证实。
+
+鉴于此异想体拥有引起强烈好奇心，并且能够随时改变样貌，吸引他人触碰的能力，因此在工作中务必小心谨慎。
+
+<摘自一名员工的证词>
+当我回过神时，我就站在收容单元的大门前，正准备按下那该死的按钮。如果不是其他同事硬把我拽出来，我恐怕已经……
+
+在经过多项检查并被诊断为正常后，该员工已重回工作岗位。然而，由于其不时对当初没能按下按钮表现出不满和遗憾，因此仍需定期进行心理咨询。
+
+（本文本由AI根据设定集识别，可能有部分错误）"
+Observation_level = "/"
+flavour_text = Array[String](["该异想体的工作日志与“光锤”一致，推测仅是将其作为占位符使用"])
+other_info = "别碰我（O-05-47）是一个巨大的黄色盒子。一道黑色的条纹横向穿过盒子的一侧，条纹上有一个“禁止触碰”的标识。在盒子上还有一个巨大的红色按钮，上面写着“BUTTON”（按钮）
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]/[/cell][cell border=#ffffa1]/[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/O-05-47/img/Don%27t_Touch_Me_Close-up.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+主管无法通过工作来解锁别碰我的图鉴信息，解锁别碰我部分信息的方式是触发一次别碰我导致的游戏闪退。在游戏的准备阶段点击别碰我的图鉴图标三次，游戏会在三次愈加明显的碎屏特效后播放韩语的“别碰我”，然后播放Legacy的进入游戏画面的倒放版并闪退。再次进入游戏时，即可解锁别碰我的基础信息并提升其观测等级。但在游戏内，由于无法打开其详细信息页面，主管只能通过各种方式获取其名称，危险等级和头像的信息。
+
+主管尝试打开别碰我的工作窗口时，会随机播放两种特效中的一种。如果播放的是血液从屏幕上流下的特效，则设施内所有的职员都将立刻死亡。如果播放的是抖屏特效并且伴随着爆炸的音效，则设施内所有的职员都将陷入恐慌。主管在管理过程中尝试打开别碰我的详细信息页面时，游戏会播放一个工作结果优变成差的动画并伴随着WARNING的警告字样，且设施内所有异想体的计数器都会立刻归零。
+
+在管理过程中，在10秒内尝试打开5次别碰我的相关窗口同样同样会播放韩语的“别碰我”并播放Legacy版进入游戏的动画的倒放版，且会导致游戏关闭。
+
+只要触发了别碰我导致的游戏闪退，游戏就会在尝试解锁别碰我的基础信息后立刻进行一次存档。如果主管此时没有完成研发部核心抑制挑战，且之前的点击导致了职员的死亡或恐慌，则所有被员工装备的E.G.O都将会损失（原理和员工死亡后结束一天时的装备损失相同），主管将无法通过回到记忆库和重新开始这一天来挽回损失。
+
+每隔50秒，别碰我有50%的概率在收容室内可能会变化成下列异想体的形态：一罪与百善，教学兔兔“Dummy”，歌唱机，快乐泰迪。如果别碰我没有成功变化成其他异想体的形态，则它会将收容室的特效随机变为下列异想体（无论该特效在游戏内是否被使用）使用的特效：一罪与百善，快乐泰迪，焦化少女，白夜，疫医，炎雀，裸巢，老妇人，小王子，无名怪婴，美女与野兽，蜘蛛巢和沉默的代价（Legacy）。形态/特效变化持续15秒。变化倒计时在变化效果结束后才会开始。
+
+这些特效使得主管在正常工作时很容易不小心点到它导致重开。但主管仍然可以通过别碰我的收容单元上显示的异想体名称来分辨这个异想体是否是由别碰我伪装，尤其是在白夜或疫医打乱了设施内异想体的收容位置时。无论别碰我伪装成什么异想体，它的名字都不会改变。
+
+别碰我的图鉴不计入真结局的100%异想体图鉴当中，因此主管无法在主界面的图鉴页面内查看它的图鉴信息。"
+price = "/"
+name_ = "别碰我"
+icon = ExtResource("3_wfdry")
+info_ = "资料类型：异想体
+
+你已经按过很多次了，你丫到底还想知道些什么？
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-05-47_%E5%88%AB%E7%A2%B0%E6%88%91]脑叶公司Wiki[/url] "
+subject = "O-05-47"
+level = "z"
+jumper = ExtResource("4_1s18l")
+gif = "g1"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

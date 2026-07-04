@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bdyn8jnbryihs"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_f5ak4"]
+[ext_resource type="Texture2D" uid="uid://b67li1b0kwy3" path="res://res_pack/o-05-30/ego/img/W-1513126496.webp" id="2_03mfx"]
+
+[resource]
+script = ExtResource("1_f5ak4")
+name_ = "协奏放射器"
+level = "H"
+texture = ExtResource("2_03mfx")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-05-30/ego/o-05-30-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

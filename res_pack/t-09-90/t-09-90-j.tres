@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://6ygrj6gvf41w"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_b7hry"]
+[ext_resource type="Texture2D" uid="uid://f1e5rm7nlhvf" path="res://res_pack/t-09-90/img/ProphecyOfSkin.webp" id="2_xcpeg"]
+
+[resource]
+script = ExtResource("1_b7hry")
+name_ = "人皮启示录"
+s = "T-09-90"
+level = "T"
+texture = ExtResource("2_xcpeg")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-09-90/t-09-90.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体", "宗教"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

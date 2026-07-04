@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1wprrbd1cok8"
+path="res://.godot/imported/Mili (ミリー) - Children of the City.ogg-f8a910c2ac75ba4f98fd87674586ec7e.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili (ミリー) - Children of the City.ogg"
+dest_files=["res://.godot/imported/Mili (ミリー) - Children of the City.ogg-f8a910c2ac75ba4f98fd87674586ec7e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://c74t6stnhocq1"]
+
+[ext_resource type="Resource" uid="uid://d2vf1chrm3la1" path="res://res_pack/f-01-87/ego/f-01-87-w-j.tres" id="1_512cu"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_qrwmo"]
+[ext_resource type="Texture2D" uid="uid://f0nt2e3j2xk2" path="res://res_pack/f-01-87/ego/img/W-1514217161.webp" id="3_n6tu5"]
+
+[resource]
+script = ExtResource("2_qrwmo")
+Cost = "35"
+Max_Amount = "3"
+Damage_type = 3
+Damage = "6-12"
+Attack_Speed = "快（1.5s）"
+Range_ = "一般（4）"
+dps = "6"
+m_ban = "长矛"
+Observation_Level = "3"
+Requirements = "无"
+other = "无"
+name_ = "猎头长耙"
+texture = ExtResource("3_n6tu5")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+对智慧的无尽渴望是留给这只可怜的稻草人的唯一事物。
+
+这把长耙只能帮它“耕耘”人的颅骨，获取大脑。
+
+却无法帮它的“大脑”开辟一条新的思路。
+
+我们到现在也无法确认到底有多少人因为这支长耙而丧生。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "h"
+jump = Array[String](["pres://res_pack/f-01-87/benti/f-01-87-j.tres"])
+jumper = ExtResource("1_512cu")
+gif = "g11"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

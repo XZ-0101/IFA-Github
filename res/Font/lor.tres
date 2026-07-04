@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=3 format=3 uid="uid://dyky0sy1pbkeh"]
+
+[ext_resource type="FontFile" uid="uid://d72v3tscr05y" path="res://res/Font/Arita-buriM.otf" id="1_c2gqm"]
+[ext_resource type="FontFile" uid="uid://dkra0610jei4r" path="res://res/Font/SourceHanSerifSC-Medium.otf" id="2_c2gqm"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_c2gqm")])
+base_font = ExtResource("1_c2gqm")

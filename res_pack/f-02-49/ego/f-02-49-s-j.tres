@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://8hfof1yp8urn"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_e2spx"]
+[ext_resource type="Texture2D" uid="uid://cvkkreec77ell" path="res://res_pack/f-02-49/ego/img/A-1513270093.webp" id="2_6tfet"]
+
+[resource]
+script = ExtResource("1_e2spx")
+name_ = "悲惨圣诞"
+level = "H"
+texture = ExtResource("2_6tfet")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-02-49/ego/f-02-49-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

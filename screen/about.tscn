@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c0va5a2l4qp18"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_gfbdl"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_pupwb"]
+[ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="3_pupwb"]
+
+[sub_resource type="GDScript" id="GDScript_pupwb"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$RichTextLabel.text=$RichTextLabel.text.format({\"v\":Get.v})
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="about" type="Control" unique_id=413720671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_pupwb")
+
+[node name="Control3" type="Control" parent="." unique_id=103851954]
+z_index = 1
+anchors_preset = 0
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=944220624]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=971964035]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1471527279]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=1075953326]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1545634014]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_gfbdl")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=16046027]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 22.0
+offset_right = 505.0
+offset_bottom = 64.0
+theme = ExtResource("2_pupwb")
+text = "作者感谢您的莅临！"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1706714950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=245652081]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 60.0
+offset_right = 641.0
+offset_bottom = 1067.0
+theme = ExtResource("2_pupwb")
+bbcode_enabled = true
+text = "{v}测试版
+（异想体不全，如果没有意外，每周一更）
+
+前言：
+您好！我是小张衫xz。 十分感谢你来使用此都市异想图鉴（IFA）。  这款软件是为整理月亮计划旗下的都市世界观的资料所开发的。
+其中绝大部分资料来自Wiki，如果我们侵权，我会立即删除并修改一切侵权内容，以及给予致歉。
+资料来自[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki][color=red]脑叶公司wiki[/color][/url]和[url=https://limbuscompany.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5][color=red]边狱巴士wiki[/color][/url]，以及[url=https://library-of-ruina.fandom.com/zh/wiki/%E5%BA%9F%E5%A2%9F%E5%9B%BE%E4%B9%A6%E9%A6%86_Wiki][color=red]废墟图书馆wiki[/color][/url]
+以及 《扭曲侦探》，《维利坦》，《神奇实验室》，《脑叶公司》及其dlc，《废墟图书馆》及其dlc，《边狱巴士公司》，及以上作品的废案。
+
+功能：
+我们会收录所有异想体、EGO、扭曲、神备、考验、罪种及其衍生物的资料。
+在此之后，都市世界观的其他设定我们可能会进行收录。
+您也可以欣赏月亮计划的游戏中那无与伦比的配乐。
+还有更多功能会陆续上线！
+
+操作方法：
+电脑
+长按进入资料
+手机
+长按进入资料
+*如果想要打开彩蛋，可以去设置里打开\"FUN模式\"
+
+感谢编辑组成员：
+[url=https://space.bilibili.com/3494361692113313][color=#00b1f9][shake]@胶囊装咖啡[/shake][/color][/url]
+[url=https://space.bilibili.com/3546700020976212?spm_id_from=333.1387.fans.user_card.click][color=#00b1f9][shake]@冷宝ouo[/shake][/color][/url]
+[url=https://space.bilibili.com/384659463?spm_id_from=333.1387.fans.user_card.click][color=#00b1f9][shake]@织田信长和冲田总司[/shake][/color][/url]
+如果喜欢，请去我的[url=https://space.bilibili.com/1651056637?spm_id_from=333.1239.0.0][color=#00b1f9][shake]B站账号[/shake][/color][/url]多多支持，谢谢！
+对了，记得来总部聊天哦（q≧▽≦q) Q群号：[color=#00b1f9]828404255[/color]（群里正在做[color=pink]男娘[/color]和[color=pink]变态[/color]的比例大调查哦~）
+
+版本号规则：
+第一位：
+A为alpha测试版（1）
+B为bate测试版（2）
+P为预览版（3）
+R为正式版（4）
+第二位：大更新
+第三位：小更新
+第四位：补丁优化
+"
+script = ExtResource("3_pupwb")
+
+[connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_on_meta_clicked"]

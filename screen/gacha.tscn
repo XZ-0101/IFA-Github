@@ -1,0 +1,416 @@
+[gd_scene format=3 uid="uid://c6nhss8im4iu2"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_iwmqk"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_ntqgq"]
+[ext_resource type="Texture2D" uid="uid://u1gr3xf06xo0" path="res://img/ui/Texture2D/FX_Tex_UI_Gacha_BGSpace_Normal.png" id="3_buun7"]
+[ext_resource type="Texture2D" uid="uid://dmxw552ybeopg" path="res://img/ui/Texture2D/FX_Tex_UI_Gacha_Chain2.png" id="4_5gkbo"]
+[ext_resource type="Texture2D" uid="uid://bidpfhp1p2chw" path="res://img/ui/Texture2D/MainUI_CommonIcon_2.png" id="5_5b5hw"]
+[ext_resource type="AudioStream" uid="uid://4lqvjers7g7l" path="res://res/SOUND/AudioClip/FingerSnap.wav" id="6_ntqgq"]
+[ext_resource type="AudioStream" uid="uid://un1ra6axfxjx" path="res://mus/月计人 - Project Moon - (抽卡)Limbuscompany.ogg" id="7_buun7"]
+
+[sub_resource type="GDScript" id="GDScript_44mf8"]
+script/source = "extends Control
+@export var pool:Dictionary[String,float]
+var is_gacha:bool=false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicAll.get_child(1).get_child(0).button_pressed=true
+	pool=pool.merged({
+	
+	\"3&格里高尔：埃德加家族 继承人\": 0.0363,
+	\"3&格里高尔：拉·曼却领 神父\": 0.0363,
+	\"3&格里高尔：炎拳事务所 幸存者\": 0.0363,
+	\"3&格里高尔：黑兽 - 巳\": 0.0363,
+	\"3&格里高尔：脑叶公司E.G.O:: 目灯\": 0.0363,
+	\"3&格里高尔：LCE E.G.O:: AEDD\": 0.0363,
+	\"3&奥提斯：W公司 3级 清扫组长\": 0.0363,
+	\"3&奥提斯：拉·曼却领 理发师\": 0.0363,
+	\"3&奥提斯：LCA瓦吉特 先锋三队 队长\": 0.0363,
+	\"3&格里高尔：G公司 科长代理\": 0.0363,
+	\"3&格里高尔：Zwei协会 南部4科\": 0.0363,
+	\"3&格里高尔：双钩海盗团 大副\": 0.0363,
+	\"3&辛克莱：Cinq协会 南部4科 科长\": 0.0363,
+	\"3&辛克莱：Девять协会 北部3科\": 0.0363,
+	\"3&辛克莱：中指 幼弟\": 0.0363,
+	\"3&辛克莱：拇指 东部 士兵II\": 0.0363,
+	\"3&辛克莱：蜘蛛巢 小指子辈\": 0.0363,
+	\"3&奥提斯：Seven协会 南部6科 科长\": 0.0363,
+	\"3&奥提斯：呼啸山庄 首席管家\": 0.0363,
+	\"3&罗佳：Девять协会 北部3科\": 0.0363,
+	\"3&罗佳：拉·曼却领 公主\": 0.0363,
+	\"3&罗佳：黑兽 - 已\": 0.0363,
+	\"3&罗佳：R公司 第四集团军 驯鹿队\": 0.0363,
+	\"3&罗佳：环指 野兽派 讲解员\": 0.0363,
+	\"3&辛克莱：剑契组 杀手\": 0.0363,
+	\"3&辛克莱：准执柄者\": 0.0363,
+	\"3&以实玛利：Zwei协会 西部3科\": 0.0363,
+	\"3&以实玛利：家主候选人\": 0.0363,
+	\"3&以实玛利：蜘蛛巢 中指子辈\": 0.0363,
+	\"3&罗佳：黑云会 若众\": 0.0363,
+	\"3&罗佳：玫瑰扳手工坊 代表\": 0.0363,
+	\"3&罗佳：Dieci协会 南部4科\": 0.0363,
+	\"3&罗佳：六协会 南部4科 科长\": 0.0363,
+	\"3&希斯克利夫：Öufi协会 南部3科\": 0.0363,
+	\"3&希斯克利夫：狂猎\": 0.0363,
+	\"3&希斯克利夫：黑兽-酉魁首\": 0.0363,
+	\"3&以实玛利：R公司 第四集团军 驯鹿队\": 0.0363,
+	\"3&以实玛利：六协会 南部4科\": 0.0363,
+	\"3&以实玛利：裴廓德号 船长\": 0.0363,
+	\"3&鸿璐：Dieci协会 南部4科\": 0.0363,
+	\"3&鸿璐：R公司 第四集团军 驯鹿队\": 0.0363,
+	\"3&鸿璐：鸿园的君主\": 0.0363,
+	\"3&鸿璐：蜘蛛巢 环指父辈\": 0.0363,
+	\"3&希斯克利夫：R公司 第四集团军 兔子队\": 0.0363,
+	\"3&希斯克利夫：脑叶公司E.G.O:狐雨\": 0.0363,
+	\"3&希斯克利夫：裴廓德号 鱼叉手\": 0.0363,
+	\"3&默尔索：N公司 大锤\": 0.0363,
+	\"3&默尔索：R公司 第四集团军 犀牛队\": 0.0363,
+	\"3&默尔索：Dieci协会 南部4科 科长\": 0.0363,
+	\"3&默尔索：Cinq协会 西部3科\": 0.0363,
+	\"3&默尔索：拇指 东部 指挥官IIII\": 0.0363,
+	\"3&鸿璐：豆豆帮 帮主\": 0.0363,
+	\"3&鸿璐：K公司 3级 摘除人员\": 0.0363,
+	\"3&堂吉诃德：食指 代行者 绽放E.G.O::代行\": 0.0363,
+	\"3&良秀：黑云会 若众\": 0.0363,
+	\"3&良秀：W公司 3级 清扫人员\": 0.0363,
+	\"3&良秀：埃德加家族 首席管家\": 0.0363,
+	\"3&良秀：N公司E.G.O::轻蔑，敬畏\": 0.0363,
+	\"3&良秀：鸿园的流浪武者\": 0.0363,
+	\"3&默尔索：W公司 2级 清扫人员\": 0.0363,
+	\"3&堂吉诃德：W公司 3级 清扫人员\": 0.0363,
+	\"3&堂吉诃德：Cinq协会 南部5科 科长\": 0.0363,
+	\"3&堂吉诃德：中指 幼妹\": 0.0363,
+	\"3&堂吉诃德：T公司 3级 征收人员\": 0.0363,
+	\"3&堂吉诃德：拉·曼却领 总督\": 0.0363,
+	\"3&堂吉诃德：Cinq协会 东部3科\": 0.0363,
+	\"3&堂吉诃德：黑兽-未\": 0.0363,
+	\"3&李箱：蜘蛛巢 食指父辈\": 0.0363,
+	\"3&浮士德：执柄者\": 0.0363,
+	\"3&浮士德：Seven协会 南部4科\": 0.0363,
+	\"3&浮士德：黑兽 - 卯魁首\": 0.0363,
+	\"3&浮士德：し协会 东部3科\": 0.0363,
+	\"3&浮士德：食指 苦行者: [纸条]\": 0.0363,
+	\"3&浮士德：蜘蛛巢 环指子辈\": 0.0363,
+	\"3&李箱：剑契组 杀手\": 0.0363,
+	\"3&李箱：绽放E.G.O:: 山茶花\": 0.0363,
+	\"3&李箱：W公司 3级 清扫人员\": 0.0363,
+	\"3&李箱：环指点彩派 学徒\": 0.0363,
+	\"3&李箱：六协会 南部3科\": 0.0363,
+	\"3&李箱：N公司 E.G.O:: 凶弹\": 0.0363,
+	
+	\"z&辛克莱：低泣\":0.0481,
+	\"t&格里高尔：提灯\":0.0481,
+	\"t&奥提斯：空即是色\":0.0481,
+	\"t&以实玛利：往昔\":0.0481,
+	\"t&鸿璐：低泣\":0.0481,
+	\"t&希斯克里夫：凶弹\":0.0481,
+	\"t&良秀：赤瞳\":0.0481,
+	\"t&堂吉诃德：祈愿石\":0.0481,
+	\"t&浮士德：诅咒之钉\":0.0481,
+	\"t&李箱：祈愿石\":0.0481,
+	\"h&默尔索：执行\": 0.0481,
+	\"h&鸿璐：次元撕裂者\": 0.0481,
+	\"h&希斯克利夫：空即是色\": 0.0481,
+	\"h&希斯克利夫：失衡惯性\": 0.0481,
+	\"h&以实玛利：红艳煞\": 0.0481,
+	\"h&罗佳：执行\": 0.0481,
+	\"h&辛克莱：提灯\": 0.0481,
+	\"h&李箱：次元撕裂者\": 0.0481,
+	\"h&李箱：凶弹\": 0.0481,
+	\"h&浮士德：电线杆\": 0.0481,
+	\"h&浮士德：胸痛\": 0.0481,
+	\"h&浮士德：红艳煞\": 0.0481,
+	\"h&堂吉诃德：电线杆\": 0.0481,
+	\"h&良秀：赤瞳（开）\": 0.0481,
+	\"w&良秀：轻蔑，敬畏\": 0.0481,
+	\"w&格里高尔：荆棘花园\": 0.0481,
+	\"w&罗佳：指定审判\": 0.0481,
+	
+	\"a&希斯克里夫：狐雨\":0.015,
+	\"3&小张(群友的任务罢了：男娘\":0.001,
+
+})
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_button_down() -> void:
+	if not is_gacha:
+		
+		$\"Panel/结果\".text=\"\"
+		is_gacha=true
+		for i in range(10):
+			var result = draw_one_sorted(pool)
+			var r=result.split(\"&\")
+			$AudioStreamPlayer.play()
+			match r[0]:
+				\"1\":
+					$\"Panel/结果\".append_text(\"[color=#694324]\"+\"θ \"+r[1]+\"[/color]\\n\")
+				\"2\":
+					$\"Panel/结果\".append_text(\"[color=#600000]\"+\"θθ \"+r[1]+\"[/color]\\n\")
+				\"3\":
+					$\"Panel/结果\".append_text(\"[color=#e29502]\"+\"θθθ \"+r[1]+\"[/color]\\n\")
+				\"z\":
+					$\"Panel/结果\".append_text(\"[color=green]\"+\"ZAYIN \"+r[1]+\"[/color]\\n\")
+				\"t\":
+					$\"Panel/结果\".append_text(\"[color=blue]\"+\"TETH \"+r[1]+\"[/color]\\n\")
+				\"h\":
+					$\"Panel/结果\".append_text(\"[color=yellow]\"+\"HE \"+r[1]+\"[/color]\\n\")
+				\"w\":
+					$\"Panel/结果\".append_text(\"[color=purple]\"+\"WAW \"+r[1]+\"[/color]\\n\")
+				\"a\":
+					$\"Panel/结果\".append_text(\"[color=red]\"+\"ALEPH \"+r[1]+\"[/color]\\n\")
+			$Timer.start()
+			await $Timer.timeout
+		is_gacha=false
+		
+		
+	pass # Replace with function body.
+
+func draw_one_sorted(pool: Dictionary) -> String:
+	# 提取所有奖品名称和对应的概率
+	var items = pool.keys()      # Array of String
+	var probs = pool.values()    # Array of float
+	
+	# 计算总概率（允许不为100，按相对比例抽取）
+	var total = 0.0
+	for p in probs:
+		total += p
+	
+	if total <= 0:
+		return \"错误：总概率必须大于0\"
+	
+	# 生成随机数 [0, total)
+	var r = randf() * total
+	
+	# 累积概率，找到命中的项
+	var acc = 0.0
+	for i in range(items.size()):
+		acc += probs[i]
+		if r < acc:
+			return items[i]
+	
+	# 理论上不会执行到这里，但为了安全返回最后一个
+	return items[-1]
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qlla"]
+atlas = ExtResource("5_5b5hw")
+region = Rect2(272, 834, 223, 128)
+
+[node name="提取" type="Control" unique_id=1076038978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_44mf8")
+pool = Dictionary[String, float]({
+"1&以实玛丽：LCB罪人": 6.808,
+"1&堂吉诃德：LCB罪人": 6.808,
+"1&奥提斯：LCB罪人": 6.808,
+"1&希斯克里夫：LCB罪人": 6.808,
+"1&李箱：LCB罪人": 6.808,
+"1&格里高尔：LCB罪人": 6.808,
+"1&浮士德：LCB罪人": 6.808,
+"1&罗佳：LCB罪人": 6.808,
+"1&良秀：LCB罪人": 6.808,
+"1&辛克莱：LCB罪人": 6.808,
+"1&鸿璐：LCB罪人": 6.808,
+"1&默尔索：LCB罪人": 6.808,
+"2&以实玛利：LCCB 系长": 0.312,
+"2&以实玛利：し协会 南部5科": 0.312,
+"2&以实玛利：埃德加家族 管家": 0.312,
+"2&以实玛利：脑叶公司E.G.O::荡漾": 0.312,
+"2&堂吉诃德：N公司 中锤": 0.312,
+"2&堂吉诃德：し协会 南部5科科长": 0.312,
+"2&奥提斯：Cinq协会 南部4科": 0.312,
+"2&奥提斯：G公司 部长": 0.312,
+"2&奥提斯：剑契组 杀手": 0.312,
+"2&奥提斯：环指 点彩派 学徒": 0.312,
+"2&希斯克里夫：N公司 小锤": 0.312,
+"2&希斯克里夫：Seven协会 南部4科": 0.312,
+"2&希斯克里夫：し协会 南部5科": 0.312,
+"2&李箱：Dieci协会 南部4科": 0.312,
+"2&李箱：Seven协会 南部6科": 0.312,
+"2&李箱：裴廓德号 大副": 0.312,
+"2&格里高尔：六协会 南部6科": 0.312,
+"2&格里高尔：玫扳手工坊 收尾人": 0.312,
+"2&浮士德：W公司 2级 清扫人员": 0.312,
+"2&浮士德：Zwei协会 南部4科": 0.312,
+"2&浮士德：呼啸山庄 管家": 0.312,
+"2&浮士德：脑叶公司 幸存者": 0.312,
+"2&罗佳：LCCB 系长": 0.312,
+"2&罗佳：N公司 中锤": 0.312,
+"2&罗佳：T公司 2级 征收人员": 0.312,
+"2&罗佳：Zwei协会 南部5科": 0.312,
+"2&良秀：LCCB 系长": 0.312,
+"2&良秀：Seven协会 南部6科": 0.312,
+"2&良秀：六协会 南部4科": 0.312,
+"2&辛克莱：Zwei协会 南部6科": 0.312,
+"2&辛克莱：Zwei协会 西部3科": 0.312,
+"2&辛克莱：流浪乐队 头目": 0.312,
+"2&辛克莱：脑叶公司E.G.O::朱符": 0.312,
+"2&鸿璐：W公司 2级 清扫人员": 0.312,
+"2&鸿璐：六协会 南部5科": 0.312,
+"2&鸿璐：猎牙事务所 收尾人": 0.312,
+"2&鸿璐：黑云会 若众": 0.312,
+"2&默尔索：中指 幼弟": 0.312,
+"2&默尔索：六协会 南部6科": 0.312,
+"2&默尔索：死兔帮 老大": 0.312,
+"2&默尔索：玫瑰扳手工坊 收尾人": 0.312
+})
+
+[node name="Control3" type="Control" parent="." unique_id=1417402283]
+z_index = 1
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=2127252467]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=556216537]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1649727364]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=117002579]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=40194094]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_iwmqk")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=1327125553]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("2_ntqgq")
+text = "镜像提取][取提像镜"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1733808065]
+self_modulate = Color(1, 1, 1, 0.20392157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_buun7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="." unique_id=1626123674]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -332.0
+offset_right = 237.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ntqgq")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel" unique_id=562938588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5gkbo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="结果" type="RichTextLabel" parent="Panel" unique_id=197008189]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = 77.0
+offset_right = -66.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ntqgq")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=375894731]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 934.0
+offset_right = 610.0
+offset_bottom = 1022.0
+theme = ExtResource("2_ntqgq")
+theme_override_font_sizes/font_size = 60
+text = "十连"
+icon = SubResource("AtlasTexture_6qlla")
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1899932592]
+wait_time = 0.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=974409025]
+stream = ExtResource("6_ntqgq")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1534762920]
+stream = ExtResource("7_buun7")
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2058694653]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 124.0
+offset_right = 520.0
+offset_bottom = 178.0
+theme = ExtResource("2_ntqgq")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "镜像提取][[fade start=0 length=4]取提像镜"
+fit_content = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -1,0 +1,539 @@
+[gd_scene load_steps=16 format=3 uid="uid://bvy54rf7bctv"]
+
+[ext_resource type="Texture2D" uid="uid://bh8ebh4o7uhbs" path="res://img/exported_image.png" id="1_8d6ov"]
+[ext_resource type="Script" uid="uid://bfii0u63ef8in" path="res://script/anima.gd" id="1_8s28c"]
+[ext_resource type="Texture2D" uid="uid://5jk3olflwkr2" path="res://img/ui/MainUI_BattleSelection_6_17.png" id="2_ifmmv"]
+[ext_resource type="Texture2D" uid="uid://bkc1q3bvmes4u" path="res://img/ui/Icon_CreaturePart_0.png" id="3_8s28c"]
+[ext_resource type="Texture2D" uid="uid://tbpipupwv0co" path="res://img/ui/ui.png" id="4_iifv4"]
+[ext_resource type="Texture2D" uid="uid://bj16wunhneqkq" path="res://img/ui/Icon_CreaturePart_2.png" id="5_8av4v"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="6_sp30n"]
+[ext_resource type="Shader" uid="uid://q2jcwvacwurs" path="res://a.gdshader" id="7_s7glf"]
+[ext_resource type="Shader" uid="uid://vu38nqyljhc4" path="res://b.gdshader" id="8_ifmmv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2ll8"]
+shader = ExtResource("7_s7glf")
+shader_parameter/speed = 2.0
+shader_parameter/power = 0.25
+
+[sub_resource type="Animation" id="Animation_pp4vc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainUiBattleSelection617/NinePatchRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainUiBattleSelection617/TextureRect2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(398, 397)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainUiBattleSelection617/TextureRect3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainUiBattleSelection617/NinePatchRect2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:zoom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D/ColorRect2:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(260, 418)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MainUiBattleSelection617:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RichTextLabel3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RichTextLabel3:visible_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_15uwt"]
+resource_name = "new_animation"
+length = 7.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.33333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainUiBattleSelection617/NinePatchRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.54, 0.8333333, 1, 1.6666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainUiBattleSelection617/TextureRect2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 0.8666667, 1.0333333, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.4450002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(475.99997, 455.00003), Vector2(189, 663)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.6666667, 3, 3.2666667, 3.4666667, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainUiBattleSelection617/TextureRect3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.95, 3.2, 3.4333334, 3.8, 4.1666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainUiBattleSelection617/NinePatchRect2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.95, 3.3, 3.8666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:zoom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.9666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MainUiBattleSelection617:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.96666664, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RichTextLabel3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 5.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.97999996, 5.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RichTextLabel3:visible_ratio")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.98999995, 5.4666667, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [0.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_8s28c"]
+resource_name = "new_animation_2"
+length = 5.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect2:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(260, 418), Vector2(653, 1170)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_865ov"]
+_data = {
+&"RESET": SubResource("Animation_pp4vc"),
+&"new_animation": SubResource("Animation_15uwt"),
+&"new_animation_2": SubResource("Animation_8s28c")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8s28c"]
+shader = ExtResource("8_ifmmv")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8s28c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -777.0
+offset_right = 814.0
+offset_bottom = 1263.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8d6ov")
+
+[node name="MainUiBattleSelection617" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.78039217)
+material = SubResource("ShaderMaterial_h2ll8")
+position = Vector2(345, 550.00006)
+scale = Vector2(1.5064104, 1.4258893)
+texture = ExtResource("2_ifmmv")
+
+[node name="TextureRect2" type="TextureRect" parent="MainUiBattleSelection617"]
+visible = false
+texture_filter = 3
+offset_left = 90.94469
+offset_top = -77.14489
+offset_right = 136.94467
+offset_bottom = -11.14489
+texture = ExtResource("3_8s28c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainUiBattleSelection617"]
+visible = false
+texture_filter = 3
+offset_left = 32.52765
+offset_top = -28.754025
+offset_right = 96.25531
+offset_bottom = -14.7540245
+texture = ExtResource("4_iifv4")
+region_rect = Rect2(0, 0, 35, 14)
+patch_margin_left = 7
+patch_margin_bottom = 12
+
+[node name="TextureRect3" type="TextureRect" parent="MainUiBattleSelection617"]
+visible = false
+texture_filter = 3
+offset_left = -146.04254
+offset_top = 35.767105
+offset_right = -100.04254
+offset_bottom = 101.767105
+texture = ExtResource("5_8av4v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MainUiBattleSelection617"]
+visible = false
+texture_filter = 3
+offset_left = -6.866237
+offset_top = 81.00033
+offset_right = 105.65386
+offset_bottom = 95.696526
+rotation = -3.270747
+texture = ExtResource("4_iifv4")
+region_rect = Rect2(0, 0, 35, 14)
+patch_margin_left = 7
+patch_margin_bottom = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_865ov")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 100.0
+offset_top = 585.00006
+offset_right = 178.0
+offset_bottom = 665.00006
+rotation = -0.18681385
+theme = ExtResource("6_sp30n")
+bbcode_enabled = true
+text = "[shake]分 析"
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 478.00003
+offset_top = 392.99997
+offset_right = 556.0
+offset_bottom = 472.99994
+rotation = 0.08180148
+theme = ExtResource("6_sp30n")
+bbcode_enabled = true
+text = "[shake]记 录"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 97.0
+offset_top = 546.0
+offset_right = 272.0
+offset_bottom = 761.0
+texture = ExtResource("1_8d6ov")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 720.0
+offset_right = 246.0
+offset_bottom = 800.0
+theme = ExtResource("6_sp30n")
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "都市异想图鉴"
+fit_content = true
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(398, 397)
+
+[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_8s28c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -191.0
+offset_right = 150.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

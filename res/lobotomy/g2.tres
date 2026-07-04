@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="gif_array" format=3 uid="uid://cjir4hrxqora6"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_2vxcc"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="2_32dnh"]
+[ext_resource type="SpriteFrames" uid="uid://cxrktb6dgv2o3" path="res://img/am491-6otip.gif" id="2_wiqo3"]
+
+[sub_resource type="Resource" id="Resource_df0fi"]
+script = ExtResource("1_2vxcc")
+texture = ExtResource("2_wiqo3")
+size = Vector2(0.5, 0.5)
+name_ = "mace模板攻击动画"
+index = 1
+back = Color(0, 0, 0, 0)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("2_32dnh")
+array = Array[ExtResource("1_2vxcc")]([SubResource("Resource_df0fi")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

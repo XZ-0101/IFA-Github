@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d21lkhjp6dwie"
+path="res://.godot/imported/Mili - SAIKAI.ogg-bcd34494a34a79e8db131dec3aca83ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili - SAIKAI.ogg"
+dest_files=["res://.godot/imported/Mili - SAIKAI.ogg-bcd34494a34a79e8db131dec3aca83ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

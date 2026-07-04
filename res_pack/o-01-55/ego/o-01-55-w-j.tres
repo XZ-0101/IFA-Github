@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://c3sbqbomv4t12"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_074xm"]
+[ext_resource type="Texture2D" uid="uid://bt45gen03a46b" path="res://res_pack/o-01-55/ego/img/QQ3F20180429153818.webp" id="2_074xm"]
+
+[resource]
+script = ExtResource("1_074xm")
+name_ = "小小银河"
+level = "H"
+texture = ExtResource("2_074xm")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-55/ego/o-01-55-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

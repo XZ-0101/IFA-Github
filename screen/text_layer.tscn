@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bbm4yu1fnlusc"]
+
+[ext_resource type="Script" uid="uid://vafsf1ecwuin" path="res://script/text_layer.gd" id="1_6kjee"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_3r7p6"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1311198675]
+script = ExtResource("1_6kjee")
+
+[node name="Panel" type="Panel" parent="." unique_id=1387962742]
+visible = false
+offset_right = 279.0
+offset_bottom = 139.0
+mouse_filter = 1
+theme = ExtResource("2_3r7p6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=2145306751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = -11.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("2_3r7p6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=227376696]
+wait_time = 5.0
+
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

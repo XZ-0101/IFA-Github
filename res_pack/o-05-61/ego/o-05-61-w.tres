@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://cesktajwt7lbm"]
+
+[ext_resource type="Resource" uid="uid://noj5gqu12xb3" path="res://res_pack/o-05-61/ego/o-05-61-w-j.tres" id="1_wcbfv"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_awspw"]
+[ext_resource type="Texture2D" uid="uid://7cmvsu4pqk7b" path="res://res_pack/o-05-61/ego/img/W-1513151089.webp" id="3_b32ox"]
+
+[resource]
+script = ExtResource("2_awspw")
+Cost = "35"
+Max_Amount = "1"
+Damage_type = 4
+Damage = "7-9"
+Attack_Speed = "快（1.33s）"
+Range_ = "一般（4）"
+dps = "6.02"
+m_ban = "特殊模板"
+Observation_Level = "4"
+Requirements = "[color=3fcdbd]正义[/color]II"
+other = "※这把武器拥有两种攻击动画，但造成的伤害和耗时相等，故不算做特殊攻击。"
+name_ = "决死之心"
+texture = ExtResource("3_b32ox")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+这是一把古老的武士刀。
+
+就同那副盔甲一样，如果这把刀落在了懦夫的手里，它便一点威力也没有。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-05-61_%E7%A0%B4%E8%A3%82%E7%9B%94%E7%94%B2[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["o-05-61"])
+jumper = ExtResource("1_wcbfv")
+gif = "g10"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

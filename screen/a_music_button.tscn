@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cm6gltjyt8dcj"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_itnsd"]
+[ext_resource type="Script" uid="uid://r8ytyl1khr6w" path="res://script/a_music_button.gd" id="2_2m2ws"]
+
+[node name="Button" type="Button" unique_id=805111901]
+custom_minimum_size = Vector2(640, 50)
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_itnsd")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+expand_icon = true
+script = ExtResource("2_2m2ws")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

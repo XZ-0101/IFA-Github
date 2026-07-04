@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://uxe4iadkgy8v"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_umep1"]
+[ext_resource type="Texture2D" uid="uid://bjsu7lyfioh7t" path="res://res_pack/D-01-110/EGO/img/QQ3F20180422065347.webp" id="2_p2twh"]
+
+[resource]
+script = ExtResource("1_umep1")
+name_ = "无量"
+level = "W"
+texture = ExtResource("2_p2twh")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/D-01-110/EGO/D-01-110-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司ego", "脑叶公司ego武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

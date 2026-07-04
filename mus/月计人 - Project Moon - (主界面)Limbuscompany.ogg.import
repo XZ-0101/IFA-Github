@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ghdy2wjmlcfe"
+path="res://.godot/imported/月计人 - Project Moon - (主界面)Limbuscompany.ogg-bd7ad12d3b86e04060dbd7479845b5fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/月计人 - Project Moon - (主界面)Limbuscompany.ogg"
+dest_files=["res://.godot/imported/月计人 - Project Moon - (主界面)Limbuscompany.ogg-bd7ad12d3b86e04060dbd7479845b5fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://bn3ny2xn8f68t"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_lr8b7"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_iffi1"]
+
+[sub_resource type="Resource" id="Resource_vu27r"]
+script = ExtResource("1_lr8b7")
+name_ = "t"
+"结果" = "错"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_ohof1"]
+script = ExtResource("1_lr8b7")
+name_ = "f"
+"结果" = "对"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_exwt3"]
+script = ExtResource("2_iffi1")
+"问题" = "3=4"
+item = Array[ExtResource("1_lr8b7")]([SubResource("Resource_vu27r"), SubResource("Resource_ohof1")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"
+
+[sub_resource type="Resource" id="Resource_3aop0"]
+script = ExtResource("1_lr8b7")
+name_ = "4"
+"结果" = "对"
+"分支问题" = SubResource("Resource_exwt3")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_ov2p3"]
+script = ExtResource("1_lr8b7")
+name_ = "5"
+"结果" = "错"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_dxo6d"]
+script = ExtResource("2_iffi1")
+"问题" = "2+2"
+item = Array[ExtResource("1_lr8b7")]([SubResource("Resource_3aop0"), SubResource("Resource_ov2p3")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"
+
+[sub_resource type="Resource" id="Resource_8urn0"]
+script = ExtResource("1_lr8b7")
+name_ = "2"
+"结果" = "对"
+"分支问题" = SubResource("Resource_dxo6d")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_g8tu8"]
+script = ExtResource("1_lr8b7")
+name_ = "3"
+"结果" = "错"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("2_iffi1")
+"问题" = "1+1=?"
+item = Array[ExtResource("1_lr8b7")]([SubResource("Resource_8urn0"), SubResource("Resource_g8tu8")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

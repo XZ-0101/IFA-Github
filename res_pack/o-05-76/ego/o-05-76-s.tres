@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://cbsbghd72a2h7"]
+
+[ext_resource type="Resource" uid="uid://d051svgpooeso" path="res://res_pack/o-05-76/ego/o-05-76-s-j.tres" id="1_poxaq"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_8ane6"]
+[ext_resource type="Texture2D" uid="uid://bidahogcoi0qo" path="res://res_pack/o-05-76/ego/img/A-1513615980.webp" id="3_egpb8"]
+
+[resource]
+script = ExtResource("2_8ane6")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "3"
+other = "※如果穿戴者处在监控画面内，正义的相关属性会提升10点并能获得更高的伤害抗性（斜线后为处于员工处于画面内的伤害抗性）。"
+red_def = 1.0
+white_def = 0.8
+black_def = 1.0
+pale_def = 1.5
+Requirements = "无"
+name_ = "凝视"
+texture = ExtResource("3_egpb8")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+门后的眼睛一直注视着它的目标，没有人能够理解它到底想看到什么。
+
+当你穿上这件护甲后，至少不用担心会被人伏击。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "h"
+jump = Array[String](["pres://res_pack/o-05-76/benti/o-05-76-j.tres"])
+jumper = ExtResource("1_poxaq")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

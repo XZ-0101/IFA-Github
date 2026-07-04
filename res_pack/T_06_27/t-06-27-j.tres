@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://c2b0lgyj6ou05"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_6p2tl"]
+[ext_resource type="Texture2D" uid="uid://w6cciwvbpwqc" path="res://res_pack/T_06_27/img/I-1513167657.webp" id="2_rvuo8"]
+
+[resource]
+script = ExtResource("1_6p2tl")
+name_ = "1.76兆赫"
+s = "T-06-27"
+level = "T"
+texture = ExtResource("2_rvuo8")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/T_06_27/t-06-27.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "烟霾战争"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

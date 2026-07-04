@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://br5gxl0nstey"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_bu3ik"]
+[ext_resource type="Texture2D" uid="uid://dngm1sni7cdb6" path="res://res_pack/T_06_27/ego/img/1-1524970280.webp" id="2_8ro66"]
+
+[resource]
+script = ExtResource("1_bu3ik")
+name_ = "噪音"
+texture = ExtResource("2_8ro66")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/T_06_27/ego/t-06-27-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO饰品/礼物"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

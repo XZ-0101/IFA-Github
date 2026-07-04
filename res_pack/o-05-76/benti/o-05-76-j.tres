@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://by7fk01m3bqmf"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_1jmd4"]
+[ext_resource type="Texture2D" uid="uid://lfxa0i1mdrh5" path="res://res_pack/o-05-76/benti/img/I-1513615965.webp" id="2_i76mq"]
+
+[resource]
+script = ExtResource("1_1jmd4")
+name_ = "幸灾乐祸"
+s = "O-05-76"
+level = "H"
+texture = ExtResource("2_i76mq")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-05-76/benti/o-05-76.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

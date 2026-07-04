@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://ddawpj8h7qhq7"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_mk6x2"]
+[ext_resource type="Texture2D" uid="uid://blg521oygcer" path="res://res_pack/t-02-43/ego/img/W-1513167936.webp" id="2_4dstl"]
+
+[resource]
+script = ExtResource("1_mk6x2")
+name_ = "赤瞳"
+level = "T"
+texture = ExtResource("2_4dstl")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-02-43/ego/t-02-43-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

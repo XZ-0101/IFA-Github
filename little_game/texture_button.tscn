@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bo6iyeub7nu14"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_bvwfe"]
+[ext_resource type="Texture2D" uid="uid://bfodkd5hivc4k" path="res://img2/UI/Texture2D/MainUI_DawnOfGreen_04.png" id="2_nwbsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlfn0"]
+atlas = ExtResource("2_nwbsn")
+region = Rect2(1, 558, 1334, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvwfe"]
+atlas = ExtResource("2_nwbsn")
+region = Rect2(1, 0, 1334, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwbsn"]
+atlas = ExtResource("2_nwbsn")
+region = Rect2(0, 280, 1328, 239)
+
+[sub_resource type="GDScript" id="GDScript_bvwfe"]
+resource_name = "item"
+script/source = "extends TextureButton
+var name_:String
+var text:String
+var index:int
+signal choiced
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if not LittleGameCtrl.panic:
+		$RichTextLabel.text=name_
+		$RichTextLabel2.text=text
+	else :
+		$RichTextLabel.text=\"???\"
+		$RichTextLabel2.text=\"???\"
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_down() -> void:
+	
+	emit_signal(\"choiced\")
+	pass # Replace with function body.
+"
+
+[node name="TextureButton" type="TextureButton" unique_id=622527637]
+custom_minimum_size = Vector2(556, 114)
+offset_top = 6.0
+offset_right = 556.0
+offset_bottom = 120.0
+theme = ExtResource("1_bvwfe")
+texture_normal = SubResource("AtlasTexture_tlfn0")
+texture_pressed = SubResource("AtlasTexture_bvwfe")
+texture_hover = SubResource("AtlasTexture_nwbsn")
+ignore_texture_size = true
+stretch_mode = 5
+script = SubResource("GDScript_bvwfe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1514969106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.0
+offset_top = 31.0
+offset_right = 272.0
+offset_bottom = 72.0
+grow_horizontal = 2
+mouse_filter = 1
+theme = ExtResource("1_bvwfe")
+bbcode_enabled = true
+text = "吃了他"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1224100022]
+self_modulate = Color(0.34220693, 0.34220695, 0.3422069, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -39.0
+offset_right = 274.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("1_bvwfe")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "获得一件EGO饰品"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

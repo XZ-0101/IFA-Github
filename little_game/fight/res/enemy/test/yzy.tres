@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://dyepgh7ivnkvt"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_gok80"]
+[ext_resource type="Texture2D" uid="uid://bsg23oa63jkat" path="res://little_game/fight/res/enemy/test/预知眼.webp" id="1_kyy53"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_wgc22"]
+
+[sub_resource type="Resource" id="Resource_3wok8"]
+script = ExtResource("1_wgc22")
+most_x = 30
+code = "sp+=2
+Fight.play_anima(\"text\",1,\"hel,2,sp\")"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_gok80")
+eff = SubResource("Resource_3wok8")
+icon = ExtResource("1_kyy53")
+id = "wlxnbuff1"
+name_ = "劣化预知眼"
+description = "[回合开始时]恢复2SP
+
+-“并非像[NULL]那样[NULL]。这只[NULL]更接近于通过分析[NULL]预测即将到来的瞬间的[NULL]。”"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

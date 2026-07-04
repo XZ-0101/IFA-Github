@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="deck_box" format=3 uid="uid://cbu888j2r2pq"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_lm6xk"]
+[ext_resource type="Resource" uid="uid://bqh4vw3nxowuq" path="res://little_game/q/t000777q.tres" id="2_id4y8"]
+[ext_resource type="Resource" uid="uid://eqgyvqfnwh0m" path="res://little_game/q/t0001q.tres" id="3_w7wxr"]
+[ext_resource type="Resource" uid="uid://cn8gtas0lnmvx" path="res://little_game/1.tres" id="4_3sepb"]
+[ext_resource type="Resource" uid="uid://cdigurtpmb5dg" path="res://little_game/3.tres" id="6_mghtt"]
+[ext_resource type="Resource" uid="uid://bidqus48jkygg" path="res://little_game/4.tres" id="7_envto"]
+[ext_resource type="Resource" uid="uid://bqw7au1o5o0q6" path="res://little_game/5.tres" id="8_rv5sh"]
+[ext_resource type="Resource" uid="uid://bwxxql8jqorgp" path="res://little_game/lcb_test.tres" id="9_7gv41"]
+[ext_resource type="Resource" uid="uid://bw8b8ub32aj74" path="res://little_game/t0000q.tres" id="10_hiud2"]
+[ext_resource type="Texture2D" uid="uid://cdh8wsm6um13v" path="res://img/SteamIcon_Unity_Big.webp" id="11_d68k0"]
+[ext_resource type="Resource" uid="uid://byohjh88ahfco" path="res://little_game/q/h.tres" id="11_envto"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="12_jlqp8"]
+[ext_resource type="Resource" uid="uid://cv68kau4mygrs" path="res://little_game/q/v.tres" id="12_rv5sh"]
+[ext_resource type="Resource" uid="uid://c17hxkadgrq0q" path="res://little_game/q/h2.tres" id="13_7gv41"]
+[ext_resource type="Resource" uid="uid://vbd6jlxgp7xg" path="res://little_game/q/h3.tres" id="14_hiud2"]
+[ext_resource type="Resource" uid="uid://bu244geenprt0" path="res://little_game/q/kml.tres" id="15_d68k0"]
+[ext_resource type="Resource" uid="uid://bbqgkdgducch7" path="res://little_game/q/v1.tres" id="16_jlqp8"]
+[ext_resource type="Resource" uid="uid://dh0uqaupx2cv" path="res://little_game/q/fight.tres" id="17_7gv41"]
+[ext_resource type="Resource" uid="uid://casxw30v4hh5v" path="res://little_game/fight.tres" id="18_hiud2"]
+
+[resource]
+script = ExtResource("12_jlqp8")
+name_ = "基础脑叶包"
+type = Array[String](["无限的可能性", "脑叶公司"])
+card = Array[ExtResource("1_lm6xk")]([ExtResource("2_id4y8"), ExtResource("3_w7wxr"), ExtResource("4_3sepb"), ExtResource("6_mghtt"), ExtResource("7_envto"), ExtResource("8_rv5sh"), ExtResource("9_7gv41"), ExtResource("10_hiud2"), ExtResource("11_envto"), ExtResource("12_rv5sh"), ExtResource("13_7gv41"), ExtResource("14_hiud2"), ExtResource("15_d68k0"), ExtResource("16_jlqp8"), ExtResource("17_7gv41"), ExtResource("18_hiud2")])
+img = ExtResource("11_d68k0")
+img_off = Vector2(-1.705, -0.355)
+metadata/_custom_type_script = "uid://b8rki7fa01jly"

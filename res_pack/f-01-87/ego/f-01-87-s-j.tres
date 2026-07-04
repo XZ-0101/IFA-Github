@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dyds5bxuerepx"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_v0dje"]
+[ext_resource type="Texture2D" uid="uid://dmyoer2wqguea" path="res://res_pack/f-01-87/ego/img/QQ3F20180429160715.webp" id="2_1kcla"]
+
+[resource]
+script = ExtResource("1_v0dje")
+name_ = "猎头长耙"
+level = "H"
+texture = ExtResource("2_1kcla")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-87/ego/f-01-87-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "EGO护甲", "脑叶公司EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

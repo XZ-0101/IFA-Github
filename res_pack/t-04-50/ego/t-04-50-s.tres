@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://bvukct4hke41y"]
+
+[ext_resource type="Resource" uid="uid://ddaltfih820i1" path="res://res_pack/t-04-50/ego/t-04-50-s-j.tres" id="1_l4myr"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_x1qol"]
+[ext_resource type="Texture2D" uid="uid://j63m2e542yxo" path="res://res_pack/t-04-50/ego/img/A-1513271779.webp" id="3_lejj7"]
+
+[resource]
+script = ExtResource("2_x1qol")
+Cost = "50"
+Max_Amount = "2"
+Observation_Level = "3"
+other = "无"
+red_def = 0.7
+white_def = 0.7
+black_def = 0.7
+pale_def = 1.5
+Requirements = "等级III"
+name_ = "黄蜂"
+texture = ExtResource("3_lejj7")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：尽管王国会在历史上备受瞩目，但是又有谁会记得为它做出奉献与牺牲的工蜂呢？
+
+旧日的荣耀仍在继续绽放光辉。
+
+
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "w"
+jump = Array[String](["pres://res_pack/t-04-50/benti/t-04-50-j.tres"])
+jumper = ExtResource("1_l4myr")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

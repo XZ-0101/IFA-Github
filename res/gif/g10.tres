@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=7 format=3 uid="uid://dcrf2s748dbmq"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_hr61j"]
+[ext_resource type="SpriteFrames" uid="uid://m3o862sjnlju" path="res://img2/GIF/LC/o-05-61-a1.gif" id="2_hr61j"]
+[ext_resource type="SpriteFrames" uid="uid://c2vcaah6dux8y" path="res://img2/GIF/LC/o-05-61-a2.gif" id="3_hhuux"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="4_fdd2r"]
+
+[sub_resource type="Resource" id="Resource_7fg6o"]
+script = ExtResource("1_hr61j")
+texture = ExtResource("2_hr61j")
+size = Vector2(0.6, 0.6)
+name_ = "绝死之心攻击动画1"
+index = 1
+back = Color(1, 1, 1, 1)
+pos = Vector2(20, 20)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[sub_resource type="Resource" id="Resource_87ssx"]
+script = ExtResource("1_hr61j")
+texture = ExtResource("3_hhuux")
+size = Vector2(0.6, 0.6)
+name_ = "绝死之心攻击动画2"
+index = 2
+back = Color(1, 1, 1, 1)
+pos = Vector2(20, 20)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("4_fdd2r")
+array = Array[ExtResource("1_hr61j")]([SubResource("Resource_7fg6o"), SubResource("Resource_87ssx")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgw6fyn3nvhrm"
+path="res://.godot/imported/001. Button4.wav-e4b2ced8fcda4a29f05355292d7b6fd4.sample"
+
+[deps]
+
+source_file="res://res/SOUND/AudioClip/001. Button4.wav"
+dest_files=["res://.godot/imported/001. Button4.wav-e4b2ced8fcda4a29f05355292d7b6fd4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

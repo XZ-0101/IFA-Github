@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy" load_steps=2 format=3 uid="uid://btoeestp2rx21"]
+
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="2_r2kqm"]
+
+[resource]
+script = ExtResource("2_r2kqm")
+Attack_Type = 0
+acctak_Damage = ""
+most_pe_box = ""
+good_Mood_Range = ""
+bad_Mood_Range = ""
+Norm_Mood_Range = ""
+will_Breakthrough_containment = false
+Qliphoth_Counter = ""
+red_def = 0.0
+white_def = 0.0
+black_def = 0.0
+pale_def = 0.0
+Upgrades = Array[String]([])
+story = ""
+Observation_level = ""
+flavour_text = Array[String]([])
+other_info = ""
+other_info_act = ""
+price = ""
+name_ = ""
+info_ = ""
+subject = ""
+level = ""
+type = Array[int]([])
+jump = Array[String]([])
+gif = ""
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

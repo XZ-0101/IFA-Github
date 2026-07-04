@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="lyrics" format=3 uid="uid://b2s4fol4pfr10"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_biks0"]
+
+[resource]
+script = ExtResource("1_biks0")
+lyc = "[00:00.00]Compass - Mili
+[00:00.99]Lyrics by：Cassie Wei
+[00:01.95]Composed by：Yamato Kasai/Cassie Wei
+[00:22.75][color=white]Bon voyage
+[00:26.63][color=white]Your mermaid's setting sail
+[00:30.47][color=white]At last
+[00:31.89][color=white]Full speed towards your heart
+[00:37.44][color=white]Full speed towards your heart
+[00:42.01][color=white]I've had enough
+[00:48.39][color=white]I'm reclaiming myself
+[00:52.28][color=white]The aft
+[00:53.68][color=white]Leaving behind the hurt
+[00:59.26][color=white]Leaving behind the hurt
+[01:04.97][color=white]When it snapped
+[01:08.85][color=white]My compass was swallowed by the sea
+[01:14.22][color=white]My compass was swallowed by the sea
+[01:19.62][color=white]I cursed this relationship between you and me
+[01:26.88][color=red]I wanted blood
+[01:31.78][color=red]I wanted[/color] [color=#2a2a2a]black[/color][color=red] and[/color][color=white] white
+[01:35.83][color=#ffdbbd]Clear cut
+[01:37.19][color=#ffb97a]Your evils predefined
+[01:42.67][color=#ffb97a]Your evils predefined
+[01:48.47][color=#ff9400]Hold on tight
+[01:52.31][color=#ff9400]My compass is curiosity
+[01:57.65][color=#ff9400]My compass is curiosity
+[02:03.13][color=#ff9400]I'm piercing through the rope that strangled you and me
+[02:10.01][color=#ff9400]Let us be free
+[02:12.48][color=#ff9400]High tide
+[02:14.95][color=#ff9400]Low tide
+[02:17.71][color=#ff9400]High tide
+[02:20.44][color=#ff9400]Low tide
+[02:23.11][color=#ff9400]High tide
+[02:25.86][color=#ff9400]Low tide
+[02:28.56][color=#ff9400]High tide
+[02:31.29][color=#ff9400]Low tide"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

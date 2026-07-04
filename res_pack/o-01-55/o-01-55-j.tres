@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://clb5k7hnhg4um"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_rjgan"]
+[ext_resource type="Texture2D" uid="uid://cbrfbrfy5p2vi" path="res://res_pack/o-01-55/img/GalaxyBoyBig.webp" id="2_wahdd"]
+
+[resource]
+script = ExtResource("1_rjgan")
+name_ = "银河之子"
+s = "O-01-55"
+level = "H"
+texture = ExtResource("2_wahdd")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-55/o-01-55.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

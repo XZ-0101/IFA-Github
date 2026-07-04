@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=5 format=3 uid="uid://pm2xkbo7i56g"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_2ubbn"]
+[ext_resource type="SpriteFrames" uid="uid://y8n1te2l62pd" path="res://img2/GIF/LC/ao71r-hxjxt.gif" id="2_2ubbn"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="3_2ogyi"]
+
+[sub_resource type="Resource" id="Resource_7fg6o"]
+script = ExtResource("1_2ubbn")
+texture = ExtResource("2_2ubbn")
+size = Vector2(0.3, 0.3)
+name_ = "无量攻击动画"
+index = 1
+back = Color(1, 1, 1, 1)
+pos = Vector2(0, -10)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("3_2ogyi")
+array = Array[ExtResource("1_2ubbn")]([SubResource("Resource_7fg6o")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

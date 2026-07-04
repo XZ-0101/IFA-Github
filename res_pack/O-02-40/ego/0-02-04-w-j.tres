@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dcht12rsprrc"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ank5o"]
+[ext_resource type="Texture2D" uid="uid://cn6p1lpl4uu6o" path="res://res_pack/O-02-40/ego/img/3FW.webp" id="2_j4rph"]
+
+[resource]
+script = ExtResource("1_ank5o")
+name_ = "目灯"
+level = "W"
+texture = ExtResource("2_j4rph")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/O-02-40/ego/0-02-04-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

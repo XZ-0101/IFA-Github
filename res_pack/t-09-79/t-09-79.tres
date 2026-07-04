@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" load_steps=4 format=3 uid="uid://2d8eftbmqw3a"]
+
+[ext_resource type="Texture2D" uid="uid://t87vyqdcput3" path="res://res_pack/t-09-79/img/MeatIdol (1).webp" id="1_0fxe8"]
+[ext_resource type="Resource" uid="uid://dygpi3phgdhej" path="res://res_pack/t-09-79/t-09-79-j.tres" id="2_3jper"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="3_ewsj2"]
+
+[resource]
+script = ExtResource("3_ewsj2")
+tool_type = "持续使用型"
+tool_e = "工具能力
+
+在使用血肉偶像时，使用者会每5秒受到一次随机类型的5点伤害，根据使用时间的不同会给使用者和其余员工带来不同的效果。这些效果具体表现为：
+
+祈祷者祈祷时间少于20秒时停止祈祷，则祈祷者立刻死亡。
+祈祷者祈祷时间在21秒-45秒时，每次受到伤害时会为除祈祷者外的所有员工回复5点生命值，
+祈祷者在祈祷时间为46-90秒时，每次受到伤害时会为除祈祷者外的所有员工回复5点精神值和生命值。
+祈祷者在祈祷时间为90秒时如果还没有离开收容单元，则祈祷者会立刻死亡，且设施内所有异想体的逆卡巴拉计数器都会立刻归零。
+注意：如果主管在暂停时指派员工停止使用血肉偶像且在当次暂停时再次指派他前去祈祷，则这名员工会因为bug而立刻死亡，但不会造成异想体出逃。
+
+[img]res://res_pack/t-09-79/img/3F3F-3F3F.webp[color=red]
+x月x日-T-09-79收容单元-监控画面
+-- 员工正在祈祷...
+[/color]
+"
+tool_info = "血肉偶像（T-09-79）是一个WAW级别的持续使用型工具异想体， 从外观上看是一根由类似黑铁的金属制成的、锈迹斑斑的长十字架，在它的十字中心部分有一个由令人作呕的肉块和一些金属配件组成的瘤状物。据说，当有人对它进行祷告时，这些肉块会微微蠕动。
+
+该异想体的基础信息将在持续使用30秒后解锁。
+
+[img]res://res_pack/t-09-79/img/FleshIdolCloseUp.webp[color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["您可以指派员工向“血肉偶像”祷告以触发它的特殊效果。祷告者每隔一段时间会受到随机类型的伤害。（持续使用30秒后解锁）", "<实验-1>如果祷告时间不满20秒就结束，那么祷告者会立刻死亡。（持续使用30秒后解锁）", "<实验-2>如果祷告时间在21秒至45秒内，那么除祷告者以外的所有员工会渐渐恢复生命值。（持续使用60秒后解锁）", "<实验-3>如果祷告时间在46秒至90秒内，实验结果与实验-2相近，区别在于祷告者会恢复一些精神值。（注意：使用须知4存在漏洞，实际情况是“除祷告者以外的所有员工会渐渐恢复精神值和生命值。”祷告者不会受到回复效果。）（持续使用120秒后解锁）", "<实验-4>如果祷告时间超过90秒，那么祷告者会立刻死亡且设施内所有异想体的逆卡巴拉计数器都将归零。（持续使用180秒后解锁）"])
+Research_logs = Array[String](["这是一块由血肉与废铁所构成的异想体实体。（持续使用30秒后解锁）", "这个异想体是从洪灾区被回收的，一些人推测它是一个神秘的宗教物件。当有员工向它祷告时，废铁上的血肉会开始蠕动，就好像是在对祷告做出回应。（持续使用30秒后解锁）", "祷告者会遭受各种各样的折磨，如同在接受残酷的试炼。但是其周围的人会如获救赎一般恢复精神，治愈肉体。（持续使用60秒后解锁）", "纯洁的颂唱止于永恒而绝望的嘶喊。（持续使用120秒后解锁）"])
+name_ = "血肉偶像"
+icon = ExtResource("1_0fxe8")
+info_ = "*资料类型：工具类异想体
+
+纯洁的颂唱止于永恒而绝望的嘶喊。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-09-79_%E8%A1%80%E8%82%89%E5%81%B6%E5%83%8F]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "T-09-79"
+level = "w"
+jumper = ExtResource("2_3jper")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

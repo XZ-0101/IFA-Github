@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://ctvgkqd6umyf3"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_2vwy4"]
+[ext_resource type="Texture2D" uid="uid://c2wivkxrtumxj" path="res://res_pack/t-05-51/ego/img/3F3F3F.webp" id="2_7ccy4"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_bspwb"]
+
+[sub_resource type="Resource" id="Resource_kcd5y"]
+script = ExtResource("1_2vwy4")
+name_ = "割腕者"
+texture = ExtResource("2_7ccy4")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-05-51/ego/t-05-51-g.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"
+
+[resource]
+script = ExtResource("2_bspwb")
+name_ = "割腕者"
+texture = ExtResource("2_7ccy4")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：8%
+饰品部位：手套
+成功率+2
+工作速度+2
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/t-05-51/benti/t-05-51-j.tres"])
+jumper = SubResource("Resource_kcd5y")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

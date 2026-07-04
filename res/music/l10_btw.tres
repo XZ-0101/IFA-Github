@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://d0ylaqxieestt"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_8gsot"]
+
+[resource]
+script = ExtResource("1_8gsot")
+lyc = "[00:00.00]Between Two Worlds - Mili
+[00:00.58]Lyrics by：Cassie Wei
+[00:01.05]Composed by：Cassie Wei/Yamato Kasai
+[00:01.64][color=white]Ooh
+[00:06.42][color=white]It's this time of the year
+[00:15.70]
+[00:16.63][color=white]A very so merry night we hold dear
+[00:29.51]
+[00:30.18][color=white]So many so many regrets bring me to tears
+[00:43.03]
+[00:43.90][color=white]Not many not many notice nor care
+[00:57.25]
+[00:57.92][color=white]Ooh
+[01:00.14][color=white]My saviour
+[01:04.20][color=white]Ooh
+[01:07.22][color=white]Why does a common fire hold so much power
+[01:20.02]
+[01:21.44][color=white]If only we could be forever naive and pure
+[01:34.66]
+[01:35.32][color=white]If only we could lead painless futures
+[01:49.10][color=white]If only there could be a forgiving world
+[02:02.35]
+[02:17.12][color=ff998a]Maybe that was when
+[02:23.32][color=ff998a]I chose to stay fallen
+[02:29.64]
+[02:30.24][color=red]Lights
+[02:32.83][color=red]A star
+[02:36.13][color=red]A voice
+[02:38.84][color=red]A twisted thought
+[02:42.96]
+[02:43.69][color=red]A touch
+[02:45.26]
+[02:46.07][color=red]A kiss
+[02:47.13]
+[02:48.19][color=red]A distorted dream
+[02:50.28][color=red]Ripples
+[02:51.86][color=red]A well
+[02:53.60][color=red]A stone
+[02:55.23][color=red]A multiplying desire
+[02:58.23][color=red]A fruit
+[02:59.63][color=red]A sin
+[03:01.02][color=red]A holy mother
+[03:02.72][color=red]I'm infected I'm infected
+[03:05.54][color=red]You have invaded and re-created me
+[03:09.50][color=red]Stepped over my body
+[03:12.88]
+[03:14.27][color=red]Found a sunny spot
+[03:16.52]
+[03:17.17][color=red]Curled into a ball
+[03:19.52]
+[03:20.09][color=red]Spinning out the silk
+[03:22.37]
+[03:22.94][color=red]From my head to toe
+[03:25.37][color=red]Inside the warm cocoon I dreamt to be like you
+[03:31.03]
+[03:31.60][color=red]Though I know there's no undo
+[03:34.51][color=red]What do I have left to lose
+[03:40.71]
+[03:41.72][color=red]Split
+[03:42.91][color=red]A sky
+[03:44.38][color=red]An earth
+[03:45.86][color=red]I fell into a crack
+[03:48.78][color=red]A birth
+[03:49.48]
+[03:50.16][color=red]An egg
+[03:51.08]
+[03:51.61][color=red]A freshly opened membrane
+[03:54.56][color=red]A cell
+[03:55.39]
+[03:55.99][color=red]A rot
+[03:56.77]
+[03:57.37][color=red]A face returned to ashes
+[03:59.74]
+[04:00.33][color=red]A wound
+[04:01.23]
+[04:01.75][color=red]An art
+[04:02.57]
+[04:03.19][color=red]A sentient canvas
+[04:04.89][color=red]Breaking breaking breaking the shell
+[04:06.58][color=red]Breaking out oh break it now
+[04:07.86][color=red]Show me how show me how
+[04:09.21][color=red]Listen up my broken child
+[04:10.68][color=red]]Let's lament let's lament
+[04:13.66][color=red]The life the death the good the bad
+[04:15.06][color=red]The never ending curse we cast
+[04:16.50][color=red]Control control control release
+[04:17.84][color=red]Control betray control let go
+[04:19.34][color=red]Conceal reveal unreal surreal
+[04:20.76][color=red]Invoke evoke decode reload
+[04:22.21] [color=red] Let's lament let's lament
+[04:25.15][color=red]The past that only got to live in the incomplete holy land
+[04:28.18][color=red]Celestial
+[04:29.43][color=red]Ayiah
+[04:29.62][color=red]We're astral
+[04:30.91][color=red]Ayiou
+[04:31.24][color=red]I'm reborn
+[04:32.37][color=red]Le rheaiah
+[04:32.76][color=red]Total liberation
+[04:34.02][color=red]Katre o lamenta
+[04:35.14][color=red]My tender skin
+[04:37.93][color=red]A vagitus song
+[04:40.09][color=red]Essential
+[04:40.93][color=red]I breathed
+[04:41.90][color=red]Eventual
+[04:42.22][color=red]And screamed
+[04:43.40][color=red]Eternal
+[04:43.66][color=red]From my new lungs
+[04:45.86][color=red]Inevitable freeing of the sou"
+font = "res://res/tcblackcatregular-dylbd.otf"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

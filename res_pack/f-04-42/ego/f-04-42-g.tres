@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://ptwfkjsbgloy"]
+
+[ext_resource type="Resource" uid="uid://pqoop4cpxy6s" path="res://res_pack/f-04-42/ego/f-04-42-g-j.tres" id="1_3bqkq"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_v4jgr"]
+[ext_resource type="Texture2D" uid="uid://di7govl1hruqv" path="res://res_pack/f-04-42/ego/img/3F-0.webp" id="3_te0n5"]
+
+[resource]
+script = ExtResource("2_v4jgr")
+name_ = "绿色枝干"
+texture = ExtResource("3_te0n5")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：3%
+位置：胸部
+最大精神值+6
+持有“绿色枝干”时，提高5点最大与最小攻击力。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+jump = Array[String](["pres://res_pack/f-04-42/benti/f-04-42-j.tres"])
+jumper = ExtResource("1_3bqkq")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

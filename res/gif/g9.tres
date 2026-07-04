@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=7 format=3 uid="uid://cvymmgjxqg5er"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_jvt38"]
+[ext_resource type="SpriteFrames" uid="uid://f36my6i5ugoe" path="res://img2/GIF/LC/t-01-75-a1.gif" id="2_j0nat"]
+[ext_resource type="SpriteFrames" uid="uid://b3ampgviylv77" path="res://img2/GIF/LC/t-01-75-a2.gif" id="3_4a8xa"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="3_8xm8n"]
+
+[sub_resource type="Resource" id="Resource_7fg6o"]
+script = ExtResource("1_jvt38")
+texture = ExtResource("2_j0nat")
+size = Vector2(0.3, 0.3)
+name_ = "笑靥攻击动画"
+index = 1
+back = Color(1, 1, 1, 1)
+pos = Vector2(0, -10)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[sub_resource type="Resource" id="Resource_87ssx"]
+script = ExtResource("1_jvt38")
+texture = ExtResource("3_4a8xa")
+size = Vector2(0.6, 0.6)
+name_ = "笑靥特殊攻击动画"
+index = 2
+back = Color(1, 1, 1, 1)
+pos = Vector2(0, 30)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("3_8xm8n")
+array = Array[ExtResource("1_jvt38")]([SubResource("Resource_7fg6o"), SubResource("Resource_87ssx")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

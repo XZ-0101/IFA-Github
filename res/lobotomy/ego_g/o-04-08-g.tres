@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://da8fdfdkxaqf4"]
+
+[ext_resource type="Resource" uid="uid://dpvseoqvjaoq7" path="res://res/jumper/o-04-08-g.tres" id="1_f571a"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_x0ss0"]
+[ext_resource type="Texture2D" uid="uid://dviklu6hpchcg" path="res://img2/LCA/O-04-08/G-3.webp" id="3_ss8cb"]
+
+[resource]
+script = ExtResource("1_x0ss0")
+name_ = "血之渴望"
+texture = ExtResource("3_ss8cb")
+info = "*资料类型：脑叶公司EGO饰品/礼物
+
+获得率：4%
+位置：口部
+[color=red]最大生命值[/color]+4
+持有“红舞鞋”E.G.O武器时，降低10点[color=purple]成功率[/color]和[color=purple]工作速度[/color]，提高10点[color=cyan]攻击速度[/color]。（因为bug不生效）
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-04-08_%E7%BA%A2%E8%88%9E%E9%9E%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "l"
+jump = Array[String](["o-04-08"])
+jumper = ExtResource("1_f571a")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bx834ciena4ia"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_m4eqh"]
+[ext_resource type="Texture2D" uid="uid://nweatlvlhngg" path="res://img/icon.svg" id="2_wmkff"]
+
+[resource]
+script = ExtResource("1_m4eqh")
+name_ = "测试123"
+s = "0-00-012"
+level = "W"
+texture = ExtResource("2_wmkff")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/legacy_test.tres"
+mode = "Legacy"
+type = Array[String](["测试"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

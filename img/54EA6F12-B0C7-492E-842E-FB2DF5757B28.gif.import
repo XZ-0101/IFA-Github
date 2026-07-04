@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dbolpeffwj0hx"
+path="res://.godot/imported/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif-ef81deee493c34d4554f98cd19e8dd9e.tres"
+
+[deps]
+
+source_file="res://img/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif"
+dest_files=["res://.godot/imported/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif-ef81deee493c34d4554f98cd19e8dd9e.tres"]
+
+[params]
+
+frames_per_second=30

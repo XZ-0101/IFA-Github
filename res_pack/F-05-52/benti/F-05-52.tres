@@ -1,0 +1,177 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://e02qnsillqjo"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_bglbg"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_800ja"]
+[ext_resource type="Texture2D" uid="uid://cd2j0fsgdo1ix" path="res://res_pack/F-05-52/benti/img/I-1513154450.webp" id="3_gaoyv"]
+[ext_resource type="Resource" uid="uid://c83sxlghd8sce" path="res://res_pack/F-05-52/benti/F-05-52-j.tres" id="4_8wo1f"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_s7787"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_bglbg")
+level = {
+"L1": 70,
+"L2": 70,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_bglbg")
+level = {
+"L1": 70,
+"L2": 70,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_bglbg")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_bglbg")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_800ja")
+Probabilities = Array[ExtResource("1_bglbg")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_s7787")
+Attack_Type = 1
+acctak_Damage = "1-2"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "10"
+good_Mood_Range = "8-10"
+bad_Mood_Range = "0-4"
+Norm_Mood_Range = "5-7"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 在完成了工作之后，自动贩卖机的中央会落下一罐饮料，饮料的种类会根据工作结果的不同而不同。", "Ⅱ. <测试结果W-1> 一罐红色的草莓味饮料掉了出来。喝下饮料的人表示这个口味的饮料有一种独特的香气和甜味，并且感觉身体充满了能量。后来，这款饮料被证实是有益的。", "Ⅲ. <测试结果W-2> 蓝色的蓝莓味饮料是一种无色有强烈碳酸的液体。这款饮料已被证实能有效地恢复饮用该款饮料的员工的精神。", "Ⅳ. <测试结果W-3，W-4> 外观，成分，口味与某种葡萄味的碳酸饮料完全相同的紫色饮料。研究发现喝下这种口味饮料的员工有效地恢复了体力和精神。", "Ⅴ. <警告> 当工作结果为差时，不要喝从贩卖机中掉下的饮料！！！"])
+story = "<员工记录>
+“你们最近有没有去过脑叶公司的聚会？在告诉你们这些事之前我必须先让自己冷静下来...
+有一次我参加了一个某种乒乓俱乐部的聚会，但是那里连一个女生都没有，所以我很快就溜走了，哈哈哈。
+总之...有一天我在揭示板上看到了有关一个奇怪俱乐部的宣传。
+我很感兴趣，并联络了俱乐部的部长，他自称是OO,是OO部的部长。
+我问他俱乐部里有没有女生，他说他们的女性部员简直数不清。
+这让我一下子来了兴致，所以我注册成为了部员，准备去参加下一次俱乐部聚会。
+所以我就去了，像在场的其他人一样别着写有自己名字的标签。我看到了三个来自Hod的培训部的员工，还有两个人来自Netzach的安保部。
+大概在半个小时之后，部长拿着一个上面放了好几打韦尔奇乐牌汽水的托盘走进了房间，并分给了在场的每一个人...
+我本应该在发现汽水罐是打开的时候就察觉到不对的...
+但我对汽水实在没有抵抗力，在他给我的第一时间我就仰头喝了下去...
+
+呃，在那之后部长告诉我们是时候换个地方了，他为此还租了一辆大货车。
+“他是个好人。”我这么想。我和两个人群中的员工一起跳上了货车，还跟着一个和我来自同一部门的家伙。部长说车程大概有一个小时，所以建议大家先打个盹。我们听了他的建议。
+奇怪的是，我没花什么时间就睡着了...
+就像我在闭上眼睛的那一秒就陷入了沉睡。
+我患有失眠症，出于一些原因我本不可能这么快的入睡。
+这是我最大的失误。
+我根本不知道我睡了多久。
+然后我听到远方有海鸥的叫声。
+起初我以为是某人的手机铃声。
+但是紧接着我听到了波浪声，作为手机铃声它未免太过真实了，所以我睁开了眼睛...
+我居然在一艘天杀的船上。
+一艘船！！！
+甲板上有一只跳来跳去、试图挣扎着回到海里的小虾.
+看起来它是从网里逃出来的。
+这一切的真实感像一个巨大的锤子一样击中了我，让我脊柱发寒。
+那个部长让我和其他员工昏倒，并把我们放进了船里！
+我以为这是一场梦，但是那只在甲板上跳动的小虾显得过于真实，看起来并不像梦境。
+接着我看到甲板上还有其他人，他们一定是船员。
+每一个人都显得强壮并充满肌肉。
+不知道为什么，我突然有了一种如果我说错话，他们将会立刻将我勒昏的预感。
+
+船员一共十人左右，其中包括船长、水手长、以及厨师。
+他们盯着我大笑。
+看起来像船长的那家伙走过来询问我的身高和体重。
+我问船长这船什么时候到达目的地。
+他说是在一个月之后，而且叫我不要妄想逃跑，因为他已经和我的同伴商量好了。
+我完全不知道所谓“我的同伴”到底是指什么，但我实在太害怕了，不敢开口去问。
+我一直瞠目结舌地坐在原地。
+直到船员们叫我去吃饭。他们用虾和贝类、以及其他的海鲜做成了一锅看起来很辣的红汤。
+他们叫我不要像马上就要跳进海里一样呆站在那里。
+我告诉他们我才没有。他们都笑了，对我说他们又没放安眠药在汤里，叫我赶紧过来吃饭。
+我没别的选择，只能和他们一起吃了。
+说实话那汤尝起来还不错。
+我们吃完饭之后，船员说要教我如何调整缆绳。
+从那时起我开始放弃了，从远方的海平面上我唯一能看见的就是不可能有人生还的无人小岛。
+我至少要捱过这一个月，直到这艘船到达港口。
+我学会了如何调整缆绳、如何收网、还学会了如何在给船员们煮咖啡和汤的时候还能保持渔网的平衡。
+我在煮海鲜汤的方面越来越顺手了。
+我敢发誓靠这道菜我甚至能开一家餐馆。
+几天后我们经历了几场台风。
+我和船员们开始感受到彼此之间的联系渐渐紧密起来。那是一种羁绊。
+两周后，当我开始对海面上不时冒出的鲸鱼感到无聊的时候，船长对我说我干的不错，并问我是否对正式在船上工作感兴趣。
+这时我已经很确定我被从脑叶公司开除、并需要担心日后的生计问题了。
+这份邀请让我很感兴趣。
+我现在在做什么工作？
+哎，现在我过得很开心、有稳定的职位和收入。
+当然是在船上。海上工作结束后的一杯伏特加尝起来简直就是天堂的味道。
+我已经到达了港口，但是过不了一会我就得离开去捉点虾。
+谁也不知道未来会变成什么样不是吗？
+有的时候我会想起那个聚会里的其他人。
+不过我也不想知道他们身上到底发生了什么。
+我尽力保持一个乐观的态度，我猜他们应该和我一样过得还不错。
+噢，是时候离开了。
+大家再见~"
+Observation_level = "Ⅰ. 成功率 + 5%Ⅱ. 工作速度 + 5、解锁E.G.O饰品Ⅲ. 成功率 +5%、解锁E.G.O护甲Ⅳ. 工作速度 + 5、解锁E.G.O武器"
+flavour_text = Array[String](["自动贩卖机闪烁着霓虹灯光，五彩斑斓的灯光淹没了员工。", "自动贩卖机内部发出了欢快的音乐", "无论烹饪方法如何，皮皮虾都很美味。煎炸，水煮，红烧，你开心就好！", "如果你不喜欢皮皮虾，那么你就会失去作为一个人类能享受到的大半乐趣", "有传闻说，那些喝了一罐葡萄味苏打饮料的人们将会被绑架到一艘渔船上。", "有传闻说，在你喝了一罐葡萄味苏打饮料后你会发现你的一部分器官被取走了。", "如果有人递给你一罐葡萄味苏打饮料，你必须得拒绝他。"])
+other_info = "韦尔奇乐牌汽水（F-05-52）是一台闪亮的银灰色自动售货机。它的两侧各站着一个长得很像皮皮虾的守卫，它们穿着灰蓝色的吊带工装裤和黄色的防水靴。自动售货机的出货口有一罐天蓝色的汽水，上面还有“免费（FREE）”的标语。当员工完成工作后，售货机中会落下一罐汽水，汽水的颜色会根据不同的工作以及不同的工作结果而有所变化。
+
+该异想体的名称本应随观察等级变化。在观察等级1时，为“韦尔奇乐牌汽水”，而在观察等级2及以上时，应为“开了盖的韦尔奇乐牌汽水”。不知为何翻译组两个名字都使用的是“韦尔奇乐牌汽水”。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.38[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/F-05-52/benti/img/Opened_Can_of_Wellcheers_Close-Up.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力
+当你的员工对韦尔奇乐牌汽水完成工作后，进入一段动画：员工会去饮料机拿一罐汽水喝，根据不同的工作，动画中汽水的颜色也会有所不同。当处于动画期间时，员工获得被控制、坚定。汽水的效果与员工完成的工作类型和工作结果有关。
+
+当员工完成本能工作且工作结果为优时，喝下苏打的员工将会回复最大生命值40%的生命值。
+当员工完成洞察工作且工作结果为优时，喝下苏打的员工将会回复最大精神值40%的精神值。
+当员工完成沟通或压迫工作且工作结果为优时，喝下苏打的员工将会回复最大生命值和最大精神值30%的生命值和精神值。
+工作结果为良时与工作结果为优的效果类似，但回复数值会翻倍。
+当员工的工作结果为差时，员工喝下汽水会昏睡过去，汽水机旁边的虾人将会以波浪形扭动手臂，一段时间后海水夹杂着一条渔船会充满整个收容室。特效结束后，陷入沉睡的员工将会被判定死亡。
+
+"
+price = "基础信息：8点
+敏感信息：8点
+管理须知：每条2点
+工作偏好：每条2点"
+jump_ego = Array[String](["pres://res_pack/F-05-52/ego/F-05-52-g-j.tres", "pres://res_pack/F-05-52/ego/F-05-52-s-j.tres", "pres://res_pack/F-05-52/ego/F-05-52-w-j.tres"])
+name_ = "韦尔奇乐牌汽水"
+icon = ExtResource("3_gaoyv")
+info_ = "资料类型：异想体
+
+在不知何处的远方，你听到了海鸥的鸣叫声。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-05-52_%E9%9F%A6%E5%B0%94%E5%A5%87%E4%B9%90%E7%89%8C%E6%B1%BD%E6%B0%B4]脑叶公司Wiki[/url] "
+subject = "F-05-52"
+level = "z"
+jumper = ExtResource("4_8wo1f")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

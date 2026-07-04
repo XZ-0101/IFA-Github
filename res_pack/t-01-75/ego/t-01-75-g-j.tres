@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dt2ojhq0dyk6v"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_drrxe"]
+[ext_resource type="Texture2D" uid="uid://bescnby74dgir" path="res://res_pack/t-01-75/ego/img/G-1514534970.webp" id="2_bop1f"]
+
+[resource]
+script = ExtResource("1_drrxe")
+name_ = "笑靥"
+texture = ExtResource("2_bop1f")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-01-75/ego/t-01-75-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO饰品/礼物"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

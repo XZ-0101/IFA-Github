@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dn3ccpnyakidp"
+path="res://.godot/imported/at7ed-zmcbl.gif-3bd9f535107a35550ac3662dc7f725c2.tres"
+
+[deps]
+
+source_file="res://img/gif/at7ed-zmcbl.gif"
+dest_files=["res://.godot/imported/at7ed-zmcbl.gif-3bd9f535107a35550ac3662dc7f725c2.tres"]
+
+[params]
+
+frames_per_second=30

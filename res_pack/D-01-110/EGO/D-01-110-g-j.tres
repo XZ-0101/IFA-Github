@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dfycajqhcp7sw"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ufx1h"]
+[ext_resource type="Texture2D" uid="uid://qollsxsw212w" path="res://res_pack/D-01-110/EGO/img/QQ3F20180422065410.webp" id="2_c640m"]
+
+[resource]
+script = ExtResource("1_ufx1h")
+name_ = "无量"
+texture = ExtResource("2_c640m")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/D-01-110/EGO/D-01-110-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "EGO饰品/礼物", "脑叶公司EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

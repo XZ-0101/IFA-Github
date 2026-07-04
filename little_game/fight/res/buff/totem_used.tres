@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://dqp74kbu3ftva"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_qgkhv"]
+[ext_resource type="Texture2D" uid="uid://lk08bltgu4kr" path="res://little_game/Sprite/Totem_of_Undying_JE2_BE2 - 副本.png" id="2_qgkhv"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_0j3jv"]
+
+[sub_resource type="Resource" id="Resource_bga17"]
+script = ExtResource("1_qgkhv")
+most_x = 1
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_0j3jv")
+eff = SubResource("Resource_bga17")
+icon = ExtResource("2_qgkhv")
+id = "totem_undying_used"
+type = Array[String](["debuff", "MC"])
+name_ = "失效-不死图腾"
+description = "[获得\"复活-不死图腾\"时]消耗\"复活-不死图腾\""
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

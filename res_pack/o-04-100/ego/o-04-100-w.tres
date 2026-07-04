@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://b8h1hftbok6kf"]
+
+[ext_resource type="Resource" uid="uid://bakcqeuv0dhh" path="res://res_pack/o-04-100/ego/o-04-100-w-j.tres" id="1_erk1v"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_bkf6j"]
+[ext_resource type="Texture2D" uid="uid://pteju5tldrr3" path="res://res_pack/o-04-100/ego/img/Sakura1.webp" id="3_75bee"]
+
+[resource]
+script = ExtResource("2_bkf6j")
+Cost = "25"
+Max_Amount = "1"
+Damage_type = 2
+Damage = "1-2"
+Attack_Speed = "极快（1s）"
+Range_ = "一般（5）"
+dps = "4.5"
+m_ban = "特殊模板"
+Observation_Level = "3"
+Requirements = "无"
+other = "※这把武器一次攻击动画会造成三次伤害。"
+name_ = "落樱"
+texture = ExtResource("3_75bee")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+花瓣散落开来，在空中飘过，如同展开的粉扇。映照出的余辉，令人眷恋着花落前的景色。
+
+春风，夹杂着纷飞的花瓣，吹打在人们的脸庞，却不知为何带着一丝冰冷与痛楚。
+
+不要对我留有思念。当名为死亡的冬日逝去之时，我将化作含苞待放的蓓蕾回到你的身边。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/o-04-100/benti/o-04-100-j.tres"])
+jumper = ExtResource("1_erk1v")
+gif = "g22"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

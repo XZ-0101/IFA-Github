@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://c8iolnltt66lp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_gao27"]
+[ext_resource type="Texture2D" uid="uid://cwxd38urj0kd7" path="res://res_pack/t-09-78/img/ResearcherNote.webp" id="2_qvrtu"]
+
+[resource]
+script = ExtResource("1_gao27")
+name_ = "癫狂研究员的笔记本"
+s = "T-09-78"
+level = "H"
+texture = ExtResource("2_qvrtu")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-09-78/t-09-78.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

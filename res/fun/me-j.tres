@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cdo8dlvfxhb63"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_bhhbt"]
+[ext_resource type="Texture2D" uid="uid://dlsonr11pecll" path="res://img2/me.jpg" id="2_8msjo"]
+
+[resource]
+script = ExtResource("1_bhhbt")
+name_ = "小张"
+s = "X-01-101"
+level = "a"
+texture = ExtResource("2_8msjo")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/fun/me.tres"
+mode = "lobotomyA"
+type = Array[String](["彩蛋", "制作人员"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

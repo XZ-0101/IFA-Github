@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://ioxpkdaxlpat"
+path="res://.godot/imported/gun.gif-ec52dd8415ab8adab6a59b62abc29b70.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/gun.gif"
+dest_files=["res://.godot/imported/gun.gif-ec52dd8415ab8adab6a59b62abc29b70.tres"]
+
+[params]
+
+frames_per_second=30

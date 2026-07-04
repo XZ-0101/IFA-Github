@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://boq6j8im1q4r5"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_hyuy3"]
+
+[resource]
+script = ExtResource("1_hyuy3")
+lyc = "[00:00.00]Fly, My Wings - Mili
+[00:03.87]Lyrics by：Cassie Wei
+[00:06.93]Composed by：Yamato Kasai/Cassie Wei
+[00:13.56]Fly broken wings
+[00:16.28]I know you are still with me
+[00:21.61]All I need is a nudge to get me started
+[00:27.01]Fly broken wings
+[00:29.62]To somewhere we can be free
+[00:33.75]Closer to our IDEAL
+[00:43.78]Teary eyed
+[00:46.62]Once-gentle soul
+[00:49.87]I watched as you rotted away
+[00:54.90]The mirror says
+[00:58.30]That I still remember hope
+[01:03.69]Mmm
+[01:09.51]You're doing what you love
+[01:12.38]Isn't that enough
+[01:13.68]Isn't that enough
+[01:15.14]A genius perfect job
+[01:17.47]Isn't that enough
+[01:18.64]Isn't that enough
+[01:20.16]Again and again
+[01:21.36]You locked me down I locked me down
+[01:23.91]We staked me to the ground
+[01:31.94]The soil gave me warmth
+[01:43.01]Please die little dreams
+[01:46.21]Kill the camellias in me
+[01:51.56]Wouldn't it be easier to give in
+[01:57.07]Why are these hands chasing dreams out of my reach
+[02:03.66]Is my thirst for normalcy ODD
+[02:10.41]Fly perfect wings
+[02:12.19]Goodbye goodbye goodbye
+[02:12.84]Where have you been hiding
+[02:17.19]Goodbye goodbye goodbye
+[02:18.27]Bring me to the mind that got us started
+[02:23.67]Fly perfect wings
+[02:25.79]Goodbye goodbye goodbye
+[02:26.24]Show them who I can be
+[02:29.53]Goodbye goodbye goodbye
+[02:30.29]For the one last time if you will
+[02:36.61]THAT'S ALL"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

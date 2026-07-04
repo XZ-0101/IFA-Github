@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cyo2hjlrx6x67"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_77f7k"]
+[ext_resource type="Texture2D" uid="uid://crmlq3knmlj56" path="res://img/lc-a/o-03-03/A-1513149823.webp" id="2_77f7k"]
+
+[resource]
+script = ExtResource("1_77f7k")
+name_ = "忏悔"
+level = "Z"
+texture = ExtResource("2_77f7k")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_s/o-03-03-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

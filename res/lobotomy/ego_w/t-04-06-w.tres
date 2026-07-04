@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://bujlulmeobasj"]
+
+[ext_resource type="Resource" uid="uid://4k37o6snrvr0" path="res://res/jumper/t-04-06-w.tres" id="1_6vqhj"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="1_us118"]
+[ext_resource type="Texture2D" uid="uid://dslgqnyr30h8i" path="res://img2/LCA/T-04-06/W-1513169975.webp" id="2_shqrt"]
+
+[resource]
+script = ExtResource("1_us118")
+Cost = "40"
+Max_Amount = "2"
+Damage_type = 1
+Damage = "7-7"
+Attack_Speed = "普通（2s）"
+Range_ = "极近（2）"
+dps = "7"
+m_ban = "拳套（Fist）"
+Observation_Level = "4"
+Requirements = "[color=red]勇气[/color]II"
+other = "※由于这把武器的模板为拳套模板，它每次攻击会造成2段伤害。"
+name_ = "熊熊抱"
+texture = ExtResource("2_shqrt")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+柔软的棉花填充着这只可爱的泰迪熊。
+它的身体因为岁月而变得破烂不堪，就如同人们早已丢失的童真一样。
+可它还是很可爱！如果把它作为礼物送给孩子们的话，他们一定会兴奋地抱住它。
+它的身体十分脆弱，很容易被撕开，所以对待它需格外小心。
+一些富有同情心的员工对此感到十分痛心，并建议修复它。
+但是对一个异想体的修理结果是无法预测的，因此这些建议都被回绝了。
+不要被它毛茸茸的可爱外表所迷惑，它的力量远超我们的想象。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-04-06_%E5%BF%AB%E4%B9%90%E6%B3%B0%E8%BF%AA]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "h"
+jump = Array[String](["t-04-06"])
+jumper = ExtResource("1_6vqhj")
+gif = "g6"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

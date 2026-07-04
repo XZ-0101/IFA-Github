@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://k0kda5x1fs4v"]
+
+[ext_resource type="Resource" uid="uid://diqknflawx0a7" path="res://res/jumper/LbEgo2.tres" id="1_cb6d8"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_cb6d8"]
+[ext_resource type="Texture2D" uid="uid://b1xo6bcxrgcdm" path="res://img/lc-a/o-00-00/A-1522656266.webp" id="3_cb6d8"]
+
+[resource]
+script = ExtResource("2_cb6d8")
+Cost = "1"
+Max_Amount = "5"
+Observation_Level = "4"
+other = "[暂无资料]
+"
+red_def = 0.5
+white_def = 1.0
+black_def = 1.5
+pale_def = 2.0
+Requirements = "无"
+name_ = "教学用E.G.O"
+texture = ExtResource("3_cb6d8")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+※这把E.G.O护甲只会在教学中出现。
+专为主管的教学工作而研发的E.G.O护甲。
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/O-00-00_%E6%95%99%E5%AD%A6%E5%85%94%E5%85%94%E3%80%8CDummy%E3%80%8D]脑叶公司Wiki[/url],脑叶公司情报部"
+level = "t"
+jump = Array[String](["O-00-00"])
+jumper = ExtResource("1_cb6d8")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

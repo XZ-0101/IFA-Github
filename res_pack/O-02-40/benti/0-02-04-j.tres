@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dl3yufv5a6x1x"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_n2qsw"]
+[ext_resource type="Texture2D" uid="uid://y88e76ndjg2v" path="res://res_pack/O-02-40/benti/img/3F-0.webp" id="2_mva8f"]
+
+[resource]
+script = ExtResource("1_n2qsw")
+name_ = "大鸟"
+s = "O-02-40"
+level = "W"
+texture = ExtResource("2_mva8f")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/O-02-40/benti/0-02-04.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "黑森林"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

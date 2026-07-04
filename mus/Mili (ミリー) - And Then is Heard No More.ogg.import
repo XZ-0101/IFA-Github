@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://biqeb43sll78f"
+path="res://.godot/imported/Mili (ミリー) - And Then is Heard No More.ogg-1bb4bb1d76b51a96ee5a19fbd2b419f0.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili (ミリー) - And Then is Heard No More.ogg"
+dest_files=["res://.godot/imported/Mili (ミリー) - And Then is Heard No More.ogg-1bb4bb1d76b51a96ee5a19fbd2b419f0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

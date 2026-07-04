@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://phr5cejsbpp4"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_bsrj6"]
+[ext_resource type="Texture2D" uid="uid://c3l8h7heraka6" path="res://res_pack/o-01-15/img/I-1513176183.webp" id="2_ryig5"]
+
+[resource]
+script = ExtResource("1_bsrj6")
+name_ = "无名怪婴"
+s = "O-01-15"
+level = "T"
+texture = ExtResource("2_ryig5")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-15/o-01-15.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

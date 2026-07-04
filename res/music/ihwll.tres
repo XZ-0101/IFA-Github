@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=3 format=3 uid="uid://bqml7otgigd13"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_tl1ck"]
+[ext_resource type="Texture2D" uid="uid://dn37l6lsm4de1" path="res://img/music/PlayerAlbumCover_-17730374461764958534339.jpg" id="2_vmvis"]
+
+[resource]
+script = ExtResource("1_tl1ck")
+name_ = "In Hell We Live, Lament"
+zuo_zhe = "Mili (ミリー) / KIHOW"
+texture = ExtResource("2_vmvis")
+texture1 = ExtResource("2_vmvis")
+music_path = "res://mus/Mili (ミリー) _ KIHOW - In Hell We Live, Lament (feat_ KIHOW).ogg"
+ge_ci_path = "res://res/music/l4_ihwll.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

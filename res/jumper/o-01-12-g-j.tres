@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cp62iqfibud4t"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_treka"]
+[ext_resource type="Texture2D" uid="uid://dcm231ngjiqwk" path="res://img2/LCA/O-01-12/G-2.webp" id="2_7174w"]
+
+[resource]
+script = ExtResource("1_treka")
+name_ = "孤独"
+texture = ExtResource("2_7174w")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_g/o-01-12-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "EGO饰品/礼物", "脑叶公司EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

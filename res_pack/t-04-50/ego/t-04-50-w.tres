@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://c5weoiw1j7j71"]
+
+[ext_resource type="Resource" uid="uid://cnw0q25ofo6wf" path="res://res_pack/t-04-50/ego/t-04-50-w-j.tres" id="1_fwi1e"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_j0dey"]
+[ext_resource type="Texture2D" uid="uid://seryu7kc6tpi" path="res://res_pack/t-04-50/ego/img/W-1513271747.webp" id="3_rwfov"]
+
+[resource]
+script = ExtResource("2_j0dey")
+Cost = "60"
+Max_Amount = "2"
+Damage_type = 1
+Damage = "7-8"
+Attack_Speed = "1s"
+Range_ = "25"
+dps = "7.5"
+m_ban = "来复枪"
+Observation_Level = "4"
+Requirements = "勇气III"
+other = "无"
+name_ = "黄蜂"
+texture = ExtResource("3_rwfov")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：蜂之王国需要有更多的工蜂才能发展壮大，成就自己的江山。
+
+尽管王国会在历史上备受瞩目，可又有谁会记得为它做出奉献与牺牲的工蜂呢?
+
+这杆枪不需要瞄准就可以击中它的目标，唯一需要的就是持有者的意念。
+
+它射出的子弹可以击中目不所及的敌人，甚至连历史都能够跨越。
+
+（此处填写wiki同名内容）
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "w"
+jump = Array[String](["pres://res_pack/t-04-50/benti/t-04-50-j.tres"])
+jumper = ExtResource("1_fwi1e")
+gif = "g21"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

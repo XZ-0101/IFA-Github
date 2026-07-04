@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://caw43py0llrbg"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_745jl"]
+[ext_resource type="Texture2D" uid="uid://ch4btdf2wlv36" path="res://res_pack/f-02-44/ego/img/G-1513168090.webp" id="2_uvsg7"]
+
+[resource]
+script = ExtResource("1_745jl")
+name_ = "犄角"
+texture = ExtResource("2_uvsg7")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-02-44/ego/f-02-44-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "EGO饰品/礼物", "脑叶公司EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

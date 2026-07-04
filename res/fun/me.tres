@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://cyoqw5yuaifip"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_5ynbb"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_c6lpg"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_tbri2"]
+[ext_resource type="Texture2D" uid="uid://dlsonr11pecll" path="res://img2/me.jpg" id="3_xciun"]
+[ext_resource type="Resource" uid="uid://cdo8dlvfxhb63" path="res://res/fun/me-j.tres" id="4_6yvw5"]
+
+[sub_resource type="Resource" id="Resource_ttmxw"]
+script = ExtResource("1_5ynbb")
+level = {
+"L1": 100,
+"L2": 100,
+"L3": 100,
+"L4": 100,
+"L5": 100
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_6xv5s"]
+script = ExtResource("2_tbri2")
+Probabilities = Array[ExtResource("1_5ynbb")]([SubResource("Resource_ttmxw"), SubResource("Resource_ttmxw"), SubResource("Resource_ttmxw"), SubResource("Resource_ttmxw")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("1_c6lpg")
+Attack_Type = 4
+acctak_Damage = "1-1"
+Probabilities_ = SubResource("Resource_6xv5s")
+most_pe_box = "1"
+good_Mood_Range = "1-1"
+bad_Mood_Range = "0-0"
+Norm_Mood_Range = "0-0"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+white_def = -2.0
+black_def = -2.0
+Upgrades = Array[String](["投喂[url=https://space.bilibili.com/1651056637?spm_id_from=333.1391.0.0][me][/url]一些赞，[url=https://www.114514.com/][114514][/url]个赞为最佳"])
+story = "其实我的全名是小张杉xz（什么鬼名字
+为什么呢
+因为我网名一开始叫小张
+后来，因为重名的太多了，所以加了个“衫”(虽然我有时打成“衫”
+xz是小张的首字母，很明显吧
+xz也可以读作CrossZ，因为这样读很酷（？
+
+如果你去搜索其他制作人员的名字，也会有这样介绍自己的彩蛋哦（必须打开设置里的FUN 模式哦）"
+Observation_level = "无"
+flavour_text = Array[String](["爱", "Love", "愛", "Liebe", "Amore", "愛", "Amour", "amor", "사랑", "حب", "любовь", "אהבה", "αγάπη", "مۇھەببەت", "བརྩེ་གདུང་།", "ami"])
+other_info = "外形...怎么描述呢
+对了！
+头像是阿梓喵...
+没了？"
+other_info_act = "这是能总结出什么[url=t这个词的意思是。。。]规律[/url]的吗
+对了，看看[url=a这个测试用&sres://res/test/test6-j.tres]这个[/url]"
+price = "无"
+name_ = "小张"
+icon = ExtResource("3_xciun")
+info_ = "*资料类型：？？？
+
+我是程序，这里的所有史山都是我写的=D"
+subject = "X-01-101"
+level = "a"
+jumper = ExtResource("4_6yvw5")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

@@ -1,0 +1,241 @@
+[gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://dmiax7oap3ajo"]
+
+[ext_resource type="Texture2D" uid="uid://davqeosj2irem" path="res://little_game/fight/res/enemy/test/1314-idle.webp" id="1_e1uqh"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="2_q3mwt"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_tl1lx"]
+[ext_resource type="Texture2D" uid="uid://cfn4pgodlqm4e" path="res://little_game/fight/res/skill/skill_img/exported_image (12).png" id="4_k2rr2"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="4_tl1lx"]
+[ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="5_k2rr2"]
+[ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="6_81idx"]
+[ext_resource type="Texture2D" uid="uid://c1lior31j3l0x" path="res://little_game/fight/res/enemy/test/qggj.png" id="8_tl1lx"]
+[ext_resource type="Texture2D" uid="uid://c6ad8db8fpe4m" path="res://little_game/fight/res/enemy/test/jx.png" id="9_k2rr2"]
+[ext_resource type="Texture2D" uid="uid://uqnhsrd26jjw" path="res://little_game/fight/res/enemy/test/hrx.png" id="10_81idx"]
+[ext_resource type="Texture2D" uid="uid://cw0gt0fhbg1ot" path="res://little_game/fight/res/enemy/test/cz.png" id="11_nudr6"]
+
+[sub_resource type="Resource" id="Resource_1ya27"]
+script = ExtResource("2_tl1lx")
+music_path = "res://little_game/mus/Battle_Cp9_Boss_1_2.ogg"
+ge_ci_path = "res://little_game/mus/new_resource.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_81idx"]
+script = ExtResource("4_tl1lx")
+name_ = "预知！预知啊！"
+icon = ExtResource("4_k2rr2")
+level = 1
+change_Point = 1
+coin_n = 5
+base_point = 1
+def = 100
+type = Array[String](["恐慌", "闪避"])
+sin_color = Color(0.09803922, 0.78039217, 0.93333334, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_fb4jk"]
+script = ExtResource("2_q3mwt")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/enemy/test/yzy.tres\",10,team)"
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_1mn15"]
+script = ExtResource("5_k2rr2")
+eff = SubResource("Resource_fb4jk")
+description = "[战斗开始时]获得10层\"劣化预知眼\"
+-狩猎...开始"
+name_ = "战争宣言-预知眼"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_haah4"]
+script = ExtResource("2_q3mwt")
+code = "var p =\"res://little_game/fight/res/enemy/test/yzy.tres\"
+if Fight.get_buff_x_with_res(team,p) !=0:
+	def_area=100
+	Fight.minus_buff_path(p,team,1)"
+exe_time = "before_under_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_if328"]
+script = ExtResource("5_k2rr2")
+eff = SubResource("Resource_haah4")
+description = "[被攻击时]如果带有\"劣化预知眼\"，则免疫伤害，并使劣化预知眼\"减少一层
+
+-怎么...打不中吗"
+name_ = "折射的预知眼"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_rxe5j"]
+script = ExtResource("2_q3mwt")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_m0kvj"]
+script = ExtResource("5_k2rr2")
+eff = SubResource("Resource_rxe5j")
+description = "[攻击时]对敌方施加1层烧伤
+
+-啊...烦死了"
+name_ = "香烟"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_5nd8l"]
+script = ExtResource("2_q3mwt")
+code = "max_point+=1"
+exe_time = "when_point"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_f32vx"]
+script = ExtResource("5_k2rr2")
+eff = SubResource("Resource_5nd8l")
+description = "[拼点时]最终点数+1"
+name_ = "高昂斗志"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_nudr6"]
+script = ExtResource("2_q3mwt")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/hxf.tres\",1,team)
+Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_nrm30"]
+script = ExtResource("4_tl1lx")
+name_ = "切割攻击"
+icon = ExtResource("8_tl1lx")
+level = 1
+change_Point = 3
+coin_n = 2
+base_point = 3
+at = 5
+def = 30
+description = Array[String](["[命中时]给自己一层呼吸法
+[命中时]施加一层烧伤"])
+eff_arr = Array[ExtResource("2_q3mwt")]([SubResource("Resource_nudr6")])
+type = Array[String](["闪避"])
+sin_color = Color(0, 0.20784314, 0.60784316, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_tl1lx"]
+script = ExtResource("2_q3mwt")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",3,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan.tres\",2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_k2rr2"]
+script = ExtResource("4_tl1lx")
+name_ = "解象"
+icon = ExtResource("9_k2rr2")
+level = 1
+change_Point = 2
+coin_n = 3
+base_point = 5
+at = 3
+def = 20
+description = Array[String](["[命中时]施加3层烧伤
+[命中时]施加2层震颤"])
+eff_arr = Array[ExtResource("2_q3mwt")]([SubResource("Resource_tl1lx")])
+type = Array[String](["闪避"])
+sin_color = Color(0.89411765, 0.39215687, 0.14117648, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_bus8i"]
+script = ExtResource("2_q3mwt")
+code = "var p=\"res://little_game/fight/res/buff/new_resource.tres\"
+Fight.add_buff_path(p,3,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan.tres\",1,get_enemy(team))
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
+	Fight.add_buff_path(p,1,get_enemy(team))
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan_yingbao.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_a62wd"]
+script = ExtResource("4_tl1lx")
+name_ = "很荣幸用这颗子弹将你洞穿"
+icon = ExtResource("10_81idx")
+level = 2
+change_Point = 2
+coin_n = 3
+base_point = 6
+at = 5
+def = 40
+description = Array[String](["[命中时]施加3层烧伤
+[命中时]施加1层震颤
+如果敌方烧伤大于5层，则额外施加1层烧伤和震颤引爆
+"])
+eff_arr = Array[ExtResource("2_q3mwt")]([SubResource("Resource_bus8i")])
+type = Array[String](["闪避"])
+sin_color = Color(0.9607843, 0.7294118, 0.32941177, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_n713u"]
+script = ExtResource("2_q3mwt")
+code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=7:
+	hit_area+=0.5"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_vsx16"]
+script = ExtResource("2_q3mwt")
+code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
+Fight.add_buff_path(p,4,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan.tres\",3,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan_yingbao.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_smvv8"]
+script = ExtResource("4_tl1lx")
+name_ = "处置"
+icon = ExtResource("11_nudr6")
+level = 3
+change_Point = 1
+coin_n = 5
+base_point = 10
+at = 15
+def = 30
+description = Array[String](["[攻击前]如果敌方烧伤层数大于7层，则增加50%暴击
+[命中时]施加4层烧伤
+[命中时]施加3层震颤
+[命中时]施加震颤引爆
+
+"])
+eff_arr = Array[ExtResource("2_q3mwt")]([SubResource("Resource_n713u"), SubResource("Resource_vsx16")])
+type = Array[String](["闪避"])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[resource]
+script = ExtResource("6_81idx")
+name_ = "折射错误的瓦伦希纳"
+img = ExtResource("1_e1uqh")
+description = "[NULL]的拇指护父
+烦死[NULL],你们和[NULL]都[NULL]了
+
+-闻起来像折射错误的[NULL]
+-Crossy，你能解释一下吗
+-它出现在这里的情况，我也是第一次遇见
+-按道理，它不可能出现在这台机器上
+-..."
+hp = 100
+sp = 60
+passives = Array[ExtResource("5_k2rr2")]([SubResource("Resource_1mn15"), SubResource("Resource_if328"), SubResource("Resource_m0kvj"), SubResource("Resource_f32vx")])
+skill_array = Array[ExtResource("4_tl1lx")]([SubResource("Resource_nrm30"), SubResource("Resource_k2rr2"), SubResource("Resource_a62wd"), SubResource("Resource_smvv8")])
+panic_skill = SubResource("Resource_81idx")
+action_play = Array[String](["p,0", "r"])
+music = SubResource("Resource_1ya27")
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

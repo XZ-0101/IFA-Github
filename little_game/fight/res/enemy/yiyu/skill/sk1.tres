@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://ych2tv7eus0r"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_7elce"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_15jea"]
+[ext_resource type="Texture2D" uid="uid://ubgac0u0htgc" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image.png" id="2_g6fgh"]
+
+[sub_resource type="Resource" id="Resource_g6fgh"]
+script = ExtResource("1_7elce")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/chenlun.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_15jea")
+name_ = "蜘蛛"
+icon = ExtResource("2_g6fgh")
+level = 1
+change_Point = -4
+coin_n = 2
+base_point = 14
+at = 10
+def = 40
+description = Array[String](["【命中时】施加2层流血
+施加1层沉沦"])
+eff_arr = Array[ExtResource("1_7elce")]([SubResource("Resource_g6fgh")])
+sin_color = Color(0.3372549, 0.007843138, 0.49411765, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://bidqus48jkygg"]
+
+[ext_resource type="Texture2D" uid="uid://drw31udwcwpmp" path="res://little_game/Texture2D/500px-事件-人格强化.webp" id="1_bwrpt"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_nb0rj"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_h003c"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_bvtbj"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_5hen1"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="6_dtfoi"]
+
+[sub_resource type="Resource" id="Resource_qkjo7"]
+script = ExtResource("4_bvtbj")
+value_object = 4
+add_valua = 5
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("5_5hen1")
+"介绍" = "回少量HP"
+win_text = "就这个了$s机器开始手术...$s完成了$s感觉腰不疼了，腿不酸了！"
+gift = SubResource("Resource_qkjo7")
+name_ = "HP"
+"结果" = "ok"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_n0coi"]
+script = ExtResource("4_bvtbj")
+value_object = 5
+add_valua = 5
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_y48xq"]
+script = ExtResource("5_5hen1")
+"介绍" = "回少量SP"
+win_text = "就这个了$s机器开始手术...$s完成了$s感觉精神多了！"
+gift = SubResource("Resource_n0coi")
+name_ = "SP"
+"结果" = "ok"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("2_nb0rj")
+name_ = "离开"
+"结果" = "算了$s走吧"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("6_dtfoi")
+img = ExtResource("1_bwrpt")
+name_ = "治疗"
+subject = "???"
+"问题" = "总觉得在哪见过这台机器$s不管了$s先看看吧$s“HP OR SP”$s选那个呢"
+item = Array[ExtResource("2_nb0rj")]([SubResource("Resource_j0p0o"), SubResource("Resource_y48xq"), SubResource("Resource_wowwi")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

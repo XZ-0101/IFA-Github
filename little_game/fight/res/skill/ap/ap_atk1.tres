@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://bmkkuwnc2qjwx"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_gblsg"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_8u4te"]
+
+[resource]
+script = ExtResource("2_8u4te")
+metadata/_custom_type_script = "uid://bj8vuop3720um"

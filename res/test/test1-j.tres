@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://d3xuqfm5sl14u"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_8qsqf"]
+[ext_resource type="Texture2D" uid="uid://vp66fa6saij1" path="res://img2/TEST/01/01.jpg" id="2_cx6rs"]
+
+[resource]
+script = ExtResource("1_8qsqf")
+name_ = "疑问"
+s = "绿色的黎明"
+level = "T"
+texture = ExtResource("2_cx6rs")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/test/test_1.tres"
+mode = "TEST"
+type = Array[String](["考验", "智械相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,90 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="IFA"
+config/name_localized={
+"zh": "都市异想图鉴",
+"zh_CN": "都市异想图鉴"
+}
+run/main_scene="uid://bn77hjsojm8hc"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(1, 1, 0.631373, 1)
+boot_splash/image="res://img/屏幕截图_20-2-2025_232010_.png"
+config/icon="res://img/屏幕截图_20-2-2025_232010_.png"
+
+[audio]
+
+buses/default_bus_layout="uid://cowfdpqvg2nqm"
+
+[autoload]
+
+Get="*res://script/get_.gd"
+Loading="*res://screen/loading.tscn"
+LoadTxt="*res://script/load_txt.gd"
+ScreenJumper="*res://screen/screen_jumper.tscn"
+MusicAll="*res://screen/music_all.tscn"
+Zip="*uid://cwem5pfagnaj"
+tx="*res://screen/特效.tscn"
+jumper="*res://screen/canvas_layer.tscn"
+LittleGameCtrl="*uid://dmx30m8xbig4y"
+LittleGameFight="*uid://6y0mj6udq45u"
+TextLayer="*uid://bbm4yu1fnlusc"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+mouse_cursor/custom_image="uid://bbbi5kn1bdq3c"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[file_customization]
+
+folder_colors={
+"res://img2/": "orange",
+"res://little_game/fight/": "purple",
+"res://little_game/fight/res/ques/": "blue",
+"res://res/": "pink",
+"res://res/Documentation/": "teal",
+"res://res/gif/": "teal",
+"res://res/jumper/": "teal",
+"res://res/lobotomy/": "teal",
+"res://res/test/": "teal",
+"res://res_pack/": "red",
+"res://script/": "green"
+}
+
+[input_devices]
+
+pointing/android/enable_pan_and_scale_gestures=true
+pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/locale_filter_mode=1
+locale/country_filter=[]
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

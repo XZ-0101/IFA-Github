@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bu7nmphnwf28q"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_eibuh"]
+[ext_resource type="Texture2D" uid="uid://cng6l1b51qnu1" path="res://little_game/Sprite/Totem_of_Undying_JE2_BE2.png" id="2_eibuh"]
+
+[resource]
+script = ExtResource("1_eibuh")
+name_ = "不死图腾"
+texture = ExtResource("2_eibuh")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/gift/bstt.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

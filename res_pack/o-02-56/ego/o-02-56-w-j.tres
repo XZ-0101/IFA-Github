@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://b3hjomuito0wq"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_3hxjk"]
+[ext_resource type="Texture2D" uid="uid://f3hbv42jdp72" path="res://res_pack/o-02-56/ego/img/W-1513150945.webp" id="2_8d8xg"]
+
+[resource]
+script = ExtResource("1_3hxjk")
+name_ = "小喙"
+level = "T"
+texture = ExtResource("2_8d8xg")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-56/ego/o-02-56-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

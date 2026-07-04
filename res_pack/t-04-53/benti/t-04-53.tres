@@ -1,0 +1,131 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://c8t4p4juhapbe"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_awwlf"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_5rhge"]
+[ext_resource type="Texture2D" uid="uid://dnxoec2e7f1y" path="res://res_pack/t-04-53/benti/img/I-1513272956.webp" id="3_ypcfc"]
+[ext_resource type="Resource" uid="uid://bemecsvomkrjf" path="res://res_pack/t-04-53/benti/t-04-53-j.tres" id="4_jv8fr"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_1uqn8"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_awwlf")
+level = {
+"L1": 0,
+"L2": 0,
+"L3": 40,
+"L4": 50,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_awwlf")
+type = 1
+level = {
+"L1": 0,
+"L2": 0,
+"L3": 55,
+"L4": 55,
+"L5": 55
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_awwlf")
+type = 2
+level = {
+"L1": 0,
+"L2": 0,
+"L3": 40,
+"L4": 30,
+"L5": 20
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_awwlf")
+type = 3
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_5rhge")
+Probabilities = Array[ExtResource("1_awwlf")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_1uqn8")
+Attack_Type = 2
+acctak_Damage = "4-6"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "22"
+good_Mood_Range = "16-22"
+bad_Mood_Range = "0-7"
+Norm_Mood_Range = "8-15"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+red_def = 1.2
+black_def = 0.5
+pale_def = 1.5
+Upgrades = Array[String](["Ⅰ. 当工作结果为优时，“爱娜温”的逆卡巴拉计数器有大概率在倒计时结束后减少。", "Ⅱ. 当工作结果为差时，“爱娜温”的逆卡巴拉计数器有大概率在倒计时结束后减少。"])
+story = "这个异想体的表面如同陶瓷一般光滑。她的眼窝是空的，里面长满了正在生长的翠绿植物。
+
+爱娜温，一个渴望成为人的娃娃，她有着一双深情的眼睛，正因如此，她被人们深爱着。
+
+爱娜温被遗弃在黑暗的森林之中。乌鸦们垂涎着她那双闪闪发亮的眼睛，最终偷走了它们。渐渐地，爱娜温的思想，她过去的回忆，还有她的心灵，慢慢地凋零了。
+
+爱娜温，一个渴望成为娃娃的人，用空洞的眼窝注视着一切。她希望归于尘土，于是所有渴望“生”的事物亦将归于尘土。"
+Observation_level = "Ⅰ. 工作速度+ 3Ⅱ. 成功率 + 3%、解锁E.G.O饰品Ⅲ. 工作速度 + 3、解锁E.G.O护甲Ⅳ. 成功率 + 3%、解锁E.G.O武器"
+flavour_text = Array[String](["她生于虚无，亦归于虚无。", "“爱娜温”正由内而外地枯萎着。", "也许我们是在试图创造一个没有心的人儿。", "永不凋零的鲜花正在绽放。", "员工想躺在花床上来一场安逸的春眠。", "员工被铺满整个收容单元的薰衣草深深地吸引住了。", "在轮回之中，她理解了重生的意义。一切都将消逝，曾经盛开，然后凋零。落叶归根，痕迹将会留存，一切又将回归原点。", "员工的身上涌出了沁人的芳香，而非鲜血。", "鲜花正在每个人的心头怒放。"])
+other_info = "爱娜温（T-04-53）是一只粉色的，形似羊驼的异想体。爱娜温没有手臂，长有六条尖而长的腿，脖子上长有一圈明亮的绿叶，以及一颗戴着粉色太阳帽的人形脑袋。爱娜温的口中衔着一串粉色的物质，根据观察日志里的内容来看，这些物质很有可能是薰衣草。它的收容单元内一直有粉色的花瓣围着它飘落。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-04-53/benti/img/3F-0.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力
+当工作结果为优或差时，爱娜温的计数器有70%的概率会在倒计时结束后减少1点。
+
+出逃信息
+
+出逃的“爱娜温”的生命值为1000。
+
+在计数器归零之后，它会被一层粉色的花藤覆盖。在爱娜温被覆盖的同时，设施内随机一处走廊也会出现相同的花藤。花藤所在的位置即为爱娜温即将要瞬移去的位置。
+
+爱娜温没有瞬移以外的移动方式，它在走廊内没有任何职员的时候不会进行任何活动。如果走廊在30秒内没有出现任何职员，则爱娜温会重新选择一条走廊进行传送。如果在这段时间内有任何职员进入了爱娜温所在的走廊，爱娜温就会开始它的攻击蓄力。
+
+在爱娜温开始攻击蓄力时，它的尾部上方会伴随着特殊的音效逐渐浮现出花瓣。花瓣共有三片，每5秒会浮现一片。当三片花瓣全部出现后，爱娜温会在短暂的停顿后对走廊内所有的职员造成50-70点精神伤害。然后爱娜温会立刻召唤花藤并准备在5秒后移动至另一条随机走廊，并重复上述行为。爱娜温在攻击完毕并传送后30秒内会进入行动冷却，这个期间其不能进行任何行动；冷却结束后5秒如果走廊内不存在任何职员，则爱娜温会继续随机传送；否则爱娜温会开始攻击蓄力。
+
+由于月计的传统艺能，爱娜温的攻击动画播放速度和非一倍速的游戏时间流逝速度不同步。若爱娜温为攻击蓄力时主管的游戏速度并非为一倍速，则爱娜温会在第三片花瓣完全浮现之前使用它的攻击。请主管务必注意。
+
+因爱娜温的攻击而陷入恐慌的职员，又或是已经恐慌的职员受到爱娜温的攻击时，都将被判定死亡。
+
+镇压建议
+因为爱娜温的攻击蓄力时间极长，且单次攻击伤害较高，相比硬抗它的伤害，主管应该在它进行攻击蓄力的时候派遣员工对其进行镇压，并在第三片花瓣完全出现之前将员工撤出它所在的走廊以避免受到它的伤害。远程武器，尤其是物理伤害的远程武器能在爱娜温的镇压过程中起到较大的帮助，且可以极大幅度提高主管躲避伤害的容错率。如果主管选择对爱娜温进行围殴，请主管多多关注参加镇压的低级员工。
+
+虽然爱娜温的攻击很容易规避，但爱娜温的随机瞬移可能会对主管的管理工作造成不小的麻烦，尤其是后期公司规模变得很大时。它的瞬移会让主管的主力员工无法及时赶到它所在的房间以对它造成伤害，也可能会导致低级员工的死亡。因此，爱娜温的出逃一般伴随着大量的文职伤亡，请主管务必留意可能会出现的连锁反应。
+
+
+[img]res://res_pack/t-04-53/benti/img/20180216201941_1.webp[/img]
+"
+price = "基础信息：20点
+敏感信息：20点
+管理须知：每条15点
+工作偏好：每条7点"
+jump_ego = Array[String](["pres://res_pack/t-04-53/ego/t-04-53-g-j.tres", "pres://res_pack/t-04-53/ego/t-04-53-s-j.tres", "pres://res_pack/t-04-53/ego/t-04-53-w-j.tres"])
+name_ = "爱娜温"
+icon = ExtResource("3_ypcfc")
+info_ = "资料类型：异想体
+
+她希望归于尘土，于是所有渴望“生”的事物亦将归于尘土。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-04-53_%E7%88%B1%E5%A8%9C%E6%B8%A9]脑叶公司Wiki[/url] "
+subject = "T-04-53 "
+level = "w"
+jumper = ExtResource("4_jv8fr")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

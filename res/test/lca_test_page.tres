@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="test" load_steps=4 format=3 uid="uid://dogbaa1vcej6p"]
+
+[ext_resource type="Texture2D" uid="uid://bpvx675yi1dlc" path="res://img/800px-堂吉诃德剧情立绘 - 副本.png" id="1_2kok0"]
+[ext_resource type="Resource" uid="uid://b1yhm34adg8ii" path="res://res/test/new_resource.tres" id="2_2kok0"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_7q7up"]
+
+[resource]
+script = ExtResource("3_7q7up")
+red_def = 1.0
+white_def = 0.2
+black_def = 2.0
+pale_def = 1.5
+other_info = "w"
+other_info_act = "www"
+place = "走廊"
+count = "每走廊78个"
+health = 120
+speed = "2单位"
+ob_name = "我"
+color = "绿色"
+time = "正午"
+name_ = "我"
+icon = ExtResource("1_2kok0")
+info_ = "我"
+level = "t"
+jumper = ExtResource("2_2kok0")
+gif = "null"
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

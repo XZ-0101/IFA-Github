@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://d17om2te6dpuk"]
+
+[ext_resource type="Resource" uid="uid://qvtqtpqg7j2i" path="res://res/jumper/o-01-04-w-j.tres" id="1_oju74"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="1_ym8cy"]
+[ext_resource type="Texture2D" uid="uid://hk20lrxmsthl" path="res://img/Magic1.webp" id="3_uncrl"]
+
+[resource]
+script = ExtResource("1_ym8cy")
+Cost = "70"
+Max_Amount = "1"
+Damage_type = 5
+Damage = "5-8"
+Attack_Speed = "0.83"
+Range_ = "80"
+dps = "7.83"
+m_ban = "特殊"
+Observation_Level = "4"
+Requirements = "[color=#cd2744]勇气[/color]III [color=3fcdbd]正义[/color]III 等级IV"
+other = "※这把武器射出的子弹会随机造成一种类型的伤害，物理，精神，侵蚀三种伤害的概率各占30%，射出灵魂伤害子弹的概率为10%，且伤害数值均为5-8点
+
+※这把武器射出的物理伤害子弹经过员工时，会为员工回复2-3点生命值。
+
+※这把武器射出的精神伤害子弹经过员工时，会为员工回复2-3点精神值。
+
+※这把武器射出的侵蚀伤害子弹经过员工时，会为员工回复1-1.5点生命值和精神值。
+
+※这把武器射出的灵魂伤害子弹经过员工时，会为员工回复最大生命值2%-3%的生命值。
+
+※这把武器发射的子弹会对第一个遭遇到的中立或敌对单位造成伤害，无论这个单位是否是持有者选定的攻击目标。子弹会穿过处于正常状况下的职员，不会对这些职员造成伤害。"
+name_ = "以爱与恨之名"
+texture = ExtResource("3_uncrl")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+※用这把武器攻击时会射出随机伤害类型的光弹，当光弹穿过员工时，会根据伤害类型为其恢复生命值和精神值。
+
+这根闪闪发光的魔法棒散发着魔法少女的爱之能量。
+
+坏蛋将会被神圣的光辉净化，然后重生。
+
+他们将会被烈焰灼烧，失去醒来的意志。
+
+想要守护每个人的情感很快就变成腐蚀心灵的痴迷。
+
+当她试图做出补救时，一切都为时已晚。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-04_%E6%86%8E%E6%81%B6%E5%A5%B3%E7%8E%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "w"
+jump = Array[String](["O-01-04"])
+jumper = ExtResource("1_oju74")
+gif = "g5"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

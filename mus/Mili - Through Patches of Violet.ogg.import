@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dm1yboxw3u4sb"
+path="res://.godot/imported/Mili - Through Patches of Violet.ogg-728338b1f855206aad548153d7558a79.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili - Through Patches of Violet.ogg"
+dest_files=["res://.godot/imported/Mili - Through Patches of Violet.ogg-728338b1f855206aad548153d7558a79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

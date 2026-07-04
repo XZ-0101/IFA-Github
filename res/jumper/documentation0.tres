@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bx6cwqsxbjxn4"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_uwgv5"]
+[ext_resource type="Texture2D" uid="uid://clgt44bqpbsv6" path="res://img/桑丘-default - 副本.png" id="2_ng024"]
+
+[resource]
+script = ExtResource("1_uwgv5")
+name_ = "test"
+texture = ExtResource("2_ng024")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/Documentation/Documentation_test.tres"
+mode = "documentation"
+type = Array[String](["test"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

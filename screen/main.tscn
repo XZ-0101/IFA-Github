@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://bn77hjsojm8hc"]
+
+[ext_resource type="Texture2D" uid="uid://nweatlvlhngg" path="res://img/icon.svg" id="1_7vkp7"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_nmfe7"]
+[ext_resource type="Texture2D" uid="uid://bpsadydyqq0q6" path="res://img/Site-logo.webp" id="3_nor37"]
+[ext_resource type="Texture2D" uid="uid://d2imfaeu7rjse" path="res://img/Limbus.webp" id="4_g7qg1"]
+[ext_resource type="Texture2D" uid="uid://dgx883exphhtn" path="res://img/3F3F%3Fwiki.webp" id="5_3ksnr"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="6_fnyh7"]
+[ext_resource type="Script" uid="uid://uvdae4ik8dav" path="res://script/button.gd" id="7_frhm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frhm7"]
+atlas = ExtResource("6_fnyh7")
+region = Rect2(76, 34.000034, 247, 219.05515)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2vkp"]
+atlas = ExtResource("6_fnyh7")
+region = Rect2(76, 256.34076, 247, 42.24948)
+
+[sub_resource type="GDScript" id="GDScript_frhm7"]
+script/source = "extends RichTextLabel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	text=text.format({\"v\":Get.v})+\"-\"+OS.get_name()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="开始" type="Control" unique_id=1760573877]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [166.0, 282.0]
+metadata/_edit_vertical_guides_ = [222.0, 319.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=265470480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="icons" type="Control" parent="." unique_id=2072396752]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 73.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="icons" unique_id=448842331]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 477.0
+offset_right = 854.0
+offset_bottom = 722.0
+theme = ExtResource("2_nmfe7")
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "都市[color=red]异想[/color]图鉴"
+fit_content = true
+autowrap_mode = 2
+
+[node name="屏幕截图20-2-2025232010" type="TextureRect" parent="icons" unique_id=1714720162]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 373.0
+offset_right = 294.0
+offset_bottom = 605.0
+texture = SubResource("AtlasTexture_frhm7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="icons" unique_id=1557242998]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 463.0
+offset_right = 697.0
+offset_bottom = 505.0
+theme = ExtResource("2_nmfe7")
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Ignorance the [color=red]fear[/color]，write the [color=red]illustrated[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="屏幕截图20-2-2025232011" type="TextureRect" parent="icons" unique_id=423393154]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 569.0
+offset_right = 517.0
+offset_bottom = 596.0
+texture = SubResource("AtlasTexture_x2vkp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=301884543]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.225
+anchor_bottom = 0.081
+offset_left = 246.0
+offset_top = 885.0
+offset_right = 272.2
+offset_bottom = 884.688
+theme = ExtResource("2_nmfe7")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+text = "进入"
+script = ExtResource("7_frhm7")
+
+[node name="Button2" type="Button" parent="." unique_id=1221570425]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 762.0
+offset_right = 416.0
+offset_bottom = 858.0
+tooltip_text = "敬请期待"
+theme = ExtResource("2_nmfe7")
+disabled = true
+text = "快速查找"
+
+[node name="Control" type="Control" parent="." unique_id=226069367]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control" unique_id=983259647]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control" unique_id=858790811]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=613864004]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1596688207]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect3" unique_id=1619749889]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("6_fnyh7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1832446081]
+position = Vector2(62, 1112)
+scale = Vector2(0.507813, 0.492188)
+texture = ExtResource("1_7vkp7")
+
+[node name="Label" type="Label" parent="Icon" unique_id=671411419]
+offset_left = -114.215
+offset_top = 22.3492
+offset_right = 131.785
+offset_bottom = 64.3492
+theme = ExtResource("2_nmfe7")
+text = "made by godot"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="." unique_id=1565612402]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="100Px-logoLimbus" type="TextureRect" parent="Control3" unique_id=817414434]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_top = 1053.0
+offset_right = 163.0
+offset_bottom = 1116.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.28, 1.21429)
+texture = ExtResource("4_g7qg1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Site-logo(1)2" type="TextureRect" parent="Control3" unique_id=1757749329]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_top = 1052.0
+offset_right = 444.0
+offset_bottom = 1104.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_nor37")
+stretch_mode = 5
+
+[node name="NewCompressedTexture2d" type="TextureRect" parent="Control3" unique_id=493499961]
+visible = false
+layout_mode = 0
+offset_left = 132.0
+offset_top = 1059.0
+offset_right = 230.0
+offset_bottom = 1125.0
+texture = ExtResource("5_3ksnr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=2119473642]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 1025.0
+offset_right = 504.0
+offset_bottom = 1067.0
+theme = ExtResource("2_nmfe7")
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "{v}测试版"
+fit_content = true
+autowrap_mode = 0
+script = SubResource("GDScript_frhm7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=130018428]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 1101.0
+offset_right = 581.0
+offset_bottom = 1141.0
+theme = ExtResource("2_nmfe7")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "TIP:初次使用一定要看菜单里的“关于”！"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

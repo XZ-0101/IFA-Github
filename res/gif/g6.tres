@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="gif_array" load_steps=5 format=3 uid="uid://c4oi7q6ajw6mc"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_lvtxu"]
+[ext_resource type="SpriteFrames" uid="uid://d0b3gm081anxq" path="res://img2/GIF/LC/asaf7-316zn.gif" id="2_lvtxu"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="3_1msuk"]
+
+[sub_resource type="Resource" id="Resource_b7vlx"]
+script = ExtResource("1_lvtxu")
+texture = ExtResource("2_lvtxu")
+size = Vector2(0.7, 0.7)
+name_ = "拳套模板攻击动画"
+index = 1
+back = Color(1, 1, 1, 1)
+pos = Vector2(60, 40)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("3_1msuk")
+array = Array[ExtResource("1_lvtxu")]([SubResource("Resource_b7vlx")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

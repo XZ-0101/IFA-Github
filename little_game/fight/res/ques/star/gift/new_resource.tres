@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dy6rhqg7oykxv"]
+
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_kng0m"]
+[ext_resource type="Resource" uid="uid://coaya3kynfrjw" path="res://little_game/fight/res/ques/star/gift/jump.tres" id="1_w7c4k"]
+[ext_resource type="Texture2D" uid="uid://dwpofvwe1ft46" path="res://little_game/fight/res/ques/star/gift/饰品-2006.webp" id="3_w7c4k"]
+
+[resource]
+script = ExtResource("1_kng0m")
+name_ = "星迹"
+texture = ExtResource("3_w7c4k")
+info = "[拼点时]最终威力+1"
+jumper = ExtResource("1_w7c4k")
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

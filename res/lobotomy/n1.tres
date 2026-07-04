@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="a_gif" format=3 uid="uid://dgwt71wwgd1jy"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_uxo1u"]
+[ext_resource type="SpriteFrames" uid="uid://dbolpeffwj0hx" path="res://img/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif" id="2_pmwc1"]
+
+[resource]
+script = ExtResource("1_uxo1u")
+texture = ExtResource("2_pmwc1")
+size = Vector2(0.5, 0.5)
+name_ = "DTM"
+index = 1
+back = Color(0, 0, 0, 0)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"

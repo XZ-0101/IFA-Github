@@ -1,0 +1,150 @@
+[gd_resource type="Resource" script_class="lobotomy" load_steps=11 format=3 uid="uid://bl0qyfhcahlfu"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_2mtwd"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_jasju"]
+[ext_resource type="Texture2D" uid="uid://dsyswiuaqcqb6" path="res://res_pack/t-05-41/img/I-1513173929.webp" id="3_teqiy"]
+[ext_resource type="Resource" uid="uid://cltfb4io4t5jx" path="res://res_pack/t-05-41/t-05-41-j.tres" id="4_blff3"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_0sjk6"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_2mtwd")
+level = {
+"L1": 50,
+"L2": 55,
+"L3": 55,
+"L4": 50,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_2mtwd")
+level = {
+"L1": 0,
+"L2": 0,
+"L3": -30,
+"L4": -60,
+"L5": -90
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_2mtwd")
+level = {
+"L1": 35,
+"L2": 40,
+"L3": 40,
+"L4": 35,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_2mtwd")
+level = {
+"L1": 50,
+"L2": 55,
+"L3": 55,
+"L4": 50,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_jasju")
+Probabilities = Array[ExtResource("1_2mtwd")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_0sjk6")
+Attack_Type = 1
+acctak_Damage = "3-5"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "16"
+good_Mood_Range = "10-16"
+bad_Mood_Range = "0-5"
+Norm_Mood_Range = "6-9"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "2"
+red_def = 0.5
+white_def = 1.0
+black_def = 2.0
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 当工作结果为良时，“小帮手”的逆卡巴拉计数器有小概率在倒计时结束后减少。（此处对概率的描述有额外的翻译修正）", "Ⅱ. 当工作结果为差时，“小帮手”的逆卡巴拉计数器有大概率在倒计时结束后减少。"])
+story = "这个异想体是一台纯白的清洁机器人，它有着一对独特的，形似开关的红眼睛。它的机身背后刻有一行小字“XX有限公司制造”。这个异想体总是试图清洁附近的区域。
+
+最初，它是一台批量生产的家用机器人。包装上写着“革命性的创新！清洁，烹饪，预防犯罪！这台小小的机器人能帮您完成任何事情！全新的家用机器人能在最短的时间内以最高的效率完成这些工作，使您的家庭时刻处于最佳状态！”
+
+当这台机器人的情绪指示灯显示为差时，它会把周围的环境判定为被“污染”了。然后，它会开启清洁模式，并发出一段语音：“检测到污染，开始清洁流程”。然而，机器人本应使用的清洁工具全部被替换成了菜刀，圆锯等锋利的切割工具。有传闻说，这些工具本应是烹饪时用于切割鱼，肉和蔬菜的，但是烹饪的程序和清洁的程序被“意外地调错了”。对于这种说法，官方至今未作任何评论。
+
+这台机器人的声音反馈系统似乎会把尖叫声识别为对“清洁模式”的赞美和表扬，这会促使它进行更多的清洁工作。
+
+<机器人内的录音>
+？？：哇喔！一台崭新的清洁机器人！
+？？：让我看看！快让我看看！
+？？：亲爱的，你想看看吗？来，在这儿，跟它玩儿吧。
+（电话铃声）
+？？：████，亲爱的，我接完电话再过来哦。
+（按下按钮的声音）
+小帮手：您好！我是您的好朋友机械小帮手，请问我能帮您做些什么？
+？？：做清洁！我想帮妈咪做清洁！
+小帮手：检测到环境污染已达70%，污秽程度较低，开始清洁模式。哔哔哔哔。
+？？：哇哦！它开始清洁了！它开...
+小帮手：嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞嗞—————
+
+在几秒的尖叫声之后，它的电源突然被关闭了。"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4、解锁E.G.O护甲Ⅳ. 成功率 + 4%、解锁E.G.O武器解锁信息所需独立PE-BOX"
+flavour_text = Array[String](["“小帮手”正在员工的面前飞快地旋转，但员工只专注于手头的工作。", "“小帮手”最出名的功能是它的清洁功能，这个机器人是专为家政服务而设计的。", "当“小帮手”的致命缺陷被发现后，它被偷偷地送给了一户人家。", "地板上满是鲜血，人们四散而逃。“小帮手”渐渐明白了“清洁”意味着什么。", "“小帮手”有着洁白，光滑的外壳和短小精悍的机械腿，它被制作出来的目的是为了帮助人们。", "“小帮手”的创造者，XX有限公司，以其机器人生产线而闻名。", "“小帮手”有着各式各样的功能。从防盗警报，家庭监控，到泡制咖啡和灯光调节，一个家庭所需的一切它都能做到。", "各种各样的必要工具都被紧凑地塞进了这个小小的机器人中。如果把它拆开来看，你肯定会惊讶于它的创造者是怎么把这么多东西塞进去的。", "如果“小帮手”有感情的话，它也许会为自己能够帮助人们而感到自豪。", "“小帮手”时刻注意着这里，它想知道是否有什么事儿可以让它帮上忙。", "实际上，“小帮手”能泡制出上好的咖啡，大多数人都不知道。当然，没人会想要的。", "在看到了“小帮手”以后，员工打消了购置一台清洁机器人的想法。", "员工祈祷“小帮手”的清洁模式永远不要被激活。", "员工完成了工作。“小帮手”说：“如果您需要帮助的话，小帮手随叫随到！”", "员工完成了工作。“小帮手”高兴地说：“如果您准备吃午餐的话，小帮手可以为您提供咖啡！请问您想加多少方糖？"])
+other_info = "“小帮手”（T-05-41）是一台家用清洁机器人。它有一个椭圆形的纯白身体，两个细长的金属腿，一双明亮的红色眼睛和一个快乐的表情。当员工对它的工作完成后，它的外观会发生改变：它将伸出两对锋利的镰刀状机械臂。值得注意的是，锋利的刀刃上原先就染有血迹。
+
+该异想体译名直接直译可以译为一段广告词：“全能为您帮”，“小帮手”为翻译组使用英文的错译导致的三手错误翻译。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-05-41/img/Xbs.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力
+当工作结果为良时，“小帮手”的计数器有50%的概率在倒计时结束后减少1点。
+
+当工作结果为差时，“小帮手”的计数器有70%的概率在倒计时结束后减少1点。
+
+出逃信息
+出逃的“小帮手”的生命值为300，基础移动速度为4单位。
+
+出逃时，“小帮手”会在当前部门内随机游荡，并在遇到任意单位时对其发动攻击。如果当前部门所有的员工死亡/恐慌/被控制，其会尝试随机前往另一个部门并在这个部门继续随机游荡，直至部门全灭并重复以上流程。（有的时候寻路可能会出问题导致这东西在一个房间里里左右横跳，特别快乐）。
+
+在遇到任意单位时，它会不断地在原地加速旋转来为自己的攻击进行3秒的蓄力。若主管已经获得了情报部的对应科技，可以看到它的血条下面有一个小小的黄色条是蓄力条。当蓄力条读条完成后，“小帮手”单以极快的速度立刻冲向房间的另一头，对路径上所有的单位造成20-30点物理伤害。
+
+它会在冲刺到房间尽头后停止冲刺，收起刀刃，且会在原地宕机10秒左右，然后重复上述过程。
+
+镇压建议
+由于“小帮手”单次攻击的间隔时间较长且攻击伤害较低，主管有充足的时间对它进行攻击并操作员工对它的攻击进行躲避。加上它的两次伤害之间间隔时间极长，只要主管的员工不是被一击秒杀，主管都可以让这名员工去其余休息室回复状态后再来参与镇压。
+
+如果主管的员工和护甲质量低到无法承受“小帮手”单的一次伤害，建议是先把员工移到它所在的房间里再立刻移出以骗出它的蓄力和攻击，在它攻击完宕机时对它进行正义的围殴。最后看它宕机结束准备起身时将员工移出房间以躲避它的伤害。
+
+镇压“小帮手”时，它所处的房间越小越好，电梯间最好。房间越小越有利于员工躲避它的冲撞，并可以减少赶路的时间以增加宕机时对它的输出。
+
+“小帮手”自己的护甲是前期对抗它的最优选择。"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条9点
+工作偏好：每条5点"
+jump_ego = Array[String](["t-05-41-s", "t-05-41-w", "t-05-41-g"])
+name_ = "小帮手"
+icon = ExtResource("3_teqiy")
+info_ = "资料类型：异想体
+
+地板上满是鲜血，人们四散而逃...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-05-41_%E5%B0%8F%E5%B8%AE%E6%89%8B]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "T-05-41"
+level = "h"
+jumper = ExtResource("4_blff3")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

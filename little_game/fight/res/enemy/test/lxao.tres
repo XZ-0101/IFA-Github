@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://bqcxpgibtcxxt"]
+
+[ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="1_5kot8"]
+[ext_resource type="Texture2D" uid="uid://brclog0qtauj3" path="res://little_game/fight/res/enemy/test/317px-1306-idle.webp" id="1_rsohl"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_1p0ew"]
+[ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="2_owuc7"]
+[ext_resource type="Resource" uid="uid://dmiax7oap3ajo" path="res://little_game/fight/res/enemy/test/new_resource.tres" id="3_1mcfu"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_umaqb"]
+[ext_resource type="Texture2D" uid="uid://bb4af7u1lly1k" path="res://little_game/fight/res/skill/skill_img/exported_image (21).png" id="5_rsohl"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="6_6a2gw"]
+[ext_resource type="Texture2D" uid="uid://cu73vgo5qx3jq" path="res://little_game/fight/res/skill/skill_img/exported_image.png" id="9_rsohl"]
+
+[sub_resource type="Resource" id="Resource_2f17e"]
+script = ExtResource("2_1p0ew")
+music_path = "res://little_game/mus/Battle_Cp9_Boss_1_2.ogg"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_1p0ew"]
+script = ExtResource("3_umaqb")
+name_ = "师傅...又让您失望了"
+icon = ExtResource("5_rsohl")
+level = 1
+change_Point = 1
+coin_n = 1
+base_point = 3
+at = 10
+type = Array[String](["恐慌"])
+sin_color = Color(0.5686275, 0.36078432, 0.20784314, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_sh18n"]
+script = ExtResource("6_6a2gw")
+code = "hp-=10"
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_edqnw"]
+script = ExtResource("1_5kot8")
+eff = SubResource("Resource_sh18n")
+description = "[战斗开始时]HP失去10"
+name_ = "苦战"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_1mcfu"]
+script = ExtResource("6_6a2gw")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",2,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan.tres\",3,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_yf31k"]
+script = ExtResource("3_umaqb")
+name_ = "巴勒莫剑术-NULL"
+icon = ExtResource("9_rsohl")
+level = 1
+change_Point = 3
+coin_n = 2
+base_point = 4
+at = 3
+def = 15
+description = Array[String](["[命中时]施加2层烧伤
+[命中时]施加3层震颤"])
+eff_arr = Array[ExtResource("6_6a2gw")]([SubResource("Resource_1mcfu")])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[resource]
+script = ExtResource("2_owuc7")
+name_ = "折射错误的卢西奥"
+img = ExtResource("1_rsohl")
+description = "[NULL]
+[NULL]"
+hp = 30
+sp = 30
+passives = Array[ExtResource("1_5kot8")]([SubResource("Resource_edqnw")])
+skill_array = Array[ExtResource("3_umaqb")]([SubResource("Resource_yf31k")])
+panic_skill = SubResource("Resource_1p0ew")
+action_play = Array[String](["r"])
+music = SubResource("Resource_2f17e")
+next_enemy = ExtResource("3_1mcfu")
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

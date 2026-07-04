@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://oncuonxqvlss"]
+
+[ext_resource type="Resource" uid="uid://dlecj74xkuw8k" path="res://res/jumper/lbego-o-03-03-w.tres" id="1_1ws0w"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="1_ojqax"]
+[ext_resource type="Texture2D" uid="uid://i0on2nq2pu8i" path="res://img/lc-a/o-03-03/W-1513149795.webp" id="3_xyt6t"]
+
+[resource]
+script = ExtResource("1_ojqax")
+Cost = "15"
+Max_Amount = "5"
+Damage_type = 2
+Damage = "5-7"
+Attack_Speed = "2"
+Range_ = "3"
+dps = "3"
+m_ban = "棁（Mace）"
+Observation_Level = "3"
+Requirements = "无"
+other = "※如果持有者的正义等级高于2级，每次攻击都有5%的概率恢复10点精神值。"
+name_ = "忏悔"
+texture = ExtResource("3_xyt6t")
+info = "*资料类型：脑叶公司制式EGO武器
+
+唯有理解才能获取知识。
+通过对这个异想体的细心观测，我们成功提取出了它的核心并将其塑造成一把武器。
+空洞的眼窝凝视着人们的灵魂，荆棘之冠倾诉着人们的罪孽。
+要想使用这把武器，你必须抱有为了更大的良善而杀戮的决心。
+这把武器虽然不像其他装备那般强大，但它能为持有者提供心灵上的慰藉。
+然而，对于那些缺乏正义的人而言，并不存在什么慰藉。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-03-03_%E4%B8%80%E7%BD%AA%E4%B8%8E%E7%99%BE%E5%96%84]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "z"
+jump = Array[String](["o-03-03"])
+jumper = ExtResource("1_1ws0w")
+gif = "g2"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://ctagqtbrftkap"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_yu03o"]
+[ext_resource type="Texture2D" uid="uid://cj1xwv5u2whva" path="res://res_pack/t-01-54/ego/img/3FG.webp" id="2_neqwm"]
+
+[resource]
+script = ExtResource("1_yu03o")
+name_ = "悔恨"
+texture = ExtResource("2_neqwm")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-01-54/ego/t-01-54-g.tres"
+mode = "lobotomyG"
+type = Array[String](["脑叶公司EGO", "EGO饰品", "EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

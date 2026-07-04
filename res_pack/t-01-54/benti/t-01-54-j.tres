@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dciksr42tbf6t"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_3ovp0"]
+[ext_resource type="Texture2D" uid="uid://dbxorht4mvt4x" path="res://res_pack/t-01-54/benti/img/I-2.webp" id="2_cepe2"]
+
+[resource]
+script = ExtResource("1_3ovp0")
+name_ = "被遗弃的杀人魔"
+s = "T-01-54"
+level = "T"
+texture = ExtResource("2_cepe2")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-01-54/benti/t-01-54.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "研究所"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cp3q0in7v4eh6"
+path="res://.godot/imported/hammer.gif-9286698a42ee3a01cf40c5e441c7860d.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/hammer.gif"
+dest_files=["res://.godot/imported/hammer.gif-9286698a42ee3a01cf40c5e441c7860d.tres"]
+
+[params]
+
+frames_per_second=30

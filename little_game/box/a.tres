@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="deck_box" format=3 uid="uid://5af2k1dficjy"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_8gcwh"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="2_eog8a"]
+[ext_resource type="Resource" uid="uid://cq65l0adspgc2" path="res://little_game/fight/res/ques/star/ques.tres" id="2_v2h2w"]
+[ext_resource type="Resource" uid="uid://bqh4vw3nxowuq" path="res://little_game/q/t000777q.tres" id="3_i1gii"]
+[ext_resource type="Resource" uid="uid://boatlggl5gix6" path="res://little_game/q/m1.tres" id="4_hbsi1"]
+[ext_resource type="Resource" uid="uid://bwxxql8jqorgp" path="res://little_game/lcb_test.tres" id="5_3ximu"]
+[ext_resource type="Resource" uid="uid://bw8b8ub32aj74" path="res://little_game/t0000q.tres" id="6_waihq"]
+[ext_resource type="Resource" uid="uid://cfxppalw6kbdq" path="res://little_game/sc2.tres" id="7_s8oqm"]
+[ext_resource type="Resource" uid="uid://b16btv2np1j04" path="res://little_game/sc1.tres" id="8_abexf"]
+[ext_resource type="Resource" uid="uid://ndxkapq18nuc" path="res://little_game/q/v2.tres" id="9_i1gii"]
+[ext_resource type="Resource" uid="uid://bbqgkdgducch7" path="res://little_game/q/v1.tres" id="9_vd70j"]
+[ext_resource type="Resource" uid="uid://vbd6jlxgp7xg" path="res://little_game/q/h3.tres" id="10_xc3n4"]
+[ext_resource type="Resource" uid="uid://cdigurtpmb5dg" path="res://little_game/3.tres" id="11_5fp15"]
+[ext_resource type="Resource" uid="uid://bx3rnyxq2avfm" path="res://little_game/fight/res/enemy/yiyu/new_resource.tres" id="12_i1gii"]
+[ext_resource type="Texture2D" uid="uid://3ayiuyewx5ct" path="res://img2/UI/qq.jpg" id="12_ua8we"]
+
+[resource]
+script = ExtResource("2_eog8a")
+name_ = "[font_size=20]多元宇宙的可能性"
+type = Array[String](["无限的可能性"])
+card = Array[ExtResource("1_8gcwh")]([ExtResource("2_v2h2w"), ExtResource("3_i1gii"), ExtResource("4_hbsi1"), ExtResource("5_3ximu"), ExtResource("6_waihq"), ExtResource("7_s8oqm"), ExtResource("8_abexf")])
+img = ExtResource("12_ua8we")
+max_point = 10
+fate_cards = Array[ExtResource("1_8gcwh")]([ExtResource("9_i1gii"), ExtResource("10_xc3n4"), ExtResource("11_5fp15"), ExtResource("12_i1gii"), ExtResource("9_vd70j")])
+fate_points = Array[String](["1,0", "2,4", "4,1", "7,2", "9,3"])
+metadata/_custom_type_script = "uid://b8rki7fa01jly"

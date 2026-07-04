@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://bl34o287l8uxy"]
+
+[ext_resource type="Resource" uid="uid://q382g2hp2byy" path="res://res_pack/f-01-18/ego/f-01-18-s-j.tres" id="1_r137t"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_cqknb"]
+[ext_resource type="Texture2D" uid="uid://6afuaujlvy88" path="res://res_pack/f-01-18/ego/img/A-1513150452.webp" id="3_6gmw8"]
+
+[resource]
+script = ExtResource("2_cqknb")
+Cost = "25"
+Max_Amount = "2"
+Observation_Level = "3"
+other = "无"
+red_def = 1.2
+white_def = 0.6
+black_def = 1.0
+pale_def = 2.0
+Requirements = "无"
+name_ = "刺耳嚎叫"
+texture = ExtResource("3_6gmw8")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+妖妇的执念与这件护甲紧紧结合在一起。
+
+穿戴者会受困于那令人绝望的复仇魔咒。
+
+唯有坚强的意志与冷酷的内心才能抵御这种影响。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/f-01-18/benti/f-01-18-j.tres"])
+jumper = ExtResource("1_r137t")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://xuxuy21csp43"]
+
+[ext_resource type="Resource" uid="uid://dj7kd85qrk5nh" path="res://res_pack/o-01-15/ego/o-01-15-s-j.tres" id="1_uarby"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_aao33"]
+[ext_resource type="Texture2D" uid="uid://dcsnfhc7lgb20" path="res://res_pack/o-01-15/ego/img/2-0.webp" id="3_37a0r"]
+
+[resource]
+script = ExtResource("2_aao33")
+Cost = "40"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "无"
+red_def = 1.2
+white_def = 0.5
+black_def = 0.8
+pale_def = 1.5
+Requirements = "[color=purple]自律[/color]III"
+name_ = "泣婴"
+texture = ExtResource("3_37a0r")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：欲望对我们而言是最强大的动力。
+
+它的执着与残暴足以让我们毁掉一切。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-15_%E6%97%A0%E5%90%8D%E6%80%AA%E5%A9%B4]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["o-01-15"])
+jumper = ExtResource("1_uarby")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

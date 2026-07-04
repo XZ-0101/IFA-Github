@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cl0hikdlyoopp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_831kd"]
+[ext_resource type="Texture2D" uid="uid://c232ekl3pilvd" path="res://res_pack/f-01-37/ego/img/SnowQueen_Gift.webp" id="2_23wre"]
+
+[resource]
+script = ExtResource("1_831kd")
+name_ = "我深知严冬的残酷…和玫瑰的芬芳…"
+texture = ExtResource("2_23wre")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-37/ego/f-01-37-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO饰品/礼物", "隐藏EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

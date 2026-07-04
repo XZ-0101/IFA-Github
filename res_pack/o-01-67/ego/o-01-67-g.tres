@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://dqeov7yyljqck"]
+
+[ext_resource type="Resource" uid="uid://dp2tb1148v1tp" path="res://res_pack/o-01-67/ego/o-01-67-g-j.tres" id="1_nc31g"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_k2b3u"]
+[ext_resource type="Texture2D" uid="uid://buxbday817iqf" path="res://res_pack/o-01-67/ego/img/3F3F3F.webp" id="3_q7igk"]
+
+[resource]
+script = ExtResource("2_k2b3u")
+name_ = "蕾蒂希娅"
+texture = ExtResource("3_q7igk")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：4%
+饰品位置：头饰
+最大精神值+4
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-67_%E8%95%BE%E8%92%82%E5%B8%8C%E5%A8%85]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-01-67"])
+jumper = ExtResource("1_nc31g")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

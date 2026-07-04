@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://cqpfo2xqpbboo"]
+
+[ext_resource type="Resource" uid="uid://4ja3w3l7idij" path="res://res_pack/o-05-61/ego/o-05-61-g1-j.tres" id="1_uc7hc"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_hfj42"]
+[ext_resource type="Texture2D" uid="uid://bufehcf01hocr" path="res://res_pack/o-05-61/img/3F3F-3F3F1.webp" id="3_wg1jn"]
+
+[resource]
+script = ExtResource("2_hfj42")
+name_ = "内在勇气"
+texture = ExtResource("3_wg1jn")
+info = "*资料类型：EGO饰品/礼物 
+
+此为隐藏饰品
+
+获得率：对破裂盔甲进行一次压迫工作后获得
+位置：头部
+移动速度+10
+攻击速度+10
+勇气愈发强大，一切都成为可能！
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-05-61"])
+jumper = ExtResource("1_uc7hc")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

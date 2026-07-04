@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cp8lm61o52a6n"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_qos1e"]
+[ext_resource type="Texture2D" uid="uid://ndmteyqra6q4" path="res://img/lc-a/o-03-03/I.webp" id="2_vr5dk"]
+
+[resource]
+script = ExtResource("1_qos1e")
+name_ = "一罪与百善"
+s = "O-03-03"
+level = "Z"
+texture = ExtResource("2_vr5dk")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/O-03-03.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "宗教相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

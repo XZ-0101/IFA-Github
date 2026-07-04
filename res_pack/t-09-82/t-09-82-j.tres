@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://rmjhyfj097dat637pg318"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_12u4l"]
+[ext_resource type="Texture2D" uid="uid://cycggfenry007" path="res://res_pack/t-09-82/img/Shelterfromthe27thofMarchPortraitBig.webp" id="2_tdulh"]
+
+[resource]
+script = ExtResource("1_12u4l")
+name_ = "3月27日的避难所"
+s = "T-09-82"
+level = "H"
+texture = ExtResource("2_tdulh")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-09-82/t-09-82.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体", "烟霾战争"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

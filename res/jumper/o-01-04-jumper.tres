@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cdq16enweip3l"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_dxjgk"]
+[ext_resource type="Texture2D" uid="uid://dcum284tmo537" path="res://img/Magic3.webp" id="2_7ml46"]
+
+[resource]
+script = ExtResource("1_dxjgk")
+name_ = "憎恶女王"
+s = "O-01-04"
+level = "W"
+texture = ExtResource("2_7ml46")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/O-01-04.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "魔法少女"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

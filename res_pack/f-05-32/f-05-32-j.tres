@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://i03bberlxkpa"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_dgxlj"]
+[ext_resource type="Texture2D" uid="uid://c37rxtncl6ei7" path="res://res_pack/f-05-32/img/I-1513171428.webp" id="2_3ofu8"]
+
+[resource]
+script = ExtResource("1_dgxlj")
+name_ = "热心的樵夫"
+s = "F-05-32"
+level = "H"
+texture = ExtResource("2_3ofu8")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-05-32/f-05-32.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "绿野仙踪"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

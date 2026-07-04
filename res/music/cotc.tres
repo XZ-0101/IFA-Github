@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="lyrics" load_steps=2 format=3 uid="uid://b6l2irtu0gx7b"]
+
+[ext_resource type="Script" uid="uid://5npuf8ahi7vt" path="res://script/song_word.gd" id="1_4n6k3"]
+
+[resource]
+script = ExtResource("1_4n6k3")
+lyc = "[00:00.00]Children of the City - Mili
+[00:16.90]Sleep for a total of eight hundred hours per day
+[00:20.33]And then drink a liter of milk
+[00:22.76]Warm-up before you go play
+[00:24.44]Only eat or write
+[00:26.08]Or pull the trigger with your right hand
+[00:28.42]Only thing that's left
+[00:30.17]Is to work on following commands
+[00:32.50]By the time you realize
+[00:34.18]You'll be restrained to a desk
+[00:36.23]And with your dreams on the floor you comply
+[00:38.82]Eyes chained to the test
+[00:40.29]In thirty minutes find a groom or bride
+[00:42.92]Bonus if brunette
+[00:44.30]In ninety hours spill their insides
+[00:46.57]Paint your room picturesque
+[00:48.63]
+[00:49.78]Now it's time for another vendetta
+[00:55.31]
+[00:56.22]Going through the shelves
+[00:58.44]Picking out my prewritten persona ha ah ah
+[01:03.88]Children of the city sees only the neon stars
+[01:11.23]Reflected upon the murky gutter sky
+[01:15.03]Don't ask me why
+[01:17.10]I desperately wish to be included in the city's night
+[01:22.87]
+[01:37.83]Pick up a knife and stab a familiar warm body
+[01:41.62]Learned to fight before
+[01:43.10]I knew love or bitterness of coffee
+[01:45.60]Snippy scissors cut down the strings
+[01:47.82]I set myself free
+[01:49.61]Only to figure out everything I chose was by proxy
+[01:53.89]As we suckled upon the nine millameter pacifier
+[01:57.86]Swallowing the fact that other than to expand
+[02:00.51]We had no purpose
+[02:01.97]As my ever-burning will to stay afloat backfires
+[02:05.95]I now know I must be comfortable being
+[02:08.07]Who I considered worthless
+[02:10.36]Follow the city's ribbon
+[02:14.03]To a heart nobody seems to listen
+[02:18.67]It takes my heart being broken and broken again
+[02:21.95]
+[02:22.62]To know that I am the reason why
+[02:24.64]The sufferings never end
+[02:26.64]Now it's time for another vendetta hmm mmm mmm
+[02:32.84]Going through the shelves
+[02:35.20]Picking out my prewritten persona ha ah ah
+[02:40.69]Children of the city sees
+[02:45.05]Only the neon stars
+[02:47.96]Reflected upon the murky gutter sky
+[02:51.83]Don't ask me why
+[02:53.78]I desperately wish to be noticed by the city's night
+[02:59.92]
+[03:14.46]Two point seven one eight two eight one
+[03:18.31]Eight two eight four five nine zero four
+[03:22.26]Five two three five three six zero two
+[03:26.27]Eight seven four seven one three five two
+[03:30.33]Six six two four nine seven seven five
+[03:34.30]Seven two four seven zero nine three six
+[03:38.33]Nine nine nine five nine five seven four
+[03:42.40]Nine six six nine six seven six two"
+metadata/_custom_type_script = "uid://5npuf8ahi7vt"

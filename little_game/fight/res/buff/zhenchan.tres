@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://b7jy2g0nayvej"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_fc45i"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_ms5uh"]
+[ext_resource type="Texture2D" uid="uid://cjhvy1bs7166s" path="res://little_game/fight/res/buff/震颤.webp" id="2_0wvjq"]
+
+[sub_resource type="Resource" id="Resource_ms5uh"]
+script = ExtResource("1_ms5uh")
+most_x = 99
+code = "print(\"\")"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_fc45i")
+eff = SubResource("Resource_ms5uh")
+icon = ExtResource("2_0wvjq")
+id = "zhen_chan"
+type = Array[String](["debuff"])
+name_ = "震颤"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

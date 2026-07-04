@@ -1,0 +1,28 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dd7qc1wlxbl4f"]
+
+[ext_resource type="Texture2D" uid="uid://b1vf3e5801y18" path="res://img/EBoxIcon (1).webp" id="1_0107y"]
+[ext_resource type="Texture2D" uid="uid://cuxcp1eti78sy" path="res://img/EBoxIcon.webp" id="2_3pg7g"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0107y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3pg7g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]

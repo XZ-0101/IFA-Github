@@ -1,0 +1,153 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://bynes0hif85qt"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_cd4mb"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_hh7vn"]
+[ext_resource type="Texture2D" uid="uid://bwbmwnhivq1rp" path="res://res_pack/t-01-68/img/I-1513356066.webp" id="3_pi56q"]
+[ext_resource type="Resource" uid="uid://divsftt8txp1y" path="res://res_pack/t-01-68/t-01-68-j.tres" id="4_53wj4"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_o2t44"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_cd4mb")
+level = {
+"L1": 50,
+"L2": 45,
+"L3": 40,
+"L4": 0,
+"L5": 0
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_cd4mb")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_cd4mb")
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_cd4mb")
+level = {
+"L1": 0,
+"L2": 0,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_hh7vn")
+Probabilities = Array[ExtResource("1_cd4mb")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_o2t44")
+Attack_Type = 2
+acctak_Damage = "4-6"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "16"
+good_Mood_Range = "11-16"
+bad_Mood_Range = "7-10"
+Norm_Mood_Range = "0-6"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "2"
+red_def = 0.5
+white_def = 1.5
+black_def = 1.0
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 正义等级低于3级的员工完成了对“亡蝶葬仪”的工作后，“亡蝶葬仪”的逆卡巴拉计数器会立刻减少。", "Ⅱ. 勇气等级高于3级的员工完成了对“亡蝶葬仪”的工作后，“亡蝶葬仪”的逆卡巴拉计数器会立刻减少。", "Ⅲ. 当工作结果为差时，“亡蝶葬仪”的逆卡巴拉计数器有大概率立刻减少。"])
+story = "人死后会去向何方？
+那么多踏入这家公司的人都到哪里去了？
+
+——他们一定是回到了家中，那有着亲人与温暖等候着的避风港。
+但是大家心里都清楚，除非是被“辞退”，否则我们永远都不能离开。
+——那他们一定是被“辞退”了，带着自己挣得的一切，满怀希望地回到家中。
+
+在这家公司，“辞退”并不像字面上描述地那样简单。我们都是羽翼上的羽毛，一根羽毛不会因为自己的意志而从羽翼上脱落。
+——那么，那些被“辞退”的员工会到哪里去？
+从踏入公司的那一刻开始，他们的一切就已经和它牢牢绑在了一起。就算是被“辞退”，也永远不能踏出半步。
+——很久很久以前，人们相信他们死后会变成有着小小翅膀的美妙存在，那可真是一派胡言。
+如果我们有翅膀的话，真的能离开这里吗？等我们被“辞退”以后，就能得到翅膀吗？
+
+身负重担的悼念者来到此地救赎众生。
+可是现在它如同其他人一样受困于此，锐挫望绝地徘徊着，只剩下空洞的信仰。
+它为那些无处可去的人们送着棺材，尽管这口棺材对于安放那些无辜的替罪羔羊们来说远远不够。
+棺材里的蝴蝶毫无意义地拍打着翅膀，它们正等待着永眠。
+蝴蝶本该给花朵授粉，可是这里连一朵像样的鲜花也没有。
+它们别无选择，只能等待。毕竟，一个世界注定会迎来终末。"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4Ⅳ. 成功率 + 4%、解锁E.G.O护甲，武器"
+flavour_text = Array[String](["自己的死亡若能被人铭记乃一大幸事。", "这里的人们没有时间去铭记死者，只是麻木地等待下一场死亡。", "“亡蝶葬仪”一声不响地凝视着员工。", "“亡蝶葬仪”幻想着那镜花水月的希望以及锐挫望绝的终末。", "巨大的棺材无法取代成百上千座坟墓。", "员工看到一长列由白色蝴蝶组成的送葬者。", "蝴蝶拍打着翅膀，以一种熟悉却又陌生的方式向我们靠近。", "这里寸草不生，所以那些蝴蝶是从哪里来的？", "员工们别无选择，他们无路可回，只能继续工作。", "如同一场永无止境的葬礼，员工依然平静地哀悼着。", "员工最后一次思虑着自己的人生。", "想要摆脱公司回到家中？真是无稽之谈。", "在最好的时刻，以最好的面貌死去，乃是令人难以想象的幸福。", "实际上，死于此地的员工大多都希望尽可能久得活下去。", "有些人认为，死亡意味着全新的开始，然而死后只剩下一片空无。"])
+other_info = "亡蝶葬仪（T-01-68）是一个人形异想体，一只硕大的白色蝴蝶组成了它的头部。它长有五条形似人类的手臂，其中一条手臂是从脖子上伸出来的。亡蝶葬仪身穿纯黑的套装，但脖子上的手臂套着纯白的袖管。它背后的两只黑手持着一个巨大的黑色棺材，棺材上有一张类似它头部的图像。根据观察日志记录，棺材里有大量的白色蝴蝶。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.35[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-01-68/img/FuneraloftheDeadButterfliesCloseUp.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力
+当工作结果为差时，“亡蝶葬仪”的逆卡巴拉计数器有80%的概率立刻减少1点。
+
+出逃信息
+
+出逃的“亡蝶葬仪”的生命值为400，基础移动速度为3单位。
+
+亡蝶葬仪出逃时会在设施内游荡，会对同房间内的一切单位进行攻击。
+
+当释放单体攻击时，亡蝶葬仪会比出射击的手势，并对目标发射蝴蝶。蝴蝶将直接绽放在目标上，对其造成10-15点精神伤害。
+
+亡蝶葬仪可以使用技能，该技能出逃后有10秒冷却，首次释放后冷却为20秒。释放技能时，亡蝶葬仪会停止行动，并将棺材放在地上，棺材打开，并遵循以下逻辑：
+
+每0.3秒，亡蝶葬仪便会召唤一群基础移动速度为12单位的蝴蝶。成群的蝴蝶会冲向前方，并对距离其极近的单位持续造成3-4点精神伤害；该伤害有1秒冷却时间。蝴蝶在存在超过15秒或是到达房间尽头后会消失。
+当员工因亡蝶葬仪的攻击而恐慌，又或是在恐慌状态下受到亡蝶葬仪的攻击时，该职员会立即死亡，尸体上会有几只蝴蝶停留（文职仅在被杀死时呈现该效果）。
+
+亡蝶葬仪的攻击伤害数字显示不准确，实际伤害可能与显示相差较大，此情况在其攻击文职时更为常见。
+
+亡蝶葬仪被镇压时会有一个死亡动画。身体会慢慢转到水平方向然后漂浮移进棺材。
+
+镇压建议
+虽然亡蝶葬仪的普通攻击伤害不高，但由于它的攻击是即时起效，主管在不熟悉它的攻击机制时难以走位来躲避它的普通攻击。也就是说，亡蝶葬仪会对锁定的低谨慎又或是护甲精神抗性较低的员工造成一定的威胁。加上它范围攻击伤害的白伤总量其实不低，且覆盖范围较大，如果主管准备镇压亡蝶葬仪，请尽量不要让那些低谨慎又或是低白抗的员工参战。
+
+当熟悉了亡蝶葬仪的攻击机制后，主管可以操纵员工在亡蝶葬仪的攻击前摇开始时走到它的背后。这样即使亡蝶葬仪攻击动画完成，它也无法对员工造成伤害。这可以大幅度减小亡蝶葬仪的镇压难度。
+
+但因为亡蝶葬仪的抗性实际上偏低，一些高dps的精神伤害或侵蚀伤害武器能够在它对低属性员工造成威胁前就将其镇压，而中后期这样的武器十分常见，甚至Da capo这样极高dps的武器能够直接把它摁死在收容室内，所以亡蝶葬仪就有了丢人蝶哥的称号。但请新主管不要因为这个称号忽略了它本身HE的危险等级，对于新主管来说，它仍然能造成一定的威胁。
+
+[img]res://res_pack/t-01-68/img/3F%3F.webp[/img]
+出逃的亡蝶葬仪
+[img]res://res_pack/t-01-68/img/3F3F.webp[/img]
+亡蝶葬仪单体攻击
+[img]res://res_pack/t-01-68/img/Aoe.webp[/img]
+亡蝶葬仪群体攻击
+[img]res://res_pack/t-01-68/img/3F3F3F.webp[/img]
+被亡蝶葬仪击杀的员工
+[img]res://res_pack/t-01-68/img/3F.webp[/img]
+亡蝶葬仪死亡动画"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条6点
+工作偏好：每条5点"
+jump_ego = Array[String](["t-01-68-s", "t-01-68-w", "t-01-68-g"])
+name_ = "亡蝶葬仪"
+icon = ExtResource("3_pi56q")
+info_ = "资料类型：异想体
+
+人死后会去向何方？
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-68_%E4%BA%A1%E8%9D%B6%E8%91%AC%E4%BB%AA]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "T-01-68"
+level = "h"
+jumper = ExtResource("4_53wj4")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

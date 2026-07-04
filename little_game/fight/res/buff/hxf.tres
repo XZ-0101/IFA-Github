@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://0fcuc6ir68f4"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_02uko"]
+[ext_resource type="Texture2D" uid="uid://dqyx21jdivxhk" path="res://little_game/fight/res/buff/buff_img/60px-呼吸法.webp" id="2_02uko"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_ji3pk"]
+
+[sub_resource type="Resource" id="Resource_c3v38"]
+script = ExtResource("1_02uko")
+most_x = 99
+code = "hit_area+=float(x)*0.02
+print(\"hxf\",hit_area)"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_ji3pk")
+eff = SubResource("Resource_c3v38")
+icon = ExtResource("2_02uko")
+id = "breathing"
+type = Array[String](["buff"])
+name_ = "呼吸法"
+description = "[攻击前]增加0.02倍的x暴击"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

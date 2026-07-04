@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="music_class" format=3 uid="uid://chs8yv1hyrcl8"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_pxi7d"]
+[ext_resource type="Texture2D" uid="uid://b523m64t1gtbn" path="res://img/100px-Logo_Limbus.png" id="2_ta4l4"]
+[ext_resource type="Texture2D" uid="uid://dwqlyxvsfd5io" path="res://img2/mus/600px-Battle_house_spiders_rooftop_burn.webp" id="3_pxi7d"]
+
+[resource]
+script = ExtResource("1_pxi7d")
+name_ = "时间纠缠"
+zuo_zhe = "StudioEIM"
+texture = ExtResource("2_ta4l4")
+texture1 = ExtResource("3_pxi7d")
+music_path = "res://mus/Battle_Cp9_Boss_6.mp3"
+ge_ci_path = "res://res/music/t.tres"
+wait_time = 6.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"

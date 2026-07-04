@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://ba3xnxoe8x7lv"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_rc4mw"]
+[ext_resource type="Texture2D" uid="uid://cmffsn6l3kqrv" path="res://res_pack/D-01-110/img/3F3F.webp" id="2_5qgj3"]
+
+[resource]
+script = ExtResource("1_rc4mw")
+name_ = "风云法师"
+s = "D-01-110"
+level = "W"
+texture = ExtResource("2_5qgj3")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/D-01-110/D-01-110.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "宗教相关", "佛教"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://cbsbghd72a2h7"]
+
+[ext_resource type="Resource" uid="uid://tu1yd68rskkg" path="res://res_pack/t-05-41/ego/t-05-41-s-j.tres" id="1_j5dhj"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_j30kh"]
+[ext_resource type="Texture2D" uid="uid://dk1vo2jm48m73" path="res://res_pack/t-05-41/ego/img/A-1513173952.webp" id="3_8h7xw"]
+
+[resource]
+script = ExtResource("2_j30kh")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "3"
+other = "无"
+red_def = 0.6
+white_def = 1.3
+black_def = 0.9
+pale_def = 1.5
+Requirements = "[color=white]谨慎[/color]II"
+name_ = "粉碎机MK4"
+texture = ExtResource("3_8h7xw")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+这件护甲上随处都能看到未知来源的血迹。
+
+一些员工为自己在事件中流血而感到骄傲。
+
+但是这件护甲上的血迹却来自于对异想体核心本身的提取过程中，
+
+斑斑血迹不禁让人回想起过去的那些与未来可能到来的灾难。
+
+然而机械的叛乱早已不再是现代社会的威胁。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["t-05-41"])
+jumper = ExtResource("1_j5dhj")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

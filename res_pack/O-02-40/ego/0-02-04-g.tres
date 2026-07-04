@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://do1yiscr4nw5o"]
+
+[ext_resource type="Resource" uid="uid://cf11fc45im0ir" path="res://res_pack/O-02-40/ego/0-02-04-g-j.tres" id="1_53uhi"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_tiobv"]
+[ext_resource type="Texture2D" uid="uid://cs11pah75d1da" path="res://res_pack/O-02-40/benti/img/3FG.webp" id="3_ptdk5"]
+
+[resource]
+script = ExtResource("2_tiobv")
+name_ = "目灯"
+texture = ExtResource("3_ptdk5")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：3%
+位置：头饰
+最大生命值+3
+成功率+3
+工作速度+3
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/O-02-40/benti/0-02-04-j.tres"])
+jumper = ExtResource("1_53uhi")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

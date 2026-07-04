@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://cqbhqmuref6ma"]
+
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_mftyi"]
+[ext_resource type="Resource" uid="uid://jr0e04tmy6d" path="res://res/jumper/t-04-06-g.tres" id="1_tb8bs"]
+[ext_resource type="Texture2D" uid="uid://dfccoje1c0f4" path="res://img2/LCA/T-04-06/G-1513169994.webp" id="2_ovjdw"]
+
+[resource]
+script = ExtResource("1_mftyi")
+name_ = "熊熊抱"
+texture = ExtResource("2_ovjdw")
+info = "*资料类型：脑叶公司EGO饰品/礼物
+
+获得率：4%
+位置：头部
+最大精神值+4
+沟通工作的成功率提高3%（因为bug不生效）
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-04-06_%E5%BF%AB%E4%B9%90%E6%B3%B0%E8%BF%AA]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "78"
+jump = Array[String](["t-04-06"])
+jumper = ExtResource("1_tb8bs")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

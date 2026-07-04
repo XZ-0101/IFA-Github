@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" format=3 uid="uid://sjfhqcoqskw"]
+
+[ext_resource type="Texture2D" uid="uid://d1p18l3s4qpmg" path="res://res_pack/o-09-96/img/3F-0.webp" id="1_o5xb2"]
+[ext_resource type="Resource" uid="uid://bsge6psd06aj" path="res://res_pack/o-09-96/o-09-96-j.tres" id="2_jx6qr"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="3_yjqku"]
+
+[resource]
+script = ExtResource("3_yjqku")
+tool_type = "携带型"
+tool_e = "工具能力
+主管可以指派员工携带行为校正仪。员工携带行为校正仪后，正义相关属性会提高15点，但是会减少10点最大精神值。
+
+如果携带行为校正仪的员工陷入了恐慌，或是在携带行为校正仪的30秒内就将其归还，亦或是主管选择在这30秒内结束一天，该员工会在狂笑中挖出自己的眼睛，并被判定死亡。
+
+[img]res://res_pack/o-09-96/img/img1.webp[/img][color=red]
+[/color]
+
+[img]res://res_pack/o-09-96/img/img2.webp[/img][color=red]
+[/color]
+
+[img]res://res_pack/o-09-96/img/img3.webp[/img][color=red]
+[/color]
+
+"
+tool_info = "行为矫正仪（O-09-96）是一件危险等级为TETH级的携带型工具异想体。外观是一个中间有着白色眼睛符号的黑色圆形装置，在旁边有两个蓝色的按钮，其侧面还有一个滑轮。
+
+[img]res://res_pack/o-09-96/img/Untitled.webp[/img][color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["员工携带“行为矫正仪”后，与正义相关的能力会大幅提高。同时，该员工的精神值会有所下降。（持续携带10秒解锁）", "如果员工在携带“行为矫正仪”后的30秒内被要求归还，该员工会立刻陷入恐慌并在做出一系列怪异的举动后死亡。（持续携带60秒解锁）", "当携带者的精神值归零后，该员工会在惊恐中死去。（持续携带120秒解锁）"])
+Research_logs = Array[String](["这个异想体是一个刻有神秘图案的电子设备。（持续携带10秒解锁）", "它能帮助那些误入歧途的人们矫正品行，不管他们先前有多么的邪恶，多么的顽劣。即便是那些曾犯下无数罪业，却依旧高傲自大不知悔改的人，在它的帮助下亦能改过自新，重新做人。（持续携带60秒解锁）", "但是使用者会变得对此设备极度依赖，并逐渐失去自主思考的能力。（持续携带120秒解锁）", "最终他们都会变成智障，甚至生活不能自理。（持续携带180秒解锁）"])
+name_ = "名称"
+icon = ExtResource("1_o5xb2")
+info_ = "资料类型：工具类异想体
+
+最终他们会变成智障，甚至生活不能自理。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "O-09-96"
+level = "t"
+jumper = ExtResource("2_jx6qr")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

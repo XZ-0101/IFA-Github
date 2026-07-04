@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="gif_array" format=3 uid="uid://brrdop1op7lwl"]
+
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="1_rspob"]
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_xpkp7"]
+[ext_resource type="SpriteFrames" uid="uid://dbolpeffwj0hx" path="res://img/54EA6F12-B0C7-492E-842E-FB2DF5757B28.gif" id="2_auhwy"]
+[ext_resource type="SpriteFrames" uid="uid://dsfrcs4yn53iu" path="res://img/a48hr-fi5q2.gif" id="3_j5mlk"]
+
+[sub_resource type="Resource" id="Resource_rudba"]
+script = ExtResource("1_xpkp7")
+texture = ExtResource("2_auhwy")
+size = Vector2(0.3, 0.3)
+name_ = "别碰我"
+index = 1
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[sub_resource type="Resource" id="Resource_yb6uy"]
+script = ExtResource("1_xpkp7")
+texture = ExtResource("3_j5mlk")
+size = Vector2(0.3, 0.3)
+name_ = "别碰我"
+index = 2
+back = Color(0, 0, 0, 0)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("1_rspob")
+array = Array[ExtResource("1_xpkp7")]([SubResource("Resource_rudba"), SubResource("Resource_yb6uy")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

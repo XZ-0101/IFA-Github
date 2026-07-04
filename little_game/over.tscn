@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://ykihjsrorqqu"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_aqis3"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_v2xg3"]
+[ext_resource type="Texture2D" uid="uid://kx5ttbbast4h" path="res://little_game/Texture2D/MainUI_BattleResult_1.png" id="3_v2xg3"]
+[ext_resource type="AudioStream" uid="uid://dt8eocpltus22" path="res://little_game/AudioClip/LC_전투승리_BGM_(완성본_LOOP).ogg.mp3" id="4_jsic3"]
+
+[sub_resource type="GDScript" id="GDScript_jsic3"]
+script/source = "extends Control
+@export var mode:int
+@export var win_text:Array[String]
+@export var lose_text:Array[String]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	jumper.hide_()
+	mode=LittleGameCtrl.over_mode
+	if mode ==0:
+		$win/AudioStreamPlayer.play()
+		$win/win_text.text=win_text.pick_random()
+		$win.show()
+	else:
+		$lose/lose_text.text=lose_text.pick_random()
+		$lose.show()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_win_b_button_down() -> void:
+	for i in LittleGameCtrl.gift_array:
+		if not i in Get.收藏夹:
+			Get.收藏夹.append(i)
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/enter.tscn\"))
+	OS.alert(\"别忘了去收藏夹中保存你收集到的资料哦\")
+	pass # Replace with function body.
+
+
+func _on_lose_b_button_down() -> void:
+	LittleGameCtrl.gift_array.clear()
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/enter.tscn\"))
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2xg3"]
+atlas = ExtResource("3_v2xg3")
+region = Rect2(44, 448, 559, 476)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo6w2"]
+atlas = ExtResource("3_v2xg3")
+region = Rect2(710, 444, 663, 484)
+
+[node name="Control" type="Control" unique_id=771698671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_jsic3")
+win_text = Array[String](["恭喜你！！！", "厉害！"])
+lose_text = Array[String](["再接再厉", "胜败乃兵家常事", "保持你的决心！", "输了？"])
+
+[node name="Control3" type="Control" parent="." unique_id=606986824]
+z_index = 1
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=1537859078]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=2008180384]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1576648451]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=298426952]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1875184647]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_aqis3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=663966520]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 498.0
+offset_bottom = 64.0
+theme = ExtResource("2_v2xg3")
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="win" type="Control" parent="." unique_id=1221108761]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="win" unique_id=334517815]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 91.0
+offset_right = 550.0
+offset_bottom = 617.0
+texture = SubResource("AtlasTexture_v2xg3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="win_text" type="RichTextLabel" parent="win" unique_id=1050985857]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 590.0
+offset_right = 581.0
+offset_bottom = 710.0
+theme = ExtResource("2_v2xg3")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "you win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="winB" type="Button" parent="win" unique_id=1303943421]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 796.0
+offset_right = 380.0
+offset_bottom = 871.0
+theme = ExtResource("2_v2xg3")
+theme_override_font_sizes/font_size = 50
+text = "离开"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="win" unique_id=480349940]
+stream = ExtResource("4_jsic3")
+parameters/looping = true
+
+[node name="lose" type="Control" parent="." unique_id=611556314]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="lose" unique_id=1319945500]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 91.0
+offset_right = 550.0
+offset_bottom = 617.0
+texture = SubResource("AtlasTexture_eo6w2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lose_text" type="RichTextLabel" parent="lose" unique_id=2066115056]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 590.0
+offset_right = 581.0
+offset_bottom = 710.0
+theme = ExtResource("2_v2xg3")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "you lose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loseB" type="Button" parent="lose" unique_id=1205607685]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 796.0
+offset_right = 380.0
+offset_bottom = 871.0
+theme = ExtResource("2_v2xg3")
+theme_override_font_sizes/font_size = 50
+text = "离开"
+
+[connection signal="button_down" from="win/winB" to="." method="_on_win_b_button_down"]
+[connection signal="button_down" from="lose/loseB" to="." method="_on_lose_b_button_down"]

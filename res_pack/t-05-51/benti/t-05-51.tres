@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://vfuxm6l4nx71"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_ce7bq"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_oyjw0"]
+[ext_resource type="Texture2D" uid="uid://3bardnhmhrvt" path="res://res_pack/t-05-51/benti/img/I-1513168180.webp" id="3_p34ij"]
+[ext_resource type="Resource" uid="uid://01kcmlg2xyki" path="res://res_pack/t-05-51/benti/t-05-51-j.tres" id="4_w41ce"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_rrjnb"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_ce7bq")
+level = {
+"L1": 55,
+"L2": 55,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_ce7bq")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_ce7bq")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_ce7bq")
+level = {
+"L1": 30,
+"L2": 20,
+"L3": 10,
+"L4": 0,
+"L5": 0
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_oyjw0")
+Probabilities = Array[ExtResource("1_ce7bq")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_rrjnb")
+Attack_Type = 2
+acctak_Damage = "2-4"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "14"
+good_Mood_Range = "10-14"
+bad_Mood_Range = "0-4"
+Norm_Mood_Range = "5-9"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 勇气等级为1级的员工在完成了对“血浴缸”的工作后，苍白的手从“血浴缸”中伸了出来，然后将员工抓进了浴缸中。同样的情况也在自律等级为1级的员工身上发生了。", "Ⅱ. 在员工被抓进浴缸后，一只苍白的手漂浮在了“血浴缸”的血池表面。随着手的数量的增加，“血浴缸”的PE-BOX的生产效率也将增加。", "Ⅲ. <警告>当“血浴缸”中已经有三只手时，“血浴缸”会直接将进入收容单元的员工抓进浴缸中。"])
+story = "一个装满鲜血的浴缸。浴缸中的血总是处于不会溢出的平衡状态...
+在浴缸里漂浮着苍白的手，它们试图慢慢接近员工，就好像他们在寻求员工的帮助。当员工向浴缸看去时，难以承受的抑郁和绝望将把他们淹没，然后，在一瞬间，它将员工拉入了血池。虽然它没有相当大的力量，但由于被压抑的绝望所吞噬，那些员工几乎没有进行挣扎。被拉进浴缸的员工将被它慢慢吞没，直至完全消失。
+
+当你处于理智的情绪时，用刀片割腕很不容易，你必须拥有强大的意志力才能重复许多次。只有当你把自己你的手腕当做一块肉来割时，你才有可能成功——只有当你对死亡充满了巨大的渴望时，你才有可能成功。
+
+我后悔当她向我寻求帮助时我没有问其原因；我后悔我没有注意到她用手表遮住了她的手腕；我后悔我没有意识到当我和她说话时，她总是刻意将手腕藏了起来；我后悔我没有意识到也许从某个时刻起，我再听不到她的笑声了。
+
+我甚至无法想象割腕有多么的痛苦。我意识到，她离开我的唯一原因是她真的把她的手腕割破了。
+
+每当我们成功完成工作后，我们都要开一瓶红酒喝，这成了我们的习惯之一。但她告诉我们，如果我们习惯了这种成功，那只需要一点小小的过失，就能让我们陷入不太好的状态。因此，我们是应该为每一件成功的小事而感到高兴，可我们也不能忽视失败，因为失败乃成功之母。
+当我注视着浴缸中那伤痕累累的手腕时，我想起了我们的酒窖。许多酒都不见了，只剩下了最后一瓶。
+那天，我把最后一瓶喝得精光。"
+Observation_level = "Ⅰ. 成功率 + 4%Ⅱ. 工作速度 + 6Ⅲ. 成功率 +4%、解锁E.G.O护甲、武器Ⅳ. 工作速度 + 6、解锁E.G.O饰品"
+flavour_text = Array[String](["“你知道的，在我进入脑叶公司之后我觉得我的生活回到了正轨。”", "员工从“血浴缸”那儿感受到了悲伤。", "当看着“血浴缸”时，员工的手腕隐隐作痛", "“抑郁症是一种心理疾病，我们是第一个发现如何能变得快乐的医生。”", "员工凝视着漂浮在浴缸中的绝望。", "员工感觉自己被压抑和悲伤淹没了。", "“用于治疗身体的药物以无法想象的速度高速发展着，但用于治疗心理的药物没有。”", "员工看见了即将到来的困难和失败。", "员工看见了未来的艰辛与磨难。无论自己如何挣扎，结局只剩下失败。", "失去了活下去的希望，员工没有抵抗从“血浴缸”中伸出的手。", "员工的悲伤汇聚到了一个地方。"])
+other_info = "血浴缸（T-05-51）是一个浴缸模样的异想体。在它的左侧有一双巨大的眼睛，只有在袭击员工时才会睁开。它的淋浴头被替换成一个滴着血的手掌。浴缸里满是鲜血，但永远不会溢出。苍白的手时不时地浮出血面，这些手在袭击员工的时候会伸长。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-05-51/benti/img/3F3F3.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+
+勇气等级为1级或自律等级为1级的员工完成了对“血浴缸”的工作后，苍白的手从“血浴缸”中伸了出来，然后将员工抓进了浴缸中并且死亡。在员工被抓进浴缸后，一只苍白的手漂浮在了“血浴缸”的血池表面。
+
+血浴缸的血水内存在的每只手都会在员工的工作结束后额外给予主管一点能量。这点能量不会计入血浴缸的独立pebox中，也不会计入血浴缸的正常工作能源的最大最小产量中。
+
+当“血浴缸”中已经有三只手时，“血浴缸”会直接将进入收容单元的员工抓进浴缸中。并清空手的数量。这一天结束时也会清空手的数量。
+
+[img]res://res_pack/t-05-51/benti/img/3F3F.webp[/img]
+正常状态的血浴缸
+[img]res://res_pack/t-05-51/benti/img/33F3F.webp[/img]
+血浴缸的捕杀动作
+[img]res://res_pack/t-05-51/benti/img/3F3F3.webp[/img]
+血浴缸一杀
+[img]res://res_pack/t-05-51/benti/img/3F3F33.webp[/img]
+血浴缸二杀
+[img]res://res_pack/t-05-51/benti/img/3F3F333.webp[/img]
+血浴缸三杀"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条4点
+工作偏好：每条4点
+"
+jump_ego = Array[String](["pres://res_pack/t-05-51/ego/t-05-51-g-j.tres", "pres://res_pack/t-05-51/ego/t-05-51-s-j.tres", "pres://res_pack/t-05-51/ego/t-05-51-w-j.tres"])
+name_ = "血浴缸"
+icon = ExtResource("3_p34ij")
+info_ = "资料类型：异想体
+
+浴缸里漂浮着许多苍白的手。那些我曾经深爱过的人的手。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "T-05-51"
+level = "t"
+jumper = ExtResource("4_w41ce")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

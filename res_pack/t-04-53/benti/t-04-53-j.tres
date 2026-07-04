@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bemecsvomkrjf"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_2vhbl"]
+[ext_resource type="Texture2D" uid="uid://dnxoec2e7f1y" path="res://res_pack/t-04-53/benti/img/I-1513272956.webp" id="2_a1a22"]
+
+[resource]
+script = ExtResource("1_2vhbl")
+name_ = "爱娜温"
+s = "T-04-53"
+level = "W"
+texture = ExtResource("2_a1a22")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-04-53/benti/t-04-53.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

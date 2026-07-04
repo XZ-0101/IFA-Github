@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://btfcksog54pj0"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_d0m7s"]
+[ext_resource type="Texture2D" uid="uid://d0ltmdtyvsjct" path="res://res_pack/F-05-52/ego/img/QQ3F20180429152351.webp" id="2_aioja"]
+
+[resource]
+script = ExtResource("1_d0m7s")
+name_ = "美味苏打"
+texture = ExtResource("2_aioja")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/F-05-52/ego/F-05-52-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO饰品/礼物", "脑叶公司EGO", "EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://d03m8hmlnxttw"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_w8k8i"]
+[ext_resource type="Texture2D" uid="uid://mxdfa6uimfq8" path="res://res_pack/o-02-98/benti/img/I-1513274080.webp" id="2_paybr"]
+
+[resource]
+script = ExtResource("1_w8k8i")
+name_ = "棘刺公交"
+s = "O-02-98"
+level = "H"
+texture = ExtResource("2_paybr")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-98/benti/o-02-98.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

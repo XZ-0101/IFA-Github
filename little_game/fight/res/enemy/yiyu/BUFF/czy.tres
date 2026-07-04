@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://xlmym1ct1yof"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_7gtcy"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_qlum2"]
+[ext_resource type="Texture2D" uid="uid://dkknfi6j24bm8" path="res://little_game/fight/res/enemy/yiyu/BUFF/a.png" id="2_cfxuc"]
+
+[sub_resource type="Resource" id="Resource_7gtcy"]
+script = ExtResource("1_qlum2")
+most_x = 20
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_7gtcy")
+eff = SubResource("Resource_7gtcy")
+icon = ExtResource("2_cfxuc")
+id = "czy-earma"
+name_ = "创作欲"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

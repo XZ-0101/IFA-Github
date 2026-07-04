@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i2ukcg3sy26m"
+path="res://.godot/imported/014. Cool Sticky UI Button.wav-854a9f9040a31e05747fd15d1a9c528e.sample"
+
+[deps]
+
+source_file="res://res/SOUND/AudioClip/014. Cool Sticky UI Button.wav"
+dest_files=["res://.godot/imported/014. Cool Sticky UI Button.wav-854a9f9040a31e05747fd15d1a9c528e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

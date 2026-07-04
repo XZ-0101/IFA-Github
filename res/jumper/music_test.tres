@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://b13p1e52vwsv6"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_u1j0m"]
+[ext_resource type="Texture2D" uid="uid://d2imfaeu7rjse" path="res://img/Limbus.webp" id="2_n3a5s"]
+
+[resource]
+script = ExtResource("1_u1j0m")
+name_ = "Through Patches of Violet"
+texture = ExtResource("2_n3a5s")
+screen_path = "res://screen/show_spectrum.tscn"
+res_path = "res://res/music/tpov.tres"
+mode = "music"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

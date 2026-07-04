@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://cq65l0adspgc2"]
+
+[ext_resource type="Texture2D" uid="uid://dueprn4hcmx5k" path="res://little_game/fight/res/ques/star/img.jpg" id="1_hs3s0"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_va532"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="2_tr0tv"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_fr1ya"]
+[ext_resource type="Resource" uid="uid://coaya3kynfrjw" path="res://little_game/fight/res/ques/star/gift/jump.tres" id="4_fr1ya"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_shkr8"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_sfbaf"]
+
+[sub_resource type="Resource" id="Resource_yw3jk"]
+script = ExtResource("4_shkr8")
+get_gift = Array[ExtResource("3_fr1ya")]([ExtResource("4_fr1ya")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_i0xia"]
+script = ExtResource("5_sfbaf")
+"介绍" = "获得饰品"
+win_text = "这样会获得回应么？$s当我的眼睛睁开时，一块闪闪发亮的碎片出现在地上，可这跟我的愿望好像没关系$s捡起了地上的碎片，离开了"
+gift = SubResource("Resource_yw3jk")
+name_ = "闭上眼，许个愿望"
+"结果" = "闭上了眼睛，静静许下愿望。"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_f6nt7"]
+script = ExtResource("1_va532")
+name_ = "放弃,移开"
+"结果" = "你不怎么相信,选择了离开"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("2_tr0tv")
+img = ExtResource("1_hs3s0")
+name_ = "祈愿"
+subject = "投稿-东朗-1"
+"问题" = "在一片黑暗的空间内，天上传来撕裂声，像是某些东西被撕开了一样$s“那些……是星星吗？”我抬头望去，我透过裂缝看见了像是夜空一样的景色。$s这时一颗流星划过，我想起之前听说过当流星划过天空时许愿会成真。$s我也许个愿怎么样？"
+item = Array[ExtResource("1_va532")]([SubResource("Resource_i0xia"), SubResource("Resource_f6nt7")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

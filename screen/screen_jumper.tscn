@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckiblpk3r2klw"]
+
+[ext_resource type="Script" uid="uid://c6iuebxwc8lyi" path="res://script/screen_jumper.gd" id="1_1obwo"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_dpym5"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 4
+script = ExtResource("1_1obwo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 10.0
+offset_right = 629.0
+offset_bottom = 53.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_dpym5")
+theme_override_colors/font_color = Color(0.984314, 0.984314, 0.623529, 1)
+theme_override_font_sizes/font_size = 20
+text = "返回上一级"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 507.0
+offset_bottom = 40.0
+vertical_scroll_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer"]
+layout_mode = 2
+theme = ExtResource("1_dpym5")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 3
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="meta_clicked" from="ScrollContainer/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://duafr7dnggws8"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ainvr"]
+[ext_resource type="Texture2D" uid="uid://ctg615r442k2r" path="res://img2/LCA/T-04-06/A-1513169984.webp" id="2_vge58"]
+
+[resource]
+script = ExtResource("1_ainvr")
+name_ = "熊熊抱"
+level = "H"
+texture = ExtResource("2_vge58")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_s/t-04-06-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

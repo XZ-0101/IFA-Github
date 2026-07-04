@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://bw8b8ub32aj74"]
+
+[ext_resource type="Texture2D" uid="uid://cgn2623ajj4nn" path="res://img/Dummy.webp" id="1_lv7gw"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_w6hfr"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_ilxft"]
+[ext_resource type="Resource" uid="uid://dw68xr2gcc7kt" path="res://res/jumper/LbEgo0.tres" id="4_2bj17"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="5_5qxqm"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="6_ttlyn"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="7_xvg3u"]
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("5_5qxqm")
+value_object = 1
+add_valua = 2
+get_gift = Array[ExtResource("3_ilxft")]([ExtResource("4_2bj17")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_lv7gw"]
+script = ExtResource("5_5qxqm")
+value_object = 5
+add_valua = -2
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_4d71a"]
+script = ExtResource("6_ttlyn")
+"介绍" = "需要[color=red]勇气[/color]判定"
+mode = 1
+value = 2
+win_text = "兔兔开心！$s兔兔好像更喜欢你了"
+lose_text = "兔兔害怕地躲开了！$s兔兔有点害怕你"
+gift = SubResource("Resource_j0p0o")
+losegift = SubResource("Resource_lv7gw")
+name_ = "摸一摸"
+"结果" = "去rua！！！！"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_p3o2m"]
+script = ExtResource("2_w6hfr")
+name_ = "对"
+"结果" = "滚"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_ncqpk"]
+script = ExtResource("2_w6hfr")
+name_ = "不！！！"
+"结果" = "你人真好！！！"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_qkjo7"]
+script = ExtResource("7_xvg3u")
+img = ExtResource("1_lv7gw")
+name_ = "教学兔兔1"
+subject = "T-00-00-1"
+"问题" = "真的要离开吗"
+item = Array[ExtResource("2_w6hfr")]([SubResource("Resource_p3o2m"), SubResource("Resource_ncqpk")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("2_w6hfr")
+name_ = "离开"
+"结果" = "你离开了$s兔兔很伤心"
+"分支问题" = SubResource("Resource_qkjo7")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("7_xvg3u")
+img = ExtResource("1_lv7gw")
+name_ = "教学兔兔1"
+subject = "T-00-00"
+"问题" = "可爱的兔兔$s他正在蹦蹦跳跳$s要做什么？"
+item = Array[ExtResource("2_w6hfr")]([SubResource("Resource_4d71a"), SubResource("Resource_wowwi")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

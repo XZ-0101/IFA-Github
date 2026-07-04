@@ -1,0 +1,1773 @@
+[gd_scene format=3 uid="uid://djsc1eiprbj5i"]
+
+[ext_resource type="Resource" uid="uid://dmiax7oap3ajo" path="res://little_game/fight/res/enemy/test/new_resource.tres" id="1_66qcp"]
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_713ur"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_2fnmu"]
+[ext_resource type="PackedScene" uid="uid://dee8jpba81w8a" path="res://little_game/panel.tscn" id="3_agvkt"]
+[ext_resource type="Texture2D" uid="uid://davqeosj2irem" path="res://little_game/fight/res/enemy/test/1314-idle.webp" id="4_xy36q"]
+[ext_resource type="PackedScene" uid="uid://cjelq31wl3ci2" path="res://little_game/fight/scn/button.tscn" id="5_xy36q"]
+[ext_resource type="PackedScene" uid="uid://c0pjy48i6yhx" path="res://little_game/fight/scn/skill_show.tscn" id="9_1peb1"]
+[ext_resource type="Texture2D" uid="uid://bh8ebh4o7uhbs" path="res://img/exported_image.png" id="10_haah4"]
+[ext_resource type="Texture2D" uid="uid://cc6awegf113tb" path="res://little_game/Texture2D/MainUI_BattleSelection_6.png" id="11_fb4jk"]
+[ext_resource type="PackedScene" uid="uid://db4fqmpdsguip" path="res://little_game/fight/scn/gpu_particles_2d3.tscn" id="12_1mn15"]
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="13_66qcp"]
+[ext_resource type="PackedScene" uid="uid://cf6kbdbxm85o" path="res://little_game/fight/scn/gpu_particles_2d2.tscn" id="13_if328"]
+[ext_resource type="Texture2D" uid="uid://boq3ccg55ed4b" path="res://little_game/fight/img/ui/Texture2D/BattleUI_InfoPopup_new_1.png" id="14_7uibp"]
+[ext_resource type="PackedScene" uid="uid://dghrp05v722lv" path="res://little_game/fight/scn/connect.tscn" id="14_if328"]
+[ext_resource type="PackedScene" uid="uid://baxolgn2cg7dg" path="res://little_game/fight/scn/atk.tscn" id="14_m0kvj"]
+[ext_resource type="PackedScene" uid="uid://lilepq8qiek4" path="res://screen/TX6.tscn" id="17_rxe5j"]
+[ext_resource type="AudioStream" uid="uid://dfoontq5be7f1" path="res://little_game/AudioClip/Parry_Atk.wav" id="20_rxe5j"]
+[ext_resource type="PackedScene" uid="uid://nrulnhqc6fk4" path="res://screen/typer.tscn" id="21_rxe5j"]
+[ext_resource type="AudioStream" uid="uid://dyr6f561sqb7d" path="res://little_game/AudioClip/Kali_Special_Vert_Hit.wav" id="23_n15yu"]
+[ext_resource type="AudioStream" uid="uid://bvkvamoqr1b88" path="res://little_game/AudioClip/Defensed_Vert.wav" id="24_n41f6"]
+[ext_resource type="AudioStream" uid="uid://cm5mepnudfj2v" path="res://little_game/AudioClip/Defense_Guard.wav" id="25_l04nm"]
+
+[sub_resource type="GDScript" id="GDScript_xy36q"]
+resource_name = "fight_scn"
+script/source = "extends Control
+@export var enemy:enemy_lg
+@export_category(\"赋值\")
+@export var enemy_name:RichTextLabel
+@export var enemy_hp_num_cent:RichTextLabel
+@export var enemy_hp_pb:ProgressBar
+@export var enemy_sp_num_cent:RichTextLabel
+@export var enemy_sp_pb:ProgressBar
+@export var hp_num_cent:RichTextLabel
+@export var hp_pb:ProgressBar
+@export var sp_num_cent:RichTextLabel
+@export var sp_pb:ProgressBar
+@export var buff:GridContainer
+@export var enemy_buff:GridContainer
+@export var enemy_skill:CenterContainer
+@export var skill_act:HBoxContainer
+@export var enemy_anima_node:Control
+@export var our_anima_node:Control
+var text:Array[String]
+@export var value_get_text_array:Array[String]
+var fight=LittleGameFight
+var turn_num:int=0
+var skill_show_path = preload(\"res://little_game/fight/scn/skill_show.tscn\")
+var enemy_act_list:Array[String]
+var choised_skill:skill_lt
+var choised_skill_ind:int=0
+var enemy_panic:bool=false
+var is_panic:bool=false
+var now:float
+var now_m:music_class
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	LittleGameCtrl.in_fight=true
+	jumper.hide_()
+	enemy=LittleGameCtrl.now_f
+	fight.enemy=enemy
+	
+	fight.Initialization()
+	show_enemy_info()
+	
+	fight.updata_buff_info=updata_buff
+	fight.enemy_anima=enemy_anima_node
+	fight.self_anima=our_anima_node
+	if fight.enemy.music:
+		now_m=fight.enemy.music
+	music_play()
+	fight.do_it(\"fight_strat\")
+	
+	turn_start()
+	pass # Replace with function body.
+func turn_start():
+	fight.turn_num+=1
+	turn_num=fight.turn_num
+	if fight.turn_num!=1:
+		fight.Init_value()
+	choised_skill_ind=0
+	
+	
+	fight.do_it(\"turn_strat\")
+	check_panic()
+	check_die()
+	if is_panic:
+		panic_skill_give()
+	else :
+		give_card()
+	
+	if enemy_panic:
+		enemy_panic_skill_give()
+	else:
+		enemy_act()
+	if fight.enemy_hp>fight.enemy.hp:
+		fight.enemy_hp=fight.enemy.hp
+	if fight.fight_hp>fight.fight_hp_max:
+		fight.fight_hp=fight.fight_hp_max
+
+	if fight.enemy_sp>fight.enemy.sp:
+		fight.enemy_sp=fight.enemy.sp
+	if fight.fight_sp>fight.fight_sp_max:
+		fight.fight_sp=fight.fight_sp_max
+	
+
+func give_card():
+	assignment_skill(3,fight.skill_arr[3])
+	if fight.skill_pool!=[]:
+		var c1 =fight.skill_pool.pick_random()
+		var c2= fight.skill_pool.pick_random()
+		assignment_skill(1,c1)
+		assignment_skill(2,c2)
+	else:
+		for i in randf_range(1,3):
+			fight.add_skill_inpool(fight.skill_arr[0],0)
+			
+		for i in randf_range(1,2):
+			fight.add_skill_inpool(fight.skill_arr[1],0)
+			
+		fight.add_skill_inpool(fight.skill_arr[2],0)
+		give_card()
+	skill_act.show()
+	
+func assignment_skill(which:int,skill:skill_lt):
+	skill_act.get_child(which).skill=skill
+	skill_act.get_child(which).read()
+
+#region enemy_act
+func enemy_act():
+	if enemy_act_list:
+		var now_act=enemy_act_list.front()
+		
+		enemy_give_card(now_act)
+		enemy_act_list.erase(now_act)
+		pass
+	else:
+		enemy_act_list=fight.enemy.action_play.duplicate()
+		enemy_act()
+	pass
+func enemy_give_card(act:String):
+	
+	var act_list=act.split(\",\")
+	match act_list[0]:
+			\"r\":
+				if fight.enemy_skill_pool!=[]:
+					var c1 =fight.enemy_skill_pool.pick_random()
+					ass_skill_enemy(c1)
+					
+				else:
+					give_card_enemy_rmode()
+					enemy_give_card(act)
+					
+			\"rp\":
+				var num =randi_range(int(act_list[1]),int(act_list[2]))
+				var sk=fight.enemy.skill_array[num]
+				ass_skill_enemy(sk)
+				
+			\"p\":
+				var sk=fight.enemy.skill_array[int(act_list[1])]
+				ass_skill_enemy(sk)
+	enemy_skill.show()
+
+func ass_skill_enemy(c1:skill_lt):
+	fight.now_enemy_skill=c1
+	enemy_skill.get_child(0).skill=c1
+	enemy_skill.get_child(0).show_it()
+	fight.enemy_skill_pool.erase(c1)
+
+func give_card_enemy_rmode():
+	for i in fight.enemy.skill_array:
+		print(\"give\",i.level)
+		match i.level:
+			1:
+				fight.add_skill_inpool(i,1)
+				fight.add_skill_inpool(i,1)
+				fight.add_skill_inpool(i,1)
+			2:
+				fight.add_skill_inpool(i,1)
+				fight.add_skill_inpool(i,1)
+			3:
+				fight.add_skill_inpool(i,1)
+#endregion
+
+func skill_down(ind:int):
+	var skill_node=skill_act.get_child(ind+1)
+	choised_skill=skill_node.skill
+	choised_skill_ind=ind+1
+	var jg=will_we_win(skill_node.skill,fight.now_enemy_skill)
+	set_line_color(jg)
+	pass
+func skill_up():
+	
+	choised_skill_ind=0
+
+# 投硬币函数
+# 参数：coin_n - 硬币数量
+#       p      - 每个硬币为正面的概率（建议范围 0.0~1.0）
+# 返回：Array[bool] - 长度 = coin_n，true=正面，false=反面
+func toss_coins(coin_n: int, p: float) -> Array[bool]:
+	print(p)
+	var p_ = clamp(p, 0.05, 0.95)
+	var results: Array[bool] = []
+	results.resize(coin_n)
+	
+	for i in range(coin_n):
+		
+		var n=randf()
+		# randf() 返回 [0.0, 1.0) 的随机浮点数
+		var is_positive = n < p_
+		print(n,\" and \",p_)
+		results[i] = is_positive
+	
+	return results
+
+func set_line_color(jg:String):
+	var color:Color
+	match jg:
+		\"绝对劣势\":
+			color=Color(0.5,0,0)
+		\"劣势\":
+			color=Color(0.8,0,0)
+		\"均势\":
+			color=Color(0.5,0.5,0.5)
+		\"优势\":
+			color=Color(0.5,0.5,0)
+		\"绝对优势\":
+			color=Color(1,1,0)
+	var a =skill_act.get_child(4) as Node2D  
+	a.modulate=color
+
+#region 
+func will_we_win(skill: skill_lt, skill2: skill_lt) -> String:
+	# 安全获取 SP 比例，避免除零
+	var sp_raw = float(fight.fight_sp) / max(float(fight.fight_sp_max), 0.01)
+	var esp_raw = float(fight.enemy_sp) / max(float(fight.enemy.sp), 0.01)
+	var spc = clamp(sp_raw, 0.05, 0.95)
+	var espc = clamp(esp_raw, 0.05, 0.95)
+	
+	# 获取点数分布
+	var dist1 = _get_skill_distribution(skill, spc)
+	var dist2 = _get_skill_distribution(skill2, espc)
+	var points1 = dist1[0]
+	var probs1 = dist1[1]
+	var points2 = dist2[0]
+	var probs2 = dist2[1]
+	
+	# 计算期望胜率：P(win) + 0.5 * P(tie)
+	var win_prob = 0.0
+	var tie_prob = 0.0
+	for i in range(len(points1)):
+		var p_i = probs1[i]
+		var val_i = points1[i]
+		for j in range(len(points2)):
+			var p_j = probs2[j]
+			if points2[j] < val_i:
+				win_prob += p_i * p_j
+			elif points2[j] == val_i:
+				tie_prob += p_i * p_j
+	var effective_prob = win_prob + tie_prob * 0.5
+	
+	# 五档判定（可根据游戏设计调整阈值）
+	if effective_prob >= 0.9:
+		return \"绝对优势\"
+	elif effective_prob >= 0.6:
+		return \"优势\"
+	elif effective_prob >= 0.4:
+		return \"均势\"
+	elif effective_prob >= 0.1:
+		return \"劣势\"
+	else:
+		return \"绝对劣势\"
+
+
+# 辅助函数：根据技能和概率 p 计算点数分布
+# 返回 Array[Array[float], Array[float]]，即 [点数列表, 概率列表]
+func _get_skill_distribution(skill: skill_lt, p: float) -> Array:
+	var n = skill.coin_n
+	var base = skill.base_point
+	var delta = skill.change_Point
+	var points = []
+	var probs = []
+
+	# 边界情况：概率为 0 或 1（实际上 p 已被钳制在 0.05~0.95，但保留边界处理）
+	if p == 0.0:
+		probs.append(1.0)
+		points.append(base)
+		return [points, probs]
+	if p == 1.0:
+		probs.append(1.0)
+		points.append(base + n * delta)
+		return [points, probs]
+
+	# 递推计算二项分布概率 P(X=k) 及对应点数
+	var prob = pow(1.0 - p, n)   # P(X=0)
+	probs.append(prob)
+	points.append(base)
+
+	for k in range(1, n + 1):
+		# 递推公式：P(k) = P(k-1) * (n-k+1)/k * p/(1-p)
+		prob = prob * (n - k + 1) / k * p / (1.0 - p)
+		probs.append(prob)
+		points.append(base + k * delta)
+
+	return [points, probs]
+#endregion
+
+func _process(delta: float) -> void:
+	update_info()
+	var p =$AudioStreamPlayer
+	var Typer=$CanvasLayer
+	if p.playing:
+		now=p.get_playback_position()
+		
+		Typer.time=seconds_to_time_str(snapped(now,0.1))
+	pass
+func seconds_to_time_str(seconds: float) -> String:
+	# 处理负数和零
+	if seconds <= 0:
+		return \"00:00.0\"
+	
+	# 转换为十分之一秒（保留1位小数）
+	var total_deciseconds = int(round(seconds * 10))  # 关键修改：改为 ×10
+	var total_seconds = total_deciseconds / 10
+	var decisecond = total_deciseconds % 10  # 获取十分之一秒位（0-9）
+	
+	var minutes = total_seconds / 60
+	var remaining_seconds = total_seconds % 60
+	
+	# 格式化为2位分钟:2位秒.1位十分秒
+	return \"%02d:%02d.%01d\" % [minutes, remaining_seconds, decisecond]
+
+func truncate_to_one_decimal(value: float) -> float:
+	return int(value * 10) / 10.0  # 改为保留1位小数
+
+
+func check_panic():
+	if is_panic:
+		is_panic=false
+		fight.fight_sp=fight.fight_sp_max/2
+	if enemy_panic:
+		enemy_panic=false
+		fight.enemy_sp=fight.enemy.sp/2
+	if fight.enemy_sp<=0:
+		enemy_panic=true
+	if fight.fight_sp<=0:
+		is_panic=true
+	
+
+func panic_skill_give():
+	assignment_skill(1,fight.skill_arr[4])
+	assignment_skill(2,fight.skill_arr[4])
+	assignment_skill(3,fight.skill_arr[4])
+	skill_act.show()
+	
+func enemy_panic_skill_give():
+	ass_skill_enemy(fight.enemy.panic_skill)
+	enemy_skill.show()
+	
+
+func _on_button_button_down() -> void:
+	$enemy/enemy_texture/Button/Popup.popup()
+	pass # Replace with function body.
+
+func show_enemy_info():
+	var base=$\"enemy/enemy_texture/Button/Popup/Panel/enemy_info/基础\"
+	var skill=$\"enemy/enemy_texture/Button/Popup/Panel/enemy_info/技能/sk\"
+	var passive=$\"enemy/enemy_texture/Button/Popup/Panel/enemy_info/被动\"
+	passive.text=\"\"
+	for i in skill.get_children():
+		i.queue_free()
+	base.text=\"名字:{name}\\n[color=red]HP[/color]:{hp}\\n[color=cyan]SP[/color]:{sp}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":enemy.name_,\"hp\":str(enemy.hp),\"sp\":str(enemy.sp)})+enemy.description
+	for i in enemy.passives:
+		passive.text+=\"[color=white]{name}[/color]\\n{d}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":i.name_,\"d\":i.description})
+	for i in enemy.skill_array:
+		skill.add_child(build_skill_show(i))
+	skill.add_child(build_skill_show(enemy.panic_skill,2))
+	$enemy/enemy_texture.texture=enemy.img
+	$enemy/VBoxContainer/base/VBoxContainer/enemy_name.text=enemy.name_
+
+func build_skill_show(skill,mode_:int=0):
+	var n=skill_show_path.instantiate()
+	n.skill=skill
+	n.mode=mode_
+	n.show_it()
+	return n
+func update_info():
+	var ehp=LittleGameFight.enemy.hp
+	var nowehp=LittleGameFight.enemy_hp
+	var esp=LittleGameFight.enemy.sp
+	var nowesp=LittleGameFight.enemy_sp
+	var hp=LittleGameFight.fight_hp_max
+	var nowhp=LittleGameFight.fight_hp
+	var sp=LittleGameFight.fight_sp_max
+	var nowsp=LittleGameFight.fight_sp
+	
+	enemy_hp_num_cent.text=str(nowehp)+\"/\"+str(ehp)
+	enemy_sp_num_cent.text=str(nowesp)+\"/\"+str(esp)
+	enemy_hp_pb.max_value=ehp
+	enemy_hp_pb.value=nowehp
+	enemy_sp_pb.max_value=esp
+	enemy_sp_pb.value=nowesp
+	
+	hp_num_cent.text=str(nowhp)+\"/\"+str(hp)
+	sp_num_cent.text=str(nowsp)+\"/\"+str(sp)
+	hp_pb.max_value=hp
+	hp_pb.value=nowhp
+	sp_pb.max_value=sp
+	sp_pb.value=nowsp
+	
+	$TURN.text=\"TURN:\"+str(fight.turn_num)
+	if choised_skill_ind!=0:
+		skill_act.get_child(4).show()
+		var posi1:Vector2
+		posi1=skill_act.get_child(choised_skill_ind).global_position+Vector2(60,60)
+		skill_act.get_child(4).update_curve(posi1,enemy_skill.global_position+Vector2(70,100))
+	else:
+		skill_act.get_child(4).hide()
+	if enemy_panic:
+		$enemy/enemy_texture/panic.show()
+	else:
+		$enemy/enemy_texture/panic.hide()
+	if is_panic:
+		$panic.show()
+	else :
+		$panic.hide()
+	pass
+
+func updata_buff():
+	for i in buff.get_children()+enemy_buff.get_children():
+		i.queue_free()
+	for i in LittleGameFight.buff_pool:
+		buff.add_child(buff_build(i))
+	for i in LittleGameFight.enemy_buff_pool:
+		enemy_buff.add_child(buff_build(i))
+		
+	
+	pass
+func buff_build(i):
+	var b=preload(\"res://little_game/fight/scn/buff_show.tscn\")
+	var buff_show=b.instantiate()
+	buff_show.buff=i
+	return buff_show
+	
+func _on_fight_start_button_down() -> void:
+	fight.skill_pool.erase(choised_skill)
+	start_point()
+	pass # Replace with function body.
+
+func start_point():
+	if choised_skill_ind!=0:
+		skill_act.hide()
+		enemy_skill.hide()
+		
+		fight.now_skill=choised_skill
+		var our_s=fight.now_skill
+		var enemy_s=fight.now_enemy_skill
+		fight.add_to_time_list(our_s.eff_arr.map(fight.eff_to_team_0))
+		fight.add_to_time_list(enemy_s.eff_arr.map(fight.eff_to_team_1))
+		fight.do_it(\"before_point\")
+		var s1=fight.now_skill
+		var s2=fight.now_enemy_skill
+		var spc=float(fight.fight_sp) / max(float(fight.fight_sp_max), 0.01)
+		var espc= float(fight.enemy_sp) / max(float(fight.enemy.sp), 0.01)
+		
+		
+		var arr=toss_coins(s1.coin_n,spc)
+		var arr2=toss_coins(s2.coin_n,espc)
+		$Panel_point.show()
+		$Panel_point.point(arr,s1,arr2,s2)
+	pass
+
+func _on_control_skill_choice(ind: int) -> void:
+	if choised_skill_ind==ind+1:
+		skill_up()
+		pass
+	else:
+		skill_down(ind)
+	pass # Replace with function body.
+
+
+func _on_skill_mouse_entered() -> void:
+	print(\"mouse in\")
+	$enemy/enemy_texture.self_modulate=Color(1,1,1,0.5)
+	pass # Replace with function body.
+
+
+func _on_skill_mouse_exited() -> void:
+	$enemy/enemy_texture.self_modulate=Color(1,1,1,1)
+	pass # Replace with function body.
+
+
+func _on_panel_point_point_over(who_win:int) -> void:
+	fight.who_win=who_win
+	if who_win==0:
+		fight.enemy_sp-=5
+		fight.fight_sp+=5
+		fight.play_anima(\"text\",1,\"hit,5,sp\")
+		fight.play_anima(\"text\",0,\"hel,5,sp\")
+	if who_win==1:
+		fight.fight_sp-=5
+		fight.enemy_sp+=5
+		fight.play_anima(\"text\",0,\"hit,5,sp\")
+		fight.play_anima(\"text\",1,\"hel,5,sp\")
+	await get_tree().create_timer(0.7).timeout
+	if who_win!=2:
+		use_skill()
+	else :
+		next_turn()
+	pass # Replace with function body.
+
+func use_skill():
+	
+	var our_s=fight.now_skill
+	var enemy_s=fight.now_enemy_skill
+	
+	fight.do_it(\"before_under_hit\")
+	fight.do_it(\"before_hit\")
+	await get_tree().create_timer(0.5).timeout
+	fight.hit(fight.who_win)
+	
+	if fight.who_win==0:
+		var an=$enemy/AnimatedSprite2D as AnimatedSprite2D
+		var an2=enemy_anima_node.get_child(0) as AnimationPlayer
+		
+		if \"防御\" in enemy_s.type:
+			an2.play(\"3\")
+			$sound/DefenseGuard.play()
+		elif \"闪避\" in enemy_s.type and fight.hit_num_==0:
+			an2.play(\"2\")
+			$sound/DefensedVert.play()
+		else:
+			an2.play(\"1\")
+			$sound/KaliSpecialVertHit.play()
+		an.play(\"1\")
+		
+	else:
+		if \"防御\" in our_s.type:
+			fight.play_anima(\"self_d\",0,\"\")
+			
+		elif \"闪避\" in our_s.type and fight.hit_num_==0:
+			fight.play_anima(\"self_v\",0,\"\")
+		else:
+			fight.play_anima(\"self_hit\",0,\"\")
+	fight.do_it(\"after_under_hit\")
+	fight.do_it(\"after_hit\")
+	await get_tree().create_timer(1.5).timeout
+	next_turn()
+func next_turn():
+	fight.do_it(\"turn_end\")
+	turn_start()
+func check_die():
+	if fight.enemy_hp<=0:
+		if fight.enemy.next_enemy:
+			to_next_enemy()
+		else:
+			win()
+	if fight.fight_hp<=0:
+		lose()
+	pass
+func win():
+	LittleGameCtrl.n_hp=fight.fight_hp
+	LittleGameCtrl.sp=fight.fight_sp*2
+	var i =fight.enemy
+	if i.gift:
+		if i.gift.get_gift:
+			for i_ in i.gift.get_gift:
+				
+				if not i_ in LittleGameCtrl.gift_array:
+					
+				
+				#
+					LittleGameCtrl.gift_array.append(i_)
+					text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+
+				
+
+		if i.gift.add_valua!=0 :
+			if i.gift.value_object>=4:
+				if i.gift.value_object==4:
+					LittleGameCtrl.n_hp+=i.gift.add_valua
+					text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+				if i.gift.value_object==5:
+					LittleGameCtrl.n_sp+=i.gift.add_valua
+					text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+			else :
+				LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
+				text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
+		if i.gift.skill:
+			if not i.gift.skill in LittleGameCtrl.skill_arr:
+				LittleGameCtrl.skill_arr.append(i.gift.skill)
+				text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+		$win.show_(text)
+	else:
+		text.append(\"没有奖励\")
+		$win.show_(text)
+		
+	pass
+
+func lose():
+	LittleGameCtrl.in_fight=false
+	var a = preload(\"res://little_game/over.tscn\")
+	LittleGameCtrl.over_mode=1
+	jumper.jump_to_without_await(a)
+func end():
+	LittleGameCtrl.in_fight=false
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/a_point.tscn\"))
+	
+	print(\"end\")
+func music_play():
+	if enemy.music or now_m:
+		var music
+		if not enemy.music:
+			music=now_m
+		else:
+			music=enemy.music
+		var Typer=$CanvasLayer
+		$AudioStreamPlayer.stream=load(music.music_path)
+		
+		if music.ge_ci_path:
+			if not music.ge_ci_path.begins_with(\"p\"):
+				Typer.font=load(music.ge_ci_path).font
+				Typer.wait=music.wait_time
+				var dic =LoadTxt.load_to(music.ge_ci_path)
+				Typer.dic=dic
+			Typer.start=true
+		$AudioStreamPlayer.play()
+
+
+func _on_audio_stream_player_finished() -> void:
+	var Typer=$CanvasLayer
+	Typer.start=false
+	music_play()
+	pass # Replace with function body.
+func to_next_enemy():
+	
+	var next =fight.enemy.next_enemy
+	enemy=next
+	fight.enemy=enemy
+	fight.enemy_hp=enemy.hp
+	fight.enemy_sp=roundi(float(enemy.sp)/2)
+	fight.init_arr()
+	show_enemy_info()
+	
+	fight.updata_buff_info=updata_buff
+	fight.enemy_anima=enemy_anima_node
+	fight.self_anima=our_anima_node
+	music_play()
+	
+	fight.do_it(\"fight_strat\")
+	turn_start()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0pw3"]
+bg_color = Color(0.101960786, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjq6w"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhuc8"]
+bg_color = Color(0, 0.29674956, 0.29674953, 0.16470589)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg5g8"]
+bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_m0kvj"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func shake_node(duration: float = 0.2, intensity: float = 10.0):
+	var node=self
+	var original_pos = node.position
+	var tween = create_tween()
+	var elapsed = 0.0
+	var shake_step = 0.05   # 每0.05秒改变一次位置
+	
+	while elapsed < duration:
+		var offset = Vector2(
+			randf_range(-intensity, intensity),
+			randf_range(-intensity, intensity)
+		) * (1.0 - elapsed / duration)  # 逐渐减弱
+		tween.tween_property(node, \"position\", original_pos + offset, shake_step)
+		elapsed += shake_step
+		# 等待前一个动画完成后再设置下一个（实际上 create_tween 会并行，这里简化）
+		# 更精确的做法是用多个 tween 顺序执行，但简单的效果可以接受
+	
+	# 最后回到原位
+	tween.tween_property(node, \"position\", original_pos, 0.1)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_haah4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb4jk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.22745098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.22745098)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayc8u"]
+bg_color = Color(0.03137255, 0.03137255, 0.03137255, 0.9607843)
+border_width_top = 20
+border_width_bottom = 20
+border_color = Color(0.09019608, 0.09019608, 0.09019608, 0)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_66qcp"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ayc8u")
+
+[sub_resource type="Animation" id="Animation_5nd8l"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.5072435, 1.2694486e-06, 1.92523e-07, 1), Color(0.5072435, 1.2694486e-06, 1.92523e-07, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.2, 10.0],
+"method": &"shake_node"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f32vx"]
+resource_name = "new_animation_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 81), Vector2(200, 81), Vector2(375, 81)]
+}
+
+[sub_resource type="Animation" id="Animation_n15yu"]
+resource_name = "new_animation_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.2, 0.5, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"hide"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_m0kvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 81)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f32vx"]
+_data = {
+&"1": SubResource("Animation_5nd8l"),
+&"2": SubResource("Animation_f32vx"),
+&"3": SubResource("Animation_n15yu"),
+&"RESET": SubResource("Animation_m0kvj")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n41f6"]
+atlas = ExtResource("14_7uibp")
+region = Rect2(527, 541, 120, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nl57"]
+atlas = ExtResource("14_7uibp")
+region = Rect2(657, 737, 153, 160)
+
+[sub_resource type="GDScript" id="GDScript_66qcp"]
+script/source = "extends Panel
+@export var skill_show:Node
+@export var skill_show2:Node
+@export var skill_point:Node
+@export var skill_point2:Node
+@export var skill_point_num:Label
+@export var skill_point_num2:Label
+var s1:skill_lt
+var s2:skill_lt
+var p:int
+var p2:int
+signal point_over(who_win:int)
+var can_next=false
+var who_win:int
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func point(arr:Array[bool],skill:skill_lt,arr2:Array[bool],skill2:skill_lt):
+	can_next=false
+	$partic/GPUParticles2D.emitting=true
+	skill_show.skill=skill
+	skill_show2.skill=skill2
+	s1=skill
+	s2=skill2
+	skill_show.show_it()
+	skill_show2.show_it()
+	skill_point.texture=skill.icon
+	skill_point2.texture=skill2.icon
+	skill_point_num.text=str(skill.base_point)
+	skill_point_num2.text=str(skill2.base_point)
+	p=skill.base_point
+	p2=skill2.base_point
+	$Timer.start()
+	await  $Timer.timeout
+	skill_show2.coin_show(arr2)
+	await  skill_show2.coin_over
+	
+	$Timer.start()
+	await  $Timer.timeout
+	
+	skill_show.coin_show(arr)
+	await  skill_show.coin_over
+	
+	LittleGameFight.max_point=p
+	LittleGameFight.enemy_max_point=p2
+	LittleGameFight.do_it(\"when_point\")
+	skill_point_num2.text=str(LittleGameFight.enemy_max_point)
+	skill_point_num.text=str(LittleGameFight.max_point)
+	if LittleGameFight.max_point == LittleGameFight.enemy_max_point:
+		who_win=2
+	if LittleGameFight.max_point > LittleGameFight.enemy_max_point:
+		who_win=0
+	if LittleGameFight.max_point < LittleGameFight.enemy_max_point:
+		who_win=1
+	$partic/GPUParticles2D.emitting=false
+	$ParryAtk.play()
+	$partic/GPUParticles2D2.emitting=true
+	can_next=true
+	
+	
+func _on_skill_coin_out(is_f:bool) -> void:
+	if is_f:
+		p2+=s2.change_Point
+	skill_point_num2.text=str(p2)
+	
+
+
+func _on_skil2l_coin_out(is_f:bool) -> void:
+	if is_f:
+		p+=s1.change_Point
+	skill_point_num.text=str(p)
+	
+func  _input(event: InputEvent) -> void:
+	if can_next and event is InputEventMouseButton:
+		can_next=false
+		hide()
+		emit_signal(\"point_over\",who_win)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uibp"]
+atlas = ExtResource("11_fb4jk")
+region = Rect2(1279, 280, 230, 245)
+
+[sub_resource type="GDScript" id="GDScript_n15yu"]
+script/source = "extends Panel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func show_(arr:Array[String]):
+	var label=$RichTextLabel
+	show()
+	label.text=\"恭喜你获胜了\\n\"
+	for i in arr:
+		label.text+=i+\"\\n\"
+	
+
+
+func _on_button_button_down() -> void:
+	end()
+
+func end():
+	LittleGameCtrl.in_fight=false
+	jumper.show_()
+	jumper.jump_to(load(\"res://little_game/a_point.tscn\"))
+	
+	print(\"end\")
+"
+
+[node name="fight" type="Control" unique_id=1135632432 node_paths=PackedStringArray("enemy_name", "enemy_hp_num_cent", "enemy_hp_pb", "enemy_sp_num_cent", "enemy_sp_pb", "hp_num_cent", "hp_pb", "sp_num_cent", "sp_pb", "buff", "enemy_buff", "enemy_skill", "skill_act", "enemy_anima_node", "our_anima_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_xy36q")
+enemy = ExtResource("1_66qcp")
+enemy_name = NodePath("enemy/VBoxContainer/base/VBoxContainer/enemy_name")
+enemy_hp_num_cent = NodePath("enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/hp/hp_/hp_text")
+enemy_hp_pb = NodePath("enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/hp/hp_")
+enemy_sp_num_cent = NodePath("enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/sp/sp_/sp_text")
+enemy_sp_pb = NodePath("enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/sp/sp_")
+hp_num_cent = NodePath("player/base/HBoxContainer/hp/hp_/hp_text")
+hp_pb = NodePath("player/base/HBoxContainer/hp/hp_")
+sp_num_cent = NodePath("player/base/HBoxContainer/sp/sp_/sp_text")
+sp_pb = NodePath("player/base/HBoxContainer/sp/sp_")
+buff = NodePath("player/BUFF_P/buff/GridContainer")
+enemy_buff = NodePath("enemy/VBoxContainer/BUFF_P/buff/GridContainer")
+enemy_skill = NodePath("enemy/skill")
+skill_act = NodePath("player/SKILL")
+enemy_anima_node = NodePath("enemy/enemy_texture/anima")
+our_anima_node = NodePath("player/anima")
+
+[node name="Control3" type="Control" parent="." unique_id=463102128]
+z_index = 1
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=845188948]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=615314542]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1965232346]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=168358157]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1995657885]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_713ur")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=481593889]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("2_2fnmu")
+text = "模拟遭遇战"
+horizontal_alignment = 1
+
+[node name="enemy" type="Control" parent="." unique_id=1808659290]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 98.0
+offset_right = 627.0
+offset_bottom = 617.0
+theme = ExtResource("2_2fnmu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="enemy" unique_id=130408959]
+layout_mode = 0
+offset_top = -11.0
+offset_right = 643.0
+offset_bottom = 467.0
+
+[node name="base" type="Panel" parent="enemy/VBoxContainer" unique_id=599004746]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="enemy/VBoxContainer/base" unique_id=1265190269]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 307.0
+offset_bottom = 192.0
+
+[node name="enemy_name" type="RichTextLabel" parent="enemy/VBoxContainer/base/VBoxContainer" unique_id=528522385]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "瓦伦希纳"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="enemy/VBoxContainer/base/VBoxContainer" unique_id=2023773012]
+layout_mode = 2
+
+[node name="hp" type="HBoxContainer" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer" unique_id=1888848125]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/hp" unique_id=1026409201]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=red]HP"
+
+[node name="hp_" type="ProgressBar" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/hp" unique_id=908448287]
+custom_minimum_size = Vector2(240, 35)
+layout_mode = 2
+theme = ExtResource("2_2fnmu")
+theme_override_styles/background = SubResource("StyleBoxFlat_p0pw3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fjq6w")
+show_percentage = false
+
+[node name="hp_text" type="RichTextLabel" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/hp/hp_" unique_id=1434365444]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="sp" type="HBoxContainer" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer" unique_id=147457792]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/sp" unique_id=1172007555]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=cyan]SP"
+
+[node name="sp_" type="ProgressBar" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/sp" unique_id=271071453]
+custom_minimum_size = Vector2(240, 35)
+layout_mode = 2
+theme = ExtResource("2_2fnmu")
+theme_override_styles/background = SubResource("StyleBoxFlat_rhuc8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xg5g8")
+show_percentage = false
+
+[node name="sp_text" type="RichTextLabel" parent="enemy/VBoxContainer/base/VBoxContainer/HBoxContainer/sp/sp_" unique_id=1134727744]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="BUFF_P" type="Panel" parent="enemy/VBoxContainer" unique_id=958040110]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="enemy/VBoxContainer/BUFF_P" unique_id=1014972106]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -40.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "BUFF"
+
+[node name="buff" type="ScrollContainer" parent="enemy/VBoxContainer/BUFF_P" unique_id=280528094]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -205.927
+offset_bottom = -8.0
+
+[node name="GridContainer" type="GridContainer" parent="enemy/VBoxContainer/BUFF_P/buff" unique_id=1674827458]
+layout_mode = 2
+theme_override_constants/h_separation = 7
+columns = 9
+
+[node name="skill" type="CenterContainer" parent="enemy" unique_id=3788262]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 250.0
+offset_right = 490.0
+offset_bottom = 450.0
+
+[node name="skill" parent="enemy/skill" unique_id=809147387 instance=ExtResource("9_1peb1")]
+layout_mode = 2
+
+[node name="enemy_texture" type="TextureRect" parent="enemy" unique_id=721814096]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 0
+offset_left = 375.0
+offset_top = 81.0
+offset_right = 644.0004
+offset_bottom = 481.0
+mouse_filter = 2
+texture = ExtResource("4_xy36q")
+expand_mode = 1
+stretch_mode = 5
+script = SubResource("GDScript_m0kvj")
+
+[node name="Button" type="Button" parent="enemy/enemy_texture" unique_id=368591602]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -60.0
+offset_right = 60.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_haah4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_haah4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fb4jk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fb4jk")
+
+[node name="Popup" type="Popup" parent="enemy/enemy_texture/Button" unique_id=718316243]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(600, 700)
+
+[node name="Panel" type="Panel" parent="enemy/enemy_texture/Button/Popup" unique_id=1239407945]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+
+[node name="enemy_info" type="TabContainer" parent="enemy/enemy_texture/Button/Popup/Panel" unique_id=1572418804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = -21.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+current_tab = 1
+
+[node name="基础" type="RichTextLabel" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info" unique_id=2051734372]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+metadata/_tab_index = 0
+
+[node name="技能" type="ScrollContainer" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info" unique_id=236963936]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="sk" type="VBoxContainer" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info/技能" unique_id=678461154]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="被动" type="RichTextLabel" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info" unique_id=775561052]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+metadata/_tab_index = 2
+
+[node name="panic" type="Panel" parent="enemy/enemy_texture" unique_id=939441550]
+visible = false
+custom_minimum_size = Vector2(150, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -90.0
+offset_right = 75.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_66qcp")
+
+[node name="panic" type="VBoxContainer" parent="enemy/enemy_texture/panic" unique_id=430371603]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="enemy/enemy_texture/panic/panic" unique_id=525588581]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("13_66qcp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="enemy/enemy_texture/panic/panic" unique_id=161701630]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.14117648, 0.8784314, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0, 0.50980395, 0.8352941, 1)
+theme_override_constants/outline_size = 5
+bbcode_enabled = true
+text = "[shake level=20 rate=30]PANIC[/shake]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="anima" type="Control" parent="enemy/enemy_texture" unique_id=224333452]
+anchors_preset = 0
+offset_left = 78.0
+offset_top = 195.0
+offset_right = 118.0
+offset_bottom = 235.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy/enemy_texture/anima" unique_id=315815010]
+libraries/ = SubResource("AnimationLibrary_f32vx")
+speed_scale = 0.8
+
+[node name="TextureRect" type="TextureRect" parent="enemy/enemy_texture/anima" unique_id=2069948693]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -60.0
+offset_right = 119.0
+offset_bottom = 72.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_n41f6")
+
+[node name="AnimatedSprite2D" parent="enemy" unique_id=379230708 instance=ExtResource("14_m0kvj")]
+position = Vector2(509, 276)
+scale = Vector2(2, 2)
+frame = 7
+frame_progress = 1.0
+
+[node name="player" type="Control" parent="." unique_id=405490312]
+anchors_preset = 0
+offset_left = -5.0
+offset_top = 716.0
+offset_right = 646.0
+offset_bottom = 1084.0
+theme = ExtResource("2_2fnmu")
+
+[node name="base" type="Panel" parent="player" unique_id=1269293530]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 285.0
+offset_right = 557.0
+offset_bottom = 352.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player/base" unique_id=1516779402]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 525.0
+offset_bottom = 66.0
+
+[node name="hp" type="HBoxContainer" parent="player/base/HBoxContainer" unique_id=1680711262]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="player/base/HBoxContainer/hp" unique_id=1235501330]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=red]HP"
+
+[node name="hp_" type="ProgressBar" parent="player/base/HBoxContainer/hp" unique_id=1267180750]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+theme = ExtResource("2_2fnmu")
+theme_override_styles/background = SubResource("StyleBoxFlat_p0pw3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fjq6w")
+show_percentage = false
+
+[node name="hp_text" type="RichTextLabel" parent="player/base/HBoxContainer/hp/hp_" unique_id=290848478]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="sp" type="HBoxContainer" parent="player/base/HBoxContainer" unique_id=68062124]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="player/base/HBoxContainer/sp" unique_id=622856231]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=cyan]SP"
+
+[node name="sp_" type="ProgressBar" parent="player/base/HBoxContainer/sp" unique_id=325136050]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+theme = ExtResource("2_2fnmu")
+theme_override_styles/background = SubResource("StyleBoxFlat_rhuc8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xg5g8")
+show_percentage = false
+
+[node name="sp_text" type="RichTextLabel" parent="player/base/HBoxContainer/sp/sp_" unique_id=2042220995]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "30/50"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="BUFF_P" type="Panel" parent="player" unique_id=1388299338]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 180.0
+offset_right = 554.0
+offset_bottom = 278.0
+
+[node name="Label" type="Label" parent="player/BUFF_P" unique_id=127862504]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -27.0
+offset_right = 40.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "BUFF"
+
+[node name="buff" type="ScrollContainer" parent="player/BUFF_P" unique_id=451989304]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = -11.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="player/BUFF_P/buff" unique_id=2019999497]
+layout_mode = 2
+theme_override_constants/h_separation = 7
+columns = 10
+
+[node name="SKILL" type="HBoxContainer" parent="player" unique_id=2108868641]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 55.0
+offset_right = 574.0
+offset_bottom = 175.0
+
+[node name="fight_start" type="Button" parent="player/SKILL" unique_id=655634464]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "start"
+
+[node name="Control" parent="player/SKILL" unique_id=852453537 instance=ExtResource("5_xy36q")]
+layout_mode = 2
+
+[node name="Control2" parent="player/SKILL" unique_id=291726793 instance=ExtResource("5_xy36q")]
+layout_mode = 2
+ind = 1
+
+[node name="Control3" parent="player/SKILL" unique_id=127106669 instance=ExtResource("5_xy36q")]
+layout_mode = 2
+ind = 2
+
+[node name="TextureRect" type="TextureRect" parent="player/SKILL/Control3" unique_id=356061619]
+self_modulate = Color(1, 1, 1, 0.39215687)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -3.0
+offset_right = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2nl57")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Node2D" parent="player/SKILL" unique_id=1513013406 instance=ExtResource("14_if328")]
+visible = false
+
+[node name="anima" type="Control" parent="player" unique_id=1071378188]
+anchors_preset = 0
+offset_left = 279.0
+offset_top = -17.0
+offset_right = 319.0
+offset_bottom = 23.0
+
+[node name="Panel_point" type="Panel" parent="." unique_id=1732484425 node_paths=PackedStringArray("skill_show", "skill_show2", "skill_point", "skill_point2", "skill_point_num", "skill_point_num2")]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 343.0
+offset_right = 640.0
+offset_bottom = 889.0
+theme = ExtResource("2_2fnmu")
+script = SubResource("GDScript_66qcp")
+skill_show = NodePath("VBoxContainer/our_skill/skill")
+skill_show2 = NodePath("VBoxContainer/enemy_skill/skill")
+skill_point = NodePath("VBoxContainer/HBoxContainer/icon1")
+skill_point2 = NodePath("VBoxContainer/HBoxContainer/icon2")
+skill_point_num = NodePath("VBoxContainer/HBoxContainer/icon1/num1")
+skill_point_num2 = NodePath("VBoxContainer/HBoxContainer/icon2/num2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel_point" unique_id=517432478]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="enemy_skill" type="CenterContainer" parent="Panel_point/VBoxContainer" unique_id=918168259]
+layout_mode = 2
+
+[node name="skill" parent="Panel_point/VBoxContainer/enemy_skill" unique_id=705009004 instance=ExtResource("9_1peb1")]
+layout_mode = 2
+mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel_point/VBoxContainer" unique_id=2038215061]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+alignment = 1
+
+[node name="icon1" type="TextureRect" parent="Panel_point/VBoxContainer/HBoxContainer" unique_id=1449995390]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+texture = ExtResource("10_haah4")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="num1" type="Label" parent="Panel_point/VBoxContainer/HBoxContainer/icon1" unique_id=1336816303]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "50"
+
+[node name="TextureRect" type="TextureRect" parent="Panel_point/VBoxContainer/HBoxContainer" unique_id=462201525]
+modulate = Color(0.6322254, 1.9492954e-06, 3.3691526e-07, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_7uibp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="icon2" type="TextureRect" parent="Panel_point/VBoxContainer/HBoxContainer" unique_id=2055012674]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+texture = ExtResource("10_haah4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="num2" type="Label" parent="Panel_point/VBoxContainer/HBoxContainer/icon2" unique_id=1800294405]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "30"
+
+[node name="our_skill" type="CenterContainer" parent="Panel_point/VBoxContainer" unique_id=749601804]
+layout_mode = 2
+
+[node name="skill" parent="Panel_point/VBoxContainer/our_skill" unique_id=887831576 instance=ExtResource("9_1peb1")]
+layout_mode = 2
+mode = 1
+
+[node name="partic" type="Control" parent="Panel_point" unique_id=402957446]
+anchors_preset = 0
+offset_left = 318.0
+offset_top = 283.0
+offset_right = 358.0
+offset_bottom = 323.0
+
+[node name="GPUParticles2D" parent="Panel_point/partic" unique_id=409175941 instance=ExtResource("12_1mn15")]
+
+[node name="GPUParticles2D2" parent="Panel_point/partic" unique_id=837090751 instance=ExtResource("13_if328")]
+
+[node name="Timer" type="Timer" parent="Panel_point" unique_id=118359117]
+wait_time = 0.3
+
+[node name="ParryAtk" type="AudioStreamPlayer" parent="Panel_point" unique_id=2031576436]
+stream = ExtResource("20_rxe5j")
+
+[node name="Timer2" type="Timer" parent="Panel_point" unique_id=1709910977]
+
+[node name="panic" parent="." unique_id=1130632433 instance=ExtResource("17_rxe5j")]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 818.0
+offset_top = 1452.0
+offset_right = 858.0
+offset_bottom = 1492.0
+
+[node name="sound" type="Control" parent="." unique_id=1387815184]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KaliSpecialVertHit" type="AudioStreamPlayer" parent="sound" unique_id=166621761]
+stream = ExtResource("23_n15yu")
+
+[node name="DefensedVert" type="AudioStreamPlayer" parent="sound" unique_id=1419569015]
+stream = ExtResource("24_n41f6")
+
+[node name="DefenseGuard" type="AudioStreamPlayer" parent="sound" unique_id=694893035]
+stream = ExtResource("25_l04nm")
+
+[node name="win" type="Panel" parent="." unique_id=1002821505]
+visible = false
+z_index = 130
+layout_mode = 0
+offset_left = 27.0
+offset_top = 310.0
+offset_right = 613.0
+offset_bottom = 865.0
+theme = ExtResource("2_2fnmu")
+script = SubResource("GDScript_n15yu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="win" unique_id=796174783]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 14.0
+offset_right = 574.0
+offset_bottom = 548.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="win" unique_id=44912068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=809340789]
+
+[node name="CanvasLayer" parent="." unique_id=1070704261 instance=ExtResource("21_rxe5j")]
+
+[node name="panel" parent="." unique_id=1664364564 instance=ExtResource("3_agvkt")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="TURN" type="RichTextLabel" parent="." unique_id=425562166]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -158.0
+offset_top = 98.0
+offset_right = -20.0
+offset_bottom = 138.0
+grow_horizontal = 0
+theme = ExtResource("2_2fnmu")
+bbcode_enabled = true
+text = "TURN:X"
+fit_content = true
+scroll_active = false
+
+[connection signal="mouse_entered" from="enemy/skill" to="." method="_on_skill_mouse_entered"]
+[connection signal="mouse_exited" from="enemy/skill" to="." method="_on_skill_mouse_exited"]
+[connection signal="mouse_entered" from="enemy/skill/skill" to="." method="_on_skill_mouse_entered"]
+[connection signal="mouse_exited" from="enemy/skill/skill" to="." method="_on_skill_mouse_exited"]
+[connection signal="button_down" from="enemy/enemy_texture/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="player/SKILL/fight_start" to="." method="_on_fight_start_button_down"]
+[connection signal="skill_choice" from="player/SKILL/Control" to="." method="_on_control_skill_choice"]
+[connection signal="skill_choice" from="player/SKILL/Control2" to="." method="_on_control_skill_choice"]
+[connection signal="skill_choice" from="player/SKILL/Control3" to="." method="_on_control_skill_choice"]
+[connection signal="point_over" from="Panel_point" to="." method="_on_panel_point_point_over"]
+[connection signal="coin_out" from="Panel_point/VBoxContainer/enemy_skill/skill" to="Panel_point" method="_on_skill_coin_out"]
+[connection signal="coin_out" from="Panel_point/VBoxContainer/our_skill/skill" to="Panel_point" method="_on_skil2l_coin_out"]
+[connection signal="button_down" from="win/Button" to="win" method="_on_button_button_down"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

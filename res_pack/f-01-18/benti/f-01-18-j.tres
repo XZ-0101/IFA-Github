@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bxa1wqstvfjab"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_q3vcl"]
+[ext_resource type="Texture2D" uid="uid://gor523mbpspd" path="res://res_pack/f-01-18/benti/img/I-1.webp" id="2_e4b8l"]
+
+[resource]
+script = ExtResource("1_q3vcl")
+name_ = "面壁女"
+s = "F-01-18"
+level = "T"
+texture = ExtResource("2_e4b8l")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-18/benti/f-01-18.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

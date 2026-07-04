@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://d2ncilqd1kb7m"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_63vd1"]
+[ext_resource type="Texture2D" uid="uid://bw11af7bste8i" path="res://img/W-1513167721.webp" id="2_63vd1"]
+
+[resource]
+script = ExtResource("1_63vd1")
+name_ = "终末火柴之光"
+level = "T"
+texture = ExtResource("2_63vd1")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_w/f-01-02-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

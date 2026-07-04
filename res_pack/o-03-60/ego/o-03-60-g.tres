@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dtgq3yh3xyl7w"]
+
+[ext_resource type="Resource" uid="uid://828ukg5tohbe" path="res://res_pack/o-03-60/ego/o-03-60-g-j.tres" id="1_7fr6o"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_l508b"]
+[ext_resource type="Texture2D" uid="uid://b5tas1ks5ac1f" path="res://res_pack/o-03-60/ego/img/3FG.webp" id="3_283gw"]
+
+[resource]
+script = ExtResource("2_l508b")
+name_ = "彼方的裂片"
+texture = ExtResource("3_283gw")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：5%
+位置：胸部
+成功率+2
+工作速度+2
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/o-03-60/benti/o-03-60-j.tres"])
+jumper = ExtResource("1_7fr6o")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

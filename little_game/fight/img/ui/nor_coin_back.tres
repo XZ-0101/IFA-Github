@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bcw8vm7yrq3yd"]
+
+[ext_resource type="Texture2D" uid="uid://dqauinmm1pvf1" path="res://img2/UI/Texture2D/BattleUI_NewCoin.png" id="1_6ntnk"]
+
+[resource]
+atlas = ExtResource("1_6ntnk")
+region = Rect2(274, 24, 220, 215)

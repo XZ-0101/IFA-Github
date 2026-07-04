@@ -1,0 +1,131 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://bp21we17hp4nr"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_tb7bu"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_o87cu"]
+[ext_resource type="Texture2D" uid="uid://y65an62el23n" path="res://res_pack/f-02-44/benti/img/I-1513168067.webp" id="3_34e7k"]
+[ext_resource type="Resource" uid="uid://7a21ogenv0yt" path="res://res_pack/f-02-44/benti/f-02-44-j.tres" id="4_qicor"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_xf6b8"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_tb7bu")
+level = {
+"L1": 40,
+"L2": 20,
+"L3": -20,
+"L4": -20,
+"L5": -20
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_tb7bu")
+level = {
+"L1": 30,
+"L2": 15,
+"L3": -50,
+"L4": -50,
+"L5": -50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_tb7bu")
+level = {
+"L1": 65,
+"L2": 65,
+"L3": 65,
+"L4": 65,
+"L5": 65
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_o87cu")
+Probabilities = Array[ExtResource("1_tb7bu")]([SubResource("Resource_h2i0s"), SubResource("Resource_1j1dc"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_xf6b8")
+Attack_Type = 2
+acctak_Damage = "2-4"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "12"
+good_Mood_Range = "9-12"
+bad_Mood_Range = "0-4"
+Norm_Mood_Range = "5-8"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 对“美女和野兽”进行压迫工作时有着非常高的成功率。压迫工作能显著提高这个异想体的PE-BOX产量，但会恶化其健康状况。", "Ⅱ. 对“美女和野兽”完成除压迫以外的其他工作后，它的健康状况将会得到改善。", "Ⅲ. 在被施以连续的压迫工作后，“美女和野兽”倒在了地上，而刚刚对它完成压迫工作的员工经历了一系列可怕的突变。很快，一只新的“美女和野兽”突然出现在收容单元中。"])
+story = "这是一头终日在绝望中嚎哭，深深憎恨着自己的异想体。它拼命地试图解除自身的诅咒，可都无济于事...
+
+很久很久以前，有一个美丽却贫穷的女人，她有着非常迷人的翠绿眼睛。
+
+有一天，女人听闻在伯爵的庄园里有一份薪水可观的工作。
+
+据说，伯爵有着可怕的外表，胆敢进入伯爵庄园的人都会消失在稀薄的空气之中。
+
+“那里一定有个可怕的怪物在吃人。”
+
+女人边想边在口袋里藏好一把锋利的匕首。
+
+女人开始在伯爵的庄园里工作。与传闻相反，她从未发现怪物出没的痕迹。
+
+到了晚上，有时会有一个温柔的声音同女人交谈。他为她辛劳一天表示感谢，并慷慨地付给她很多很多的钱。
+
+女人每天都在庄园里工作。时间一长，她变得越来越贪婪。
+
+“如果那伯爵死了，他的财富和这座庄园就全是我的了！”
+
+一天早晨，女人踏入了伯爵的房间——她曾被告知过永远不要进入那间房间。
+
+在那里，女人看到了伯爵的真实面貌。
+
+伯爵是一头可怕的怪物，他长有数百只眼睛，四条奇怪的腿。他既不是人类，也不是野兽。
+
+女人心想：没有了这个可怕的怪物，也许世界会变得更加美好。
+
+女人掏出匕首就朝它刺去。
+
+出人意料的是，那怪物在最后一刻发出了疯狂的笑声。
+
+“你在笑什么？”这句话还没来得及说出口，女人的身体就已发生了转变——成百上千只眼睛，一对可怖的犄角，光洁的肌肤上长出渗人的皮毛...
+
+很快，女人变成了那个怪物。
+
+现在，庄园和财富都是她的了...
+
+有一个可怕的传闻，胆敢进入伯爵庄园的人都会消失在稀薄的空气之中..."
+Observation_level = "Ⅰ. 成功率 + 4%Ⅱ. 工作速度 + 6、解锁E.G.O饰品、护甲Ⅲ. 成功率 + 6%、解锁E.G.O武器Ⅳ. 工作速度 + 4"
+flavour_text = Array[String](["“美女和野兽”正寻找着能够解除诅咒的人。", "“美女和野兽”想着自己的面貌是如此的可憎，它绝望地试图杀死自己。", "然而诅咒仍将继续，永不解除。", "诅咒已然存在了好几个世纪，一刻不停地折磨着可怜的受害者。", "“死亡”乃另一种令人喜悦的“新生”。", "数百只眼睛和一对可怖的犄角从员工的脸上冒了出来。现在，员工成为了那只想要解除诅咒的怪物。"])
+other_info = "美女和野兽（F-02-44）是一头覆盖着棕色毛皮的四足怪异生物。后腿形似蟋蟀的后肢，前腿像是畸形的人腿；右前腿呈黑色，上面有彩色的斑点，两只脚上各有四只红色的脚趾；无数绿色眼球盖满了它的脸；口部是一张女人的嘴，两侧长着昆虫的口器；额头生有两根向下弯曲的犄角，角上开着不知名的紫红色花朵；腹部有黑色的硬毛，两道红色的条纹贴在一侧（可能是伤痕，也可能是鳃）；末端还有一条僵硬的尾巴。这个生物曾经或许并不是异想体，它是遭到某种“诅咒”而变成这副模样的。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.28[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-02-44/benti/img/B.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+
+当一个员工成功对美女和野兽完成一次压迫工作后，美女和野兽会伏低身体来表示恶化的健康状况。如果员工对伏地的美女和野兽完成除压迫外其他工作，它则会变成原来的状态。
+
+如果有员工对伏地的美女和野兽完成压迫工作，它便会完全倒地，同时该员工的眼睛会长出犄角，嘴巴会长出无数的眼睛。收容室也会被一个有着大量瞳孔的眼睛遮盖住。一段时间后，收容室被揭露时，一个新的美女和野兽将出现在收容室里。"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条4点
+工作偏好：每条4点"
+jump_ego = Array[String](["pres://res_pack/f-02-44/ego/f-02-44-g-j.tres", "pres://res_pack/f-02-44/ego/f-02-44-w-j.tres", "pres://res_pack/f-02-44/ego/f-02-44-s-j.tres"])
+name_ = "美女与野兽"
+icon = ExtResource("3_34e7k")
+info_ = "资料类型：异想体
+
+然而诅咒仍将继续，永不解除...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "F-02-44"
+level = "t"
+jumper = ExtResource("4_qicor")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

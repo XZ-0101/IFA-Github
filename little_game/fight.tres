@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://casxw30v4hh5v"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_saacv"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_isv4d"]
+
+[sub_resource type="Resource" id="Resource_4o82f"]
+script = ExtResource("1_saacv")
+name_ = "不回答"
+"结果" = "看来走错了$s那么，再见"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_4d71a"]
+script = ExtResource("1_saacv")
+name_ = "回答"
+"结果" = "...$s看来找错了$s那么，再见"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("2_isv4d")
+"问题" = "这里是Crossy$s有人听得到吗"
+item = Array[ExtResource("1_saacv")]([SubResource("Resource_4o82f"), SubResource("Resource_4d71a")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

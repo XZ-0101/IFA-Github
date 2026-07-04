@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://c5f4jxmq20aun"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://jiaoben/jumper_class.gd" id="1_wlvhw"]
+[ext_resource type="Texture2D" uid="uid://cbbelxi4up4ip" path="res://res_pack/T_06_27/ego/img/A-1513167628.webp" id="2_v1v7h"]
+
+[resource]
+script = ExtResource("1_wlvhw")
+name_ = "噪音"
+level = "T"
+texture = ExtResource("2_v1v7h")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/T_06_27/ego/t-06-27-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

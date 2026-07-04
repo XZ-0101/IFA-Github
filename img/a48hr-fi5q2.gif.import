@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dsfrcs4yn53iu"
+path="res://.godot/imported/a48hr-fi5q2.gif-b9d6c0de47636a7bae942774475ff953.tres"
+
+[deps]
+
+source_file="res://img/a48hr-fi5q2.gif"
+dest_files=["res://.godot/imported/a48hr-fi5q2.gif-b9d6c0de47636a7bae942774475ff953.tres"]
+
+[params]
+
+frames_per_second=30

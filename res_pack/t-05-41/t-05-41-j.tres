@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://cltfb4io4t5jx"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_voifu"]
+[ext_resource type="Texture2D" uid="uid://dsyswiuaqcqb6" path="res://res_pack/t-05-41/img/I-1513173929.webp" id="2_agp8o"]
+
+[resource]
+script = ExtResource("1_voifu")
+name_ = "小帮手"
+s = "T-05-41"
+level = "H"
+texture = ExtResource("2_agp8o")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-05-41/t-05-41.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "智械相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

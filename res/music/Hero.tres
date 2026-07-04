@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=3 format=3 uid="uid://nqpg2trb1wk0"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_j0dq0"]
+[ext_resource type="Texture2D" uid="uid://cttuoimhwicvl" path="res://img/music/PlayerAlbumCover_7326967381764956392899.webp" id="2_epn1k"]
+
+[resource]
+script = ExtResource("1_j0dq0")
+name_ = "Hero"
+zuo_zhe = "mili"
+texture = ExtResource("2_epn1k")
+texture1 = ExtResource("2_epn1k")
+music_path = "res://mus/Mili - Hero.ogg"
+ge_ci_path = "res://res/music/l2_hero.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

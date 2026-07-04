@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://c3ydf1a7nc3gd"]
+
+[ext_resource type="Resource" uid="uid://dpp71fqjuo44g" path="res://res_pack/o-02-56/ego/o-02-56-s-j.tres" id="1_fs828"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_673k2"]
+[ext_resource type="Texture2D" uid="uid://12iia8bi3q1g" path="res://res_pack/o-02-56/ego/img/A-1513150952.webp" id="3_cbr27"]
+
+[resource]
+script = ExtResource("2_673k2")
+Cost = "25"
+Max_Amount = "2"
+Observation_Level = "3"
+other = "无"
+red_def = 0.7
+white_def = 0.8
+black_def = 1.2
+pale_def = 2.0
+Requirements = "无"
+name_ = "小喙"
+texture = ExtResource("3_cbr27")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+这件护甲非常光滑，它最初被制造出来时特别地小，只有小孩才能勉强穿上。
+
+当它被鲜血浸透时，胸部的红块就会像活着一般开始蠕动。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/o-02-56/benti/o-02-56-j.tres"])
+jumper = ExtResource("1_fs828")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

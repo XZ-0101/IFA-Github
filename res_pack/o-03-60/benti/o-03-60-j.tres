@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dx7phd6on5bt2"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_upr6n"]
+[ext_resource type="Texture2D" uid="uid://cimcoixen5rsa" path="res://res_pack/o-03-60/benti/img/3F-0.webp" id="2_pn8yf"]
+
+[resource]
+script = ExtResource("1_upr6n")
+name_ = "宇宙碎片"
+s = "O-03-60"
+level = "T"
+texture = ExtResource("2_pn8yf")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-03-60/benti/o-03-60.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

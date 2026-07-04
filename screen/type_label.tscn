@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://4segh1suvcwx"]
+
+[ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="1_plv88"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_yheih"]
+[ext_resource type="Texture2D" uid="uid://qujmfkk5ukec" path="res://img2/LEGACY/3F.webp" id="3_e5udy"]
+
+[sub_resource type="GDScript" id="GDScript_wt0ei"]
+script/source = "extends NinePatchRect
+
+@export var name_:String
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Container/RichTextLabel.text=name_
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	pass
+
+
+func _on_button_button_down() -> void:
+	get_parent().queue_free()
+	pass # Replace with function body.
+"
+
+[node name="Control" type="Control" unique_id=1770531986]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="type_label" type="NinePatchRect" parent="." unique_id=1711190580]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("1_plv88")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = SubResource("GDScript_wt0ei")
+metadata/_tab_index = 0
+
+[node name="Container" type="HBoxContainer" parent="type_label" unique_id=512726394]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 145.0
+offset_bottom = 46.0
+theme_override_constants/separation = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="type_label/Container" unique_id=431571964]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("2_yheih")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "标签"
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="type_label/Container" unique_id=1794461219]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme = ExtResource("2_yheih")
+icon = ExtResource("3_e5udy")
+expand_icon = true
+
+[connection signal="button_down" from="type_label/Container/Button" to="type_label" method="_on_button_button_down"]

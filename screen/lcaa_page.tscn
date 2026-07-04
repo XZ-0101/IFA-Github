@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://vmxipkmjbtfe"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_2m3sv"]
+[ext_resource type="Script" uid="uid://bgxluhm45oxaa" path="res://script/lcaa_page.gd" id="1_08ol3"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_08ol3"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_dk0ga"]
+[ext_resource type="Theme" uid="uid://d1d0dsxu3p1hr" path="res://res/HUAKUAI.tres" id="3_08ol3"]
+[ext_resource type="Texture2D" uid="uid://bokvhiqa5svjc" path="res://img/ui/red.png" id="3_dk0ga"]
+[ext_resource type="Resource" uid="uid://ew3asm3r4dxf" path="res://res/jumper/O-00-00.tres" id="5_d0gri"]
+[ext_resource type="Resource" uid="uid://bkyp6wwsm234t" path="res://res/jumper/F-01-02-jumper.tres" id="6_l06c8"]
+[ext_resource type="Resource" uid="uid://cp8lm61o52a6n" path="res://res/jumper/o-03-03-jumper.tres" id="7_50jcm"]
+[ext_resource type="Resource" uid="uid://cdq16enweip3l" path="res://res/jumper/o-01-04-jumper.tres" id="8_1xppm"]
+[ext_resource type="Resource" uid="uid://blwwv7tpjg2bx" path="res://res/jumper/t-04-06.tres" id="9_1rvd5"]
+[ext_resource type="Resource" uid="uid://b1dnuydswu54d" path="res://res/jumper/o-04-08-j.tres" id="10_02vnu"]
+[ext_resource type="Resource" uid="uid://crgyqrt75mtlt" path="res://res/jumper/T-09-09.tres" id="11_f7fbn"]
+[ext_resource type="Resource" uid="uid://bwwmud6x43jlh" path="res://res/jumper/T-09-77.tres" id="12_vx6c5"]
+[ext_resource type="Resource" uid="uid://csfdjpc5dktud" path="res://res_pack/t-01-75/t-01-75-j.tres" id="13_d0gri"]
+[ext_resource type="Resource" uid="uid://c2b0lgyj6ou05" path="res://res_pack/T_06_27/t-06-27-j.tres" id="13_vkc56"]
+[ext_resource type="Resource" uid="uid://ba3xnxoe8x7lv" path="res://res_pack/D-01-110/d-01-110-j.tres" id="14_c5t5h"]
+[ext_resource type="Resource" uid="uid://dygpi3phgdhej" path="res://res_pack/t-09-79/t-09-79-j.tres" id="14_l06c8"]
+[ext_resource type="Resource" uid="uid://d2sf3f0dcmjg4" path="res://res_pack/o-05-61/o-05-61-j.tres" id="15_50jcm"]
+[ext_resource type="Resource" uid="uid://bf2ybh8cmamwb" path="res://res_pack/f-01-37/f-01-37-j.tres" id="16_f7fbn"]
+[ext_resource type="PackedScene" uid="uid://wgpftignoqxd" path="res://screen/s.tscn" id="17_1adtn"]
+[ext_resource type="Resource" uid="uid://phr5cejsbpp4" path="res://res_pack/o-01-15/o-01-15-j.tres" id="17_vx6c5"]
+[ext_resource type="Resource" uid="uid://i03bberlxkpa" path="res://res_pack/f-05-32/f-05-32-j.tres" id="18_vkc56"]
+[ext_resource type="Resource" uid="uid://d4e1k6psvd8wl" path="res://res_pack/o-05-30/o-05-30-j.tres" id="19_c5t5h"]
+[ext_resource type="Resource" uid="uid://cltfb4io4t5jx" path="res://res_pack/t-05-41/t-05-41-j.tres" id="20_vx6c5"]
+[ext_resource type="Resource" uid="uid://bbmnx770cjgdp" path="res://res_pack/f-02-49/f-02-49-j.tres" id="21_vkc56"]
+[ext_resource type="Resource" uid="uid://clb5k7hnhg4um" path="res://res_pack/o-01-55/o-01-55-j.tres" id="22_c5t5h"]
+[ext_resource type="Resource" uid="uid://dphjyb3v8h5vb" path="res://res_pack/o-01-67/o-01-67-j.tres" id="23_g5k0g"]
+[ext_resource type="Resource" uid="uid://divsftt8txp1y" path="res://res_pack/t-01-68/t-01-68-j.tres" id="24_ulk80"]
+[ext_resource type="Resource" uid="uid://dsbrg7tly3m51" path="res://res/jumper/o-01-12.tres" id="25_jiyn1"]
+[ext_resource type="Resource" uid="uid://dwb6c0gjtnfhd" path="res://res_pack/f-01-87/benti/f-01-87-j.tres" id="27_6m7dk"]
+[ext_resource type="Resource" uid="uid://bb5bj1k7rlcm" path="res://res_pack/f-01-69/benti/f-01-69-j.tres" id="28_8dmup"]
+[ext_resource type="Resource" uid="uid://by7fk01m3bqmf" path="res://res_pack/o-05-76/benti/o-05-76-j.tres" id="28_dfxp4"]
+[ext_resource type="Resource" uid="uid://c8iolnltt66lp" path="res://res_pack/t-09-78/t-09-78-j.tres" id="29_8dmup"]
+[ext_resource type="Texture2D" uid="uid://mx0ku0kvf1f3" path="res://img2/UI/Texture2D/CreatureSelect_2.png" id="29_jq56h"]
+[ext_resource type="Resource" uid="uid://c365256qscvfs" path="res://res_pack/t-09-80/t-09-80-j.tres" id="30_hfwao"]
+[ext_resource type="Resource" uid="uid://02xmd6grsqtd" path="res://res_pack/o-09-91/o-09-91-j.tres" id="31_ravqt"]
+[ext_resource type="Resource" uid="uid://dv24x7sd6rla8" path="res://res_pack/t-09-82/t-09-82-j.tres" id="32_hfwao"]
+[ext_resource type="Resource" uid="uid://c83sxlghd8sce" path="res://res_pack/F-05-52/benti/F-05-52-j.tres" id="33_yt57b"]
+[ext_resource type="Resource" uid="uid://dl3yufv5a6x1x" path="res://res_pack/O-02-40/benti/0-02-04-j.tres" id="34_ukdfh"]
+[ext_resource type="Resource" uid="uid://d03m8hmlnxttw" path="res://res_pack/o-02-98/benti/o-02-98-j.tres" id="35_4dwok"]
+[ext_resource type="Resource" uid="uid://c5non0jrcot3f" path="res://res_pack/t-04-50/benti/t-04-50-j.tres" id="36_bb4kk"]
+[ext_resource type="Resource" uid="uid://bemecsvomkrjf" path="res://res_pack/t-04-53/benti/t-04-53-j.tres" id="37_aus3a"]
+[ext_resource type="Resource" uid="uid://ctvxnwjkyro3v" path="res://res_pack/f-04-42/benti/f-04-42-j.tres" id="38_g8s4g"]
+[ext_resource type="Resource" uid="uid://cxpmn72eusbey" path="res://res_pack/O-05-47/o-05-47-j.tres" id="39_8ayvn"]
+[ext_resource type="Resource" uid="uid://dciksr42tbf6t" path="res://res_pack/t-01-54/benti/t-01-54-j.tres" id="40_nfayd"]
+[ext_resource type="Resource" uid="uid://7a21ogenv0yt" path="res://res_pack/f-02-44/benti/f-02-44-j.tres" id="41_i5ge8"]
+[ext_resource type="Resource" uid="uid://bxa1wqstvfjab" path="res://res_pack/f-01-18/benti/f-01-18-j.tres" id="42_6ged0"]
+[ext_resource type="Resource" uid="uid://bpm5xgt3elqo0" path="res://res_pack/t-02-43/benti/t-02-43-j.tres" id="43_ma66j"]
+[ext_resource type="Resource" uid="uid://bsge6psd06aj" path="res://res_pack/o-09-96/o-09-96-j.tres" id="44_phd0e"]
+[ext_resource type="Resource" uid="uid://bc8tnnj1bph7j" path="res://res_pack/o-09-95/o-09-95-j.tres" id="45_6geeb"]
+[ext_resource type="Resource" uid="uid://0laekaxyuqo4" path="res://res_pack/o-04-100/benti/o-04-100-j.tres" id="46_22qnp"]
+[ext_resource type="Resource" uid="uid://dx7phd6on5bt2" path="res://res_pack/o-03-60/benti/o-03-60-j.tres" id="47_fmwft"]
+[ext_resource type="Resource" uid="uid://mpbipoll2c8e" path="res://res_pack/o-02-56/benti/o-02-56-j.tres" id="48_dhpux"]
+[ext_resource type="Resource" uid="uid://01kcmlg2xyki" path="res://res_pack/t-05-51/benti/t-05-51-j.tres" id="49_h3kvj"]
+[ext_resource type="Resource" uid="uid://6ygrj6gvf41w" path="res://res_pack/t-09-90/t-09-90-j.tres" id="50_q6fd6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m7dk"]
+atlas = ExtResource("29_jq56h")
+region = Rect2(13, 449, 997, 561)
+
+[node name="异想体" type="Control" unique_id=1168362764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08ol3")
+jumper_array = Array[ExtResource("2_08ol3")]([ExtResource("5_d0gri"), ExtResource("6_l06c8"), ExtResource("7_50jcm"), ExtResource("8_1xppm"), ExtResource("9_1rvd5"), ExtResource("10_02vnu"), ExtResource("11_f7fbn"), ExtResource("12_vx6c5"), ExtResource("13_vkc56"), ExtResource("14_c5t5h"), ExtResource("13_d0gri"), ExtResource("14_l06c8"), ExtResource("15_50jcm"), ExtResource("16_f7fbn"), ExtResource("17_vx6c5"), ExtResource("18_vkc56"), ExtResource("19_c5t5h"), ExtResource("20_vx6c5"), ExtResource("21_vkc56"), ExtResource("22_c5t5h"), ExtResource("23_g5k0g"), ExtResource("24_ulk80"), ExtResource("25_jiyn1"), ExtResource("27_6m7dk"), ExtResource("28_dfxp4"), ExtResource("28_8dmup"), ExtResource("29_8dmup"), ExtResource("30_hfwao"), ExtResource("31_ravqt"), ExtResource("32_hfwao"), ExtResource("33_yt57b"), ExtResource("34_ukdfh"), ExtResource("35_4dwok"), ExtResource("36_bb4kk"), ExtResource("37_aus3a"), ExtResource("38_g8s4g"), ExtResource("39_8ayvn"), ExtResource("40_nfayd"), ExtResource("41_i5ge8"), ExtResource("42_6ged0"), ExtResource("43_ma66j"), ExtResource("44_phd0e"), ExtResource("45_6geeb"), ExtResource("46_22qnp"), ExtResource("47_fmwft"), ExtResource("48_dhpux"), ExtResource("49_h3kvj"), ExtResource("50_q6fd6")])
+
+[node name="Control3" type="Control" parent="." unique_id=2042666945]
+z_index = 1
+anchors_preset = 0
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=98326262]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=375783902]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1369321327]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=366625954]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=1685545376]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_2m3sv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=170643678]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("2_dk0ga")
+text = "IFA服务站已获取异想体资料"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=486859494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=55722230]
+layout_mode = 0
+offset_left = -244.0
+offset_top = 131.0
+offset_right = 891.0
+offset_bottom = 1126.0
+texture = SubResource("AtlasTexture_6m7dk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1407282260]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 70.0
+offset_right = 624.0
+offset_bottom = 1067.0
+texture = ExtResource("3_dk0ga")
+region_rect = Rect2(0, 1, 1000, 760)
+patch_margin_left = 3
+patch_margin_top = 27
+patch_margin_bottom = 4
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="." unique_id=1185641528]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 173.0
+offset_right = 620.0
+offset_bottom = 1051.0
+theme = ExtResource("3_08ol3")
+
+[node name="VBoxContainer" type="GridContainer" parent="ScrollContainer3" unique_id=1669772685]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="CanvasLayer" parent="." unique_id=1679995970 instance=ExtResource("17_1adtn")]
+
+[node name="Button" type="Button" parent="." unique_id=736619278]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 118.0
+offset_right = 105.0
+offset_bottom = 166.0
+theme = ExtResource("2_dk0ga")
+text = "搜索"
+
+[node name="Button2" type="Button" parent="." unique_id=887609470]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 118.0
+offset_right = 218.0
+offset_bottom = 166.0
+theme = ExtResource("2_dk0ga")
+text = "编号搜索"
+
+[node name="Button3" type="Button" parent="." unique_id=1885143589]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 118.0
+offset_right = 422.0
+offset_bottom = 166.0
+theme = ExtResource("2_dk0ga")
+text = "类型搜索"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]

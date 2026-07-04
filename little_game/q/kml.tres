@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://bu244geenprt0"]
+
+[ext_resource type="Texture2D" uid="uid://dwl8wlu6mudf4" path="res://img/music/1200px-渴望-蜜卡拉-背景.webp" id="1_5h6e0"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_q647q"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_f1xk2"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_sbv13"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_bfwcn"]
+[ext_resource type="Resource" uid="uid://27vedc843xyj" path="res://little_game/gift/kml-g.tres" id="6_yiw52"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="7_t75y2"]
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("4_sbv13")
+value_object = 4
+add_valua = -50
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_n0coi"]
+script = ExtResource("5_bfwcn")
+win_text = "你在干什么？$s玫瑰因为此举陷入了极度的恐惧$s你还真是...$s等等$s小心，它朝你过来了"
+gift = SubResource("Resource_j0p0o")
+name_ = "浇水吧"
+"结果" = "？"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_y48xq"]
+script = ExtResource("4_sbv13")
+value_object = 4
+add_valua = -10
+get_gift = Array[ExtResource("3_f1xk2")]([ExtResource("6_yiw52")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("5_bfwcn")
+win_text = "玫瑰显得很满足$s它送你了一份礼物"
+gift = SubResource("Resource_y48xq")
+name_ = "鲜血"
+"结果" = "很好"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_esvqd"]
+script = ExtResource("7_t75y2")
+img = ExtResource("1_5h6e0")
+name_ = "饥渴者"
+subject = "---"
+"问题" = "对的，是鲜血$s...$s玫瑰看起来有些渴了$s浇点什么吧"
+item = Array[ExtResource("2_q647q")]([SubResource("Resource_n0coi"), SubResource("Resource_wowwi")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"
+
+[sub_resource type="Resource" id="Resource_2rdt5"]
+script = ExtResource("2_q647q")
+name_ = "是鲜血"
+"分支问题" = SubResource("Resource_esvqd")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[sub_resource type="Resource" id="Resource_bmcaw"]
+script = ExtResource("2_q647q")
+name_ = "是肥料"
+"结果" = "...$s并非如此$s最好还是趁它还未饥渴时逃跑吧"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("7_t75y2")
+img = ExtResource("1_5h6e0")
+name_ = "饥渴者"
+subject = "---"
+"问题" = "这是一朵玫瑰$s它比任何玫瑰长得都要更高更大$s它究竟以何为养分才可以如此鹤立鸡群？"
+item = Array[ExtResource("2_q647q")]([SubResource("Resource_2rdt5"), SubResource("Resource_bmcaw")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

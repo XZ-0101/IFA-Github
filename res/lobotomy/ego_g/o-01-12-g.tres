@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://jws060slxt0y"]
+
+[ext_resource type="Resource" uid="uid://cp62iqfibud4t" path="res://res/jumper/o-01-12-g-j.tres" id="1_4ypxp"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_qkd4o"]
+[ext_resource type="Texture2D" uid="uid://dcm231ngjiqwk" path="res://img2/LCA/O-01-12/G-2.webp" id="3_qkd4o"]
+
+[resource]
+script = ExtResource("2_qkd4o")
+name_ = "孤独"
+texture = ExtResource("3_qkd4o")
+info = "*资料类型：脑叶公司EGO饰品/礼物
+
+获得率：8%
+位置：眼部
+成功率+3
+工作速度+3
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-12_%E8%80%81%E5%A6%87%E4%BA%BA]脑叶公司Wiki[/url],脑叶公司情报部"
+level = "a"
+jump = Array[String](["o-01-12"])
+jumper = ExtResource("1_4ypxp")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

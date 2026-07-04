@@ -1,0 +1,171 @@
+[gd_resource type="Resource" script_class="lobotomy" load_steps=11 format=3 uid="uid://ckd8wkkx063qv"]
+
+[ext_resource type="Texture2D" uid="uid://ndmteyqra6q4" path="res://img/lc-a/o-03-03/I.webp" id="1_g8rjh"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_ifi5c"]
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_pjm1l"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_68i08"]
+[ext_resource type="Resource" uid="uid://cp8lm61o52a6n" path="res://res/jumper/o-03-03-jumper.tres" id="2_ju2pi"]
+
+[sub_resource type="Resource" id="Resource_0mdcx"]
+script = ExtResource("1_pjm1l")
+level = {
+"L1": 50,
+"L2": 40,
+"L3": 30,
+"L4": 30,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_kcu37"]
+script = ExtResource("1_pjm1l")
+level = {
+"L1": 70,
+"L2": 70,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_hgyhm"]
+script = ExtResource("1_pjm1l")
+level = {
+"L1": 70,
+"L2": 70,
+"L3": 70,
+"L4": 70,
+"L5": 70
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_a0v3j"]
+script = ExtResource("1_pjm1l")
+level = {
+"L1": 50,
+"L2": 40,
+"L3": 30,
+"L4": 30,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_pv5r8"]
+script = ExtResource("2_68i08")
+Probabilities = Array[ExtResource("1_pjm1l")]([SubResource("Resource_0mdcx"), SubResource("Resource_kcu37"), SubResource("Resource_hgyhm"), SubResource("Resource_a0v3j")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("1_ifi5c")
+Attack_Type = 2
+acctak_Damage = "1-2"
+Probabilities_ = SubResource("Resource_pv5r8")
+most_pe_box = "10"
+good_Mood_Range = "8-10"
+bad_Mood_Range = "4-7"
+Norm_Mood_Range = "0-3"
+Qliphoth_Counter = "X"
+red_def = 1.0
+white_def = 1.0
+black_def = 1.0
+Upgrades = Array[String](["Ⅰ. 当工作结果为优时，“一罪与百善”会为完成工作的员工恢复一些精神值。某个员工解释说那是一种“释然”的感觉。", "Ⅱ. 如果员工在一次工作中成功产出了所有的PE-BOX，那么“一罪与百善”会为该部门的所有员工恢复精神值。"])
+story = "这是一个沉默的异想体。理解善恶冲突的它，会用空洞的眼窝凝视所有遇见它的人。
+
+一颗头戴荆棘之冠的巨大头骨被连接在十字架上，静静地飘浮在离地两米的高度。
+
+这个异想体的外貌虽然很是怪诞，可它记录在案的针对员工的暴力行为少之又少。
+
+它以言语中浮现的“罪孽”为食。被指派进行工作的员工需要向它承认自己的罪行，并进行忏悔。它究竟是如何食用这些罪孽的？目前还不得而知。
+
+近期，研究发现一罪与百善能带来一些积极的效应。一项针对一罪与百善的研究表明成功进行了忏悔的员工在完成忏悔之后恢复了部分精神值；但这种积极效应的原理尚未明了。同时，如若员工承认的罪孽是内容不实的，这种效应将不会发生。
+
+<实验记录X2-321>
+通过对这个异想体的研究，我们将人类的罪孽划分为以下三个等级。
+
+第一级：能够在社交场合中作为玩笑谈论的，无关紧要的谎言或是不会引人注目的小错。
+第二级：只会与最亲密的朋友分享，更加严重的错误和过失。
+第三级：永远不能透露给任何人知道，只能跟随自己一同埋进坟墓的滔天大罪。
+
+实验1：员工████被指派去向这个异想体承认第一级的罪孽。
+实验结果：这个异想体的能源产量增长了12%。
+
+实验2：员工████被指派去向这个异想体承认第二级的罪孽。
+实验结果：这个异想体的能源产量增长了15%。
+
+实验3：员工████被指派去向这个异想体承认第三级的罪孽。
+实验结果：在████被送入收容单元的第1分48秒，收容单元内部出现了一道耀眼的光芒。光芒愈发明亮，就连身处收容单元外的员工都能看见。紧接着公司经历了一场持续2小时的大停电。████失去了近六年以来的所有记忆。
+
+事故发生后，所有类似的实验都被取消了。值得一提的是，该部门所有员工的精神污染程度都有一定程度的下降。
+按照道德规范来讲，所有的实验画面都应被保密。可是为了详细了解事故的起因，我们只能选择查看事发时的监控录像。
+
+<音频记录>
+████：“这件事发生在████，████，下午四点左右...额...这样说真的有用吗...？好吧，在那个离我家大约有二十分钟路程的地方，我和几个比较要好的朋友准备去参加森林动物乔装派对。其中一个朋友把自己打扮成一头鹿，他披了一件深色的大衣，上面有几块类似鹿身上的斑点，头上还歪七八糟地戴着一对鹿角，很蹩脚的那种。老实说，他的打扮真是糟糕透了。不管怎么说，我...额...我不知道我们的“小鹿”为什么要跑进森林里，可能...可能是因为好奇吧？额...一个小时之后，我们才意识到他不见了。我们一起出门找他。最后是，额...我们在远处的某片灌木丛里看到了他，我喊了他的名字。他...额...他...我，我不知道他是不是因为迷路了，看到我们的时候太激动...还是，别的什么原因...他向我们跑来。就在这时我们听到了枪声。砰！砰！砰！我，我们不知道那是从哪来的...当我从惊恐中缓过神后，我...我...看到他的血溅在了我的靴子上...从那以后，我们再也没有人敢打扮成动物了...就...就是这样...”
+
+<观察日志#4-435>
+它没有眼睛，毕竟，它只是一颗骷髅头，但我并不认为它什么都看不见。我的意思是，我能感受到它在注视着我，听我说话，让我在忏悔时能够减轻罪恶所带来的心理负担。
+
+后来，我们前往████的家乡进行了一次调查。在那里我们了解到，当年有一个名叫贾斯丁的小男孩在猎鹿期装扮成小鹿，被一名猎人射杀。但和████所讲述的不同，贾斯丁曾多次被其他孩子霸凌。据目击者称，在枪声响起之前他曾听到孩子们在大喊：“贾斯丁，快给我跑！再跑快点呀！” 事故发生后，每一个与贾斯丁的死有关的孩子都搬离了小镇，猎鹿也被镇长所禁止。
+[color=ff7300]
+<摘录自研究记录X-392>
+你不能指望所有的员工都能够真诚地向那个异想体坦白。通常情况下，大约有十分之一的员工会倾向于说出略带虚构的事情。这与撒谎不同，你可以把它理解成一种本能的自我防卫。人们有时会歪曲事实来为自己的某些过错进行辩解，可他们一旦这么做，那就不再是忏悔了。没错，我就是在说你呢，你丫已经为你那天为什么上班迟到哔哔五分钟了！
+[/color]"
+Observation_level = "Ⅰ. 成功率 + 5%、解锁E.G.O饰品 Ⅱ. 工作速度 + 5、解锁E.G.O护甲 Ⅲ. 成功率 + 5%、解锁E.G.O武器 Ⅳ. 工作速度 + 5"
+flavour_text = Array[String](["进入“一罪与百善”的收容单元时，出于对它的一无所知，员工感受到了恐惧。", "通常情况下，“一罪与百善”能够对员工们产生积极的影响。", "指派一名诚实的员工进入“一罪与百善”的收容单元是再好不过的。", "“一罪与百善”能够看透你的灵魂。", "“一罪与百善”等待着人们的“罪孽”。", "员工的罪孽很快就会被“一罪与百善”吸收。", "“一罪与百善”有时会紧咬牙关，发出骇人的声响，但这其实没什么可担心的。", "“一罪与百善”正缓慢地飘浮在空中。", "“一罪与百善”没有眼睛，但它能感知到员工的存在。", "“一罪与百善”是人类的惩戒者。", "员工见证了“一罪与百善”的庄严肃穆。", "员工完成了工作，但“一罪与百善”没有丝毫的回应。", "在员工进行工作的时候，“一罪与百善”没有任何反应。", "“一罪与百善”并没有回应员工。", "承受苦难，仅仅只是赎罪的开始。", "只有那些能够熟练地欺骗自己的人才能过上“幸福”的生活。", "为了正义而犯下的罪孽，能够被赦免吗？"])
+other_info = "一罪与百善（O-03-03）是一个基本无害的异想体。从外表上看，它是一颗戴着荆棘之冠的巨大骷髅头，一根金属十字架贯穿了它的顶骨和两侧的颞骨。
+
+在不考虑bug的情况下，因为异想体选择机制，“一罪与百善”永远是第一天能够选择的唯一一个异想体。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://img/lc-a/o-03-03/ogmb1.png[color=red]
+收容单元监控画面[/color]
+
+构成十字架的金属成分未知
+十字架的下边曾受到过破坏
+
+*在一罪与百善工作时，从收容单元里传出来的诵经声。经查找，已确认是《Brainwave-Sync - Gregorian Chant - Theta Frequency》（格里高利圣咏）
+
+*格里高利圣咏
+中世纪的单声宗教体裁
+格里高利圣咏（Gregorian chant），使用于罗马教会礼拜仪式，以教皇格里高利一世命名，因表情肃穆、风格朴素也被称为素歌。
+格里高利圣咏的歌词主要来自圣经和诗篇，音乐服从于唱词。由于其宗教性质，因此旋律音调一般平缓，音域常控制在较为狭窄的范围 。
+（来自百度百科）
+
+一罪与百善的形象原型是被钉在十字架上的耶稣
+
+推测LCE评级为Z-01
+推测罪孽属性为傲慢，暴食
+
+
+"
+other_info_act = "特殊能力
+当工作结果为优时，“一罪与百善”将会为刚对其完成工作的员工恢复4点精神值。如果员工在一次工作中成功产出了所有的PE-BOX，那么“一罪与百善”将为它所处部门内所有员工恢复4点精神值。
+
+“一罪与百善”虽然会对员工造成微量的精神伤害，但同时“一罪与百善”也会回复员工精神值。所以“一罪与百善”是唯一完全对员工有益的非工具类异想体。
+
+特殊情报
+当“T-03-46”突破收容时，使“T-03-46”的第十二名使徒(卖主的叛徒)对一罪与百善工作时，所有工作选项全部被替换为“赎罪”。
+进行赎罪工作后一罪与百善会向“白夜”照耀光芒，不断(每0.3)对其造成666点灵魂伤害(实为3330点无来源灵魂伤害)，直到其死亡。"
+price = "基础信息：8点
+敏感信息：8点
+管理须知：每条4点
+工作偏好：每条2点"
+jump_ego = Array[String](["o-03-03-w", "o-03-03-s", "o-03-03-g"])
+name_ = "一罪与百善"
+icon = ExtResource("1_g8rjh")
+info_ = "*资料类型：异想体
+
+它以言语中浮现的“罪孽”为食。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-03-03_%E4%B8%80%E7%BD%AA%E4%B8%8E%E7%99%BE%E5%96%84]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "O-03-03"
+level = "z"
+jumper = ExtResource("2_ju2pi")
+jump = Array[String](["d-0303"])
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

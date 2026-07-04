@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2nb8sl5l6q5i"
+path="res://.godot/imported/Studio EIM - Lobby (Inst_).ogg-9461f9bfea964632e9ae1deba6d049df.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Studio EIM - Lobby (Inst_).ogg"
+dest_files=["res://.godot/imported/Studio EIM - Lobby (Inst_).ogg-9461f9bfea964632e9ae1deba6d049df.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

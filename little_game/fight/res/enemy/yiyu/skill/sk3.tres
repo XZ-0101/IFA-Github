@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://elv56exxwcjo"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_bd15d"]
+[ext_resource type="Texture2D" uid="uid://bfl7rat0t0k5p" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image (5).png" id="2_bd15d"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_cb53u"]
+
+[sub_resource type="Resource" id="Resource_bd15d"]
+script = ExtResource("1_bd15d")
+code = "var num
+num=Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/yiyu/BUFF/czy.tres\")
+print(num)
+if num!=0:
+	Fight.add_buff_path(\"res://little_game/fight/res/enemy/yiyu/BUFF/happiness.tres\",num,get_enemy(team))
+	Fight.minus_buff_path(\"res://little_game/fight/res/enemy/yiyu/BUFF/czy.tres\",team,num)
+sp+=10
+ehp+=10"
+exe_time = "after_under_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_cb53u")
+name_ = "忆雨名作"
+icon = ExtResource("2_bd15d")
+level = 3
+change_Point = 5
+coin_n = 1
+at = 5
+def = 15
+description = Array[String](["【受到攻击时】自身带有每一层创作欲
+则消耗一层创作欲，并施加一层“快乐”
+自己恢复10SP
+敌方恢复10HP"])
+eff_arr = Array[ExtResource("1_bd15d")]([SubResource("Resource_bd15d")])
+sin_color = Color(0.9882353, 0.41960785, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

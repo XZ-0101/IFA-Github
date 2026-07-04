@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://d0b3gm081anxq"
+path="res://.godot/imported/asaf7-316zn.gif-4b20d8216bd49d584a79f13cc7267c16.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/asaf7-316zn.gif"
+dest_files=["res://.godot/imported/asaf7-316zn.gif-4b20d8216bd49d584a79f13cc7267c16.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dwb6c0gjtnfhd"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_x4yf4"]
+[ext_resource type="Texture2D" uid="uid://buyqaxj04hydp" path="res://res_pack/f-01-87/benti/img/I-1514217151.webp" id="2_73wnx"]
+
+[resource]
+script = ExtResource("1_x4yf4")
+name_ = "索取智慧的稻草人"
+s = "F-01-87"
+level = "H"
+texture = ExtResource("2_73wnx")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-87/benti/f-01-87.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "绿野仙踪"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

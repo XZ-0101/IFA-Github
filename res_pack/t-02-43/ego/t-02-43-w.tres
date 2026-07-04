@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://cem2bm43uvgym"]
+
+[ext_resource type="Resource" uid="uid://ddawpj8h7qhq7" path="res://res_pack/t-02-43/ego/t-02-43-w-j.tres" id="1_t26kt"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_ejoo2"]
+[ext_resource type="Texture2D" uid="uid://blg521oygcer" path="res://res_pack/t-02-43/ego/img/W-1513167936.webp" id="3_xtn4m"]
+
+[resource]
+script = ExtResource("2_ejoo2")
+Cost = "20"
+Max_Amount = "3"
+Damage_type = 1
+Damage = "7-9"
+Attack_Speed = "普通（2s）"
+Range_ = "近（3）"
+dps = "4"
+m_ban = "棁"
+Observation_Level = "3"
+Requirements = "无"
+other = "※这把武器的资料描述存在问题。实际上，当持有者的勇气等级大于等于4级时，一旦其进入镇压状态，其移动速度就会提高2.5点。"
+name_ = "赤瞳"
+texture = ExtResource("3_xtn4m")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+※如果持有者的勇气等级高于2级，进入战斗后会提高2.5点移动速度。
+
+在这座长有许多眼睛的蜘蛛巢中，爬着许多饥肠辘辘却不知满足的后代。
+
+为了在夜间觅食，它的眼睛会发出微光。
+
+这把E.G.O武器可以增强持有者的追踪能力。
+
+它能在黑暗中察觉到受害者身上的热量所散发出的红光。
+
+但是，如果持有者注视着蜘眼过久，他们反会被其操控。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/t-02-43/benti/t-02-43-j.tres"])
+jumper = ExtResource("1_t26kt")
+gif = "g2"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

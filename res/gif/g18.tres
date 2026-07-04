@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="gif_array" format=3 uid="uid://dnhfit0helyqp"]
+
+[ext_resource type="Script" uid="uid://c1qh3yycnfuil" path="res://script/a_gif.gd" id="1_6h074"]
+[ext_resource type="SpriteFrames" uid="uid://c43hnamsuovw1" path="res://img2/GIF/LC/0576.gif" id="2_6h074"]
+[ext_resource type="Script" uid="uid://duipxcw3u38xk" path="res://script/gif_array.gd" id="3_hy002"]
+
+[sub_resource type="Resource" id="Resource_7fg6o"]
+script = ExtResource("1_6h074")
+texture = ExtResource("2_6h074")
+size = Vector2(0.5, 0.5)
+name_ = "凝视攻击动画"
+index = 1
+back = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c1qh3yycnfuil"
+
+[resource]
+script = ExtResource("3_hy002")
+array = Array[ExtResource("1_6h074")]([SubResource("Resource_7fg6o")])
+metadata/_custom_type_script = "uid://duipxcw3u38xk"

@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://ckh72712byg78"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_bq8xd"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_lvrnh"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_i1ap6"]
+[ext_resource type="Resource" uid="uid://dw68xr2gcc7kt" path="res://res/jumper/LbEgo0.tres" id="2_x0pi2"]
+[ext_resource type="Texture2D" uid="uid://dggp6d61ewif2" path="res://little_game/Texture2D/MainUI_BattleSelection_7.png" id="3_a4xb1"]
+[ext_resource type="Resource" uid="uid://cg3cmcr6cjd5o" path="res://little_game/gift/sz-g.tres" id="3_j52rh"]
+[ext_resource type="Texture2D" uid="uid://2hkdlqpfxmsv" path="res://img2/UI/star2.png" id="4_7f5x4"]
+[ext_resource type="Resource" uid="uid://260nlqqkrop7" path="res://little_game/gift/milk_coffe-j.tres" id="4_13mvh"]
+[ext_resource type="Resource" uid="uid://27vedc843xyj" path="res://little_game/gift/kml-g.tres" id="5_ujrtb"]
+[ext_resource type="Resource" uid="uid://cbu888j2r2pq" path="res://little_game/box/new_resource1.tres" id="6_13mvh"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="6_ujrtb"]
+[ext_resource type="Resource" uid="uid://b0cll1vd06fn1" path="res://little_game/box/new_resource.tres" id="7_ujrtb"]
+[ext_resource type="Resource" uid="uid://c7br35u7pfil8" path="res://little_game/box/new_resource2.tres" id="8_ehf87"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="10_12tmc"]
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="10_dd6e7"]
+[ext_resource type="Resource" uid="uid://5af2k1dficjy" path="res://little_game/box/a.tres" id="10_hfb7x"]
+[ext_resource type="Resource" uid="uid://c3do51yorjdtx" path="res://little_game/fight/res/skill/basic_burn/s1.tres" id="12_2kcq8"]
+[ext_resource type="Resource" uid="uid://dtrl25njsyoqx" path="res://little_game/fight/res/skill/basic_burn/s2.tres" id="13_lfxqo"]
+[ext_resource type="Script" uid="uid://dsc5rk3jx627s" path="res://little_game/fight/CLASS/gift_value.gd" id="13_r1m48"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="14_burdh"]
+[ext_resource type="Resource" uid="uid://bdpvpx3k0ty3p" path="res://little_game/fight/res/skill/basic_burn/s3.tres" id="14_hfb7x"]
+[ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="15_2tesm"]
+[ext_resource type="Resource" uid="uid://yq3bbbpdqsd" path="res://little_game/fight/res/skill/basic_burn/sdef.tres" id="15_gd4cu"]
+[ext_resource type="Resource" uid="uid://dilfhtpamcm3t" path="res://little_game/fight/res/skill/basic_burn/spanic.tres" id="16_iof3e"]
+[ext_resource type="Resource" uid="uid://bu7nmphnwf28q" path="res://little_game/gift/bstt-g.tres" id="20_2kcq8"]
+[ext_resource type="Resource" uid="uid://clgcnddaegmjb" path="res://little_game/fight/res/ques/star/gift/eff.tres" id="21_lfxqo"]
+[ext_resource type="Texture2D" uid="uid://b5l6c0dlvxxpm" path="res://little_game/Sprite/zheshe.png" id="25_hfb7x"]
+
+[sub_resource type="GDScript" id="GDScript_ygh6a"]
+script/source = "extends Control
+
+@export var useful_gift_arr_:Array[jumper_class]
+@export var deck_pool_:Array[deck_box]
+@export var hard_deck_pool_:Array[deck_box]
+@export var nm_deck_pool_:Array[deck_box]
+@export var skill_dic:Dictionary[int,skill_arr]={
+	
+
+}
+var d_skill_arr:Array[skill_lt]
+@export var d_gift_eff_arr:Array[gift_value]
+
+var ml:int=5
+var lgc=LittleGameCtrl
+var skill_ind:int=0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicAll.get_child(1).get_child(0).button_pressed=true
+	jumper.hide_()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_button_down() -> void:
+	lgc.gift_array.clear()
+	lgc.deck_pool=deck_pool_
+	lgc.h_deck_pool=hard_deck_pool_
+	lgc.nm_deck_pool=nm_deck_pool_
+	lgc.useful_gift_arr=useful_gift_arr_
+	d_skill_arr=skill_dic.get(skill_ind).skill_arr
+	lgc.skill_arr=d_skill_arr
+	LittleGameFight.skill_arr=d_skill_arr
+	LittleGameFight.gift_eff_arr=d_gift_eff_arr
+	lgc.value_array[0]=0
+	lgc.value_array[1]=0
+	lgc.value_array[2]=0
+	lgc.value_array[3]=0
+	lgc.hp=30
+	lgc.n_hp=30
+	lgc.sp=30
+	lgc.n_sp=30
+	lgc.max_level=ml
+	lgc.now_level=0
+	lgc.max_point=0
+	lgc.now_point=0
+	jumper.show_()
+	Loading.load_to(\"res://little_game/choose_deck.tscn\",1)
+	await Loading.load_over
+	get_tree().change_scene_to_packed(Get.going_to_load_screen)
+	
+	pass # Replace with function body.
+
+
+
+
+
+func _on_button_2_button_down() -> void:
+	Loading.load_to(\"res://screen/收藏夹.tscn\",1)
+	await Loading.load_over
+	Get.jumped_list.append(Get.going_to_load_screen)
+	get_tree().change_scene_to_packed(Get.going_to_load_screen)
+	pass # Replace with function body.
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	match index:
+		0:
+			ml=5
+		1:
+			ml=10
+		2:
+			ml=15
+	pass # Replace with function body.
+
+
+func _on_option_button_2_item_selected(index: int) -> void:
+	skill_ind=index
+	pass # Replace with function body.
+"
+
+[sub_resource type="Resource" id="Resource_5ixl0"]
+script = ExtResource("10_dd6e7")
+skill_arr = Array[ExtResource("10_12tmc")]([ExtResource("12_2kcq8"), ExtResource("13_lfxqo"), ExtResource("14_hfb7x"), ExtResource("15_gd4cu"), ExtResource("16_iof3e")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_srfm3"]
+script = ExtResource("14_burdh")
+code = "sp+=3
+Fight.play_anima(\"text\",0,\"show,EGO忏悔 SP恢复3\")"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_dd6e7"]
+script = ExtResource("13_r1m48")
+gift_jumper = ExtResource("15_2tesm")
+gift_eff = SubResource("Resource_srfm3")
+gift_price = 10
+lv = 3
+de = "[回合开始时]恢复3SP"
+metadata/_custom_type_script = "uid://dsc5rk3jx627s"
+
+[sub_resource type="Resource" id="Resource_2kcq8"]
+script = ExtResource("14_burdh")
+code = "ehp-=ehp*0.2"
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_lfxqo"]
+script = ExtResource("13_r1m48")
+gift_jumper = ExtResource("5_ujrtb")
+gift_eff = SubResource("Resource_2kcq8")
+gift_price = 10
+lv = 2
+de = "[战斗开始时]对敌方造成其体力上限20%的固定伤害。
+"
+metadata/_custom_type_script = "uid://dsc5rk3jx627s"
+
+[sub_resource type="Resource" id="Resource_p3o2m"]
+script = ExtResource("14_burdh")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/totem.tres\",1,team)"
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_ndois"]
+script = ExtResource("13_r1m48")
+gift_jumper = ExtResource("20_2kcq8")
+gift_eff = SubResource("Resource_p3o2m")
+gift_price = 200
+lv = 6
+de = "[战斗开始时]获得一层\"复活-不死图腾\""
+metadata/_custom_type_script = "uid://dsc5rk3jx627s"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ara"]
+atlas = ExtResource("3_a4xb1")
+region = Rect2(1792, 8, 248, 288)
+
+[node name="小游戏" type="Control" unique_id=732714690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ygh6a")
+useful_gift_arr_ = Array[ExtResource("1_lvrnh")]([ExtResource("2_x0pi2"), ExtResource("3_j52rh"), ExtResource("4_13mvh"), ExtResource("5_ujrtb")])
+deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87"), ExtResource("10_hfb7x"), ExtResource("10_hfb7x")])
+skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({
+0: SubResource("Resource_5ixl0")
+})
+d_gift_eff_arr = Array[ExtResource("13_r1m48")]([SubResource("Resource_dd6e7"), SubResource("Resource_lfxqo"), SubResource("Resource_ndois"), ExtResource("21_lfxqo")])
+
+[node name="Control3" type="Control" parent="." unique_id=1074257157]
+z_index = 1
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=1150559406]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=189872602]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=1077487300]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=1141824281]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=181893254]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_bq8xd")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=1815875375]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 498.0
+offset_bottom = 64.0
+theme = ExtResource("2_i1ap6")
+text = "踏入此门者，当舍弃一切希望"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2058698091]
+texture_filter = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = 61.0
+offset_right = 646.0
+offset_bottom = 723.0
+texture = ExtResource("25_hfb7x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=80481076]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 383.0
+offset_right = 677.0
+offset_bottom = 516.0
+theme = ExtResource("2_i1ap6")
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 46
+bbcode_enabled = true
+text = "折射镜像迷宫][fade][宫迷像镜射折"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=358926463]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 693.0
+offset_right = 509.0
+offset_bottom = 988.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer" unique_id=254096048]
+layout_mode = 2
+theme = ExtResource("2_i1ap6")
+theme_override_font_sizes/font_size = 40
+selected = 0
+item_count = 3
+popup/item_0/text = "简单"
+popup/item_0/id = 0
+popup/item_1/text = "普通"
+popup/item_1/id = 1
+popup/item_2/text = "困难"
+popup/item_2/id = 2
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer" unique_id=1986206235]
+layout_mode = 2
+theme = ExtResource("2_i1ap6")
+theme_override_font_sizes/font_size = 40
+selected = 0
+item_count = 1
+popup/item_0/text = "烧伤"
+popup/item_0/id = 0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=794305451]
+layout_mode = 2
+theme = ExtResource("2_i1ap6")
+theme_override_font_sizes/font_size = 40
+text = "进入"
+icon = SubResource("AtlasTexture_u5ara")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=118724008]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_i1ap6")
+theme_override_font_sizes/font_size = 40
+text = "收藏夹"
+icon = ExtResource("4_7f5x4")
+expand_icon = true
+
+[connection signal="item_selected" from="VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]

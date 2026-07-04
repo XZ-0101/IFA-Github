@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://crgyqrt75mtlt"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ab2ei"]
+[ext_resource type="Texture2D" uid="uid://cdob2qjff4beg" path="res://img2/LCA/T-09-09/Theresia_-1102744.webp" id="2_ab2ei"]
+
+[resource]
+script = ExtResource("1_ab2ei")
+name_ = "特蕾西娅"
+s = "T-09-09"
+level = "T"
+texture = ExtResource("2_ab2ei")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/tool/T-09-09.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

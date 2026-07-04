@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://cw81brwq2d1na"]
+
+[ext_resource type="Resource" uid="uid://coksawfryww8e" path="res://res_pack/o-01-55/ego/o-01-55-g-j.tres" id="1_wflqi"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_dujc2"]
+[ext_resource type="Texture2D" uid="uid://da2psnkf5lt8x" path="res://res_pack/o-01-55/ego/img/QQ3F20180429153051.webp" id="3_0opbx"]
+
+[resource]
+script = ExtResource("2_dujc2")
+name_ = "小小银河"
+texture = ExtResource("3_0opbx")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：4%
+位置：颈部
+成功率+3
+工作速度+3
+每隔一段时间为佩戴者恢复少量生命值。
+和描述不同，这个饰品的具体效果为：每5秒为穿戴者回复1.8点生命值与精神值。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-01-55"])
+jumper = ExtResource("1_wflqi")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

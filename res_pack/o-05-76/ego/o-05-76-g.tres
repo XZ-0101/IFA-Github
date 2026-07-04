@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dy0v03ku6msvl"]
+
+[ext_resource type="Resource" uid="uid://72ykwerynb6r" path="res://res_pack/o-05-76/ego/o-05-76-g-j.tres" id="1_10qfh"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_t0tq0"]
+[ext_resource type="Texture2D" uid="uid://bij12i22by74w" path="res://res_pack/o-05-76/ego/img/3F3F.webp" id="3_kn6e2"]
+
+[resource]
+script = ExtResource("2_t0tq0")
+name_ = "凝视"
+texture = ExtResource("3_kn6e2")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：4%
+位置：手套
+最大生命值+4
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/o-05-76/benti/o-05-76-.tres"])
+jumper = ExtResource("1_10qfh")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

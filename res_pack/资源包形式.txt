@@ -1,0 +1,76 @@
+<异想体编号>
+--<ego>
+----<img>
+-------图片...
+----饰品
+----饰品跳转
+----护甲
+----护甲转跳
+----武器
+----武器转跳
+--<img>
+----图片...
+--异想体
+--异想体跳转
+
+异想体资料手册
+attack type-伤害类型 1-RED 2-WHITE 3-BLACK 4-PALE
+attack damage- 伤害范围（x-y）
+Probabilities-工作偏好 共创4个单位 由0-3分别是本能，洞察，沟通（依恋），压迫 L1,L2,L3,L4,L5分别对应1-5级员工，值添对应百分比（不填百分号）
+most_pe_box 最大PE-BOX产量
+good_Mood_Range 工作结果为优时对应的PE-BOX产量范围
+bad_Mood_Range 工作结果为差时对应的PE-BOX产量范围
+Norm_Mood_Range 工作结果为良时对应的PE-BOX产量范围
+will_Breakthrough_containment 该异想体是否会突破收容 （说的话，勾选按钮）
+Qliphoth_Counter 逆卡巴拉计数器极值（没有添X-大写）
+red_def 红色伤害抗性
+white_def 白色伤害抗性
+black_def 黑色伤害抗性
+pale_def 绿色伤害抗性
+Upgrades 管理须知
+story 故事
+Observation_level 观察等级加成
+flavour_text 工作日志 逐条添
+other_info 格式如下
+
+wiki上对该异想体描述
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]基础工作速度数值[/cell][cell border=#ffffa1]工作冷却数值[/cell]
+[/table]
+[/center]
+
+[img]收容单元图片路径[/img][color=red]
+收容单元监控画面[/color]
+
+other_info_act  格式如下
+特殊能力
+
+出逃信息
+
+镇压建议
+
+price 解锁信息所需独立PE-BOX
+jump_ego 添转跳代码-详情请看-转跳讲解-
+
+bacis_info部分
+name_  名字
+icon 资料图片
+info_  格式如下
+
+*资料类型：异想体
+
+提取时文本
+
+资料来自：[url=网页地址]脑叶公司Wiki[/url] 脑叶公司情报部
+
+subject 编号
+level 等级
+jumper 转跳资源-详情请看-转跳讲解-（唯一化后单独保存为一个文件）
+jump 添转跳代码-详情请看-转跳讲解-
+gif 动图代码 不管，添null
+
+异想体资料手册
+

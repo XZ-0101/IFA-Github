@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dd6l15uxajdse"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_2db3o"]
+[ext_resource type="Texture2D" uid="uid://bkbolgvni8gib" path="res://img2/TEST/03/03.jpg" id="2_2db3o"]
+
+[resource]
+script = ExtResource("1_2db3o")
+name_ = "前往何方"
+s = "绿色的黄昏"
+level = "W"
+texture = ExtResource("2_2db3o")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/test/test3.tres"
+mode = "TEST"
+type = Array[String](["考验", "智械相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

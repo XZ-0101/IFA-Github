@@ -1,0 +1,434 @@
+[gd_scene format=3 uid="uid://c0pjy48i6yhx"]
+
+[ext_resource type="Texture2D" uid="uid://bm6qe6p7jnkaw" path="res://little_game/fight/img/ui/Texture2D/BattleUI_CoinPopup_1.png" id="1_rk3vd"]
+[ext_resource type="Texture2D" uid="uid://cs2u1xeusrfw8" path="res://little_game/fight/res/skill/skill_img/d_s.png" id="2_yp5n3"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="4_dpubc"]
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="5_e4wgj"]
+[ext_resource type="Texture2D" uid="uid://boq3ccg55ed4b" path="res://little_game/fight/img/ui/Texture2D/BattleUI_InfoPopup_new_1.png" id="5_n7p26"]
+[ext_resource type="AudioStream" uid="uid://c01bpeei1lhpw" path="res://little_game/AudioClip/moving-cursor-5.mp3" id="8_dpubc"]
+[ext_resource type="AudioStream" uid="uid://cp6ak5ddgq4ls" path="res://little_game/AudioClip/moving-cursor-1.mp3" id="9_n7p26"]
+
+[sub_resource type="GDScript" id="GDScript_rk3vd"]
+resource_name = "skill_show"
+script/source = "extends Control
+@export var skill:skill_lt
+@export var mode:int
+signal coin_over
+signal coin_out(is_f:bool)
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_window_close_requested() -> void:
+	$Window.hide()
+	pass # Replace with function body.
+
+
+func _on_button_button_down() -> void:
+	$Window.popup()
+	pass # Replace with function body.
+
+func show_it():
+	remove_coin()
+#region value
+	var skill_icon = $img/skill_icon
+	var labelI_color=$img/label_panel
+	var labelII_color=$img/label_panelII
+	var coin = $coin
+	var name_=$label/name
+	var base=$label/base
+	var change=$label/change
+	var at=$HBoxContainer/at
+	var def=$HBoxContainer2/def
+	var de=$Window/RichTextLabel
+#endregion
+	
+	name_.call_deferred(\"_request_adjust\")
+	
+	skill_icon.texture=skill.icon
+	labelII_color.modulate=skill.sin_color
+	labelI_color.modulate=skill.sin_color
+	name_.text=skill.name_
+	base.text=str(skill.base_point)
+	
+	change.text = str(skill.change_Point) if  skill.change_Point<0 else \"+\"+str(skill.change_Point)
+	at.text=str(skill.at)
+	def.text =str(skill.def)
+	for i in skill.coin_n:
+		coin.add_child(creat_coin())
+	if mode!=1:
+		
+		var text1=\"技能效果\\n\"
+		for i in skill.description:
+			text1+=i+'\\n'
+		var text2=\"标签\\n\"
+		for i in skill.type:
+			text2+=\"-\"+i+\"\\n\"
+		de.text=text1+\"\\n\"+text2
+	if mode ==1:
+		$Button.hide()
+	if mode==2:
+		$TextureRect.show()
+	return
+
+func creat_coin(coin:int=0):
+	var back=preload(\"res://little_game/fight/img/ui/nor_coin_back.tres\")
+	var front=preload(\"res://little_game/fight/img/ui/nor_coin_front.tres\")
+	var nor=preload(\"res://little_game/fight/img/ui/nor_coin.tres\")
+	var icon=TextureRect.new()
+	icon.custom_minimum_size=Vector2(30,30)
+	icon.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	match coin:
+		0:
+			icon.texture=nor
+		1:
+			icon.texture=front
+		2:
+			icon.texture=back
+	return icon
+
+func coin_show(arr:Array[bool]):
+	
+	if arr.size()==skill.coin_n:
+		for i in range(1, arr.size()+1):
+			var c=creat_coin(1 if arr[i-1] else 2)
+			if arr[i-1]:
+				
+				creat_p(c)
+				$show/AudioStreamPlayer.play()
+			else:
+				$show/AudioStreamPlayer2.play()
+			$coin.get_child(i-1).replace_by(c)
+			$show/Timer.start()
+			emit_signal(\"coin_out\",arr[i-1])
+			await  $show/Timer.timeout
+	emit_signal(\"coin_over\")
+	
+		
+		
+
+func creat_p(c):
+	var p=preload(\"res://little_game/fight/scn/gpu_particles_2d.tscn\").instantiate() as GPUParticles2D
+	c.add_child(p)
+	p.emitting=true
+	await p.finished
+	p.queue_free()
+	
+func remove_coin():
+	for i in $coin.get_children():
+		i.queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3qh8"]
+atlas = ExtResource("1_rk3vd")
+region = Rect2(1080, 524, 259, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh1he"]
+atlas = ExtResource("1_rk3vd")
+region = Rect2(144, 539, 147, 89)
+
+[sub_resource type="GDScript" id="GDScript_e4wgj"]
+script/source = "extends RichTextLabel
+
+@export var min_font_size: int = 8
+@export var default_font_size: int = 16
+
+var _current_text: String = \"\"
+var _is_adjusting: bool = false
+var _pending_adjust: bool = false
+
+func _ready():
+	fit_content = false
+	bbcode_enabled = true
+	resized.connect(_on_resized)
+	call_deferred(\"_request_adjust\")
+func update_text(new_text: String) -> void:
+	if _current_text == new_text:
+		return
+	_current_text = new_text
+	super.set_text(new_text)
+	_request_adjust()
+
+func _on_resized():
+	_request_adjust()
+
+func _exit_tree():
+	# 断开信号，防止在销毁后仍被触发
+	if resized.is_connected(_on_resized):
+		resized.disconnect(_on_resized)
+
+func _request_adjust():
+	if not is_inside_tree():
+		return
+	if _is_adjusting:
+		_pending_adjust = true
+		return
+	_is_adjusting = true
+	await _adjust_font_size()
+	_is_adjusting = false
+	if _pending_adjust:
+		_pending_adjust = false
+		_request_adjust()
+
+func _adjust_font_size():
+	if not is_inside_tree():
+		return
+
+	await get_tree().process_frame
+	if not is_inside_tree():
+		return
+
+	var target_height = size.y
+	if target_height <= 0:
+		return
+
+	var current_font_size = get_theme_font_size(\"normal_font_size\")
+	var content_height = get_content_height()
+	if content_height <= target_height and current_font_size == default_font_size:
+		return
+
+	var low = min_font_size
+	var high = default_font_size
+	var best = default_font_size
+
+	while low <= high:
+		var mid = (low + high) / 2
+		add_theme_font_size_override(\"normal_font_size\", mid)
+
+		await get_tree().process_frame
+		if not is_inside_tree():
+			return
+
+		var cur_height = get_content_height()
+		if cur_height <= target_height:
+			best = mid
+			low = mid + 1
+		else:
+			high = mid - 1
+
+	if best != current_font_size:
+		add_theme_font_size_override(\"normal_font_size\", best)
+		await get_tree().process_frame
+		# 最后再检查一次树状态（可选）
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llw8i"]
+atlas = ExtResource("5_n7p26")
+region = Rect2(343, 527, 157, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svowy"]
+atlas = ExtResource("5_n7p26")
+region = Rect2(527, 541, 120, 132)
+
+[node name="skill" type="Control" unique_id=809147387]
+custom_minimum_size = Vector2(460, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 460.0
+offset_bottom = 200.0
+script = SubResource("GDScript_rk3vd")
+
+[node name="img" type="Control" parent="." unique_id=168204911]
+anchors_preset = 0
+offset_top = 16.0
+offset_bottom = 61.0
+mouse_filter = 1
+
+[node name="label_panelII" type="TextureRect" parent="img" unique_id=709469490]
+modulate = Color(0.003921569, 0.30588236, 0.81960785, 1)
+layout_mode = 0
+offset_left = 105.0
+offset_top = 60.0
+offset_right = 451.0
+offset_bottom = 100.0
+texture = SubResource("AtlasTexture_l3qh8")
+expand_mode = 1
+
+[node name="label_panel" type="TextureRect" parent="img" unique_id=154650433]
+modulate = Color(0.003921569, 0.30588236, 0.81960785, 1)
+layout_mode = 0
+offset_left = 34.0
+offset_top = -55.0
+offset_right = 105.0
+offset_bottom = 94.0
+texture = SubResource("AtlasTexture_eh1he")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="skill_icon" type="TextureRect" parent="img" unique_id=916908267]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = -34.0
+offset_top = -2.0
+offset_right = 166.0
+offset_bottom = 185.0
+texture = ExtResource("2_yp5n3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="coin" type="HBoxContainer" parent="." unique_id=155267181]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 41.0
+offset_right = 400.0
+offset_bottom = 71.0
+
+[node name="label" type="Control" parent="." unique_id=2072362029]
+anchors_preset = 0
+offset_left = 218.0
+offset_top = 41.0
+offset_right = 218.0
+offset_bottom = 71.0
+mouse_filter = 1
+
+[node name="name" type="RichTextLabel" parent="label" unique_id=1369188394]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 21.0
+offset_right = 210.0
+offset_bottom = 66.0
+mouse_filter = 1
+theme = ExtResource("4_dpubc")
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "钻石剑"
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 2
+script = SubResource("GDScript_e4wgj")
+min_font_size = 18
+default_font_size = 30
+
+[node name="change" type="RichTextLabel" parent="label" unique_id=861926962]
+layout_mode = 0
+offset_left = -180.0
+offset_top = -37.0
+offset_right = -111.0
+offset_bottom = 11.0
+mouse_filter = 1
+theme = ExtResource("4_dpubc")
+theme_override_constants/outline_size = 20
+bbcode_enabled = true
+text = "+1"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="base" type="RichTextLabel" parent="label" unique_id=1998713966]
+layout_mode = 0
+offset_left = -225.0
+offset_top = 71.0
+offset_right = -156.0
+offset_bottom = 131.0
+mouse_filter = 1
+theme = ExtResource("4_dpubc")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "11"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1108232688]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 118.0
+offset_right = 268.0
+offset_bottom = 168.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=745455623]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("AtlasTexture_llw8i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="at" type="Label" parent="HBoxContainer" unique_id=1690253675]
+layout_mode = 2
+theme = ExtResource("4_dpubc")
+text = "11"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=563854384]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 119.0
+offset_right = 382.0
+offset_bottom = 169.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=1589438927]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("AtlasTexture_svowy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="def" type="Label" parent="HBoxContainer2" unique_id=799412566]
+layout_mode = 2
+theme = ExtResource("4_dpubc")
+text = "20"
+
+[node name="Button" type="Button" parent="." unique_id=1799435667]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 116.0
+offset_right = 173.0
+offset_bottom = 164.0
+theme = ExtResource("4_dpubc")
+text = "详细"
+
+[node name="Window" type="Popup" parent="." unique_id=1052088066]
+oversampling_override = 1.0
+title = "技能详情"
+initial_position = 2
+size = Vector2i(500, 300)
+wrap_controls = false
+
+[node name="Panel" type="Panel" parent="Window" unique_id=94214757]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_dpubc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window" unique_id=72535806]
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 485.0
+offset_bottom = 287.0
+theme = ExtResource("4_dpubc")
+bbcode_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=402368427]
+visible = false
+self_modulate = Color(1, 1, 1, 0.65882355)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 61.0
+offset_right = 117.0
+offset_bottom = 153.0
+texture = ExtResource("5_e4wgj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="show" type="Node" parent="." unique_id=1141792729]
+
+[node name="Timer" type="Timer" parent="show" unique_id=831705003]
+wait_time = 0.4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="show" unique_id=1348754343]
+stream = ExtResource("8_dpubc")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="show" unique_id=2079624607]
+stream = ExtResource("9_n7p26")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

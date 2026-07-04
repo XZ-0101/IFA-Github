@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://cbsbghd72a2h7"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_cggg5"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_8ane6"]
+[ext_resource type="Texture2D" uid="uid://rpclbq4t3o4s" path="res://res_pack/f-01-69/ego/img/QQ3F20180429154955.webp" id="2_dph4n"]
+
+[sub_resource type="Resource" id="Resource_itrom"]
+script = ExtResource("1_cggg5")
+name_ = "魔弹"
+level = "H"
+texture = ExtResource("2_dph4n")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-69/ego/f-01-69-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"
+
+[resource]
+script = ExtResource("2_8ane6")
+Cost = "45"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "※持有“魔弹”时，提高3点最大与最小攻击力"
+red_def = 0.7
+white_def = 0.7
+black_def = 0.7
+pale_def = 1.5
+Requirements = "勇气III 正义III"
+name_ = "魔弹"
+texture = ExtResource("2_dph4n")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+尽管无法完全提取该异想体核心中那股深奥的力量，
+
+但利用那神奇力量所研制出来的武器仍然无比强大。
+
+这把枪射出的子弹甚至能达到人们目不可及之处。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "h"
+jump = Array[String](["pres://res_pack/f-01-69/benti/f-01-69-j.tres"])
+jumper = SubResource("Resource_itrom")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

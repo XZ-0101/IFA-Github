@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=4 format=3 uid="uid://bfemosa86efuc"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_yeehs"]
+[ext_resource type="Texture2D" uid="uid://bvvd2ctmdd67" path="res://img/music/ga.jpg" id="2_b26fh"]
+[ext_resource type="Texture2D" uid="uid://ht3rv7nrmogj" path="res://img/music/ga_f.webp" id="3_mj0e1"]
+
+[resource]
+script = ExtResource("1_yeehs")
+name_ = "Gone Angels"
+zuo_zhe = "mili"
+texture = ExtResource("2_b26fh")
+texture1 = ExtResource("3_mj0e1")
+music_path = "res://mus/Mili - Gone Angels.ogg"
+ge_ci_path = "res://res/music/l3_ga.tres"
+wait_time = 2.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"

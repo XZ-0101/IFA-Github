@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://27vedc843xyj"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_and2a"]
+[ext_resource type="Texture2D" uid="uid://cjnuf1te55bcj" path="res://little_game/Texture2D/150px-饰品-9036.webp" id="2_orilf"]
+
+[resource]
+script = ExtResource("1_and2a")
+name_ = "卡蜜拉"
+texture = ExtResource("2_orilf")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/gift/new_resource.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

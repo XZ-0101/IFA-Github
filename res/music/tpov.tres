@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=3 format=3 uid="uid://bei1ss55c37y0"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_cu73u"]
+[ext_resource type="Texture2D" uid="uid://6gn8scqjt5ku" path="res://img/music/p.jpg" id="2_32btu"]
+
+[resource]
+script = ExtResource("1_cu73u")
+name_ = "Through Patches of Violet"
+zuo_zhe = "mili"
+texture = ExtResource("2_32btu")
+texture1 = ExtResource("2_32btu")
+music_path = "res://mus/Mili - Through Patches of Violet.ogg"
+ge_ci_path = "res://res/music/l1_tpov.tres"
+wait_time = 2.0
+metadata/_custom_type_script = "uid://jie20fpxgk32"

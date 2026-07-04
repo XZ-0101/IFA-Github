@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cxpmn72eusbey"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_x7ktd"]
+[ext_resource type="Texture2D" uid="uid://yxb0g5mkiakq" path="res://res_pack/O-05-47/img/DontTouchMe.webp" id="2_5ptbv"]
+
+[resource]
+script = ExtResource("1_x7ktd")
+name_ = "别碰我"
+s = "O-05-47"
+level = "z"
+texture = ExtResource("2_5ptbv")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/O-05-47/O-05-47.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "别碰我!!!"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

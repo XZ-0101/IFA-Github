@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://blwwv7tpjg2bx"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_sxret"]
+[ext_resource type="Texture2D" uid="uid://vb7m1ytbl7kf" path="res://img2/LCA/T-04-06/I-1513169944.webp" id="2_6sx2p"]
+
+[resource]
+script = ExtResource("1_sxret")
+name_ = "快乐泰迪"
+s = "T-04-06"
+level = "H"
+texture = ExtResource("2_6sx2p")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/T-04-06.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

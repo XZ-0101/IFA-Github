@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://upi8rmjmmjmb"]
+
+[ext_resource type="Resource" uid="uid://260nlqqkrop7" path="res://little_game/gift/milk_coffe-j.tres" id="1_25oju"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_084il"]
+[ext_resource type="Texture2D" uid="uid://bny066k4atjqa" path="res://img/NoData.webp" id="3_6u50h"]
+
+[resource]
+script = ExtResource("2_084il")
+name_ = "牛奶咖啡"
+texture = ExtResource("3_6u50h")
+info = "如果自律等级大于10，则使精神值上限加5"
+jumper = ExtResource("1_25oju")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://coaya3kynfrjw"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_iff10"]
+[ext_resource type="Texture2D" uid="uid://dwpofvwe1ft46" path="res://little_game/fight/res/ques/star/gift/饰品-2006.webp" id="2_iff10"]
+
+[resource]
+script = ExtResource("1_iff10")
+name_ = "星迹"
+texture = ExtResource("2_iff10")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/fight/res/ques/star/gift/new_resource.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

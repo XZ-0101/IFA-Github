@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cf11fc45im0ir"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ehrkc"]
+[ext_resource type="Texture2D" uid="uid://cs11pah75d1da" path="res://res_pack/O-02-40/benti/img/3FG.webp" id="2_esls1"]
+
+[resource]
+script = ExtResource("1_ehrkc")
+name_ = "目灯"
+texture = ExtResource("2_esls1")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/O-02-40/ego/0-02-04-g.tres"
+mode = "lobotomyG"
+type = Array[String](["EGO饰品/礼物 ", "脑叶公司EGO", "EGO"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

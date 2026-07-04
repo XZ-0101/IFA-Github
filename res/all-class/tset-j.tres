@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://1ek67van4ml1"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_yqeyl"]
+[ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="2_1qi8w"]
+
+[resource]
+script = ExtResource("1_yqeyl")
+name_ = "啊啊"
+texture = ExtResource("2_1qi8w")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/all-class/test.tres"
+mode = "Category"
+type = Array[String](["测试"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

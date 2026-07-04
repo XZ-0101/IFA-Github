@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://ddrtmodsitvih"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_jnwvk"]
+[ext_resource type="Texture2D" uid="uid://dd1qegw6afoah" path="res://res_pack/f-05-32/ego/img/1-1524971057.webp" id="2_ow7sl"]
+
+[resource]
+script = ExtResource("1_jnwvk")
+name_ = "伐木者"
+level = "H"
+texture = ExtResource("2_ow7sl")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-05-32/ego/f-05-32-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

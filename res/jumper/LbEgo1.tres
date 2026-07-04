@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://krujykff5n63"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_f20yv"]
+[ext_resource type="Texture2D" uid="uid://d3c7ksgcbug10" path="res://img/W-1522656252.webp" id="2_31jve"]
+
+[resource]
+script = ExtResource("1_f20yv")
+name_ = "学用E.G.O(武器)"
+level = "T"
+texture = ExtResource("2_31jve")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/dummy_ego_w.tres"
+mode = "lobotomyW"
+type = Array[String](["脑叶公司EGO", "EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

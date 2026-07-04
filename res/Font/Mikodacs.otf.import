@@ -1,0 +1,50 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dyd87mrxaiwdu"
+path="res://.godot/imported/Mikodacs.otf-cfe171b954232ce4e0a94aaf12f39ee2.fontdata"
+
+[deps]
+
+source_file="res://res/Font/Mikodacs.otf"
+dest_files=["res://.godot/imported/Mikodacs.otf-cfe171b954232ce4e0a94aaf12f39ee2.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=5.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "新建配置",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0,
+&"variation_transform": null
+}, {
+"chars": [],
+"glyphs": [],
+"name": "新建配置",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0,
+&"variation_transform": Transform2D(1, 0, 0, 3, 0, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

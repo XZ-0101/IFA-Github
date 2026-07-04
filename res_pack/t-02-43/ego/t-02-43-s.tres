@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://brbho10tispk4"]
+
+[ext_resource type="Resource" uid="uid://cy7v7an6ruy3w" path="res://res_pack/t-02-43/ego/t-02-43-s-j.tres" id="1_1aaoo"]
+[ext_resource type="Texture2D" uid="uid://jk5sdk6b5t1u" path="res://res_pack/t-02-43/ego/img/A-1513167945.webp" id="2_c1fem"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_lutfn"]
+
+[resource]
+script = ExtResource("2_lutfn")
+Cost = "30"
+Max_Amount = "1"
+Observation_Level = "2"
+other = "※如果穿戴者的勇气等级高于2级，进入战斗后会提高2.5点移动速度。"
+red_def = 0.8
+white_def = 0.8
+black_def = 0.8
+pale_def = 2.0
+Requirements = "勇气II"
+name_ = "赤瞳"
+texture = ExtResource("2_c1fem")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+※如果穿戴者的勇气等级高于2级，进入战斗后会提高2.5点移动速度。
+
+蜘蛛巢的狩猎本能是无法被压制的。
+
+即使在黑暗中，它的眼睛也能死死咬住目标。
+
+这件E.G.O护甲能增强穿戴者的体能，
+
+可也会使他们变得残忍，对朋友和敌人毫无怜悯。
+
+但是，如果穿戴者注视着蜘眼过久，他们反会被其操控。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/t-02-43/benti/t-02-43-j.tres"])
+jumper = ExtResource("1_1aaoo")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://7a21ogenv0yt"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_cqksw"]
+[ext_resource type="Texture2D" uid="uid://y65an62el23n" path="res://res_pack/f-02-44/benti/img/I-1513168067.webp" id="2_0aox2"]
+
+[resource]
+script = ExtResource("1_cqksw")
+name_ = "美女与野兽"
+s = "F-02-44"
+level = "T"
+texture = ExtResource("2_0aox2")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-02-44/benti/f-02-44.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

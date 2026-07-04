@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://cpgl7gs1226sl"]
+
+[ext_resource type="Resource" uid="uid://dnqefse04b01h" path="res://res/jumper/o-04-08-w.tres" id="1_j1u2t"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_qedwg"]
+[ext_resource type="Texture2D" uid="uid://yqakepq7me4l" path="res://img2/LCA/O-04-08/W-1513156883.webp" id="3_qedwg"]
+
+[resource]
+script = ExtResource("2_qedwg")
+Cost = "40"
+Max_Amount = "2"
+Damage_type = 1
+Damage = "5-7"
+Attack_Speed = "极快（1s）"
+Range_ = "极近（2）"
+dps = "6（基础）9（自律2）11（自律1）"
+m_ban = "斧（Axe）"
+Observation_Level = "3"
+Requirements = "无"
+other = "※该E.G.O武器的介绍翻译有误，直译为：当持有者的自律等级低于3级时，其自律等级越低，这把武器的最大与最小攻击力就越高。但在这种情况下，持有者每次攻击时都会受到等同于其最大精神值4%的精神伤害。
+
+※如果持有者的自律等级为1级，这把武器的最大最小攻击力都会提升5点。
+
+※如果持有者的自律等级低于3级，每次攻击都会提高最大与最小攻击力。但代价是每次攻击都会丧失等同于最大精神值4%的精神值。
+
+※如果持有者的自律等级为2级，这把武器的最大最小攻击力都会提升3点。
+
+※如果持有者的自律等级低于3级，每次攻击时持有者都会受到等同于最大精神值4%的精神伤害。"
+name_ = "血之渴望"
+texture = ExtResource("3_qedwg")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+甚至在女孩的双脚被砍断后，舞鞋依旧凭借着难以置信的执念，带着残肢进入了森林。
+
+大多数员工都熟悉这双舞鞋曾引发的悲惨往事。
+
+持有者应当牢记，即便是这把质地轻盈的红斧头，也曾因错误的抉择而害死了很多人。
+
+持有者的信念越是坚定，红斧头就越是强大。
+
+然而，若被贪婪蒙蔽了双眼，就再也无法从虚妄中醒来。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-04-08_%E7%BA%A2%E8%88%9E%E9%9E%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "h"
+jump = Array[String](["o-04-08"])
+jumper = ExtResource("1_j1u2t")
+gif = "g7"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

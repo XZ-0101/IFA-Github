@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://db4fqmpdsguip"]
+
+[sub_resource type="Gradient" id="Gradient_hfolx"]
+offsets = PackedFloat32Array(0.04232804, 0.1984127, 0.44179896, 0.6931217, 1)
+colors = PackedColorArray(1, 0.35686275, 0, 0, 1, 0.35686275, 0, 1, 1, 0.6156863, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_svl5o"]
+gradient = SubResource("Gradient_hfolx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rg1lk"]
+particle_flag_disable_z = true
+angle_min = -199.99998
+angle_max = 200.00002
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_svl5o")
+turbulence_noise_strength = 4.94
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=409175941]
+amount = 10
+lifetime = 0.3
+trail_enabled = true
+trail_lifetime = 0.09999999999999999
+trail_sections = 10
+trail_section_subdivisions = 6
+process_material = SubResource("ParticleProcessMaterial_rg1lk")

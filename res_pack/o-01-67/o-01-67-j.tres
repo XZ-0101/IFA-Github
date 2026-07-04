@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dphjyb3v8h5vb"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_pbj2k"]
+[ext_resource type="Texture2D" uid="uid://dg1ep7e682w5x" path="res://res_pack/o-01-67/img/I-1513352777.webp" id="2_2wplv"]
+
+[resource]
+script = ExtResource("1_pbj2k")
+name_ = "蕾蒂希娅"
+s = "O-01-67"
+level = "H"
+texture = ExtResource("2_2wplv")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-01-67/o-01-67.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

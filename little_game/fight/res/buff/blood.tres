@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://2jqh45mkkrgn"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_fpl6r"]
+[ext_resource type="Texture2D" uid="uid://2nye835o3tps" path="res://little_game/fight/res/buff/buff_img/60px-流血.webp" id="2_fpl6r"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_sb35g"]
+
+[sub_resource type="Resource" id="Resource_dgjdr"]
+script = ExtResource("1_fpl6r")
+most_x = 99
+code = "var a =roundi(float(x)/2)
+hp-=a
+Fight.play_anima(\"text\",team,\"do_buff,血流成河,流血,\"+str(a))"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_sb35g")
+eff = SubResource("Resource_dgjdr")
+icon = ExtResource("2_fpl6r")
+id = "blood"
+type = Array[String](["debuff"])
+name_ = "流血"
+description = "[拼点时]hp 减少 x/2 (四舍五入)"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

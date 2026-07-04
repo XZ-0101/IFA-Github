@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://clevc4o004cli"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_48mlq"]
+[ext_resource type="Texture2D" uid="uid://d2d4gdjlomwau" path="res://res_pack/F-05-52/ego/img/A-1513154498.webp" id="2_t85aa"]
+
+[resource]
+script = ExtResource("1_48mlq")
+name_ = "美味苏打"
+level = "Z"
+texture = ExtResource("2_t85aa")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/F-05-52/ego/F-05-52-s.tres"
+mode = "lobotomyS"
+type = Array[String](["各种标签", "别忘了另存为"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://id3sjoi3ngx0"]
+
+[ext_resource type="Resource" uid="uid://6gvl5rj1kceq" path="res://res/jumper/o-04-08-s.tres" id="1_ykj76"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_at74o"]
+[ext_resource type="Texture2D" uid="uid://pcuo6r521ejk" path="res://img2/LCA/O-04-08/A-1513156904.webp" id="3_ym7wh"]
+
+[resource]
+script = ExtResource("2_at74o")
+Cost = "30"
+Max_Amount = "1"
+Observation_Level = "3"
+other = "无"
+red_def = 0.5
+white_def = 1.2
+black_def = 0.8
+pale_def = 1.5
+Requirements = "[color=purple]自律[/color]III"
+name_ = "血之渴望"
+texture = ExtResource("3_ym7wh")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+甚至在女孩的双脚被砍断后，舞鞋依旧凭借着难以置信的执念，带着残肢进入了森林。
+
+这件护甲上可爱的蕾丝花边能让人联想起一位面带微笑的美丽女孩。
+
+一定要对这双舞鞋保持警惕，不要让那些悲剧再度重演。
+
+也许某一天，这双沾满鲜血的舞鞋将走向只属于它的豪华舞厅。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-04-08_%E7%BA%A2%E8%88%9E%E9%9E%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "h"
+jump = Array[String](["o-04-08"])
+jumper = ExtResource("1_ykj76")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

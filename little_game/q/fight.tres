@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://dh0uqaupx2cv"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_rljw7"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_rsjcv"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_ssnyr"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="3_5y6gs"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_rr61r"]
+[ext_resource type="Resource" uid="uid://bu7nmphnwf28q" path="res://little_game/gift/bstt-g.tres" id="5_2w8qq"]
+[ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="5_rr61r"]
+
+[sub_resource type="Resource" id="Resource_2w8qq"]
+script = ExtResource("3_rr61r")
+to_fight = "res://little_game/fight/res/enemy/test/lxao.tres"
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_rr61r"]
+script = ExtResource("3_5y6gs")
+"介绍" = "遭遇战"
+win_text = "战斗。。"
+gift = SubResource("Resource_2w8qq")
+name_ = "战斗"
+"结果" = "战斗。"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_n7nub"]
+script = ExtResource("3_rr61r")
+get_gift = Array[ExtResource("2_ssnyr")]([ExtResource("5_2w8qq")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_hfb7x"]
+script = ExtResource("2_rsjcv")
+"问题" = "去战斗吧"
+item = Array[ExtResource("1_rljw7")]([SubResource("Resource_rr61r")])
+with_fight = true
+metadata/_custom_type_script = "uid://y1osmarxqm3p"
+
+[sub_resource type="Resource" id="Resource_2kcq8"]
+script = ExtResource("3_5y6gs")
+mode = 2
+need = Array[ExtResource("2_ssnyr")]([ExtResource("5_rr61r")])
+win_text = "...可以！"
+lose_text = "滚"
+gift = SubResource("Resource_n7nub")
+losegift = SubResource("Resource_2w8qq")
+name_ = "我要神器"
+"结果" = "我看看啊...你需要主的馈赠才可以"
+"分支问题" = SubResource("Resource_hfb7x")
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_rsjcv")
+"问题" = "塔塔开"
+item = Array[ExtResource("1_rljw7")]([SubResource("Resource_rr61r"), SubResource("Resource_2kcq8")])
+with_fight = true
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

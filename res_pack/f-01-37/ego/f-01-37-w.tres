@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://d3hndlsas1tfi"]
+
+[ext_resource type="Resource" uid="uid://w0ord0ru34nl" path="res://res_pack/f-01-37/ego/f-01-37-w-j.tres" id="1_6snt6"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_tv8uv"]
+[ext_resource type="Texture2D" uid="uid://d11v1sdmvm53n" path="res://res_pack/f-01-37/ego/img/W-1513153383.webp" id="3_uka7r"]
+
+[resource]
+script = ExtResource("2_tv8uv")
+Cost = "35"
+Max_Amount = "3"
+Damage_type = 2
+Damage = "6-12"
+Attack_Speed = "快（1.5s）"
+Range_ = "一般（4）"
+dps = "6"
+m_ban = "长矛"
+Observation_Level = "4"
+Requirements = " 无"
+other = "※它赋予的减速效果不能叠加，而是在再次赋予时刷新持续时间。
+
+※这把武器的减速效果只能对Geburah和Binah起作用。"
+name_ = "霜之碎片"
+texture = ExtResource("3_uka7r")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+※被这支武器刺中的目标会减少30%的移动速度，持续3秒。
+
+冰雪女皇是美丽的，但是她的内心只应当在空虚中被冻结。
+
+锐利的矛尖冰冷无比，被它刺中的目标甚至会因为寒冷而暂时无法动弹。
+
+由冰雪所铸成的长矛终有融化之日。
+
+而当冰雪消融的那天，她冰封的内心也将一并融化。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-01-37_%E5%86%B0%E9%9B%AA%E5%A5%B3%E7%9A%87?variant=zh-hans]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "h"
+jump = Array[String](["f-01-37"])
+jumper = ExtResource("1_6snt6")
+gif = "g11"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

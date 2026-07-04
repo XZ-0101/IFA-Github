@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://swsu3iovgh1m"]
+
+[ext_resource type="Resource" uid="uid://dvxkrqvb3jth8" path="res://res_pack/o-05-61/ego/o-05-61-g4-j.tres" id="1_qmcp1"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_dydyg"]
+[ext_resource type="Texture2D" uid="uid://ueh0jdmvilfl" path="res://res_pack/o-05-61/img/3F3F-3F3F4.webp" id="3_dydyg"]
+
+[resource]
+script = ExtResource("2_dydyg")
+name_ = "匹夫之勇（3）"
+texture = ExtResource("3_dydyg")
+info = "*资料类型：EGO饰品/礼物 
+
+此为隐藏饰品，由匹夫之勇（2）再对任意异想体进行一次压迫后获得获
+
+获得率：获得二阶段的“匹夫之勇”后，对任意异想体进行一次压迫工作后获得
+位置：头部
+最大生命值-20
+移动速度+20
+攻击速度+20
+匹夫之勇，终将葬送一切。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-05-61"])
+jumper = ExtResource("1_qmcp1")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

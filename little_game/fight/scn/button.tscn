@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://cjelq31wl3ci2"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_u8p3u"]
+[ext_resource type="PackedScene" uid="uid://c0pjy48i6yhx" path="res://little_game/fight/scn/skill_show.tscn" id="2_kmwbc"]
+[ext_resource type="Texture2D" uid="uid://oryoo27j3hxx" path="res://little_game/fight/res/skill/skill_img/test_skill.png" id="2_u8p3u"]
+
+[sub_resource type="GDScript" id="GDScript_j1xvq"]
+script/source = "extends Control
+@export var skill:skill_lt
+@export var ind:int
+signal skill_choice(ind:int)
+@export var color:Color
+var m 
+var nm
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	m =load(\"res://little_game/fight/res/new_shader_material.tres\")
+	nm=m.duplicate()
+	$Button.material=nm
+	$Button.material.set_shader_parameter(\"outline_width\",10)
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if $Button.material:
+		$Button.material.set_shader_parameter(\"outline_color\",color)
+		
+	pass
+
+
+func _on_button_2_button_down() -> void:
+	$Button2/Window2.popup()
+
+	$Button2/Window2/CenterContainer/skill.show_it()
+	pass # Replace with function body.
+
+
+func _on_window_2_close_requested() -> void:
+	$Button2/Window2.hide()
+	pass # Replace with function body.
+
+
+func _on_button_button_down() -> void:
+	emit_signal(\"skill_choice\",ind)
+	pass # Replace with function body.
+func read():
+	$Button.texture_normal=skill.icon
+	$Button2/Window2/CenterContainer/skill.skill=self.skill
+
+
+func _on_button_mouse_entered() -> void:
+	$Button/AnimationPlayer.play(\"big\")
+	pass # Replace with function body.
+
+
+func _on_button_mouse_exited() -> void:
+	$Button/AnimationPlayer.play_backwards(\"big\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kmwbc"]
+
+[sub_resource type="Animation" id="Animation_kmwbc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j1xvq"]
+resource_name = "big"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0edf"]
+_data = {
+&"RESET": SubResource("Animation_kmwbc"),
+&"big": SubResource("Animation_j1xvq")
+}
+
+[node name="Control" type="Control" unique_id=852453537]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 120.0
+script = SubResource("GDScript_j1xvq")
+
+[node name="Button" type="TextureButton" parent="." unique_id=562761960]
+material = SubResource("ShaderMaterial_kmwbc")
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+offset_transform_enabled = true
+texture_normal = ExtResource("2_u8p3u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button" unique_id=157599697]
+libraries/ = SubResource("AnimationLibrary_m0edf")
+
+[node name="Button2" type="Button" parent="." unique_id=897072968]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_u8p3u")
+theme_override_font_sizes/font_size = 20
+text = "详细"
+
+[node name="Window2" type="Popup" parent="Button2" unique_id=575946732]
+oversampling_override = 1.0
+title = "技能"
+initial_position = 2
+size = Vector2i(600, 400)
+wrap_controls = false
+
+[node name="Panel" type="Panel" parent="Button2/Window2" unique_id=2074465431]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Button2/Window2" unique_id=127557396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skill" parent="Button2/Window2/CenterContainer" unique_id=809147387 instance=ExtResource("2_kmwbc")]
+layout_mode = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="close_requested" from="Button2/Window2" to="." method="_on_window_2_close_requested"]

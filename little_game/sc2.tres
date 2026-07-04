@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://cfxppalw6kbdq"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_i2oum"]
+[ext_resource type="Texture2D" uid="uid://bny066k4atjqa" path="res://img/NoData.webp" id="1_vty4r"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_vty4r"]
+[ext_resource type="Resource" uid="uid://cg3cmcr6cjd5o" path="res://little_game/gift/sz-g.tres" id="3_j24bu"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_yn01s"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_m3b7g"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="6_6ov0f"]
+
+[sub_resource type="Resource" id="Resource_p3o2m"]
+script = ExtResource("4_yn01s")
+value_object = 3
+add_valua = -80
+get_gift = Array[ExtResource("2_vty4r")]([ExtResource("3_j24bu")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_ncqpk"]
+script = ExtResource("5_m3b7g")
+"介绍" = "需要80等级"
+mode = 1
+is_shop = true
+check_object = 3
+value = 80
+win_text = "1.机器缓缓吐出了一张纸条——$s使用须知
+1.■■■■禁止使用■■。
+2.你真的有罪。
+3.发现■■有罪，立刻放弃使用
+4.■■■时，撕下赎罪，攥在手心
+5.不可以吃蔷薇！
+6.使用时心怀狂气。
+"
+lose_text = "没钱就快滚吧"
+gift = SubResource("Resource_p3o2m")
+name_ = "购买"
+"结果" = "..."
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_qkjo7"]
+script = ExtResource("1_i2oum")
+name_ = "没必要"
+"结果" = "穷逼..."
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("6_6ov0f")
+img = ExtResource("1_vty4r")
+name_ = "某人看到的"
+subject = "SC-331.2.7"
+"问题" = "*滋滋*$s嘿！价值79.6的赎罪。$s购买？购买！"
+item = Array[ExtResource("1_i2oum")]([SubResource("Resource_ncqpk"), SubResource("Resource_qkjo7")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

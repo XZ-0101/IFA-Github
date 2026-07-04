@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://c5jphbuuqb0pm"]
+
+[ext_resource type="Resource" uid="uid://b6fnhlsjmk8uq" path="res://res_pack/t-01-54/ego/t-01-54-s-j.tres" id="1_eqj6o"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_2e7tx"]
+[ext_resource type="Texture2D" uid="uid://bg26xp0c1d5vk" path="res://res_pack/t-01-54/ego/img/A-1513150772.webp" id="2_qiicl"]
+
+[resource]
+script = ExtResource("2_2e7tx")
+Cost = "25"
+Max_Amount = "2"
+Observation_Level = "3"
+other = "无"
+red_def = 0.7
+white_def = 1.2
+black_def = 0.8
+pale_def = 2.0
+Requirements = "无"
+name_ = "悔恨"
+texture = ExtResource("2_qiicl")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+秘密研究是从一个地下室开始的，而那项研究有着改变人类未来的无限可能。
+
+没人会为那些沦为小白鼠的死囚哀悼，他们只能慢慢烂在束缚自己的紧身衣中。
+
+现在那件紧身衣只是被用作配饰，但过去的悔恨和愤怒依然存在。
+
+如果穿戴者再也无法忍受这件护甲所带来的压力，那他们必须被送去接受心理咨询。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/t-01-54/benti/t-01-54-j.tres"])
+jumper = ExtResource("1_eqj6o")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://ndxkapq18nuc"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_oajqf"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_pbbky"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_b4f02"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="4_r68qe"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="5_qm51i"]
+
+[sub_resource type="Resource" id="Resource_ah8tg"]
+script = ExtResource("3_b4f02")
+add_valua = 20
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_oajqf"]
+script = ExtResource("4_r68qe")
+"介绍" = "提升属性"
+win_text = "咔嚓$s赤色的力量裹挟了你"
+gift = SubResource("Resource_ah8tg")
+name_ = "红色树枝"
+"结果" = "折下了红色的树枝"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_pbbky"]
+script = ExtResource("3_b4f02")
+value_object = 1
+add_valua = 20
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_b4f02"]
+script = ExtResource("4_r68qe")
+"介绍" = "提升属性"
+win_text = "咔嚓$s白色的力量裹挟了你"
+gift = SubResource("Resource_pbbky")
+name_ = "白色树枝"
+"结果" = "折下了白色的树枝"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_ryw6q"]
+script = ExtResource("3_b4f02")
+value_object = 2
+add_valua = 20
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_r68qe"]
+script = ExtResource("4_r68qe")
+"介绍" = "提升属性"
+win_text = "咔嚓$s紫色的力量裹挟了你"
+gift = SubResource("Resource_ryw6q")
+name_ = "紫色树枝"
+"结果" = "折下了紫色的树枝"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_qm51i"]
+script = ExtResource("3_b4f02")
+value_object = 3
+add_valua = 20
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_rtd6m"]
+script = ExtResource("4_r68qe")
+"介绍" = "提升属性"
+win_text = "咔嚓$s青色的力量裹挟了你"
+gift = SubResource("Resource_qm51i")
+name_ = "青色树枝"
+"结果" = "折下了青色的树枝"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("5_qm51i")
+"问题" = "多么奇怪的宫殿$s我漫步进去$s发现这硕大的宫殿内部竟只有一棵小树$s小树有四种颜色的树枝$s要折下来其中一种吗"
+item = Array[ExtResource("1_oajqf")]([SubResource("Resource_oajqf"), SubResource("Resource_b4f02"), SubResource("Resource_r68qe"), SubResource("Resource_rtd6m")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

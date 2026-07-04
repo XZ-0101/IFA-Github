@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cs0wyigiuc8ov"
+path="res://.godot/imported/speargif.gif-3b00182cc4e479c2b98e94c828a0bd8b.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/speargif.gif"
+dest_files=["res://.godot/imported/speargif.gif-3b00182cc4e479c2b98e94c828a0bd8b.tres"]
+
+[params]
+
+frames_per_second=30

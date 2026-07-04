@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://bvg43nvb5pm5n"]
+
+[ext_resource type="Script" uid="uid://ckl4d84ffujc4" path="res://script/documentation_page.gd" id="1_5jxii"]
+[ext_resource type="Texture2D" uid="uid://15xr0qjq7xhq" path="res://img/ui/2.png" id="1_xocfq"]
+[ext_resource type="Texture2D" uid="uid://bn6dofnfo07sk" path="res://img/kq.png" id="2_5jxii"]
+[ext_resource type="Resource" uid="uid://c7dskm4b5hq05" path="res://res/Documentation/Documentation_test.tres" id="2_x6jvt"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="3_x6jvt"]
+[ext_resource type="Texture2D" uid="uid://jdtnjov7i6xq" path="res://img/BadResult.webp" id="4_373cs"]
+[ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="4_wi2fh"]
+[ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="7_373cs"]
+[ext_resource type="Texture2D" uid="uid://bui5d2jopstsc" path="res://img/Site-logo (2).webp" id="9_v71l7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4emh"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_377bm"]
+Panel/styles/panel = SubResource("StyleBoxFlat_i4emh")
+
+[node name="Control" type="Control" unique_id=1516708620]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5jxii")
+Documentation = ExtResource("2_x6jvt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1409786833]
+texture_filter = 1
+layout_mode = 0
+offset_left = 68.0
+offset_top = 77.0
+offset_right = 637.0
+offset_bottom = 361.0
+texture = ExtResource("1_xocfq")
+region_rect = Rect2(259, 30, 413, 591)
+patch_margin_left = 64
+patch_margin_top = 59
+patch_margin_right = 12
+patch_margin_bottom = 19
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect" unique_id=1050342588]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.014
+anchor_bottom = 0.017
+offset_left = 272.0
+offset_top = 12.0
+offset_right = 547.348
+offset_bottom = 265.172
+color = Color(0.121569, 0.121569, 0.0745098, 1)
+
+[node name="icon" type="TextureRect" parent="NinePatchRect" unique_id=298944701]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 30.0
+offset_right = 540.0
+offset_bottom = 257.0
+texture = ExtResource("2_5jxii")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect" unique_id=2095943973]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 249.0
+offset_bottom = 234.0
+
+[node name="name" type="Label" parent="NinePatchRect/VBoxContainer" unique_id=361241758]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("3_x6jvt")
+theme_override_font_sizes/font_size = 40
+text = "abc"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="by" type="Label" parent="NinePatchRect/VBoxContainer" unique_id=1104658585]
+layout_mode = 2
+theme = ExtResource("3_x6jvt")
+theme_override_font_sizes/font_size = 25
+text = "abc"
+horizontal_alignment = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=688277141]
+texture_filter = 1
+layout_mode = 0
+offset_left = 19.0
+offset_top = 355.0
+offset_right = 636.0
+offset_bottom = 1076.0
+texture = ExtResource("4_wi2fh")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="nr" type="RichTextLabel" parent="NinePatchRect3" unique_id=1379509690]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 32.0
+offset_right = 582.0
+offset_bottom = 663.0
+size_flags_horizontal = 0
+theme = ExtResource("3_x6jvt")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "啊啊啊啊"
+script = ExtResource("7_373cs")
+
+[node name="Butto" type="Button" parent="." unique_id=1552082348]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 291.0
+offset_right = 270.0
+offset_bottom = 346.0
+theme = ExtResource("3_x6jvt")
+theme_override_colors/font_color = Color(1, 1, 0.6313726, 1)
+theme_override_font_sizes/font_size = 16
+text = "全屏"
+icon = ExtResource("9_v71l7")
+expand_icon = true
+
+[node name="Window" type="Window" parent="." unique_id=1571449491]
+oversampling_override = 1.0
+size = Vector2i(650, 1150)
+visible = false
+exclusive = true
+unresizable = true
+borderless = true
+always_on_top = true
+minimize_disabled = true
+maximize_disabled = true
+
+[node name="Panel" type="Panel" parent="Window" unique_id=85343582]
+z_index = 30
+anchors_preset = -1
+anchor_right = 16.12
+anchor_bottom = 28.727001
+offset_left = -21.0
+offset_top = -87.0
+offset_right = -9780.001
+offset_bottom = -31854.05
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_377bm")
+
+[node name="nr" type="RichTextLabel" parent="Window/Panel" unique_id=1595026474]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162
+anchor_top = 0.079
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.477997
+offset_top = 91.015
+offset_right = 281.5
+offset_bottom = 562.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_x6jvt")
+bbcode_enabled = true
+text = "已付款规范和卡拉库汇丰控股
+
+
+
+srgrgss
+sdgfg
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+script = ExtResource("7_373cs")
+
+[node name="Button" type="Button" parent="Window/Panel" unique_id=971427419]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 138.0
+offset_right = 205.0
+offset_bottom = 186.0
+theme = ExtResource("3_x6jvt")
+text = "退出"
+icon = ExtResource("4_373cs")
+expand_icon = true
+
+[connection signal="meta_clicked" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_clicked"]
+[connection signal="meta_hover_ended" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_hover_started"]
+[connection signal="button_down" from="Butto" to="." method="_on_butto_button_down"]
+[connection signal="meta_clicked" from="Window/Panel/nr" to="Window/Panel/nr" method="_on_meta_clicked"]
+[connection signal="meta_hover_ended" from="Window/Panel/nr" to="Window/Panel/nr" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Window/Panel/nr" to="Window/Panel/nr" method="_on_meta_hover_started"]
+[connection signal="button_down" from="Window/Panel/Button" to="." method="_on_button_button_down"]

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://de2n23bmw82nf"]
+
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_iaqox"]
+[ext_resource type="Resource" uid="uid://bkt65ga3xx704" path="res://res/jumper/f-01-02-g-jumper.tres" id="1_lqwyl"]
+[ext_resource type="Texture2D" uid="uid://ctg0xk6daked3" path="res://img/G-1513167739.webp" id="2_lqwyl"]
+
+[resource]
+script = ExtResource("1_iaqox")
+name_ = "终末火柴之光"
+texture = ExtResource("2_lqwyl")
+info = "*资料类型：脑叶公司EGO饰品/礼物
+
+获得率：5%
+位置：口部
+最大生命值+4
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/F-01-02_%E7%84%A6%E5%8C%96%E5%B0%91%E5%A5%B3]脑叶公司Wiki[/url],脑叶公司情报部"
+level = "a"
+jump = Array[String](["F-01-02"])
+jumper = ExtResource("1_lqwyl")
+gif = ""
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

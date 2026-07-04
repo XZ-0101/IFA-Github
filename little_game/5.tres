@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://bqw7au1o5o0q6"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_wpb7t"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_h8ipf"]
+[ext_resource type="Resource" uid="uid://260nlqqkrop7" path="res://little_game/gift/milk_coffe-j.tres" id="3_2pivm"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_qawg3"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_8exve"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="6_bk7i4"]
+
+[sub_resource type="Resource" id="Resource_p3o2m"]
+script = ExtResource("4_qawg3")
+get_gift = Array[ExtResource("2_h8ipf")]([ExtResource("3_2pivm")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_ncqpk"]
+script = ExtResource("5_8exve")
+win_text = "味道很香"
+gift = SubResource("Resource_p3o2m")
+name_ = "我没理由拒绝"
+"结果" = "我要了一杯"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_qkjo7"]
+script = ExtResource("6_bk7i4")
+"问题" = "我请了假,到了那里，带了孝，守了灵，喝了牛奶咖啡，使我感到困意$s要多要一杯牛奶咖啡吗"
+item = Array[ExtResource("1_wpb7t")]([SubResource("Resource_ncqpk")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("1_wpb7t")
+name_ = "去看看妈妈"
+"分支问题" = SubResource("Resource_qkjo7")
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("6_bk7i4")
+"问题" = "今天，妈妈死了，也许是昨天，我不知道"
+item = Array[ExtResource("1_wpb7t")]([SubResource("Resource_j0p0o")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

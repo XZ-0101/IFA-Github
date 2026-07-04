@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://q382g2hp2byy"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ebha2"]
+[ext_resource type="Texture2D" uid="uid://6afuaujlvy88" path="res://res_pack/f-01-18/ego/img/A-1513150452.webp" id="2_eckph"]
+
+[resource]
+script = ExtResource("1_ebha2")
+name_ = "刺耳嚎叫"
+level = "T"
+texture = ExtResource("2_eckph")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-18/ego/f-01-18-s.tres"
+mode = "lobotomyS"
+type = Array[String](["脑叶公司EGO", "EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

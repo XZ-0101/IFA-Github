@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://d1at46rpb7ix2"]
+
+[ext_resource type="Resource" uid="uid://bagsvcxrbhuhg" path="res://res_pack/o-05-61/ego/o-05-61-g2-j.tres" id="1_bpfl6"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_d7k4p"]
+[ext_resource type="Texture2D" uid="uid://dmms2oq110gmg" path="res://res_pack/o-05-61/img/3F3F-3F3F2.webp" id="3_d7k4p"]
+
+[resource]
+script = ExtResource("2_d7k4p")
+name_ = "匹夫之勇（1）"
+texture = ExtResource("3_d7k4p")
+info = "*资料类型：EGO饰品/礼物 
+
+此为隐藏饰品，由内在勇气再对任意异想体进行一次压迫后获得
+
+获得率：压迫一次破裂盔甲后，对任意异想体进行一次压迫工作后获得
+位置：头部
+最大生命值-5
+移动速度+10
+攻击速度+10
+充满勇气的战士时刻准备着冲锋陷阵！
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-75_%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-05-61"])
+jumper = ExtResource("1_bpfl6")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

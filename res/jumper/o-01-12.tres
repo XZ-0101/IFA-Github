@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dsbrg7tly3m51"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_63rrl"]
+[ext_resource type="Texture2D" uid="uid://b5gni2gxe1u5c" path="res://img2/LCA/O-01-12/I-0.webp" id="2_63rrl"]
+
+[resource]
+script = ExtResource("1_63rrl")
+name_ = "老妇人"
+s = "O-01-12"
+level = "T"
+texture = ExtResource("2_63rrl")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/la/O-01-12.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

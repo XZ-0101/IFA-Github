@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://mysnf7jgae08"]
+
+[ext_resource type="Resource" uid="uid://cyo2hjlrx6x67" path="res://res/jumper/lbego-o-03-03-s.tres" id="1_438ea"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="1_ixxax"]
+[ext_resource type="Texture2D" uid="uid://crmlq3knmlj56" path="res://img/lc-a/o-03-03/A-1513149823.webp" id="3_suxcm"]
+
+[resource]
+script = ExtResource("1_ixxax")
+Cost = "10"
+Max_Amount = "5"
+Observation_Level = "2"
+other = "※当穿戴者受到物理或侵蚀伤害时，有5%的概率恢复10点精神值。"
+red_def = 0.9
+white_def = 0.8
+black_def = 0.9
+pale_def = 2.0
+Requirements = "无"
+name_ = "忏悔"
+texture = ExtResource("3_suxcm")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+枪炮和刀刃无法对异想体造成伤害。
+
+因此我们试着将从异想体中提取的核心塑造成武器和护甲。
+但效果会根据使用者的不同而有或大或小的差异。
+荆棘之冠会保护人们的灵魂。
+荆棘带来的刺痛是短暂的，但它时刻警示着自己。
+然而，对于那些毫无负罪感的人而言，他们不会从这件护甲中获得丝毫的益处。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-03-03_%E4%B8%80%E7%BD%AA%E4%B8%8E%E7%99%BE%E5%96%84]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "z"
+jump = Array[String](["o-03-03"])
+jumper = ExtResource("1_438ea")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

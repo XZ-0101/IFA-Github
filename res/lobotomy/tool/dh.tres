@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" load_steps=4 format=3 uid="uid://cfp1krsfkk2eh"]
+
+[ext_resource type="Texture2D" uid="uid://c0x0w0f0mv2qu" path="res://img/DesireHeart_-1101976.webp" id="1_6nk58"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="1_wfqss"]
+[ext_resource type="Resource" uid="uid://bwwmud6x43jlh" path="res://res/jumper/T-09-77.tres" id="2_nia6u"]
+
+[resource]
+script = ExtResource("1_wfqss")
+tool_type = "携带型"
+tool_e = "主管可以派遣员工去携带渴望之心，使其获得10点最大生命值和10点攻击速度加成。
+
+如果携带渴望之心的员工在携带时间小于30秒，或者并没有进行攻击动作被要求归还，他将会立即陷入恐慌，且恐慌类型和勇气最高的员工陷入恐慌时的类型必然相同，即袭击同僚，获得额外的攻击速度并会主动使用其装备的E.G.O武器攻击其他职员。
+
+在有员工携带渴望之心时直接结束一天并不会对该员工造成任何影响，即使没有满足上述的条件。
+
+[img]res://img/dh1.png[color=red]
+x月x日-控制部某条走廊-监控画面
+-- 职员的心脏剧烈跳动！
+[/color]"
+tool_info = "渴望之心（T-09-77）是一件危险等级为TETH级的携带型工具异想体。从外观上看，它是一颗被摘除的心脏，中央长着一块瘤状物。携带渴望之心的员工能够增加生命值及攻击速度。如果携带者在30秒内，或是在没有进行过攻击的情况下归还渴望之心，该员工会立刻陷入恐慌。如果陷入恐慌的员工恢复到正常状态，他们就可以继续使用或是归还渴望之心，直到结束一天的工作。
+
+[img]res://img/TheHeartofAspirationCloseUp.webp[color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["携带“渴望之心”的员工会获得额外的生命值与攻击速度加成。（持续携带10秒解锁）", "如果携带者在没有进行过攻击的情况下被要求归还“渴望之心”，便会立刻陷入恐慌且其暴力倾向会急剧增长，随后该员工会攻击附近的所有目标。（持续携带60秒解锁）", "如果携带者在携带“渴望之心”后的30秒内被要求归还，该员工也会出现同上文相同的症状。（持续携带120秒解锁）"])
+Research_logs = Array[String](["该异想体是一颗无主的心脏。尽管已经从肉体上摘除，它也从未停止过跳动。（持续携带10秒解锁）", "被员工携带时，心脏的跳动频率将会加倍，并能提高携带者的生命值和攻击能力。（持续携带60秒解锁）", "过度的渴望会使人发狂。（持续携带120秒解锁）", "如果携带者在归还心脏前没有进行过攻击，或是在携带后30秒内就归还的话，他会失去理智并对看到的一切发起攻击。（持续携带180秒解锁）"])
+name_ = "渴望之心"
+icon = ExtResource("1_6nk58")
+info_ = "*资料类型：工具类异想体
+
+过度的渴望会使人发狂。
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/T-09-77_%E6%B8%B4%E6%9C%9B%E4%B9%8B%E5%BF%83]脑叶公司Wiki[/url],脑叶公司情报部"
+subject = "T-09-77"
+level = "t"
+jumper = ExtResource("2_nia6u")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

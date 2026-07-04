@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Unreleased" format=3 uid="uid://bikuqgms0hesv"]
+
+[ext_resource type="Texture2D" uid="uid://nweatlvlhngg" path="res://img/icon.svg" id="1_nkq44"]
+[ext_resource type="Script" uid="uid://cpa5s030uoo4d" path="res://script/unuse.gd" id="1_pnk3u"]
+[ext_resource type="Resource" uid="uid://1sofx23gjp74" path="res://res/Unreleased/test-j.tres" id="2_dk850"]
+[ext_resource type="Texture2D" uid="uid://bh8ebh4o7uhbs" path="res://img/exported_image.png" id="4_jg4hn"]
+[ext_resource type="Texture2D" uid="uid://6gn8scqjt5ku" path="res://img/music/p.jpg" id="5_id754"]
+
+[resource]
+script = ExtResource("1_pnk3u")
+"介绍" = "这是测试"
+"现状" = "测试"
+name_ = "测试"
+icon = ExtResource("1_nkq44")
+info_ = "测试"
+subject = "0-00-00"
+level = "a"
+jumper = ExtResource("2_dk850")
+jump = Array[String](["pres://res/test/test1-j.tres"])
+gif = "g17"
+texture_array = Array[Texture2D]([ExtResource("4_jg4hn"), ExtResource("5_id754")])
+metadata/_custom_type_script = "uid://cpa5s030uoo4d"

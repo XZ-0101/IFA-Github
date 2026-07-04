@@ -1,0 +1,142 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://c0q7vcj3tiu6w"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_pru2c"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_vrljp"]
+[ext_resource type="Texture2D" uid="uid://3axjifue70np" path="res://res_pack/f-04-42/benti/img/I-1513253349.webp" id="3_id5rm"]
+[ext_resource type="Resource" uid="uid://ctvxnwjkyro3v" path="res://res_pack/f-04-42/benti/f-04-42-j.tres" id="4_xq5ic"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_jw5ut"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_pru2c")
+level = {
+"L1": 0,
+"L2": 0,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_pru2c")
+type = 1
+level = {
+"L1": 10,
+"L2": 20,
+"L3": 45,
+"L4": 45,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_pru2c")
+type = 2
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_pru2c")
+type = 3
+level = {
+"L1": 20,
+"L2": 30,
+"L3": 55,
+"L4": 55,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_vrljp")
+Probabilities = Array[ExtResource("1_pru2c")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_jw5ut")
+Attack_Type = 3
+acctak_Damage = "3-5"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "20"
+good_Mood_Range = "14-20"
+bad_Mood_Range = "0-7"
+Norm_Mood_Range = "8-13"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "1"
+red_def = 0.5
+white_def = 1.0
+pale_def = 1.5
+Upgrades = Array[String](["Ⅰ. 当工作结果为良时，“白雪公主的苹果”的逆卡巴拉计数器有小概率在倒计时结束后减少。（该条翻译有误。该句中的“小概率”应为“中等概率”。）", "Ⅱ. 当工作结果为差时，“白雪公主的苹果”的逆卡巴拉计数器有大概率在倒计时结束后减少。", "Ⅲ. 突破收容后，“白雪公主的苹果”会瞬移到设施内的某一条走廊，然后开始散布藤蔓。藤蔓上的员工会降低移动速度，当藤蔓与“白雪公主的苹果”相连时，藤蔓上的员工将会受到“白雪公主的苹果”的攻击。", "Ⅳ. 当一条走廊完全被藤蔓覆盖时，“白雪公主的苹果”将会瞬移到其他的走廊并继续散布藤蔓。即使“白雪公主的苹果”被成功镇压，它的藤蔓在下一天到来前都不会消失。"])
+story = "..在白马王子深情地亲吻白雪公主之后，白雪公主咳出了卡在喉咙里的毒苹果...白雪公主与白马王子在七个小矮人的祝福声中携手穿过鲜花漫烂的小道，迈向幸福的城堡...从此以后，他们过上了幸福快乐的生活...
+
+然而，那个被女巫的愤怒与诅咒所污染，已然成为了女巫一部分的苹果，仅仅只被白雪公主咬了一小口后，便如垃圾一般被丢弃在了地上。慢慢地，苹果被愤怒侵染着，除了对白雪公主和她给予的孤独感到憎恶之外，它已经什么都感受不到了。可它唯一能做的，就是等待着腐烂，等待着回归自然母亲的怀抱。
+
+不知是因为女巫的诅咒，还是它的仇恨扭曲了自然的法则。岁月流转，时间飞逝，本该早已发芽的苹果却没有丝毫的腐烂，它的一些部分被过路的旅人踩碎了，其余的部分也满是蛀虫与鸟儿留下的空洞。
+
+...苹果的周围已经堆满了死去的蛀虫与小鸟，它在腐烂的尸堆之中思考着自己的存在意义。一天又一天，了无生机的茎干慢慢地从苹果中长了出来，但纵使全数干枯，它们也从未停歇。
+
+某个宁静的午后，白雪公主的苹果终于获得了可以使它活动起来的力量...它想起了弃它而去的，正过着幸福生活的公主与王子。白雪公主，亦如现在的它，也曾静静地沉睡了很久...很久...但属于她的王子最终与她相逢，温柔地将她唤醒。现在，这颗苹果，不，这位公主，开始动身，踏上了寻找属于她的那位王子的旅途...
+
+————摘录自《童话故事背后的秘密》（作者不详）"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4、解锁E.G.O护甲Ⅳ. 成功率 + 4%、解锁E.G.O武器"
+flavour_text = Array[String](["在无人知晓的密室中，那个女巫问到：“魔镜啊魔镜，谁是这个世界上最美丽的女人？”", "镜子自然不会作出回应，可女巫心里早已有了答案。", "那一天，随着被诅咒的苹果遗落在公主与王子的花园里，那个女巫的内心也随之崩溃。", "女巫不顾死活，在苹果上施下了最恶毒的咒语...", "员工看到了铺满整个收容单元的藤蔓。", "一些藤蔓和枝叶仍然在“白雪公主的苹果”的收容单元里缓慢生长着", "藤蔓正缠绕在“白雪公主的苹果”附近。", "枝叶沙沙作响。", "如果你走近观察，你会意识到这些藤蔓早已枯萎。", "茎叶已经完全干透了，只要轻轻一碰就能把它们变回尘土。如此恐怖的东西很难被称作是“植物”。", "尽管茎叶已经枯萎了，可它们仍然在生长。", "“白雪公主的苹果”的眼睛是在很久很久以前被小鸟和昆虫咬出来的。“白雪公主的苹果”靠吃小鸟和昆虫的死尸而生长", "“白雪公主的苹果”孤独了很久很久...它的四周遍布小鸟和昆虫的残骸。", "“白雪公主的苹果”想起了在众人的祝福声中迈过鲜花之道的公主与王子。", "无辜的苹果被女巫降下最恶毒的诅咒，可那个因苹果而陷入沉睡的公主，最终却过上了幸福快乐的生活", "随着可怕的嫉妒、愤怒、孤独...“白雪公主的苹果”将愈发强大"])
+other_info = "白雪公主的苹果（F-04-42）是一个以苹果为头部的人形异想体。它高得令人难以置信，脖子和手臂似乎是由带刺的藤蔓构成的。它穿着一件长长的红色连衣裙，衣领部位像是干枯的叶子，腰上还系着白色的围裙。它的头部有几处凹陷，看起来像它的眼窝和鼻孔，这些凹陷据说是被昆虫和鸟类所吃掉的。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-04-42/benti/img/Bx.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力
+当工作结果为良时，白雪公主的苹果的计数器有50%的概率会在倒计时结束后减少1点。
+
+当工作结果为差时，白雪公主的苹果的计数器有70%的概率会在倒计时结束后减少1点。
+
+出逃信息
+
+出逃的“白雪公主的苹果”的生命值为800。
+
+出逃时，异想体“白雪公主的苹果”会瞬移至全设施的随机走廊，并在那个房间散布荆棘。荆棘会每2秒延长一次。当荆棘完全覆盖房间的地面时，“白雪公主的苹果”则会瞬移至随机其他未布满荆棘的走廊，并继续如上动作。如果设施内所有的走廊全部遍布荆棘，则“白雪公主的苹果”会每隔20秒进行一次随机瞬移。
+
+位于“白雪公主的苹果”所散布的荆棘上的职员的移动速度会降低至原有的40%。如果职员位于荆棘上时，“白雪公主的苹果”也位于同一房间，则“白雪公主的苹果”会每隔4秒用荆棘穿刺职员，造成20-25点侵蚀伤害。
+
+“白雪公主的苹果”生成的荆棘只有结束工作后到第二天才会消除。
+
+该异想体的藤蔓有一个bug存在，有时该异想体散布的藤蔓会重复给予员工减速，这会导致员工在藤蔓上几乎无法进行正常的移动，这会对主管的日常工作产生极大的影响。目前尚未发现任何解决方法，唯一能解决这个bug的方式只有重开一天。但此bug的触发几率小到可以忽略不计，请各位主管不必过于担心。
+
+镇压建议
+镇压“白雪公主的苹果”的工作通常需要考虑多个方面，既要确保在避免员工伤亡的情况下尽快镇压它，又要防止它过多地散布荆棘，并为今天的后续工作产生更多负面影响。
+
+虽然“白雪公主的苹果”的血量实际上算不上高，但其较高的伤害，散布藤蔓的减速效果都极大限制了员工的输出环境，选择指挥仅仅一支镇压小队去攻击它是缺乏效率且效果不佳的。尤其是携带近战武器、且移动速度较慢的员工，“白雪公主的苹果”很有可能会在受到伤害之前就瞬移离开，或是杀死那些属性不足的员工。所以请装备不足的主管使用远程武器如弩模板，来复枪模板的武器来对其进行消耗，并在藤蔓蔓延至员工脚底之前将他们撤出苹果所在的房间。
+
+鉴于“白雪公主的苹果”的影响，建议最好不要令其出逃。如果出逃，则建议在设施内的多个地方部署数名装备有造成精神或灵魂伤害的武器（最好是远程武器）、且侵蚀抗性较高（最好至少都拥有0.6侵蚀抗性）的员工，并在“白雪公主的苹果”出逃后立刻对其展开攻势，尽早地将其镇压。要注意“白雪公主的苹果”造成的伤害较高，在员工的抗性不足时，反侵蚀力场盾可以较为有效地抵挡它的伤害。
+
+在游戏前期和中期，“白雪公主的苹果”自己的护甲提供的侵蚀抗性很适合用来对付它自己，月光女神E.G.O武器月光特殊攻击附加黑盾的特效，寄生树E.G.O伪善护甲的全房间回蓝（但必须配远程武器因为伪善护甲的侵蚀抗性较低），憎恶女王E.G.O爱与恨之名的群体回复效果和高侵蚀抗性都能对主管的镇压工作提供较大的帮助。
+
+因为兔子队需要时间集合，且“白雪公主的苹果”会瞬移，使用兔子队来镇压它不是一个可行的选择，经常会出现兔子队好不容易集合到目标房间开始输出的时候“白雪公主的苹果”直接瞬移跑路的情况。
+
+雇佣小红帽雇佣兵虽然可以将其镇压，但是“白雪公主的苹果”会在被镇压之前给公司的不少走廊都覆盖上藤蔓，且这种方法会造成极大的文职伤亡，满公司跑的小红帽和一地的文职尸体引起的连锁反应可能要远远麻烦于“白雪公主的苹果”本身。所以请主管自行衡量是否要雇佣小红帽来镇压它。
+
+[img]res://res_pack/f-04-42/benti/img/20180216202715_1.webp[/img]
+[img]res://res_pack/f-04-42/benti/img/20180216202831_1.webp[/img]"
+price = "基础信息：20点
+敏感信息：20点
+管理须知：每条10点
+工作偏好：每条6点"
+jump_ego = Array[String](["pres://res_pack/f-04-42/ego/f-04-42-g-j.tres", "pres://res_pack/f-04-42/ego/f-04-42-s-j.tres", "pres://res_pack/f-04-42/ego/f-04-42-w-j.tres"])
+name_ = "白雪公主的苹果"
+icon = ExtResource("3_id5rm")
+info_ = "资料类型：异想体
+
+那一天，随着被诅咒的苹果遗落在公主与王子的花园里，那个女巫的内心也随之崩溃。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-04-42_%E7%99%BD%E9%9B%AA%E5%85%AC%E4%B8%BB%E7%9A%84%E8%8B%B9%E6%9E%9C]脑叶公司Wiki[/url] "
+subject = "F-04-42"
+level = "w"
+jumper = ExtResource("4_xq5ic")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

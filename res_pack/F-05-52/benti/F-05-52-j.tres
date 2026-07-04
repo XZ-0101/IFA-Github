@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://c83sxlghd8sce"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_sr7si"]
+[ext_resource type="Texture2D" uid="uid://cd2j0fsgdo1ix" path="res://res_pack/F-05-52/benti/img/I-1513154450.webp" id="2_n0l3f"]
+
+[resource]
+script = ExtResource("1_sr7si")
+name_ = "韦尔奇乐牌汽水"
+s = "F-05-52"
+level = "Z"
+texture = ExtResource("2_n0l3f")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/F-05-52/benti/F-05-52.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

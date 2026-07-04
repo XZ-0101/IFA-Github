@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://xwouugaf3t5n"]
+
+[ext_resource type="Resource" uid="uid://ddrtmodsitvih" path="res://res_pack/f-05-32/ego/f-05-32-s-j.tres" id="1_xk8f4"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_l448c"]
+[ext_resource type="Texture2D" uid="uid://dd1qegw6afoah" path="res://res_pack/f-05-32/ego/img/1-1524971057.webp" id="3_2fkxp"]
+
+[resource]
+script = ExtResource("2_l448c")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "3"
+other = "无"
+red_def = 0.8
+white_def = 1.2
+black_def = 0.8
+pale_def = 1.5
+Requirements = "无"
+name_ = "伐木者"
+texture = ExtResource("3_2fkxp")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+（wiki和游戏中都没有对应描述，故空）
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-05-32_%E7%83%AD%E5%BF%83%E7%9A%84%E6%A8%B5%E5%A4%AB]脑叶公司Wiki[/url] 脑叶公司情报"
+level = "h"
+jump = Array[String](["f-05-32"])
+jumper = ExtResource("1_xk8f4")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

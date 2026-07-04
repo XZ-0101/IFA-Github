@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://cg3cmcr6cjd5o"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_uq1nn"]
+[ext_resource type="Texture2D" uid="uid://djet2ohxvkyoe" path="res://little_game/Texture2D/R-C.jpg" id="2_ydnnw"]
+
+[resource]
+script = ExtResource("1_uq1nn")
+name_ = "赎罪"
+texture = ExtResource("2_ydnnw")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/gift/sz.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

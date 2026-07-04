@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://evjbsfjh2rsm"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_3pcra"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_7wsnm"]
+[ext_resource type="Texture2D" uid="uid://beq0q8hfj2d3b" path="res://little_game/fight/res/buff/Absorption_JE3_BE3.webp" id="2_r4e6j"]
+
+[sub_resource type="Resource" id="Resource_8lojt"]
+script = ExtResource("1_3pcra")
+most_x = 99
+code = "hp+=5"
+exe_time = "before_under_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_7wsnm")
+eff = SubResource("Resource_8lojt")
+icon = ExtResource("2_r4e6j")
+id = "absorption-mc"
+type = Array[String](["buff", "MC"])
+name_ = "伤害吸收"
+description = "[受到攻击时]额外获得5HP"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

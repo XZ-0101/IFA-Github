@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" load_steps=4 format=3 uid="uid://daysghyeccct0"]
+
+[ext_resource type="Resource" uid="uid://bjly1msxqp15t" path="res://res_pack/t-01-68/ego/t-01-68-w-j.tres" id="1_jb5nx"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_lwvk1"]
+[ext_resource type="Texture2D" uid="uid://ck0678k3xcrt5" path="res://res_pack/t-01-68/ego/img/W-1513356076.webp" id="3_odcup"]
+
+[resource]
+script = ExtResource("2_lwvk1")
+Cost = "50"
+Max_Amount = "1"
+Damage_type = 2
+Damage = "2-1"
+Attack_Speed = "极快（0.5s）"
+Range_ = "远（10）"
+dps = "8"
+m_ban = "特殊模板"
+Observation_Level = "4"
+Requirements = "[color=3fcdbd]正义[/color]III"
+other = "※和面板不同，这把武器攻击时也会造成2-2的侵蚀伤害，伤害造成顺序略晚于精神伤害。"
+name_ = "圣宣"
+texture = ExtResource("3_odcup")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+这两把枪令人感到严肃。
+
+死者之哀，死亡之惧，烙印其上。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-01-68_%E4%BA%A1%E8%9D%B6%E8%91%AC%E4%BB%AA]脑叶公司Wiki[/url] 脑叶公司情报部门"
+level = "w"
+jump = Array[String](["t-01-68"])
+jumper = ExtResource("1_jb5nx")
+gif = "g16"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

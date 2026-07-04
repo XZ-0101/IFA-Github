@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://dvigse4ohs034"]
+
+[ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="1_3aqy4"]
+[ext_resource type="Texture2D" uid="uid://bgq5xtuwk7mol" path="res://little_game/fight/res/enemy/yiyu/zwf.png" id="1_srn1y"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_mc2dj"]
+[ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="2_srn1y"]
+[ext_resource type="Resource" uid="uid://ckn14tu6qflgn" path="res://little_game/fight/res/enemy/yiyu/skill/sk-panic.tres" id="2_us0qg"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_kmuyg"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="5_8c2qy"]
+[ext_resource type="Resource" uid="uid://ych2tv7eus0r" path="res://little_game/fight/res/enemy/yiyu/skill/sk1.tres" id="6_4kqbg"]
+[ext_resource type="Resource" uid="uid://b3hjk1anyy2o1" path="res://little_game/fight/res/enemy/yiyu/skill/sk1-2.tres" id="7_mc2dj"]
+[ext_resource type="Resource" uid="uid://c5bwstso3olrv" path="res://little_game/fight/res/enemy/yiyu/skill/sk2.tres" id="8_8c2qy"]
+[ext_resource type="Resource" uid="uid://elv56exxwcjo" path="res://little_game/fight/res/enemy/yiyu/skill/sk3.tres" id="9_mymwx"]
+[ext_resource type="Resource" uid="uid://o4d4eeut611c" path="res://little_game/fight/res/enemy/yiyu/skill/sk-d.tres" id="10_axido"]
+
+[sub_resource type="Resource" id="Resource_mymwx"]
+script = ExtResource("2_mc2dj")
+music_path = "res://little_game/fight/res/enemy/yiyu/LC_1장_적전투_후반부_BGM_(완성본_LOOP).ogg.mp3"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_mp3lf"]
+script = ExtResource("5_8c2qy")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/chenlun.tres\",2,team)"
+exe_time = "after_under_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_37oma"]
+script = ExtResource("1_3aqy4")
+eff = SubResource("Resource_mp3lf")
+description = "[受到攻击时]为自己施加一层沉沦"
+name_ = "死亡圣诞"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_axido"]
+script = ExtResource("5_8c2qy")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))"
+exe_time = "after_under_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_wrtxd"]
+script = ExtResource("1_3aqy4")
+eff = SubResource("Resource_axido")
+description = "【受到攻击时】对敌方施加两层流血"
+name_ = "实验楼"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_tnlf0"]
+script = ExtResource("5_8c2qy")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/enemy/yiyu/BUFF/czy.tres\",1,team)"
+exe_time = "after_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_8xs46"]
+script = ExtResource("1_3aqy4")
+eff = SubResource("Resource_tnlf0")
+description = "【命中时】对自己施加两层创作欲"
+name_ = "忆雨童话"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_eo6w2"]
+script = ExtResource("5_8c2qy")
+code = "if sp>=sp_max*0.7:
+	Fight.minus_buff_path(\"res://little_game/fight/res/buff/blood.tres\",get_enemy(team),5)
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/absorption-mc.tres\",5,get_enemy(team))"
+exe_time = "turn_end"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_jsic3"]
+script = ExtResource("1_3aqy4")
+eff = SubResource("Resource_eo6w2")
+description = "[回合结束时]如果SP高于80%，则消耗敌方5层流血，施加5层伤害吸收"
+name_ = "Warma"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[resource]
+script = ExtResource("2_srn1y")
+name_ = "忆雨"
+img = ExtResource("1_srn1y")
+description = "我很人类
+（From:Warma）"
+hp = 300
+sp = 50
+passives = Array[ExtResource("1_3aqy4")]([SubResource("Resource_37oma"), SubResource("Resource_wrtxd"), SubResource("Resource_8xs46"), SubResource("Resource_jsic3")])
+skill_array = Array[ExtResource("3_kmuyg")]([ExtResource("6_4kqbg"), ExtResource("7_mc2dj"), ExtResource("8_8c2qy"), ExtResource("9_mymwx"), ExtResource("10_axido")])
+panic_skill = ExtResource("2_us0qg")
+action_play = Array[String](["rp,0,1", "r", "p,4", "rp,0,2", "p,3"])
+music = SubResource("Resource_mymwx")
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

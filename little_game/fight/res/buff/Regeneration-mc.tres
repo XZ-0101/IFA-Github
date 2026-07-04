@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://ccb3blqp8srhj"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_72a3l"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_ohxj8"]
+[ext_resource type="Texture2D" uid="uid://g0xn0nfuadl5" path="res://little_game/fight/res/buff/Regeneration_JE3_BE2.webp" id="2_2pulu"]
+
+[sub_resource type="Resource" id="Resource_5p01q"]
+script = ExtResource("1_ohxj8")
+most_x = 99
+code = "hp+=floori(x*0.5)"
+exe_time = "turn_strat"
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_72a3l")
+eff = SubResource("Resource_5p01q")
+icon = ExtResource("2_2pulu")
+id = "Regeneration_mc"
+type = Array[String](["buff", "MC"])
+name_ = "生命恢复"
+description = "[回合开始时]获得0.5x的HP（向下取整）"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

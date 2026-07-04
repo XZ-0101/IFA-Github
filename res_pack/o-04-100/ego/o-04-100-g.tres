@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://m3sbn6vdhp5l"]
+
+[ext_resource type="Resource" uid="uid://d1ja7yfdx17ax" path="res://res_pack/o-04-100/ego/o-04-100-g-j.tres" id="1_gkpeg"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_gw1tb"]
+[ext_resource type="Texture2D" uid="uid://ce1q8g65q7dqd" path="res://res_pack/o-04-100/ego/img/Sakura4.webp" id="3_pvjge"]
+
+[resource]
+script = ExtResource("2_gw1tb")
+name_ = "落樱"
+texture = ExtResource("3_pvjge")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：8%
+位置：头部
+最大精神值+2
+移动速度+2
+攻击速度+2
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/o-04-100/benti/o-04-100-j.tres"])
+jumper = ExtResource("1_gkpeg")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

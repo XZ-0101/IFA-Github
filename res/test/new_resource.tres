@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://b1yhm34adg8ii"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_dt38g"]
+[ext_resource type="Texture2D" uid="uid://bpvx675yi1dlc" path="res://img/800px-堂吉诃德剧情立绘 - 副本.png" id="2_deso7"]
+
+[resource]
+script = ExtResource("1_dt38g")
+name_ = "我"
+texture = ExtResource("2_deso7")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/test/lca_test_page.tres"
+mode = "TEST"
+type = Array[String](["考验"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

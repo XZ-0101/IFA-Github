@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://d1ja7yfdx17ax"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_l1eu1"]
+[ext_resource type="Texture2D" uid="uid://ce1q8g65q7dqd" path="res://res_pack/o-04-100/ego/img/Sakura4.webp" id="2_iuifv"]
+
+[resource]
+script = ExtResource("1_l1eu1")
+name_ = "落樱"
+texture = ExtResource("2_iuifv")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-04-100/ego/o-04-100-g.tres"
+mode = "lobotomyG"
+type = Array[String](["脑叶公司EGO", "EGO", "EGO礼物/饰品"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

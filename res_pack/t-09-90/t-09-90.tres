@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" format=3 uid="uid://3oshchktcbp3"]
+
+[ext_resource type="Texture2D" uid="uid://f1e5rm7nlhvf" path="res://res_pack/t-09-90/img/ProphecyOfSkin.webp" id="1_bh862"]
+[ext_resource type="Resource" uid="uid://6ygrj6gvf41w" path="res://res_pack/t-09-90/t-09-90-j.tres" id="2_bh862"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="3_gq67i"]
+
+[resource]
+script = ExtResource("3_gq67i")
+tool_type = "单次使用型"
+tool_e = "工作能力
+
+当员工被指派使用人皮启示录时，该员工的最大精神值将会额外提高15点（最多额外提高100点），同时该员工护甲的精神抗性会发生变化，精神抗性变化的数额和员工的初始护甲抗性以及一天内该员工阅读人皮启示录的次数有关。
+
+每天第一次阅读人皮启示录时，该员工的精神抗性会更改为护甲初始精神抗性的1.25倍，第二次时为1.55倍，第三次时为1.9倍，第四次时为2.3倍，之后该员工在这一天内继续阅读人皮启示录时将不再改变精神抗性，但阅读人皮启示录仍然可以提高该员工的精神值直至100点的额外精神值提高上限。
+
+同时装备Da Capo护甲和饰品的员工在阅读人皮启示录后的精神抗性依旧会进行乘算，但由于该员工的精神抗性为-1.0，这会导致该员工在阅读四次人皮启示录后精神抗性被更改至-2.3——远高于初始的精神抗性。
+
+在一天内，若阅读过人皮启示录的员工陷入恐慌，则该员工将被血管组成的笼子拖入地下，并被判定死亡。
+
+人皮启示录对员工精神抗性，精神值的影响和条件杀的限制将在一天结束时清零。
+
+[img]res://res_pack/t-09-90/img/20180519171452_1.webp[/img][color=red]
+员工使用记录[/color]
+"
+tool_info = "人皮启示录（T-09-90）是一个危险等级为TETH的单次使用型工具异想体，其外形是一本疑似宗教类的厚重书籍，书的封面和页底可能是由人皮、人骨等从人的尸体身上获取的生物组织制成的。这本书上记载着各种血色的奇怪印记和难以理解的符文符号，并且被放置在一个很可能是由人类的血管、肌肉、骨骼等器官做成的书架上，这本书和承载它的书架上的血液早已干涸。
+
+[img]res://res_pack/t-09-90/img/ProphecyoftheSkinCloseUp.webp[/img][color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["读过“人皮启示录”的员工会获得额外的精神值加成。（使用1次后解锁）", "员工们随时都可以阅读“人皮启示录”，直到他们的精神值到达上限为止。（使用3次后解锁）", "阅读“人皮启示录”的次数越多，对精神伤害的抗性就越低。（使用5次后解锁）", "读过“人皮启示录”的员工一旦陷入恐慌，就会立刻死亡。（使用7次后解锁）"])
+Research_logs = Array[String](["这个异想体是一本外表古旧的宗教书籍，它被安置在一个由人骨支起的书架上。厚实的人皮书页里承载着无法估量的信息。（使用1次后解锁）", "虔诚的信徒们用人皮装订圣籍，以此祈祷他们的神圣信仰永世长存。（使用3次后解锁）", "读过这本书的员工将会被难以想象的万千真理所启发，而真正理解了那些真理的人会被先知们召唤————你不能拒绝他们的召唤。（使用5次后解锁）", "请成为我们永远的救世主，真理将会解放这世间的所有人！（使用7次后解锁）"])
+name_ = "人皮启示录"
+icon = ExtResource("1_bh862")
+info_ = "资料类型：工具类异想体
+
+请成为我们永远的救世主。真理将会解放这世间的所有人！
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] 脑叶公司情报
+（此处不需要改动）"
+subject = "T-09-90"
+level = "t"
+jumper = ExtResource("2_bh862")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://choyjypwwj4tc"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_0dsld"]
+[ext_resource type="Texture2D" uid="uid://oryoo27j3hxx" path="res://little_game/fight/res/skill/skill_img/test_skill.png" id="2_mycc7"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_hjnob"]
+
+[sub_resource type="Resource" id="Resource_0dsld"]
+script = ExtResource("1_0dsld")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/hxf.tres\",1,team)"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_hjnob")
+name_ = "纵斩"
+icon = ExtResource("2_mycc7")
+level = 1
+change_Point = 7
+coin_n = 1
+base_point = 4
+at = 5
+def = 30
+description = Array[String](["[命中时]给自己一层呼吸法"])
+eff_arr = Array[ExtResource("1_0dsld")]([SubResource("Resource_0dsld")])
+type = Array[String](["闪避"])
+sin_color = Color(0, 0.20784314, 0.60784316, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

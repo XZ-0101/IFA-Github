@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://b1j34rt1at8ph"]
+
+[ext_resource type="Texture2D" uid="uid://coq21u1lee7h3" path="res://img/ui/New Piskel3.png" id="1_8cxnq"]
+
+[resource]
+texture = ExtResource("1_8cxnq")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0.438598, 0.508433, 0, 1)

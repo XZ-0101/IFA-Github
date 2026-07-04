@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://bs3be2xbqsj0m"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_a58kv"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_6b6k6"]
+[ext_resource type="Texture2D" uid="uid://8jkwg0xolb68" path="res://res_pack/o-02-56/benti/img/I-1513168300.webp" id="3_rnsvn"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="4_ib1ws"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_fijsm"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_a58kv")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_a58kv")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_a58kv")
+level = {
+"L1": 55,
+"L2": 55,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_a58kv")
+level = {
+"L1": 30,
+"L2": 20,
+"L3": 10,
+"L4": 0,
+"L5": 0
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_6b6k6")
+Probabilities = Array[ExtResource("1_a58kv")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[sub_resource type="Resource" id="Resource_7u6pa"]
+script = ExtResource("4_ib1ws")
+name_ = "惩戒鸟"
+s = "O-02-56"
+level = "T"
+texture = ExtResource("3_rnsvn")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-56/benti/o-02-56.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "黑森林"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"
+
+[resource]
+script = ExtResource("5_fijsm")
+Attack_Type = 1
+acctak_Damage = "2-4"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "12"
+good_Mood_Range = "9-12"
+bad_Mood_Range = "0-4"
+Norm_Mood_Range = "5-8"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "4"
+red_def = 2.0
+white_def = 2.0
+black_def = 2.0
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ.当“惩戒鸟”的收容单元内没有员工时，如果有员工进入其他异想体的收容单元，那么“惩戒鸟”的逆卡巴拉计数器有小概率立刻减少。当某个员工陷入恐慌时，“惩戒鸟”的逆卡巴拉计数器会立刻减少。", "Ⅱ.当“惩戒鸟”的逆卡巴拉计数器归零后，“惩戒鸟”会飞出收容单元并对您的员工进行数次啄击。在造成一定伤害后，“惩戒鸟”飞回了收容单元。", "Ⅲ.当某个员工的恐慌正好导致“惩戒鸟”突破收容时，“惩戒鸟”会飞向这名员工并帮助其恢复精神值。在该员工恢复正常后，“惩戒鸟”飞回了收容单元。", "Ⅳ.我们曾指派某个员工镇压“惩戒鸟”，当他攻击“惩戒鸟”后，“惩戒鸟”肚子上的红色部分突然裂开并████，在那之后该员工被发现已经死亡，镇压失败。", "（编者注：该异想体的管理须知和原文有极大的不同，但却比原文表达的更为全面，故不对该异想体的管理须知进行任何改动。）(此文本沿袭wiki）"])
+story = "“一只惩罚那些懦弱，充满罪恶，做出不敬之事的人的自信的小小鸟。一些员工表示，小鸟扑腾着它的小翅膀的样子看上去相当可爱。”
+
+“人们从很久以前就开始不停地犯下罪恶。“为什么他们要做这种事儿？即使他们知道那是充满罪恶的？”一只小小鸟好奇地想着。
+
+“这一定是因为没有一个惩罚坏人的人，既然如此，那我就自己扮演这个角色，让那些肮脏而罪恶的事情永远不要发生！”从此以后，一只小鸟离开了它一生居住的森林，再也没有回去过。"
+Observation_level = "Ⅰ. 工作速度 + 5Ⅱ. 成功率 + 5%、解锁E.G.O饰品Ⅲ. 工作速度 + 5、解锁E.G.O护甲、武器Ⅳ. 成功率 + 5%"
+flavour_text = Array[String](["因为“惩戒鸟”看起来很无聊，所以员工们在“惩戒鸟”的收容单元里放了一棵用作栖息处的树。", "“惩戒鸟”站在树上，回想着那片它曾经居住过的森林以及它的过去。", "实际上，因为“惩戒鸟”的体型娇小，所以放置这棵树可以防止它被踩到。", "实际上，放置这棵树的目的是防止体型娇小的“惩戒鸟”受到不可预料的伤害。", "大多数时候，“惩戒鸟”都像一只普通的鸟一样在收容单元内飞来飞去。", "“惩戒鸟”从不鸣叫，但它的腹部有时会隐隐的抽搐。", "没有多少人知道“惩戒鸟”那隐藏的獠牙。", "有多少人知道“惩戒鸟”那分为几块的，令人作呕的肉？"])
+other_info = "惩戒鸟（O-02-56）又称小鸟，是一只小白鸟。它有着蓝白色的小翅膀，胸口有一块红色的印记。“惩戒鸟”喜欢待在收容单元的一棵树上休息。当受到来自员工的非溅射伤害时，“惩戒鸟”会变得全身通红。
+
+观察等级2级前，该异想体的名称为“小鸟”，观察等级2及以上时会更改为“惩戒鸟”。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/o-02-56/benti/img/Punishing_Bird_Close-Up.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+
+当惩戒鸟的收容单元内没有员工时，如果有员工进入其他异想体（包括工具类异想体）的收容单元，惩戒鸟的计数器有20%的概率立刻减少。
+
+当有员工陷入恐慌时，惩戒鸟的计数器会立刻减少。
+
+出逃信息
+
+出逃的“惩戒鸟”的生命值为200，基础移动速度为4单位。
+
+由于bug，惩戒鸟在较小的房间或是走廊时，其攻击范围会变大。
+
+出逃的“惩戒鸟”默认状态为中立状态。虽然“惩戒鸟”会尝试主动攻击员工，但其不会被任何员工主动选为攻击目标，员工也不会在受到伤害后进行反击，且除失乐园的房间伤害与魔弹以外的溅射或贯穿伤害不会攻击到\"惩戒鸟\"；E.G.O.护甲薄暝的房间伤害也不会主动影响到\"惩戒鸟\"。
+
+在它所处的区域内有员工时，它每3秒会随机选择同房间的一名员工作为目标并对其进行追击，在与其距离小于等于2.27时尝试对员工进行3秒一次的啄击，造成1点物理伤害。在造成总计8-12点有效的物理伤害后，它会自行回到收容室。
+
+如果惩戒鸟的计数器是因为有员工陷入恐慌而归零，则它会尝试追击导致其出逃的恐慌的员工并持续啄击员工，但每次啄击并不会造成伤害而是为员工回复3-5点精神值。在恐慌的员工回复正常时，它会自行回到收容室。
+
+如果一个非恐慌员工对惩戒鸟造成了伤害（包括但不限于黑天鹅武器的反伤，魔弹，失乐园的房间伤害，爱慕，爱与恨之名的子弹判定等），惩戒鸟会变得浑身通红，生命值上限上升至1000，立刻恢复所有生命值并在60秒内开始追击该员工。此状态下如果惩戒鸟在追击时与追击目标距离小于等于2.27，则它会尝试用从腹部撕裂出来的喙对其造成1次800-1200点物理伤害，在成功造成伤害后，它会返回收容单元，否则会继续追击这名员工直至追击时间结束。若追击时间结束，它会自行回到收容室。
+
+在回到收容室的过程中，惩戒鸟无法被员工镇压，并获得无敌。
+
+受到来自于恐慌员工的伤害时，未变红的惩戒鸟不会因此而变红并攻击恐慌员工。
+
+镇压建议
+
+因为惩戒鸟变红后可以近似看做秒杀的极高单次物理伤害，加上它会主动回到收容室和出逃后不会被职员主动攻击的特性，镇压惩戒鸟是没有意义的行为。与其想办法揍鸟大爷一顿还不如在门口放个物理抗性较低的员工让它快点回去。
+
+如果主管为了完成任务决定使用员工镇压惩戒鸟，请使用攻击距离较长且抬手较快的武器，如来复枪模板和弩模板的武器对它进行风筝。或者主管可以用一个高移速员工来触发它的仇恨，接着让这名员工和惩戒鸟赛跑。惩戒鸟的仇恨只会针对让它变红的员工，变红后如果还有员工对它进行攻击，它也不会转移仇恨。
+
+因为惩戒鸟的单次巨额红伤只针对非恐慌员工，受到异想体伤害时的惩戒鸟不会变红。所以雇佣小红帽雇佣兵和魔弹射手来镇压惩戒鸟也是个不错的选择。
+
+[img]res://res_pack/o-02-56/benti/img/3F3F.webp[/img]
+你惹怒了你小鸟大爷
+
+[img]res://res_pack/o-02-56/benti/img/3F3Fa.webp[/img]
+小鸟的二阶段攻击"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条3点
+工作偏好：每条4点"
+jump_ego = Array[String](["pres://res_pack/o-02-56/ego/o-02-56-g-j.tres", "pres://res_pack/o-02-56/ego/o-02-56-w-j.tres", "pres://res_pack/o-02-56/ego/o-02-56-s-j.tres"])
+name_ = "惩戒鸟"
+icon = ExtResource("3_rnsvn")
+info_ = "资料类型：异想体
+
+人们从很久以前就开始不停地犯下罪恶。“为什么他们要做这种事儿？即使他们知道那是充满罪恶的？”
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "O-02-56"
+level = "t"
+jumper = SubResource("Resource_7u6pa")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

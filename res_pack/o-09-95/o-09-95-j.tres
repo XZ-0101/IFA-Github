@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://bc8tnnj1bph7j"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_k74pp"]
+[ext_resource type="Texture2D" uid="uid://b0grymc8t1j30" path="res://res_pack/o-09-95/img/HealthBracelet (1).webp" id="2_aa63x"]
+
+[resource]
+script = ExtResource("1_k74pp")
+name_ = "荧光手镯"
+s = "O-09-95"
+level = "T"
+texture = ExtResource("2_aa63x")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-09-95/o-09-95.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

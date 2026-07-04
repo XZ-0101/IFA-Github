@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://2baelumxnolb"]
+
+[ext_resource type="Resource" uid="uid://dq8uqppnwpftr" path="res://res_pack/O-02-40/ego/0-02-04-s-j.tres" id="1_f4skx"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_n848d"]
+[ext_resource type="Texture2D" uid="uid://b35pxrs5jdtno" path="res://res_pack/O-02-40/ego/img/A-1513245425.webp" id="3_rhx04"]
+
+[resource]
+script = ExtResource("2_n848d")
+Cost = "60"
+Max_Amount = "1"
+Observation_Level = "5"
+other = "无"
+red_def = 0.8
+white_def = 0.7
+black_def = 0.4
+pale_def = 1.5
+Requirements = "自律III 正义III 等级IV"
+name_ = "目灯"
+texture = ExtResource("3_rhx04")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：每当有一只黑森林里的动物被它“拯救”时，它的身上就会多出一颗令人毛骨悚然的眼睛。
+
+这件护甲上大小不一却又无比密集的眼睛更是能体现出它对自己所作所为的骄傲。
+那些明亮而又炙热的眼睛总是同时注视着一处。
+
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "w"
+jump = Array[String](["pres://res_pack/O-02-40/benti/0-02-04-j.tres"])
+jumper = ExtResource("1_f4skx")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

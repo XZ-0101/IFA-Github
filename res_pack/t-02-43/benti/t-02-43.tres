@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://dg8iqx1p0n1ow"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_cr0wg"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_f1pnb"]
+[ext_resource type="Texture2D" uid="uid://cwl3fngrgdehs" path="res://res_pack/t-02-43/benti/img/I-1513167919.webp" id="3_iyeon"]
+[ext_resource type="Resource" uid="uid://bpm5xgt3elqo0" path="res://res_pack/t-02-43/benti/t-02-43-j.tres" id="4_iyeon"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_w8djk"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_cr0wg")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 65,
+"L4": 65,
+"L5": 65
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_cr0wg")
+level = {
+"L1": -50,
+"L2": -50,
+"L3": -50,
+"L4": -50,
+"L5": -50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_cr0wg")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 55,
+"L4": 55,
+"L5": 55
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_cr0wg")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_f1pnb")
+Probabilities = Array[ExtResource("1_cr0wg")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_w8djk")
+Attack_Type = 1
+acctak_Damage = "2-3"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "14"
+good_Mood_Range = "X"
+bad_Mood_Range = "0-6"
+Norm_Mood_Range = "7-14"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 谨慎等级为1级的员工进入“蜘蛛巢”的收容单元后会踩死地上的小蜘蛛，“蜘蛛巢”会把踩死小蜘蛛的员工缠成茧。（该条翻译有误。谨慎等级为1级的在对“蜘蛛巢”进行工作时会踩到，甚至碾死地上的小蜘蛛。而“蜘蛛巢”会把踩死它幼崽的员工缠成茧。这代表着“蜘蛛巢”只会在工作完成后再击杀员工。）", "Ⅱ. 当某个准备对“蜘蛛巢”进行洞察工作的员工进入其收容单元时，“蜘蛛巢”飞快地将那名员工缠成了茧。（该条翻译有误。原文直译为：当某名员工在收容单元内完成了对“蜘蛛巢”的洞察工作后，“蜘蛛巢”将正在清扫收容单元内部的员工飞快地缠成了茧。）", "Ⅲ. “蜘蛛巢”缠出的茧会独自产生能源。越多的茧就意味着越多的能源。"])
+story = "这个异想体形似一只巨型蜘蛛，它隐藏在黑暗中，守卫着自己的领地。收容单元的地板上有许多小蜘蛛在跳来跳去，电缆和一些无法辨认的物体相互纠缠在天花板上。大部分电缆已经被破坏，导致收容单元内没有丝毫的光线。
+
+我们令人敬佩的员工彼得自愿进入这个异想体的收容单元进行调查。当他打开手电筒时，他看到大量小蜘蛛正爬向远离光源的地方。
+
+当彼得不可避免地踩死一只小蜘蛛时，可怕的事情发生了：一只长有许多眼睛的巨型蜘蛛从天花板上降下，直勾勾地盯着彼得。就在一眨眼的功夫，他被抓住了。大蜘蛛显然非常高兴，它用丝把他缠成茧吊在天花板上。可怜的彼得将会成为小蜘蛛的食物。
+
+不出所料，没有人自愿去取回他们同事的尸体。
+
+...绝大多数员工都不知道，那个被包裹在茧中的员工并没有立即死亡。相反，那名员工会死得非常，非常慢。据猜测，这个异想体不会立即杀死它的猎物，因为它要确保猎物尽可能久地保持新鲜。它分泌的毒液中含有一种特殊的毒素，会永久性地损害心脏，最终导致死亡。被困在茧中的员工别无选择，只能在一片漆黑中迎来自己的末日，听着自己的心跳一天比一天慢...（省略）
+[color=blue]
+<摘录自某封信件>
+亲爱的████，
+您好。
+
+首先，非常感谢您愿意和我们分享您的意见。
+
+然而，我们深表遗憾地告知您，您的救援提案已被驳回。
+
+研究表明，当“蜘蛛巢”的收容单元内存在由员工制成的茧时，它的能源产出将会大幅增长。
+基于这一事实，我们无法对茧中的员工施以救援，因为这一行为违背了公司的基本利益。
+
+当然，我们已经将您的担忧考虑在内。
+我们保证会投入更多的资源，对“蜘蛛巢”这个异想体进行更为彻底的研究。
+
+此外，我们还要告知您的是，散播未经证实的谣言将会妨碍到其他员工的日常作息。
+您的部分行为已经违反了员工行为守则，这足以成为公司解雇您的理由。
+
+在此建议您谨言慎行。
+
+脑叶公司会竭尽全力为每一位员工谋求最大的福利。
+我们会倾听，并尊重每一条宝贵的意见和建议。
+[right]————脑叶公司福利部部长
+[right]       敬上
+[/color]
+一些可怕的谣言正在我们的员工之间流传。谣言会在这样的一家公司里传开并不足为奇。但有趣的是，所谓的“证人”的数量似乎在成倍增加。以下是部分流传甚广的谣言：“那天晚上我听到收容单元里传出很奇怪的声音！”，“那是亚历克斯的声音，他几天前失踪了...”，“他们说，他在茧里哭，求我们把他救出来...”"
+Observation_level = "Ⅰ. 成功率 + 4%Ⅱ. 工作速度 + 6、解锁E.G.O饰品、护甲Ⅲ. 成功率 + 6%、解锁E.G.O武器Ⅳ. 工作速度 + 4"
+flavour_text = Array[String](["“蜘蛛巢”想要为即将到来的冬天准备些食物，它的孩子们总是很饿。", "整个收容单元已然成为一张巨大的蛛网，从员工踏入此地的第一步起，它便在注视着猎物。", "当员工意识到天花板上的电线看起来比平时要长时，某一根电线突然开始蠕动。", "当员工注意到地板不该是黑色的时候，一团巨大的阴影突然开始移动", "“蜘蛛巢”的眼睛死死盯着员工的一举一动。", "“蜘蛛巢”不仅仅能看到员工，还能听到、摸到、闻到、甚至尝到。", "蜘蛛有着强烈的母性本能，它们会不择手段地保护孩子们。", "员工在工作期间从不看向天花板，确保不和“蜘蛛巢”产生任何目光接触。", "有时，一些小蜘蛛会从天花板上掉下来，如果你不去碰它们的话，什么事都不会发生。", "员工从没忘记在离开收容单元前轻轻拍几下衣服，确保没有小蜘蛛黏在上面。", "员工在没有踩到小蜘蛛的情况下成功离开了收容单元。"])
+other_info = "蜘蛛巢（T-02-43）是一只巨大的雌性蛛形纲生物。在观察日志中，它被描述成一只长有许多红色眼睛的巨型蜘蛛，尽管它从外表上看更像一个黑色的大囊。蜘蛛巢的收容单元因为断电而一直漆黑一片，它平时就挂在天花板上，只有在它抓住员工时我们才能看见它那弯曲的蛛腿。它的收容单元内有很多很多的小蜘蛛在地板上爬行。
+
+该异想体的名称直译应为“蜘蛛蕾”，“蜘蛛巢”为错误翻译。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.28[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/t-02-43/benti/img/Spider_Bud_Good_Mood.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+
+当一个谨慎等级为1级的员工对蜘蛛巢完成工作时或一个员工对蜘蛛巢进行洞察工作时。一个巨大的蜘蛛会从收容室屋顶下来并凝视这个员工，并在工作结束后将面露恐惧神色的员工抓起来裹成茧。被缠成茧的员工将被判定为死亡；在动画结束前结束一天的工作依然会导致这名员工死亡。
+
+蜘蛛巢的收容室内存在的每个茧都会在员工的工作结束后额外给予主管1点能量。这点能量不会计入蜘蛛巢的独立PE-BOX中，也不会计入蜘蛛巢的正常工作能源的最大最小产量中。最多五个茧。
+
+蜘蛛巢茧的数量将在一天的工作结束时重置。
+
+[img]res://res_pack/t-02-43/benti/img/3F3F%3F.webp[/img]
+开始捕猎
+[img]res://res_pack/t-02-43/benti/img/3F3F3F.webp[/img]
+一个茧
+[img]res://res_pack/t-02-43/benti/img/3F33F.webp[/img]
+多个茧"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条4点
+工作偏好：每条4点"
+jump_ego = Array[String](["pres://res_pack/t-02-43/ego/t-02-43-g-j.tres", "pres://res_pack/t-02-43/ego/t-02-43-w-j.tres", "pres://res_pack/t-02-43/ego/t-02-43-s-j.tres"])
+name_ = "蜘蛛巢"
+icon = ExtResource("3_iyeon")
+info_ = "资料类型：异想体
+
+不出所料，没有人自愿去取回他们同事的尸体。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] 
+
+该异想体的相关动图因为存储原因无法导入"
+subject = "T-02-43"
+level = "t"
+jumper = ExtResource("4_iyeon")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

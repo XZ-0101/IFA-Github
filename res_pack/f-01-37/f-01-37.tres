@@ -1,0 +1,170 @@
+[gd_resource type="Resource" script_class="lobotomy" load_steps=11 format=3 uid="uid://dphc2wtogigym"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_5we1l"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_evi45"]
+[ext_resource type="Texture2D" uid="uid://dsn0jj7scq1gq" path="res://res_pack/f-01-37/img/I-1513153343.webp" id="3_g6jbt"]
+[ext_resource type="Resource" uid="uid://bf2ybh8cmamwb" path="res://res_pack/f-01-37/f-01-37-j.tres" id="4_m61ib"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_g0ion"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_5we1l")
+level = {
+"L1": 30,
+"L2": 30,
+"L3": 40,
+"L4": 40,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_5we1l")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 60,
+"L4": 60,
+"L5": 70
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_5we1l")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 50,
+"L4": 50,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_5we1l")
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_evi45")
+Probabilities = Array[ExtResource("1_5we1l")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_g0ion")
+Attack_Type = 2
+acctak_Damage = "4-5"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "18"
+good_Mood_Range = "14-18"
+bad_Mood_Range = "0-7"
+Norm_Mood_Range = "8-13"
+Qliphoth_Counter = "X"
+Upgrades = Array[String](["Ⅰ. 当工作结果为良时，员工有小概率被“冰雪女皇”亲吻。（该条翻译有误。该句中的小概率”应为“中等概率”。）", "Ⅱ. 当工作结果为差时，员工有大概率被“冰雪女皇”亲吻。（实际上是必定）", "Ⅲ. 被“冰雪女皇”亲吻第二次的员工会忘记一切，然后被冰封在“冰雪女皇”的收容单元中。", "Ⅳ. 为了避免第三次的死亡之吻，也为了救出被困住的员工，必须指派一名员工与“冰雪女皇”进行决斗。", "Ⅴ. 只有那些勇气强大的员工才能安全地救出被困住的员工。请务必在今天的工作结束前救出员工。"])
+story = "一位居住在永远被冬日笼罩的寒冷森林的女皇。
+
+就像每个童话故事都是这么开头的——凯是一个热心的孩子。在那个邪恶的女巫将破镜的碎片散播进每个人的心中时后，凯竟能看见那些他不想，也不需要看到的东西。于是，他离开了他生活了一辈子的村庄。
+在无情的暴风雪中，凯遇见了冰雪女皇。他觉得他所知道的一切都已经没有了意义，他想要了解那在他认知之外的世界。
+
+冰雪女皇的吻冰封了凯的内心，即时这华丽的冰雪宫殿是如此的寒冷，但他也再感受不到这刺骨的极寒了——这个宫殿没有一丝生机，有的只是没有止境的漫长冬夜...
+同时，这里有一个心灵强大到不会被碎镜刺伤的孩子，一个勇气强大到不惜冒险去解救凯的孩子，她的名字叫格尔达。
+这段旅途充满了坎坷与艰险。伤痛伴随着格尔达，有时，她甚至会难受地哭出来。
+但最终，格尔达找到了凯，鲜花开始在四周盛开，紧接着，春天来临。
+春日的暖阳融化了冰雪女皇的寒冷宫殿，凯心中的镜片也不留痕迹地消融了。
+最后，只留下了冰雪女皇孤独一人...
+
+我们还记得我们亲手把她放进冷冻棺里的时候。从某一天起，她那欢快的笑声永远消失了。她只是不断重复着哭泣，强颜欢笑，哭泣，强颜欢笑...最终，她选择了割腕自尽。我们在一个浴缸里发现了被她自己的鲜血浸染的她。
+我们从不相信死亡。现在，答案只剩下一个，我将用我此生一直所憎恨着的“那个机器”重新将她制造出来。死在浴缸里的她，一定一直讨厌着我。但我们已经一起走过了太多太多的路...
+...
+有一天，“它”说话了。
+“A，我记得你。你是个善良的人。”
+那一刻，我有一种冲动，一种毁掉我所创造的一切的冲动。"
+Observation_level = "Ⅰ. 成功率 + 4%Ⅱ. 工作速度 + 4Ⅲ. 成功率 + 4%、解锁E.G.O护甲Ⅳ. 工作速度 + 4、解锁E.G.O武器"
+flavour_text = Array[String](["“冰雪女皇”的收容单元里刮着寒冷的暴风雪。", "收容单元内的冰与雪霜闪闪发亮。", "凯必须用冰片拼出“永恒”。如果不是这样的话，他本将是世界的宠儿。", "为了拯救被被困在冰雪宫殿里的凯，格尔达与冰雪女皇的决斗无法避免。", "格尔达比任何人都要勇敢强大。她为了困在冰雪宫殿的凯而战。", "春日来临，玫瑰盛开，格尔达和凯手拉着手踏上归家旅途。", "格尔达和凯败给了冰雪女皇，他们变成了冰的碎片，永远地留在了冰雪宫殿。"])
+other_info = "冰雪女皇（F-01-37）是一个皮肤苍白的人形异想体。它头戴一个王冠，这个王冠呈蓝白色，中间有一个雪花的图案作装饰，两边各有一支黑色的鹿角。“冰雪女皇”没有脖子，它的头与身体相分离。它身穿一件白色的长袍，肩膀上还有雪花似的冰柱。“冰雪女皇”双手握着一把大剑，剑尖朝下抵在收容单元的地板上。这把大剑散发着寒气，剑柄与剑托呈深蓝色。
+
+“冰雪女皇”的收容单元内刮着永不停止的暴风雪，地板上覆盖着白色的雾气，你能在它的收容单元中听到阵阵呼啸的寒风。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.33[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-01-37/img/Bx-0.webp[/img][color=red]
+收容单元监控画面[/color]
+"
+other_info_act = "特殊能力：
+
+当工作结果为良时，冰雪女皇有50%的概率在工作结束后亲吻员工。（实际上只是用剑砸地一下）
+
+和管理须知所述不同，当工作结果为差时，冰雪女皇必定会在工作结束后亲吻员工。
+
+[img]res://res_pack/f-01-37/img/3F3F.webp[/img]
+给予第一次吻
+
+员工被冰雪女皇亲吻一次后，胸口会出现一枚尖锐的冰片。冰片不会给员工带来任何影响，仅仅作为一个标记，会在当天结束后消除。当有冰片的员工再次被冰雪女皇亲吻后，他会被冰雪女皇冻住并困在收容单元内。
+
+[img]res://res_pack/f-01-37/img/3F3.webp[/img]
+拥有第一次吻的员工
+
+[img]res://res_pack/f-01-37/img/a.webp[/img]
+给予第二次吻
+
+[img]res://res_pack/f-01-37/img/aaa.webp[/img]
+员工被冻住
+
+主管下一次指派员工对冰雪女皇进行工作时，收容室会被铁门覆盖，员工会在收容室内与冰雪女皇进行决斗。决斗的成功率与工作类型和工作结果无关，仅与决斗者的勇气等级有关。
+
+[img]res://res_pack/f-01-37/img/b.webp[/img]
+前往决斗的员工及其武器
+
+[img]res://res_pack/f-01-37/img/aaaa.webp[/img]
+铁门覆盖
+
+决斗结果会在工作结束后公示。若决斗胜利，则被冰冻的员工会被拯救，两名员工都会获得冰雪女皇的饰品。若决斗失败，则两名员工会一起在收容室内碎成冰渣，均被判定死亡。
+
+[img]res://res_pack/f-01-37/img/3F3F.webp[/img]
+决斗胜利
+
+[img]res://res_pack/f-01-37/img/3F3F3F3F.webp[/img]
+首个决斗失败
+
+[img]res://res_pack/f-01-37/img/cc.webp[/img]
+第二次决斗失败
+
+[img]res://res_pack/f-01-37/img/cccc.webp[/img]
+多次决斗失败
+
+当决斗者的勇气等级为1时，决斗的成功率为10%，2级勇气对应着30%的成功率，3级勇气对应着50%的成功率，4级勇气对应着80%的成功率而5级勇气决斗必定胜利，前提是员工不因决斗时工作产生的精神伤害等原因在决斗的途中死亡或陷入恐慌。若参与决斗的员工在决斗途中死亡或陷入恐慌，则决斗将提前结束，结果判定为决斗失败。
+
+如果主管在有员工被困在冰雪女皇的收容单元的情况下结束这一天，那么这个员工会被判定死亡。
+
+注意：请主管不要派遣穿有荣耀之羽E.G.O护甲的员工进入冰雪女皇的收容室，如果主管这么做了，这名员工会立刻死亡。但持有或穿着霜之碎片E.G.O的员工和炎雀并没有任何特殊互动，因此穿着霜之碎片护甲的员工在镇压炎雀时会直接被条件杀为谣言。再者，一天之内让相同的员工重复获取“冰雪女皇”的隐藏饰品并不会导致这些员工被条件杀。请各位主管不要以谣传谣。
+
+[img]res://res_pack/f-01-37/img/ccccc.webp[/img]
+荣耀之羽饰品员工特殊阵亡
+
+[img]res://res_pack/f-01-37/img/3F3F3F%3F.webp[/img]
+荣耀之羽饰品员工尸体
+
+也请主管不要让已经隐藏了“我深知严冬的残酷...和玫瑰的芬芳...”饰品的员工被冰雪女皇冻在收容室中。否则即使该员工被救出，该员工也会在一天结束时被判定死亡。（bug）
+
+若一名无脸颊饰品的员工被冰冻在“冰雪女皇”的收容单元内后，主管派遣一名拥有脸颊饰品，且锁定了脸颊饰品的员工对其进行救援，救援成功后两名员工都不会获得饰品。（这也是bug）
+"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条4点
+工作偏好：每条5点"
+jump_ego = Array[String](["f-01-37-s", "f-01-37-w", "f-01-37-g"])
+name_ = "冰雪女王"
+icon = ExtResource("3_g6jbt")
+info_ = "资料类型：异想体
+
+冰雪正在消融...是因为宫殿正在崩塌吗？又或许是因为春天即将来临？
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-01-37_%E5%86%B0%E9%9B%AA%E5%A5%B3%E7%9A%87?variant=zh-hans]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "F-01-37"
+level = "h"
+jumper = ExtResource("4_m61ib")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

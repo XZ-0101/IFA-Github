@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Documentation_class" load_steps=3 format=3 uid="uid://c7dskm4b5hq05"]
+
+[ext_resource type="Texture2D" uid="uid://clgt44bqpbsv6" path="res://img/桑丘-default - 副本.png" id="1_nbxui"]
+[ext_resource type="Script" uid="uid://brdh4hpbn0703" path="res://script/Documentation_class.gd" id="2_cl1k5"]
+
+[resource]
+script = ExtResource("2_cl1k5")
+name_ = "test"
+icon = ExtResource("1_nbxui")
+str_ = "这是测试文档虽然但是我并[shake level=10]不知道[/shake][rainbow]要在[/rainbow]这写点什么。。。
+[color=red]啊这[/color]
+好吧，那各位知道[wave]小金[/wave]为什么会带领月计开发出脑叶公司吗
+因为啊
+沟槽的小金在。。。
+中间忘了
+后面忘了
+那么，就这样了
+[img,size=550]res://img/artbook/屏幕截图 2025-11-30 205535.png[color=rdd][/color]
+[tornado]拜拜
+[url=https://lobotomycorp.fandom.com/zh/wiki/O-00-00_%E6%95%99%E5%AD%A6%E5%85%94%E5%85%94%E3%80%8CDummy%E3%80%8D]bilibili[/url]
+a
+a
+a
+a
+a
+a
+a
+a
+aa
+
+a
+aa
+
+a
+a
+a
+a
+a"
+by = "xz"
+metadata/_custom_type_script = "uid://brdh4hpbn0703"

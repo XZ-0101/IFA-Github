@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" format=3 uid="uid://bb2prr6t0pv3e"]
+
+[ext_resource type="Texture2D" uid="uid://b0grymc8t1j30" path="res://res_pack/o-09-95/img/HealthBracelet (1).webp" id="1_242ff"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_ii6n8"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="3_b2hl7"]
+
+[sub_resource type="Resource" id="Resource_3jxrj"]
+script = ExtResource("2_ii6n8")
+name_ = "荧光手镯"
+s = "O-09-95"
+level = "T"
+texture = ExtResource("1_242ff")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-09-95/o-09-95.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"
+
+[resource]
+script = ExtResource("3_b2hl7")
+tool_type = "携带型"
+tool_e = "工具能力
+
+员工佩戴手镯后，他的最大生命值将提高15点。
+
+该异想体本应为佩戴者每3秒回复2.4点生命值。但实际上，它只会在员工佩戴手镯后的第3秒为其回复2.4点生命值。
+
+在员工佩戴手镯的15秒后，手镯将开始一个时长为60秒的倒计时。在倒计时持续时间内，如果员工的生命值在任意一个时刻小于最大生命值，则这个倒计时将会被重置为60秒。若倒计时归零，员工将立刻死亡。
+
+主管指派员工员工尝试归还荧光手镯时，若生命值小于最大生命值，则这名员工会立刻死亡。这同样适用于在结束一天的工作的同时员工的生命值不为满的情况下。
+
+事实上，荧光手镯只会在340282300000000000000000000000000000000秒之后尝试再为员工提供一次恢复，因此通常认为其只会进行一次恢复。（wiki注脚）
+
+[img]res://res_pack/o-09-95/img/3F3F-3F3F.webp[/img][color=red]
+员工携带记录[/color]"
+tool_info = "荧光手镯（O-09-95）是一件危险等级为TETH级的携带型工具异想体。从外观上看，它是一个黑色的手镯，上面嵌着一颗六边形的绿宝石，这个手镯会发散发与宝石颜色相同的微光。
+
+该异想体的基础信息将在持续携带30秒后解锁。
+
+[img]res://res_pack/o-09-95/img/LuminousBraceletCloseUp.webp[/img][color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["佩戴“荧光手镯”的员工会大幅提高生命值。（持续携带10秒解锁）", "当佩戴者受伤后，“荧光手镯”会为其持续恢复生命值。（持续携带60秒解锁）", "如果佩戴者在生命值没有全满的情况下试图归还该异想体，那么佩戴者就会死亡。（持续携带120秒解锁）", "如果佩戴者的生命值在一定时间内不曾损失，那么佩戴者也会死亡。（持续携带180秒解锁）"])
+Research_logs = Array[String](["我们在郊区发现了许多无法以常理解释的异想体实体，这个散发出柔和荧光的手镯就是其中之一。（持续携带10秒解锁）", "当一名伤者佩戴手镯后，其身上所有的伤口都会毫无痕迹地快速愈合。（持续携带60秒解锁）", "但是，在没有任何伤口的情况下佩戴手镯，是一种非常贪婪的行为。（持续携带120秒解锁）", "这个手镯不会饶恕那些贪婪的鼠辈，所以它只该被有需要的人佩戴。（持续携带180秒解锁）"])
+name_ = "荧光手镯"
+icon = ExtResource("1_242ff")
+info_ = "资料类型：工具类异想体
+
+这个手镯不会饶恕那些贪婪的鼠辈，所以它只该被有需要的人佩戴。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "O-09-95"
+level = "t"
+jumper = SubResource("Resource_3jxrj")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

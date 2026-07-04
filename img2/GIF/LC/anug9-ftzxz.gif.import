@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://ctre5pnqa6w32"
+path="res://.godot/imported/anug9-ftzxz.gif-3eed83ac6aff32fb7c37860d2317d84b.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/anug9-ftzxz.gif"
+dest_files=["res://.godot/imported/anug9-ftzxz.gif-3eed83ac6aff32fb7c37860d2317d84b.tres"]
+
+[params]
+
+frames_per_second=30

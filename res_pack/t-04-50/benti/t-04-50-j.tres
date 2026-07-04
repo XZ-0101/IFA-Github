@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://c5non0jrcot3f"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_h7ya5"]
+[ext_resource type="Texture2D" uid="uid://68m7uell4wgg" path="res://res_pack/t-04-50/benti/img/I-1513271738.webp" id="2_r6xfm"]
+
+[resource]
+script = ExtResource("1_h7ya5")
+name_ = "蜂后"
+s = "T-04-50"
+level = "W"
+texture = ExtResource("2_r6xfm")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-04-50/benti/t-04-50.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

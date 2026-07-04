@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://b0jlty03hgy0r"]
+
+[ext_resource type="Resource" uid="uid://d08n2nylmcisg" path="res://res_pack/o-05-61/ego/o-05-61-s-j.tres" id="1_hf4au"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_63ndk"]
+[ext_resource type="Texture2D" uid="uid://d2jdqllorvq3t" path="res://res_pack/o-05-61/ego/img/A-1513151103.webp" id="3_hf4au"]
+
+[resource]
+script = ExtResource("2_63ndk")
+Cost = "30"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "无"
+red_def = 0.6
+white_def = 0.9
+black_def = 0.9
+pale_def = 2.0
+Requirements = "[color=purple]自律[/color]II"
+name_ = "决死之心"
+texture = ExtResource("3_hf4au")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+如果让有赴死之心的员工穿上这套护甲，它便会挡下所有的伤害。
+
+但在这个地方很难找到一个不怕丧命的人。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-05-61_%E7%A0%B4%E8%A3%82%E7%9B%94%E7%94%B2[/url] 脑叶公司情报"
+level = "t"
+jump = Array[String](["o-05-61"])
+jumper = ExtResource("1_hf4au")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

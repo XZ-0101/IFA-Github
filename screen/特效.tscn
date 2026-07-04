@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhh22hujb0vct"]
+
+[ext_resource type="Shader" uid="uid://doyvaoh6nno12" path="res://res/tx2.tres" id="1_5ui3n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2a8el"]
+shader = ExtResource("1_5ui3n")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1844746102]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1760033888]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(3.08037e-06, 0, 0.832349, 0.521569)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=271382991]
+material = SubResource("ShaderMaterial_2a8el")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 1, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=17777734]
+color = Color(0, 0.156581, 0.999999, 1)

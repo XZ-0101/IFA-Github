@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://c8m7nkcnp32oe"]
+
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="1_hgrj5"]
+[ext_resource type="Resource" uid="uid://cjpq5rbwwv0vb" path="res://res/jumper/o-01-04-s-j.tres" id="1_xslrc"]
+[ext_resource type="Texture2D" uid="uid://blpgxuq0oxdok" path="res://img/Magic2.webp" id="3_1owtu"]
+
+[resource]
+script = ExtResource("1_hgrj5")
+Cost = "60"
+Max_Amount = "1"
+Observation_Level = "4"
+other = "[暂无资料]"
+red_def = 0.7
+white_def = 0.8
+black_def = 0.4
+pale_def = 2.0
+Requirements = "[color=white]谨慎[/color]III [color=#824b84]自律[/color]III 等级IV"
+name_ = "以爱与恨之名"
+texture = ExtResource("3_1owtu")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+这件魔法礼服漫溢着魔法少女的爱与正义。
+
+穿上这件礼服，能够点燃你的正义精神与保护世界的欲望，
+
+但随之而来的，却是充满憎恨的，比爱更加沉重的低语，它们无时无刻不在你耳边回响。
+
+我们该怎么做？
+
+我下定决心要用爱去对待世间万物，但是最终却只得到了一颗伤痕累累的，破碎的心。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-04_%E6%86%8E%E6%81%B6%E5%A5%B3%E7%8E%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "w"
+jump = Array[String](["O-01-04"])
+jumper = ExtResource("1_xslrc")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

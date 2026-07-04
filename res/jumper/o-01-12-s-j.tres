@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://c53qpete85vt5"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_xemrd"]
+[ext_resource type="Texture2D" uid="uid://fgrxif4f6aek" path="res://img2/LCA/O-01-12/A-1513150321.webp" id="2_xemrd"]
+
+[resource]
+script = ExtResource("1_xemrd")
+name_ = "孤独"
+level = "T"
+texture = ExtResource("2_xemrd")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/ego_s/o-01-12-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

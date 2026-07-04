@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="test" load_steps=4 format=3 uid="uid://dbwnt7sr4hy5i"]
+
+[ext_resource type="Texture2D" uid="uid://cwgrhkicuf8n8" path="res://img2/TEST/04/04.jpg" id="1_3y077"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="1_vabf5"]
+[ext_resource type="Resource" uid="uid://d1chhamwhqdnh" path="res://res/test/test4-j.tres" id="2_wogbk"]
+
+[resource]
+script = ExtResource("1_vabf5")
+red_def = 0.5
+white_def = 0.8
+black_def = 1.2
+pale_def = 1.0
+other_info = "“终末螺旋”（绿色的午夜）会在情报部的主休息室中生成一座由黑色金属制成的巨大炮台。炮台的左右两侧各有一块由黑色蜂窝格制成的半圆形防护罩，炮台中央是两门能够射出绿色激光的能量炮。
+
+老版本的“终末螺旋”确实会，但现版本的“终末螺旋”不会生成在控制部。
+
+[img]res://img2/TEST/04/img.webp[color=red]
+代价[/color]"
+other_info_act = "考验能力
+在考验出现的提示播放后，情报部的主休息室将出现一个巨大的激光炮台。炮台的能量炮会在短暂的启动动画后启动，并发射两条激光。内侧的能量炮发射的激光永远竖直向上，外侧的能量炮发射的激光会从竖直向上开始顺时针旋转，逐渐扫过整个设施。
+
+激光会对扫过的所有单位（包括在收容单元内对异想体进行工作的员工，但对3月27日的避难所内的员工无效）造成每秒5次的12-20点侵蚀伤害，并减缓它们50%的移动速度。若终末螺旋的激光击杀了职员，则职员的尸体会直接被融化成沾着绿泥的骨头，无法被其余异想体利用。
+
+在不受任何干扰的前提下，激光扫过整个设施所需的时间为120秒。每当累计受到大于等于405点的伤害时，“终末螺旋”的周围会出现电流特效，激光的旋转速度会在接下来的10秒内降低50%并从零开始计算伤害累积。这个时间可以多次叠加，最多叠加至100秒。因而在面对大量员工的重火力时，“终末螺旋”的激光旋转速度会大大减慢。
+
+在激光转完一圈后，“终末螺旋”会停止运作30秒，然后会重新竖直向上射出两条激光，并重复上述流程。
+
+当“终末螺旋\"被镇压后，击败提示将出现，绿色的午夜将被判定结束。
+
+镇压建议
+与碧蓝新星类似，由于“终末螺旋”的全设施攻击特性，一旦其开始运作，则很有可能导致大鸟或微笑的尸山等响应文职死亡的异想体突破收容，这会使得镇压“终末螺旋”的工作进行得更加艰难。请主管确保在绿色的午夜开始前,设施内的所有存活文职已经被清理的差不多又或是设施内没有会响应文职死亡而出逃的异想体。
+
+如果想要镇压“终末螺旋”，则主管应该集中所有员工，并令他们在情报部左侧的走廊中等候，待“终末螺旋”一出现就迅速发起猛攻。
+
+“终末螺旋”激光的伤害非常恐怖，且自带减速效果。因而给员工附加反侵蚀力场盾并让他们直接穿过激光是很不明智的选择。在主管不熟悉它的攻击机制，尤其是不会躲避激光时，它会对主管的员工造成巨大的威胁。
+
+较为常用的躲避“终末螺旋”激光的方式是利用电梯特性。现版本电梯已经改版，不需等待，会瞬间将员工从电梯间传送到另一边，因此派遣员工通过电梯来瞬移躲过“终末螺旋”的攻击是可行的。
+
+同时，在员工输出火力足够的游戏后期，镇压“终末螺旋”将变得越来越容易，员工甚至可以在“终末螺旋”的激光还未扫过半个设施之前就将其彻底击溃。切记千万不要派遣持有攻击距离为“极近”武器的员工去攻击“终末螺旋”，他们会很容易因进入“终末螺旋”的伤害判定区域而持续受到高频的侵蚀伤害并死亡。
+
+[img]res://img2/TEST/04/img1.webp[color=red]
+展开[/color]
+
+[img]res://img2/TEST/04/img2.webp[color=red]
+直指天穹的时针，划开大地的分针，默数着终末的倒计时。[/color]
+
+[img]res://img2/TEST/04/img3.webp[color=red]
+倾泻[/color]
+
+[img]res://img2/TEST/04/img4.webp[color=red]
+怒火[/color]
+
+[img]res://img2/TEST/04/img5.webp[color=red]
+这就是...生命？[/color]
+"
+place = "情报部的主休息室"
+count = "1"
+health = 22000
+speed = "该单位无法运动"
+ob_name = "终末螺旋"
+color = "绿色"
+time = "午夜"
+name_ = "终末螺旋"
+icon = ExtResource("1_3y077")
+info_ = "*资料类型：考验
+
+高塔直破苍穹，大地荡然无存。
+
+给予我们生命，却放任我们受苦的人，必将为此付出代价！
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%BB%BF%E8%89%B2%E7%9A%84%E5%8D%88%E5%A4%9C_%E7%BB%88%E6%9C%AB%E8%9E%BA%E6%97%8B]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "绿色的午夜"
+level = "a"
+jumper = ExtResource("2_wogbk")
+jump = Array[String](["pres://res/test/test1-j.tres", "pres://res/test/test2-j.tres", "pres://res/test/test3-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_3y077")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://ep615v6w7jso"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_a47wo"]
+[ext_resource type="Script" uid="uid://b6p2rck625wq" path="res://script/class/file_saver.gd" id="1_aiodr"]
+[ext_resource type="Script" uid="uid://dboraohqgvxye" path="res://script/class/diy_Project.gd" id="2_xo08e"]
+
+[sub_resource type="GDScript" id="GDScript_a47wo"]
+script/source = "extends Control
+@export var res:DIYProject
+signal read
+signal rewrite
+signal remove
+var dic={
+	\"1\":'异想体',
+	\"m\":\"音乐\",
+	\"doc\":\"文档\"
+}
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	show_it()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_button_down() -> void:
+	emit_signal(\"read\")
+	pass # Replace with function body.
+
+
+func _on_button_2_button_down() -> void:
+	emit_signal(\"rewrite\")
+	pass # Replace with function body.
+func show_it():
+	$Panel/VBoxContainer/name.text=res.project_name
+	$Panel/VBoxContainer/time_type.text=res.time+\" - \"+dic.get(res.type)
+
+
+func _on_button_3_button_down() -> void:
+	emit_signal(\"remove\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="Resource" id="Resource_17ods"]
+script = ExtResource("2_xo08e")
+project_name = "me"
+type = "m"
+time = "11.22 12:40"
+metadata/_custom_type_script = "uid://dboraohqgvxye"
+
+[node name="Control" type="Control" unique_id=468915641]
+custom_minimum_size = Vector2(297, 149)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -351.0
+offset_bottom = 149.0
+grow_horizontal = 2
+script = SubResource("GDScript_a47wo")
+res = SubResource("Resource_17ods")
+
+[node name="Panel" type="Panel" parent="." unique_id=1204705919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a47wo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=12618438]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 287.0
+offset_bottom = 140.0
+
+[node name="name" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=349317927]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+bbcode_enabled = true
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time_type" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=923377822]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "2025.4.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=346577393]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1547958640]
+layout_mode = 2
+text = "读取"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=23435449]
+layout_mode = 2
+text = "覆盖"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1703863211]
+layout_mode = 2
+text = "删除"
+
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_button_down"]

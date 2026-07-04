@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" format=3 uid="uid://2o3uxe3x1g1u"]
+
+[ext_resource type="Resource" uid="uid://bj5pw0xxytimp" path="res://res_pack/o-02-98/ego/o-02-98-s-j.tres" id="1_twish"]
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="2_wu713"]
+[ext_resource type="Texture2D" uid="uid://da85daohqsorr" path="res://res_pack/o-02-98/ego/img/QQ3F20180429162005.webp" id="3_dwtwe"]
+
+[resource]
+script = ExtResource("2_wu713")
+Cost = "30"
+Max_Amount = "3"
+Observation_Level = "3"
+other = "无"
+red_def = 1.2
+white_def = 0.8
+black_def = 0.8
+pale_def = 1.5
+Requirements = "无"
+name_ = "因乐颠狂"
+texture = ExtResource("3_dwtwe")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+寻求常人无法承受的快感通常会使人丧失自我。
+如果那些荆棘上落下的粉末散播到了尘世，那么人们恐怕此生都将像陷入泥沼一般难以求生。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "h"
+jump = Array[String](["pres://res_pack/o-02-98/benti/o-02-98-j.tres"])
+jumper = ExtResource("1_twish")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://bwxxql8jqorgp"]
+
+[ext_resource type="Texture2D" uid="uid://b3diteodvsxlg" path="res://little_game/Texture2D/1100px-ChoiceEvent_971062.webp" id="1_i6c81"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_gq57l"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_e7fdj"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_hkuxj"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_nha06"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="6_a82np"]
+
+[sub_resource type="Resource" id="Resource_qkjo7"]
+script = ExtResource("4_hkuxj")
+value_object = 1
+add_valua = 5
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_p3o2m"]
+script = ExtResource("5_nha06")
+"介绍" = "将提升数值"
+win_text = "我们带走了样品。"
+gift = SubResource("Resource_qkjo7")
+name_ = "拿走它。"
+"结果" = "“上次的……培训部来着？我在那里注射的安瓿……看起来和这个很像。”$s“名字似乎和那个时候不同。但是，保护对象的意图似乎是一样的。”$s如果像罪人们所说的那样，是有用的东西的话，一定会派上用场吧。"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("2_gq57l")
+name_ = "保持原样。"
+"结果" = "随便乱碰不了解的东西，也许会发生预料之外的问题。$s我们决定就这样放着不管。$s什么都没有发生。"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("6_a82np")
+img = ExtResource("1_i6c81")
+name_ = "脑叶公司 中央本部"
+subject = "LCB-W8-03"
+"问题" = "中央本部的文职办公桌上放着一份报告书。$s<第■■天，■■ ■■ 研究业务结果报告书>$s虽然部分被删改了，但其内容似乎是关于新型屏蔽力场子弹的。$s“精神屏蔽力场可以在■■■■内防止自外部而来的■■■■精神伤害。”$s“关于屏蔽力场子弹的■■，请咨询主管或■■■■■■■■。”$s在这份被删改了大量内容的报告书旁边，有一个写着“精神屏蔽力场样品及说明书”的箱子。"
+item = Array[ExtResource("2_gq57l")]([SubResource("Resource_p3o2m"), SubResource("Resource_j0p0o")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://xyfmyn7ljaah"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_50x8b"]
+[ext_resource type="Texture2D" uid="uid://cs2u1xeusrfw8" path="res://little_game/fight/res/skill/skill_img/d_s.png" id="2_mc5h4"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_fl7si"]
+
+[sub_resource type="Resource" id="Resource_e4wgj"]
+script = ExtResource("1_50x8b")
+code = "print('sword_at')"
+exe_time = "turn_strat"
+who = "player"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_fl7si")
+name_ = "钻石剑"
+icon = ExtResource("2_mc5h4")
+level = 3
+change_Point = -5
+coin_n = 5
+base_point = 50
+at = 30
+def = 60
+description = Array[String](["[当回合开始时] 打印一句信息"])
+eff_arr = Array[ExtResource("1_50x8b")]([SubResource("Resource_e4wgj")])
+type = Array[String](["MC"])
+sin_color = Color(0.003921569, 0.30588236, 0.81960785, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://kdnahkwwtbr2"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_oeq25"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_yuqli"]
+[ext_resource type="Texture2D" uid="uid://gor523mbpspd" path="res://res_pack/f-01-18/benti/img/I-1.webp" id="3_n56q3"]
+[ext_resource type="Resource" uid="uid://bxa1wqstvfjab" path="res://res_pack/f-01-18/benti/f-01-18-j.tres" id="4_n141o"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_4kyup"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_oeq25")
+level = {
+"L1": 55,
+"L2": 55,
+"L3": 55,
+"L4": 55,
+"L5": 55
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_oeq25")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 0,
+"L4": 0,
+"L5": 0
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_oeq25")
+level = {
+"L1": 100,
+"L2": 100,
+"L3": 100,
+"L4": 100,
+"L5": 100
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_oeq25")
+level = {
+"L1": 55,
+"L2": 55,
+"L3": 30,
+"L4": 30,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_yuqli")
+Probabilities = Array[ExtResource("1_oeq25")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_4kyup")
+Attack_Type = 2
+acctak_Damage = "2-3"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "14"
+good_Mood_Range = "8-14"
+bad_Mood_Range = "4-7"
+Norm_Mood_Range = "0-3"
+Qliphoth_Counter = "2"
+Upgrades = Array[String](["Ⅰ. 自律等级为1级的员工进入“面壁女”的收容单元时会立刻陷入恐慌。（该条翻译有误。原文直译可以译为：“若对“面壁女”进行工作的员工自律等级为1级，该员工将会在听完“面壁女”的话语后回头看，并立刻陷入恐慌。”结合异想体故事可知，该管理须知原文并没有错误，实为翻译组翻译英文的错误翻译导致的错译。）", "Ⅱ. 当某个准备对“面壁女”进行沟通工作的员工踏入其收容单元时，“面壁女”的逆卡巴拉计数器会立刻减少。", "Ⅲ. 当工作结果为良时，“面壁女”的逆卡巴拉计数器有小概率在倒计时结束后减少。（该条翻译有误。该句中的“小概率”应为“中等概率”。）", "Ⅳ. 当工作结果为差时，“面壁女”的逆卡巴拉计数器有大概率在倒计时结束后减少。", "Ⅴ. 当“面壁女”的逆卡巴拉计数器归零时，“面壁女”会发出刺耳的嚎叫并对该部门所有人员造成白色伤害。"])
+story = "这是一个面朝墙壁的人形异想体。它那无法忍受的哀思不断增长着，直到它完全被阴郁的长发所覆盖。
+
+由于它总是保持着同样的姿势，所以没有人知道它的脸长什么样。它偶尔会喃喃低语或是发出呜咽声，但与它直接交流是不可能的。尽管它有着一名人类的外貌，可观察它的人永远无法得知它到底在想些什么，在看些什么。
+
+在员工意图离开收容单元时，该异想体会千方百计地试着与其对话或是煽起他们的好奇心。无论如何，员工们不应对它那不轨的企图做出回应，绝对！绝对不能转身！
+
+<摘录自观察日志#1-304>
+对它进行工作时，只需注意一点：不管它在做些什么，统统无视掉。
+事实上，它一直在试着引起我们的注意，它语无伦次地喃喃低语，想让收容单元里的人更加关注它。当有人想要离开时，它甚至会恶意地恳求或是自言自语，希望他们会本能地转过身来看向它。在它面前，本能的反应是相当危险的。当你和它同处一室的时候，请务必保持警惕，哪怕只是一瞬间的大意，你就有可能发现自己在无意识的情况下已经转向了它。
+之后我要给所有读过这篇文章的后辈留下一个警告：不要让这个阴险的异想体知道你的名字。如果让它知道你的名字，它就有可能以此来欺骗你转向它。当你和它待在收容单元里的时候，无论你听到些什么，无论它对你施展了什么样的诱惑，千万不要转过身！
+
+<咨询记录#9-391>
+员工代号F5004
+████是我一直很关照的一位同事，当然啦，我也关照其他的同事们，但████不一样，这孩子对工作有着罕见的热情。不管怎么说...我不明白它是怎么知道████的名字的，也许是有人在收容单元外喊了████的名字，那时候被它听见了吧？按照标准流程来讲，我们本应让两人一组进入收容单元，可人手总是不够。更何况那个异想体的危险等级很低，即便是按照流程真派进去两个人，高层估计也会不太高兴的...（省略）
+...接下来就像你们了解的那样。事发当天，████一如既往地被派进收容单元，但是过了很长时间都没有回来。████不是那种办事拖泥带水的人，这一点我再清楚不过了，所以我赶紧去看看发生了什么。谢天谢地，她还在房间里，身上也没有任何伤痕，可是她看上去很不对劲，是的...她...她很不对劲...她一直盯着墙壁，喃喃自语，对任何人都没有反应...
+那是我最后一次看到████...
+第二天，那孩子被公司“解雇”了。我听说他们把她送进了一家精神病院，但在那之后再也没有人看到过████。
+那一天，收容单元里究竟发生了什么？除了那个异想体，谁都不会知道...恐怕那孩子也没有办法亲口告诉你们了..."
+Observation_level = "Ⅰ. 成功率 + 4%Ⅱ. 工作速度 + 6Ⅲ. 成功率 + 6%、解锁E.G.O护甲Ⅳ. 工作速度 + 4、解锁E.G.O武器"
+flavour_text = Array[String](["除了“面壁女”一直盯着墙壁以外，我们对它一无所知。", "迄今为止还没有人看到过“面壁女”的脸，但这并不意味着有人想要看到它的脸。", "在聆听它的低语之后，你能推测出它一直在思念着某人。", "最好...就这样把它晾在墙边吧。", "我只希望员工们都戴好了耳塞。", "“面壁女”总是保持着同一个姿势，要不是因为它的低语，人们八成会把它当成一尊雕塑。", "员工似乎不怎么害怕“面壁女”，因为无论是谁进入它的收容单元，它都只是跪在那里一动不动。", "员工在“面壁女”背后巡视了一阵，确认一切安好后开始了工作。", "“面壁女”附近的墙面已经长霉，尽管如此，没有人愿意去重新上漆。", "工作期间，员工听到了“面壁女”述说的晦涩难懂的低语。", "在员工工作时，收容单元内是如此的寂静，直到“面壁女”那疯狂的低语打破了沉默。", "即便知道员工就在收容单元内，“面壁女”也没有一丝一毫的动作。", "即便“面壁女”什么事情都没有做，员工依然能感受到从它身上散发出的那份凄凄楚楚。", "低语模糊而嘶哑。", "低语的声音似乎越来越大。", "如果更加集中注意力的话，似乎就能听清它到底在说什么了，然而并没有员工真的敢去尝试。", "一如既往的，低沉的耳语难以理解，不过也没人在乎。", "员工尽力试着专注于手头的工作。", "员工明白无视它才是最好的选择。", "不管“面壁女”说了些什么，员工都将其置若罔闻，如同自己是聋子一般。", "员工快马加鞭地进行着手头的工作，以便能尽快离开收容单元。"])
+other_info = "面壁女（F-01-18）是一个面朝墙壁的人形异想体。它全身赤裸，长有一头长长的，完全遮住面部的黑发。平时，它一直跪在收容单元的地板上，双手压墙，不停地发出抽泣声。在某些情况下，它能把脖子伸成一个极其诡异的长度。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.25[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/f-01-18/benti/img/Woman_Facing_the_Wall.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+当自律等级为1级的员工对面壁女完成工作后，面壁女会在员工离开前反向伸长脖子至员工前并发出声音。员工会回头看并立刻陷入恐慌。
+
+当工作结果为良时，面壁女的计数器有50%的概率在倒计时结束后减少1点。
+
+当工作结果为差时，面壁女的计数器有70%的概率在倒计时结束后减少1点。
+
+员工对其开始“沟通”工作时，面壁女的计数器会立即减少1点。
+
+当计数器归零时，两只鬼手会出现抓住面壁女的收容室两侧，面壁女会发出一声尖叫，对部署在它所在部门的所有员工和文职（无论他们此时正位于设施的什么位置）造成18-24点精神伤害。这个时候主管的屏幕视角会发生颤抖而且短暂时间内无法移动。"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条3点
+工作偏好：每条4点"
+jump_ego = Array[String](["pres://res_pack/f-01-18/ego/f-01-18-w-j.tres", "pres://res_pack/f-01-18/ego/f-01-18-s-j.tres"])
+name_ = "刺耳嚎叫"
+icon = ExtResource("3_n56q3")
+info_ = "资料类型：异想体
+
+它那无法忍受的哀思不断增长着，直到它完全被阴郁的长发所覆盖。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "F-01-18"
+level = "t"
+jumper = ExtResource("4_n141o")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

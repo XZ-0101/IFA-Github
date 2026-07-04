@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="music_class" load_steps=4 format=3 uid="uid://oth2glq85y53"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_mium1"]
+[ext_resource type="Texture2D" uid="uid://b523m64t1gtbn" path="res://img/100px-Logo_Limbus.png" id="2_bseyo"]
+[ext_resource type="Texture2D" uid="uid://bpoaap1oabvlx" path="res://img/music/1200px-Story_final_room.webp" id="3_mium1"]
+
+[resource]
+script = ExtResource("1_mium1")
+name_ = "贾丘一阶段"
+zuo_zhe = "StudioEIM"
+texture = ExtResource("2_bseyo")
+texture1 = ExtResource("3_mium1")
+music_path = "res://mus/月计人 - Project Moon - (章节8)贾丘Ⅰ–Limbuscompany.ogg"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

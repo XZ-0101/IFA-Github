@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://d0ahrmbk1vl37"]
+
+[ext_resource type="Resource" uid="uid://cg3cmcr6cjd5o" path="res://little_game/gift/sz-g.tres" id="1_4dkec"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_pa7np"]
+[ext_resource type="Texture2D" uid="uid://djet2ohxvkyoe" path="res://little_game/Texture2D/R-C.jpg" id="3_36lth"]
+
+[resource]
+script = ExtResource("2_pa7np")
+name_ = "赎罪"
+texture = ExtResource("3_36lth")
+info = "使生命值上限增加正义等级的1/5（向下取整）"
+jumper = ExtResource("1_4dkec")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0y58hdhjmcli"
+path="res://.godot/imported/Mili - Compass.ogg-46a82114f09b22d44045de4524e0325d.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili - Compass.ogg"
+dest_files=["res://.godot/imported/Mili - Compass.ogg-46a82114f09b22d44045de4524e0325d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

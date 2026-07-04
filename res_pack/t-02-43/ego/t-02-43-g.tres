@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://c0q76ytqcc00b"]
+
+[ext_resource type="Resource" uid="uid://crjj8fhn4t2ts" path="res://res_pack/t-02-43/ego/t-02-43-g-j.tres" id="1_fwgym"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_syfcu"]
+[ext_resource type="Texture2D" uid="uid://b728ygxnwwo77" path="res://res_pack/t-02-43/ego/img/G-1513167953.webp" id="3_66qx0"]
+
+[resource]
+script = ExtResource("2_syfcu")
+name_ = "赤瞳"
+texture = ExtResource("3_66qx0")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：5%
+位置：眼部
+成功率+3
+工作速度+3
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/t-02-43/benti/t-02-43-j.tres"])
+jumper = ExtResource("1_fwgym")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

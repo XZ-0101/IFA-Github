@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://yq3bbbpdqsd"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_gbukr"]
+[ext_resource type="Texture2D" uid="uid://cu73vgo5qx3jq" path="res://little_game/fight/res/skill/skill_img/exported_image.png" id="2_0owae"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_bgfd6"]
+
+[sub_resource type="Resource" id="Resource_gbukr"]
+script = ExtResource("1_gbukr")
+code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
+	max_point+=2"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_bgfd6")
+name_ = "打火"
+icon = ExtResource("2_0owae")
+level = 1
+change_Point = 9
+coin_n = 1
+base_point = 2
+def = 60
+description = Array[String](["[拼点前]如果敌方烧伤层数大于3层，则最终点数+2"])
+eff_arr = Array[ExtResource("1_gbukr")]([SubResource("Resource_gbukr")])
+type = Array[String](["守备", "防御"])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

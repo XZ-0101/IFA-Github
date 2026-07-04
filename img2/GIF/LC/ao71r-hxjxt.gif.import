@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://y8n1te2l62pd"
+path="res://.godot/imported/ao71r-hxjxt.gif-99ad411fbc782c3787860689072c297f.tres"
+
+[deps]
+
+source_file="res://img2/GIF/LC/ao71r-hxjxt.gif"
+dest_files=["res://.godot/imported/ao71r-hxjxt.gif-99ad411fbc782c3787860689072c297f.tres"]
+
+[params]
+
+frames_per_second=30

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://chu2uoae3iq5c"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_i14e7"]
+[ext_resource type="Texture2D" uid="uid://bu5n8866h3yln" path="res://res_pack/o-02-56/ego/img/QQ3F20180423025418.webp" id="2_h2n3d"]
+
+[resource]
+script = ExtResource("1_i14e7")
+name_ = "小喙"
+texture = ExtResource("2_h2n3d")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-02-56/ego/o-02-56-g.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

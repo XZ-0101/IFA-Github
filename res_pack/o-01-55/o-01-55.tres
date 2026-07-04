@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://cfedxcrk2l8h2"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_3pl0t"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_fn5s3"]
+[ext_resource type="Texture2D" uid="uid://cbrfbrfy5p2vi" path="res://res_pack/o-01-55/img/GalaxyBoyBig.webp" id="3_fibta"]
+[ext_resource type="Resource" uid="uid://clb5k7hnhg4um" path="res://res_pack/o-01-55/o-01-55-j.tres" id="4_fehd1"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_g5a7p"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_3pl0t")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_3pl0t")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_3pl0t")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_3pl0t")
+level = {
+"L1": 45,
+"L2": 45,
+"L3": 45,
+"L4": 45,
+"L5": 45
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_fn5s3")
+Probabilities = Array[ExtResource("1_3pl0t")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_g5a7p")
+Attack_Type = 3
+acctak_Damage = "2-3"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "16"
+good_Mood_Range = "X"
+bad_Mood_Range = "0-8"
+Norm_Mood_Range = "9-16"
+Qliphoth_Counter = "5"
+Upgrades = Array[String](["Ⅰ. 成功完成工作的员工会从“银河之子”那儿得到一颗象征着友谊的鹅卵石。鹅卵石将根据“银河之子”的逆卡巴拉计数器为该员工持续恢复相应的生命值和精神值。", "Ⅱ. 当某个持有鹅卵石的员工完成了对“银河之子”的工作后，“银河之子”的逆卡巴拉计数器会立刻增加。", "Ⅲ. 当某个持有鹅卵石的员工进入其他异想体的收容单元后，该员工将根据“银河之子”的逆卡巴拉计数器指数受到相应的伤害，且“银河之子”逆卡巴拉计数器会立刻减少。", "Ⅳ. 当某个持有鹅卵石的员工死亡时，“银河之子”的逆卡巴拉计数器会立刻减4。", "Ⅴ. 当“银河之子”的逆卡巴拉计数器归零时，持有鹅卵石的所有员工都会立刻死亡。"])
+story = "那是一个被迷雾笼罩着的夜晚。
+一个光着脚的孩子默默地注视着我。
+我停下了脚步，因为我留意到他脸上的哀伤。
+他泪流满面，那梦幻的眼中充满了悲伤与迷茫。
+泪水一滴滴落下，就仿佛从云端坠落的繁星。
+“弄丢了什么重要的东西吗？我来帮你找吧？”
+那孩子露出了灿烂的笑容，悲伤随着喜悦慢慢消失不见。
+那一晚，世界陷入了酣睡，好似沉醉在了迷人的摇篮曲中。
+那一晚，银河光着小脚丫落到了地上。
+————摘录自员工████的日记，该员工已自杀身亡。
+
+这个异想体是一个有着大眼睛的男孩，它的皮肤如同星空般璀璨。它有些害羞，但并不会对他人表现出恐惧或是敌意。当与某人结下深厚的友谊时，它会变得非常友好。一些员工对该异想体抱有纯粹的好感。
+
+这个异想体很喜欢和他人沟通及玩耍，它对与人交往的行为表现出强烈的依恋。
+
+在该异想体和某个员工的亲密度达到一定程度后，它会送给这个员工一颗小小的鹅卵石。持有鹅卵石的员工会感到健康与幸福。然而，如果该员工进入了其他异想体的收容单元，它便会做出一些不太好的举动。
+
+持有鹅卵石的员工一旦死去，该异想体会非常悲伤。
+
+员工████的日记
+X月O日
+我盯着他的眼睛看了很久，我有些出神，因为他的眼睛是如此的梦幻...我很想好好地抚摸一下他的头发，可我的同事警告我不要对异想体抱有好感。
+X月O日
+我告诉了他我的名字。他的眼睛睁得大大的，就好像听到了什么大秘密一样。当他一遍又一遍地呼唤我的名字时，我感觉...他已不仅仅是我生命中的某个熟人了。
+X月O日
+当别的员工进入他的房间时，他并没有理会那家伙，而是询问我在哪。听到这则消息后，我有一股得胜的喜悦感。哈！那孩子喜欢的人是我，而不是你哦！
+X月O日
+当我走进他的房间时，他哭着扑进我的怀里。为了让他放开我，我不得不向他保证从现在开始，我会经常回来看他的。当我终于半强迫地挪开他的手时，一颗白色的鹅卵石落到了我的手上。“请不要丢掉它，也不要把它交给别人...”那孩子咕哝着...
+X月O日
+“比起我，你更喜欢那只鸟吗？”他这么问我...而在那之前，我刚刚完成了对异想体“大鸟”的相关工作。我诧异地问他，你是怎么知道我干了些什么的。他的目光落在那颗鹅卵石上，笑着对我说：“我什么都知道，无论你做了些什么，无论你去了哪里...”那笑容...那眼睛...让我浑身直起鸡皮疙瘩...
+X月O日
+我试着丢掉那块石头，可...可我丢不掉...我不明白这是怎么一回事...“你还爱着我，对吗？”他冲我笑了笑...笑...那笑容...
+X月O日
+我无法摆脱这块石头...我唯一的希望就是等他哪天能够厌倦我...我等着...但...真的会有那一天吗？我的同事们都说我是一个优秀的员工...你们这些白痴屁都不懂，给我闭嘴！
+最后一篇日记
+我再也受不了了...我无法摆脱他。我自以为我是负责管理他的人，而实际上...我一直都是那男孩手里的玩具。不管我做了什么，不管我去到哪里，我都会听到他的低语...我要结束这一切...可...我甚至不确定我能不能结束...
+——“我来自很远很远的地方，见到你真高兴！请变成一颗鹅卵石，和我一起在银河漫步吧...”我听到了他的低语...和呼吸...接着就是一片漆黑...就像我第一次遇见他的那个夜晚..."
+Observation_level = "Ⅰ. 工作速度 + 4、解锁E.G.O护甲Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4Ⅳ. 成功率 + 4%、解锁E.G.O武器"
+flavour_text = Array[String](["在一个星星纷纷坠落的夜晚，那孩子悄悄走了过来。", "“银河之子”知晓员工的一切。", "漫长的等待化成了滴滴泪水，仿若繁星似的一颗一颗落下。", "哀伤的心头绽出朵朵思念之花。", "员工和“银河之子”约定好明天会再来看它。", "“银河之子”抽泣着，它似乎不想让员工离开。", "即便看到“银河之子”哭泣的模样，员工也无可奈何。"])
+other_info = "银河之子（O-01-55）是一个总是在抽泣的人形异想体。它穿着一件深灰色的无袖衬衫和一条灰色长裤。它的皮肤和头发如同夜空中的群星和银河一样璀璨，它的头发颜色与背景会不断变化。“银河之子”会把某些员工当做自己的“朋友”，并送给他们一块代表着友谊的小小鹅卵石。它似乎知道“朋友”全部的所作所为。
+
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.23[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/o-01-55/img/GalaxyBoy.webp[/img][color=red]
+收容单元监控画面[/color]
+
+银河之子自身可能出现的台词：
+我很喜欢你！这颗卵石是我最珍视的东西，所以我要把它送给你！你要一直带在身边哦！
+要珍惜我们的友谊哦！
+我喜欢你，真想把你紧紧握在手中。
+我知道你在哪。
+我是那么的喜欢你，可是你为什么不来见我？
+你为什么不来看看我？
+你为什么不来找我啊？
+那东西难道比我重要吗？
+你为什么在那儿？你应该在我这儿！"
+other_info_act = "特殊能力
+银河之子的初始计数器为1，但主管可以通过工作来使其的计数器增加到最大值。
+
+当员工对银河之子完成工作后，银河之子会给予完成工作的员工一颗鹅卵石。同时可以有多名员工持有鹅卵石，但每个员工最多只能拥有一枚鹅卵石。鹅卵石会每5秒为持有者回复银河之子计数器0.65倍的生命值和精神值，且会在一天结束后消失。
+
+当持有鹅卵石的员工进入非工具异想体的收容单元并开始工作时，持有者会受到无视等级压制但可以被护甲减免的物理和精神伤害各一次，伤害量均为银河之子计数器的4倍。尝试造成伤害之后，银河之子的计数器会立刻减少1点。
+
+如果银河之子计数器归零，所有持有鹅卵石的员工会立即死亡。当有员工对计数器为0的银河之子进行工作后，银河之子会给予这名员工鹅卵石并立刻将计数器提高1点，不需要已持有鹅卵石的员工对其进行工作。
+
+联动效果
+一些如T-09-82 3月27日的避难所之类能够提供无敌效果的异想体可以防止持有鹅卵石的员工在银河之子的逆卡巴拉计数器归零时被立即杀死。然而，如果银河之子的逆卡巴拉计数器没能回到1或以上，则每隔20秒银河之子都会尝试杀死一次未被立即杀死的员工。
+持有鹅卵石的员工使用T-09-85 我们可以改变一切会获得debuff，使得鹅卵石的回复变为10秒一次且鹅卵石提供的回复量减半。
+
+[img]res://res_pack/o-01-55/img/GalaxyBoyS.webp[/img]
+鹅卵石"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条3点
+工作偏好：每条5点"
+jump_ego = Array[String](["pres://res_pack/o-01-55/ego/o-01-55-s-j.tres", "o-01-55-w", "o-01-55-g"])
+name_ = "银河之子"
+icon = ExtResource("3_fibta")
+info_ = "资料类型：异想体
+
+泪水一滴滴落下，就仿佛从云端坠落的繁星。那晚，世界陷入了酣睡，好似沉醉在了迷人的摇篮曲中。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-55_%E9%93%B6%E6%B2%B3%E4%B9%8B%E5%AD%90]脑叶公司Wiki[/url] 脑叶公司情报"
+subject = "O-01-55"
+level = "h"
+jumper = ExtResource("4_fehd1")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

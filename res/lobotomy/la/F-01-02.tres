@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://bki6ibxm8v5vl"]
+
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_igvhg"]
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_nvol1"]
+[ext_resource type="Texture2D" uid="uid://ctupj2msj071x" path="res://img/I-1513167768.webp" id="1_tg88k"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_fpjny"]
+[ext_resource type="Resource" uid="uid://bkyp6wwsm234t" path="res://res/jumper/F-01-02-jumper.tres" id="4_eh83n"]
+
+[sub_resource type="Resource" id="Resource_2lyvi"]
+script = ExtResource("1_nvol1")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_7ns62"]
+script = ExtResource("1_nvol1")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_qmw35"]
+script = ExtResource("1_nvol1")
+level = {
+"L1": 30,
+"L2": 15,
+"L3": 0,
+"L4": -40,
+"L5": -50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_eg45d"]
+script = ExtResource("1_nvol1")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_vun7e"]
+script = ExtResource("2_fpjny")
+Probabilities = Array[ExtResource("1_nvol1")]([SubResource("Resource_2lyvi"), SubResource("Resource_7ns62"), SubResource("Resource_qmw35"), SubResource("Resource_eg45d")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("1_igvhg")
+Attack_Type = 1
+acctak_Damage = "2-4"
+Probabilities_ = SubResource("Resource_vun7e")
+most_pe_box = "12"
+good_Mood_Range = "8-12"
+bad_Mood_Range = "5-7"
+Norm_Mood_Range = "0-4"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "2"
+red_def = 0.5
+white_def = 2.0
+black_def = 1.0
+pale_def = 2.0
+Upgrades = Array[String](["Ⅰ. 当工作结果为良时，“焦化少女”的逆卡巴拉计数器有小概率在倒计时结束后减少。（该条翻译有误。该句中的“小概率”应为“中等概率”。）", "Ⅱ. 当工作结果为差时，“焦化少女”的逆卡巴拉计数器有大概率在倒计时结束后减少。", "Ⅲ. 突破收容后，“焦化少女”会缓慢靠近被她标记的员工，并在遇到目标的5秒之后爆炸，对当前区域造成巨量红色伤害。"])
+story = "这个异想体的外貌宛如一位彻底烧焦的少女。少女身上的火焰从未熄灭，即便已经完全没有东西可供它继续燃烧。
+
+一根木桩般的火柴贯穿了这个异想体的身体。尽管火柴总是燃烧着，可它从未对此表露出痛苦的迹象。正因如此，部分员工推测也许火柴才是这个异想体的本体。然而，最近有目击者称，他们看到少女做出了类似哭泣的动作。
+
+<摘录自异想体研究专家████的研究日志>
+...那焦黑的身体象征着她支离破碎的希望...那永恒的烈焰却象征着她对爱的渴望...啊！可怜的少女一直在二者之间苦苦挣扎！
+
+操！看在我们付出了这么多的份上，你就整出这么些垃圾！？
+
+<员工的传闻>
+她就像一枚定时炸弹，很难知道她是高兴还是悲伤。我们只能向上帝祷告，乞求被她炸死的永远不会是自己。她可能不会好起来，但至少我们不能让她更加难过。
+
+<咨询记录████>
+员工代号M3923
+我从没想过那个异想体居然会逃出来。它看上去唯一能做的事就是烧光身上的火柴，正因如此我们有些粗心大意了。的确，我承认我们的反应速度有点慢...（省略）...大多数试图逃跑的异想体都会袭击它们面前的员工。可这个异想体并没有对收容单元附近的员工表现出敌意。相反地，它径直走向公司内聚集着最多人的一处办公室。要不是我们及时把它镇压在门前，今天这里一半的人就不复存在了。"
+Observation_level = "Ⅰ. 成功率 + 5%Ⅱ. 工作速度 + 5、解锁E.G.O饰品Ⅲ. 成功率 + 5%、解锁E.G.O护甲Ⅳ. 工作速度 + 5、解锁E.G.O武器"
+flavour_text = Array[String](["请注意，“焦化少女”的观察记录目前尚不完整，所以任何事情都有可能发生。", "“焦化少女”的观察记录已经基本完成，只要稍加注意，就能顺利完成工作。", "“焦化少女”一看到员工就躲进了角落里。", "“焦化少女”一边退到墙边，一边观察着员工的动作。", "“焦化少女”站在角落里注视着员工的工作。", "“焦化少女”看起来很害怕，它把头转向墙角。", "“焦化少女”一动不动地站着，就仿佛身上燃烧的火焰一点儿也不痛。", "贯穿“焦化少女”的火柴正在剧烈地燃烧。", "与火柴上疯狂燃烧的火焰不同，“焦化少女”一动不动地站在收容单元中", "火柴燃烧着，但女孩丝毫不为所动。", "员工正仔细检查着火柴仍未燃烧的部分。", "如果火柴近乎烧光，那就会发生非常危险的事件。员工正紧张地看着“焦化少女”。", "幸运的是，火柴还能烧上一段时间。但是当它烧尽的时候...", "灰烬四散，一半的火柴似乎仍未燃烧。", "员工完成了工作，火柴上的火焰正在轻轻地摇曳着。", "火焰中没有任何东西，但“焦化少女”的眼睛闪烁着光芒，就仿佛看到了某人。", "火中，空无一物。", "只有火柴燃烧后的余烬散落在“焦化少女”周围。"])
+other_info = "“焦化少女”（F-01-02）表现为一个完全烧焦的人形异想体。因为它头部后面烧焦的两条马尾辫，使得它的形态更加类似一个全身已经被烧得焦黑炭化，难以分辨的小女孩。它没有手臂，眼神空洞，嘴巴微微张开，表情显得有些痛苦和呆滞。一根巨大且点燃了的火柴贯穿了“焦化少女”的身体，火柴头在它的背后微微燃烧着。而支撑它身体的双腿相比之下显得十分细小。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.33[/cell][cell border=#ffffa1]15[/cell]
+[/table]
+[/center]
+
+[img]res://img/ScorchedGirlScreenshotCloseup.webp[color=red]
+收容单元监控画面[/color]
+
+特殊能力
+1.当工作结果为良时，焦化少女有50%的概率在倒计时结束后将计数器减少1点。
+2.当工作结果为差时，焦化少女有70%的概率在倒计时结束后将计数器减少1点。
+
+焦化少女原型是童话《卖火柴的小女孩》。
+推测的罪孽属性：暴怒，色欲，嫉妒，暴食，忧郁
+猜测LCE评级为T-04左右
+
+"
+other_info_act = "出逃信息
+出逃的“焦化少女”的生命值为120，基础移动速度为2单位。
+出逃后，它会随机选择部门内的一名职员并为他添加一个火柴标记。焦化少女会以较慢的速度径直走向被标记的员工的房间。它不会对路上任何职员或异想体进行互动。如果它成功到达该房间并停留5秒，它会发生自爆并对该房间所有单位造成300物理伤害。
+若它的目标在它被镇压或自爆前死亡，则它会立刻重新标记新的目标。若部门内已无任何存活职员可选，它的标记选择范围将扩大到整个设施。若设施内没有职员存活，它将会走到自己收容单元所在部门主休息室的正中央，并在停留5秒后自爆。
+在被镇压或自爆后，它会重新回到收容室并重置计数器。
+
+镇压建议
+如果焦化少女标记的是员工，则最好的镇压方式是把被标记的员工尽可能拉离焦化少女，让其余员工前去镇压。
+如果焦化少女标记的是部门内的文职，由于文职的移动路径不可控，最好的镇压方式则是放着它不管，把部门内的员工拉离部门，等它把被标记的文职炸飞之后再让员工归位。
+在前中期装备不是特别优秀时，焦化少女的300点物理伤害对主管的员工来说是致命的，请主管在收到它的出逃提示后尽量对其多加注意。
+
+[img]res://img/20180313201242_1.webp[color=red]
+x月x日-监控画面1-副本
+-- F-01-02突破收容了！[/color]
+
+[img]res://img/20180313201319_1.webp[color=red]
+x月x日-监控画面2-副本
+-- 被标记的职员还不知道要发生什么。。。[/color]
+
+[img]res://img/20180313201831_1.webp[color=red]
+x月x日-监控画面3-副本
+-- 结束了。[/color]
+"
+price = "基础信息：12点
+敏感信息：12点
+管理须知：每条4点
+工作偏好：每条4点"
+jump_ego = Array[String](["f-01-02-s", "f-01-02-w", "f-01-02-g"])
+name_ = "焦化少女"
+icon = ExtResource("1_tg88k")
+info_ = "资料类型：异想体
+
+我来...找你了...你会...化为...灰烬...就和我...一样...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/F-01-02_%E7%84%A6%E5%8C%96%E5%B0%91%E5%A5%B3]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "F-01-02"
+level = "t"
+jumper = ExtResource("4_eh83n")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

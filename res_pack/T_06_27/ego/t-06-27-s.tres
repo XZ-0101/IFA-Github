@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Suit" load_steps=4 format=3 uid="uid://dgtew5ilg7opp"]
+
+[ext_resource type="Script" uid="uid://bisv55u6ecweb" path="res://script/lobotomy_ego_Suit.gd" id="1_0g5bb"]
+[ext_resource type="Resource" uid="uid://c5f4jxmq20aun" path="res://res_pack/T_06_27/ego/t-06-27-s-j.tres" id="1_me8j4"]
+[ext_resource type="Texture2D" uid="uid://cbbelxi4up4ip" path="res://res_pack/T_06_27/ego/img/A-1513167628.webp" id="3_6ie58"]
+
+[resource]
+script = ExtResource("1_0g5bb")
+Cost = "30"
+Max_Amount = "1"
+Observation_Level = "3"
+other = "无"
+red_def = 1.2
+white_def = 0.7
+black_def = 0.6
+pale_def = 2.0
+Requirements = "[color=white]谨慎[/color]II"
+name_ = "噪音"
+texture = ExtResource("3_6ie58")
+info = "*资料类型：脑叶公司制式EGO护甲
+
+资料：
+
+该异想体没有清晰的物理形象，它是由一种电磁现象所构成的。
+
+当人们穿戴这件E.G.O护甲时，会有许多诡异的尖叫伴着细微的爆炸声环绕在他们耳边。
+
+它会把你与被人们遗忘的“那一天”环环相扣。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-06-27_1.76%E5%85%86%E8%B5%AB]脑叶公司Wiki[/url] 脑叶公司情报部"
+level = "t"
+jump = Array[String](["t-06-27"])
+jumper = ExtResource("1_me8j4")
+gif = "null"
+metadata/_custom_type_script = "uid://bisv55u6ecweb"

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://mm05w0sw2n0c"]
+
+[ext_resource type="Resource" uid="uid://bjso5xb5som2m" path="res://res_pack/o-01-15/ego/o-01-15-g-j.tres" id="1_ippn8"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_k6aky"]
+[ext_resource type="Texture2D" uid="uid://c5p3hndv6hp45" path="res://res_pack/o-01-15/ego/img/1-1524969616.webp" id="3_2qk5x"]
+
+[resource]
+script = ExtResource("2_k6aky")
+name_ = "泣婴"
+texture = ExtResource("3_2qk5x")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：1%
+获得率：4%
+位置：头饰
+最大生命值-2
+最大精神值-2
+移动速度+6
+攻击速度+6
+受到精神伤害时，减少5%的精神损耗。
+※因为月计忘记限制起效的伤害类型，以至于该饰品的实际效果为员工受到的全类型伤害额外乘算0.95（包括恐惧伤害）。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-15_%E6%97%A0%E5%90%8D%E6%80%AA%E5%A9%B4]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["o-01-15"])
+jumper = ExtResource("1_ippn8")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

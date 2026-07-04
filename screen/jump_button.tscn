@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cold0gvl73qc5"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_m73a2"]
+
+[sub_resource type="GDScript" id="GDScript_m73a2"]
+script/source = "extends Button
+
+@export var res:Resource
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if res is lobotomy:
+		icon=res.icon
+		$RichTextLabel.text=res.name_
+	elif res is Documentation_class:
+		icon=res.icon
+		$RichTextLabel.text=res.name_
+	if res is music_class:
+		icon=res.texture
+		$RichTextLabel.text=res.name_
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_down() -> void:
+		if res is lobotomy:
+			Get.going_to_load=res
+			Get.going_to_Load_type=\"lobotomy\"
+			get_tree().change_scene_to_file(\"res://screen/a_page.tscn\")
+			Get.jumped_list.append(load(\"res://screen/a_page.tscn\"))
+		elif res is Documentation_class:
+			Get.going_to_Documentation=res
+			Get.going_to_Load_type=\"documentation\"
+			get_tree().change_scene_to_file(\"res://screen/a_page.tscn\")
+			Get.jumped_list.append(load(\"res://screen/a_page.tscn\"))
+		elif  res is music_class:
+			Get.jumped_list.append(res)
+			Get.going_to_music=res
+			get_tree().change_scene_to_file(\"res://screen/show_spectrum.tscn\")
+		pass # Replace with function body.
+"
+
+[node name="Button" type="Button" unique_id=1900352866]
+custom_minimum_size = Vector2(300, 50)
+offset_right = 349.0
+offset_bottom = 67.0
+scale = Vector2(1.1581, 1.0227)
+theme = ExtResource("1_m73a2")
+expand_icon = true
+script = SubResource("GDScript_m73a2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=60522114]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.855137
+offset_bottom = 17.144863
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "nbvg"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

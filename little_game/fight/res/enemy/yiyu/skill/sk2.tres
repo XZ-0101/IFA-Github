@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://c5bwstso3olrv"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_2wcog"]
+[ext_resource type="Texture2D" uid="uid://xfv0lmirunve" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image (3).png" id="2_2wcog"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_nqrt6"]
+
+[sub_resource type="Resource" id="Resource_2wcog"]
+script = ExtResource("1_2wcog")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",5,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/chenlun.tres\",5,get_enemy(team))
+sp-=10"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_nqrt6")
+name_ = "抑郁"
+icon = ExtResource("2_2wcog")
+level = 2
+change_Point = -10
+coin_n = 1
+base_point = 20
+at = 15
+def = 15
+description = Array[String](["【命中时】施加5层流血，5层沉沦
+自己失去10SP"])
+eff_arr = Array[ExtResource("1_2wcog")]([SubResource("Resource_2wcog")])
+sin_color = Color(0.80784315, 0.0627451, 0.039215688, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

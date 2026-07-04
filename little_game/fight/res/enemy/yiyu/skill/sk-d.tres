@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://o4d4eeut611c"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_1u54y"]
+[ext_resource type="Texture2D" uid="uid://0krg41lsxcbn" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image (4).png" id="2_1u54y"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_yji22"]
+
+[sub_resource type="Resource" id="Resource_1u54y"]
+script = ExtResource("1_1u54y")
+code = "hit_area+=0.15
+sp+=5
+"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_yji22")
+name_ = "我恨人类"
+icon = ExtResource("2_1u54y")
+level = 1
+change_Point = -5
+coin_n = 2
+base_point = 10
+at = 10
+def = 65
+description = Array[String](["【命中时】若敌方属于人类，则加伤15%，自己恢复5SP"])
+eff_arr = Array[ExtResource("1_1u54y")]([SubResource("Resource_1u54y")])
+type = Array[String](["防御"])
+sin_color = Color(0.09411765, 0.2784314, 0.4745098, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

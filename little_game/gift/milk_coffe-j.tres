@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://260nlqqkrop7"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_5kptu"]
+[ext_resource type="Texture2D" uid="uid://bny066k4atjqa" path="res://img/NoData.webp" id="2_fytmu"]
+
+[resource]
+script = ExtResource("1_5kptu")
+name_ = "牛奶咖啡"
+texture = ExtResource("2_fytmu")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/gift/new_resource.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

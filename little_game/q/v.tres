@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://cv68kau4mygrs"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_72ukj"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_dvcbj"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_wllhb"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="4_koddy"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="5_d76ff"]
+
+[sub_resource type="Resource" id="Resource_qxtac"]
+script = ExtResource("3_wllhb")
+add_valua = 3
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_2tcct"]
+script = ExtResource("4_koddy")
+"介绍" = "提升属性"
+win_text = "机器发出轰鸣声..."
+gift = SubResource("Resource_qxtac")
+name_ = "勇气属性"
+"结果" = "好，就这个"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_2g1sq"]
+script = ExtResource("3_wllhb")
+value_object = 1
+add_valua = 3
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_55nkk"]
+script = ExtResource("4_koddy")
+"介绍" = "提升属性"
+win_text = "机器发出轰鸣声..."
+gift = SubResource("Resource_2g1sq")
+name_ = "谨慎属性"
+"结果" = "好，就这个"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_i1nfg"]
+script = ExtResource("3_wllhb")
+value_object = 2
+add_valua = 3
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_bvoii"]
+script = ExtResource("4_koddy")
+"介绍" = "提升属性"
+win_text = "机器发出轰鸣声..."
+gift = SubResource("Resource_i1nfg")
+name_ = "自律属性"
+"结果" = "好，就这个"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_eb416"]
+script = ExtResource("3_wllhb")
+value_object = 3
+add_valua = 3
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_gn3h1"]
+script = ExtResource("4_koddy")
+"介绍" = "提升属性"
+win_text = "机器发出轰鸣声..."
+gift = SubResource("Resource_eb416")
+name_ = "正义属性"
+"结果" = "好，就这个"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("5_d76ff")
+"问题" = "这里存放着一个奇怪的装置$s其旁边写有说明$s“属性训练器Pro版-可以小幅度提升某个属性”$s要提升哪个？"
+item = Array[ExtResource("1_72ukj")]([SubResource("Resource_2tcct"), SubResource("Resource_55nkk"), SubResource("Resource_bvoii"), SubResource("Resource_gn3h1")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dq8uqppnwpftr"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_a333n"]
+[ext_resource type="Texture2D" uid="uid://b35pxrs5jdtno" path="res://res_pack/O-02-40/ego/img/A-1513245425.webp" id="2_kixds"]
+
+[resource]
+script = ExtResource("1_a333n")
+name_ = "目灯"
+level = "W"
+texture = ExtResource("2_kixds")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/O-02-40/ego/0-02-04-s.tres"
+mode = "lobotomyS"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

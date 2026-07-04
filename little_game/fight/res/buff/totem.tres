@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cq7q5eqsb12il"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_cy1ww"]
+[ext_resource type="Texture2D" uid="uid://cng6l1b51qnu1" path="res://little_game/Sprite/Totem_of_Undying_JE2_BE2.png" id="2_ajijb"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_5iey1"]
+
+[sub_resource type="Resource" id="Resource_cc6iv"]
+script = ExtResource("1_cy1ww")
+most_x = 1
+code = "var num=Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/buff/totem_used.tres\")
+if num==1:
+	Fight.minus_buff_path(\"res://little_game/fight/res/buff/totem.tres\",team,1)
+if hp<=0 and num!=1 :
+	hp=hp_max
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/totem_used.tres\",1,team)
+
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/Regeneration-mc.tres\",5,team)
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/Fire_Resistance-mc.tres\",3,team)
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/absorption-mc.tres\",2,team)
+
+	Fight.minus_buff_path(\"res://little_game/fight/res/buff/totem.tres\",team,1)
+"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_5iey1")
+eff = SubResource("Resource_cc6iv")
+icon = ExtResource("2_ajijb")
+id = "totem_undying"
+type = Array[String](["buff", "MC"])
+name_ = "复活-不死图腾"
+description = "[回合开始时]如果HP小于等于0，那么触发一次复活
+获得5层\"生命恢复\"，2层\"伤害吸收\"，2层\"抗火\"
+获得\"失效-不死图腾\"并失去本效果"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

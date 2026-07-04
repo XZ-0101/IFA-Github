@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://bf2ybh8cmamwb"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_gfd5l"]
+[ext_resource type="Texture2D" uid="uid://dsn0jj7scq1gq" path="res://res_pack/f-01-37/img/I-1513153343.webp" id="2_gsux0"]
+
+[resource]
+script = ExtResource("1_gfd5l")
+name_ = "冰雪女皇"
+s = "F-01-37"
+level = "H"
+texture = ExtResource("2_gsux0")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-37/f-01-37.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体", "研究所相关"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

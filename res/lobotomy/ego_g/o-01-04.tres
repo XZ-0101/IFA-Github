@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://cac2uytmyuoea"]
+
+[ext_resource type="Resource" uid="uid://pwbcuesn8o1w" path="res://res/jumper/o-01-04-g-jumper.tres" id="1_tk7bw"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_063bv"]
+[ext_resource type="Texture2D" uid="uid://e8543ipcdbpd" path="res://img/Magic4.webp" id="3_f3ai0"]
+
+[resource]
+script = ExtResource("2_063bv")
+name_ = "以爱与恨之名"
+texture = ExtResource("3_f3ai0")
+info = "*资料类型：脑叶公司EGO饰品/礼物
+
+获得率：3%
+位置：头部
+成功率+2
+工作速度+2
+移动速度+4
+攻击速度+4
+
+
+资料：
+
+这件魔法礼服漫溢着魔法少女的爱与正义。
+
+穿上这件礼服，能够点燃你的正义精神与保护世界的欲望，
+
+但随之而来的，却是充满憎恨的，比爱更加沉重的低语，它们无时无刻不在你耳边回响。
+
+我们该怎么做？
+
+我下定决心要用爱去对待世间万物，但是最终却只得到了一颗伤痕累累的，破碎的心。
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/O-01-04_%E6%86%8E%E6%81%B6%E5%A5%B3%E7%8E%8B脑叶公司Wiki[/url],脑叶公司情报部"
+level = "a"
+jump = Array[String](["O-01-04"])
+jumper = ExtResource("1_tk7bw")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://ctvxnwjkyro3v"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_g5wue"]
+[ext_resource type="Texture2D" uid="uid://3axjifue70np" path="res://res_pack/f-04-42/benti/img/I-1513253349.webp" id="2_qc8a4"]
+
+[resource]
+script = ExtResource("1_g5wue")
+name_ = "白雪公主的苹果"
+s = "F-04-42"
+level = "w"
+texture = ExtResource("2_qc8a4")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-04-42/benti/f-04-42.tres"
+mode = "lobotomyA"
+type = Array[String](["脑叶公司", "异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

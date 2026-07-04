@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="lobotomy_tool" load_steps=4 format=3 uid="uid://bni6sn03uvcud"]
+
+[ext_resource type="Texture2D" uid="uid://cdob2qjff4beg" path="res://img2/LCA/T-09-09/Theresia_-1102744.webp" id="1_sace1"]
+[ext_resource type="Resource" uid="uid://crgyqrt75mtlt" path="res://res/jumper/T-09-09.tres" id="2_hh5jr"]
+[ext_resource type="Script" uid="uid://cdfofyangdhkb" path="res://script/lobotomy_tool.gd" id="3_dtj3p"]
+
+[resource]
+script = ExtResource("3_dtj3p")
+tool_type = "持续使用型"
+tool_e = "主管可以派遣员工前去聆听特蕾西娅。进入收容单元后，员工会开始播放特蕾西娅，奏出动听的旋律。特蕾西娅所属部门的所有职员将会每5秒回复10点精神值。
+
+和管理须知不同，实际上如果聆听的时间超过了30秒，聆听者会立刻强制陷入恐慌。
+
+值得一提的是，如果聆听特蕾西娅的员工并非来自收容特蕾西娅的部门，则这名员工在使用它时不会回复精神值，但属于特蕾西娅部门的职员仍会正常地恢复精神值。
+
+员工离开收容单元后，陷入恐慌的倒计时会被重置。
+
+[img]res://img2/LCA/T-09-09/20180519172436_1.webp[color=red]
+x月x日-T-09-09收容单元-监控画面
+-- 真怀念啊！不是吗？
+[/color]"
+tool_info = "特蕾西娅（T-09-09）是一件危险等级为TETH级的持续使用型工具异想体。从外表上看，它是一台锈迹斑斑却又十分精美的八音盒，盒的一侧有根棕色的发条。八音盒上有一个小小的芭蕾舞演员模型，它踮着脚，定格在一个无比优美的姿势。启动后，“特蕾西娅”会奏出动听的旋律。
+
+[img]res://img2/LCA/T-09-09/TheresiaCloseUp.webp[color=red]
+收容单元监控画面[/color]"
+Precautions = Array[String](["聆听“特蕾西娅”的员工将会持续恢复精神值。（该条翻译有误。该句直译应为：听到“特蕾西娅”的声音时，“特蕾西娅”所属部门的职员将会持续恢复精神值。）（持续使用30秒后解锁）", "聆听“特蕾西娅”的时间处于20-30秒时，员工会立刻陷入恐慌。（持续使用60秒后解锁）"])
+Research_logs = Array[String](["这个异想体是一台老旧的八音盒。八音盒上有一个小小的，踮起脚尖跳舞的小芭蕾演员模型。（持续使用30秒后解锁）", "上好发条后，八音盒将会播放一段悲伤的旋律。没有人知道是谁制作了这台八音盒，但是从时不时的卡顿中可以看出，它已经有一定的年岁了。（持续使用60秒后解锁）", "八音盒上粗糙地刻着一行小字：“还记得这段旋律吗？每当学生们犯困时，教授就会把这段旋律放给他们听。生日快乐。”（持续使用120秒后解锁）", "聆听八音盒的旋律会使人感到“一切都会好起来的”，疲劳也会被一扫而空。但是过度的聆听将会导致人们失去对现实的把握，最终陷入疯狂。（持续使用180秒后解锁）"])
+icon = ExtResource("1_sace1")
+info_ = "*资料类型：工具类异想体
+
+还记得这段旋律吗？每当学生们犯困时，教授就会把这段旋律放给他们听。生日快乐。
+
+资料来源:[url=https://lobotomycorp.fandom.com/zh/wiki/T-09-09_%E7%89%B9%E8%95%BE%E8%A5%BF%E5%A8%85]脑叶公司Wiki[/url],脑叶公司情报部"
+subject = "T-09-09"
+level = "t"
+jumper = ExtResource("2_hh5jr")
+gif = "null"
+metadata/_custom_type_script = "uid://cdfofyangdhkb"

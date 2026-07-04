@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://bqh4vw3nxowuq"]
+
+[ext_resource type="Texture2D" uid="uid://rfye5gw8f3h4" path="res://img/lc-a/o-03-03/ogmb1.png" id="1_0nwua"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_5jupa"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_4g8ep"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_sbewu"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_6jq3o"]
+[ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="6_rjmhh"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="7_r3hxd"]
+
+[sub_resource type="Resource" id="Resource_j0p0o"]
+script = ExtResource("4_sbewu")
+value_object = 5
+add_valua = -10
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_n0coi"]
+script = ExtResource("4_sbewu")
+value_object = 5
+add_valua = -30
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_y48xq"]
+script = ExtResource("5_6jq3o")
+"介绍" = "需要谨慎判定"
+mode = 1
+check_object = 1
+value = 10
+win_text = "他用空洞的不存在的视线洞穿了你$s你如遭雷劈$s痛苦蔓延至你的中枢神经$s但身体却完好无损"
+lose_text = "你的谎言漏洞百出$s他看着你$s痛苦蔓延至你的中枢神经$s但身体却完好无损"
+gift = SubResource("Resource_j0p0o")
+losegift = SubResource("Resource_n0coi")
+name_ = "说谎"
+"结果" = "你说了谎"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_wowwi"]
+script = ExtResource("4_sbewu")
+value_object = 5
+add_valua = 10
+get_gift = Array[ExtResource("3_4g8ep")]([ExtResource("6_rjmhh")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_esvqd"]
+script = ExtResource("5_6jq3o")
+win_text = "他的上颚与下颚不时碰撞在一起，发出骇人的声音$s当它停止时$s你感到从所未有的释然"
+gift = SubResource("Resource_wowwi")
+name_ = "忏悔"
+"结果" = "你将你的罪恶告诉了他"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("7_r3hxd")
+img = ExtResource("1_0nwua")
+name_ = "一罪与百善1"
+subject = "T-00-07"
+"问题" = "神圣的诵经声贯入你的大脑$s这位伟大的主就在你的面前$s说说你的罪恶$s诚实一点"
+item = Array[ExtResource("2_5jupa")]([SubResource("Resource_y48xq"), SubResource("Resource_esvqd")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

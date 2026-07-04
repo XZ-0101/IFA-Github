@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://diqknflawx0a7"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_lnmrh"]
+[ext_resource type="Texture2D" uid="uid://b1xo6bcxrgcdm" path="res://img/lc-a/o-00-00/A-1522656266.webp" id="2_uu2ym"]
+
+[resource]
+script = ExtResource("1_lnmrh")
+name_ = "教学用E.G.O(护甲)"
+level = "T"
+texture = ExtResource("2_uu2ym")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/lobotomy/dummy_ego_s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://daimco6afstyw"]
+
+[ext_resource type="Resource" uid="uid://npbauv66nytr" path="res://res_pack/o-02-98/ego/o-02-98-g-j.tres" id="1_u065b"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_wukxl"]
+[ext_resource type="Texture2D" uid="uid://pkkpnkew8jnc" path="res://res_pack/o-02-98/ego/img/QQ3F20180429162019.webp" id="3_rswa7"]
+
+[resource]
+script = ExtResource("2_wukxl")
+name_ = "因乐颠狂"
+texture = ExtResource("3_rswa7")
+info = "*资料类型：EGO饰品/礼物 
+
+获得几率：4%
+位置：颈部
+最大精神值+10
+成功率-6
+工作速度-6
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "null"
+jump = Array[String](["pres://res_pack/o-02-98/benti/o-02-98-j.tres"])
+jumper = ExtResource("1_u065b")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

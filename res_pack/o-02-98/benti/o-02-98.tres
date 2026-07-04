@@ -1,0 +1,177 @@
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://dlljl1ygqja4q"]
+
+[ext_resource type="Script" uid="uid://dsphtrkubrdqo" path="res://script/Probabilities_item.gd" id="1_ni47n"]
+[ext_resource type="Script" uid="uid://btrm66t20xpas" path="res://script/Probabilities.gd" id="2_bs16l"]
+[ext_resource type="Texture2D" uid="uid://mxdfa6uimfq8" path="res://res_pack/o-02-98/benti/img/I-1513274080.webp" id="3_btw3p"]
+[ext_resource type="Resource" uid="uid://d03m8hmlnxttw" path="res://res_pack/o-02-98/benti/o-02-98-j.tres" id="4_lj6gl"]
+[ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="5_u1cdu"]
+
+[sub_resource type="Resource" id="Resource_h2i0s"]
+script = ExtResource("1_ni47n")
+level = {
+"L1": 60,
+"L2": 60,
+"L3": 60,
+"L4": 60,
+"L5": 60
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_008w0"]
+script = ExtResource("1_ni47n")
+level = {
+"L1": 40,
+"L2": 40,
+"L3": 40,
+"L4": 40,
+"L5": 40
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_1j1dc"]
+script = ExtResource("1_ni47n")
+level = {
+"L1": 50,
+"L2": 50,
+"L3": 50,
+"L4": 50,
+"L5": 50
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_ve3m3"]
+script = ExtResource("1_ni47n")
+level = {
+"L1": 30,
+"L2": 30,
+"L3": 30,
+"L4": 30,
+"L5": 30
+}
+metadata/_custom_type_script = "uid://dsphtrkubrdqo"
+
+[sub_resource type="Resource" id="Resource_3ou0v"]
+script = ExtResource("2_bs16l")
+Probabilities = Array[ExtResource("1_ni47n")]([SubResource("Resource_h2i0s"), SubResource("Resource_008w0"), SubResource("Resource_1j1dc"), SubResource("Resource_ve3m3")])
+metadata/_custom_type_script = "uid://btrm66t20xpas"
+
+[resource]
+script = ExtResource("5_u1cdu")
+Attack_Type = 3
+acctak_Damage = "1-5"
+Probabilities_ = SubResource("Resource_3ou0v")
+most_pe_box = "18"
+good_Mood_Range = "15-18"
+bad_Mood_Range = "0-8"
+Norm_Mood_Range = "9-14"
+will_Breakthrough_containment = true
+Qliphoth_Counter = "2"
+red_def = 1.0
+white_def = 0.5
+black_def = 1.0
+pale_def = 1.5
+Upgrades = Array[String](["Ⅰ. 当工作结果为优时，“棘刺公交”的逆卡巴拉计数器会立刻增加。", "Ⅱ. 当工作结果为差时，“棘刺公交”的逆卡巴拉计数器会立刻减少。", "Ⅲ. 自律等级低于4级的员工完成结果为“优”的工作时，该员工将被“棘刺公交”杀死。", "Ⅳ. 突破收容后，“棘刺公交”会对自律等级低于4级的员工造成巨量白色精神伤害。", "Ⅴ. 突破收容后，“棘刺公交”不会受到来自它攻击范围外的伤害。"])
+story = "<是时候引爆你的小脑瓜了！>
+说实话，这里的日常生活并不是那么有趣。虽然公司有提倡员工们去做一些健康积极的活动，不过没几个员工会去响应的。
+
+毕竟，每个人都有逃避现实的手段：动用暴力，嗑药磕嗨，沉迷赌博，暴饮暴食......而我则有着超乎常人的自律性，这使我的生活相比那些废物要过得更平稳一些。或许，这就是我被指派来管理“棘刺公交”的原因吧。
+
+是的，关于“棘刺公交”...只有那些生活在阴郁和悲伤中的员工才会被派来管理它。
+
+关于他们在收容单元里跟那个异想体做的事情，我有听其他员工说起过。他们管那叫做“信任游戏”。
+“信任游戏”？呵，说得可真高尚啊。
+
+（省略）
+
+曾在这里工作过的前辈告诉我，要和这个异想体亲近并不是很难，一旦你同它亲近了，就可以轻而易举地得到你想要的东西。
+
+他们说，当时机恰当时，“棘刺公交”会俯下身来，这时我就可以轻松地够到它身上的刺。再过一会儿它就会对我示好，伸长尾巴来让我抚摸。
+
+（省略）
+
+当我第一次碰到它的刺时，我大声地叫了出来。那感觉就像是有根硕大无比的钢针直直贯穿了我的手指。可我并没有流血，疼痛也很快就消失了。紧接着，一股我从未体验过的快感猛烈地窜过整个身体......
+
+后来，其他员工走进收容单元告诉我“旅程”结束了，而我当时正瘫在地上流着口水。
+
+那种快感是如此地新奇，又是如此地恐怖，以至于我有一段时间没再去工作。然而，情况变得越来越糟了。我就像是有了某种戒断反应一样，开始呕吐，盗汗。和我一起工作的那个同事甚至拔光了自己所有的牙齿，因为他觉得牙齿上全是虫子。
+
+感受？我所掌握的词汇完全无法描述那种感受。还记得你生活中最快乐的那个时刻吗？那种感受可比这还要爽上千倍万倍！
+
+我是最后一个依旧“在职”的负责管理“棘刺公交”的员工。没错，我的大脑还渴望着更强烈的刺激，这没什么好奇怪的。一开始，我需要做的就只是被它的刺轻轻扎一下，可现在我必须用它的刺来回摩擦我的身体才能达到我所期望的那种感觉了。
+
+我觉得自己全身的血液都在一股劲地涌上大脑，我的脑袋就快要爆炸了。嘭！这样的情景早就在我的脑海里上演了无数遍。
+
+我得走了，该去工作了。你有注意到吗？事实上，我早就兴奋得汗流浃背了。
+
+噢，顺带一提，“棘刺公交”并不像你们所推测的那样具有攻击性。它从没想着吃掉我们或是咬掉我们的脑袋，你也有提到过那些尸体都咧着嘴笑，不是吗？哈！这就对了，是我们自己要“笑到最后”的。
+
+你没资格责怪我们，因为我们时时刻刻都生活在地狱之中...我们不过是想品尝一小口天堂的滋味罢了。
+
+你知道吗，我觉得你很可悲。因为你从来都没有体会过如此的幸福和喜悦，而且你永远都体会不到。现在你还必须保持着所谓的体面得体，来采访像我这种被称作“瘾君子”的员工，哈哈哈哈哈。
+
+我的脑袋就要爆炸了，再见咯~"
+Observation_level = "Ⅰ. 工作速度 + 4Ⅱ. 成功率 + 4%、解锁E.G.O饰品Ⅲ. 工作速度 + 4、解锁E.G.O护甲Ⅳ. 成功率 + 4%、解锁E.G.O武器"
+flavour_text = Array[String](["当你与“棘刺公交”的“信任游戏”达到高潮时，“棘刺公交”会用尾巴上的刺温柔地爱抚你的小脑瓜。", "据说“棘刺公交”的刺会传递一种常人难以承受的快感，但是没有人能够清楚地描述这种感受。", "某次收容失效时，“棘刺公交”的脖颈上多了一条项圈，没有人知道是谁给它套上的。", "一些痴迷于快感的员工试图从“棘刺公交”身上拔下几根刺，可是他们都失败了。"])
+other_info = "棘刺公交（O-02-98）是一条蛇样的植物形异想体。它的身上长有许多淡黄色的绒刺以及一朵作为头部的大红花，花朵中心有着黄色的花蕊，两旁各有一颗黑亮的眼睛。它的脖子上有一条枷锁，上面有一块红色的宝石。当它发动能力时，尾部会长出一块类似仙人球的多刺植物。
+
+[center]
+[table=2]
+[cell border=#ffffa1]基础工作速度[/cell][cell border=#ffffa1]工作冷却[/cell]
+[cell border=#ffffa1]0.3[/cell][cell border=#ffffa1]10[/cell]
+[/table]
+[/center]
+
+[img]res://res_pack/o-02-98/benti/img/PorccubusCloseUp.webp[/img][color=red]
+收容单元监控画面[/color]"
+other_info_act = "特殊能力
+自律等级低于4级的员工对棘刺公交完成结果为“优”的工作时，会播放一段特殊动画，该员工的头将在狂笑中爆裂开来，只留下仍在狂笑的下半部分头部。该员工将在动画结束后被判定为死亡。在特殊动画期间结束一天的工作会导致这名员工直接死亡。
+
+[img]res://res_pack/o-02-98/benti/img/20180215205722_1.webp[/img]
+特殊死亡的员工
+
+被出逃的棘刺公交的攻击清空精神值条，又或是精神值条已被清空且被棘刺公交攻击命中的员工或是被棘刺公交直接杀死的文职也会在相同的动画后死去。
+
+[img]res://res_pack/o-02-98/benti/img/20180215210440_1.webp[/img]
+大片的文职尸体（现在时和将来时）
+
+出逃信息
+出逃的“棘刺公交”的生命值为830，不会移动。
+
+[img]res://res_pack/o-02-98/benti/img/20180215210238_1.webp[/img]
+出逃的棘刺公交
+
+出逃后，棘刺公交随机瞬移到设施内一个走廊中间并不会再进行任何移动。当有职员进入它的攻击范围时，它会使用尾部的刺球来戳刺职员，对自律等级不同的员工造成的白色伤害不同。
+
+[img]res://res_pack/o-02-98/benti/img/20180215210229_1.webp[/img]
+棘刺公交攻击
+
+荆棘公交拥有特殊的攻击逻辑，其首先会选择一名7.33单位范围内的可选中的员工（优先选择自律等级低于5的员工，多个符合者中优先选择尝试镇压自己的、距离最远的员工）。 荆棘公交会根据所选员工距离发动不同攻击：
+
+· ≤4单位：荆棘公交对5.33单位内的单体目标造成伤害。
+· >4单位：荆棘公交对4.67~8单位内的单体目标造成伤害（表现为头伸的比较远）。
+对自律等级小于等于3的员工，戳刺会造成9-24点精神伤害。对自律等级4的员工，戳刺会造成3-8点精神伤害。对自律等级5的员工，戳刺只会造成1-4点精神伤害。一切因为棘刺公交的攻击而陷入恐慌的员工都会立刻死亡（文职另算）
+
+一般情况下，棘刺公交会免疫来自7.33单位范围外的单位对其造成的伤害，但“兔子”雇佣兵无视这个限制；对于各种来源于异想体的伤害而言，由于伤害来源不一定来自异想体本身而有可能来自动画伤害，因此这个机制不一定会生效。详细不再一一列出。对于攻击动画造成的伤害、无来源伤害和额外附加的dot效果，
+棘刺公交无法免疫；对于来源于异想体的伤害，则需要该异想体位于棘刺公交的攻击范围内。
+
+镇压建议
+由于棘刺公交出逃后只会待在一个位置不移动，因而完全不对它进行镇压也是可行的选择之一，它能做的只有清空部门内前来送死的文职而已。但如果主管设施内收容了响应文职死亡的异想体且没有惩戒部的科技：处决弹，那么请主管尽量使用高自律且拥有较高最大精神值的员工来镇压它。
+
+棘刺公交对低自律的员工造成的伤害是毁灭性的，而对于那些五级自律且精神抗性不弱的员工来说，它还没它的E.G.O武器能打。"
+price = "基础信息：16点
+敏感信息：16点
+管理须知：每条4点
+工作偏好：每条5点"
+jump_ego = Array[String](["pres://res_pack/o-02-98/ego/o-02-98-g-j.tres", "pres://res_pack/o-02-98/ego/o-02-98-s-j.tres", "pres://res_pack/o-02-98/ego/o-02-98-w-j.tres"])
+name_ = "棘刺公交"
+icon = ExtResource("3_btw3p")
+info_ = "资料类型：异想体
+
+我的脑袋就要爆炸了，再见咯~
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+subject = "O-02-98"
+level = "h"
+jumper = ExtResource("4_lj6gl")
+gif = "null"
+metadata/_custom_type_script = "uid://qdcjcgqeopeb"

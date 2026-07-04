@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://3jc0b20wspvu"]
+
+[ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="1_shuml"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_ha1qx"]
+[ext_resource type="Theme" uid="uid://d1d0dsxu3p1hr" path="res://res/HUAKUAI.tres" id="3_1ji8p"]
+[ext_resource type="AudioStream" uid="uid://ie8t5q367mct" path="res://mus/Studio EIM - Theme (Inst_).ogg" id="4_ha1qx"]
+
+[sub_resource type="GDScript" id="GDScript_shuml"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicAll.get_child(1).get_child(0).button_pressed=true
+	$ScrollContainer/AnimationPlayer.play(\"new_animation\")
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_button_down() -> void:
+
+	print(\"a\")
+	$ScrollContainer/AnimationPlayer.speed_scale=2.5
+
+
+func _on_button_button_up() -> void:
+	$ScrollContainer/AnimationPlayer.speed_scale=1
+	pass # Replace with function body.
+"
+
+[sub_resource type="Animation" id="Animation_shuml"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6000]
+}
+
+[sub_resource type="Animation" id="Animation_ha1qx"]
+resource_name = "new_animation"
+length = 45.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8333333, 44),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 6084]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ji8p"]
+_data = {
+&"RESET": SubResource("Animation_shuml"),
+&"new_animation": SubResource("Animation_ha1qx")
+}
+
+[node name="谢谢" type="Control" unique_id=1670001107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_shuml")
+
+[node name="Control3" type="Control" parent="." unique_id=1844871398]
+z_index = 1
+anchors_preset = 0
+
+[node name="ColorRect4" type="ColorRect" parent="Control3" unique_id=100922110]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 649.0
+offset_bottom = 64.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control3" unique_id=2144574973]
+layout_mode = 0
+offset_top = 1068.0
+offset_right = 651.0
+offset_bottom = 1134.0
+color = Color(0.121569, 0.121569, 0.0784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control3" unique_id=896328831]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 651.0
+offset_bottom = 58.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control3" unique_id=345824736]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1074.0
+offset_right = 656.0
+offset_bottom = 1159.0
+color = Color(0.224312, 0.221412, 0.0513682, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control3/ColorRect3" unique_id=849756017]
+layout_mode = 0
+offset_left = 478.0
+offset_right = 567.0
+offset_bottom = 82.0
+texture = ExtResource("1_shuml")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control3/ColorRect3" unique_id=1923766109]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 64.0
+theme = ExtResource("2_ha1qx")
+text = "谢谢你"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=139746513]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 66.0
+offset_right = 648.0
+offset_bottom = 1069.0
+mouse_filter = 2
+theme = ExtResource("3_1ji8p")
+scroll_vertical = 6000
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer" unique_id=1047278871]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ha1qx")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "鸣谢名单
+
+原作
+[img]res://img2/UI/Project_Moon_Logo.webp[/img]
+
+MAKED BY
+[img]res://img2/UI/cctm_with_name_white.png[/img]
+
+监制
+胶囊装咖啡（B站）
+小张杉xz
+
+程序
+小张杉xz
+
+技术指导/副程序
+DeepSeek
+
+UI设计
+小张杉xz
+
+美术
+小张杉xz
+来自网络
+原作素材
+
+音效/音乐
+来自网络
+原作素材
+
+其他艺术资源
+（字体，着色器等）
+来自网络
+DeepSeek
+
+数据来源
+脑叶公司wiki
+边狱巴士wik
+废墟图书馆wiki
+《扭曲侦探》
+《维利坦》
+《神奇实验室》
+《脑叶公司》及其DLC
+《废墟图书馆》及其DLC
+《边狱巴士公司》
+
+编辑
+胶囊装咖啡（B站）
+小张杉xz
+冷宝ouo（B站）
+织田信长和冲田总司（B站）
+
+文本校对
+小张杉xz
+
+考据
+胶囊装咖啡（B站）
+小张杉xz
+冷宝ouo（B站）
+织田信长和冲田总司（B站）
+小徐
+都市e^(iπ) 协会（Q群828404255）的各位
+
+测试
+寒鸟
+胶囊装咖啡（B站）
+小张杉xz
+都市e^(iπ) 协会（Q群828404255）的各位
+
+特别感谢
+在视频下支持我的所有观众！
+亿个杂圈无名辈（B站）
+小恶魔737（B站）
+[img,size=300]res://img2/UI/qq.jpg[color=red][/color]
+都市e^(iπ) 协会（Q群828404255）
+胶囊装咖啡（B站）
+冷宝ouo（B站）
+小徐
+织田信长和冲田总司（B站）
+寒鸟
+文本
+东朗
+泽兑离震
+靓仔洛
+新的鸽子
+
+[以上排名，不分先后，感谢每位为该项目出过力的人！]
+
+[font_size=80]以及，您[/font_size]
+
+
+
+
+
+
+
+
+
+
+
+[img]res://img/屏幕截图_20-2-2025_232010_.png[/img]
+都市异想图鉴
+小张杉xz
+敬上
+
+
+
+
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer" unique_id=28146570]
+libraries/ = SubResource("AnimationLibrary_1ji8p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=64619476]
+stream = ExtResource("4_ha1qx")
+autoplay = true
+
+[node name="Button" type="Button" parent="." unique_id=982735092]
+layout_mode = 0
+offset_top = 71.0
+offset_right = 647.0
+offset_bottom = 1075.0
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

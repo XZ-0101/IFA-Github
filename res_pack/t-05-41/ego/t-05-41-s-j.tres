@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://tu1yd68rskkg"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_75t0c"]
+[ext_resource type="Texture2D" uid="uid://dk1vo2jm48m73" path="res://res_pack/t-05-41/ego/img/A-1513173952.webp" id="2_66lee"]
+
+[resource]
+script = ExtResource("1_75t0c")
+name_ = "粉碎机MK4"
+level = "H"
+texture = ExtResource("2_66lee")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-05-41/ego/t-05-41-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

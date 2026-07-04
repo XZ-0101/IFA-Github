@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cej4e7m15fuc6"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_786d6"]
+[ext_resource type="Script" uid="uid://dfhtlf0rg6gl8" path="res://script/tree.gd" id="2_soanc"]
+
+[node name="Tree" type="Tree" unique_id=179124415]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_786d6")
+hide_root = true
+script = ExtResource("2_soanc")

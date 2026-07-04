@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dyqwxic6d7cjw"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_f5wyt"]
+[ext_resource type="Texture2D" uid="uid://du50sthrosuwt" path="res://res_pack/o-03-60/ego/img/3F-0.webp" id="2_ihsh3"]
+
+[resource]
+script = ExtResource("1_f5wyt")
+name_ = "彼方的裂片"
+level = "T"
+texture = ExtResource("2_ihsh3")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-03-60/ego/o-03-60-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

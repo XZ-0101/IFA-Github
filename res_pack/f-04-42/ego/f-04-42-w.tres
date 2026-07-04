@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://dyl4jhn2c83b"]
+
+[ext_resource type="Resource" uid="uid://b3p12mfdj8u1y" path="res://res_pack/f-04-42/ego/f-04-42-w-j.tres" id="1_vsx4r"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_fpfvq"]
+[ext_resource type="Texture2D" uid="uid://jmmk7kbohu33" path="res://res_pack/f-04-42/ego/img/W-1513253439.webp" id="3_3hsfb"]
+
+[resource]
+script = ExtResource("2_fpfvq")
+Cost = "50"
+Max_Amount = "3"
+Damage_type = 3
+Damage = "8-16"
+Attack_Speed = "1.5s"
+Range_ = "4"
+dps = "8（基础），11.33（同时持有饰品）"
+m_ban = "长矛"
+Observation_Level = "4"
+Requirements = "自律III"
+other = "无"
+name_ = "绿色枝干"
+texture = ExtResource("3_3hsfb")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：在它意识到无人将会归来时，就像变魔法一样，它伸展出了自己的枝干和茎叶，
+
+由于那自诞生起就有的浓厚怨恨，当花朵绽放时，所有的生命都将溃散。
+
+因为怨恨，这支武器会放出足以致死的毒气。
+
+持有者需要穿着厚实的防护才能避免自身受到毒气的影响。
+
+
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "w"
+jump = Array[String](["pres://res_pack/f-04-42/benti/f-04-42-j.tres"])
+jumper = ExtResource("1_vsx4r")
+gif = "g11"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://nqbajo5u6cmj"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_eq62a"]
+[ext_resource type="Texture2D" uid="uid://3n0e0gg10lg6" path="res://res_pack/f-01-69/ego/img/DerW.webp" id="2_twfxl"]
+
+[resource]
+script = ExtResource("1_eq62a")
+name_ = "魔弹"
+s = "F-01-69"
+level = "W"
+texture = ExtResource("2_twfxl")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-69/ego/f-01-69-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

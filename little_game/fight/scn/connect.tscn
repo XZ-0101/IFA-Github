@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dghrp05v722lv"]
+
+[sub_resource type="GDScript" id="GDScript_mwj8j"]
+script/source = "extends Node2D
+
+var segments = 10
+var sprites = []
+var is_dragging = false
+@export var start_pos = Vector2(50, 70)
+
+func _ready():
+	
+	for i in range(segments):
+		var sprite = Sprite2D.new()
+		add_child(sprite)
+		sprites.append(sprite)
+		sprite.texture = preload(\"res://img/ar1.png\")
+		if i == segments - 1:
+			sprite.texture = preload(\"res://img/ar.png\")
+			
+
+
+
+func update_curve(p0: Vector2, p3: Vector2):
+	#print(\"终点坐标: \", p3)
+	var ctrl1 = Vector2(p0.x + (p0.x - p3.x) * 0.1, p3.y - (p3.y - p0.y) * 0.2)
+	var ctrl2 = Vector2(p0.x - (p0.x - p3.x) * 0.3, p3.y + (p3.y - p0.y) * 0.3)
+	
+	for i in range(segments):
+		var t = float(i) / (segments - 1)
+		var point = _calculate_bezier_point(t, p0, ctrl1, ctrl2, p3)
+		sprites[i].global_position = point
+		sprites[i].scale = Vector2.ONE * (0.3 + t * 0.7)
+		if i > 0:
+			var dir = point - sprites[i-1].global_position
+			sprites[i].global_rotation_degrees = dir.angle()
+
+func _calculate_bezier_point(t: float, p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2) -> Vector2:
+	var u = 1.0 - t
+	return u*u*u*p0 + 3*u*u*t*p1 + 3*u*t*t*p2 + t*t*t*p3
+"
+
+[node name="Node2D" type="Node2D" unique_id=1513013406]
+script = SubResource("GDScript_mwj8j")

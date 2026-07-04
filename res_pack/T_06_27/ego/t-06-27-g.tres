@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://2crae4i000ko"]
+
+[ext_resource type="Resource" uid="uid://br5gxl0nstey" path="res://res_pack/T_06_27/ego/t-06-27-g-j.tres" id="1_lbt5t"]
+[ext_resource type="Texture2D" uid="uid://dngm1sni7cdb6" path="res://res_pack/T_06_27/ego/img/1-1524970280.webp" id="2_vtdad"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="3_51jct"]
+
+[resource]
+script = ExtResource("3_51jct")
+name_ = "噪音"
+texture = ExtResource("2_vtdad")
+info = "*资料类型：EGO饰品/礼物 
+
+获得率：5%
+位置：胸部
+移动速度+2
+攻击速度+2
+穿戴“噪音”时，减少10点最大精神值并增加10点攻击速度。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/T-06-27_1.76%E5%85%86%E8%B5%AB]脑叶公司Wiki[/url] 脑叶公司情报部"
+jump = Array[String](["t-06-27"])
+jumper = ExtResource("1_lbt5t")
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

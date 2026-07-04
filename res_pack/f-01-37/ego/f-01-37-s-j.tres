@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dmb83q1w8fhld"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_grg7i"]
+[ext_resource type="Texture2D" uid="uid://b3ck3nd6n30j4" path="res://res_pack/f-01-37/ego/img/A-1513153397.webp" id="2_bra6d"]
+
+[resource]
+script = ExtResource("1_grg7i")
+name_ = "霜之碎片"
+level = "H"
+texture = ExtResource("2_bra6d")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-01-37/ego/f-01-37-s.tres"
+mode = "lobotomyS"
+type = Array[String](["EGO", "脑叶公司EGO", "EGO护甲"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://ckn14tu6qflgn"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_5l7qs"]
+[ext_resource type="Texture2D" uid="uid://bijdn5n6knvhg" path="res://little_game/fight/res/enemy/yiyu/skill/exported_image (2).png" id="2_bl7rw"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_j07j6"]
+
+[sub_resource type="Resource" id="Resource_ox0ri"]
+script = ExtResource("1_5l7qs")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",10,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/chenlun.tres\",5,get_enemy(team))
+Fight.remove_buff_path(\"res://little_game/fight/res/enemy/yiyu/BUFF/happiness.tres\",get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_j07j6")
+name_ = "梦中呓语"
+icon = ExtResource("2_bl7rw")
+level = 3
+change_Point = -5
+coin_n = 1
+base_point = 50
+at = 50
+def = 100
+description = Array[String](["【命中时】施加10层流血
+施加5层沉沦
+清除敌方身上所有的“快乐”"])
+eff_arr = Array[ExtResource("1_5l7qs")]([SubResource("Resource_ox0ri")])
+type = Array[String](["恐慌"])
+sin_color = Color(0.09411765, 0.7764706, 0.92156863, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

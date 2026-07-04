@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" load_steps=3 format=3 uid="uid://dygpi3phgdhej"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_uudt2"]
+[ext_resource type="Texture2D" uid="uid://t87vyqdcput3" path="res://res_pack/t-09-79/img/MeatIdol (1).webp" id="2_e3r5h"]
+
+[resource]
+script = ExtResource("1_uudt2")
+name_ = "血肉偶像"
+s = "T-09-79"
+level = "W"
+texture = ExtResource("2_e3r5h")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/t-09-79/t-09-79.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://b3p12mfdj8u1y"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_kpjcf"]
+[ext_resource type="Texture2D" uid="uid://jmmk7kbohu33" path="res://res_pack/f-04-42/ego/img/W-1513253439.webp" id="2_f14rn"]
+
+[resource]
+script = ExtResource("1_kpjcf")
+name_ = "绿色枝干"
+level = "W"
+texture = ExtResource("2_f14rn")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/f-04-42/ego/f-04-42-w.tres"
+mode = "lobotomyW"
+type = Array[String](["EGO", "脑叶EGO", "EGO武器"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

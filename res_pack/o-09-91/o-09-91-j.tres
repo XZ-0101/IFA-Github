@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://02xmd6grsqtd"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_12u4l"]
+[ext_resource type="Texture2D" uid="uid://b7odgi6d5kgwl" path="res://res_pack/o-09-91/img/OtherWorldPortrait.webp" id="2_4wnd6"]
+
+[resource]
+script = ExtResource("1_12u4l")
+name_ = "异世的肖像"
+s = "O-09-91"
+level = "H"
+texture = ExtResource("2_4wnd6")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res_pack/o-09-91/o-09-91.tres"
+mode = "lobotomyT"
+type = Array[String](["脑叶公司", "异想体", "工具类异想体"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

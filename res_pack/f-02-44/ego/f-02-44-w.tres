@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="lobotomy_ego_Weapon" format=3 uid="uid://c8o070m1gi83d"]
+
+[ext_resource type="Resource" uid="uid://l04nhv2dnsv" path="res://res_pack/f-02-44/ego/f-02-44-w-j.tres" id="1_4wn3w"]
+[ext_resource type="Script" uid="uid://2p0bvt3ieh4s" path="res://script/lobotomy_ego.gd" id="2_xdobg"]
+[ext_resource type="Texture2D" uid="uid://dwr40f6136ci" path="res://res_pack/f-02-44/ego/img/W-1513168077.webp" id="3_h6jr6"]
+
+[resource]
+script = ExtResource("2_xdobg")
+Cost = "20"
+Max_Amount = "3"
+Damage_type = -4
+Damage = "1"
+Attack_Speed = "快（1.5s）"
+Range_ = "一般（4）"
+dps = "4.67"
+m_ban = "长矛"
+Observation_Level = "3"
+Requirements = "无"
+other = "无"
+name_ = "犄角"
+texture = ExtResource("3_h6jr6")
+info = "*资料类型：脑叶公司制式EGO武器
+
+资料：
+
+那有着翠绿眼睛，佩戴着大丽花的美丽女孩已经用爱征服了我。
+
+但是仇恨伴随着那令人惊骇的犄角，从她的头上蔓生而出，
+
+她开始为她与大丽花的誓言而付出代价。
+
+绽放的花朵因为仇恨而将永远绽放。
+
+她的犄角会刺穿敌人的心脏，用鲜血染红一切。
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki]脑叶公司Wiki[/url] "
+level = "t"
+jump = Array[String](["pres://res_pack/f-02-44/benti/f-02-44-j.tres"])
+jumper = ExtResource("1_4wn3w")
+gif = "g11"
+metadata/_custom_type_script = "uid://2p0bvt3ieh4s"

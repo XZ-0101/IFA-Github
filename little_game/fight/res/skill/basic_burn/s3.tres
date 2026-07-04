@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://bdpvpx3k0ty3p"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_iaasg"]
+[ext_resource type="Texture2D" uid="uid://cmyyje21de4uq" path="res://little_game/fight/res/skill/skill_img/exported_image (2).png" id="2_iaasg"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_m5qg0"]
+
+[sub_resource type="Resource" id="Resource_6kk75"]
+script = ExtResource("1_iaasg")
+code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=7:
+	hit_area+=0.5"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_m5qg0"]
+script = ExtResource("1_iaasg")
+code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
+Fight.add_buff_path(p,4,get_enemy(team))
+"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_m5qg0")
+name_ = "烈火焚身"
+icon = ExtResource("2_iaasg")
+level = 3
+change_Point = 1
+coin_n = 5
+base_point = 10
+at = 15
+def = 30
+description = Array[String](["[攻击前]如果敌方烧伤层数大于7层，则增加50%暴击
+[命中时]施加4层烧伤
+
+"])
+eff_arr = Array[ExtResource("1_iaasg")]([SubResource("Resource_6kk75"), SubResource("Resource_m5qg0")])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

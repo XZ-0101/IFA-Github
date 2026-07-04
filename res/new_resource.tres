@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="basis_info" load_steps=2 format=3 uid="uid://bncsto0ysk2bc"]
+
+[ext_resource type="Script" uid="uid://bss1lupcncdxr" path="res://script/BACIS.gd" id="1_4j5nh"]
+
+[resource]
+script = ExtResource("1_4j5nh")
+name_ = ""
+info_ = ""
+numbering = ""
+level = ""
+metadata/_custom_type_script = "uid://bss1lupcncdxr"

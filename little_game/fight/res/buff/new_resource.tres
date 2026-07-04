@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://bv5kjqyww0ytv"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_635oc"]
+[ext_resource type="Texture2D" uid="uid://crey6ml0v5q4k" path="res://little_game/fight/res/buff/buff_img/烧伤.webp" id="2_08mmc"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_stvla"]
+
+[sub_resource type="Resource" id="Resource_4by16"]
+script = ExtResource("1_635oc")
+most_x = 99
+code = "print(\"brun!!!\")
+hp-=1
+Fight.play_anima(\"text\",team,\"do_buff,燃烧！,烧伤,1\")"
+exe_time = "turn_strat"
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_stvla")
+eff = SubResource("Resource_4by16")
+icon = ExtResource("2_08mmc")
+id = "brun_n"
+type = Array[String](["debuff"])
+name_ = "烧伤"
+description = "[回合结束时] 受到1点固定伤害。持续x回合"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"
