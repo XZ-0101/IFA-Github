@@ -2,8 +2,17 @@
 
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_gblsg"]
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_8u4te"]
+[ext_resource type="Texture2D" uid="uid://isvll1eqjt3" path="res://little_game/fight/res/skill/ap/ap-a-1.png" id="2_q8jmm"]
 
 [resource]
 script = ExtResource("2_8u4te")
-name_ = "攻击"
+name_ = "攻击（中）"
+icon = ExtResource("2_q8jmm")
+level = 1
+change_Point = 3
+coin_n = 3
+base_point = 3
+at = 10
+def = 30
+sin_color = Color(0.84705883, 0.03529412, 0.08235294, 1)
 metadata/_custom_type_script = "uid://bj8vuop3720um"
