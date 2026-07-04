@@ -64,14 +64,14 @@ metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
 script = ExtResource("5_8c2qy")
 code = "if sp>=sp_max*0.7:
 	Fight.minus_buff_path(\"res://little_game/fight/res/buff/blood.tres\",get_enemy(team),5)
-	Fight.add_buff_path(\"res://little_game/fight/res/buff/absorption-mc.tres\",5,get_enemy(team))"
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/absorption-mc.tres\",1,get_enemy(team))"
 exe_time = "turn_end"
 metadata/_custom_type_script = "uid://skro7sm8drh8"
 
 [sub_resource type="Resource" id="Resource_jsic3"]
 script = ExtResource("1_3aqy4")
 eff = SubResource("Resource_eo6w2")
-description = "[回合结束时]如果SP高于80%，则消耗敌方5层流血，施加5层伤害吸收"
+description = "[回合结束时]如果SP高于80%，则消耗敌方5层流血，施加1层伤害吸收"
 name_ = "Warma"
 metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
 
