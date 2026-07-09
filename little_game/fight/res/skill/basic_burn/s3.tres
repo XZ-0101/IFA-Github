@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_6kk75"]
 script = ExtResource("1_iaasg")
 code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
-if Fight.get_buff_x_with_res(get_enemy(team),p) >=7:
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
 	hit_area+=0.5"
 exe_time = "before_hit"
 is_who = true
@@ -34,7 +34,7 @@ coin_n = 5
 base_point = 10
 at = 15
 def = 30
-description = Array[String](["[攻击前]如果敌方烧伤层数大于7层，则增加50%暴击
+description = Array[String](["[攻击前]如果敌方烧伤层数大于5层，则增加50%暴击
 [命中时]施加4层烧伤
 
 "])

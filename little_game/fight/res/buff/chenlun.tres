@@ -7,8 +7,13 @@
 [sub_resource type="Resource" id="Resource_26am7"]
 script = ExtResource("1_a6d1q")
 most_x = 99
-code = "sp-=1
-Fight.play_anima(\"text\",team,\"do_buff,难受香菇！,沉沦,1\")"
+code = "sp-=x
+var zc=\"res://little_game/fight/res/buff/chenlun.tres\"
+var num= ceili(x/3 * 2 - 1)
+Fight.minus_buff_path(zc,team,num)
+
+
+Fight.play_anima(\"text\",team,\"do_buff,难受香菇！,沉沦,\"+str(x))"
 exe_time = "after_under_hit"
 is_who = true
 one_time = true
@@ -21,5 +26,5 @@ icon = ExtResource("2_a6d1q")
 id = "Sinking"
 type = Array[String](["debuff"])
 name_ = "沉沦"
-description = "[受到攻击时]sp减少1"
+description = "[受到攻击时]sp减少x,层数减少2/3倍的x(向上取整)"
 metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"
