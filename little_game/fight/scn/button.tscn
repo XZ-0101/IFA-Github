@@ -18,6 +18,7 @@ func _ready() -> void:
 	nm=m.duplicate()
 	$Button.material=nm
 	$Button.material.set_shader_parameter(\"outline_width\",10)
+	$RichTextLabel.text=skill.name_
 	
 	pass # Replace with function body.
 
@@ -183,6 +184,23 @@ grow_vertical = 2
 
 [node name="skill" parent="Button2/Window2/CenterContainer" unique_id=809147387 instance=ExtResource("2_kmwbc")]
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=73992656]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 95.0
+offset_right = -49.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme = ExtResource("1_u8p3u")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://qq3r3nydphm1"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_0mjkr"]
+[ext_resource type="Texture2D" uid="uid://2kfca2yaoj6j" path="res://little_game/fight/res/skill/skill_img/exported_image (4).png" id="2_0mjkr"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_0q17w"]
+
+[sub_resource type="Resource" id="Resource_fip0q"]
+script = ExtResource("1_0mjkr")
+code = "var num=get_buff_x_with_res(get_enemy(team),\"res://little_game/fight/res/buff/blood.tres\")
+var a=floori(num/2)
+max_point+=min(a,2)"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_netrt"]
+script = ExtResource("1_0mjkr")
+code = "var p=\"res://little_game/fight/res/buff/blood.tres\"
+Fight.add_buff_path(p,3,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_0q17w")
+name_ = "淤血"
+icon = ExtResource("2_0mjkr")
+level = 2
+change_Point = 2
+coin_n = 4
+base_point = 3
+at = 5
+def = 40
+description = Array[String](["[拼点时]敌方每有2层流血，则拼点威力+1（最多加2）", "[命中时]施加3层流血"])
+eff_arr = Array[ExtResource("1_0mjkr")]([SubResource("Resource_fip0q"), SubResource("Resource_netrt")])
+sin_color = Color(0.9882353, 0.42745098, 0.015686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

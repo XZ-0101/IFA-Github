@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="skill_arr" format=3 uid="uid://bma0yaphj8h3s"]
+
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="1_kdpyg"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_5ikcr"]
+[ext_resource type="Resource" uid="uid://cq5spdga30y5d" path="res://little_game/fight/res/skill/basic_blood/s1.tres" id="3_wvg2n"]
+[ext_resource type="Resource" uid="uid://qq3r3nydphm1" path="res://little_game/fight/res/skill/basic_blood/s2.tres" id="4_v5yo3"]
+[ext_resource type="Resource" uid="uid://bgm7k6um5kvda" path="res://little_game/fight/res/skill/basic_blood/s3.tres" id="5_af3pv"]
+[ext_resource type="Resource" uid="uid://c4jwuux1ct48t" path="res://little_game/fight/res/skill/basic_blood/sdef.tres" id="6_f2w2h"]
+[ext_resource type="Resource" uid="uid://c5me5d3s8eciw" path="res://little_game/fight/res/skill/basic_blood/spanic.tres" id="7_x5hfl"]
+
+[resource]
+script = ExtResource("1_kdpyg")
+name_ = "初始流血"
+skill_arr = Array[ExtResource("2_5ikcr")]([ExtResource("3_wvg2n"), ExtResource("4_v5yo3"), ExtResource("5_af3pv"), ExtResource("6_f2w2h"), ExtResource("7_x5hfl")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"

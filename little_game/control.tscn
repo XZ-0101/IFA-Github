@@ -132,12 +132,18 @@ func _a_choiced(index:int):
 							text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
 					else :
 						LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
+						if i.gift.value_object==0:
+							LittleGameCtrl.n_hp+=i.gift.add_valua
+						if i.gift.value_object==1:
+							LittleGameCtrl.n_sp+=i.gift.add_valua
 						text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
 #endregion
 				if i.gift.skill:
-					if not i.gift.skill in LittleGameCtrl.skill_arr:
-						LittleGameCtrl.skill_arr.append(i.gift.skill)
-						text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+				
+					for i_ in i.gift.skill.skill_arr:
+						if not i_ in LittleGameCtrl.skill_arr:
+							LittleGameCtrl.skill_arr.append(i_)
+					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
 				if i.gift.to_fight!=\"\":
 					fight(i.gift.to_fight)
 			can_next=true
@@ -188,13 +194,19 @@ func _a_choiced(index:int):
 							LittleGameCtrl.n_sp+=i.losegift.add_valua
 							text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(i.losegift.add_valua)}))
 					else :
+						
 						LittleGameCtrl.value_array[i.losegift.value_object]+=i.losegift.add_valua
+						if i.losegift.value_object==0:
+							LittleGameCtrl.n_hp+=i.losegift.add_valua
+						if i.losegift.value_object==1:
+							LittleGameCtrl.n_sp+=i.losegift.add_valua
 						text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.losegift.value_object])}))
 #endregion
 				if i.losegift.skill:
-					if not i.losegift.skill in LittleGameCtrl.skill_arr:
-						LittleGameCtrl.skill_arr.append(i.losegift.skill)
-						text.append(\"你获得了[color=red]\"+i.losegift.skill.name_+\"[/color]\")
+					for i_ in i.losegift.skill:
+						if not i_ in LittleGameCtrl.skill_arr:
+							LittleGameCtrl.skill_arr.append(i_)
+					text.append(\"你获得了[color=red]\"+i.losegift.skill.name_+\"[/color]\")
 				if i.losegift.to_fight!=\"\":
 					fight(i.losegift.to_fight)
 

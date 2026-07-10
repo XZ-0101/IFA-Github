@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="skill_arr" format=3 uid="uid://css27sun4u6eq"]
+
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="1_qgf3a"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_rsq6l"]
+[ext_resource type="Resource" uid="uid://c3do51yorjdtx" path="res://little_game/fight/res/skill/basic_burn/s1.tres" id="3_06ijb"]
+[ext_resource type="Resource" uid="uid://dtrl25njsyoqx" path="res://little_game/fight/res/skill/basic_burn/s2.tres" id="4_2ar3l"]
+[ext_resource type="Resource" uid="uid://bdpvpx3k0ty3p" path="res://little_game/fight/res/skill/basic_burn/s3.tres" id="5_yw0e2"]
+[ext_resource type="Resource" uid="uid://yq3bbbpdqsd" path="res://little_game/fight/res/skill/basic_burn/sdef.tres" id="6_mx36b"]
+[ext_resource type="Resource" uid="uid://dilfhtpamcm3t" path="res://little_game/fight/res/skill/basic_burn/spanic.tres" id="7_45wqd"]
+
+[resource]
+script = ExtResource("1_qgf3a")
+name_ = "初始烧伤"
+skill_arr = Array[ExtResource("2_rsq6l")]([ExtResource("3_06ijb"), ExtResource("4_2ar3l"), ExtResource("5_yw0e2"), ExtResource("6_mx36b"), ExtResource("7_45wqd")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"

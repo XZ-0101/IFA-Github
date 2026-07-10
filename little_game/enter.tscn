@@ -13,17 +13,13 @@
 [ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="6_ujrtb"]
 [ext_resource type="Resource" uid="uid://b0cll1vd06fn1" path="res://little_game/box/new_resource.tres" id="7_ujrtb"]
 [ext_resource type="Resource" uid="uid://c7br35u7pfil8" path="res://little_game/box/new_resource2.tres" id="8_ehf87"]
-[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="10_12tmc"]
 [ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="10_dd6e7"]
 [ext_resource type="Resource" uid="uid://5af2k1dficjy" path="res://little_game/box/a.tres" id="10_hfb7x"]
-[ext_resource type="Resource" uid="uid://c3do51yorjdtx" path="res://little_game/fight/res/skill/basic_burn/s1.tres" id="12_2kcq8"]
-[ext_resource type="Resource" uid="uid://dtrl25njsyoqx" path="res://little_game/fight/res/skill/basic_burn/s2.tres" id="13_lfxqo"]
+[ext_resource type="Resource" uid="uid://css27sun4u6eq" path="res://little_game/fight/res/skill/basic_burn/arr.tres" id="12_srfm3"]
+[ext_resource type="Resource" uid="uid://bma0yaphj8h3s" path="res://little_game/fight/res/skill/basic_blood/arr.tres" id="13_dd6e7"]
 [ext_resource type="Script" uid="uid://dsc5rk3jx627s" path="res://little_game/fight/CLASS/gift_value.gd" id="13_r1m48"]
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="14_burdh"]
-[ext_resource type="Resource" uid="uid://bdpvpx3k0ty3p" path="res://little_game/fight/res/skill/basic_burn/s3.tres" id="14_hfb7x"]
 [ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="15_2tesm"]
-[ext_resource type="Resource" uid="uid://yq3bbbpdqsd" path="res://little_game/fight/res/skill/basic_burn/sdef.tres" id="15_gd4cu"]
-[ext_resource type="Resource" uid="uid://dilfhtpamcm3t" path="res://little_game/fight/res/skill/basic_burn/spanic.tres" id="16_iof3e"]
 [ext_resource type="Resource" uid="uid://bu7nmphnwf28q" path="res://little_game/gift/bstt-g.tres" id="20_2kcq8"]
 [ext_resource type="Resource" uid="uid://clgcnddaegmjb" path="res://little_game/fight/res/ques/star/gift/eff.tres" id="21_lfxqo"]
 [ext_resource type="Texture2D" uid="uid://b5l6c0dlvxxpm" path="res://little_game/Sprite/zheshe.png" id="25_hfb7x"]
@@ -114,11 +110,6 @@ func _on_option_button_2_item_selected(index: int) -> void:
 	pass # Replace with function body.
 "
 
-[sub_resource type="Resource" id="Resource_5ixl0"]
-script = ExtResource("10_dd6e7")
-skill_arr = Array[ExtResource("10_12tmc")]([ExtResource("12_2kcq8"), ExtResource("13_lfxqo"), ExtResource("14_hfb7x"), ExtResource("15_gd4cu"), ExtResource("16_iof3e")])
-metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
-
 [sub_resource type="Resource" id="Resource_srfm3"]
 script = ExtResource("14_burdh")
 code = "sp+=3
@@ -181,7 +172,8 @@ script = SubResource("GDScript_ygh6a")
 useful_gift_arr_ = Array[ExtResource("1_lvrnh")]([ExtResource("2_x0pi2"), ExtResource("3_j52rh"), ExtResource("4_13mvh"), ExtResource("5_ujrtb")])
 deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87"), ExtResource("10_hfb7x"), ExtResource("10_hfb7x")])
 skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({
-0: SubResource("Resource_5ixl0")
+0: ExtResource("12_srfm3"),
+1: ExtResource("13_dd6e7")
 })
 d_gift_eff_arr = Array[ExtResource("13_r1m48")]([SubResource("Resource_dd6e7"), SubResource("Resource_lfxqo"), SubResource("Resource_ndois"), ExtResource("21_lfxqo")])
 
@@ -290,9 +282,11 @@ layout_mode = 2
 theme = ExtResource("2_i1ap6")
 theme_override_font_sizes/font_size = 40
 selected = 0
-item_count = 1
+item_count = 2
 popup/item_0/text = "烧伤"
 popup/item_0/id = 0
+popup/item_1/text = "流血"
+popup/item_1/id = 1
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=794305451]
 layout_mode = 2

@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://bgm7k6um5kvda"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_h6w0o"]
+[ext_resource type="Texture2D" uid="uid://535vuj4i77ec" path="res://little_game/fight/res/skill/skill_img/exported_image (5).png" id="2_h6w0o"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_okelx"]
+
+[sub_resource type="Resource" id="Resource_h6w0o"]
+script = ExtResource("1_h6w0o")
+code = "hp+=5"
+exe_time = "before_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_ks752"]
+script = ExtResource("1_h6w0o")
+code = "var p = \"res://little_game/fight/res/buff/blood.tres\"
+Fight.add_buff_path(p,4,get_enemy(team))
+if ehp>=ehp*0.7:
+	Fight.add_buff_path(p,5,get_enemy(team))
+"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_okelx")
+name_ = "呕心沥血"
+icon = ExtResource("2_h6w0o")
+level = 3
+change_Point = 16
+coin_n = 1
+base_point = 2
+at = 10
+def = 40
+description = Array[String](["[拼点前]恢复5hp
+[命中时]施加4层流血
+若敌方hp不低于其70%，则额外施加5层流血
+
+"])
+eff_arr = Array[ExtResource("1_h6w0o")]([SubResource("Resource_h6w0o"), SubResource("Resource_ks752")])
+sin_color = Color(0.9019608, 0.39607844, 0.15686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

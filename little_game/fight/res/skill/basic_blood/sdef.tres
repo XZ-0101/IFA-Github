@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://c4jwuux1ct48t"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_u056j"]
+[ext_resource type="Texture2D" uid="uid://535vuj4i77ec" path="res://little_game/fight/res/skill/skill_img/exported_image (5).png" id="2_u056j"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_mf8ib"]
+
+[sub_resource type="Resource" id="Resource_aq1cq"]
+script = ExtResource("1_u056j")
+code = "hp+=6"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_mf8ib")
+name_ = "止血"
+icon = ExtResource("2_u056j")
+level = 1
+change_Point = 5
+coin_n = 2
+base_point = 2
+def = 80
+description = Array[String](["[拼点前]HP+6"])
+eff_arr = Array[ExtResource("1_u056j")]([SubResource("Resource_aq1cq")])
+type = Array[String](["守备", "闪避"])
+sin_color = Color(0.99607843, 0.43529412, 0.015686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

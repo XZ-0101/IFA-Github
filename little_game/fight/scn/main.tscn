@@ -46,6 +46,7 @@ var text:Array[String]
 @export var value_get_text_array:Array[String]
 var fight=LittleGameFight
 var turn_num:int=0
+var fake_turn_num:bool=true
 var skill_show_path = preload(\"res://little_game/fight/scn/skill_show.tscn\")
 var enemy_act_list:Array[String]
 var choised_skill:skill_lt
@@ -75,14 +76,20 @@ func _ready() -> void:
 	turn_start()
 	pass # Replace with function body.
 func turn_start():
+	choised_skill_ind=0
+	
+	fight.true_turn_num+=1
 	fight.turn_num+=1
 	turn_num=fight.turn_num
-	if fight.turn_num!=1:
+	
+	if fight.true_turn_num!=1:
 		fight.Init_value()
-	choised_skill_ind=0
+	
+	
 	
 	
 	fight.do_it(\"turn_strat\")
+	fake_turn_num=fight.true_turn_num!=fight.turn_num
 	check_panic()
 	check_die()
 	if is_panic:
@@ -409,7 +416,7 @@ func update_info():
 	sp_pb.max_value=sp
 	sp_pb.value=nowsp
 	
-	$TURN.text=\"TURN:\"+str(fight.turn_num)
+	$TURN.text=\"TURN:\"+str(fight.turn_num) if not fake_turn_num else \"[color=red]TURN:\"+str(fight.turn_num)
 	if choised_skill_ind!=0:
 		skill_act.get_child(4).show()
 		var posi1:Vector2

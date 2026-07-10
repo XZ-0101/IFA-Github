@@ -54,6 +54,7 @@ var anima_dic={
 var buff_will_e:Array
 var do_it_will_e:Array
 var turn_num:int=0
+var true_turn_num:int=0
 
 func get_gift_in_arr(gift:gift_value):
 	return gift.gift_jumper

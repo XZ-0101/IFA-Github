@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://cnsgj3fx6o31i"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_g1aiq"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_pmcn1"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_qw388"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_hv2q2"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="4_5nne2"]
+[ext_resource type="Resource" uid="uid://css27sun4u6eq" path="res://little_game/fight/res/skill/basic_burn/arr.tres" id="4_hv2q2"]
+
+[sub_resource type="Resource" id="Resource_qw388"]
+script = ExtResource("3_hv2q2")
+skill = ExtResource("4_hv2q2")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_g1aiq"]
+script = ExtResource("4_5nne2")
+"介绍" = "获得技能"
+win_text = "给你！"
+gift = SubResource("Resource_qw388")
+name_ = "好的"
+"结果" = "没问题！"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_kmwbc"]
+script = ExtResource("1_g1aiq")
+name_ = "不了"
+"结果" = "没关系！$s再见！"
+metadata/_custom_type_script = "uid://d33or61wn0aky"
+
+[resource]
+script = ExtResource("2_qw388")
+"问题" = "你错过了初始烧伤技能？$s没事，过来领取！"
+item = Array[ExtResource("1_g1aiq")]([SubResource("Resource_g1aiq"), SubResource("Resource_kmwbc")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

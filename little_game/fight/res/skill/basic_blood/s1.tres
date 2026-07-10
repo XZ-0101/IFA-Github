@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://cq5spdga30y5d"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_7yrct"]
+[ext_resource type="Texture2D" uid="uid://btlu4q25cd3cq" path="res://little_game/fight/res/skill/skill_img/exported_image (3).png" id="2_7yrct"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_votou"]
+
+[sub_resource type="Resource" id="Resource_7yrct"]
+script = ExtResource("1_7yrct")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_votou")
+name_ = "致血"
+icon = ExtResource("2_7yrct")
+level = 1
+change_Point = 2
+coin_n = 2
+base_point = 5
+at = 2
+def = 30
+description = Array[String](["[命中时]施加2层流血"])
+eff_arr = Array[ExtResource("1_7yrct")]([SubResource("Resource_7yrct")])
+sin_color = Color(0.9019608, 0.39607844, 0.15686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
