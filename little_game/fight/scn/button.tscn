@@ -10,6 +10,7 @@ script/source = "extends Control
 @export var ind:int
 signal skill_choice(ind:int)
 @export var color:Color
+@export var is_choised:bool=false
 var m 
 var nm
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +19,7 @@ func _ready() -> void:
 	nm=m.duplicate()
 	$Button.material=nm
 	$Button.material.set_shader_parameter(\"outline_width\",10)
-	$RichTextLabel.text=skill.name_
+	
 	
 	pass # Replace with function body.
 
@@ -27,7 +28,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if $Button.material:
 		$Button.material.set_shader_parameter(\"outline_color\",color)
-		
+	$ColorRect.visible=is_choised
 	pass
 
 
@@ -48,6 +49,7 @@ func _on_button_button_down() -> void:
 	pass # Replace with function body.
 func read():
 	$Button.texture_normal=skill.icon
+	$RichTextLabel.text=skill.name_
 	$Button2/Window2/CenterContainer/skill.skill=self.skill
 
 
@@ -123,6 +125,16 @@ _data = {
 &"RESET": SubResource("Animation_kmwbc"),
 &"big": SubResource("Animation_j1xvq")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlk45"]
+bg_color = Color(0, 1, 1, 0.11764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_hlk45"]
+Panel/styles/panel = SubResource("StyleBoxFlat_hlk45")
 
 [node name="Control" type="Control" unique_id=852453537]
 custom_minimum_size = Vector2(150, 120)
@@ -201,6 +213,17 @@ bbcode_enabled = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" type="Panel" parent="." unique_id=2041735889]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_hlk45")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]

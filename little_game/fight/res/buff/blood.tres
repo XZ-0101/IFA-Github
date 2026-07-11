@@ -10,11 +10,11 @@ most_x = 99
 code = "
 hp-=x
 var zc=\"res://little_game/fight/res/buff/blood.tres\"
-var num= ceili(x/3 *2-1)
+var num= ceili(float(x)/3 *2)
+print(\"lx\",num)
 Fight.minus_buff_path(zc,team,num)
 Fight.play_anima(\"text\",team,\"do_buff,血流成河,流血,\"+str(x))"
 exe_time = "when_point"
-one_time = true
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]

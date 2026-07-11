@@ -9,14 +9,14 @@ script = ExtResource("1_a6d1q")
 most_x = 99
 code = "sp-=x
 var zc=\"res://little_game/fight/res/buff/chenlun.tres\"
-var num= ceili(x/3 * 2 - 1)
+var num= ceili(float(x)/3 * 2 )
+print(\"cl\",num)
 Fight.minus_buff_path(zc,team,num)
 
 
 Fight.play_anima(\"text\",team,\"do_buff,难受香菇！,沉沦,\"+str(x))"
 exe_time = "after_under_hit"
 is_who = true
-one_time = true
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]

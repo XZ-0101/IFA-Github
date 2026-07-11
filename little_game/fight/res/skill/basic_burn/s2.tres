@@ -7,9 +7,9 @@
 [sub_resource type="Resource" id="Resource_3dgli"]
 script = ExtResource("1_3dgli")
 code = "var p=\"res://little_game/fight/res/buff/new_resource.tres\"
-Fight.add_buff_path(p,3,get_enemy(team))
-if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
-	Fight.add_buff_path(p,1,get_enemy(team))"
+Fight.add_buff_path(p,4,get_enemy(team))
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=2:
+	Fight.add_buff_path(p,3,get_enemy(team))"
 exe_time = "after_hit"
 is_who = true
 one_time = true
@@ -25,8 +25,8 @@ coin_n = 3
 base_point = 6
 at = 5
 def = 40
-description = Array[String](["[命中时]施加3层烧伤
-如果敌方烧伤大于5层，则额外施加1层烧伤
+description = Array[String](["[命中时]施加4层烧伤
+如果敌方烧伤大于2层，则额外施加3层烧伤
 "])
 eff_arr = Array[ExtResource("1_3dgli")]([SubResource("Resource_3dgli")])
 sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)

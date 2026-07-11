@@ -9,12 +9,11 @@ script = ExtResource("1_02uko")
 most_x = 99
 code = "hit_area+=float(x)*0.02
 var zc=\"res://little_game/fight/res/buff/hxf.tres\"
-var num= ceili(x/3 *2-1)
+var num= ceili(float(x)/3 *2)
 Fight.minus_buff_path(zc,team,num)
 print(\"hxf\",hit_area)"
 exe_time = "before_hit"
 is_who = true
-one_time = true
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]

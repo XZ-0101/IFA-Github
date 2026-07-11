@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_6kk75"]
 script = ExtResource("1_iaasg")
 code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
-if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=3:
 	hit_area+=0.5"
 exe_time = "before_hit"
 is_who = true
@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://skro7sm8drh8"
 [sub_resource type="Resource" id="Resource_m5qg0"]
 script = ExtResource("1_iaasg")
 code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
-Fight.add_buff_path(p,4,get_enemy(team))
+Fight.add_buff_path(p,8,get_enemy(team))
 "
 exe_time = "after_hit"
 is_who = true
@@ -29,13 +29,13 @@ script = ExtResource("3_m5qg0")
 name_ = "烈火焚身"
 icon = ExtResource("2_iaasg")
 level = 3
-change_Point = 1
+change_Point = 2
 coin_n = 5
-base_point = 10
-at = 15
+base_point = 6
+at = 10
 def = 30
-description = Array[String](["[攻击前]如果敌方烧伤层数大于5层，则增加50%暴击
-[命中时]施加4层烧伤
+description = Array[String](["[攻击前]如果敌方烧伤层数大于3，则增加50%暴击
+[命中时]施加8层烧伤
 
 "])
 eff_arr = Array[ExtResource("1_iaasg")]([SubResource("Resource_6kk75"), SubResource("Resource_m5qg0")])

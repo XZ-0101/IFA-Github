@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://bs2ehveuf6wnr"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_6bx3r"]
+[ext_resource type="Texture2D" uid="uid://erxcfd2lsmlj" path="res://little_game/fight/res/buff/破裂.webp" id="2_6bx3r"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_6a7lu"]
+
+[sub_resource type="Resource" id="Resource_6bx3r"]
+script = ExtResource("1_6bx3r")
+most_x = 99
+code = "hp-=x
+var zc=\"res://little_game/fight/res/buff/polie.tres\"
+var num= ceili(float(x)/3 * 2 )
+
+Fight.minus_buff_path(zc,team,num)
+Fight.play_anima(\"text\",team,\"do_buff,给我破！,破裂,\"+str(x))"
+exe_time = "after_under_hit"
+is_who = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_6a7lu")
+eff = SubResource("Resource_6bx3r")
+icon = ExtResource("2_6bx3r")
+id = "ruptured"
+type = Array[String](["debuff"])
+name_ = "破裂"
+description = "[受到攻击时]hp减少x,层数减少2/3倍的x(向上取整)"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

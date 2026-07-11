@@ -76,7 +76,7 @@ func _ready() -> void:
 	turn_start()
 	pass # Replace with function body.
 func turn_start():
-	choised_skill_ind=0
+	
 	
 	fight.true_turn_num+=1
 	fight.turn_num+=1
@@ -87,7 +87,7 @@ func turn_start():
 	
 	
 	
-	
+	choised_skill_ind=0
 	fight.do_it(\"turn_strat\")
 	fake_turn_num=fight.true_turn_num!=fight.turn_num
 	check_panic()
@@ -595,8 +595,8 @@ func win():
 				LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
 				text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
 		if i.gift.skill:
-			if not i.gift.skill in LittleGameCtrl.skill_arr:
-				LittleGameCtrl.skill_arr.append(i.gift.skill)
+			if not i.gift.skill in LittleGameCtrl.skill_arr_a:
+				LittleGameCtrl.skill_arr_a.append(i.gift.skill)
 				text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
 		$win.show_(text)
 	else:
@@ -1361,6 +1361,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="anima" type="Control" parent="enemy/enemy_texture" unique_id=224333452]
+z_index = 99
 anchors_preset = 0
 offset_left = 78.0
 offset_top = 195.0
@@ -1561,6 +1562,7 @@ stretch_mode = 5
 visible = false
 
 [node name="anima" type="Control" parent="player" unique_id=1071378188]
+z_index = 99
 anchors_preset = 0
 offset_left = 279.0
 offset_top = -17.0

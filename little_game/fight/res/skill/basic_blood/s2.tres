@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_fip0q"]
 script = ExtResource("1_0mjkr")
-code = "var num=get_buff_x_with_res(get_enemy(team),\"res://little_game/fight/res/buff/blood.tres\")
+code = "var num=Fight.get_buff_x_with_res(get_enemy(team),\"res://little_game/fight/res/buff/blood.tres\")
 var a=floori(num/2)
 max_point+=min(a,2)"
 exe_time = "when_point"

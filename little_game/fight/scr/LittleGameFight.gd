@@ -7,11 +7,7 @@ var fight_sp:int
 var enemy:enemy_lg
 var enemy_hp:int
 var enemy_sp:int
-var skill_arr:Array[skill_lt]=[load("res://little_game/fight/res/skill/new_resource.tres"),
-load("res://little_game/fight/res/skill/new_resource1.tres"),
-load("res://little_game/fight/res/skill/new_resource1.tres"),
-load("res://little_game/fight/res/skill/new_resource1.tres"),
-load("res://little_game/fight/res/skill/new_resource1.tres")]
+var skill_arr:Array[skill_lt]
 var buff_pool:Array[buff_lg]
 var enemy_buff_pool:Array[buff_lg]
 var skill_pool:Array[skill_lt]

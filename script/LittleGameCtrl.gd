@@ -18,7 +18,7 @@ var now_point:int
 var max_level:int
 var max_point:int
 var in_fight:bool=false
-var skill_arr:Array[skill_lt]
+var skill_arr_a:Array[skill_lt]
 
 @export var useful_gift_arr:Array[jumper_class]
 var deck_pool:Array[deck_box]
@@ -27,7 +27,7 @@ var nm_deck_pool:Array[deck_box]
 var gift_text=["教学用E.G.O\n-最大生命值+2\n-最大精神值+2",
 "赎罪\n-使生命值上限增加正义等级的1/5（向下取整）",
 "牛奶咖啡\n-如果自律等级大于10，则使精神值上限加5",
-"卡密拉\n-将勇气等级增加自己最大生命值与生命值之差"
+"卡密拉\n-若生命值与最大生命值之差大于10，则将勇气等级+10"
 ]
 func _process(delta: float) -> void:
 	hp=30
@@ -54,8 +54,8 @@ func _process(delta: float) -> void:
 
 			gift_text_arr.append(gift_text[2])
 		if useful_gift_arr[3] in gift_array:
-			n_value_array[0]+=hp-n_hp
-			gift_text_arr.append(gift_text[3])
+			if hp-n_hp>10:
+				n_value_array[0]+=10
 	hp=hp+n_value_array[0]
 	sp=sp+n_value_array[1]
 	if n_hp>hp:

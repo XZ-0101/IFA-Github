@@ -141,8 +141,9 @@ func _a_choiced(index:int):
 				if i.gift.skill:
 				
 					for i_ in i.gift.skill.skill_arr:
-						if not i_ in LittleGameCtrl.skill_arr:
-							LittleGameCtrl.skill_arr.append(i_)
+						if not i_ in LittleGameCtrl.skill_arr_a:
+							LittleGameCtrl.skill_arr_a.append(i_)
+							
 					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
 				if i.gift.to_fight!=\"\":
 					fight(i.gift.to_fight)
@@ -204,8 +205,8 @@ func _a_choiced(index:int):
 #endregion
 				if i.losegift.skill:
 					for i_ in i.losegift.skill:
-						if not i_ in LittleGameCtrl.skill_arr:
-							LittleGameCtrl.skill_arr.append(i_)
+						if not i_ in LittleGameCtrl.skill_arr_a:
+							LittleGameCtrl.skill_arr_a.append(i_)
 					text.append(\"你获得了[color=red]\"+i.losegift.skill.name_+\"[/color]\")
 				if i.losegift.to_fight!=\"\":
 					fight(i.losegift.to_fight)

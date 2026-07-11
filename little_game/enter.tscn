@@ -31,7 +31,7 @@ script/source = "extends Control
 @export var deck_pool_:Array[deck_box]
 @export var hard_deck_pool_:Array[deck_box]
 @export var nm_deck_pool_:Array[deck_box]
-@export var skill_dic:Dictionary[int,skill_arr]={
+@export var skill_dic:Dictionary[int,skill_arr_]={
 	
 
 }
@@ -45,6 +45,7 @@ var skill_ind:int=0
 func _ready() -> void:
 	MusicAll.get_child(1).get_child(0).button_pressed=true
 	jumper.hide_()
+	
 	pass # Replace with function body.
 
 
@@ -60,8 +61,10 @@ func _on_button_button_down() -> void:
 	lgc.nm_deck_pool=nm_deck_pool_
 	lgc.useful_gift_arr=useful_gift_arr_
 	d_skill_arr=skill_dic.get(skill_ind).skill_arr
-	lgc.skill_arr=d_skill_arr
-	LittleGameFight.skill_arr=d_skill_arr
+	
+	lgc.skill_arr_a=d_skill_arr.duplicate()
+	LittleGameFight.skill_arr=d_skill_arr.duplicate()
+	
 	LittleGameFight.gift_eff_arr=d_gift_eff_arr
 	lgc.value_array[0]=0
 	lgc.value_array[1]=0
@@ -107,6 +110,11 @@ func _on_option_button_item_selected(index: int) -> void:
 
 func _on_option_button_2_item_selected(index: int) -> void:
 	skill_ind=index
+	pass # Replace with function body.
+
+
+func _on_help_button_down() -> void:
+	$Window2.popup()
 	pass # Replace with function body.
 "
 
@@ -170,7 +178,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_ygh6a")
 useful_gift_arr_ = Array[ExtResource("1_lvrnh")]([ExtResource("2_x0pi2"), ExtResource("3_j52rh"), ExtResource("4_13mvh"), ExtResource("5_ujrtb")])
-deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87"), ExtResource("10_hfb7x"), ExtResource("10_hfb7x")])
+deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87")])
+hard_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x")])
+nm_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x")])
 skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({
 0: ExtResource("12_srfm3"),
 1: ExtResource("13_dd6e7")
@@ -305,8 +315,350 @@ text = "收藏夹"
 icon = ExtResource("4_7f5x4")
 expand_icon = true
 
+[node name="Window2" type="Popup" parent="." unique_id=778666846]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(600, 800)
+wrap_controls = false
+
+[node name="Panel" type="Panel" parent="Window2" unique_id=1306859838]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_i1ap6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window2" unique_id=1061641439]
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 582.0
+offset_bottom = 781.0
+theme = ExtResource("2_i1ap6")
+bbcode_enabled = true
+text = "[font_size=45][b][center]《折射镜像迷宫》完整玩法攻略[/center][/b][/font_size]
+[font_size=18][color=#ffaa66][center]—— 边狱巴士同人 · 管理人入门手册 ——[/center][/color][/font_size]
+
+[color=#ffcc00][b]【第一章：游戏流程概览 —— 我该干什么？】[/b][/color]
+
+游戏循环只有 4 步：
+
+[color=#66ccff]① 开始冒险[/color] -> 选择难度和技能倾向
+[color=#66ccff]② 选择卡包[/color] -> 从三张卡包中选一张，作为本层的“地图”
+[color=#66ccff]③ 推进事件[/color] -> 卡包中包含若干张事件卡，逐一经历
+[color=#66ccff]④ 结算循环[/color] -> 走完一张卡包的所有事件卡 -> 选择下一张卡包继续深入 -> 直到通关或死亡
+
+[color=#ffcc00][b]【第二章：你的属性面板 —— 生存的资本】[/b][/color]
+
+[color=#66ff99]❤️ HP（生命值）[/color]
+归零则游戏结束。可通过事件奖励或战斗胜利恢复。
+
+[color=#66ccff]💧 SP（精神值 / 理智）[/color]
+[color=#ffaa66]战斗中最核心的资源！[/color]
+它决定硬币的正面概率。SP越高，硬币越容易出正面（伤害高）；SP越低，越容易出反面（伤害低甚至自残）。
+[color=#ff4444]一旦归零，立即陷入“恐慌”状态！[/color]
+
+[color=#ff6666]🔴 勇气[/color]
+用于暴力/力量型事件判定。也略微影响生命上限。
+
+[color=#ffffff]⚪ 谨慎[/color]
+用于洞察/技巧型事件判定（如识破陷阱）。
+
+[color=#cc66ff]🟣 自律[/color]
+按一定比例减少判定时需要的数值。
+
+[color=#66ccff]🔵 正义[/color]
+用于特定事件判定，以及商店消费。可通过卖出饰品大量获取。
+
+[color=#ffaa66][b]※ 重要：[/b][/color] 最大 HP 和 SP 会因饰品和属性提升而增加。
+
+[color=#ffcc00][b]【第三章：卡包与事件卡】[/b][/color]
+
+[color=#66ccff]【卡包 —— 每一层的地图】[/color]
+
+每层游戏开始前，你会看到三张卡包。选择其中一张后，本层的所有内容都由这张卡包决定。
+
+[color=#66ccff]【事件卡 —— 卡包里的内容】[/color]
+
+每张卡包包含若干张事件卡，你需要逐一经历。事件卡分为三种类型：
+
+[color=#66ff66]⚔️ 战斗[/color]
+进入战斗，与敌人拼点。胜利后推进到下一张事件卡。
+
+[color=#ffaa66]📖 特殊事件[/color]
+显示一段剧情故事，下方有选项供你选择。根据你的选择，可能获得奖励、触发判定、或进入战斗。
+
+[color=#66ccff]🛒 商店[/color]
+可以用正义属性购买饰品或服务。
+
+[color=#ffaa66]※ 卡包中的事件卡顺序可能是固定的，也可能是随机的，取决于卡包类型。[/color]
+
+[color=#ffcc00][b]【第四章：事件系统 —— 抉择与判定】[/b][/color]
+
+当遇到特殊事件时，屏幕会显示故事文字和选项。
+
+[color=#66ccff]【普通选项】[/color]
+选了直接出结果（如“获得苹果，HP+5”），无风险。
+
+[color=#66ccff]【判定选项】[/color]
+长这样：[color=#ff6666][勇气 ≥ 8][/color] 或 [谨慎 ≥ 5]。系统会检查你的属性是否达标。
+
+[color=#ffaa66][b]※ “自律”的作弊效果：[/b][/color]
+看判定数字的颜色：
+普通 = 目标值固定。
+[color=#cc66ff]紫色[/color] = [color=#66ff66]因自律高，目标值已被降低！[/color]
+
+示例：
+[color=#888888]> 要求“勇气 ≥ 10”。自律为0时，需真·10点勇气。自律为10时，门槛自动降5点，只需勇气 ≥ 5 即可成功。[/color]
+
+[color=#66ccff]【判定结果】[/color]
+[color=#66ff66]成功[/color]：获得胜利奖励（强力技能、珍稀饰品、大量回血）
+[color=#ff6666]失败[/color]：获得失败奖励（扣血、扣SP、进入不利战斗）
+
+[color=#66ccff]【饰品获取与售卖】[/color]
+通过事件或战胜强敌可获得 EGO 饰品，提供 [color=#ffaa66]永久被动效果[/color]。
+在面板的“物品”页点击“售卖”，饰品会消失，但你将获得大量 [color=#66ccff]正义[/color] 属性点。
+[color=#ffaa66]※ 注意：有些事件必须携带特定饰品才能触发隐藏选项，每种最好留一个备查。[/color]
+
+[color=#ffcc00][b]【第五章：战斗系统 —— 完整流程】[/b][/color]
+
+战斗是游戏最核心的机制，脱胎于《边狱巴士》经典系统。下面按实际操作顺序讲解。
+
+[color=#66ccff]【第一步：进入战斗 —— SP自动减半】[/color]
+
+当你从事件卡进入战斗时，[color=#ffaa66]你当前的SP会自动减半[/color]（向下取整）。
+例如：进战斗前 SP=30 → 进入战斗后 SP=15。
+
+
+[color=#66ccff]【第二步：技能槽 —— 你看到的三个位置】[/color]
+
+进入战斗后，你会看到 [b]3 个技能位[/b]：
+
+[color=#66ccff]1号位（普通技能槽）[/color]
+从技能池中随机抽取一个技能。使用后消失，下回合补新技能。
+
+[color=#66ccff]2号位（普通技能槽）[/color]
+同样从技能池中随机抽取。使用后消失，下回合补新技能。
+
+[color=#ffaa66]3号位（守备技能槽）[/color]
+[color=#ffaa66]这个位置是你自己设定的固定技能，永远不会变！[/color]
+它不会被消耗，每个回合都在，相当于你的“底牌”或“保险”。
+
+[color=#888888]> 注意：1号位和2号位可能抽到技能池中的【同一个】技能。比如技能池里有一张“斩击”，两个槽位可能同时都抽到“斩击”。[/color]
+
+[color=#66ccff]【第三步：技能池 —— 你的发牌堆】[/color]
+
+战斗开始前，系统会根据你装备的技能自动构建技能池：
+
+[color=#ff6666]- 你装备的1星技能：放入 3 张[/color]
+[color=#ffaa66]- 你装备的2星技能：放入 2 张[/color]
+[color=#66ccff]- 你装备的3星技能：放入 1 张[/color]
+
+[color=#888888]> 例如：你装备了1个1星技能“突刺”、1个2星技能“斩击”、1个3星技能“终极技”，则技能池为：[突刺、突刺、突刺、斩击、斩击、终极技]，共6张。[/color]
+
+[color=#66ccff]【第四步：每回合发牌】[/color]
+
+每个回合开始时：
+
+1号位从技能池中随机抽1张技能
+
+2号位从技能池中随机抽1张技能
+
+3号位固定为守备技能（不参与抽牌）
+
+[color=#888888]> 两个槽位各自独立抽取，可能抽到同一张技能。[/color]
+
+[color=#66ccff]【第五步：选择与消耗】[/color]
+
+你从1、2、3号位中选一个技能，点击“START”开始战斗：
+
+如果选的是1号位或2号位的技能：[color=#ff4444]该技能从技能池中移除（消耗掉了）[/color]
+
+如果选的是3号位守备技能：[color=#66ff66]不消耗，守备技能永远在[/color]
+
+[color=#66ccff]【第六步：回合结束补牌】[/color]
+
+回合结束后，如果1号位或2号位为空（因为被你用掉了），系统会从技能池中重新抽一张补上。
+
+[color=#66ccff]【第七步：技能池耗尽 —— 重新填充】[/color]
+
+当技能池中的技能全部被消耗完时，系统会[color=#ffaa66]按照最初的规则重新构建技能池[/color]：
+
+1星技能放入3张
+
+2星技能放入2张
+
+3星技能放入1张
+
+[color=#888888]> 然后继续正常发牌。这意味着你永远不会“无牌可用”，但每轮技能池的深度是有限的。[/color]
+
+[color=#66ccff]【第八步：拼点】[/color]
+
+你选好技能后，会与敌人的技能进行拼点。
+
+[color=#66ccff]① 基础点数[/color]：技能自带的保底值。
+[color=#66ccff]② 投硬币[/color]：技能上有N枚硬币。按当前 SP 概率依次投出。
+[color=#66ccff]③ 最终点数[/color] = [b]基础点数 + (正面硬币数 × 硬币变动值)[/b]
+
+[color=#ffaa66]※ 硬币变动值说明：[/color]
+[color=#66ff66]+值[/color]：正面越多越强，稳定可靠。
+[color=#ff6666]-值（负硬币）[/color]：正面反而扣点！高风险高回报，[color=#ff4444]低SP时千万别用[/color]。
+
+[color=#66ccff]【第九步：胜负与结算】[/color]
+
+点数大的一方获胜。
+[color=#66ff66]胜者[/color]：对敌人造成伤害，[color=#66ff66]立即恢复 5 点 SP[/color]。
+[color=#ff6666]败者[/color]：受到伤害，[color=#ff6666]扣除 5 点 SP[/color]。
+
+[color=#66ff99][b]伤害 = (技能攻击力 + 最终威力 / 2) × 暴击 × (1 - 敌方防御力 / 100)[/b][/color]
+[color=#66ccff]TIPS：[/color][color=#ff6666]被攻击的技能[/color][color=#66ccff]防御力为100时，或[/color][color=#ff6666]攻击的技能[/color][color=#66ccff]攻击力为0时固定不造成伤害。
+防御力会根据BUFF或技能效果改变。[/color]
+
+[color=#66ccff]【第十步：战斗结束 —— SP乘以2归还】[/color]
+
+战斗胜利后，[color=#66ff66]你当前的SP会乘以2[/color]，恢复到进入战斗前的水平（减去战斗中的消耗）。
+例如：进战斗前 SP=30 → 战斗结束时 SP=12 → 结算后 SP=24。
+
+
+
+[color=#66ccff]【连线颜色 —— 拼点预判系统】[/color]
+
+[color=#ffaa66]战斗中选择技能时非常重要的辅助功能！[/color]
+
+当你用鼠标点击选中1号位或2号位的技能时，会有一条线从你的技能连接到敌人的技能。线的颜色会告诉你这次拼点的胜率预判：
+
+[color=#ffcc00]🟡 亮黄色 —— “绝对优势”[/color]
+胜率 ≥ 90%。这把稳了，放心选。
+
+[color=#aa8800]🟡 土黄色 —— “优势”[/color]
+胜率在 60%~90% 之间。大概率能赢，可以放心拼点。
+
+[color=#888888]⬜ 灰色 —— “均势”[/color]
+胜率在 40%~60% 之间。五五开，看硬币运气。如果局势胶着，可以考虑用守备技能稳妥一点。
+
+[color=#ff4444]🔴 亮红色 —— “劣势”[/color]
+胜率在 10%~40% 之间。不太妙，除非没得选，否则建议换张技能。
+
+[color=#882222]🔴 暗红色 —— “绝对劣势”[/color]
+胜率 < 10%。基本必输，[color=#ff4444]绝对不要选这个技能拼点！[/color]用守备技能硬吃伤害可能都比这强。
+
+[color=#ffaa66][b]※ 如何使用连线颜色：[/b][/color]
+
+观察线的颜色，判断胜率
+
+如果颜色不理想，换另一个技能试试
+
+[color=#ff4444][b]【恐慌 —— 最危险的绝境】[/b][/color]
+
+当你的 SP 归零时，会立刻触发恐慌状态：
+
+[color=#ff4444]- 1号位、2号位、3号位（守备技能）全部被锁住[/color]
+[color=#ff4444]- 三个槽位全部被替换为“恐慌技能”[/color]
+[color=#ff4444]- 你只能使用恐慌技能进行拼点[/color]
+
+[color=#ffaa66]※ 恐慌技能通常威力很弱，是纯粹的保命挣扎。[/color]
+
+[color=#66ff66]【恐慌的解除】[/color]
+[color=#66ff66]恐慌状态只持续【一回合】。下一回合开始时，如果SP已经恢复到0以上，你会自动恢复正常，1、2、3号位恢复原状。[/color]
+
+[color=#ffaa66]对策：快没SP时，优先用带“恢复SP”特效的技能，或用守备技能拖一回合，避免进入恐慌。[/color]
+
+[color=#ffcc00][b]【第六章：敌方单位 —— 知己知彼】[/b][/color]
+
+[color=#66ccff]【敌人的数据】[/color]
+敌人和你一样有 HP、SP、技能列表和被动能力。
+鼠标点击敌人查看，可看到：
+[color=#66ff99]- 当前 HP / 最大 HP[/color]
+[color=#66ccff]- 当前 SP / 最大 SP[/color]
+[color=#ffaa66]- 技能列表（含硬币数、基础值、变动值）[/color]
+[color=#cc66ff]- 被动能力（持续生效的特殊效果）[/color]
+
+[color=#66ccff]【敌人的行动方式】[/color]
+敌方会按预设行动模式出招：
+[color=#66ccff]- 随机[/color]：从技能池中随机选。
+[color=#66ccff]- 固定[/color]：按顺序或指定位置出招。
+[color=#66ccff]- 循环[/color]：按固定循环重复行动。
+
+[color=#ffaa66]※ 技巧：[/color]若敌人连续出同一招，可在它出防御技时用恢复或增益技能“赚一回合”。
+
+[color=#66ccff]【敌人的恐慌】[/color]
+敌人 SP 归零时同样会陷入恐慌，被迫使用弱小的恐慌技能。
+[color=#66ff66]这是你输出的黄金窗口！[/color]
+
+[color=#ffcc00][b]【第七章：Buff 系统 —— 增益与减益】[/b][/color]
+
+Buff（增益/减益）是战斗中临时附加的状态，持续若干回合或层数。
+
+[color=#66ccff]【如何获得 Buff？】[/color]
+[color=#66ff66]- 技能特效[/color]：某些技能自带施加 Buff 效果。
+[color=#66ff66]- 饰品被动[/color]：部分饰品在战斗中自动上 Buff。
+[color=#66ff66]- 事件奖励[/color]：特定事件给予临时强化。
+
+[color=#66ccff]【如何查看 Buff？】[/color]
+战斗界面中，角色头像旁会显示 Buff 图标。
+鼠标点击可看到：[color=#ffaa66]Buff 名称、剩余层数、效果描述[/color]。
+
+[color=#ffaa66]※ 关键机制：[/color]
+
+Buff 有层数，使用后层数通常会减少
+
+层数归零时 Buff 消失
+
+同类 Buff 可叠加层数
+
+[color=#ff4444]敌人也会给你上 Debuff，注意看自己头上的图标！[/color]
+
+[color=#66ccff]【策略建议】[/color]
+[color=#66ff66]- 遇到高伤敌人，优先上防御类 Buff 保命。[/color]
+[color=#ff6666]- 若被挂上负面效果，尽快结束战斗或使用净化技能。[/color]
+[color=#66ff66]- Buff 层数越高效果越强，但敌人也可能拥有“驱散”能力。[/color]
+
+[color=#ffcc00][b]【第八章：新手避坑指南（省流总结）】[/b][/color]
+
+[color=#ff4444]① 不要在低理智时赌脸！[/color]
+SP < 30% 时别选“负硬币”技能，极易翻车。
+
+[color=#66ff66]② 优先拿“自律”奖励！[/color]
+自律高了，所有判定都会变紫色（简单模式）。
+
+[color=#ffaa66]③ 善用连线颜色！[/color]
+鼠标悬停看连线颜色，黄线放心拼，红线赶紧跑。
+
+[color=#ffaa66]④ 看敌人技能预览！[/color]
+看技能伤害、防御、威力，以及特效。摸清底细再选择技能拼点！
+
+[color=#ffaa66]⑤ 别急着卖所有饰品！[/color]
+有些事件[color=#ff4444]必须携带特定饰品[/color]才能触发隐藏选项。每种留一个备查。
+
+[color=#66ccff]⑥ 善用面板！[/color]
+打不过时按出面板看敌人信息（被动、技能列表），知己知彼。
+
+[color=#66ff66]⑦ 关注 Buff 图标！[/color]
+头顶有 Debuff 时及时处理，别让它叠高。
+
+[color=#66ff66]⑧ 守备技能是你的保险！[/color]
+3号位永远不变，遇到危险回合不知道选什么时，选守备技能总不会错。
+
+[color=#66ff66]⑨ 规划技能池消耗！[/color]
+技能池被抽空后会重新洗牌，但重新填充前的最后一两回合可能选择很少。注意节奏，别在技能池快空的时候被迫用不想用的技能。
+
+[center][color=#ffaa66]记住：[b]SP 就是你的第二条命！[/b][/color]
+[color=#888888]遇到卡关，99% 是因为 SP 没控好。[/color]
+
+[color=#66ff66]出发吧，管理人！🚀[/color][/center]"
+
+[node name="HELP" type="Button" parent="." unique_id=848979620]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 975.0
+offset_right = 626.0
+offset_bottom = 1023.0
+theme = ExtResource("2_i1ap6")
+text = "HELP"
+
 [connection signal="item_selected" from="VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="VBoxContainer/OptionButton2" to="." method="_on_option_button_2_item_selected"]
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="HELP" to="." method="_on_help_button_down"]
