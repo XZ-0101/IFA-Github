@@ -383,8 +383,9 @@ func show_enemy_info():
 	for i in enemy.passives:
 		passive.text+=\"[color=white]{name}[/color]\\n{d}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":i.name_,\"d\":i.description})
 	for i in enemy.buff_arr:
-		var arr = PackedStringArray(i.type)
-		var result = JSON.stringify(arr)
+		var result=\"\"
+		if i.type:
+			result = JSON.stringify(i.type)
 		buff_text.text+=\"[color=white]{name}[/color]\\n最大值:{most}\\n{d}\\n类型:{type}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":i.name_,\"d\":i.description,\"most\":i.eff.most_x,\"type\":result})
 	for i in enemy.skill_array:
 		skill.add_child(build_skill_show(i))
@@ -1290,15 +1291,15 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2fnmu")
-current_tab = 1
+current_tab = 0
 
 [node name="基础" type="RichTextLabel" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info" unique_id=2051734372]
-visible = false
 layout_mode = 2
 bbcode_enabled = true
 metadata/_tab_index = 0
 
 [node name="技能" type="ScrollContainer" parent="enemy/enemy_texture/Button/Popup/Panel/enemy_info" unique_id=236963936]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

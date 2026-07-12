@@ -64,7 +64,7 @@ func _on_button_button_down() -> void:
 	
 	lgc.skill_arr_a=d_skill_arr.duplicate()
 	LittleGameFight.skill_arr=d_skill_arr.duplicate()
-	
+	lgc.in_fight=false
 	LittleGameFight.gift_eff_arr=d_gift_eff_arr
 	lgc.value_array[0]=0
 	lgc.value_array[1]=0
