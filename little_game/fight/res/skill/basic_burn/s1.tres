@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_hufsq"]
 script = ExtResource("1_cyur8")
-code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",3,get_enemy(team))"
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",2,get_enemy(team))"
 exe_time = "after_hit"
 is_who = true
 one_time = true
@@ -22,7 +22,7 @@ coin_n = 3
 base_point = 5
 at = 3
 def = 20
-description = Array[String](["[命中时]施加3层烧伤"])
+description = Array[String](["[命中时]施加2层烧伤"])
 eff_arr = Array[ExtResource("1_cyur8")]([SubResource("Resource_hufsq")])
 sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
 metadata/_custom_type_script = "uid://bj8vuop3720um"

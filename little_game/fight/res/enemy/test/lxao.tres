@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="1_5kot8"]
 [ext_resource type="Texture2D" uid="uid://brclog0qtauj3" path="res://little_game/fight/res/enemy/test/317px-1306-idle.webp" id="1_rsohl"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_yf31k"]
 [ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_1p0ew"]
+[ext_resource type="Resource" uid="uid://b7jy2g0nayvej" path="res://little_game/fight/res/buff/zhenchan.tres" id="2_6a2gw"]
 [ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="2_owuc7"]
 [ext_resource type="Resource" uid="uid://dmiax7oap3ajo" path="res://little_game/fight/res/enemy/test/new_resource.tres" id="3_1mcfu"]
+[ext_resource type="Resource" uid="uid://bv5kjqyww0ytv" path="res://little_game/fight/res/buff/new_resource.tres" id="3_5vg7q"]
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_umaqb"]
 [ext_resource type="Texture2D" uid="uid://bb4af7u1lly1k" path="res://little_game/fight/res/skill/skill_img/exported_image (21).png" id="5_rsohl"]
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="6_6a2gw"]
@@ -80,4 +83,5 @@ panic_skill = SubResource("Resource_1p0ew")
 action_play = Array[String](["r"])
 music = SubResource("Resource_2f17e")
 next_enemy = ExtResource("3_1mcfu")
+buff_arr = Array[ExtResource("1_yf31k")]([ExtResource("2_6a2gw"), ExtResource("3_5vg7q")])
 metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

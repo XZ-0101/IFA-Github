@@ -1,12 +1,18 @@
 [gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://dmiax7oap3ajo"]
 
 [ext_resource type="Texture2D" uid="uid://davqeosj2irem" path="res://little_game/fight/res/enemy/test/1314-idle.webp" id="1_e1uqh"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_k2rr2"]
+[ext_resource type="Resource" uid="uid://dyepgh7ivnkvt" path="res://little_game/fight/res/enemy/test/yzy.tres" id="2_bus8i"]
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="2_q3mwt"]
 [ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_tl1lx"]
+[ext_resource type="Resource" uid="uid://bv5kjqyww0ytv" path="res://little_game/fight/res/buff/new_resource.tres" id="3_a62wd"]
 [ext_resource type="Texture2D" uid="uid://cfn4pgodlqm4e" path="res://little_game/fight/res/skill/skill_img/exported_image (12).png" id="4_k2rr2"]
+[ext_resource type="Resource" uid="uid://b7jy2g0nayvej" path="res://little_game/fight/res/buff/zhenchan.tres" id="4_n713u"]
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="4_tl1lx"]
 [ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="5_k2rr2"]
+[ext_resource type="Resource" uid="uid://dv0op8qnkdb6o" path="res://little_game/fight/res/buff/zhenchan_yingbao.tres" id="5_vsx16"]
 [ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="6_81idx"]
+[ext_resource type="Resource" uid="uid://0fcuc6ir68f4" path="res://little_game/fight/res/buff/hxf.tres" id="6_smvv8"]
 [ext_resource type="Texture2D" uid="uid://c1lior31j3l0x" path="res://little_game/fight/res/enemy/test/qggj.png" id="8_tl1lx"]
 [ext_resource type="Texture2D" uid="uid://c6ad8db8fpe4m" path="res://little_game/fight/res/enemy/test/jx.png" id="9_k2rr2"]
 [ext_resource type="Texture2D" uid="uid://uqnhsrd26jjw" path="res://little_game/fight/res/enemy/test/hrx.png" id="10_81idx"]
@@ -96,7 +102,7 @@ metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
 [sub_resource type="Resource" id="Resource_nudr6"]
 script = ExtResource("2_q3mwt")
 code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/hxf.tres\",1,team)
-Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",1,get_enemy(team))"
+Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",2,get_enemy(team))"
 exe_time = "after_hit"
 is_who = true
 one_time = true
@@ -112,8 +118,8 @@ coin_n = 2
 base_point = 3
 at = 5
 def = 30
-description = Array[String](["[命中时]给自己一层呼吸法
-[命中时]施加一层烧伤"])
+description = Array[String](["[命中时]给自己1层呼吸法
+[命中时]施加2层烧伤"])
 eff_arr = Array[ExtResource("2_q3mwt")]([SubResource("Resource_nudr6")])
 type = Array[String](["闪避"])
 sin_color = Color(0, 0.20784314, 0.60784316, 1)
@@ -133,9 +139,9 @@ script = ExtResource("4_tl1lx")
 name_ = "解象"
 icon = ExtResource("9_k2rr2")
 level = 1
-change_Point = 2
-coin_n = 3
-base_point = 5
+change_Point = 3
+coin_n = 2
+base_point = 6
 at = 3
 def = 20
 description = Array[String](["[命中时]施加3层烧伤
@@ -163,9 +169,9 @@ script = ExtResource("4_tl1lx")
 name_ = "很荣幸用这颗子弹将你洞穿"
 icon = ExtResource("10_81idx")
 level = 2
-change_Point = 2
+change_Point = 4
 coin_n = 3
-base_point = 6
+base_point = 3
 at = 5
 def = 40
 description = Array[String](["[命中时]施加3层烧伤
@@ -180,7 +186,7 @@ metadata/_custom_type_script = "uid://bj8vuop3720um"
 [sub_resource type="Resource" id="Resource_n713u"]
 script = ExtResource("2_q3mwt")
 code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
-if Fight.get_buff_x_with_res(get_enemy(team),p) >=7:
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=6:
 	hit_area+=0.5"
 exe_time = "before_hit"
 is_who = true
@@ -205,10 +211,10 @@ icon = ExtResource("11_nudr6")
 level = 3
 change_Point = 1
 coin_n = 5
-base_point = 10
+base_point = 12
 at = 15
 def = 30
-description = Array[String](["[攻击前]如果敌方烧伤层数大于7层，则增加50%暴击
+description = Array[String](["[攻击前]如果敌方烧伤层数大于6层，则增加50%暴击
 [命中时]施加4层烧伤
 [命中时]施加3层震颤
 [命中时]施加震颤引爆
@@ -238,4 +244,5 @@ skill_array = Array[ExtResource("4_tl1lx")]([SubResource("Resource_nrm30"), SubR
 panic_skill = SubResource("Resource_81idx")
 action_play = Array[String](["p,0", "r"])
 music = SubResource("Resource_1ya27")
+buff_arr = Array[ExtResource("1_k2rr2")]([ExtResource("2_bus8i"), ExtResource("3_a62wd"), ExtResource("4_n713u"), ExtResource("5_vsx16"), ExtResource("6_smvv8")])
 metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

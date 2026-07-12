@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://dvigse4ohs034"]
 
 [ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="1_3aqy4"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_8xs46"]
 [ext_resource type="Texture2D" uid="uid://bgq5xtuwk7mol" path="res://little_game/fight/res/enemy/yiyu/zwf.png" id="1_srn1y"]
 [ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="2_mc2dj"]
 [ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="2_srn1y"]
+[ext_resource type="Resource" uid="uid://xlmym1ct1yof" path="res://little_game/fight/res/enemy/yiyu/BUFF/czy.tres" id="2_tnlf0"]
 [ext_resource type="Resource" uid="uid://ckn14tu6qflgn" path="res://little_game/fight/res/enemy/yiyu/skill/sk-panic.tres" id="2_us0qg"]
+[ext_resource type="Resource" uid="uid://bxil8htl62s4o" path="res://little_game/fight/res/enemy/yiyu/BUFF/happiness.tres" id="3_bq3d2"]
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_kmuyg"]
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="5_8c2qy"]
 [ext_resource type="Resource" uid="uid://ych2tv7eus0r" path="res://little_game/fight/res/enemy/yiyu/skill/sk1.tres" id="6_4kqbg"]
@@ -88,4 +91,5 @@ skill_array = Array[ExtResource("3_kmuyg")]([ExtResource("6_4kqbg"), ExtResource
 panic_skill = ExtResource("2_us0qg")
 action_play = Array[String](["rp,0,1", "r", "p,4", "rp,0,2", "p,3"])
 music = SubResource("Resource_mymwx")
+buff_arr = Array[ExtResource("1_8xs46")]([ExtResource("2_tnlf0"), ExtResource("3_bq3d2"), null])
 metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

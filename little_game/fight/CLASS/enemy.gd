@@ -12,3 +12,4 @@ class_name enemy_lg
 @export var music:music_class
 @export var gift:lg_gift
 @export var next_enemy:enemy_lg
+@export var buff_arr:Array[buff_lg]

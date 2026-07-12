@@ -20,7 +20,7 @@ var f_path:String="res://res/Font/n.tres"
 var asked_Permission:bool=false ##是否获得了权限
 var fun_mode:bool=false
 var going_to_web:String 
-var v="B.01.20.1" ##项目版本号
+var v="B.01.21.0" ##项目版本号
 var is_changed_theme:bool
 var now_theme:Theme =load("res://res/theme.tres")
 var our_dir:String=OS.get_executable_path().get_base_dir()

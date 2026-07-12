@@ -9,7 +9,7 @@ script = ExtResource("1_a6d1q")
 most_x = 99
 code = "sp-=x
 var zc=\"res://little_game/fight/res/buff/chenlun.tres\"
-var num= ceili(float(x)/3 * 2 )
+var num= ceili(float(x)/3)
 print(\"cl\",num)
 Fight.minus_buff_path(zc,team,num)
 
@@ -26,5 +26,5 @@ icon = ExtResource("2_a6d1q")
 id = "Sinking"
 type = Array[String](["debuff"])
 name_ = "沉沦"
-description = "[受到攻击时]sp减少x,层数减少2/3倍的x(向上取整)"
+description = "[受到攻击时]sp减少x,层数减少1/3倍的x(向上取整)"
 metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

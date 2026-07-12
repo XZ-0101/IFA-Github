@@ -9,7 +9,7 @@ script = ExtResource("1_6bx3r")
 most_x = 99
 code = "hp-=x
 var zc=\"res://little_game/fight/res/buff/polie.tres\"
-var num= ceili(float(x)/3 * 2 )
+var num= ceili(float(x)/3 )
 
 Fight.minus_buff_path(zc,team,num)
 Fight.play_anima(\"text\",team,\"do_buff,给我破！,破裂,\"+str(x))"
@@ -24,5 +24,5 @@ icon = ExtResource("2_6bx3r")
 id = "ruptured"
 type = Array[String](["debuff"])
 name_ = "破裂"
-description = "[受到攻击时]hp减少x,层数减少2/3倍的x(向上取整)"
+description = "[受到攻击时]hp减少x,层数减少1/3倍的x(向上取整)"
 metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

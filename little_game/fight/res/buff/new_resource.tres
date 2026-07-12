@@ -11,7 +11,7 @@ code = "print(\"brun!!!\")
 var a=float(x)
 hp-=x
 var zc=\"res://little_game/fight/res/buff/new_resource.tres\"
-var num= ceili(a/3 *2)
+var num= ceili(a/3)
 print(\"ss\",num)
 Fight.minus_buff_path(zc,team,num)
 Fight.play_anima(\"text\",team,\"do_buff,燃烧！,烧伤,\"+str(x))"
@@ -25,5 +25,5 @@ icon = ExtResource("2_08mmc")
 id = "brun_n"
 type = Array[String](["debuff"])
 name_ = "烧伤"
-description = "[回合结束时] 受到x点固定伤害,层数减少x的2/3倍(向上取整)"
+description = "[回合结束时] 受到x点固定伤害,层数减少x的1/3倍(向上取整)"
 metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

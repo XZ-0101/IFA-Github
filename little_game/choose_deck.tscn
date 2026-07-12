@@ -24,11 +24,11 @@ func _ready() -> void:
 		jumper.jump_to_without_await(a)
 	else :
 		jumper.hide_()
-	if LittleGameCtrl.max_level <=5:
+	if LittleGameCtrl.now_level <=5:
 		pool=LittleGameCtrl.deck_pool
-	if LittleGameCtrl.max_level >5 and LittleGameCtrl.max_level <=10:
+	if LittleGameCtrl.now_level >5 and LittleGameCtrl.now_level <=10:
 		pool=LittleGameCtrl.h_deck_pool
-	if LittleGameCtrl.max_level>10:
+	if LittleGameCtrl.now_level>10:
 		pool=LittleGameCtrl.nm_deck_pool
 	for i in range(0,3):
 		deck_array.append(pool.pick_random())
