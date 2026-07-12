@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_gbukr"]
 script = ExtResource("1_gbukr")
 code = "var p = \"res://little_game/fight/res/buff/new_resource.tres\"
-if Fight.get_buff_x_with_res(get_enemy(team),p) >=5:
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=4:
 	max_point+=2"
 exe_time = "when_point"
 one_time = true
@@ -22,7 +22,7 @@ change_Point = 9
 coin_n = 1
 base_point = 2
 def = 60
-description = Array[String](["[拼点前]如果敌方烧伤层数大于5层，则最终点数+2"])
+description = Array[String](["[拼点前]如果敌方烧伤层数大于4层，则最终点数+2"])
 eff_arr = Array[ExtResource("1_gbukr")]([SubResource("Resource_gbukr")])
 type = Array[String](["守备", "防御"])
 sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
