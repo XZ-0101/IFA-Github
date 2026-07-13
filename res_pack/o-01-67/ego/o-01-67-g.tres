@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="bacis_ego" load_steps=4 format=3 uid="uid://dqeov7yyljqck"]
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://dqeov7yyljqck"]
 
 [ext_resource type="Resource" uid="uid://dp2tb1148v1tp" path="res://res_pack/o-01-67/ego/o-01-67-g-j.tres" id="1_nc31g"]
 [ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="2_k2b3u"]

@@ -15,7 +15,10 @@ func _ready() -> void:
 	elif res is Documentation_class:
 		icon=res.icon
 		$RichTextLabel.text=res.name_
-	if res is music_class:
+	elif res is music_class:
+		icon=res.texture
+		$RichTextLabel.text=res.name_
+	elif res is bacis_ego:
 		icon=res.texture
 		$RichTextLabel.text=res.name_
 	pass # Replace with function body.
@@ -41,6 +44,21 @@ func _on_button_down() -> void:
 			Get.jumped_list.append(res)
 			Get.going_to_music=res
 			get_tree().change_scene_to_file(\"res://screen/show_spectrum.tscn\")
+		elif res is lobotomy_ego_Suit:
+			Get.going_to_load=res
+			Get.going_to_Load_type=\"lobotomy\"
+			get_tree().change_scene_to_file(\"res://screen/a_page.tscn\")
+			Get.jumped_list.append(load(\"res://screen/a_page.tscn\"))
+		elif res is lobotomy_ego_Weapon:
+			Get.going_to_load=res
+			Get.going_to_Load_type=\"lobotomy\"
+			get_tree().change_scene_to_file(\"res://screen/a_page.tscn\")
+			Get.jumped_list.append(load(\"res://screen/a_page.tscn\"))
+		elif res is bacis_ego:
+			Get.going_to_load=res
+			Get.going_to_Load_type=\"lobotomy\"
+			get_tree().change_scene_to_file(\"res://screen/a_page.tscn\")
+			Get.jumped_list.append(load(\"res://screen/a_page.tscn\"))
 		pass # Replace with function body.
 "
 

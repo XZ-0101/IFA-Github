@@ -13,7 +13,10 @@ signal remove
 var dic={
 	\"1\":'异想体',
 	\"m\":\"音乐\",
-	\"doc\":\"文档\"
+	\"doc\":\"文档\",
+	\"eg\":\"EGO饰品\",
+	\"ew\":\"EGO武器\",
+	\"es\":\"EGO护甲\"
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -130,7 +130,64 @@ func Translate_to_res(a:Array):
 		doc.str_ = a[2].format({"n": "\n", "e1": ",", "e2": '"'})
 		doc.by = a[3]
 		Get.mod_list.append(doc)
-	pass
+	elif type == "ew":   # E.G.O武器
+		var weapon = lobotomy_ego_Weapon.new()
+		weapon.name_ = a[0]
+		if a[1] != "":
+			weapon.texture = load_img_file(a[1])
+		else:
+			weapon.texture = null
+		weapon.info = a[2].format({"n": "\n", "e1": ",", "e2": '"'})
+		weapon.Cost = a[3]
+		weapon.Max_Amount = a[4]
+		weapon.Damage_type = a[5].to_int()
+		weapon.Damage = a[6]
+		weapon.Attack_Speed = a[7]
+		weapon.Range_ = a[8]
+		weapon.dps = a[9]
+		weapon.m_ban = a[10]
+		weapon.Observation_Level = a[11]
+		weapon.Requirements = a[12]
+		weapon.gif="null"
+		weapon.level=a[14]
+		weapon.jumper=jumper_class.new()
+		weapon.other = a[13].format({"n": "\n", "e1": ",", "e2": '"'})
+		Get.mod_list.append(weapon)
+
+	elif type == "es":   # E.G.O护甲
+		var suit = lobotomy_ego_Suit.new()
+		suit.name_ = a[0]
+		if a[1] != "":
+			suit.texture = load_img_file(a[1])
+		else:
+			suit.texture = null
+		suit.info = a[2].format({"n": "\n", "e1": ",", "e2": '"'})
+		suit.Cost = a[3]
+		suit.Max_Amount = a[4]
+		suit.Observation_Level = a[5]
+		suit.other = a[6].format({"n": "\n", "e1": ",", "e2": '"'})
+		suit.red_def = a[7].to_float()
+		suit.white_def = a[8].to_float()
+		suit.black_def = a[9].to_float()
+		suit.pale_def = a[10].to_float()
+		suit.gif="null"
+		suit.jumper=jumper_class.new()
+		suit.Requirements = a[11]
+		suit.level=a[12]
+		Get.mod_list.append(suit)
+
+	elif type == "eg":   # E.G.O饰品（类名为 bacis_ego）
+		var gift = bacis_ego.new()
+		gift.name_ = a[0]
+		if a[1] != "":
+			gift.texture = load_img_file(a[1])
+		else:
+			gift.texture = null
+		gift.info = a[2].format({"n": "\n", "e1": ",", "e2": '"'})
+		gift.gif="null"
+		gift.jumper=jumper_class.new()
+		Get.mod_list.append(gift)
+		pass
 func load_img_file(path:String):
 	
 	var data_ = Zip.reader.read_file(path)

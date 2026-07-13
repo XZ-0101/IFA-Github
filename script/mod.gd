@@ -40,6 +40,12 @@ func _on_option_button_item_selected(index: int) -> void:
 			########
 		"doc":            # 新增
 			documentation_text_cover(index)
+		"ew":
+			ego_weapon_text_cover(index)
+		"es":
+			ego_suit_text_cover(index)
+		"eg":
+			ego_gift_text_cover(index)
 		
 	pass # Replace with function body.
 func music_text_cover(ind):
@@ -62,7 +68,34 @@ func documentation_text_cover(ind):
 			StringEdit.text = CsvDataArray[ind].replace("\n", "").replace("{n}", "")
 	else:
 		StringEdit.text = ""
+func ego_weapon_text_cover(ind):
+	if ind < CsvDataArray.size():
+		if ind == 2:   # 介绍/相关
+			StringEdit.text = CsvDataArray[ind].replace("{n}", "\n")
+		else:
+			StringEdit.text = CsvDataArray[ind].replace("\n", "").replace("{n}", "")
+	else:
+		StringEdit.text = ""
 
+func ego_suit_text_cover(ind):
+	if ind < CsvDataArray.size():
+		if ind == 2:   # 介绍/相关
+			StringEdit.text = CsvDataArray[ind].replace("{n}", "\n")
+		elif ind == 6: # 其他/特殊效果
+			StringEdit.text = CsvDataArray[ind].replace("{n}", "\n")
+		else:
+			StringEdit.text = CsvDataArray[ind].replace("\n", "").replace("{n}", "")
+	else:
+		StringEdit.text = ""
+
+func ego_gift_text_cover(ind):
+	if ind < CsvDataArray.size():
+		if ind == 2:   # 介绍保留换行
+			StringEdit.text = CsvDataArray[ind].replace("{n}", "\n")
+		else:
+			StringEdit.text = CsvDataArray[ind].replace("\n", "").replace("{n}", "")
+	else:
+		StringEdit.text = ""
 func _on_button_button_down() -> void:
 	#确定
 	match res_type:
@@ -73,6 +106,12 @@ func _on_button_button_down() -> void:
 			write_music_value()
 		"doc":           # 新增
 			write_documentation_value()
+		"ew":
+			write_ego_weapon_value()
+		"es":
+			write_ego_suit_value()
+		"eg":
+			write_ego_gift_value()
 	Preview()
 	pass # Replace with function body.
 
@@ -91,6 +130,92 @@ func write_documentation_value():
 			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
 		3:  # 作者
 			CsvDataArray[3] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+func write_ego_weapon_value():
+	match NowWritingValueInd:
+		0:  # 名称
+			CsvDataArray[0] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		1:  # 图标
+			if select_res <= ReadyResArray.size() - 1:
+				var v = ReadyResArray[select_res]
+				ImportedResArray.append(v)
+				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
+			else:
+				OS.alert("请导入图标资源!")
+		2:  # 介绍/相关（保留换行）
+			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
+		3:  # 所需PEBOX
+			CsvDataArray[3] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		4:  # 最大可生产数量
+			CsvDataArray[4] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		5:  # 伤害类型（整数）
+			CsvDataArray[5] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		6:  # 伤害数值
+			CsvDataArray[6] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		7:  # 伤害速度
+			CsvDataArray[7] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		8:  # 攻击距离
+			CsvDataArray[8] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		9:  # DPS
+			CsvDataArray[9] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		10: # 模板
+			CsvDataArray[10] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		11: # 需观察等级
+			CsvDataArray[11] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		12: # 要求
+			CsvDataArray[12] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		13: # 其他/特殊效果（保留换行）
+			CsvDataArray[13] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
+		14: 
+			CsvDataArray[14] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		
+func write_ego_suit_value():
+	match NowWritingValueInd:
+		0:  # 名称
+			CsvDataArray[0] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		1:  # 图标
+			if select_res <= ReadyResArray.size() - 1:
+				var v = ReadyResArray[select_res]
+				ImportedResArray.append(v)
+				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
+			else:
+				OS.alert("请导入图标资源!")
+		2:  # 介绍/相关（保留换行）
+			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
+		3:  # 所需PEBOX
+			CsvDataArray[3] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		4:  # 最大可生产数量
+			CsvDataArray[4] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		5:  # 需观察等级
+			CsvDataArray[5] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		6:  # 其他/特殊效果（保留换行）
+			CsvDataArray[6] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
+		7:  # 红色抗性（浮点数）
+			CsvDataArray[7] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		8:  # 白色抗性
+			CsvDataArray[8] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		9:  # 黑色抗性
+			CsvDataArray[9] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		10: # 蓝色抗性
+			CsvDataArray[10] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		11: # 要求
+			CsvDataArray[11] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		12: # 
+			CsvDataArray[12] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+	
+func write_ego_gift_value():
+	
+	match NowWritingValueInd:
+		0:  # 名称
+			CsvDataArray[0] = StringEdit.text.replace("\n", "").replace(",", "{e1}").replace('"', '{e2}')
+		1:  # 图标
+			if select_res <= ReadyResArray.size() - 1:
+				var v = ReadyResArray[select_res]
+				ImportedResArray.append(v)
+				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
+			else:
+				OS.alert("请导入图标资源!")
+		2:  # 介绍（保留换行）
+			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
 
 func _on_button_2_button_down() -> void:
 	$writer/VBoxContainer/input/FileDialog.popup()
@@ -162,6 +287,12 @@ func _on_option_type_selected(index: int) -> void:
 		res_type="1"
 	elif index == 2:          # 新增
 		res_type = "doc"
+	elif index == 3:
+		res_type = "ew"
+	elif index == 4:
+		res_type = "es"
+	elif index == 5:
+		res_type = "eg"
 	pass # Replace with function body.
 
 
@@ -176,11 +307,17 @@ func _on_bulid_button_down() -> void:
 				build_lobotomy_res_op()
 			"doc":               # 新增
 				build_documentation_res_op()
-				
+			"ew":
+				build_ego_weapon_res_op()
+			"es":
+				build_ego_suit_res_op()
+			"eg":
+				build_ego_gift_res_op()
 	else :
 		OS.alert("请填写项目名称或项目类型")
 	pass # Replace with function body.
 	
+#region 新建代码区域
 func build_documentation_res_op():
 	value_choice_node.clear()
 	value_choice_node.add_item("名称")
@@ -188,7 +325,50 @@ func build_documentation_res_op():
 	value_choice_node.add_item("文档内容")
 	value_choice_node.add_item("作者")
 	CsvDataArray = ["", "", "", "","doc"]
+func build_ego_weapon_res_op():
+	value_choice_node.clear()
+	# 父类字段
+	value_choice_node.add_item("名称")
+	value_choice_node.add_item("图标")
+	value_choice_node.add_item("介绍/相关")
+	# 子类字段
+	value_choice_node.add_item("所需PEBOX")
+	value_choice_node.add_item("最大可生产数量")
+	value_choice_node.add_item("伤害类型")
+	value_choice_node.add_item("伤害数值")
+	value_choice_node.add_item("伤害速度")
+	value_choice_node.add_item("攻击距离")
+	value_choice_node.add_item("DPS")
+	value_choice_node.add_item("模板")
+	value_choice_node.add_item("需观察等级")
+	value_choice_node.add_item("要求")
+	value_choice_node.add_item("其他/特殊效果")
+	value_choice_node.add_item("等级")
+	CsvDataArray = ["", "", "", "", "", "", "", "", "", "", "", "", "","","","ew"]
 
+func build_ego_suit_res_op():
+	value_choice_node.clear()
+	value_choice_node.add_item("名称")
+	value_choice_node.add_item("图标")
+	value_choice_node.add_item("介绍/相关")
+	value_choice_node.add_item("所需PEBOX")
+	value_choice_node.add_item("最大可生产数量")
+	value_choice_node.add_item("需观察等级")
+	value_choice_node.add_item("其他/特殊效果")
+	value_choice_node.add_item("红色抗性")
+	value_choice_node.add_item("白色抗性")
+	value_choice_node.add_item("黑色抗性")
+	value_choice_node.add_item("蓝色抗性")
+	value_choice_node.add_item("要求")
+	value_choice_node.add_item("等级")
+	CsvDataArray = ["", "", "", "", "", "", "", "", "", "", "","","","es"]
+
+func build_ego_gift_res_op():
+	value_choice_node.clear()
+	value_choice_node.add_item("名称")
+	value_choice_node.add_item("图标")
+	value_choice_node.add_item("介绍/相关")
+	CsvDataArray = ["", "", "", "eg"]
 func build_music_res_op():
 	value_choice_node.add_item("歌词文件")
 	value_choice_node.add_item("歌词显示时间")
@@ -230,6 +410,7 @@ func build_lobotomy_res_op():#########!!!!###########
 	value_choice_node.add_item("解锁信息所需PE-BOX")
 	value_choice_node.add_item("图册")
 	CsvDataArray=["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","1"]
+#endregion
 
 func write_music_value():
 	match NowWritingValueInd:
@@ -445,7 +626,88 @@ func Preview():
 				"content": content_val
 			})
 			preview_area.text = t
-			
+		"ew":   # E.G.O武器预览
+			var name_val = CsvDataArray[0] if CsvDataArray.size() > 0 else "未填写"
+			var icon_val = CsvDataArray[1] if CsvDataArray.size() > 1 else "未填写"
+			var info_val = (CsvDataArray[2] if CsvDataArray.size() > 2 else "").replace("{n}", "\n")
+			var cost = CsvDataArray[3] if CsvDataArray.size() > 3 else "未填写"
+			var max_amt = CsvDataArray[4] if CsvDataArray.size() > 4 else "未填写"
+			var dmg_type = CsvDataArray[5] if CsvDataArray.size() > 5 else "未填写"
+			var dmg = CsvDataArray[6] if CsvDataArray.size() > 6 else "未填写"
+			var atk_spd = CsvDataArray[7] if CsvDataArray.size() > 7 else "未填写"
+			var range_ = CsvDataArray[8] if CsvDataArray.size() > 8 else "未填写"
+			var dps = CsvDataArray[9] if CsvDataArray.size() > 9 else "未填写"
+			var m_ban = CsvDataArray[10] if CsvDataArray.size() > 10 else "未填写"
+			var obs_lv = CsvDataArray[11] if CsvDataArray.size() > 11 else "未填写"
+			var req = CsvDataArray[12] if CsvDataArray.size() > 12 else "未填写"
+			var l = CsvDataArray[14] if CsvDataArray.size() > 14 else "未填写"
+			var other = (CsvDataArray[13] if CsvDataArray.size() > 13 else "").replace("{n}", "\n")
+			t = "项目名称: {pn}\n名称: {name}\n图标: {icon}\n介绍:\n{info}\n所需PEBOX: {cost}\n最大数量: {max}\n伤害类型: {dmg_type}\n伤害: {dmg}\n速度: {atk_spd}\n距离: {range}\nDPS: {dps}\n模板: {m_ban}\n观察等级: {obs_lv}\n要求: {req}\n特殊效果:\n{other}\n等级:{l}"
+			t = t.format({
+				"pn": project_name,
+				"name": name_val,
+				"icon": icon_val,
+				"info": info_val,
+				"cost": cost,
+				"max": max_amt,
+				"dmg_type": dmg_type,
+				"dmg": dmg,
+				"atk_spd": atk_spd,
+				"range": range_,
+				"dps": dps,
+				"m_ban": m_ban,
+				"obs_lv": obs_lv,
+				"req": req,
+				"other": other,
+				"l":l
+			})
+			preview_area.text = t
+
+		"es":   # E.G.O护甲预览
+			var name_val = CsvDataArray[0] if CsvDataArray.size() > 0 else "未填写"
+			var icon_val = CsvDataArray[1] if CsvDataArray.size() > 1 else "未填写"
+			var info_val = (CsvDataArray[2] if CsvDataArray.size() > 2 else "").replace("{n}", "\n")
+			var cost = CsvDataArray[3] if CsvDataArray.size() > 3 else "未填写"
+			var max_amt = CsvDataArray[4] if CsvDataArray.size() > 4 else "未填写"
+			var obs_lv = CsvDataArray[5] if CsvDataArray.size() > 5 else "未填写"
+			var other = (CsvDataArray[6] if CsvDataArray.size() > 6 else "").replace("{n}", "\n")
+			var red = CsvDataArray[7] if CsvDataArray.size() > 7 else "未填写"
+			var white = CsvDataArray[8] if CsvDataArray.size() > 8 else "未填写"
+			var black = CsvDataArray[9] if CsvDataArray.size() > 9 else "未填写"
+			var pale = CsvDataArray[10] if CsvDataArray.size() > 10 else "未填写"
+			var req = CsvDataArray[11] if CsvDataArray.size() > 11 else "未填写"
+			var l = CsvDataArray[12] if CsvDataArray.size() > 12 else "未填写"
+			t = "项目名称: {pn}\n名称: {name}\n图标: {icon}\n介绍:\n{info}\n所需PEBOX: {cost}\n最大数量: {max}\n观察等级: {obs_lv}\n要求: {req}\n红色抗性: {red}\n白色抗性: {white}\n黑色抗性: {black}\n蓝色抗性: {pale}\n特殊效果:\n{other}\n等级:{l}"
+			t = t.format({
+				"pn": project_name,
+				"name": name_val,
+				"icon": icon_val,
+				"info": info_val,
+				"cost": cost,
+				"max": max_amt,
+				"obs_lv": obs_lv,
+				"req": req,
+				"red": red,
+				"white": white,
+				"black": black,
+				"pale": pale,
+				"other": other,
+				"l":l
+			})
+			preview_area.text = t
+
+		"eg":   # E.G.O饰品预览
+			var name_val = CsvDataArray[0] if CsvDataArray.size() > 0 else "未填写"
+			var icon_val = CsvDataArray[1] if CsvDataArray.size() > 1 else "未填写"
+			var info_val = (CsvDataArray[2] if CsvDataArray.size() > 2 else "").replace("{n}", "\n")
+			t = "项目名称: {pn}\n名称: {name}\n图标: {icon}\n介绍:\n{info}"
+			t = t.format({
+				"pn": project_name,
+				"name": name_val,
+				"icon": icon_val,
+				"info": info_val
+			})
+			preview_area.text = t
 
 
 func _on_preview_button_down() -> void:
@@ -537,6 +799,65 @@ func export(dir:String):
 				packer.close_file()
 			packer.close()
 			OS.alert("文档项目导出完成!")
+		"ew":   # E.G.O武器导出
+			print("导出E.G.O武器项目")
+			var csv_text = "\n\n"
+			for i in CsvDataArray:
+				if i == CsvDataArray.back():
+					csv_text += i
+				else:
+					csv_text += i + ","
+			packer.open(dir + "/" + project_name + ".ires")
+			OS.alert("目标路径:" + dir + "/" + project_name + ".ires")
+			packer.start_file(project_name + "/模板.csv")
+			packer.write_file(csv_text.to_utf8_buffer())
+			packer.close_file()
+			for i in ImportedResArray:
+				packer.start_file(project_name + "/" + i.name_ + "." + i.type)
+				packer.write_file(i.b)
+				packer.close_file()
+			packer.close()
+			OS.alert("E.G.O武器项目导出完成!")
+
+		"es":   # E.G.O护甲导出
+			print("导出E.G.O护甲项目")
+			var csv_text = "\n\n"
+			for i in CsvDataArray:
+				if i == CsvDataArray.back():
+					csv_text += i
+				else:
+					csv_text += i + ","
+			packer.open(dir + "/" + project_name + ".ires")
+			OS.alert("目标路径:" + dir + "/" + project_name + ".ires")
+			packer.start_file(project_name + "/模板.csv")
+			packer.write_file(csv_text.to_utf8_buffer())
+			packer.close_file()
+			for i in ImportedResArray:
+				packer.start_file(project_name + "/" + i.name_ + "." + i.type)
+				packer.write_file(i.b)
+				packer.close_file()
+			packer.close()
+			OS.alert("E.G.O护甲项目导出完成!")
+
+		"eg":   # E.G.O饰品导出
+			print("导出E.G.O饰品项目")
+			var csv_text = "\n\n"
+			for i in CsvDataArray:
+				if i == CsvDataArray.back():
+					csv_text += i
+				else:
+					csv_text += i + ","
+			packer.open(dir + "/" + project_name + ".ires")
+			OS.alert("目标路径:" + dir + "/" + project_name + ".ires")
+			packer.start_file(project_name + "/模板.csv")
+			packer.write_file(csv_text.to_utf8_buffer())
+			packer.close_file()
+			for i in ImportedResArray:
+				packer.start_file(project_name + "/" + i.name_ + "." + i.type)
+				packer.write_file(i.b)
+				packer.close_file()
+			packer.close()
+			OS.alert("E.G.O饰品项目导出完成!")
 
 func read_project(project:DIYProject):
 	value_choice_node.clear()
@@ -547,6 +868,12 @@ func read_project(project:DIYProject):
 			build_lobotomy_res_op()
 		"doc":               # 新增
 			build_documentation_res_op()
+		"ew":
+			build_ego_weapon_res_op()
+		"es":
+			build_ego_suit_res_op()
+		"eg":
+			build_ego_gift_res_op()
 
 	project_name=project.project_name
 	res_type=project.type

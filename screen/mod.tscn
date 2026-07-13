@@ -238,15 +238,12 @@ popup/item_1/text = "异想体"
 popup/item_1/id = 1
 popup/item_2/text = "文档"
 popup/item_2/id = 2
-popup/item_3/text = "EGO饰品"
-popup/item_3/id = 3
-popup/item_3/disabled = true
-popup/item_4/text = "EGO武器"
-popup/item_4/id = 4
-popup/item_4/disabled = true
-popup/item_5/text = "EGO护甲"
-popup/item_5/id = 5
-popup/item_5/disabled = true
+popup/item_3/text = "EGO武器"
+popup/item_3/id = 4
+popup/item_4/text = "EGO护甲"
+popup/item_4/id = 5
+popup/item_5/text = "EGO饰品"
+popup/item_5/id = 3
 
 [node name="Container" type="Container" parent="Panel/VBoxContainer" unique_id=939169701]
 custom_minimum_size = Vector2(0, 50)
