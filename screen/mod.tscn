@@ -537,6 +537,55 @@ VII.图册
 
 "
 
+[node name="通用" type="Panel" parent="help/TabContainer" unique_id=459634382]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_okhpl")
+metadata/_tab_index = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help/TabContainer/通用" unique_id=1063084945]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 526.0
+offset_bottom = 884.0
+bbcode_enabled = true
+text = "[center]1.需要导入的属性[/center]
+通常叫“图标”
+图标需要导入一个jpg，jpeg，png或webp文件
+
+[center]2.特殊填入[/center]
+
+I.等级
+等级使用首字母小写
+ZAYIN-z
+TETH-t
+HE-h
+WAW-w
+ALEPH-a
+
+II.伤害类型
+伤害类型用数字代替
+红色-0
+白色-1
+黑色-2
+蓝色-3
+
+III.图册
+正常导入图片，记住图片编号
+（在选择资源的菜单查看）
+将要写入的图片的编号用\"&\"连接在一期
+
+IV.数值一类
+如果没有特殊说明，那都只添数字
+像阈值这样的可以写成“x-y”或“x~y”的形式
+
+
+其他[color=red]无特殊标注[/color]的均为输入框填入
+
+
+"
+
 [node name="Panel2" type="Panel" parent="." unique_id=634133213]
 visible = false
 layout_mode = 0
