@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://d1chhamwhqdnh" path="res://res/test/test4-j.tres" id="6_6sf4u"]
 [ext_resource type="Resource" uid="uid://bhfa1jgbnci33" path="res://res/test/test6-j.tres" id="7_g4c3d"]
 [ext_resource type="Resource" uid="uid://bsr3n87t35stk" path="res://res/test/test5-j.tres" id="7_ln3tn"]
+[ext_resource type="Resource" uid="uid://nesua80ma5s8" path="res://res/test/test7-j.tres" id="9_yofho"]
 [ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="27_rqhbx"]
 [ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="28_qoqho"]
 [ext_resource type="Texture2D" uid="uid://bokvhiqa5svjc" path="res://img/ui/red.png" id="29_axj2o"]
@@ -22,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6xjsw")
-jumper_array = Array[ExtResource("2_738ph")]([ExtResource("3_nopdk"), ExtResource("4_25xxp"), ExtResource("5_n36h6"), ExtResource("6_6sf4u"), ExtResource("7_ln3tn"), ExtResource("7_g4c3d")])
+jumper_array = Array[ExtResource("2_738ph")]([ExtResource("3_nopdk"), ExtResource("4_25xxp"), ExtResource("5_n36h6"), ExtResource("6_6sf4u"), ExtResource("7_ln3tn"), ExtResource("7_g4c3d"), ExtResource("9_yofho")])
 
 [node name="Control3" type="Control" parent="." unique_id=2008930523]
 z_index = 1

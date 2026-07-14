@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://b1hiay1yoy2wp"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_ub4f6"]
+[ext_resource type="Texture2D" uid="uid://dwmuas64diap2" path="res://img2/TEST/07/TEST7-02.png" id="2_ub4f6"]
+
+[resource]
+script = ExtResource("1_ub4f6")
+name_ = "白色祭坛"
+s = "紫罗兰的午夜"
+level = "A"
+texture = ExtResource("2_ub4f6")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://res/test/test7-02.tres"
+mode = "TEST"
+type = Array[String](["考验", "群星"])
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

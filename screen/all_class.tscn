@@ -112,18 +112,6 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1030761136]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 336.0
-offset_right = 274.0
-offset_bottom = 378.0
-theme = ExtResource("8_6lf50")
-bbcode_enabled = true
-text = "[b]ZAYIN[/b]"
-fit_content = true
-scroll_active = false
-
 [node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer/basic" unique_id=1700465502]
 texture_filter = 1
 layout_mode = 0

@@ -5,10 +5,12 @@
 
 [resource]
 script = ExtResource("1_8gcyk")
-level = ""
+name_ = "红色祭坛"
+s = "紫罗兰的午夜"
+level = "A"
 texture = ExtResource("2_8gcyk")
 screen_path = "res://screen/a_page.tscn"
-res_path = "res://res/test/test6.tres"
+res_path = "res://res/test/test7-01.tres"
 mode = "TEST"
 type = Array[String](["考验", "群星"])
 metadata/_custom_type_script = "uid://ca35eduysd8ex"

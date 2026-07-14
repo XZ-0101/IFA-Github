@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="test" format=3 uid="uid://d3kly2yrojyxs"]
+
+[ext_resource type="Texture2D" uid="uid://dwmuas64diap2" path="res://img2/TEST/07/TEST7-02.png" id="1_mw70f"]
+[ext_resource type="Resource" uid="uid://b1hiay1yoy2wp" path="res://res/test/test7-02-j.tres" id="2_pqodn"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_r0p7x"]
+
+[resource]
+script = ExtResource("3_r0p7x")
+red_def = 1.0
+white_def = -1.0
+black_def = 1.0
+pale_def = 1.2
+other_info = "白色祭坛上放置着一段白色的触手。
+[img]res://img2/TEST/07/W.webp[color=red]
+石碑[/color]
+"
+other_info_act = "白色祭坛会在生成10-15秒后在设施内的随机位置开启一道白色传送门，一段巨大的，布满白色螺纹的触手将从传送门中伸出。经过8-11秒的蓄力之后，白色触手将会扫过一块圆心角约呈120度的扇形区域，并对触碰到的所有单位造成45-60点精神伤害。白色触手到达指定位置后，会缩回传送门并连同传送门一起消失。这之后白色祭坛每隔25-30秒就会在设施内的随机位置再次开启传送门。
+
+白色祭坛每损失最大生命值30%的生命值，就会在走廊两端各开启一道朝向为左和右的白色传送门，白色触手会以同样的机制发起攻击。需要注意的是，白色触手的伤害判定范围为贴图范围，攻击可能会伤害到处于走廊临近房间内的单位，乃至另一部门内的单位。"
+place = "随机部门的走廊"
+count = "4"
+health = 6000
+speed = "该单位无法运动"
+ob_name = "白色祭坛"
+color = "紫罗兰"
+time = "午夜"
+name_ = "白色祭坛"
+icon = ExtResource("1_mw70f")
+info_ = "*资料类型：考验
+
+我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！
+
+为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的午夜"
+level = "a"
+jumper = ExtResource("2_pqodn")
+jump = Array[String](["pres://res/test/test7-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_mw70f")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

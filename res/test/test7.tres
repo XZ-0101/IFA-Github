@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="basic_class" format=3 uid="uid://gaoawp1wk5ds"]
+
+[ext_resource type="Script" uid="uid://lqalg5rb7ad6" path="res://script/class/all_class.gd" id="1_1cniv"]
+[ext_resource type="Texture2D" uid="uid://y22k1yyysgb5" path="res://img2/TEST/07/t.png" id="1_p23d0"]
+[ext_resource type="Resource" uid="uid://nesua80ma5s8" path="res://res/test/test7-j.tres" id="2_p23d0"]
+[ext_resource type="Texture2D" uid="uid://cgpuneor31prj" path="res://img2/TEST/07/TEST7-01.png" id="4_8uv4o"]
+[ext_resource type="Texture2D" uid="uid://dwmuas64diap2" path="res://img2/TEST/07/TEST7-02.png" id="5_2se2p"]
+[ext_resource type="Texture2D" uid="uid://dxjnvt5r8j7mi" path="res://img2/TEST/07/TEST7-03.png" id="6_vfpdq"]
+[ext_resource type="Texture2D" uid="uid://b00j15gwnwjih" path="res://img2/TEST/07/TEST7-04.png" id="7_gd7ku"]
+
+[resource]
+script = ExtResource("1_1cniv")
+d_text = "“神明的迷思”（紫罗兰的午夜）会生成4个看上去像是用于祭祀的巨型石碑群。
+
+这些石碑群的颜色，祭坛上放置的物体，攻击方式及伤害抗性都各不相同。
+
+红色祭坛上放置着一截红色的怪爪。
+白色祭坛上放置着一段白色的触手。
+紫色祭坛上放置着一块紫色的刺钉。
+蓝色祭坛上放置着一颗蓝色的眼球。
+
+考验能力
+事件开始时，4个祭坛会随机出现在4条走廊中，一个部门最多只会出现一个祭坛。这些祭坛有着完全不同的攻击方式和伤害抗性，它们会吸收与其颜色相对应的伤害，并会造成与其颜色对应的[url=n无来源]无来源[/url]伤害。
+
+当对应颜色的祭坛被粉碎后，它所拥有的攻击方式会立刻停止并消失。当四种颜色的祭坛都被镇压后，击败提示将出现，紫罗兰的午夜将被判定结束。
+
+镇压建议
+紫午夜被大多数主管公认为最难的考验，四种祭坛极大的攻击范围，较为高额的伤害和随机出现的传送门都可能会导致主管的主力员工意外损失。更不要说那些属性和装备不足的员工了。因而，不推荐新主管镇压紫午夜，即使新主管需要完成惩戒部的任务。比较推荐新主管在完成中央本部的核心抑制，获取“反灵魂力场盾”后，再来尝试镇压紫午夜。
+
+四种祭坛对主管员工造成的威胁各有不同。红色和紫色祭坛拥有较远的攻击范围和较高的伤害，但它们的攻击方式均为直线攻击，在传送门开启时，主管就可以预判这两个祭坛的攻击位置。只要主管提前集结好员工并活用暂停进行躲避，这两个祭坛高额的伤害就无法对员工造成威胁。
+
+白色祭坛拥有最大的攻击范围，在传送门出现时，主管一般没有机会指派它攻击范围内的员工进行躲避。但好在它的伤害不高且仅为单次，很难一击让主管的主力员工陷入恐慌。因而，中央本部的科技“反精神力场盾”，福利部的科技“精神治疗弹”和伪善护甲都可以有效减小白色祭坛触手对主力员工的威胁。
+
+蓝色祭坛的眼睛能对主管的主力员工造成的威胁是最大的，眼睛本身较大的攻击范围，毫无规律的移动路径和较高频率的灵魂伤害使得主管难以操控员工躲避它的攻击。加上游戏内绝大多数护甲的灵魂抗性低于1.0，眼睛的高频低额灵魂伤害会使得处于其中的灵魂抗性低于1.0的员工因弱抗减速而移动速度大幅减缓。这也会使得主管难以操控他们躲避来自其余祭坛的攻击。唯一有效减免蓝色祭坛影响的方式是给员工附加“反灵魂力场盾”，故而推荐新主管在完成中央本部的核心抑制后再尝试镇压紫午夜。
+
+镇压紫午夜前，请主管优先把员工集结在电梯间和较小的休息室内，处理掉所有的文职或是确保设施内没有会响应职员死亡出逃的异想体。否则主管需要频繁暂停来操控公司各个位置的员工躲避各种祭坛的攻击并处理出逃的异想体，这会十分消耗主管的精力。在主管决定好要处理哪个祭坛时，请尽量多用暂停，指派对应抗性够高且伤害类型合适的员工前去镇压。如果某些祭坛生成的位置极差且主管难以操控员工躲避它的护主攻击（点名批评研发和记录部走廊的红，紫祭坛），请主管尽量使用那些攻击距离极远的武器来对它们进行消耗，以免护主攻击对员工造成多段伤害，直接击杀员工。
+
+因为祭坛生成的位置和进行攻击的位置都是随机，如果主管为了镇压某一个祭坛而无视其余祭坛并指派员工长途跋涉，可能会出现员工大部队因为正义属性不同又或是被蓝色祭坛眼睛攻击减速而错开，导致员工难以规避其余祭坛的攻击，从而造成更多的伤亡。故请主管在不熟悉紫午夜的机制或是装备和员工质量不足时，尽量优先处理员工集合点附近的祭坛。但情况允许时，处理优先级最高的仍然是蓝色祭坛，其余祭坛的处理优先级请主管自行衡量。
+
+因为单个祭坛的抗性和生命值并不算高，使用兔子队来镇压祭坛就成了一个不错的选择，尤其是面对那些生成的位置不好的祭坛时，灵活使用兔子队可以极大程度的减少主管员工损失的概率。就算兔子队没能成功击杀祭坛，它们也能对祭坛进行有效的杀伤，主管在兔子队完全损失后前去收尾即可。
+
+注释
+“神明的迷思”名字源于理查德·道金斯的作品The God Delusion。
+
+"
+child_jump = Array[String](["pres://res/test/test7-01-j.tres", "pres://res/test/test7-02-j.tres", "pres://res/test/test7-03-j.tres", "pres://res/test/test7-04-j.tres"])
+name_ = "神明的迷思"
+icon = ExtResource("1_p23d0")
+info_ = "*资料类型：考验
+
+我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！
+
+为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的午夜"
+level = "a"
+jumper = ExtResource("2_p23d0")
+jump = Array[String](["pres://res/test/test6-j.tres", "pres://res/test/test5-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_p23d0"), ExtResource("4_8uv4o"), ExtResource("5_2se2p"), ExtResource("6_vfpdq"), ExtResource("7_gd7ku")])
+metadata/_custom_type_script = "uid://lqalg5rb7ad6"

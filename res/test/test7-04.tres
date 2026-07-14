@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="test" format=3 uid="uid://d0am26u5775m4"]
+
+[ext_resource type="Texture2D" uid="uid://b00j15gwnwjih" path="res://img2/TEST/07/TEST7-04.png" id="1_7sbnk"]
+[ext_resource type="Resource" uid="uid://cx0rsdvcpsk1e" path="res://res/test/test7-04-j.tres" id="2_peg5f"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_x52e6"]
+
+[resource]
+script = ExtResource("3_x52e6")
+red_def = 1.2
+white_def = 0.7
+black_def = -1.0
+pale_def = 1.0
+other_info = "蓝色祭坛上放置着一颗蓝色的眼球。
+[img]res://img2/TEST/07/P.webp[color=red]
+石碑[/color]
+"
+other_info_act = "蓝色的机制与其他祭坛全然不同。它会在设施内的随机走廊生成一团气态的物体，这个物体的中央有一颗巨大的蓝色眼球及数颗小而尖锐的牙齿，它在显形时会每1秒对处于其动画范围中的所有单位造成一次5-7点灵魂伤害；若处于隐形状态，则它不会造成任何伤害。眼睛在生成后会随机寻找走廊停留，且只会在走廊停留。它每次显形8-14秒。在消失约5秒后眼睛会重新显形。每隔25-30秒（第一次移动为10-15秒），眼睛会随机一个走廊并以极快的速度飘向那条走廊。在飘向新走廊的过程中若眼睛处于显形状态，其依旧能对路途上的所有单位造成伤害。
+
+蓝色祭坛每损失最大生命值30%的生命值，蓝色眼球会强制终止其行动倒计时并立刻前往蓝色祭坛本体所在的走廊，并在该走廊停留5-10秒。在停留结束后，其会继续正常行动直至蓝色祭坛被摧毁。
+
+"
+place = "随机部门的走廊"
+count = "4"
+health = 6000
+speed = "该单位无法运动"
+ob_name = "蓝色祭坛"
+color = "紫罗兰"
+time = "午夜"
+name_ = "蓝色祭坛"
+icon = ExtResource("1_7sbnk")
+info_ = "*资料类型：考验
+
+我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！
+
+为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的午夜"
+level = "a"
+jumper = ExtResource("2_peg5f")
+jump = Array[String](["pres://res/test/test7-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_7sbnk")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"

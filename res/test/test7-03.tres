@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="test" format=3 uid="uid://b5cmcd5pbog07"]
+
+[ext_resource type="Texture2D" uid="uid://dxjnvt5r8j7mi" path="res://img2/TEST/07/TEST7-03.png" id="1_2d0ya"]
+[ext_resource type="Resource" uid="uid://cx0rsdvcpsk1e" path="res://res/test/test7-04-j.tres" id="2_2d0ya"]
+[ext_resource type="Script" uid="uid://j64n1p61b5xd" path="res://script/lca_test.gd" id="3_wp050"]
+
+[resource]
+script = ExtResource("3_wp050")
+red_def = 1.2
+white_def = 0.7
+black_def = -1.0
+pale_def = 1.0
+other_info = "紫色祭坛上放置着一块紫色的刺钉。
+[img]res://img2/TEST/07/B.webp[color=red]
+石碑[/color]
+"
+other_info_act = "紫色祭坛会在生成10-15秒后在设施内的随机位置开启一道紫色传送门，一块巨大的，缠绕着黑荆棘的紫色刺钉将从传送门中伸出。经过8-11秒的蓄力之后，紫色刺钉会笔直伸出，尝试伸长三次后刺出一段非常长的距离（最长距离约为红色祭坛怪爪伸长距离的两倍），并在戳刺后直接返回传送门中。钉刺每次伸长时会对被刺中的所有单位造成45-55点侵蚀 伤害，最多4次伤害。这之后紫色祭坛每隔25-30秒就会在冷却时间结束后后在设施内的随机位置再次开启传送门。
+
+紫色祭坛每损失最大生命值30%的生命值，就会在走廊两端各开启一道朝向为左和右的紫色传送门，紫色钉刺会以同样的机制发起攻击。需要注意的是，紫色钉刺的伤害判定范围为贴图范围，攻击可能会因为走廊过短而伤害到处于走廊临近房间内的单位。
+
+"
+place = "随机部门的走廊"
+count = "4"
+health = 6000
+speed = "该单位无法运动"
+ob_name = "紫色祭坛"
+color = "紫罗兰"
+time = "午夜"
+name_ = "紫色祭坛"
+icon = ExtResource("1_2d0ya")
+info_ = "*资料类型：考验
+
+我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！
+
+为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...
+
+资料来自：[url=https://lobotomycorp.fandom.com/zh/wiki]脑叶公司Wiki[/url] 脑叶公司情报部"
+subject = "紫罗兰的午夜"
+level = "a"
+jumper = ExtResource("2_2d0ya")
+jump = Array[String](["pres://res/test/test7-j.tres"])
+gif = "null"
+texture_array = Array[Texture2D]([ExtResource("1_2d0ya")])
+metadata/_custom_type_script = "uid://j64n1p61b5xd"
