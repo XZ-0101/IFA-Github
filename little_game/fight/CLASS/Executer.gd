@@ -5,6 +5,7 @@ class_name Executer
 @export var who:String
 @export var is_who:bool
 @export var one_time:bool
+@export_multiline var func_code:String="pass"
 #export var description:String
 var basic_code="\nfunc run():\n	{code}\n	queue_free()"
 var team:int
@@ -21,9 +22,15 @@ var exe_body:Node
 func create_scr():
 	var s =GDScript.new()
 	var code_=build_var()+basic_code.format({"code":code.replace("\n","\n	")}) 
+	#print("===== 生成的脚本 =====")
 	#print(code_)
+	#print("=====================")
 	s.source_code=code_
-	s.reload()
+	var error = s.reload()
+	if error != OK:
+		print("Executer 编译失败: ", error)
+		print("错误代码:\n", code_)
+		return
 	exe_body=Node.new()
 	exe_body.set_script(s)
 	
@@ -88,4 +95,4 @@ func build_var() -> String:
 			res_text += "var enow_skill:\n\tget:\n\t\treturn Fight.now_skill\n\tset(value):\n\t\tFight.now_skill = value\n"
 			res_text += "var eskill_arr:\n\tget:\n\t\treturn Fight.skill_arr\n\tset(value):\n\t\tFight.skill_arr = value\n"
 			res_text += "var team = 1\n"
-	return res_text
+	return res_text+"\n"+func_code.replace("\n","\n	")

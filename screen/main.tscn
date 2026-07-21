@@ -31,6 +31,30 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="GDScript" id="GDScript_hlk45"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	visible=Get.is_lg_version
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_button_down() -> void:
+		
+	var a = load(\"res://little_game/enter.tscn\")
+	Get.jumped_list.append(a)
+	Get.jump_saver_list.append(jump_saver.new())
+	get_tree().change_scene_to_packed(a)
+	pass # Replace with function body.
+"
+
 [node name="开始" type="Control" unique_id=1760573877]
 layout_mode = 3
 anchors_preset = 15
@@ -269,4 +293,53 @@ text = "TIP:初次使用一定要看菜单里的“关于”！"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="LittleGameVersion" type="Control" parent="." unique_id=1022454687]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_nmfe7")
+script = SubResource("GDScript_hlk45")
+
+[node name="Label" type="Label" parent="LittleGameVersion" unique_id=295877398]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 582.0
+offset_right = 474.0
+offset_bottom = 636.0
+theme = ExtResource("2_nmfe7")
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 40
+text = "小游戏版"
+
+[node name="Panel" type="Panel" parent="LittleGameVersion" unique_id=308526525]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 757.0
+offset_right = 503.0
+offset_bottom = 996.0
+theme = ExtResource("2_nmfe7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LittleGameVersion" unique_id=1081002929]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 774.0
+offset_right = 451.0
+offset_bottom = 876.0
+theme_override_font_sizes/normal_font_size = 20
+text = "此版本不阉割原版所有功能
+但仅有小游戏入口"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="LittleGameVersion" unique_id=1361515943]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 903.0
+offset_right = 359.0
+offset_bottom = 951.0
+text = "进入"
+
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_down" from="LittleGameVersion/Button" to="LittleGameVersion" method="_on_button_button_down"]

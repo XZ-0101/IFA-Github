@@ -1,0 +1,220 @@
+[gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://dlitc4eb30rao"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_0ns85"]
+[ext_resource type="Resource" uid="uid://crvrxnknvtuhj" path="res://little_game/fight/res/enemy/black_jack/buff/ABUFF.tres" id="2_a36nt"]
+[ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="2_g32vd"]
+[ext_resource type="Texture2D" uid="uid://bkmganwaooeft" path="res://little_game/fight/res/enemy/black_jack/img.png" id="2_phne7"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="3_mxcul"]
+[ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="3_phne7"]
+[ext_resource type="Resource" uid="uid://ecbb1055buwj" path="res://little_game/fight/res/enemy/black_jack/buff/2BUFF.tres" id="3_r3e15"]
+[ext_resource type="Resource" uid="uid://dksx5oyf8ejqb" path="res://little_game/fight/res/enemy/black_jack/buff/3BUFF.tres" id="4_laqml"]
+[ext_resource type="Texture2D" uid="uid://c4e4gseoqli2f" path="res://little_game/fight/res/enemy/black_jack/yxt.png" id="4_oic8j"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="4_su43h"]
+[ext_resource type="Resource" uid="uid://d0jbd4t34ntt5" path="res://little_game/fight/res/enemy/black_jack/buff/4BUFF.tres" id="5_lhen8"]
+[ext_resource type="Resource" uid="uid://dno2bso87oewd" path="res://little_game/fight/res/enemy/black_jack/buff/5BUFF.tres" id="6_ldaw4"]
+[ext_resource type="Resource" uid="uid://b1l1xm4mph58p" path="res://little_game/fight/res/enemy/black_jack/buff/6BUFF.tres" id="7_3fmsx"]
+[ext_resource type="Resource" uid="uid://cbsqloj67jw2x" path="res://little_game/fight/res/enemy/black_jack/SK1.tres" id="8_5qa2k"]
+[ext_resource type="Resource" uid="uid://bsws6k66mxfho" path="res://little_game/fight/res/enemy/black_jack/buff/7BUFF.tres" id="8_ujs5q"]
+[ext_resource type="Resource" uid="uid://fgtu2iys5ehb" path="res://little_game/fight/res/enemy/black_jack/buff/8BUFF.tres" id="9_6sqqv"]
+[ext_resource type="Resource" uid="uid://cdnx6arukl7s5" path="res://little_game/fight/res/enemy/black_jack/buff/9BUFF.tres" id="10_5dk7f"]
+[ext_resource type="Resource" uid="uid://b0ytoi16mu0mu" path="res://little_game/fight/res/enemy/black_jack/buff/10BUFF.tres" id="11_tmi34"]
+[ext_resource type="Resource" uid="uid://cc5gx77nqhhue" path="res://little_game/fight/res/enemy/black_jack/buff/JBUFF.tres" id="12_q8lkt"]
+[ext_resource type="Resource" uid="uid://bjdwr5ugukflh" path="res://little_game/fight/res/enemy/black_jack/buff/QBUFF.tres" id="13_cvble"]
+[ext_resource type="Resource" uid="uid://dqmwm0y3va446" path="res://little_game/fight/res/enemy/black_jack/buff/KBUFF.tres" id="14_evkqs"]
+[ext_resource type="Resource" uid="uid://c8e7glh6sx8lq" path="res://little_game/fight/res/enemy/black_jack/buff/anpai.tres" id="15_ndloo"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="17_n54vh"]
+
+[sub_resource type="Resource" id="Resource_oic8j"]
+script = ExtResource("17_n54vh")
+music_path = "res://little_game/fight/res/enemy/black_jack/LC_2장_적전투_중반부_BGM_(완성본_LOOP).ogg.mp3"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_mxcul"]
+script = ExtResource("3_mxcul")
+code = "hp-=21
+Fight.play_anima(\"text\",team,\"hit,21,hp\")"
+exe_time = "after_under_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_gnmjs"]
+script = ExtResource("3_mxcul")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/Q.tres\",3,team)"
+exe_time = "turn_end"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_su43h"]
+script = ExtResource("4_su43h")
+name_ = "恐慌：异想体-黑杰克"
+icon = ExtResource("4_oic8j")
+level = 1
+coin_n = 1
+def = -20
+description = Array[String](["[被攻击时]对自己造成21点固定伤害", "[回合结束时]对自己施加3层逆卡巴拉计数器"])
+eff_arr = Array[ExtResource("3_mxcul")]([SubResource("Resource_mxcul"), SubResource("Resource_gnmjs")])
+sin_color = Color(0.6392157, 0.43529412, 0.25490198, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_ikvm7"]
+script = ExtResource("3_mxcul")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/Q.tres\",3,team)"
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_vt21f"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_ikvm7")
+description = "[战斗开始时]对自己施加三层逆卡巴拉计数器"
+name_ = "异想体"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_03ckx"]
+script = ExtResource("3_mxcul")
+code = "if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/buff/Q.tres\")!=0:
+	sp=roundi(sp_max/2)
+else:
+	sp=0"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_na6oa"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_03ckx")
+description = "[回合开始时]若自己的逆卡巴拉计数器不为0，将自己的理智回复到理智值上限的一半，否则强制陷入恐慌"
+name_ = "异想体II"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_7jxxb"]
+script = ExtResource("3_mxcul")
+code = "var num=Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/buff/Q.tres\")
+Fight.remove_all_buff(team)
+Fight.remove_all_buff(get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/Q.tres\",num,team)"
+exe_time = "turn_end"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_isven"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_7jxxb")
+description = "[回合结束时]清除身上的所有BUFF
+清除敌方身上的所有buff
+(此被动不清除逆卡巴拉计数器)"
+name_ = "不许出老千！"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_r3e15"]
+script = ExtResource("3_mxcul")
+code = "edef_area=100"
+exe_time = "before_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_a36nt"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_r3e15")
+description = "[攻击时]敌方免疫伤害"
+name_ = "友谊第一"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_lhen8"]
+script = ExtResource("3_mxcul")
+code = "def_area=100"
+exe_time = "before_under_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_laqml"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_lhen8")
+description = "[被攻击时]免疫伤害"
+name_ = "游戏第二"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_ldaw4"]
+script = ExtResource("3_mxcul")
+code = "card1(get_enemy(team))
+card1(get_enemy(team))
+card1(team)
+Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/anpai.tres\",1,team)"
+exe_time = "turn_strat"
+func_code = "func card1(who:int):
+	var num=randi_range(1,13)
+	
+	match num:
+		1:
+			var Anum=randi_range(1,2)
+			if Anum==1:
+				Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/ABUFF.tres\",1,who)
+			else:
+				Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/ABUFF.tres\",11,who)
+		2:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/2BUFF.tres\",2,who)
+		3:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/3BUFF.tres\",3,who)
+		4:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/4BUFF.tres\",4,who)
+		5:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/5BUFF.tres\",5,who)
+		6:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/6BUFF.tres\",6,who)
+		7:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/7BUFF.tres\",7,who)
+		8:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/8BUFF.tres\",8,who)
+		9:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/9BUFF.tres\",10,who)
+		10:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/10BUFF.tres\",10,who)
+		11:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/JBUFF.tres\",10,who)
+		12:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/QBUFF.tres\",10,who)
+		13:
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/KBUFF.tres\",10,who)"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_3fmsx"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_ldaw4")
+description = "抽牌
+[回合开始时]给敌方任意2种“扑克牌”，并使两种扑克牌的层数分别等于他们代表的数字
+
+给自己的随机一种扑克牌和1层暗牌，并使扑克牌的层数分别等于他们代表的数字
+
+可能抽到的牌有：
+扑克牌A，扑克牌2，扑克牌3，扑克牌4，扑克牌5，扑克牌6，扑克牌7，扑克牌8，扑克牌9，扑克牌10，扑克牌J，扑克牌Q，扑克牌K
+（A的层数按11或1算，随机分配，2-10的层数按面值算，J,Q,K的层数按10算）"
+name_ = "抽牌"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_x2vkp"]
+script = ExtResource("3_mxcul")
+code = "esp=roundi(esp_max/2)"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_frhm7"]
+script = ExtResource("2_g32vd")
+eff = SubResource("Resource_x2vkp")
+description = "[回合开始时]将敌方的理智值设为敌方理智值上限的一半"
+name_ = "公平竞争"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[resource]
+script = ExtResource("3_phne7")
+name_ = "黑杰克"
+img = ExtResource("2_phne7")
+description = "-编号O-02-210
+-等级HE-05
+"
+hp = 105
+sp = 100
+passives = Array[ExtResource("2_g32vd")]([SubResource("Resource_vt21f"), SubResource("Resource_na6oa"), SubResource("Resource_isven"), SubResource("Resource_a36nt"), SubResource("Resource_laqml"), SubResource("Resource_3fmsx"), SubResource("Resource_frhm7")])
+skill_array = Array[ExtResource("4_su43h")]([ExtResource("8_5qa2k")])
+panic_skill = SubResource("Resource_su43h")
+action_play = Array[String](["r"])
+music = SubResource("Resource_oic8j")
+buff_arr = Array[ExtResource("1_0ns85")]([ExtResource("2_a36nt"), ExtResource("3_r3e15"), ExtResource("4_laqml"), ExtResource("5_lhen8"), ExtResource("6_ldaw4"), ExtResource("7_3fmsx"), ExtResource("8_ujs5q"), ExtResource("9_6sqqv"), ExtResource("10_5dk7f"), ExtResource("11_tmi34"), ExtResource("12_q8lkt"), ExtResource("13_cvble"), ExtResource("14_evkqs"), ExtResource("15_ndloo")])
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

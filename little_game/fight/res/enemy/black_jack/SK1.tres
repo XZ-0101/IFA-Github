@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://cbsqloj67jw2x"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_er2dl"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_gnmjs"]
+[ext_resource type="Texture2D" uid="uid://cq7ra27o2utg2" path="res://little_game/fight/res/enemy/black_jack/SK1.png" id="2_rruxi"]
+
+[sub_resource type="Resource" id="Resource_6cvrv"]
+script = ExtResource("1_er2dl")
+code = "print(\"run\")
+var ep=LittleGameFight.get_buff_x_with_type(get_enemy(team),\"扑克牌\")
+var selfp=LittleGameFight.get_buff_x_with_type(team,\"扑克牌\")
+max_point=selfp
+emax_point=ep
+
+if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/black_jack/buff/anpai.tres\")!=0:
+	var add=randi_range(1,11)
+	max_point+=add
+	Fight.play_anima(\"text\",team,\"show,暗牌点数是{p}\".format({\"p\":str(add)}))
+if max_point<17:
+	var add=randi_range(1,11)
+	max_point+=add
+	Fight.play_anima(\"text\",team,\"show,抽牌点数是{p}\".format({\"p\":str(add)}))
+if LittleGameFight.now_skill == LittleGameFight.skill_arr[3]:
+	var add=randi_range(1,11)
+	emax_point+=add
+"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_cc1tr"]
+script = ExtResource("1_er2dl")
+code = "if max_point<=21:
+	ehp-=10
+	Fight.play_anima(\"text\",get_enemy(team),\"hit,10,hp\")
+else:
+	hp-=21
+	Fight.play_anima(\"text\",team,\"hit,21,hp\")
+	Fight.minus_buff_path(\"res://little_game/fight/res/buff/Q.tres\",team,1)"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_gnmjs"]
+script = ExtResource("1_er2dl")
+code = "if emax_point<=21:
+	hp-=10
+	Fight.play_anima(\"text\",team,\"hit,10,hp\")
+else:
+	ehp-=21
+	Fight.play_anima(\"text\",get_enemy(team),\"hit,21,hp\")"
+exe_time = "after_under_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_gnmjs")
+name_ = "出牌吧！"
+icon = ExtResource("2_rruxi")
+level = 1
+coin_n = 3
+description = Array[String](["[拼点时]将双方威力分别设为他们扑克牌的层数之和
+若自己身上有“暗牌”，则将自己的威力从1～11中随机增加，并消耗一层暗牌
+若自己的点数不超过17，则将自己的威力从1～11中随机增加
+若敌方的技能是守备技能，则将敌方的威力从1～11中随机增加
+
+", "[攻击后]如果自己的点数没有超过21点，造成10点固定伤害，否则对自己造成21点伤害并失去一层逆卡巴拉计数器
+", "[被攻击后]若敌方点数未超过21点，对自己造成10点固定伤害，否则对敌方造成21点伤害
+"])
+eff_arr = Array[ExtResource("1_er2dl")]([SubResource("Resource_6cvrv"), SubResource("Resource_cc1tr"), SubResource("Resource_gnmjs")])
+sin_color = Color(0.09019608, 0.26666668, 0.4392157, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

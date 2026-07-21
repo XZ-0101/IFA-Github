@@ -52,6 +52,8 @@ var do_it_will_e:Array
 var turn_num:int=0
 var true_turn_num:int=0
 
+@export_multiline var eff_arr:String
+
 func get_gift_in_arr(gift:gift_value):
 	return gift.gift_jumper
 func get_eff_in_passives(passive:passive_lg):
@@ -231,6 +233,10 @@ func add_buff_path(what:String,x:int,who:int):
 
 func get_buff_id(buff:buff_lg):
 	return buff.id
+
+func remove_all_buff(who):
+	var array= buff_pool if who==0 else enemy_buff_pool
+	array.clear()
 
 func remove_buff_path(path:String,who:int):
 	remove_buff(load(path),who)

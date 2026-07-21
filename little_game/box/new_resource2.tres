@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_roxdc"]
 [ext_resource type="Resource" uid="uid://bqh4vw3nxowuq" path="res://little_game/q/t000777q.tres" id="2_84fb1"]
+[ext_resource type="Resource" uid="uid://frjusphi2v2m" path="res://little_game/fight/res/enemy/black_jack/q/q.tres" id="3_daxbn"]
 [ext_resource type="Resource" uid="uid://bu244geenprt0" path="res://little_game/q/kml.tres" id="3_gdqes"]
 [ext_resource type="Resource" uid="uid://cq65l0adspgc2" path="res://little_game/fight/res/ques/star/ques.tres" id="3_n4gaj"]
 [ext_resource type="Resource" uid="uid://cnsgj3fx6o31i" path="res://little_game/fight/res/ques/basic_brun_give.tres" id="3_tkxky"]
@@ -14,7 +15,7 @@
 script = ExtResource("5_tkxky")
 name_ = "愿主保佑"
 type = Array[String](["宗教相关", "无限的可能性"])
-card = Array[ExtResource("1_roxdc")]([ExtResource("2_84fb1"), ExtResource("3_tkxky"), ExtResource("3_n4gaj"), ExtResource("4_n4gaj"), ExtResource("5_n4gaj"), ExtResource("3_gdqes")])
+card = Array[ExtResource("1_roxdc")]([ExtResource("2_84fb1"), ExtResource("3_daxbn"), ExtResource("3_tkxky"), ExtResource("3_n4gaj"), ExtResource("4_n4gaj"), ExtResource("5_n4gaj"), ExtResource("3_gdqes")])
 is_trun = true
 img = ExtResource("5_84fb1")
 metadata/_custom_type_script = "uid://b8rki7fa01jly"

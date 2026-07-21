@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://c8e7glh6sx8lq"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_7dlsq"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_lhwoo"]
+[ext_resource type="Texture2D" uid="uid://f6wy13isobmj" path="res://little_game/fight/res/enemy/black_jack/buff/img/pk_anpai.png" id="2_7dlsq"]
+
+[sub_resource type="Resource" id="Resource_etq4j"]
+script = ExtResource("1_7dlsq")
+most_x = 1
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_lhwoo")
+eff = SubResource("Resource_etq4j")
+icon = ExtResource("2_7dlsq")
+id = "anpai"
+type = Array[String]([""])
+name_ = "暗牌"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

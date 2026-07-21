@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://frjusphi2v2m"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_q4mat"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_ccn0b"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_o7g43"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="3_45305"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_s1xtv"]
+
+[sub_resource type="Resource" id="Resource_s1xtv"]
+script = ExtResource("3_s1xtv")
+to_fight = "res://little_game/fight/res/enemy/black_jack/enemy.tres"
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_45305"]
+script = ExtResource("3_45305")
+"介绍" = "遭遇战"
+win_text = "21点？"
+gift = SubResource("Resource_s1xtv")
+name_ = "ok"
+"结果" = "好极了！来玩吧！$s来玩21点"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_o7g43")
+"问题" = "来玩扑克？"
+item = Array[ExtResource("1_q4mat")]([SubResource("Resource_45305")])
+with_fight = true
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

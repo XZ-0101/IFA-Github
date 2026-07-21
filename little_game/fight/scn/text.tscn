@@ -32,17 +32,27 @@ func play_a(x):
 	show()
 	var x_ = x as String
 	var x_arr = x_.split(\",\")
+	var nt=\"\"
 	match x_arr[0]:
+		
 		\"hit\":
-			$text.text = \"伤害 \" + x_arr[1] + x_arr[2]
+			nt= \"伤害 \" + x_arr[1] + x_arr[2]
+		
 		\"add_buff\":
-			$text.text = x_arr[1] + \" 增加 \" + x_arr[2]
+			nt= x_arr[1] + \" 增加 \" + x_arr[2]
+			 
 		\"do_buff\":
-			$text.text = x_arr[1] + \" \" + x_arr[2] + ' : ' + x_arr[3]
+			nt= x_arr[1] + \" \" + x_arr[2] + ' : ' + x_arr[3]
+			
 		\"hel\":
-			$text.text = \"恢复 \" + x_arr[1] + x_arr[2]
+			nt= \"恢复 \" + x_arr[1] + x_arr[2]
+			 
 		\"show\":
-			$text.text = x_arr[1]
+			nt= x_arr[1]
+	$text.text=nt
+	var name_=get_parent().name
+	
+	LittleGameFight.eff_arr+=name_+\":\"+nt+\"\\n\"
 	$text/AnimationPlayer.play(\"new_animation\")
 	await $text/AnimationPlayer.animation_finished
 	queue_free()

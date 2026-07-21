@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://d0jbd4t34ntt5"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_rpqry"]
+[ext_resource type="Texture2D" uid="uid://bwms80570vpis" path="res://little_game/fight/res/enemy/black_jack/buff/img/pk4.png" id="2_rpqry"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="3_mak5o"]
+
+[sub_resource type="Resource" id="Resource_2j1d6"]
+script = ExtResource("1_rpqry")
+most_x = 8
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("3_mak5o")
+eff = SubResource("Resource_2j1d6")
+icon = ExtResource("2_rpqry")
+id = "PK_4"
+type = Array[String](["扑克牌"])
+name_ = "扑克4"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

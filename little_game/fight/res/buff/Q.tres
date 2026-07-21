@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://1e87oc7u4vqd"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_5q2hd"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_mmpc5"]
+[ext_resource type="Texture2D" uid="uid://b18rclfpcbumg" path="res://img/QliphothCounterIcon.webp" id="2_oqy0p"]
+
+[sub_resource type="Resource" id="Resource_gybvw"]
+script = ExtResource("1_mmpc5")
+most_x = 5
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_5q2hd")
+eff = SubResource("Resource_gybvw")
+icon = ExtResource("2_oqy0p")
+id = "QC1"
+name_ = "逆卡巴拉计数器"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

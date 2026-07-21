@@ -170,10 +170,11 @@ func enemy_give_card(act:String):
 	enemy_skill.show()
 
 func ass_skill_enemy(c1:skill_lt):
-	fight.now_enemy_skill=c1
-	enemy_skill.get_child(0).skill=c1
+	var c=c1.duplicate()
+	fight.now_enemy_skill=c
+	enemy_skill.get_child(0).skill=c
 	enemy_skill.get_child(0).show_it()
-	fight.enemy_skill_pool.erase(c1)
+	fight.enemy_skill_pool.erase(c)
 
 func give_card_enemy_rmode():
 	for i in fight.enemy.skill_array:
@@ -467,7 +468,7 @@ func start_point():
 		skill_act.hide()
 		enemy_skill.hide()
 		
-		fight.now_skill=choised_skill
+		fight.now_skill=choised_skill.duplicate()
 		var our_s=fight.now_skill
 		var enemy_s=fight.now_enemy_skill
 		fight.add_to_time_list(our_s.eff_arr.map(fight.eff_to_team_0))
@@ -665,6 +666,12 @@ func to_next_enemy():
 	
 	fight.do_it(\"fight_strat\")
 	turn_start()
+
+
+func _on_efflog_button_down() -> void:
+	$efflog/Popup/Panel/RichTextLabel.text=fight.eff_arr
+	$efflog/Popup.popup()
+	pass # Replace with function body.
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0pw3"]
@@ -1028,8 +1035,8 @@ buff = NodePath("player/BUFF_P/buff/GridContainer")
 enemy_buff = NodePath("enemy/VBoxContainer/BUFF_P/buff/GridContainer")
 enemy_skill = NodePath("enemy/skill")
 skill_act = NodePath("player/SKILL")
-enemy_anima_node = NodePath("enemy/enemy_texture/anima")
-our_anima_node = NodePath("player/anima")
+enemy_anima_node = NodePath("enemy/enemy_texture/enemy")
+our_anima_node = NodePath("player/self")
 
 [node name="Control3" type="Control" parent="." unique_id=463102128]
 z_index = 1
@@ -1373,7 +1380,7 @@ text = "[shake level=20 rate=30]PANIC[/shake]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="anima" type="Control" parent="enemy/enemy_texture" unique_id=224333452]
+[node name="enemy" type="Control" parent="enemy/enemy_texture" unique_id=224333452]
 z_index = 99
 anchors_preset = 0
 offset_left = 78.0
@@ -1381,11 +1388,11 @@ offset_top = 195.0
 offset_right = 118.0
 offset_bottom = 235.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy/enemy_texture/anima" unique_id=315815010]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy/enemy_texture/enemy" unique_id=315815010]
 libraries/ = SubResource("AnimationLibrary_f32vx")
 speed_scale = 0.8
 
-[node name="TextureRect" type="TextureRect" parent="enemy/enemy_texture/anima" unique_id=2069948693]
+[node name="TextureRect" type="TextureRect" parent="enemy/enemy_texture/enemy" unique_id=2069948693]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1574,7 +1581,7 @@ stretch_mode = 5
 [node name="Node2D" parent="player/SKILL" unique_id=1513013406 instance=ExtResource("14_if328")]
 visible = false
 
-[node name="anima" type="Control" parent="player" unique_id=1071378188]
+[node name="self" type="Control" parent="player" unique_id=1071378188]
 z_index = 99
 anchors_preset = 0
 offset_left = 279.0
@@ -1779,6 +1786,41 @@ text = "TURN:X"
 fit_content = true
 scroll_active = false
 
+[node name="efflog" type="Button" parent="." unique_id=2103578803]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 944.0
+offset_right = 629.0
+offset_bottom = 1032.0
+theme = ExtResource("2_2fnmu")
+text = "效果
+日志"
+
+[node name="Popup" type="Popup" parent="efflog" unique_id=851347669]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(600, 700)
+
+[node name="Panel" type="Panel" parent="efflog/Popup" unique_id=171376129]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="efflog/Popup/Panel" unique_id=710651627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 19.0
+offset_right = -23.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="mouse_entered" from="enemy/skill" to="." method="_on_skill_mouse_entered"]
 [connection signal="mouse_exited" from="enemy/skill" to="." method="_on_skill_mouse_exited"]
 [connection signal="mouse_entered" from="enemy/skill/skill" to="." method="_on_skill_mouse_entered"]
@@ -1793,3 +1835,4 @@ scroll_active = false
 [connection signal="coin_out" from="Panel_point/VBoxContainer/our_skill/skill" to="Panel_point" method="_on_skil2l_coin_out"]
 [connection signal="button_down" from="win/Button" to="win" method="_on_button_button_down"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="button_down" from="efflog" to="." method="_on_efflog_button_down"]

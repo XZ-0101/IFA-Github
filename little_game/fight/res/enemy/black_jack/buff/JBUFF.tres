@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cc5gx77nqhhue"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_gm0lo"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_qog2p"]
+[ext_resource type="Texture2D" uid="uid://jsb70a0twoq5" path="res://little_game/fight/res/enemy/black_jack/buff/img/pkJ.png" id="2_gm0lo"]
+
+[sub_resource type="Resource" id="Resource_1mwfn"]
+script = ExtResource("1_gm0lo")
+most_x = 20
+exe_time = "fight_strat"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_qog2p")
+eff = SubResource("Resource_1mwfn")
+icon = ExtResource("2_gm0lo")
+id = "PK_J"
+type = Array[String](["扑克牌"])
+name_ = "扑克J"
+description = "特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"
