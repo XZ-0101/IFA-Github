@@ -20,7 +20,7 @@ if max_point<17:
 	var add=randi_range(1,11)
 	max_point+=add
 	Fight.play_anima(\"text\",team,\"show,抽牌点数是{p}\".format({\"p\":str(add)}))
-if LittleGameFight.now_skill == LittleGameFight.skill_arr[3]:
+if \"守备\" in LittleGameFight.now_skill.type:
 	var add=randi_range(1,11)
 	emax_point+=add
 "
