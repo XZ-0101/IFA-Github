@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	lgc.gift_array.clear()
-	#lgc.gift_array.append(load(\"res://little_game/fight/res/enemy/redmist/gift/gj.tres\"))
+
 	lgc.deck_pool=deck_pool_
 	lgc.h_deck_pool=hard_deck_pool_
 	lgc.nm_deck_pool=nm_deck_pool_
