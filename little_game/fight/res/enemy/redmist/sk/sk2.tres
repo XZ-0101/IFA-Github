@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://dnic052l6wcdm"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_6s2ec"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_a3ta2"]
+[ext_resource type="Texture2D" uid="uid://cts40ny21cwu0" path="res://little_game/fight/res/enemy/redmist/sk/rm_sk2.png" id="2_d11er"]
+
+[sub_resource type="Resource" id="Resource_d11er"]
+script = ExtResource("1_6s2ec")
+code = "var p = Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\")
+max_point+=p"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_rt3mf"]
+script = ExtResource("1_6s2ec")
+code = "var p = Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\") * 0.1
+hit_area+=p
+"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_l5ifl"]
+script = ExtResource("1_6s2ec")
+code = "for i in range(1,3):
+	if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\")!=0:
+		Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))
+		Fight.minus_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",team,1)"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_a3ta2")
+name_ = "极速冲击"
+icon = ExtResource("2_d11er")
+level = 2
+change_Point = 15
+coin_n = 1
+base_point = 10
+at = 33
+def = 60
+description = Array[String](["[拼点时]自身每带有1层 过人的技巧 ，使本技能拼点威力+1(最多+3)", "[攻击前]自身每带有1层 过人的技巧 ，使本技能造成的伤害+10%(最多+30%)", "[命中时]使自身失去至多3层 过人的技巧 ，每失去1层 过人的技巧 ，施加2层 流血"])
+eff_arr = Array[ExtResource("1_6s2ec")]([SubResource("Resource_d11er"), SubResource("Resource_rt3mf"), SubResource("Resource_l5ifl")])
+sin_color = Color(0.77254903, 0.07450981, 0.0627451, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

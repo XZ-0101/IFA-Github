@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://mi3r6vjl2rc5"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_0vkkq"]
+[ext_resource type="Texture2D" uid="uid://c3n8tey3tg0ye" path="res://little_game/fight/res/skill/ap/ap-a-2.png" id="2_0vkkq"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_onvfh"]
+
+[sub_resource type="Resource" id="Resource_jxls1"]
+script = ExtResource("1_0vkkq")
+code = "hit_area+=randi_range(1,6)*0.1
+"
+exe_time = "before_hit"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_onvfh"]
+script = ExtResource("1_0vkkq")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/powerful.tres\",2,team)"
+exe_time = "turn_end"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_onvfh")
+name_ = "攻击（大）"
+icon = ExtResource("2_0vkkq")
+level = 2
+change_Point = 4
+coin_n = 3
+base_point = 5
+at = 15
+def = 20
+description = Array[String](["[攻击前]暴击增加1~6的10%倍
+", "[回合结束时]获得2层强壮"])
+eff_arr = Array[ExtResource("1_0vkkq")]([SubResource("Resource_jxls1"), SubResource("Resource_onvfh")])
+sin_color = Color(0.84705883, 0.03529412, 0.08235294, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

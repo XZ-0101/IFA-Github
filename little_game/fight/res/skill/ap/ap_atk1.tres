@@ -4,6 +4,21 @@
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_8u4te"]
 [ext_resource type="Texture2D" uid="uid://isvll1eqjt3" path="res://little_game/fight/res/skill/ap/ap-a-1.png" id="2_q8jmm"]
 
+[sub_resource type="Resource" id="Resource_q8jmm"]
+script = ExtResource("1_gblsg")
+code = "hit_area+=randi_range(1,3)*0.1
+"
+exe_time = "before_hit"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_gjrwo"]
+script = ExtResource("1_gblsg")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/powerful.tres\",1,team)"
+exe_time = "turn_end"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
 [resource]
 script = ExtResource("2_8u4te")
 name_ = "攻击（中）"
@@ -14,5 +29,8 @@ coin_n = 3
 base_point = 3
 at = 10
 def = 30
+description = Array[String](["[攻击前]暴击增加1~3的10%倍
+", "[回合结束时]获得1层强壮"])
+eff_arr = Array[ExtResource("1_gblsg")]([SubResource("Resource_q8jmm"), SubResource("Resource_gjrwo")])
 sin_color = Color(0.84705883, 0.03529412, 0.08235294, 1)
 metadata/_custom_type_script = "uid://bj8vuop3720um"

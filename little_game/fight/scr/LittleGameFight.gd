@@ -123,11 +123,12 @@ func  build_gift_eff():
 
 func add_to_time_list(eff_list:Array):
 	for i in eff_list:
-		
-		add_one_to_time_list(i)
+		if i:
+			add_one_to_time_list(i)
 
 func add_one_to_time_list(i:Executer):
-	get(i.exe_time).append(i)
+	if i:
+		get(i.exe_time).append(i)
 	#match  i.exe_time:
 		#"fight_strat":
 			#fight_strat.append(i)

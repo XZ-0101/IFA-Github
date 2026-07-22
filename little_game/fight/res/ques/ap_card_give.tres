@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://bixya20bw2hv1"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_34x6e"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_17eku"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_q2wt1"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_kwu1m"]
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="4_auv3w"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="5_rk2pw"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="6_2ujnd"]
+[ext_resource type="Resource" uid="uid://bmkkuwnc2qjwx" path="res://little_game/fight/res/skill/ap/ap_atk1.tres" id="6_rk2pw"]
+[ext_resource type="Resource" uid="uid://mi3r6vjl2rc5" path="res://little_game/fight/res/skill/ap/ap_atk2.tres" id="7_2ujnd"]
+[ext_resource type="Resource" uid="uid://5mwlvvvkjfyo" path="res://little_game/fight/res/skill/ap/ap_atk3.tres" id="8_sjfed"]
+
+[sub_resource type="Resource" id="Resource_5tfor"]
+script = ExtResource("4_auv3w")
+name_ = "吉星派对卡组1"
+skill_arr = Array[ExtResource("5_rk2pw")]([ExtResource("6_rk2pw"), ExtResource("7_2ujnd"), ExtResource("8_sjfed")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_soxgy"]
+script = ExtResource("3_kwu1m")
+skill = SubResource("Resource_5tfor")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_28ud4"]
+script = ExtResource("6_2ujnd")
+"介绍" = "获得卡牌"
+win_text = "给你"
+gift = SubResource("Resource_soxgy")
+name_ = "好"
+"结果" = "ok"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_17eku")
+"问题" = "获得卡牌$s对的"
+item = Array[ExtResource("1_34x6e")]([SubResource("Resource_28ud4")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

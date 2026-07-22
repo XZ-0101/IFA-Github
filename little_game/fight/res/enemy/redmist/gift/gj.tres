@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="jumper_class" format=3 uid="uid://dx8e8ecv61b1e"]
+
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="1_oeqoh"]
+[ext_resource type="Texture2D" uid="uid://t3akfflhvgk0" path="res://little_game/fight/res/enemy/redmist/gift/gift.webp" id="2_rb3kv"]
+
+[resource]
+script = ExtResource("1_oeqoh")
+name_ = "血雾"
+texture = ExtResource("2_rb3kv")
+screen_path = "res://screen/a_page.tscn"
+res_path = "res://little_game/fight/res/enemy/redmist/gift/gb.tres"
+mode = "lobotomyG"
+metadata/_custom_type_script = "uid://ca35eduysd8ex"

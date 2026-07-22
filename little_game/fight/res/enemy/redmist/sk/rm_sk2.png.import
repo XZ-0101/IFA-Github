@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2smweree3en"
-path="res://.godot/imported/xw.png-797056753110d315d500cea7f5572cbf.ctex"
+uid="uid://cts40ny21cwu0"
+path="res://.godot/imported/rm_sk2.png-5f60989d99c0d4953c7eec985e1b8c5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/enemy/redmist/img/xw.png"
-dest_files=["res://.godot/imported/xw.png-797056753110d315d500cea7f5572cbf.ctex"]
+source_file="res://little_game/fight/res/enemy/redmist/sk/rm_sk2.png"
+dest_files=["res://.godot/imported/rm_sk2.png-5f60989d99c0d4953c7eec985e1b8c5d.ctex"]
 
 [params]
 

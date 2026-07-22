@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dsc5rk3jx627s" path="res://little_game/fight/CLASS/gift_value.gd" id="13_r1m48"]
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="14_burdh"]
 [ext_resource type="Resource" uid="uid://dpvlmkkdl58sh" path="res://res/jumper/o-03-03-g-jumper.tres" id="15_2tesm"]
+[ext_resource type="Resource" uid="uid://cdetcmsdu3a33" path="res://little_game/fight/res/enemy/redmist/gift/g.tres" id="19_dd6e7"]
 [ext_resource type="Resource" uid="uid://bu7nmphnwf28q" path="res://little_game/gift/bstt-g.tres" id="20_2kcq8"]
 [ext_resource type="Resource" uid="uid://clgcnddaegmjb" path="res://little_game/fight/res/ques/star/gift/eff.tres" id="21_lfxqo"]
 [ext_resource type="Texture2D" uid="uid://b5l6c0dlvxxpm" path="res://little_game/Sprite/zheshe.png" id="25_hfb7x"]
@@ -56,6 +57,7 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	lgc.gift_array.clear()
+	#lgc.gift_array.append(load(\"res://little_game/fight/res/enemy/redmist/gift/gj.tres\"))
 	lgc.deck_pool=deck_pool_
 	lgc.h_deck_pool=hard_deck_pool_
 	lgc.nm_deck_pool=nm_deck_pool_
@@ -185,7 +187,7 @@ skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({
 0: ExtResource("12_srfm3"),
 1: ExtResource("13_dd6e7")
 })
-d_gift_eff_arr = Array[ExtResource("13_r1m48")]([SubResource("Resource_dd6e7"), SubResource("Resource_lfxqo"), SubResource("Resource_ndois"), ExtResource("21_lfxqo")])
+d_gift_eff_arr = Array[ExtResource("13_r1m48")]([SubResource("Resource_dd6e7"), SubResource("Resource_lfxqo"), SubResource("Resource_ndois"), ExtResource("21_lfxqo"), ExtResource("19_dd6e7")])
 
 [node name="Control3" type="Control" parent="." unique_id=1074257157]
 z_index = 1

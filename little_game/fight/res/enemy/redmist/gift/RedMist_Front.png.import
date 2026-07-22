@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://80cs6iu21bvt"
-path="res://.godot/imported/rm_skpanic.png-9842342644e9fc13fe614a8fddbdd4e0.ctex"
+uid="uid://dchc5jmj8248"
+path="res://.godot/imported/RedMist_Front.png-322388053d331158c60e726f44c62aa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/enemy/redmist/img/rm_skpanic.png"
-dest_files=["res://.godot/imported/rm_skpanic.png-9842342644e9fc13fe614a8fddbdd4e0.ctex"]
+source_file="res://little_game/fight/res/enemy/redmist/gift/RedMist_Front.png"
+dest_files=["res://.godot/imported/RedMist_Front.png-322388053d331158c60e726f44c62aa9.ctex"]
 
 [params]
 

@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://lilepq8qiek4" path="res://screen/TX6.tscn" id="17_rxe5j"]
 [ext_resource type="AudioStream" uid="uid://dfoontq5be7f1" path="res://little_game/AudioClip/Parry_Atk.wav" id="20_rxe5j"]
 [ext_resource type="PackedScene" uid="uid://nrulnhqc6fk4" path="res://screen/typer.tscn" id="21_rxe5j"]
+[ext_resource type="Texture2D" uid="uid://b5l6c0dlvxxpm" path="res://little_game/Sprite/zheshe.png" id="22_m0kvj"]
+[ext_resource type="AudioStream" uid="uid://dt8eocpltus22" path="res://little_game/AudioClip/LC_전투승리_BGM_(완성본_LOOP).ogg.mp3" id="23_5nd8l"]
 [ext_resource type="AudioStream" uid="uid://dyr6f561sqb7d" path="res://little_game/AudioClip/Kali_Special_Vert_Hit.wav" id="23_n15yu"]
 [ext_resource type="AudioStream" uid="uid://bvkvamoqr1b88" path="res://little_game/AudioClip/Defensed_Vert.wav" id="24_n41f6"]
 [ext_resource type="AudioStream" uid="uid://cm5mepnudfj2v" path="res://little_game/AudioClip/Defense_Guard.wav" id="25_l04nm"]
@@ -110,7 +112,10 @@ func turn_start():
 		fight.enemy_sp=fight.enemy.sp
 	if fight.fight_sp>fight.fight_sp_max:
 		fight.fight_sp=fight.fight_sp_max
-	
+	$turn_anima/RichTextLabel.text=\"回合\"+str(fight.true_turn_num)
+	$turn_anima/AnimationPlayer.play(\"new_animation\")
+	await $turn_anima/AnimationPlayer.animation_finished
+	return
 
 func give_card():
 	assignment_skill(3,fight.skill_arr[3])
@@ -128,7 +133,8 @@ func give_card():
 			
 		fight.add_skill_inpool(fight.skill_arr[2],0)
 		give_card()
-	skill_act.show()
+	$player/ColorRect.hide()
+	$player/skill_an.play_backwards(\"new_animation\")
 	
 func assignment_skill(which:int,skill:skill_lt):
 	skill_act.get_child(which).skill=skill
@@ -175,7 +181,7 @@ func ass_skill_enemy(c1:skill_lt):
 	enemy_skill.get_child(0).skill=c
 	enemy_skill.get_child(0).show_it()
 	fight.enemy_skill_pool.erase(c)
-
+	
 func give_card_enemy_rmode():
 	for i in fight.enemy.skill_array:
 		print(\"give\",i.level)
@@ -360,7 +366,8 @@ func panic_skill_give():
 	assignment_skill(1,fight.skill_arr[4])
 	assignment_skill(2,fight.skill_arr[4])
 	assignment_skill(3,fight.skill_arr[4])
-	skill_act.show()
+	$player/ColorRect.hide()
+	$player/skill_an.play_backwards(\"new_animation\")
 	
 func enemy_panic_skill_give():
 	ass_skill_enemy(fight.enemy.panic_skill)
@@ -465,7 +472,8 @@ func _on_fight_start_button_down() -> void:
 
 func start_point():
 	if choised_skill_ind!=0:
-		skill_act.hide()
+		$player/ColorRect.show()
+		$player/skill_an.play(\"new_animation\")
 		enemy_skill.hide()
 		
 		fight.now_skill=choised_skill.duplicate()
@@ -575,6 +583,8 @@ func check_die():
 		lose()
 	pass
 func win():
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer2.play()
 	LittleGameCtrl.n_hp=fight.fight_hp
 	LittleGameCtrl.sp=fight.fight_sp*2
 	var i =fight.enemy
@@ -891,6 +901,66 @@ region = Rect2(527, 541, 120, 132)
 atlas = ExtResource("14_7uibp")
 region = Rect2(657, 737, 153, 160)
 
+[sub_resource type="Animation" id="Animation_cp1f4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SKILL:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SKILL:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3obch"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SKILL:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SKILL:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d07j6"]
+_data = {
+&"RESET": SubResource("Animation_cp1f4"),
+&"new_animation": SubResource("Animation_3obch")
+}
+
 [sub_resource type="GDScript" id="GDScript_66qcp"]
 script/source = "extends Panel
 @export var skill_show:Node
@@ -994,6 +1064,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func show_(arr:Array[String]):
+	
 	var label=$RichTextLabel
 	show()
 	label.text=\"恭喜你获胜了\\n\"
@@ -1012,6 +1083,67 @@ func end():
 	
 	print(\"end\")
 "
+
+[sub_resource type="Animation" id="Animation_n41f6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l04nm"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333337, 0.72, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cp1f4"]
+_data = {
+&"RESET": SubResource("Animation_n41f6"),
+&"new_animation": SubResource("Animation_l04nm")
+}
 
 [node name="fight" type="Control" unique_id=1135632432 node_paths=PackedStringArray("enemy_name", "enemy_hp_num_cent", "enemy_hp_pb", "enemy_sp_num_cent", "enemy_sp_pb", "hp_num_cent", "hp_pb", "sp_num_cent", "sp_pb", "buff", "enemy_buff", "enemy_skill", "skill_act", "enemy_anima_node", "our_anima_node")]
 layout_mode = 3
@@ -1539,11 +1671,14 @@ theme_override_constants/h_separation = 7
 columns = 10
 
 [node name="SKILL" type="HBoxContainer" parent="player" unique_id=2108868641]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 12.0
 offset_top = 55.0
 offset_right = 574.0
 offset_bottom = 175.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 100)
 
 [node name="fight_start" type="Button" parent="player/SKILL" unique_id=655634464]
 custom_minimum_size = Vector2(100, 50)
@@ -1589,12 +1724,24 @@ offset_top = -17.0
 offset_right = 319.0
 offset_bottom = 23.0
 
+[node name="ColorRect" type="ColorRect" parent="player" unique_id=387470003]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 55.0
+offset_right = 578.0
+offset_bottom = 175.0
+color = Color(1, 1, 1, 0)
+
+[node name="skill_an" type="AnimationPlayer" parent="player" unique_id=1002324192]
+libraries/ = SubResource("AnimationLibrary_d07j6")
+speed_scale = 2.0
+
 [node name="Panel_point" type="Panel" parent="." unique_id=1732484425 node_paths=PackedStringArray("skill_show", "skill_show2", "skill_point", "skill_point2", "skill_point_num", "skill_point_num2")]
 visible = false
 layout_mode = 0
-offset_left = 5.0
+offset_left = -1.0
 offset_top = 343.0
-offset_right = 640.0
+offset_right = 646.0
 offset_bottom = 889.0
 theme = ExtResource("2_2fnmu")
 script = SubResource("GDScript_66qcp")
@@ -1820,6 +1967,41 @@ offset_right = -23.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="turn_anima" type="TextureRect" parent="." unique_id=214506453]
+texture_filter = 1
+layout_mode = 0
+offset_left = -30.0
+offset_top = 352.0
+offset_right = 621.0
+offset_bottom = 857.0
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("22_m0kvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="turn_anima" unique_id=2131440004]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 225.0
+offset_right = 469.0
+offset_bottom = 305.0
+mouse_filter = 2
+theme = ExtResource("2_2fnmu")
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "回合3"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="turn_anima" unique_id=1214737260]
+libraries/ = SubResource("AnimationLibrary_cp1f4")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=136420485]
+stream = ExtResource("23_5nd8l")
+parameters/looping = true
 
 [connection signal="mouse_entered" from="enemy/skill" to="." method="_on_skill_mouse_entered"]
 [connection signal="mouse_exited" from="enemy/skill" to="." method="_on_skill_mouse_exited"]

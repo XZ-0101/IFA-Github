@@ -164,7 +164,7 @@ func_code = "func card1(who:int):
 		8:
 			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/8BUFF.tres\",8,who)
 		9:
-			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/9BUFF.tres\",10,who)
+			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/9BUFF.tres\",9,who)
 		10:
 			Fight.add_buff_path(\"res://little_game/fight/res/enemy/black_jack/buff/10BUFF.tres\",10,who)
 		11:

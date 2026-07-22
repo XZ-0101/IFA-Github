@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="bacis_ego" format=3 uid="uid://des7ayiixfk0r"]
+
+[ext_resource type="Resource" uid="uid://dx8e8ecv61b1e" path="res://little_game/fight/res/enemy/redmist/gift/gj.tres" id="1_hwpla"]
+[ext_resource type="Script" uid="uid://df3xo7aj4q6ri" path="res://script/bacis_ego.gd" id="1_q3cgf"]
+[ext_resource type="Texture2D" uid="uid://t3akfflhvgk0" path="res://little_game/fight/res/enemy/redmist/gift/gift.webp" id="3_hwpla"]
+
+[resource]
+script = ExtResource("1_q3cgf")
+name_ = "血雾"
+texture = ExtResource("3_hwpla")
+info = "[攻击前]最终威力+2
+
+敌方每有两层流血，则获得1层过人的技巧
+
+对装备了守备技能的敌方单位造成伤害+30%"
+jumper = ExtResource("1_hwpla")
+gif = "null"
+metadata/_custom_type_script = "uid://df3xo7aj4q6ri"

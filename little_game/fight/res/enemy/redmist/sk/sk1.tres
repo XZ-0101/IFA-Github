@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://c0lphm8hg527x"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_nro7y"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_7pu7a"]
+[ext_resource type="Texture2D" uid="uid://qydubq74k1s" path="res://little_game/fight/res/enemy/redmist/sk/rm_sk1.png" id="2_8ds20"]
+
+[sub_resource type="Resource" id="Resource_8ds20"]
+script = ExtResource("1_nro7y")
+code = "if Fight.get_buff_x_with_res(get_enemy(team),\"res://little_game/fight/res/buff/blood.tres\")>=4:
+	Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",1,team)
+"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_s1w2r"]
+script = ExtResource("1_nro7y")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_7pu7a")
+name_ = "大刀连袭"
+icon = ExtResource("2_8ds20")
+level = 1
+change_Point = 5
+coin_n = 3
+base_point = 8
+at = 30
+def = 80
+description = Array[String](["[攻击前]若目标 流血 层数不低于4层，则使自身获得1层 过人的技巧", "[命中时]施加2层 流血"])
+eff_arr = Array[ExtResource("1_nro7y")]([SubResource("Resource_8ds20"), SubResource("Resource_s1w2r")])
+sin_color = Color(0.8156863, 0.05490196, 0.05490196, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

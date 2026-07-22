@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjd5his0dpcw2"
-path="res://.godot/imported/rm_skdef.png-ccfa68da2d5f40b1682a4e131749a2bc.ctex"
+path="res://.godot/imported/rm_skdef.png-536e1b324dc638a13aa804a4816441aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/enemy/redmist/img/rm_skdef.png"
-dest_files=["res://.godot/imported/rm_skdef.png-ccfa68da2d5f40b1682a4e131749a2bc.ctex"]
+source_file="res://little_game/fight/res/enemy/redmist/sk/rm_skdef.png"
+dest_files=["res://.godot/imported/rm_skdef.png-536e1b324dc638a13aa804a4816441aa.ctex"]
 
 [params]
 

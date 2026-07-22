@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://cyrijju7x5ckr"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_xev8o"]
+[ext_resource type="Texture2D" uid="uid://i6c18lpleij2" path="res://little_game/fight/res/enemy/redmist/sk/rm_sk3.png" id="2_17c2e"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_nrchv"]
+
+[sub_resource type="Resource" id="Resource_17c2e"]
+script = ExtResource("1_xev8o")
+code = "var bleed = Fight.get_buff_x_with_type(get_enemy(team), \"res://little_game/fight/res/buff/blood.tres\")
+var recover = floor(bleed / 3)
+if recover > 0:
+	sp = min(sp + recover, sp_max)
+	Fight.play_anima(\"text\", team, \"hel,\" + str(recover) + \",sp\")
+
+
+hit_area+=0.5"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_x2qh8"]
+script = ExtResource("1_xev8o")
+code = "var bleed = Fight.get_buff_x_with_type(get_enemy(team), \"res://little_game/fight/res/buff/blood.tres\")
+if bleed != 0:
+
+	ehp -= bleed
+	Fight.play_anima(\"text\", get_enemy(team), \"hit,\" + str(bleed) + \",hp\")
+
+	Fight.remove_buff_path(\"res://little_game/fight/res/buff/blood.tres\",get_enemy(team))
+
+	var stack = floor(bleed / 3)
+	if stack > 0:
+		Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\", stack, team)
+"
+exe_time = "after_hit"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_nrchv")
+name_ = "血雾弥漫"
+icon = ExtResource("2_17c2e")
+level = 3
+change_Point = 13
+coin_n = 1
+base_point = 10
+at = 45
+def = 60
+description = Array[String](["[攻击前]目标每拥有3层 流血 ，使自身恢复1点理智值
+[攻击前]使本技能造成的伤害+50%", "[命中时]追加同等于目标带有的 流血 层数的伤害并使目标失去所有 流血
+[命中时]目标每失去3层 流血 便使自身获得1层 过人的技巧"])
+eff_arr = Array[ExtResource("1_xev8o")]([SubResource("Resource_17c2e"), SubResource("Resource_x2qh8")])
+sin_color = Color(0.972549, 0.02745098, 0.015686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

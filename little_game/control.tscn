@@ -146,6 +146,7 @@ func _a_choiced(index:int):
 							
 					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
 				if i.gift.to_fight!=\"\":
+					text.append(\"遭遇战！\")
 					fight(i.gift.to_fight)
 			can_next=true
 			if text.size() > 1:

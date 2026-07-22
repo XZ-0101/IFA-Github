@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://eva012ty47fu"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_20u7n"]
+[ext_resource type="Texture2D" uid="uid://80cs6iu21bvt" path="res://little_game/fight/res/enemy/redmist/sk/rm_skpanic.png" id="2_mevtb"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_vqoyt"]
+
+[sub_resource type="Resource" id="Resource_20u7n"]
+script = ExtResource("1_20u7n")
+code = "sp+=10"
+exe_time = "before_hit"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_vqoyt"]
+script = ExtResource("1_20u7n")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/xw.tres\",1,team)
+#我真的要累死了，现在0：14"
+exe_time = "turn_end"
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_vqoyt")
+name_ = "■■■展现？"
+icon = ExtResource("2_mevtb")
+change_Point = 2
+coin_n = 1
+base_point = 4
+def = 50
+description = Array[String](["[攻击前]使自身回复10sp", "[回合结束时]获得1层 红雾传说"])
+eff_arr = Array[ExtResource("1_20u7n")]([SubResource("Resource_20u7n"), SubResource("Resource_vqoyt")])
+type = Array[String](["恐慌"])
+sin_color = Color(0.9882353, 0.007843138, 0.015686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

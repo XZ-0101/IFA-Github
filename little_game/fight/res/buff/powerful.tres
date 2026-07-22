@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cql5d872fsp3t"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_eh2jy"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_t06g7"]
+[ext_resource type="Texture2D" uid="uid://b2v82lptpgmou" path="res://little_game/fight/res/buff/buff_img/强壮.webp" id="2_3a5f7"]
+
+[sub_resource type="Resource" id="Resource_2d75f"]
+script = ExtResource("1_t06g7")
+most_x = 10
+code = "max_point+=x
+Fight.remove_buff_path(\"res://little_game/fight/res/buff/powerful.tres\",team)"
+exe_time = "when_point"
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_eh2jy")
+eff = SubResource("Resource_2d75f")
+icon = ExtResource("2_3a5f7")
+id = "powerful"
+type = Array[String](["buff"])
+name_ = "强壮"
+description = "[拼点时]威力加+X，失去该Buff"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

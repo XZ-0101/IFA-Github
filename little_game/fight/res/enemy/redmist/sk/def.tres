@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://dcjlbfywurkr8"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_ekyee"]
+[ext_resource type="Texture2D" uid="uid://bjd5his0dpcw2" path="res://little_game/fight/res/enemy/redmist/sk/rm_skdef.png" id="2_2f63k"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_qll1n"]
+
+[sub_resource type="Resource" id="Resource_2w2tg"]
+script = ExtResource("1_ekyee")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/powerful.tres\",2,team)
+Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",2,team)"
+exe_time = "after_under_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_qll1n")
+name_ = "屏息凝神"
+icon = ExtResource("2_2f63k")
+level = 3
+change_Point = 6
+coin_n = 1
+base_point = 10
+at = 20
+def = 85
+description = Array[String](["[受到攻击后]获得2层 过人的技巧,2层强壮"])
+eff_arr = Array[ExtResource("1_ekyee")]([SubResource("Resource_2w2tg")])
+type = Array[String](["守备", "防御"])
+sin_color = Color(0.79607844, 0.047058824, 0.08627451, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

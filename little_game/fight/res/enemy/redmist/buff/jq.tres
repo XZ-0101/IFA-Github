@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://c3a7fhdxy7g6i"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_bsfdg"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_oajqh"]
+[ext_resource type="Texture2D" uid="uid://jv08kl6vvx6l" path="res://little_game/fight/res/enemy/redmist/buff/buf.png" id="2_gc3bh"]
+
+[sub_resource type="Resource" id="Resource_eonda"]
+script = ExtResource("1_bsfdg")
+most_x = 3
+code = "hit_area+=0.05*x
+
+if \"守备\" in enow_skill.type:
+	hit_area-=0.1*x
+	minus_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",team,1)"
+exe_time = "before_hit"
+is_who = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_oajqh")
+eff = SubResource("Resource_eonda")
+icon = ExtResource("2_gc3bh")
+id = "RedMistBuff1"
+name_ = "过人的技巧"
+description = "[攻击前]每层使自身造成的伤害+5%(最大+15%)，对装备守备技能的单位造成伤害-10%(最大-30%)
+每次命中使用守备技能的单位时，使自身失去1层本效果"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

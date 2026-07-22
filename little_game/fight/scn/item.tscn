@@ -74,6 +74,8 @@ func _on_button_button_down() -> void:
 		LittleGameCtrl.value_array[3]+=gift.gift_price
 		LittleGameCtrl.gift_array.erase(gift_)
 		emit_signal(\"sale_event\")
+		$AnimationPlayer.play(\"new_animation\")
+		await  $AnimationPlayer.animation_finished
 		queue_free()
 		OS.alert(\"获得了{x}正义等级！\".format({\"x\":str(gift.gift_price)}),\"成功\")
 		
@@ -87,6 +89,43 @@ func _on_button_2_button_down() -> void:
 	pass # Replace with function body.
 "
 
+[sub_resource type="Animation" id="Animation_6i6uq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v0u7f"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwcl3"]
+_data = {
+&"RESET": SubResource("Animation_6i6uq"),
+&"new_animation": SubResource("Animation_v0u7f")
+}
+
 [node name="Control" type="Control" unique_id=1598841261]
 custom_minimum_size = Vector2(100, 130)
 layout_mode = 3
@@ -97,7 +136,13 @@ offset_right = -548.0
 offset_bottom = -1022.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
 script = SubResource("GDScript_v0u7f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1488230883]
+root_node = NodePath("../icon2")
+libraries/ = SubResource("AnimationLibrary_kwcl3")
+speed_scale = 1.2
 
 [node name="icon2" type="TextureRect" parent="." unique_id=316201300]
 layout_mode = 1

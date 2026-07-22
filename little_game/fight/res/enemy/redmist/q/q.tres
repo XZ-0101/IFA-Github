@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://cxblhoyi36ar0"]
+
+[ext_resource type="Texture2D" uid="uid://mwxq51to18er" path="res://little_game/fight/res/enemy/redmist/img/q.jpg" id="1_774ts"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_u2e3y"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="2_mm0wc"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_sidmb"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_37ikf"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="5_47t2k"]
+[ext_resource type="Resource" uid="uid://dx8e8ecv61b1e" path="res://little_game/fight/res/enemy/redmist/gift/gj.tres" id="6_sidmb"]
+
+[sub_resource type="Resource" id="Resource_bwdfi"]
+script = ExtResource("4_37ikf")
+value_object = 3
+add_valua = 50
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_n37d5"]
+script = ExtResource("5_47t2k")
+"介绍" = "增加正义等级"
+win_text = "收尾人把什么东西塞进了我的手里，转身离开。"
+gift = SubResource("Resource_bwdfi")
+name_ = "告诉面前的人自己也不清楚。"
+"结果" = "“我也不清楚。”$s你如此回答。$s“那得了，我自己再找找吧，不过，把这个留给你们吧。”"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_sidmb"]
+script = ExtResource("4_37ikf")
+get_gift = Array[ExtResource("3_sidmb")]([ExtResource("6_sidmb")])
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_774ts"]
+script = ExtResource("4_37ikf")
+value_object = 5
+add_valua = -10
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_q221s"]
+script = ExtResource("5_47t2k")
+"介绍" = "需要谨慎判定"
+mode = 1
+check_object = 1
+value = 15
+win_text = "简单思考后，你指出了一条路。$s“多谢了。”$s收尾人尝试把什么东西塞进你手里，然而，却瞬间坍塌，成为了一缕布条。
+"
+lose_text = "你简单思考后，指出了一条路。$s“那是我已经走过的。”$s气氛顿时有些尴尬。"
+gift = SubResource("Resource_sidmb")
+losegift = SubResource("Resource_774ts")
+name_ = "指一条路"
+"结果" = "..."
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_47t2k"]
+script = ExtResource("4_37ikf")
+to_fight = "res://little_game/fight/res/enemy/redmist/rm.tres"
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_37ikf"]
+script = ExtResource("5_47t2k")
+"介绍" = "触发遭遇战"
+win_text = "“啧，难道说你也是刚才那种怪物？”$s尽管能看出，收尾人并没有使出多少力量，也可能是[NULL]的调谐，但武器已经向你砍来。"
+gift = SubResource("Resource_47t2k")
+name_ = "默不作声。"
+"结果" = "镜像迷宫中的一切都只是折射的产物，面前的“收尾人”不一定是否有足够的理智，你决定默不作声。"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_mm0wc")
+img = ExtResource("1_774ts")
+name_ = "血雾弥漫"
+subject = "投稿-鱼翅-01"
+"问题" = "满是血色浓雾的十字路口，听到了不远处的喊声。$s“喂，这附近有能出去的路吗？”$s似乎是一名收尾人，站在你面前询问着。$s“您是…”$s尽管能感觉出面前的收尾人是，或者曾是鼎鼎有名的大人物…但你却完全没有头绪。$s“如果你们也是在这个地方迷路的，那我就自己去找好了。"
+item = Array[ExtResource("1_u2e3y")]([SubResource("Resource_n37d5"), SubResource("Resource_q221s"), SubResource("Resource_37ikf")])
+with_fight = true
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

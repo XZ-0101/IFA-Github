@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://dq05myfunbsbs"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_c4wun"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_s1w2r"]
+[ext_resource type="Texture2D" uid="uid://cw2smweree3en" path="res://little_game/fight/res/enemy/redmist/buff/xw.png" id="2_p7dev"]
+
+[sub_resource type="Resource" id="Resource_j5y6c"]
+script = ExtResource("1_s1w2r")
+most_x = 1
+code = "max_point+=1"
+exe_time = "when_point"
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_c4wun")
+eff = SubResource("Resource_j5y6c")
+icon = ExtResource("2_p7dev")
+id = "RedMistBuff2"
+name_ = "红雾传说"
+description = "[拼点时]硬币威力+1"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

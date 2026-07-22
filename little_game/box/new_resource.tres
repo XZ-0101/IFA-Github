@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://cv68kau4mygrs" path="res://little_game/q/v.tres" id="3_rni80"]
 [ext_resource type="Resource" uid="uid://byohjh88ahfco" path="res://little_game/q/h.tres" id="4_mu1a2"]
 [ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="4_rni80"]
+[ext_resource type="Resource" uid="uid://cxblhoyi36ar0" path="res://little_game/fight/res/enemy/redmist/q/q.tres" id="5_rni80"]
+[ext_resource type="Resource" uid="uid://bixya20bw2hv1" path="res://little_game/fight/res/ques/ap_card_give.tres" id="6_mu1a2"]
 
 [resource]
 script = ExtResource("4_rni80")
@@ -13,4 +15,6 @@ name_ = "[color=pink]MAGIC GRIL[/color]"
 type = Array[String](["脑叶公司", "异想体", "魔法少女"])
 card = Array[ExtResource("1_cknxi")]([ExtResource("2_oj0ux"), ExtResource("3_rni80"), ExtResource("4_mu1a2")])
 img = ExtResource("3_esdpb")
+fate_cards = Array[ExtResource("1_cknxi")]([ExtResource("5_rni80"), ExtResource("6_mu1a2")])
+fate_points = Array[String](["0,1", "1,0"])
 metadata/_custom_type_script = "uid://b8rki7fa01jly"
