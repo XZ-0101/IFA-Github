@@ -154,26 +154,23 @@ func _a_choiced(index:int):
 				await text_over
 				$\"判定\".hide()
 			else:
-				# 先检查是否有分支问题
-				if i.分支问题:
-					# 直接跳转，不等待按钮点击
-					f = true
-					q = i.分支问题
-					ask_question()
-					f = false
-					return  # 直接退出，不执行后续
-				else:
-					can_next = false
-					is_over = true
-					$Timer.wait_time = 1
-					$Timer.start()
-					await $Timer.timeout
-					$\"判定\".hide()
-
-			# 分段显示完成后的分支检查（保留原来的）
-			if not i.分支问题:  # 如果没跳转，才设置结束
-				can_next = false
-				is_over = true
+				print(\"要over\")
+				can_next=false
+				is_over=true
+				$Timer.wait_time=1
+				$Timer.start()
+				await $Timer.timeout
+				$\"判定\".hide()
+#region 胜利分支
+			if i.分支问题:
+				f=true
+				await text_over2
+				q=i.分支问题
+				ask_question()
+				f=false
+			else:
+				can_next=false
+				is_over=true
 #endregion
 #endregion
 
@@ -218,31 +215,30 @@ func _a_choiced(index:int):
 					fight(i.losegift.to_fight)
 
 			can_next=true
+			print(\"text_size:\",text.size())
 			if text.size() > 1:
 				await text_over
+			
 				$\"判定\".hide()
 			else:
-				# 先检查是否有分支问题
-				if i.lose_question:
-					# 直接跳转，不等待按钮点击
-					f = true
-					q = i.lose_question
-					ask_question()
-					f = false
-					return  # 直接退出，不执行后续
-				else:
-					can_next = false
-					is_over = true
-					$Timer.wait_time = 1
-					$Timer.start()
-					await $Timer.timeout
-					$\"判定\".hide()
+				can_next=false
+				is_over=true
+				$Timer.wait_time=1
+				$Timer.start()
+				await $Timer.timeout
+				$\"判定\".hide()
+			
+#region 失败分支
+			if i.lose_question:
+				f=true
+				await text_over2
+				q=i.lose_question
+				ask_question()
+				f=false
+			else	:
+				can_next=false
+				is_over=true
 
-			# 分段显示完成后的分支检查（保留原来的）
-			if not i.lose_question:  # 如果没跳转，才设置结束
-				can_next = false
-				is_over = true
-#endregion
 #endregion
 #endregion
 
@@ -345,7 +341,7 @@ func check(object:int,value:int,is_shop:bool):
 		$\"判定/Control/RichTextLabel2\".text=\"<\"
 		check_wait2()
 		return \"lose\"
-	pass
+
 
 func check_wait1():
 	$Timer.start()
