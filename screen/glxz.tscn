@@ -36,11 +36,13 @@ offset_left = 13.0
 offset_top = 35.0
 offset_right = 528.0
 offset_bottom = 109.0
+focus_mode = 2
 theme = ExtResource("2_iu5pb")
 theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+selection_enabled = true
 script = ExtResource("4_fb2e6")
 
 [node name="Label" type="Label" parent="." unique_id=1254823627]
@@ -70,11 +72,13 @@ offset_left = 18.0
 offset_top = 4.0
 offset_right = 265.0
 offset_bottom = 73.0
+focus_mode = 2
 theme = ExtResource("2_iu5pb")
 theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+selection_enabled = true
 script = ExtResource("4_fb2e6")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1092427228]
@@ -92,11 +96,13 @@ offset_left = 24.0
 offset_top = 4.0
 offset_right = 278.0
 offset_bottom = 72.0
+focus_mode = 2
 theme = ExtResource("2_iu5pb")
 theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+selection_enabled = true
 script = ExtResource("4_fb2e6")
 
 [connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_on_meta_clicked"]

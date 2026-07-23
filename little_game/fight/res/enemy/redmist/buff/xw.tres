@@ -7,8 +7,8 @@
 [sub_resource type="Resource" id="Resource_j5y6c"]
 script = ExtResource("1_s1w2r")
 most_x = 1
-code = "max_point+=1"
-exe_time = "when_point"
+code = "now_skill.change_Point+=1"
+exe_time = "before_point"
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]
@@ -17,5 +17,5 @@ eff = SubResource("Resource_j5y6c")
 icon = ExtResource("2_p7dev")
 id = "RedMistBuff2"
 name_ = "红雾传说"
-description = "[拼点时]硬币威力+1"
+description = "[拼点前]硬币威力+1"
 metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

@@ -34,6 +34,8 @@ if bleed != 0:
 		Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\", stack, team)
 "
 exe_time = "after_hit"
+is_who = true
+one_time = true
 metadata/_custom_type_script = "uid://skro7sm8drh8"
 
 [resource]

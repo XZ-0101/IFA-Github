@@ -2,7 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_u8p3u"]
 [ext_resource type="PackedScene" uid="uid://c0pjy48i6yhx" path="res://little_game/fight/scn/skill_show.tscn" id="2_kmwbc"]
+[ext_resource type="Resource" uid="uid://dilfhtpamcm3t" path="res://little_game/fight/res/skill/basic_burn/spanic.tres" id="2_m0edf"]
 [ext_resource type="Texture2D" uid="uid://oryoo27j3hxx" path="res://little_game/fight/res/skill/skill_img/test_skill.png" id="2_u8p3u"]
+[ext_resource type="Texture2D" uid="uid://cft2epmedivip" path="res://img2/UI/ring.png" id="3_j1xvq"]
 
 [sub_resource type="GDScript" id="GDScript_j1xvq"]
 script/source = "extends Control
@@ -19,7 +21,7 @@ func _ready() -> void:
 	nm=m.duplicate()
 	$Button.material=nm
 	$Button.material.set_shader_parameter(\"outline_width\",10)
-	
+	read()
 	
 	pass # Replace with function body.
 
@@ -32,25 +34,20 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_2_button_down() -> void:
-	$Button2/Window2.popup()
-
-	$Button2/Window2/CenterContainer/skill.show_it()
 	pass # Replace with function body.
 
 
 func _on_window_2_close_requested() -> void:
-	$Button2/Window2.hide()
+	$Window2.hide()
 	pass # Replace with function body.
 
 
-func _on_button_button_down() -> void:
-	emit_signal(\"skill_choice\",ind)
+
 	pass # Replace with function body.
 func read():
 	$Button.texture_normal=skill.icon
 	$RichTextLabel.text=skill.name_
-	$Button2/Window2/CenterContainer/skill.skill=self.skill
+	$Window2/CenterContainer/skill.skill=self.skill
 
 
 func _on_button_mouse_entered() -> void:
@@ -60,6 +57,47 @@ func _on_button_mouse_entered() -> void:
 
 func _on_button_mouse_exited() -> void:
 	$Button/AnimationPlayer.play_backwards(\"big\")
+	pass # Replace with function body.
+
+
+
+
+func _on_button_3_button_down() -> void:
+	$Timer2.start()
+	$TextureProgressBar.show()
+	pass # Replace with function body.
+
+
+func _on_button_3_button_up() -> void:
+	
+	
+	if $Timer2.time_left:
+		
+		print(\"a\")
+		emit_signal(\"skill_choice\",ind)
+	
+	$Timer2.stop()
+	$TextureProgressBar.hide()
+
+	
+	pass # Replace with function body.
+
+func _physics_process(delta: float) -> void:
+	if $Timer2.time_left>=0.01:
+		$TextureProgressBar.value=(1-$Timer2.time_left/$Timer2.wait_time)*100
+	else:
+		$TextureProgressBar.value=100
+	
+	pass
+
+
+func _on_timer_2_timeout() -> void:
+	
+	$Timer2.stop()
+	
+	$TextureProgressBar.hide()
+	$Window2.popup()
+	$Window2/CenterContainer/skill.show_it()
 	pass # Replace with function body.
 "
 
@@ -137,12 +175,14 @@ corner_radius_bottom_left = 5
 Panel/styles/panel = SubResource("StyleBoxFlat_hlk45")
 
 [node name="Control" type="Control" unique_id=852453537]
-custom_minimum_size = Vector2(150, 120)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 150.0
+offset_right = 120.0
 offset_bottom = 120.0
+theme = ExtResource("1_u8p3u")
 script = SubResource("GDScript_j1xvq")
+skill = ExtResource("2_m0edf")
 
 [node name="Button" type="TextureButton" parent="." unique_id=562761960]
 material = SubResource("ShaderMaterial_kmwbc")
@@ -158,54 +198,15 @@ stretch_mode = 5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button" unique_id=157599697]
 libraries/ = SubResource("AnimationLibrary_m0edf")
 
-[node name="Button2" type="Button" parent="." unique_id=897072968]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=73992656]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -36.0
-grow_horizontal = 0
+offset_top = -18.0
+grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_u8p3u")
-theme_override_font_sizes/font_size = 20
-text = "详细"
-
-[node name="Window2" type="Popup" parent="Button2" unique_id=575946732]
-oversampling_override = 1.0
-title = "技能"
-initial_position = 2
-size = Vector2i(600, 400)
-wrap_controls = false
-
-[node name="Panel" type="Panel" parent="Button2/Window2" unique_id=2074465431]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="Button2/Window2" unique_id=127557396]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="skill" parent="Button2/Window2/CenterContainer" unique_id=809147387 instance=ExtResource("2_kmwbc")]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=73992656]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 5.0
-offset_top = 95.0
-offset_right = -49.0
-offset_bottom = 113.0
-grow_horizontal = 2
 theme = ExtResource("1_u8p3u")
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 15
@@ -225,8 +226,60 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_hlk45")
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1647911597]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -117.0
+offset_right = 130.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(132, 118)
+mouse_filter = 2
+fill_mode = 5
+texture_under = ExtResource("3_j1xvq")
+texture_progress = ExtResource("3_j1xvq")
+tint_under = Color(0.1358124, 0.13248262, 0, 1)
+tint_progress = Color(1, 1, 0.6313726, 1)
+
+[node name="Timer2" type="Timer" parent="." unique_id=1824807106]
+process_callback = 0
+wait_time = 0.8
+
+[node name="Window2" type="Popup" parent="." unique_id=575946732]
+oversampling_override = 1.0
+title = "技能"
+initial_position = 2
+size = Vector2i(600, 400)
+wrap_controls = false
+
+[node name="Panel" type="Panel" parent="Window2" unique_id=2074465431]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Window2" unique_id=127557396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skill" parent="Window2/CenterContainer" unique_id=809147387 instance=ExtResource("2_kmwbc")]
+layout_mode = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_3_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_3_button_up"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
-[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
-[connection signal="close_requested" from="Button2/Window2" to="." method="_on_window_2_close_requested"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="close_requested" from="Window2" to="." method="_on_window_2_close_requested"]

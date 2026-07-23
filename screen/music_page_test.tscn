@@ -181,6 +181,7 @@ offset_top = 68.0
 offset_right = 642.0
 offset_bottom = 1060.0
 theme = ExtResource("16_1y6it")
+scroll_hint_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1160386629]
 layout_mode = 2

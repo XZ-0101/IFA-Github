@@ -11,7 +11,7 @@ code = "hit_area+=0.05*x
 
 if \"守备\" in enow_skill.type:
 	hit_area-=0.1*x
-	minus_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",team,1)"
+	Fight.minus_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\",team,1)"
 exe_time = "before_hit"
 is_who = true
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"

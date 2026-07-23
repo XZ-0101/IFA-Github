@@ -80,7 +80,9 @@ func Initialization():
 	fight_hp_max=LittleGameCtrl.hp
 	fight_sp=roundi(float(LittleGameCtrl.n_sp)/2)
 	fight_sp_max=LittleGameCtrl.sp
-	
+	true_turn_num=0
+	turn_num=0
+	eff_arr=""
 	Init_value()
 	
 	

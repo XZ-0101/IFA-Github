@@ -586,7 +586,7 @@ func win():
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
 	LittleGameCtrl.n_hp=fight.fight_hp
-	LittleGameCtrl.sp=fight.fight_sp*2
+	LittleGameCtrl.n_sp=fight.fight_sp*2
 	var i =fight.enemy
 	if i.gift:
 		if i.gift.get_gift:
@@ -612,10 +612,14 @@ func win():
 			else :
 				LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
 				text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
+		
 		if i.gift.skill:
-			if not i.gift.skill in LittleGameCtrl.skill_arr_a:
-				LittleGameCtrl.skill_arr_a.append(i.gift.skill)
-				text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+				
+			for i_ in i.gift.skill.skill_arr:
+				if not i_ in LittleGameCtrl.skill_arr_a:
+					LittleGameCtrl.skill_arr_a.append(i_)
+							
+					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
 		$win.show_(text)
 	else:
 		text.append(\"没有奖励\")
@@ -1703,9 +1707,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
+offset_left = -6.0
 offset_top = -3.0
-offset_right = 7.0
+offset_right = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

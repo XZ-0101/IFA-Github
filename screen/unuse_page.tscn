@@ -18,6 +18,7 @@ offset_right = 641.0
 offset_bottom = 1080.0
 theme = ExtResource("1_4wi1r")
 vertical_scroll_mode = 2
+scroll_hint_mode = 1
 script = ExtResource("2_y82x2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1380799907]
@@ -105,12 +106,14 @@ offset_left = 186.0
 offset_top = 351.0
 offset_right = 344.0
 offset_bottom = 391.0
+focus_mode = 2
 theme = ExtResource("7_qmm5s")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "这是名字"
 fit_content = true
 autowrap_mode = 0
+selection_enabled = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer/basic" unique_id=96821765]
 texture_filter = 1
@@ -132,11 +135,13 @@ offset_left = 314.0
 offset_top = 95.0
 offset_right = 615.0
 offset_bottom = 292.0
+focus_mode = 2
 theme = ExtResource("7_qmm5s")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "异响体info"
+selection_enabled = true
 script = ExtResource("8_qpu1e")
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=1042890722]
@@ -185,6 +190,7 @@ offset_left = 321.0
 offset_top = 341.0
 offset_right = 606.0
 offset_bottom = 396.0
+focus_mode = 2
 theme = ExtResource("7_qmm5s")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 35
@@ -193,6 +199,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+selection_enabled = true
 
 [node name="Label2" type="Label" parent="VBoxContainer/basic" unique_id=451239129]
 layout_mode = 0
@@ -255,9 +262,11 @@ offset_left = 21.0
 offset_top = 16.0
 offset_right = 572.0
 offset_bottom = 450.0
+focus_mode = 2
 theme = ExtResource("7_qmm5s")
 bbcode_enabled = true
 text = "b"
+selection_enabled = true
 script = ExtResource("8_qpu1e")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy2/TabContainer/解析" unique_id=1644293948]
@@ -290,6 +299,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy2/TabContainer/录像/ScrollContainer" unique_id=1179842886]
 layout_mode = 2
@@ -340,6 +350,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy2/TabContainer/图册/ScrollContainer" unique_id=132270758]
 layout_mode = 2
@@ -411,6 +422,7 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 571.0
 offset_bottom = 279.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/相关/ScrollContainer" unique_id=352633685]
 layout_mode = 2
@@ -435,6 +447,7 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 571.0
 offset_bottom = 279.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/标签/ScrollContainer" unique_id=1079027503]
 layout_mode = 2

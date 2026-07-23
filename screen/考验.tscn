@@ -107,6 +107,7 @@ offset_top = 173.0
 offset_right = 620.0
 offset_bottom = 1051.0
 theme = ExtResource("30_x3ejp")
+scroll_hint_mode = 1
 
 [node name="VBoxContainer" type="GridContainer" parent="ScrollContainer3" unique_id=684524744]
 layout_mode = 2

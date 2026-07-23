@@ -143,6 +143,7 @@ theme = ExtResource("3_1ji8p")
 scroll_vertical = 6000
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
+scroll_hint_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer" unique_id=1047278871]
 custom_minimum_size = Vector2(640, 0)

@@ -104,10 +104,12 @@ offset_top = 32.0
 offset_right = 582.0
 offset_bottom = 663.0
 size_flags_horizontal = 0
+focus_mode = 2
 theme = ExtResource("3_x6jvt")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "啊啊啊啊"
+selection_enabled = true
 script = ExtResource("7_373cs")
 
 [node name="Butto" type="Button" parent="." unique_id=1552082348]
@@ -161,6 +163,7 @@ offset_right = 281.5
 offset_bottom = 562.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme = ExtResource("3_x6jvt")
 bbcode_enabled = true
 text = "已付款规范和卡拉库汇丰控股
@@ -183,6 +186,7 @@ sdgfg
 
 
 "
+selection_enabled = true
 script = ExtResource("7_373cs")
 
 [node name="Button" type="Button" parent="Window/Panel" unique_id=971427419]

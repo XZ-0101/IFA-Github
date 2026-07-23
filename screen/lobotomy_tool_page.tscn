@@ -52,6 +52,7 @@ offset_right = 641.0
 offset_bottom = 1080.0
 theme = ExtResource("3_gav1i")
 vertical_scroll_mode = 2
+scroll_hint_mode = 1
 script = ExtResource("1_iou8n")
 a = ExtResource("2_cunhx")
 
@@ -140,6 +141,7 @@ offset_left = 51.0
 offset_top = 302.0
 offset_right = 277.0
 offset_bottom = 342.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -147,6 +149,7 @@ text = "这是名字"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+selection_enabled = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1677470300]
 layout_mode = 0
@@ -154,11 +157,13 @@ offset_left = 182.0
 offset_top = 336.0
 offset_right = 274.0
 offset_bottom = 378.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 bbcode_enabled = true
 text = "[b]ZAYIN[/b]"
 fit_content = true
 scroll_active = false
+selection_enabled = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer/basic" unique_id=1858406456]
 texture_filter = 1
@@ -180,12 +185,14 @@ offset_left = 314.0
 offset_top = 95.0
 offset_right = 615.0
 offset_bottom = 292.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%BB%BF%E8%89%B2%E7%9A%84%E9%BB%8E%E6%98%8E_%E7%96%91%E9%97%AE]a
 "
+selection_enabled = true
 script = ExtResource("9_2mk07")
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=832309384]
@@ -234,6 +241,7 @@ offset_left = 322.0
 offset_top = 346.0
 offset_right = 607.0
 offset_bottom = 401.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 40
@@ -242,6 +250,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+selection_enabled = true
 
 [node name="Label2" type="Label" parent="VBoxContainer/basic" unique_id=737140867]
 layout_mode = 0
@@ -337,6 +346,7 @@ offset_left = 23.0
 offset_top = 84.0
 offset_right = 313.0
 offset_bottom = 571.0
+scroll_hint_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/lobotomy2/ScrollContainer" unique_id=1515268659]
 layout_mode = 2
@@ -348,6 +358,7 @@ offset_left = 316.0
 offset_top = 84.0
 offset_right = 611.0
 offset_bottom = 575.0
+scroll_hint_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/lobotomy2/ScrollContainer2" unique_id=1353552025]
 layout_mode = 2
@@ -402,9 +413,11 @@ offset_left = 21.0
 offset_top = 16.0
 offset_right = 572.0
 offset_bottom = 449.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 bbcode_enabled = true
 text = "a"
+selection_enabled = true
 script = ExtResource("9_2mk07")
 
 [node name="工具解析" type="NinePatchRect" parent="VBoxContainer/lobotomy3/TabContainer" unique_id=260362348]
@@ -426,9 +439,11 @@ offset_left = 21.0
 offset_top = 16.0
 offset_right = 572.0
 offset_bottom = 450.0
+focus_mode = 2
 theme = ExtResource("11_jld8x")
 bbcode_enabled = true
 text = "b"
+selection_enabled = true
 script = ExtResource("9_2mk07")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy3/TabContainer/工具解析" unique_id=1418773119]
@@ -461,6 +476,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy3/TabContainer/异想体图册/ScrollContainer" unique_id=1998614300]
 layout_mode = 2
@@ -511,6 +527,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy3/TabContainer/异想体录像/ScrollContainer" unique_id=1700434267]
 layout_mode = 2
@@ -582,6 +599,7 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 571.0
 offset_bottom = 279.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/相关/ScrollContainer" unique_id=76354908]
 layout_mode = 2
@@ -606,6 +624,7 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 571.0
 offset_bottom = 279.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/标签/ScrollContainer" unique_id=905030027]
 layout_mode = 2

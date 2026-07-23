@@ -18,6 +18,7 @@ offset_right = 641.0
 offset_bottom = 1080.0
 theme = ExtResource("1_hvo5q")
 vertical_scroll_mode = 2
+scroll_hint_mode = 1
 script = ExtResource("2_hvo5q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1138440893]
@@ -104,6 +105,7 @@ offset_left = 51.0
 offset_top = 302.0
 offset_right = 277.0
 offset_bottom = 342.0
+focus_mode = 2
 theme = ExtResource("8_6lf50")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -111,6 +113,7 @@ text = "这是名字"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+selection_enabled = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer/basic" unique_id=1700465502]
 texture_filter = 1
@@ -132,11 +135,13 @@ offset_left = 314.0
 offset_top = 95.0
 offset_right = 609.0
 offset_bottom = 408.0
+focus_mode = 2
 theme = ExtResource("8_6lf50")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "异响体info"
+selection_enabled = true
 script = ExtResource("9_w5xng")
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=1510716617]
@@ -200,9 +205,11 @@ offset_left = 21.0
 offset_top = 16.0
 offset_right = 572.0
 offset_bottom = 450.0
+focus_mode = 2
 theme = ExtResource("8_6lf50")
 bbcode_enabled = true
 text = "b"
+selection_enabled = true
 script = ExtResource("9_w5xng")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy2/TabContainer/介绍" unique_id=1728973532]
@@ -235,6 +242,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy2/TabContainer/录像/ScrollContainer" unique_id=2014009912]
 layout_mode = 2
@@ -285,6 +293,7 @@ offset_left = 24.0
 offset_top = 23.0
 offset_right = 573.0
 offset_bottom = 460.0
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/lobotomy2/TabContainer/图册/ScrollContainer" unique_id=281386359]
 layout_mode = 2
@@ -362,6 +371,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/脑叶/ScrollContainer" unique_id=718829604]
 layout_mode = 2
@@ -390,6 +400,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/图书馆/ScrollContainer" unique_id=282093640]
 layout_mode = 2
@@ -418,6 +429,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP/TabContainer/边狱/ScrollContainer" unique_id=613284745]
 layout_mode = 2
@@ -468,6 +480,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP3/TabContainer/EGO/ScrollContainer" unique_id=1114451925]
 layout_mode = 2
@@ -496,6 +509,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP3/TabContainer/事件/ScrollContainer" unique_id=369037273]
 layout_mode = 2
@@ -524,6 +538,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP3/TabContainer/次级衍生单位/ScrollContainer" unique_id=2129395347]
 layout_mode = 2
@@ -574,6 +589,7 @@ offset_right = -21.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP2/TabContainer/相关/ScrollContainer" unique_id=1068803249]
 layout_mode = 2
@@ -603,6 +619,7 @@ offset_right = -17.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/JUMP2/TabContainer/标签/ScrollContainer" unique_id=1146363795]
 layout_mode = 2
