@@ -10,11 +10,11 @@
 [ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="7_373cs"]
 [ext_resource type="Texture2D" uid="uid://bui5d2jopstsc" path="res://img/Site-logo (2).webp" id="9_v71l7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4emh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_373cs"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_377bm"]
-Panel/styles/panel = SubResource("StyleBoxFlat_i4emh")
+Panel/styles/panel = SubResource("StyleBoxFlat_373cs")
 
 [node name="Control" type="Control" unique_id=1516708620]
 layout_mode = 3
@@ -97,7 +97,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="nr" type="RichTextLabel" parent="NinePatchRect3" unique_id=1379509690]
+[node name="nr" type="RichTextLabel" parent="NinePatchRect3" unique_id=2064524865]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 32.0
@@ -111,6 +111,7 @@ bbcode_enabled = true
 text = "啊啊啊啊"
 selection_enabled = true
 script = ExtResource("7_373cs")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="Butto" type="Button" parent="." unique_id=1552082348]
 layout_mode = 0
@@ -200,9 +201,6 @@ text = "退出"
 icon = ExtResource("4_373cs")
 expand_icon = true
 
-[connection signal="meta_clicked" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="NinePatchRect3/nr" to="NinePatchRect3/nr" method="_on_meta_hover_started"]
 [connection signal="button_down" from="Butto" to="." method="_on_butto_button_down"]
 [connection signal="meta_clicked" from="Window/Panel/nr" to="Window/Panel/nr" method="_on_meta_clicked"]
 [connection signal="meta_hover_ended" from="Window/Panel/nr" to="Window/Panel/nr" method="_on_meta_hover_ended"]

@@ -29,9 +29,9 @@ func load_basic_class():
 	if a.level=="?":
 		$VBoxContainer/basic/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 	$VBoxContainer/basic/icon.texture=a.icon
-	$VBoxContainer/basic/RichTextLabel2.text=a.info_
+	$VBoxContainer/basic/RichTextLabel2.text="[url=show]全屏[/url]\n"+a.info_
 	
-	$VBoxContainer/lobotomy2/TabContainer/介绍/RichTextLabel.text=a.d_text
+	$VBoxContainer/lobotomy2/TabContainer/介绍/RichTextLabel.text="[url=show]全屏[/url]\n"+a.d_text
 	$VBoxContainer/basic/Label.text=a.subject
 	load_jump_array(a.lca_jump,$"VBoxContainer/JUMP/TabContainer/脑叶")
 	load_jump_array(a.lor_jump,$"VBoxContainer/JUMP/TabContainer/图书馆/ScrollContainer/HBoxContainer")

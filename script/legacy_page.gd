@@ -28,7 +28,7 @@ func load_legacy():
 		$VBoxContainer/basic/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 		$VBoxContainer/basic/RichTextLabel.text="[b][color=white]UNDEF.[/color][/b]"
 	$VBoxContainer/basic/RichTextLabel3.text=a.name_
-	$VBoxContainer/basic/RichTextLabel2.text=a.info_
+	$VBoxContainer/basic/RichTextLabel2.text="[url=show]全屏[/url]\n"+a.info_
 	$VBoxContainer/basic/Label.text=a.subject
 	$VBoxContainer/lobotomy/NinePatchRect3/TYPE.text=a.Attack_Type.format({"0":"[color=red]物理[/color]","1":"[color=white]精神[/color]","2":"[color=purple]侵蚀[/color]","3":"[color=cyan]灵魂[/color]"})
 	$"VBoxContainer/lobotomy/NinePatchRect7/恐惧等级".text="Lv."+str(a.a_lv)
@@ -83,10 +83,11 @@ func load_legacy():
 	if not a.特质:
 		$"VBoxContainer/lobotomy9/异想体特质/RichTextLabel".text="无"
 	else:
-		$"VBoxContainer/lobotomy9/异想体特质/RichTextLabel".text="名字:"+a.特质.name_+"\n"+a.特质.详细
-	$"VBoxContainer/lobotomy6/TabContainer/故事/RichTextLabel".text=a.story
-	$"VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel".text=a.other_info_act
-	$"VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel".text=a.other_info
+		$"VBoxContainer/lobotomy9/异想体特质/RichTextLabel".text="[url=show]全屏[/url]\n"+"名字:"+a.特质.name_+"\n"+a.特质.详细
+	$"VBoxContainer/lobotomy6/TabContainer/故事/RichTextLabel".text="[url=show]全屏[/url]\n"+a.story
+	$"VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel".text="[url=show]全屏[/url]\n"+a.other_info_act
+	$"VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel".text="[url=show]全屏[/url]\n"+a.other_info
+	$"VBoxContainer/lobotomy6/TabContainer/工作日志/RichTextLabel".text="[url=show]全屏[/url]\n"
 	for i in a.flavour_text.size():
 		$"VBoxContainer/lobotomy6/TabContainer/工作日志/RichTextLabel".text+="○"+a.flavour_text[i]+"\n"
 	for i in a.jump:

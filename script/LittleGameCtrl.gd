@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 		if useful_gift_arr[3] in gift_array:
 			if hp-n_hp>10:
 				n_value_array[0]+=10
+			gift_text_arr.append(gift_text[3])
 	hp=hp+n_value_array[0]
 	sp=sp+n_value_array[1]
 	if n_hp>hp:

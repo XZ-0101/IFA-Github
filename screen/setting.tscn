@@ -18,6 +18,7 @@ theme = ExtResource("2_qdldw")
 script = ExtResource("1_7g5kf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1468780296]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,10 +154,10 @@ popup/item_2/id = 2
 
 [node name="diy" type="VBoxContainer" parent="." unique_id=1034226576]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 518.0
-offset_right = 295.0
-offset_bottom = 1054.0
+offset_left = 343.0
+offset_top = 77.0
+offset_right = 621.0
+offset_bottom = 673.0
 theme_override_constants/separation = 10
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="diy" unique_id=2097969325]
@@ -235,12 +236,74 @@ use_native_dialog = true
 layout_mode = 2
 text = "主题重置"
 
+[node name="RichTextLabel7" type="RichTextLabel" parent="diy" unique_id=2141350527]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "背景"
+scroll_active = false
+
+[node name="OptionButton2" type="OptionButton" parent="diy" unique_id=1235452960]
+layout_mode = 2
+selected = 1
+search_bar_enabled = true
+item_count = 4
+popup/item_0/text = "本地"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "无"
+popup/item_1/id = 1
+popup/item_2/text = "都市地图"
+popup/item_2/id = 2
+popup/item_3/text = "脑叶办公室"
+popup/item_3/id = 3
+
+[node name="back_button" type="Button" parent="diy" unique_id=1070287279]
+layout_mode = 2
+text = "本地背景"
+
+[node name="FileDialog" type="FileDialog" parent="diy/back_button" unique_id=1431092653]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg", "*.webp")
+use_native_dialog = true
+
+[node name="mht" type="RichTextLabel" parent="diy" unique_id=2065305341]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "背景模糊度:1.2"
+scroll_active = false
+
+[node name="mh" type="HSlider" parent="diy" unique_id=1453023117]
+layout_mode = 2
+max_value = 5.0
+step = 0.01
+value = 1.2
+
+[node name="darkt" type="RichTextLabel" parent="diy" unique_id=921932101]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "背景暗度:0.8"
+scroll_active = false
+
+[node name="dark" type="HSlider" parent="diy" unique_id=2127779671]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.8
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=570646957]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 81.0
-offset_right = 595.0
-offset_bottom = 281.0
+offset_left = 35.0
+offset_top = 522.0
+offset_right = 259.0
+offset_bottom = 722.0
 theme_override_constants/separation = 12
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="VBoxContainer" unique_id=928506604]
@@ -272,5 +335,11 @@ text = "配置loading文本"
 [connection signal="button_down" from="diy/load_button" to="." method="_on_load_button_button_down"]
 [connection signal="file_selected" from="diy/load_button/FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="button_down" from="diy/back" to="." method="_on_back_button_down"]
+[connection signal="item_selected" from="diy/OptionButton2" to="." method="_on_option_back_item_selected"]
+[connection signal="button_down" from="diy/back_button" to="." method="_on_back_button_button_down"]
+[connection signal="dir_selected" from="diy/back_button/FileDialog" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="diy/back_button/FileDialog" to="." method="_on_file_dialog2_file_selected"]
+[connection signal="value_changed" from="diy/mh" to="." method="_on_mh_value_changed"]
+[connection signal="value_changed" from="diy/dark" to="." method="_on_dark_value_changed"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]

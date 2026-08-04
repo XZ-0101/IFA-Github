@@ -34,7 +34,7 @@ func load_lobotomy(mode:int):
 				$VBoxContainer/basic/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 				$VBoxContainer/basic/RichTextLabel.text="[b][color=white]UNDEF.[/color][/b]"
 			$VBoxContainer/basic/RichTextLabel3.text=a.name_
-			$VBoxContainer/basic/RichTextLabel2.text=a.info_
+			$VBoxContainer/basic/RichTextLabel2.text="[url=show]全屏[/url]\n"+a.info_
 			$VBoxContainer/basic/Label.text=a.subject
 			var lobotomy_=a as lobotomy
 			
@@ -106,11 +106,12 @@ func load_lobotomy(mode:int):
 			
 			glxz.add_child(Control.new())
 			
-			$"VBoxContainer/lobotomy5/TabContainer/观察等级加成/RichTextLabel".text=lobotomy_.Observation_level
-			$"VBoxContainer/lobotomy5/TabContainer/解锁信息所需独立PE-BOX/RichTextLabel".text=lobotomy_.price
-			$"VBoxContainer/lobotomy6/TabContainer/故事/RichTextLabel".text=lobotomy_.story
-			$"VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel".text=lobotomy_.other_info_act
-			$"VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel".text=lobotomy_.other_info
+			$"VBoxContainer/lobotomy5/TabContainer/观察等级加成/RichTextLabel".text="[url=show]全屏[/url]\n"+lobotomy_.Observation_level
+			$"VBoxContainer/lobotomy5/TabContainer/解锁信息所需独立PE-BOX/RichTextLabel".text="[url=show]全屏[/url]\n"+lobotomy_.price
+			$"VBoxContainer/lobotomy6/TabContainer/故事/RichTextLabel".text="[url=show]全屏[/url]\n"+lobotomy_.story
+			$"VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel".text="[url=show]全屏[/url]\n"+lobotomy_.other_info_act
+			$"VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel".text="[url=show]全屏[/url]\n"+lobotomy_.other_info
+			$"VBoxContainer/lobotomy6/TabContainer/工作日志/RichTextLabel".text+="[url=show]全屏[/url]\n"
 			for i in lobotomy_.flavour_text.size():
 				$"VBoxContainer/lobotomy6/TabContainer/工作日志/RichTextLabel".text+="○"+lobotomy_.flavour_text[i]+"\n"
 			for i in a.jump:
@@ -173,8 +174,8 @@ func load_lobotomy(mode:int):
 				$VBoxContainer/basic_ego/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 				$VBoxContainer/basic_ego/level.text="[b][color=white]UNDEF.[/color][/b]"
 		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect5/NinePatchRect6/n.text=s.Max_Amount+"件"
-		$VBoxContainer/basic_ego/RichTextLabel2.text=s.info
-		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect6/text.text=s.Requirements
+		$VBoxContainer/basic_ego/RichTextLabel2.text="[url=show]全屏[/url]\n"+s.info
+		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect6/text.text="[url=show]全屏[/url]\n"+s.Requirements
 		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect7/GridContainer/RichTextLabel.text="[img,size=30]res://img/RedDamageTypeIcon.webp[color=#cd2744]("+f_to_string(s.red_def)+")"+d_to_string(s.red_def)
 		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect7/GridContainer/RichTextLabel2.text="[img,size=30]res://img/WhiteDamageTypeIcon.webp[color=#f0ebbf]("+f_to_string(s.white_def)+")"+d_to_string(s.white_def)
 		$VBoxContainer/lobotomy_ego/NinePatchRect5/NinePatchRect7/GridContainer/RichTextLabel3.text="[img,size=30]res://img/BlackDamageTypeIcon.webp[color=#824b84]("+f_to_string(s.black_def)+")"+d_to_string(s.black_def)
@@ -224,10 +225,10 @@ func load_lobotomy(mode:int):
 		if w.level=="?":
 				$VBoxContainer/basic_ego/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 				$VBoxContainer/basic_ego/level.text="[b][color=white]UNDEF.[/color][/b]"
-		$VBoxContainer/basic_ego/RichTextLabel2.text=w.info
+		$VBoxContainer/basic_ego/RichTextLabel2.text="[url=show]全屏[/url]\n"+w.info
 		$VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect5/NinePatchRect5/n.text=w.Cost
 		$VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect5/NinePatchRect6/Label2.text=w.Max_Amount+"件"
-		$VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect6/RichTextLabel.text=w.Requirements
+		$VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect6/RichTextLabel.text="[url=show]全屏[/url]\n"+w.Requirements
 		if w.Damage_type == 1:
 				#red
 				$VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect7/TYPE.text="RED"
@@ -259,7 +260,7 @@ func load_lobotomy(mode:int):
 		$VBoxContainer/lobotomy_ego_weapon2/NinePatchRect6/NinePatchRect7/RichTextLabel.text=w.Range_
 		$VBoxContainer/lobotomy_ego_weapon2/NinePatchRect6/NinePatchRect8/RichTextLabel.text="*武器模板：\n"+w.m_ban
 		$VBoxContainer/lobotomy_ego_weapon2/NinePatchRect6/NinePatchRect8/RichTextLabel2.text="*武器基础期望DPS："+w.dps
-		$"VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel".text="*需要观察等级"+w.Observation_Level+"才可研发"+"\n"+"\n*特殊资料：\n"+w.other
+		$"VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel".text="[url=show]全屏[/url]\n"+"*需要观察等级"+w.Observation_Level+"才可研发"+"\n"+"\n*特殊资料：\n"+w.other
 		for i in w.jump:
 				
 				var j
@@ -290,7 +291,7 @@ func load_lobotomy(mode:int):
 		$VBoxContainer/basic_ego/icon2.show()
 		$VBoxContainer/basic_ego/RichTextLabel3.text=g.name_
 		$VBoxContainer/basic_ego/icon2/icon2.texture=g.texture
-		$VBoxContainer/basic_ego/RichTextLabel2.text=g.info
+		$VBoxContainer/basic_ego/RichTextLabel2.text="[url=show]全屏[/url]\n"+g.info
 		
 		for i in g.jump:
 				

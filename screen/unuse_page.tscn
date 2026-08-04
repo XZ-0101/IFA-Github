@@ -129,7 +129,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel_" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1385642611]
+[node name="RichTextLabel_" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=895362525]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 95.0
@@ -143,6 +143,7 @@ bbcode_enabled = true
 text = "异响体info"
 selection_enabled = true
 script = ExtResource("8_qpu1e")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=1042890722]
 self_modulate = Color(1, 1, 1, 0.0196078)
@@ -256,7 +257,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy2/TabContainer/解析" unique_id=1786792580]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy2/TabContainer/解析" unique_id=811580787]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 16.0
@@ -268,6 +269,7 @@ bbcode_enabled = true
 text = "b"
 selection_enabled = true
 script = ExtResource("8_qpu1e")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy2/TabContainer/解析" unique_id=1644293948]
 modulate = Color(1, 1, 1, 0.0196078)

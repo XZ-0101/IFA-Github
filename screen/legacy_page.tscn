@@ -150,7 +150,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=774785969]
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1021179151]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 95.0
@@ -164,6 +164,7 @@ bbcode_enabled = true
 text = "异响体info"
 selection_enabled = true
 script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=1510716617]
 self_modulate = Color(1, 1, 1, 0.0196078)
@@ -693,7 +694,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=359952489]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=896194740]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -709,6 +710,8 @@ theme = ExtResource("6_fghyl")
 bbcode_enabled = true
 text = "a"
 selection_enabled = true
+script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=236912853]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -734,21 +737,23 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=404257902]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=835299532]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 16.0
-offset_right = -15.0
-offset_bottom = -10.0
+offset_left = 1.5
+offset_top = 7.0
+offset_right = -5.5
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 theme = ExtResource("6_fghyl")
 bbcode_enabled = true
 selection_enabled = true
+script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=141752201]
 modulate = Color(1, 1, 1, 0.0392157)
@@ -804,7 +809,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体行为" unique_id=1331008717]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体行为" unique_id=1663470942]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -821,6 +826,7 @@ bbcode_enabled = true
 text = "a"
 selection_enabled = true
 script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="异想体解析" type="NinePatchRect" parent="VBoxContainer/lobotomy7/TabContainer" unique_id=210349029]
 visible = false
@@ -835,15 +841,15 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=148855437]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=1739411713]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 17.0
-offset_top = 23.0
-offset_right = -20.0
-offset_bottom = -18.0
+offset_left = 2.0
+offset_top = 6.5
+offset_right = -5.0
+offset_bottom = -1.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -852,6 +858,7 @@ bbcode_enabled = true
 text = "b"
 selection_enabled = true
 script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=939978491]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -1046,7 +1053,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy9/异想体特质" unique_id=634688263]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy9/异想体特质" unique_id=1718717723]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1063,6 +1070,7 @@ bbcode_enabled = true
 text = "a"
 selection_enabled = true
 script = ExtResource("19_em4hm")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="LJB" type="CheckButton" parent="VBoxContainer" unique_id=1487749171]
 custom_minimum_size = Vector2(0, 40)

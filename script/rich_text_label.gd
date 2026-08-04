@@ -1,13 +1,21 @@
 extends RichTextLabel
+class_name NewRichTextLabel
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
+func _ready():
+	# 只连一次，安全第一
+	if not meta_clicked.is_connected(_on_meta_clicked):
+		meta_clicked.connect(_on_meta_clicked)
+	
+	if not meta_hover_started.is_connected(_on_meta_hover_started):
+		meta_hover_started.connect(_on_meta_hover_started)
+	
+	if not meta_hover_ended.is_connected(_on_meta_hover_ended):
+		meta_hover_ended.connect(_on_meta_hover_ended)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 #一般用[hint]代替，非一般情况用这个
@@ -42,6 +50,9 @@ func _on_meta_clicked(meta: Variant) -> void:
 				TextLayer.show_panel(t)
 			else :
 				TextLayer.hide_panel()
+	elif meta_.begins_with("show"):
+		FullShowText.show_text(text)
+		pass
 	else :
 		OS.shell_open(meta_)
 	pass # Replace with function body.

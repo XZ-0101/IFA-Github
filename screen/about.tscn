@@ -82,6 +82,7 @@ text = "作者感谢您的莅临！"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1706714950]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,7 +92,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=245652081]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1229653914]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 60.0
@@ -107,6 +108,9 @@ text = "{v}测试版
 其中绝大部分资料来自Wiki，如果我们侵权，我会立即删除并修改一切侵权内容，以及给予致歉。
 资料来自[url=https://lobotomycorp.fandom.com/zh/wiki/%E8%84%91%E5%8F%B6%E5%85%AC%E5%8F%B8_Wiki][color=red]脑叶公司wiki[/color][/url]和[url=https://limbuscompany.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5][color=red]边狱巴士wiki[/color][/url]，以及[url=https://library-of-ruina.fandom.com/zh/wiki/%E5%BA%9F%E5%A2%9F%E5%9B%BE%E4%B9%A6%E9%A6%86_Wiki][color=red]废墟图书馆wiki[/color][/url]
 以及 《扭曲侦探》，《维利坦》，《神奇实验室》，《脑叶公司》及其dlc，《废墟图书馆》及其dlc，《边狱巴士公司》，及以上作品的废案。
+
+[img]res://img2/UI/logo.png[/img]
+记得来支持我们的[url=https://the-city-for-projectmoon.fandom.com/zh/wiki/%E9%83%BD%E5%B8%82_Wiki]都市wiki[/url]
 
 功能：
 我们会收录所有异想体、EGO、扭曲、神备、考验、罪种及其衍生物的资料。
@@ -139,5 +143,4 @@ R为正式版（4）
 第四位：补丁优化
 "
 script = ExtResource("3_pupwb")
-
-[connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_on_meta_clicked"]
+metadata/_custom_type_script = "uid://bwtb738eyru67"

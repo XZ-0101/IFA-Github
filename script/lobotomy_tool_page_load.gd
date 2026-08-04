@@ -23,7 +23,7 @@ func load_tool():
 		$VBoxContainer/basic/RichTextLabel.text="[b][color=white]UNDEF.[/color][/b]"
 			
 	$VBoxContainer/basic/RichTextLabel3.text=a.name_
-	$VBoxContainer/basic/RichTextLabel_.text=a.info_
+	$VBoxContainer/basic/RichTextLabel_.text="[url=show]全屏[/url]\n"+a.info_
 	$VBoxContainer/basic/Label.text=a.subject
 	$VBoxContainer/basic/RichTextLabel4.text=a.tool_type
 	var p=a.Precautions
@@ -46,8 +46,8 @@ func load_tool():
 	
 	$VBoxContainer/lobotomy2/ScrollContainer2/VBoxContainer.add_child(c.new())
 	
-	$VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel.text=a.tool_info
-	$VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel.text=a.tool_e
+	$VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel.text="[url=show]全屏[/url]\n"+a.tool_info
+	$VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel.text="[url=show]全屏[/url]\n"+a.tool_e
 	for i in a.jump:
 		var j
 		if not i.begins_with("p"):

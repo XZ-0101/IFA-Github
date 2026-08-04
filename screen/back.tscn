@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cpfexnqb6wkk2"]
+
+[ext_resource type="Texture2D" uid="uid://dxw8dobp3b6r" path="res://img/music/btw.jpg" id="1_bq2fi"]
+
+[sub_resource type="GDScript" id="GDScript_b1ndt"]
+script/source = "extends Control
+@export_range(0,5) var mh:float=1.2
+@export_range(0,1) var darkness:float=0.8
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	change_p()
+	pass
+func change():
+	visible=Get.is_back
+	$TextureRect.texture=Get.back_texture
+	
+func change_p():
+	$TextureRect/ColorRect.color.a=darkness
+	var m =$TextureRect/ColorRect3.material as ShaderMaterial
+	m.set_shader_parameter(\"f\",mh)
+	
+"
+
+[sub_resource type="Shader" id="Shader_knggo"]
+code = "shader_type canvas_item;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+uniform float f:hint_range(0.0, 5.0);
+
+void fragment(){
+	COLOR.rgb=texture(screen_texture,SCREEN_UV , f).rgb;
+}
+
+
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x80s5"]
+shader = SubResource("Shader_knggo")
+shader_parameter/f = 1.200000057
+
+[node name="back" type="Control" unique_id=1372943549]
+visible = false
+z_index = -9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_b1ndt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1342166973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bq2fi")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=2385466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="ColorRect3" type="ColorRect" parent="TextureRect" unique_id=1193131513]
+material = SubResource("ShaderMaterial_x80s5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

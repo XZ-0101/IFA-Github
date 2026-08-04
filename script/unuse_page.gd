@@ -25,9 +25,9 @@ func load_Unreleased():
 	if a.level=="?":
 		$VBoxContainer/basic/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 	$VBoxContainer/basic/icon.texture=a.icon
-	$VBoxContainer/basic/RichTextLabel_.text=a.info_
+	$VBoxContainer/basic/RichTextLabel_.text="[url=show]全屏[/url]\n"+a.info_
 	$VBoxContainer/basic/RichTextLabel4.text=a.现状
-	$VBoxContainer/lobotomy2/TabContainer/解析/RichTextLabel.text=a.介绍
+	$VBoxContainer/lobotomy2/TabContainer/解析/RichTextLabel.text="[url=show]全屏[/url]\n"+a.介绍
 	$VBoxContainer/basic/Label.text=a.subject
 	for i in a.jump:
 		var j

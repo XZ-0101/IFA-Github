@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dnagl5xdkhaf4" path="res://screen/TX4.tscn" id="15_knggo"]
 [ext_resource type="PackedScene" uid="uid://c0kiyuk4fd611" path="res://screen/TX5.tscn" id="16_tj372"]
 
-[sub_resource type="Shader" id="Shader_knggo"]
+[sub_resource type="Shader" id="Shader_tj372"]
 code = "shader_type canvas_item;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
 uniform float f:hint_range(0.0, 5.0);
@@ -30,13 +30,39 @@ void fragment(){
 
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj372"]
-shader = SubResource("Shader_knggo")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sm8tm"]
+shader = SubResource("Shader_tj372")
 shader_parameter/f = 1.50000007125
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sm8tm"]
-shader = SubResource("Shader_knggo")
+[sub_resource type="Shader" id="Shader_r7fqj"]
+code = "shader_type canvas_item;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+uniform float f:hint_range(0.0, 5.0);
+
+void fragment(){
+	COLOR.rgb=texture(screen_texture,SCREEN_UV , f).rgb;
+}
+
+
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxpps"]
+shader = SubResource("Shader_r7fqj")
 shader_parameter/f = 1.200000057
+
+[sub_resource type="Shader" id="Shader_knggo"]
+code = "shader_type canvas_item;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+uniform float f:hint_range(0.0, 5.0);
+
+void fragment(){
+	COLOR.rgb=texture(screen_texture,SCREEN_UV , f).rgb;
+}
+
+
+
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r7fqj"]
 shader = SubResource("Shader_knggo")
@@ -123,7 +149,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="ColorRect" type="ColorRect" parent="Control2/TextureRect" unique_id=352466751]
-material = SubResource("ShaderMaterial_tj372")
+material = SubResource("ShaderMaterial_sm8tm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,7 +160,7 @@ grow_vertical = 2
 color = Color(1, 0.599933, 0.540393, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Control2/TextureRect" unique_id=1936334091]
-material = SubResource("ShaderMaterial_sm8tm")
+material = SubResource("ShaderMaterial_xxpps")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -193,6 +193,9 @@ var text_dic:Dictionary={
 	"被控制":"被控制的员工无法执行主管的命令，也无法行动，部分被控制状态可能导致员工在一天结束后死亡"
 }
 var si_path:String
+var is_back:bool
+var back_texture:Texture2D
+var back_index:int=1
 func jump_to(jumper:jumper_class):
 	if jumper.mode=="lobotomyA":
 		

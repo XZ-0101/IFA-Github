@@ -26,7 +26,7 @@ func load_test():
 	if a.level=="?":
 		$VBoxContainer/basic/TextureRect.texture=load("res://img2/UI/undef_risk.tres")
 	$VBoxContainer/basic/icon.texture=a.icon
-	$VBoxContainer/basic/RichTextLabel_.text=a.info_
+	$VBoxContainer/basic/RichTextLabel_.text="[url=show]全屏[/url]\n"+a.info_
 	$VBoxContainer/basic/RichTextLabel4.text=a.ob_name
 	$VBoxContainer/basic/Label.text=a.color+"的"+a.time+"  "+a.name_
 	if a.time=="黎明" or a.time=="午夜":
@@ -54,8 +54,8 @@ func load_test():
 		$VBoxContainer/basic/Label.modulate=Color(0.863, 0.078, 0.235, 1.0)
 		$VBoxContainer/basic/icon2.modulate=Color(0.863, 0.078, 0.235, 1.0)
 	$VBoxContainer/basic/RichTextLabel4.text=a.ob_name
-	$VBoxContainer/lobotomy2/TabContainer/考验介绍/RichTextLabel.text=a.other_info
-	$VBoxContainer/lobotomy2/TabContainer/考验解析/RichTextLabel.text=a.other_info_act
+	$VBoxContainer/lobotomy2/TabContainer/考验介绍/RichTextLabel.text="[url=show]全屏[/url]\n"+a.other_info
+	$VBoxContainer/lobotomy2/TabContainer/考验解析/RichTextLabel.text="[url=show]全屏[/url]\n"+a.other_info_act
 	$VBoxContainer/lobotomy3/NinePatchRect5/NinePatchRect6/DEF/RichTextLabel.text="[img,size=30]res://img/RedDamageTypeIcon.webp[color=#cd2744]("+f_to_string(a.red_def)+")"+d_to_string(a.red_def)
 	$VBoxContainer/lobotomy3/NinePatchRect5/NinePatchRect6/DEF/RichTextLabel2.text="[img,size=30]res://img/WhiteDamageTypeIcon.webp[color=#f0ebbf]("+f_to_string(a.white_def)+")"+d_to_string(a.white_def)
 	$VBoxContainer/lobotomy3/NinePatchRect5/NinePatchRect6/DEF/RichTextLabel3.text="[img,size=30]res://img/BlackDamageTypeIcon.webp[color=#824b84]("+f_to_string(a.black_def)+")"+d_to_string(a.black_def)

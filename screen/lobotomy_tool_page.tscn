@@ -179,7 +179,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel_" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1506834239]
+[node name="RichTextLabel_" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=247325170]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 95.0
@@ -194,6 +194,7 @@ text = "[url=https://lobotomycorp.fandom.com/zh/wiki/%E7%BB%BF%E8%89%B2%E7%9A%84
 "
 selection_enabled = true
 script = ExtResource("9_2mk07")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=832309384]
 self_modulate = Color(1, 1, 1, 0.0196078)
@@ -407,7 +408,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy3/TabContainer/工具介绍" unique_id=788459948]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy3/TabContainer/工具介绍" unique_id=437992813]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 16.0
@@ -419,6 +420,7 @@ bbcode_enabled = true
 text = "a"
 selection_enabled = true
 script = ExtResource("9_2mk07")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="工具解析" type="NinePatchRect" parent="VBoxContainer/lobotomy3/TabContainer" unique_id=260362348]
 visible = false
@@ -433,7 +435,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy3/TabContainer/工具解析" unique_id=1139021330]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy3/TabContainer/工具解析" unique_id=373081774]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 16.0
@@ -445,6 +447,7 @@ bbcode_enabled = true
 text = "b"
 selection_enabled = true
 script = ExtResource("9_2mk07")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy3/TabContainer/工具解析" unique_id=1418773119]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -634,17 +637,8 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 mouse_filter = 1
 
-[connection signal="meta_clicked" from="VBoxContainer/basic/RichTextLabel_" to="VBoxContainer/basic/RichTextLabel_" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/basic/RichTextLabel_" to="VBoxContainer/basic/RichTextLabel_" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/basic/RichTextLabel_" to="VBoxContainer/basic/RichTextLabel_" method="_on_meta_hover_started"]
 [connection signal="toggled" from="VBoxContainer/l2_b" to="." method="_on_l_2_b_toggled"]
 [connection signal="toggled" from="VBoxContainer/l3_b" to="." method="_on_l_3_b_toggled"]
-[connection signal="meta_clicked" from="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具介绍/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" to="VBoxContainer/lobotomy3/TabContainer/工具解析/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="button_down" from="VBoxContainer/lobotomy3/TabContainer/异想体图册/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/lobotomy3/TabContainer/异想体录像/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="toggled" from="VBoxContainer/jump_b" to="." method="_on_jump_b_toggled"]

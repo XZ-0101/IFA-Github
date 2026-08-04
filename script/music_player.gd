@@ -71,6 +71,9 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 func _ready() -> void:
 	MusicAll.get_child(1).get_child(0).button_pressed=true
+	Get.back_index=1
+	Get.is_back=false
+	Back.change()
 	music=Get.going_to_music
 	if not music.music_path.begins_with("p"):
 		song=load(music.music_path)

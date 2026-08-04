@@ -29,7 +29,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=744438817]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1661459501]
 visible = false
 layout_mode = 0
 offset_left = 13.0
@@ -44,6 +44,7 @@ bbcode_enabled = true
 text = "；khfdgjkjfgf"
 selection_enabled = true
 script = ExtResource("4_fb2e6")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="Label" type="Label" parent="." unique_id=1254823627]
 visible = false
@@ -66,7 +67,7 @@ offset_right = 290.0
 offset_bottom = 79.0
 texture = ExtResource("4_hajas")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=671495355]
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1125192037]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 4.0
@@ -80,6 +81,7 @@ bbcode_enabled = true
 text = "；khfdgjkjfgf"
 selection_enabled = true
 script = ExtResource("4_fb2e6")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1092427228]
 visible = false
@@ -89,7 +91,7 @@ offset_right = 300.0
 offset_bottom = 78.0
 texture = ExtResource("5_fb2e6")
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=357865147]
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1169156656]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -104,13 +106,4 @@ bbcode_enabled = true
 text = "；khfdgjkjfgf"
 selection_enabled = true
 script = ExtResource("4_fb2e6")
-
-[connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="RichTextLabel" to="RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="RichTextLabel" to="RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="RichTextLabel2" to="RichTextLabel2" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="RichTextLabel2" to="RichTextLabel2" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="RichTextLabel2" to="RichTextLabel2" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="RichTextLabel3" to="RichTextLabel3" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="RichTextLabel3" to="RichTextLabel3" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="RichTextLabel3" to="RichTextLabel3" method="_on_meta_hover_started"]
+metadata/_custom_type_script = "uid://bwtb738eyru67"

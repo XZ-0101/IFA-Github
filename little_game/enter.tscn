@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="6_ujrtb"]
 [ext_resource type="Resource" uid="uid://b0cll1vd06fn1" path="res://little_game/box/new_resource.tres" id="7_ujrtb"]
 [ext_resource type="Resource" uid="uid://c7br35u7pfil8" path="res://little_game/box/new_resource2.tres" id="8_ehf87"]
+[ext_resource type="Resource" uid="uid://crd50qap226ea" path="res://little_game/box/fight_to_end.tres" id="10_2kcq8"]
 [ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="10_dd6e7"]
 [ext_resource type="Resource" uid="uid://5af2k1dficjy" path="res://little_game/box/a.tres" id="10_hfb7x"]
 [ext_resource type="Resource" uid="uid://css27sun4u6eq" path="res://little_game/fight/res/skill/basic_burn/arr.tres" id="12_srfm3"]
@@ -46,6 +47,9 @@ var skill_ind:int=0
 func _ready() -> void:
 	MusicAll.get_child(1).get_child(0).button_pressed=true
 	jumper.hide_()
+	Get.back_index=1
+	Get.is_back=false
+	Back.change()
 	
 	pass # Replace with function body.
 
@@ -180,8 +184,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_ygh6a")
 useful_gift_arr_ = Array[ExtResource("1_lvrnh")]([ExtResource("2_x0pi2"), ExtResource("3_j52rh"), ExtResource("4_13mvh"), ExtResource("5_ujrtb")])
-deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87")])
-hard_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x")])
+deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87"), ExtResource("10_2kcq8")])
+hard_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x"), ExtResource("10_2kcq8")])
 nm_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x")])
 skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({
 0: ExtResource("12_srfm3"),

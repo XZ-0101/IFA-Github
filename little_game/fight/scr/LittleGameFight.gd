@@ -365,3 +365,13 @@ func get_buff_x_with_res(who:int,res_path:String):
 	else:
 		return 0
 	
+
+func clear_executer_queue() -> void:
+	var lists = [before_under_hit, before_hit, after_under_hit, after_hit]
+	for list in lists:
+		var to_remove = []
+		for i in list:
+			if i.is_who and i.one_time:
+				to_remove.append(i)
+		for i in to_remove:
+			list.erase(i)

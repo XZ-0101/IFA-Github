@@ -64,6 +64,12 @@ func _ready() -> void:
 	if DirAccess.dir_exists_absolute(Get.our_dir.path_join("Theme_pack")):
 		$diy/load_button/FileDialog.root_subfolder=Get.our_dir.path_join("Theme_pack")
 
+	$diy/OptionButton2.selected=Get.back_index
+	$diy/mh.value=Back.mh
+	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
+	$diy/dark.value=Back.darkness
+	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
+
 
 func _on_check_box_3_toggled(toggled_on: bool) -> void:
 	Get.fun_mode=toggled_on
@@ -101,4 +107,74 @@ func _on_load_button_button_down() -> void:
 func _on_file_dialog_file_selected(path: String) -> void:
 	Get.now_theme.merge_with(load(path))
 	Get.is_changed_theme=true
+	pass # Replace with function body.
+
+
+func _on_option_back_item_selected(index: int) -> void:
+	if index==1:
+		Get.back_index=1
+		Get.is_back=false
+		Back.change()
+	if index==2:
+		Get.back_index=2
+		Get.is_back=true
+		Get.back_texture=load("res://img2/back/官方地图.jpg")
+		Back.change()
+	if index==3:
+		Get.back_index=3
+		Get.is_back=true
+		Get.back_texture=load("res://img2/back/3F-Angela.webp")
+		Back.change()
+	pass # Replace with function body.
+
+
+
+
+func _on_file_dialog2_file_selected(path: String) -> void:
+	$diy/OptionButton2.select(0)
+	Get.back_index=0
+	Get.back_texture=load_img_file(path)
+	Get.is_back=true
+	Back.change()
+	pass # Replace with function body.
+
+
+func _on_back_button_button_down() -> void:
+	$diy/back_button/FileDialog.popup()
+	pass # Replace with function body.
+func load_img_file(path:String):
+	var file_ = FileAccess.open(path, FileAccess.READ)
+	var data_ = file_.get_buffer(file_.get_length())
+	
+	var image = Image.new()
+	var extension = path.get_extension().to_lower()
+	var image_format
+	match extension:
+		"png":
+			image_format = "png"
+			image.load_png_from_buffer(data_)
+		"jpg", "jpeg":
+			image_format = "jpg"
+			image.load_jpg_from_buffer(data_)
+		"webp":
+			image_format = "webp"
+			image.load_webp_from_buffer(data_)
+	
+	var texture_ = ImageTexture.create_from_image(image)
+	return texture_
+
+
+
+
+
+
+func _on_mh_value_changed(value: float) -> void:
+	Back.mh=$diy/mh.value
+	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
+	pass # Replace with function body.
+
+
+func _on_dark_value_changed(value: float) -> void:
+	Back.darkness=$diy/dark.value
+	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
 	pass # Replace with function body.

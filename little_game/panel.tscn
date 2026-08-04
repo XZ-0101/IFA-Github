@@ -128,7 +128,7 @@ func read_v3():
 	pass
 func sale():
 	$Panel/TabContainer/ITEM/sale.play()
-	read_v1()
+	read_v()
 	pass
 "
 
@@ -478,6 +478,7 @@ offset_left = 35.0
 offset_top = 64.0
 offset_right = 108.0
 offset_bottom = 137.0
+mouse_filter = 2
 texture = SubResource("AtlasTexture_2nl57")
 expand_mode = 1
 stretch_mode = 5

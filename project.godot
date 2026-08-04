@@ -37,12 +37,14 @@ Loading="*res://screen/loading.tscn"
 LoadTxt="*res://script/load_txt.gd"
 ScreenJumper="*res://screen/screen_jumper.tscn"
 MusicAll="*res://screen/music_all.tscn"
+FullShowText="*uid://cq1rgxkew3kkg"
 Zip="*uid://cwem5pfagnaj"
 tx="*res://screen/特效.tscn"
 jumper="*res://screen/canvas_layer.tscn"
 LittleGameCtrl="*uid://dmx30m8xbig4y"
 LittleGameFight="*uid://6y0mj6udq45u"
 TextLayer="*uid://bbm4yu1fnlusc"
+Back="*uid://cpfexnqb6wkk2"
 
 [display]
 

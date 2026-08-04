@@ -200,7 +200,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=774785969]
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic" unique_id=1731822267]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 95.0
@@ -214,6 +214,7 @@ bbcode_enabled = true
 text = "异响体info"
 selection_enabled = true
 script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic" unique_id=1510716617]
 self_modulate = Color(1, 1, 1, 0.0196078)
@@ -1136,7 +1137,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy5/TabContainer/观察等级加成" unique_id=1006746033]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy5/TabContainer/观察等级加成" unique_id=2083542951]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1153,6 +1154,8 @@ theme = ExtResource("6_iig6a")
 bbcode_enabled = true
 text = "a"
 selection_enabled = true
+script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="解锁信息所需独立PE-BOX" type="NinePatchRect" parent="VBoxContainer/lobotomy5/TabContainer" unique_id=77436807]
 texture_filter = 1
@@ -1166,7 +1169,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy5/TabContainer/解锁信息所需独立PE-BOX" unique_id=2117460136]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy5/TabContainer/解锁信息所需独立PE-BOX" unique_id=844659581]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1183,6 +1186,8 @@ theme = ExtResource("6_iig6a")
 bbcode_enabled = true
 text = "b"
 selection_enabled = true
+script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="L6B" type="CheckButton" parent="VBoxContainer" unique_id=436226042 groups=["lobotomyA"]]
 visible = false
@@ -1226,7 +1231,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=359952489]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=1382754061]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1242,6 +1247,8 @@ theme = ExtResource("6_iig6a")
 bbcode_enabled = true
 text = "a"
 selection_enabled = true
+script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy6/TabContainer/故事" unique_id=236912853]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -1266,7 +1273,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=404257902]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=887873912]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1281,6 +1288,8 @@ focus_mode = 2
 theme = ExtResource("6_iig6a")
 bbcode_enabled = true
 selection_enabled = true
+script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy6/TabContainer/工作日志" unique_id=141752201]
 modulate = Color(1, 1, 1, 0.0392157)
@@ -1337,7 +1346,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体行为" unique_id=1331008717]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体行为" unique_id=833921750]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1354,6 +1363,7 @@ bbcode_enabled = true
 text = "a"
 selection_enabled = true
 script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="异想体解析" type="NinePatchRect" parent="VBoxContainer/lobotomy7/TabContainer" unique_id=210349029]
 texture_filter = 1
@@ -1367,7 +1377,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=148855437]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=340291360]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1384,6 +1394,7 @@ bbcode_enabled = true
 text = "b"
 selection_enabled = true
 script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy7/TabContainer/异想体解析" unique_id=939978491]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -1756,7 +1767,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic_ego" unique_id=708543178]
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/basic_ego" unique_id=491551492]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 95.0
@@ -1770,6 +1781,7 @@ bbcode_enabled = true
 text = "ego info"
 selection_enabled = true
 script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="info_icon" type="TextureRect" parent="VBoxContainer/basic_ego" unique_id=1136475197]
 self_modulate = Color(1, 1, 1, 0.0196078)
@@ -2315,7 +2327,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 15
 text = "装备要求"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect6" unique_id=645539645]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy_ego_weapon/NinePatchRect5/NinePatchRect6" unique_id=189243431]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 18.0
@@ -2327,6 +2339,8 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "sfvknknfkfk"
 selection_enabled = true
+script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="Label" type="Label" parent="VBoxContainer/lobotomy_ego_weapon" unique_id=149520269]
 layout_mode = 0
@@ -2556,7 +2570,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析" unique_id=1823739233]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析" unique_id=1671549316]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2573,6 +2587,7 @@ bbcode_enabled = true
 text = "a"
 selection_enabled = true
 script = ExtResource("25_go4fu")
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析" unique_id=852343397]
 modulate = Color(1, 1, 1, 0.0196078)
@@ -2727,9 +2742,6 @@ visible = false
 layout_mode = 2
 mouse_filter = 1
 
-[connection signal="meta_clicked" from="VBoxContainer/basic/RichTextLabel2" to="VBoxContainer/basic/RichTextLabel2" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/basic/RichTextLabel2" to="VBoxContainer/basic/RichTextLabel2" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/basic/RichTextLabel2" to="VBoxContainer/basic/RichTextLabel2" method="_on_meta_hover_started"]
 [connection signal="toggled" from="VBoxContainer/LB" to="VBoxContainer" method="_on_lb_toggled"]
 [connection signal="toggled" from="VBoxContainer/L2B" to="VBoxContainer" method="_on_l_2b_toggled"]
 [connection signal="toggled" from="VBoxContainer/L3B" to="VBoxContainer" method="_on_l_3b_toggled"]
@@ -2737,24 +2749,12 @@ mouse_filter = 1
 [connection signal="toggled" from="VBoxContainer/L5B" to="VBoxContainer" method="_on_l_5b_toggled"]
 [connection signal="toggled" from="VBoxContainer/L6B" to="VBoxContainer" method="_on_l_6b_toggled"]
 [connection signal="toggled" from="VBoxContainer/L7B" to="VBoxContainer" method="_on_l_7b_toggled"]
-[connection signal="meta_clicked" from="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体行为/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" to="VBoxContainer/lobotomy7/TabContainer/异想体解析/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="button_down" from="VBoxContainer/lobotomy7/TabContainer/异想体录像/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/lobotomy7/TabContainer/异想体图册/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="toggled" from="VBoxContainer/LJB" to="VBoxContainer" method="_on_ljb_toggled"]
-[connection signal="meta_clicked" from="VBoxContainer/basic_ego/RichTextLabel2" to="VBoxContainer/basic_ego/RichTextLabel2" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/basic_ego/RichTextLabel2" to="VBoxContainer/basic_ego/RichTextLabel2" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/basic_ego/RichTextLabel2" to="VBoxContainer/basic_ego/RichTextLabel2" method="_on_meta_hover_started"]
 [connection signal="toggled" from="VBoxContainer/EB" to="VBoxContainer" method="_on_eb_toggled"]
 [connection signal="toggled" from="VBoxContainer/EWB" to="VBoxContainer" method="_on_ewb_toggled"]
 [connection signal="toggled" from="VBoxContainer/EW2B" to="VBoxContainer" method="_on_ew_2b_toggled"]
 [connection signal="toggled" from="VBoxContainer/E2B" to="VBoxContainer" method="_on_e_2b_toggled"]
-[connection signal="meta_clicked" from="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" to="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" to="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" to="VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="button_down" from="VBoxContainer/lobotomy_ego2/TabContainer/EGO图册/button" to="." method="_on_button1_button_down"]
 [connection signal="toggled" from="VBoxContainer/JEB" to="VBoxContainer" method="_on_jeb_toggled"]

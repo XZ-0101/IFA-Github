@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="deck_box" format=3 uid="uid://crd50qap226ea"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_1kwre"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="2_scdkr"]
+[ext_resource type="Resource" uid="uid://bqh4vw3nxowuq" path="res://little_game/q/t000777q.tres" id="2_w2234"]
+[ext_resource type="Resource" uid="uid://bixya20bw2hv1" path="res://little_game/fight/res/ques/ap_card_give.tres" id="3_fjm6f"]
+[ext_resource type="Resource" uid="uid://ndxkapq18nuc" path="res://little_game/q/v2.tres" id="4_83eai"]
+[ext_resource type="Resource" uid="uid://cnsgj3fx6o31i" path="res://little_game/fight/res/ques/basic_brun_give.tres" id="5_ognjp"]
+[ext_resource type="Resource" uid="uid://bbqgkdgducch7" path="res://little_game/q/v1.tres" id="6_vrtey"]
+[ext_resource type="Resource" uid="uid://vbd6jlxgp7xg" path="res://little_game/q/h3.tres" id="7_6d3tg"]
+[ext_resource type="Resource" uid="uid://cdigurtpmb5dg" path="res://little_game/3.tres" id="8_2fe8w"]
+[ext_resource type="Resource" uid="uid://cxblhoyi36ar0" path="res://little_game/fight/res/enemy/redmist/q/q.tres" id="9_fhkos"]
+[ext_resource type="Resource" uid="uid://dh0uqaupx2cv" path="res://little_game/q/fight.tres" id="10_gqr43"]
+[ext_resource type="Resource" uid="uid://frjusphi2v2m" path="res://little_game/fight/res/enemy/black_jack/q/q.tres" id="11_emmch"]
+[ext_resource type="Resource" uid="uid://cq65l0adspgc2" path="res://little_game/fight/res/ques/star/ques.tres" id="12_cbyo0"]
+[ext_resource type="Resource" uid="uid://bx3rnyxq2avfm" path="res://little_game/fight/res/enemy/yiyu/new_resource.tres" id="13_se1yp"]
+[ext_resource type="Texture2D" uid="uid://5jk3olflwkr2" path="res://img/ui/MainUI_BattleSelection_6_17.png" id="14_85qub"]
+
+[resource]
+script = ExtResource("2_scdkr")
+name_ = "战斗到底"
+type = Array[String](["战斗"])
+card = Array[ExtResource("1_1kwre")]([ExtResource("2_w2234"), ExtResource("3_fjm6f"), ExtResource("4_83eai"), ExtResource("5_ognjp"), ExtResource("6_vrtey"), ExtResource("7_6d3tg"), ExtResource("8_2fe8w"), ExtResource("9_fhkos"), ExtResource("10_gqr43"), ExtResource("11_emmch"), ExtResource("12_cbyo0"), ExtResource("13_se1yp")])
+is_trun = true
+img = ExtResource("14_85qub")
+metadata/_custom_type_script = "uid://b8rki7fa01jly"
