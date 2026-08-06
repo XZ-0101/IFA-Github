@@ -196,6 +196,7 @@ var si_path:String
 var is_back:bool
 var back_texture:Texture2D
 var back_index:int=1
+var is_select_text:bool=false
 func jump_to(jumper:jumper_class):
 	if jumper.mode=="lobotomyA":
 		

@@ -548,7 +548,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/text" unique_id=13598750]
+[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/text" unique_id=1655837654]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -564,6 +564,9 @@ theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 scroll_following = true
 script = ExtResource("4_sm0by")
+auto_add_full = false
+auto_add_copy = false
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="TextureRect" type="TextureRect" parent="text_and_texture" unique_id=2019314367]
 layout_mode = 0
@@ -575,7 +578,7 @@ texture = ExtResource("7_lsk2g")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/TextureRect" unique_id=1660768928]
+[node name="RichTextLabel" type="RichTextLabel" parent="text_and_texture/TextureRect" unique_id=760413429]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -591,6 +594,9 @@ text = "事件编号:---
 "
 vertical_alignment = 2
 script = ExtResource("4_sm0by")
+auto_add_full = false
+auto_add_copy = false
+metadata/_custom_type_script = "uid://bwtb738eyru67"
 
 [node name="ColorRect" type="ColorRect" parent="text_and_texture/TextureRect" unique_id=378772470]
 material = SubResource("ShaderMaterial_sjl3k")
@@ -802,9 +808,5 @@ metadata/_edit_lock_ = true
 stream = ExtResource("19_ndois")
 autoplay = true
 
-[connection signal="meta_clicked" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="text_and_texture/text/RichTextLabel" to="text_and_texture/text/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="text_and_texture/TextureRect/RichTextLabel" to="text_and_texture/TextureRect/RichTextLabel" method="_on_meta_clicked"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="finished" from="AudioStreamPlayer3" to="." method="_on_audio_stream_player_3_finished"]

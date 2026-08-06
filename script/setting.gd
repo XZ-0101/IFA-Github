@@ -69,7 +69,7 @@ func _ready() -> void:
 	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
 	$diy/dark.value=Back.darkness
 	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
-
+	$system/text_s.button_pressed=Get.is_select_text
 
 func _on_check_box_3_toggled(toggled_on: bool) -> void:
 	Get.fun_mode=toggled_on
@@ -177,4 +177,9 @@ func _on_mh_value_changed(value: float) -> void:
 func _on_dark_value_changed(value: float) -> void:
 	Back.darkness=$diy/dark.value
 	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
+	pass # Replace with function body.
+
+
+func _on_text_s_toggled(toggled_on: bool) -> void:
+	Get.is_select_text=toggled_on
 	pass # Replace with function body.

@@ -143,4 +143,5 @@ R为正式版（4）
 第四位：补丁优化
 "
 script = ExtResource("3_pupwb")
+auto_add_full = false
 metadata/_custom_type_script = "uid://bwtb738eyru67"

@@ -152,6 +152,21 @@ popup/item_1/id = 1
 popup/item_2/text = "边狱"
 popup/item_2/id = 2
 
+[node name="RichTextLabel5" type="RichTextLabel" parent="system" unique_id=96679317]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "文本选区"
+scroll_active = false
+
+[node name="text_s" type="CheckBox" parent="system" unique_id=686139161]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qdldw")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+text = "启用"
+
 [node name="diy" type="VBoxContainer" parent="." unique_id=1034226576]
 layout_mode = 0
 offset_left = 343.0
@@ -300,10 +315,10 @@ value = 0.8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=570646957]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 522.0
-offset_right = 259.0
-offset_bottom = 722.0
+offset_left = 23.0
+offset_top = 735.0
+offset_right = 247.0
+offset_bottom = 935.0
 theme_override_constants/separation = 12
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="VBoxContainer" unique_id=928506604]
@@ -330,6 +345,7 @@ text = "配置loading文本"
 [connection signal="toggled" from="system/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="system/CheckBox2" to="." method="_on_check_box_2_toggled"]
 [connection signal="item_selected" from="system/OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="toggled" from="system/text_s" to="." method="_on_text_s_toggled"]
 [connection signal="item_selected" from="diy/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="diy/CheckBox3" to="." method="_on_check_box_3_toggled"]
 [connection signal="button_down" from="diy/load_button" to="." method="_on_load_button_button_down"]
