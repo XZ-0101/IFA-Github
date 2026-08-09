@@ -32,11 +32,11 @@ func _process(delta: float) -> void:
 
 func _on_win_b_button_down() -> void:
 	for i in LittleGameCtrl.gift_array:
-		if not i in Get.收藏夹:
-			Get.收藏夹.append(i)
+		if not i in LittleGameCtrl.got_gift_array:
+			LittleGameCtrl.got_gift_array.append(i)
 	jumper.show_()
 	jumper.jump_to(load(\"res://little_game/enter.tscn\"))
-	OS.alert(\"别忘了去收藏夹中保存你收集到的资料哦\")
+	OS.alert(\"别忘了去藏品中保存你收集到的资料哦\")
 	pass # Replace with function body.
 
 

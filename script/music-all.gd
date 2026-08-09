@@ -17,6 +17,8 @@ var d:Dictionary={
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Get.is_lg_version:
+		hide()
 	pass # Replace with function body.
 
 

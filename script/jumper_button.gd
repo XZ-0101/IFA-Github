@@ -93,8 +93,9 @@ func _on_button_button_up() -> void:
 
 func _on_timer_2_timeout() -> void:
 	$TextureProgressBar.hide()
-	
-	j()
+	if Get.is_lg_version:
+		
+		j()
 	pass # Replace with function body.
 func j():
 	if jumper.name_=="别碰我" and Get.fun_mode:

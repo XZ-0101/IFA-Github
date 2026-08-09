@@ -27,19 +27,7 @@ var now_theme:Theme =load("res://res/theme.tres")
 var our_dir:String=OS.get_executable_path().get_base_dir()
 signal music_over
 var 收藏夹:Array[jumper_class]=[]
-var a_fun_list=[load("res://res_pack/O-05-47/img/DontTouchMe.webp"),
-load("res://img/I-1513167768.webp"),
-load("res://img/Magic3.webp"),
-load("res://img/lc-a/o-00-00/3F-0.webp"),
-load("res://img/lc-a/o-03-03/I.webp"),
-load("res://img2/LCA/O-01-12/I-0.webp"),
-load("res://img2/LCA/O-04-08/I-1513156783.webp"),
-load("res://img2/LCA/T-04-06/I-1513169944.webp"),
-load("res://res_pack/o-01-15/img/I-1513176183.webp"),
-load("res://res_pack/f-05-32/img/I-1513171428.webp"),
-load("res://res_pack/O-05-47/img/DontTouchMe.webp")
-
-]
+var a_fun_list
 var gif_list={
 	"n1":"res://res/lobotomy/n1.tres",
 	"n2":"res://res/lobotomy/n2.tres",
@@ -197,6 +185,10 @@ var is_back:bool
 var back_texture:Texture2D
 var back_index:int=1
 var is_select_text:bool=false
+func _ready() -> void:
+	
+	is_lg_version=not FileAccess.file_exists("res://mode_config_file/not_only_little_game.cfg")
+	
 func jump_to(jumper:jumper_class):
 	if jumper.mode=="lobotomyA":
 		

@@ -29,6 +29,7 @@ var gift_text=["教学用E.G.O\n-最大生命值+2\n-最大精神值+2",
 "牛奶咖啡\n-如果自律等级大于10，则使精神值上限加5",
 "卡密拉\n-若生命值与最大生命值之差大于10，则将勇气等级+10"
 ]
+var got_gift_array:Array[jumper_class]
 func _process(delta: float) -> void:
 	hp=30
 	sp=30

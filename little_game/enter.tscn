@@ -96,7 +96,7 @@ func _on_button_button_down() -> void:
 
 
 func _on_button_2_button_down() -> void:
-	Loading.load_to(\"res://screen/收藏夹.tscn\",1)
+	Loading.load_to(\"res://little_game/fight/scn/藏品.tscn\",1)
 	await Loading.load_over
 	Get.jumped_list.append(Get.going_to_load_screen)
 	get_tree().change_scene_to_packed(Get.going_to_load_screen)
@@ -317,7 +317,7 @@ texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_i1ap6")
 theme_override_font_sizes/font_size = 40
-text = "收藏夹"
+text = "藏品"
 icon = ExtResource("4_7f5x4")
 expand_icon = true
 
