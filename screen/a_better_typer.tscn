@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://cr8qc64sw4pu0"]
+
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_uybve"]
+
+[sub_resource type="GDScript" id="GDScript_hlk45"]
+script/source = "extends Control
+const a_typer=preload(\"res://screen/a_typr_letter.tscn\")
+@export var text:String
+@export var text_array:Array
+@export var wait:float=3.5
+@export var font:String=\"n\"
+var now_y:float=0
+var change_value:int
+var now_indx:int=0
+var lower_0:int
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#type_to(\"你好！[color=red]abc[/color]d[color=green]cc\")
+
+	pass # Replace with function body.
+func type_to(new_text:String):
+	text=new_text
+	text_array =split_bbcode_keep_tags(text)
+	
+	#print(JSON.stringify(PackedStringArray(text_array)))
+	if lower_0:
+		change_value=randi_range(-10,-1)
+	else :
+		change_value=randi_range(1,10)
+	$type.start()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func build_label(letter:String):
+	var l=a_typer.instantiate() as RichTextLabel
+	l.text=\"[shakescale]\"+letter
+
+	if font==\"n\":
+		
+		l.add_theme_font_override(\"normal_font\",load(Get.f_path))
+	else :
+		l.add_theme_font_override(\"normal_font\",load(font))
+	#var font_ = l.get_theme_font(\"font\")
+	#var font_size = l.get_theme_font_size(\"font_size\")
+	#var content_width = font_.get_string_size(l.get_parsed_text(), font_size).x
+	#l.custom_minimum_size.x=content_width+5
+	
+	return l
+
+# 如果你有类变量 text，建议改名为 default_text 等，以避免参数遮蔽。
+# 但如果你保留，下面的函数参数已改成 p_text，不会冲突。
+
+func split_bbcode_keep_tags(p_text: String) -> Array:
+	var result = []
+	var stack = []           # 存储开标签原文（含属性）
+	var i = 0
+	var length = p_text.length()
+	
+	while i < length:
+		var ch = p_text[i]
+		
+		# 转义 \\[ → 当作普通字符
+		if ch == \"\\\\\" and i + 1 < length and p_text[i+1] == \"[\":
+			result.append(_wrap_char(\"[\", stack))
+			i += 2
+			continue
+		
+		# 检测标签
+		if ch == \"[\":
+			var end = p_text.find(\"]\", i + 1)
+			if end != -1:
+				var tag_content = p_text.substr(i, end - i + 1)
+				if tag_content.length() >= 2 and tag_content[1] == \"/\":
+					# 闭标签：提取标签名（去掉 \"[/\" 和 \"]\" 及属性）
+					var close_raw = tag_content.substr(2, tag_content.length() - 3)
+					var close_name = close_raw
+					var eq_pos = close_raw.find(\"=\")
+					if eq_pos != -1:
+						close_name = close_raw.substr(0, eq_pos)
+					# 从栈中查找最近一个同名开标签
+					var found = -1
+					for j in range(stack.size() - 1, -1, -1):
+						if _get_open_tag_name(stack[j]) == close_name:
+							found = j
+							break
+					if found != -1:
+						stack = stack.slice(0, found)
+				else:
+					# 开标签
+					stack.push_back(tag_content)
+				i = end + 1
+				continue
+			# 找不到匹配的 ']'，'[' 当作普通字符
+		
+		# 普通字符
+		result.append(_wrap_char(ch, stack))
+		i += 1
+	
+	return result
+
+
+func _wrap_char(p_char: String, stack: Array) -> String:
+	if stack.is_empty():
+		return p_char
+	var open_tags = \"\".join(stack)
+	var close_tags = \"\"
+	for tag in stack:
+		var tag_name = _get_open_tag_name(tag)
+		close_tags = \"[/\" + tag_name + \"]\" + close_tags
+	return open_tags + p_char + close_tags
+
+
+func _get_open_tag_name(p_tag: String) -> String:
+	var content = p_tag.substr(1, p_tag.length() - 2)  # 去掉首尾的 [ 和 ]
+	var eq_pos = content.find(\"=\")
+	if eq_pos == -1:
+		return content
+	else:
+		return content.substr(0, eq_pos)
+
+func _on_type_timeout() -> void:
+	if now_indx!=text_array.size():
+		var node=build_label(text_array[now_indx])
+		
+		
+		node.offset_transform_position.y+=now_y + change_value
+		now_y=node.offset_transform_position.y
+		$HBoxContainer.add_child(node)
+		now_indx+=1
+		$type.start()
+	else:
+	
+		$Timer.wait_time=wait
+		$Timer.start()
+	pass # Replace with function body.
+
+
+func _on_timer_timeout() -> void:
+	print(\"over\")
+	$AnimationPlayer.play(\"new_animation\")
+	pass # Replace with function body.
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name==\"new_animation\":
+		queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="Animation" id="Animation_uybve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nex8b"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uybve"]
+_data = {
+&"RESET": SubResource("Animation_uybve"),
+&"new_animation": SubResource("Animation_nex8b")
+}
+
+[node name="Control" type="Control" unique_id=1698117792]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -648.0
+offset_bottom = -1152.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+mouse_filter = 2
+theme = ExtResource("1_uybve")
+script = SubResource("GDScript_hlk45")
+text = "你好！[color=red]abc[/color]d[color=green]cc"
+
+[node name="Timer" type="Timer" parent="." unique_id=212612313]
+one_shot = true
+
+[node name="type" type="Timer" parent="." unique_id=636130593]
+wait_time = 0.05
+one_shot = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2091856326]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 72.0
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=814209763]
+libraries/ = SubResource("AnimationLibrary_uybve")
+speed_scale = 0.65
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="type" to="." method="_on_type_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

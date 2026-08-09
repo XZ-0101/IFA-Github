@@ -185,6 +185,7 @@ var is_back:bool
 var back_texture:Texture2D
 var back_index:int=1
 var is_select_text:bool=false
+var l_mode:=1
 func _ready() -> void:
 	
 	is_lg_version=not FileAccess.file_exists("res://mode_config_file/not_only_little_game.cfg")

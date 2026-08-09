@@ -1,0 +1,63 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://screen/a_typr_letter.tscn" id="1_8uh7m"]
+[ext_resource type="FontVariation" path="res://res/Font/n.tres" id="2_6uqi0"]
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=1016560435]
+offset_right = 22.0
+offset_bottom = 72.0
+theme_override_constants/separation = 5
+
+[node name="RichTextLabel" parent="." unique_id=640265074 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 8)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "你"
+
+[node name="_RichTextLabel_174" parent="." unique_id=1140103010 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 16)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "好"
+
+[node name="_RichTextLabel_177" parent="." unique_id=2115474137 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 24)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "！"
+
+[node name="_RichTextLabel_180" parent="." unique_id=304027824 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 32)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "[color=red]a[/color]"
+
+[node name="_RichTextLabel_183" parent="." unique_id=796866231 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 40)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "[color=red]b[/color]"
+
+[node name="_RichTextLabel_186" parent="." unique_id=1755418444 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 48)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "[color=red]c[/color]"
+
+[node name="_RichTextLabel_189" parent="." unique_id=1569529354 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 56)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "d"
+
+[node name="_RichTextLabel_192" parent="." unique_id=2033860118 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 64)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "[color=green]c[/color]"
+
+[node name="_RichTextLabel_195" parent="." unique_id=801854822 instance=ExtResource("1_8uh7m")]
+layout_mode = 2
+offset_transform_position = Vector2(0, 72)
+theme_override_fonts/normal_font = ExtResource("2_6uqi0")
+text = "[color=green]c[/color]"

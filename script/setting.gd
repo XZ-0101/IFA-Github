@@ -63,7 +63,7 @@ func _ready() -> void:
 	$diy/CheckBox3.button_pressed=Get.fun_mode
 	if DirAccess.dir_exists_absolute(Get.our_dir.path_join("Theme_pack")):
 		$diy/load_button/FileDialog.root_subfolder=Get.our_dir.path_join("Theme_pack")
-
+	$system/lmode.selected=Get.l_mode
 	$diy/OptionButton2.selected=Get.back_index
 	$diy/mh.value=Back.mh
 	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
@@ -182,4 +182,9 @@ func _on_dark_value_changed(value: float) -> void:
 
 func _on_text_s_toggled(toggled_on: bool) -> void:
 	Get.is_select_text=toggled_on
+	pass # Replace with function body.
+
+
+func _on_lmode_item_selected(index: int) -> void:
+	Get.l_mode=index
 	pass # Replace with function body.

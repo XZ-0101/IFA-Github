@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bqk837348vk4u"]
+
+[ext_resource type="Script" uid="uid://ob0auwde2g1v" path="res://script/bbcode/sizeshake.gd" id="1_fp8s3"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="1_uqa2e"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_uybve"]
+script = ExtResource("1_fp8s3")
+metadata/_custom_type_script = "uid://ob0auwde2g1v"
+
+[node name="RichTextLabel" type="RichTextLabel" unique_id=640265074]
+clip_contents = false
+offset_right = 30.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+mouse_filter = 2
+theme = ExtResource("1_uqa2e")
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_uybve")]

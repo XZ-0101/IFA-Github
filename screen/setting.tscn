@@ -167,6 +167,26 @@ theme = ExtResource("2_qdldw")
 theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 text = "启用"
 
+[node name="RichTextLabel6" type="RichTextLabel" parent="system" unique_id=159835677]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "浮动字幕款式"
+scroll_active = false
+
+[node name="lmode" type="OptionButton" parent="system" unique_id=993146957]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qdldw")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+selected = 1
+item_count = 2
+popup/item_0/text = "旧版"
+popup/item_0/id = 0
+popup/item_1/text = "新版"
+popup/item_1/id = 1
+
 [node name="diy" type="VBoxContainer" parent="." unique_id=1034226576]
 layout_mode = 0
 offset_left = 343.0
@@ -346,6 +366,7 @@ text = "配置loading文本"
 [connection signal="toggled" from="system/CheckBox2" to="." method="_on_check_box_2_toggled"]
 [connection signal="item_selected" from="system/OptionButton2" to="." method="_on_option_button_2_item_selected"]
 [connection signal="toggled" from="system/text_s" to="." method="_on_text_s_toggled"]
+[connection signal="item_selected" from="system/lmode" to="." method="_on_lmode_item_selected"]
 [connection signal="item_selected" from="diy/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="diy/CheckBox3" to="." method="_on_check_box_3_toggled"]
 [connection signal="button_down" from="diy/load_button" to="." method="_on_load_button_button_down"]

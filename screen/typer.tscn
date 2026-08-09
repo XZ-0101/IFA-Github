@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://nrulnhqc6fk4"]
+[gd_scene format=3 uid="uid://nrulnhqc6fk4"]
 
 [ext_resource type="Script" uid="uid://dsrr88erf62ay" path="res://script/typer.gd" id="1_tfk10"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1085324382]
 layer = 128
 script = ExtResource("1_tfk10")
+metadata/_edit_horizontal_guides_ = [273.0]
+metadata/_edit_vertical_guides_ = [501.0]
