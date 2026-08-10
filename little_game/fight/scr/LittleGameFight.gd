@@ -341,6 +341,8 @@ func do_buff_on_time(the_time:String,team:int):
 	pass
 
 func do_it(the_time:String):
+	sort_all_lists()
+	sort_buff_pools()
 	do_it_on_time(the_time)
 	do_buff_on_time(the_time,1)
 	do_buff_on_time(the_time,0)
@@ -375,3 +377,30 @@ func clear_executer_queue() -> void:
 				to_remove.append(i)
 		for i in to_remove:
 			list.erase(i)
+func sort_by_weight(arr: Array) -> void:
+	arr.sort_custom(func(a, b):
+		return clamp(a.weight, 1, 3) > clamp(b.weight, 1, 3)
+	)
+func sort_executers_by_weight(a: Executer, b: Executer) -> bool:
+	var wa = a.weight if a.weight != null else 2
+	var wb = b.weight if b.weight != null else 2
+	return wa < wb
+
+func sort_all_lists():
+	var all_lists = [
+		fight_strat, turn_strat, when_point, before_point,
+		before_hit, after_hit, before_under_hit, after_under_hit, turn_end
+	]
+	for list in all_lists:
+		if list.size() > 1:
+			list.sort_custom(sort_executers_by_weight)
+func sort_buff_pools():
+	if buff_pool.size() > 1:
+		buff_pool.sort_custom(sort_buff_by_weight)
+	if enemy_buff_pool.size() > 1:
+		enemy_buff_pool.sort_custom(sort_buff_by_weight)
+
+func sort_buff_by_weight(a: buff_lg, b: buff_lg) -> bool:
+	var wa = a.eff.weight if a.eff and a.eff.weight != null else 2
+	var wb = b.eff.weight if b.eff and b.eff.weight != null else 2
+	return wa < wb

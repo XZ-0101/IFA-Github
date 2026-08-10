@@ -10,7 +10,7 @@ most_x = 1
 code = "var num=Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/buff/totem_used.tres\")
 if num==1:
 	Fight.minus_buff_path(\"res://little_game/fight/res/buff/totem.tres\",team,1)
-if hp<=0 and num!=1 :
+if hp<=0:
 	hp=hp_max
 	Fight.add_buff_path(\"res://little_game/fight/res/buff/totem_used.tres\",1,team)
 
@@ -21,6 +21,7 @@ if hp<=0 and num!=1 :
 	Fight.minus_buff_path(\"res://little_game/fight/res/buff/totem.tres\",team,1)
 "
 exe_time = "turn_strat"
+weight = 3
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]

@@ -5,6 +5,7 @@ class_name Executer
 @export var who:String
 @export var is_who:bool
 @export var one_time:bool
+@export var weight:int=2
 @export_multiline var func_code:String="pass"
 #export var description:String
 var basic_code="\nfunc run():\n	{code}\n	queue_free()"
