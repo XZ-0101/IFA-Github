@@ -68,3 +68,4 @@ func _process(delta: float) -> void:
 		panic=true
 	else :
 		panic=false
+var test_arr:Array=[1,1,1,1]

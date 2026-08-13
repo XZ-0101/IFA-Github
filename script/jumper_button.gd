@@ -93,7 +93,7 @@ func _on_button_button_up() -> void:
 
 func _on_timer_2_timeout() -> void:
 	$TextureProgressBar.hide()
-	if Get.is_lg_version:
+	if not Get.is_lg_version:
 		
 		j()
 	pass # Replace with function body.

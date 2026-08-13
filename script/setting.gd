@@ -27,14 +27,14 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 func _process(delta: float) -> void:
 	if AudioServer.is_bus_mute(0):
-		$system/CheckBox.button_pressed=true
+		$a/system/CheckBox.button_pressed=true
 		AudioServer.set_bus_mute(0,true)
 	else :
-		$system/CheckBox.button_pressed=false
+		$a/system/CheckBox.button_pressed=false
 		AudioServer.set_bus_mute(0,false)
 	
-	$diy/OptionButton.select(Get.mouse_index)
-	$system/OptionButton2.disabled=Get.is_changed_theme
+	$a/diy/OptionButton.select(Get.mouse_index)
+	$a/system/OptionButton2.disabled=Get.is_changed_theme
 
 
 func _on_check_box_2_toggled(toggled_on: bool) -> void:
@@ -58,18 +58,19 @@ func _on_option_button_2_item_selected(index: int) -> void:
 		Get.f_path="res://res/Font/lc.tres"
 	pass # Replace with function body.
 func _ready() -> void:
-	$system/OptionButton2.selected=Get.f_index
-	$system/CheckBox2.button_pressed=Get.h2d
-	$diy/CheckBox3.button_pressed=Get.fun_mode
+	$a/system/OptionButton2.selected=Get.f_index
+	$a/system/CheckBox2.button_pressed=Get.h2d
+	$a/diy/CheckBox3.button_pressed=Get.fun_mode
 	if DirAccess.dir_exists_absolute(Get.our_dir.path_join("Theme_pack")):
-		$diy/load_button/FileDialog.root_subfolder=Get.our_dir.path_join("Theme_pack")
-	$system/lmode.selected=Get.l_mode
-	$diy/OptionButton2.selected=Get.back_index
-	$diy/mh.value=Back.mh
-	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
-	$diy/dark.value=Back.darkness
-	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
-	$system/text_s.button_pressed=Get.is_select_text
+		$a/diy/load_button/FileDialog.root_subfolder=Get.our_dir.path_join("Theme_pack")
+	$a/system/lmode.selected=Get.l_mode
+	$a/diy/OptionButton2.selected=Get.back_index
+	$a/diy/mh.value=Back.mh
+	$a/diy/mht.text="背景模糊度:"+str($a/diy/mh.value)
+	$a/diy/dark.value=Back.darkness
+	$a/diy/darkt.text="背景暗度:"+str($a/diy/dark.value)
+	$a/system/text_s.button_pressed=Get.is_select_text
+	$a/system/debug2.button_pressed=Get.debug
 
 func _on_check_box_3_toggled(toggled_on: bool) -> void:
 	Get.fun_mode=toggled_on
@@ -100,7 +101,7 @@ func _on_back_button_down() -> void:
 
 
 func _on_load_button_button_down() -> void:
-	$diy/load_button/FileDialog.popup()
+	$a/diy/load_button/FileDialog.popup()
 	pass # Replace with function body.
 
 
@@ -125,13 +126,19 @@ func _on_option_back_item_selected(index: int) -> void:
 		Get.is_back=true
 		Get.back_texture=load("res://img2/back/3F-Angela.webp")
 		Back.change()
+	if index==4:
+		Get.back_index=4
+		Get.is_back=true
+		Get.back_texture=load("res://img2/UI/Texture2D/back.tres")
+		Back.change()
+	
 	pass # Replace with function body.
 
 
 
 
 func _on_file_dialog2_file_selected(path: String) -> void:
-	$diy/OptionButton2.select(0)
+	$a/diy/OptionButton2.select(0)
 	Get.back_index=0
 	Get.back_texture=load_img_file(path)
 	Get.is_back=true
@@ -140,7 +147,7 @@ func _on_file_dialog2_file_selected(path: String) -> void:
 
 
 func _on_back_button_button_down() -> void:
-	$diy/back_button/FileDialog.popup()
+	$a/diy/back_button/FileDialog.popup()
 	pass # Replace with function body.
 func load_img_file(path:String):
 	var file_ = FileAccess.open(path, FileAccess.READ)
@@ -169,14 +176,14 @@ func load_img_file(path:String):
 
 
 func _on_mh_value_changed(value: float) -> void:
-	Back.mh=$diy/mh.value
-	$diy/mht.text="背景模糊度:"+str($diy/mh.value)
+	Back.mh=$a/diy/mh.value
+	$a/diy/mht.text="背景模糊度:"+str($a/diy/mh.value)
 	pass # Replace with function body.
 
 
 func _on_dark_value_changed(value: float) -> void:
-	Back.darkness=$diy/dark.value
-	$diy/darkt.text="背景暗度:"+str($diy/dark.value)
+	Back.darkness=$a/diy/dark.value
+	$a/diy/darkt.text="背景暗度:"+str($a/diy/dark.value)
 	pass # Replace with function body.
 
 
@@ -187,4 +194,9 @@ func _on_text_s_toggled(toggled_on: bool) -> void:
 
 func _on_lmode_item_selected(index: int) -> void:
 	Get.l_mode=index
+	pass # Replace with function body.
+
+
+func _on_debug_2_toggled(toggled_on: bool) -> void:
+	Get.debug=toggled_on
 	pass # Replace with function body.

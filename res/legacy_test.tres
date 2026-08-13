@@ -1,11 +1,21 @@
 [gd_resource type="Resource" script_class="legacy" format=3 uid="uid://bx47cgdjdbnj3"]
 
+[ext_resource type="Texture2D" uid="uid://bn6dofnfo07sk" path="res://img/kq.png" id="1_3misx"]
 [ext_resource type="Resource" uid="uid://bx834ciena4ia" path="res://res/legacy-j.tres" id="1_i51yw"]
 [ext_resource type="Script" uid="uid://rg4rhmdleeuu" path="res://script/l_lca.gd" id="2_i51yw"]
 [ext_resource type="Resource" uid="uid://bn3ny2xn8f68t" path="res://res/QuestionTest.tres" id="3_3misx"]
+[ext_resource type="Script" uid="uid://dogw5on4lp7ds" path="res://script/te_zhi.gd" id="5_0sbeq"]
+
+[sub_resource type="Resource" id="Resource_nkq44"]
+script = ExtResource("5_0sbeq")
+name_ = "速度打分数达到‘里面就觉得还是看见立刻"
+metadata/_custom_type_script = "uid://dogw5on4lp7ds"
 
 [resource]
 script = ExtResource("2_i51yw")
+Attack_Type = "white"
+type = "red"
+a_lv = 2
 "心情" = "20+	,19~20点,7~18点,0~6点
 +8（50秒）,+6.0（高）,+2.3（低）,-3.5（少量）
 复合（2+1点）,复合（2+1点）,复合（2+1点）,复合（2+1点）"
@@ -15,7 +25,29 @@ script = ExtResource("2_i51yw")
 无较为厌恶的工作类型
 非常厌恶：{沟通},{娱乐}"
 o = Array[String](["1,2,3,4,5,6,7,8", "a,b,c,d,e,f,g,h", "a1,a2,a3,a4,a5,a6,a7,a8", "/,/,/,/,/,/,/,/", "11,12,13,14,15,16,17,18"])
+Upgrades = Array[String](["1", "2"])
+story = "速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻
+速度打分数达到‘里面就觉得还是看见立刻"
+flavour_text = Array[String](["速度打分数达到‘里面就觉得还是看见立刻", "速度打分数达到‘里面就觉得还是看见立刻"])
+other_info = "速度打分数达到‘里面就觉得还是看见立刻速度打分数达到‘里面就觉得还是看见立刻"
+other_info_act = "速度打分数达到‘里面就觉得还是看见立刻速度打分数达到‘里面就觉得还是看见立刻速度打分数达到‘里面就觉得还是看见立刻"
 "最终观测" = ExtResource("3_3misx")
+"特质" = SubResource("Resource_nkq44")
+name_ = "速度打分数达到‘里面就觉得还是看见立刻"
+icon = ExtResource("1_3misx")
+info_ = "速度打分数达到‘里面就觉得还是看见立刻"
+subject = "F-U-C-K"
+level = "a"
 jumper = ExtResource("1_i51yw")
 gif = "null"
 metadata/_custom_type_script = "uid://rg4rhmdleeuu"

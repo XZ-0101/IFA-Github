@@ -8,13 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://jdtnjov7i6xq" path="res://img/BadResult.webp" id="4_373cs"]
 [ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="4_wi2fh"]
 [ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="7_373cs"]
+[ext_resource type="Theme" uid="uid://bppg3ov84vf8n" path="res://res/better_theme.tres" id="9_i4emh"]
 [ext_resource type="Texture2D" uid="uid://bui5d2jopstsc" path="res://img/Site-logo (2).webp" id="9_v71l7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_373cs"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_377bm"]
-Panel/styles/panel = SubResource("StyleBoxFlat_373cs")
 
 [node name="Control" type="Control" unique_id=1516708620]
 layout_mode = 3
@@ -149,7 +144,7 @@ offset_bottom = -31854.05
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = SubResource("Theme_377bm")
+theme = ExtResource("9_i4emh")
 
 [node name="nr" type="RichTextLabel" parent="Window/Panel" unique_id=1595026474]
 layout_mode = 1

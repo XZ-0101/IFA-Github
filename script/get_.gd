@@ -20,9 +20,11 @@ var f_path:String="res://res/Font/n.tres"
 var asked_Permission:bool=false ##是否获得了权限
 var fun_mode:bool=false
 var going_to_web:String 
-var v="B.01.22.1" ##项目版本号
+var v="B.01.22.2" ##项目版本号
 var is_lg_version:bool=false
+var is_fast_version:bool=false
 var is_changed_theme:bool
+var debug:bool=false
 var now_theme:Theme =load("res://res/theme.tres")
 var our_dir:String=OS.get_executable_path().get_base_dir()
 signal music_over
@@ -189,7 +191,8 @@ var l_mode:=1
 func _ready() -> void:
 	
 	is_lg_version=not FileAccess.file_exists("res://mode_config_file/not_only_little_game.cfg")
-	
+	if OS.is_debug_build():
+		debug=true
 func jump_to(jumper:jumper_class):
 	if jumper.mode=="lobotomyA":
 		

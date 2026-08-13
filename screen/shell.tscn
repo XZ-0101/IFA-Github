@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://d4m0qjr830xpg"]
+
+[ext_resource type="Script" uid="uid://dmqye8kxkpfqs" path="res://script/scn/shell.gd" id="1_k0wfw"]
+[ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_eorsm"]
+[ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="3_gwhra"]
+[ext_resource type="PackedScene" uid="uid://nrulnhqc6fk4" path="res://screen/typer.tscn" id="4_eorsm"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1365950670 node_paths=PackedStringArray("text_node")]
+layer = 30
+script = ExtResource("1_k0wfw")
+text_node = NodePath("Control/RichTextLabel")
+
+[node name="Control" type="Control" parent="." unique_id=836239717]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_eorsm")
+
+[node name="Panel" type="ColorRect" parent="Control" unique_id=398722596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.09411765, 0.09411765, 0.93333334)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=977575133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
+bbcode_enabled = true
+text = "
+"
+scroll_following = true
+scroll_following_visible_characters = true
+script = ExtResource("3_gwhra")
+auto_add_full = false
+auto_add_copy = false
+metadata/_custom_type_script = "uid://bwtb738eyru67"
+
+[node name="LineEdit" type="LineEdit" parent="Control" unique_id=1069894979]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "输入..."
+caret_blink = true
+
+[node name="Button" type="Button" parent="." unique_id=2090104873]
+offset_left = 627.0
+offset_top = 66.0
+offset_right = 648.0
+offset_bottom = 97.0
+text = "O"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=176696469]
+
+[node name="CanvasLayer" parent="." unique_id=1085324382 instance=ExtResource("4_eorsm")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1526978409]
+
+[connection signal="text_submitted" from="Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

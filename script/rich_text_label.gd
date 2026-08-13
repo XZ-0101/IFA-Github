@@ -2,11 +2,17 @@ extends RichTextLabel
 class_name NewRichTextLabel
 @export var auto_add_full := true
 @export var auto_add_copy := true
+@export var change_father_size:=false
+@export var change_side_size:int=150
+@export var father_arr:Array[Control]
+@export var is_pass=true
+@export var saved_min_sizes: Dictionary = {}
 
 const WITHOUT_FULL := "§without_full"
 const WITHOUT_COPY := "§without_copy"
 const FULL_LINK := "[url=show]全屏[/url]"
 const COPY_LINK := "[url=copy]复制[/url]"
+
 
 func _set(property: StringName, value: Variant) -> bool:
 	if property == &"text":
@@ -41,9 +47,15 @@ func _ready():
 	if not meta_hover_ended.is_connected(_on_meta_hover_ended):
 		meta_hover_ended.connect(_on_meta_hover_ended)
 	
+	
 	selection_enabled=Get.is_select_text
+	if is_pass:
+		mouse_filter=Control.MOUSE_FILTER_PASS
 	
-	
+	if change_father_size:
+		save_father_size()
+		_on_vis_changed()
+		visibility_changed.connect(_on_vis_changed)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
@@ -117,3 +129,37 @@ func _on_meta_hover_started(meta: Variant) -> void:
 func _on_meta_hover_ended(meta: Variant) -> void:
 	TextLayer.hide_panel()
 	pass # Replace with function body.
+
+	pass
+func _on_vis_changed():
+	if is_visible_in_tree():
+		#print(text)
+		await get_tree().process_frame
+		content()
+	else:
+		print("hide")
+		for father in father_arr:
+			if father and saved_min_sizes.has(father):
+				print("saved")
+				father.custom_minimum_size.y = saved_min_sizes[father]
+		
+		pass
+	
+func content():
+	if change_father_size:
+			
+			for father in father_arr:
+				
+				var size_y = get_content_height()
+				var father_size_y=father.custom_minimum_size.y
+				print(size_y," ",father_size_y," ",father.custom_minimum_size.y)
+				custom_minimum_size.x = size.x
+				#if father_size_y<size_y+change_side_size:
+				father.custom_minimum_size.y=size_y+change_side_size
+				print(size_y," ",father_size_y," ",father.custom_minimum_size.y)
+func save_father_size():
+	saved_min_sizes.clear()
+	for father in father_arr:
+		if father:
+			saved_min_sizes[father] = father.custom_minimum_size.y
+			father.custom_minimum_size.y = 0

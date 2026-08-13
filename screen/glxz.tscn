@@ -4,24 +4,27 @@
 [ext_resource type="Script" uid="uid://b0ssd11ymlq4s" path="res://script/glxz.gd" id="1_iu5pb"]
 [ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="2_iu5pb"]
 [ext_resource type="Script" uid="uid://bwtb738eyru67" path="res://script/rich_text_label.gd" id="4_fb2e6"]
-[ext_resource type="Texture2D" uid="uid://dw0ln2eygeugl" path="res://img/ui/左半.webp" id="4_hajas"]
-[ext_resource type="Texture2D" uid="uid://4fe8y50pdir" path="res://img/ui/右半.webp" id="5_fb2e6"]
+[ext_resource type="Texture2D" uid="uid://bb2gjvoiop2u8" path="res://img/ui/New Piskel 2.png" id="5_hajas"]
 
 [node name="Control" type="Control" unique_id=515299834]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1.0
-offset_right = 1.0
+offset_right = 548.0
+offset_bottom = 100.0
 mouse_filter = 1
 script = ExtResource("1_iu5pb")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=928055126]
+unique_name_in_owner = true
 visible = false
 texture_filter = 1
-layout_mode = 0
-offset_top = 20.0
+custom_maximum_size = Vector2(550, -1)
+layout_mode = 1
+offset_top = 15.0
 offset_right = 550.0
-offset_bottom = 120.0
+offset_bottom = 115.0
 texture = ExtResource("1_8ugsf")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 4
@@ -29,49 +32,63 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1661459501]
-visible = false
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=1254823627]
+unique_name_in_owner = true
+z_index = 2
+layout_mode = 0
+offset_left = 217.0
+offset_top = -18.0
+offset_right = 354.0
+offset_bottom = 24.0
+theme = ExtResource("2_iu5pb")
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 25
+text = "管理须知1"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect" unique_id=1661459501 node_paths=PackedStringArray("father_arr")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 13.0
-offset_top = 35.0
+offset_top = 15.0
 offset_right = 528.0
-offset_bottom = 109.0
+offset_bottom = 89.0
 focus_mode = 2
 theme = ExtResource("2_iu5pb")
 theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+fit_content = true
+scroll_active = false
 selection_enabled = true
 script = ExtResource("4_fb2e6")
+change_father_size = true
+change_side_size = 20
+father_arr = [NodePath(".."), NodePath("../..")]
 metadata/_custom_type_script = "uid://bwtb738eyru67"
 
-[node name="Label" type="Label" parent="." unique_id=1254823627]
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1872145070]
+unique_name_in_owner = true
 visible = false
-z_index = 2
+self_modulate = Color(0.5019608, 0.49411765, 0.32156864, 1)
+texture_filter = 1
+custom_maximum_size = Vector2(300, -1)
 layout_mode = 0
-offset_left = 217.0
-offset_top = 2.0
-offset_right = 354.0
-offset_bottom = 44.0
-theme = ExtResource("2_iu5pb")
-theme_override_constants/outline_size = 30
-theme_override_font_sizes/font_size = 25
-text = "管理须知1"
+offset_right = 261.0
+offset_bottom = 78.0
+texture = ExtResource("5_hajas")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=990751692]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect" unique_id=1125192037 node_paths=PackedStringArray("father_arr")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = -3.0
-offset_top = 1.0
-offset_right = 290.0
-offset_bottom = 79.0
-texture = ExtResource("4_hajas")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1125192037]
-layout_mode = 0
-offset_left = 18.0
+offset_left = 6.0
 offset_top = 4.0
-offset_right = 265.0
+offset_right = 253.0
 offset_bottom = 73.0
 focus_mode = 2
 theme = ExtResource("2_iu5pb")
@@ -79,24 +96,38 @@ theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+fit_content = true
+scroll_active = false
 selection_enabled = true
 script = ExtResource("4_fb2e6")
+change_father_size = true
+change_side_size = 20
+father_arr = [NodePath(".."), NodePath("../..")]
 metadata/_custom_type_script = "uid://bwtb738eyru67"
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1092427228]
+[node name="TextureRect2" type="NinePatchRect" parent="." unique_id=1552923847]
+unique_name_in_owner = true
 visible = false
+self_modulate = Color(0.9882353, 0.5921569, 0.2784314, 1)
+texture_filter = 1
+custom_maximum_size = Vector2(300, -1)
 layout_mode = 0
-offset_left = -9.0
-offset_right = 300.0
+offset_left = -1.0
+offset_right = 259.0
 offset_bottom = 78.0
-texture = ExtResource("5_fb2e6")
+texture = ExtResource("5_hajas")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1169156656]
-visible = false
+[node name="RichTextLabel3" type="RichTextLabel" parent="TextureRect2" unique_id=1169156656 node_paths=PackedStringArray("father_arr")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 24.0
-offset_top = 4.0
-offset_right = 278.0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 255.0
 offset_bottom = 72.0
 focus_mode = 2
 theme = ExtResource("2_iu5pb")
@@ -104,6 +135,11 @@ theme_override_colors/default_color = Color(0.988235, 0.988235, 0.623529, 1)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "；khfdgjkjfgf"
+fit_content = true
+scroll_active = false
 selection_enabled = true
 script = ExtResource("4_fb2e6")
+change_father_size = true
+change_side_size = 20
+father_arr = [NodePath(".."), NodePath("../..")]
 metadata/_custom_type_script = "uid://bwtb738eyru67"

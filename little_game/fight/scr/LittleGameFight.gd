@@ -404,3 +404,7 @@ func sort_buff_by_weight(a: buff_lg, b: buff_lg) -> bool:
 	var wa = a.eff.weight if a.eff and a.eff.weight != null else 2
 	var wb = b.eff.weight if b.eff and b.eff.weight != null else 2
 	return wa < wb
+func test1(s):
+	print(s)
+func  test2(s):
+	return s

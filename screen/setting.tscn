@@ -80,15 +80,20 @@ offset_bottom = 66.0
 theme = ExtResource("2_qdldw")
 text = "设置里其实只有9个选项"
 
-[node name="system" type="VBoxContainer" parent="." unique_id=953077948]
+[node name="a" type="TabContainer" parent="." unique_id=743074773]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 88.0
-offset_right = 294.0
-offset_bottom = 524.0
-theme_override_constants/separation = 10
+offset_left = 14.0
+offset_top = 91.0
+offset_right = 626.0
+offset_bottom = 1059.0
+current_tab = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="system" unique_id=590705721]
+[node name="system" type="VBoxContainer" parent="a" unique_id=953077948]
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="a/system" unique_id=590705721]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -98,7 +103,7 @@ text = "系统"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="system" unique_id=1830233019]
+[node name="RichTextLabel2" type="RichTextLabel" parent="a/system" unique_id=1830233019]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -106,14 +111,14 @@ bbcode_enabled = true
 text = "静音"
 scroll_active = false
 
-[node name="CheckBox" type="CheckBox" parent="system" unique_id=1796815387]
+[node name="CheckBox" type="CheckBox" parent="a/system" unique_id=1796815387]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_qdldw")
 theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 text = "是否静音"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="system" unique_id=271498161]
+[node name="RichTextLabel3" type="RichTextLabel" parent="a/system" unique_id=271498161]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -121,7 +126,7 @@ bbcode_enabled = true
 text = "特效"
 scroll_active = false
 
-[node name="CheckBox2" type="CheckBox" parent="system" unique_id=602462575]
+[node name="CheckBox2" type="CheckBox" parent="a/system" unique_id=602462575]
 layout_mode = 2
 tooltip_text = "在播放音乐时，界面会出现辉光特效"
 mouse_default_cursor_shape = 2
@@ -130,7 +135,7 @@ theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 button_pressed = true
 text = "是否开启辉光"
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="system" unique_id=382525409]
+[node name="RichTextLabel4" type="RichTextLabel" parent="a/system" unique_id=382525409]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -138,7 +143,7 @@ bbcode_enabled = true
 text = "字体"
 scroll_active = false
 
-[node name="OptionButton2" type="OptionButton" parent="system" unique_id=1623738649]
+[node name="OptionButton2" type="OptionButton" parent="a/system" unique_id=1623738649]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_qdldw")
@@ -152,7 +157,7 @@ popup/item_1/id = 1
 popup/item_2/text = "边狱"
 popup/item_2/id = 2
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="system" unique_id=96679317]
+[node name="RichTextLabel5" type="RichTextLabel" parent="a/system" unique_id=96679317]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -160,14 +165,14 @@ bbcode_enabled = true
 text = "文本选区"
 scroll_active = false
 
-[node name="text_s" type="CheckBox" parent="system" unique_id=686139161]
+[node name="text_s" type="CheckBox" parent="a/system" unique_id=686139161]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_qdldw")
 theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 text = "启用"
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="system" unique_id=159835677]
+[node name="RichTextLabel6" type="RichTextLabel" parent="a/system" unique_id=159835677]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -175,7 +180,7 @@ bbcode_enabled = true
 text = "浮动字幕款式"
 scroll_active = false
 
-[node name="lmode" type="OptionButton" parent="system" unique_id=993146957]
+[node name="lmode" type="OptionButton" parent="a/system" unique_id=993146957]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_qdldw")
@@ -187,15 +192,55 @@ popup/item_0/id = 0
 popup/item_1/text = "新版"
 popup/item_1/id = 1
 
-[node name="diy" type="VBoxContainer" parent="." unique_id=1034226576]
-layout_mode = 0
-offset_left = 343.0
-offset_top = 77.0
-offset_right = 621.0
-offset_bottom = 673.0
-theme_override_constants/separation = 10
+[node name="debug" type="RichTextLabel" parent="a/system" unique_id=2068707736]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "DEBUG"
+scroll_active = false
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="diy" unique_id=2097969325]
+[node name="debug2" type="CheckBox" parent="a/system" unique_id=2146211397]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qdldw")
+theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
+text = "允许作弊"
+
+[node name="text" type="VBoxContainer" parent="a" unique_id=570646957]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tab_index = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="a/text" unique_id=928506604]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "文本配置
+[font size=15]tip：loading文本的配置在重启后生效"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="a/text" unique_id=848481711]
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+text = "配置指令文本"
+
+[node name="Button" type="Button" parent="a/text" unique_id=589729401]
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+text = "配置loading文本"
+
+[node name="diy" type="VBoxContainer" parent="a" unique_id=1034226576]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="a/diy" unique_id=2097969325]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -205,7 +250,7 @@ text = "个性化"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="diy" unique_id=1324411589]
+[node name="RichTextLabel" type="RichTextLabel" parent="a/diy" unique_id=1324411589]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -213,7 +258,7 @@ bbcode_enabled = true
 text = "鼠标样式"
 scroll_active = false
 
-[node name="OptionButton" type="OptionButton" parent="diy" unique_id=905424408]
+[node name="OptionButton" type="OptionButton" parent="a/diy" unique_id=905424408]
 layout_mode = 2
 tooltip_text = "仅电脑端可用"
 mouse_default_cursor_shape = 2
@@ -231,7 +276,7 @@ popup/item_2/text = "边狱"
 popup/item_2/icon = ExtResource("5_srscx")
 popup/item_2/id = 2
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="diy" unique_id=1755601819]
+[node name="RichTextLabel5" type="RichTextLabel" parent="a/diy" unique_id=1755601819]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -239,7 +284,7 @@ bbcode_enabled = true
 text = "fun模式"
 scroll_active = false
 
-[node name="CheckBox3" type="CheckBox" parent="diy" unique_id=1882444786]
+[node name="CheckBox3" type="CheckBox" parent="a/diy" unique_id=1882444786]
 layout_mode = 2
 tooltip_text = "如果开启，会有好玩的彩蛋哦~"
 mouse_default_cursor_shape = 2
@@ -247,7 +292,7 @@ theme = ExtResource("2_qdldw")
 theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 text = "开启fun模式"
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="diy" unique_id=2087419281]
+[node name="RichTextLabel6" type="RichTextLabel" parent="a/diy" unique_id=2087419281]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -256,22 +301,22 @@ text = "主题
 [font_size=20]注意：部分资源无法被替换"
 scroll_active = false
 
-[node name="load_button" type="Button" parent="diy" unique_id=1597418871]
+[node name="load_button" type="Button" parent="a/diy" unique_id=1597418871]
 layout_mode = 2
 text = "读取主题"
 
-[node name="FileDialog" type="FileDialog" parent="diy/load_button" unique_id=641475189]
+[node name="FileDialog" type="FileDialog" parent="a/diy/load_button" unique_id=641475189]
 title = "Open a File"
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.tres", "*.theme", "*.res")
 use_native_dialog = true
 
-[node name="back" type="Button" parent="diy" unique_id=1813087387]
+[node name="back" type="Button" parent="a/diy" unique_id=1813087387]
 layout_mode = 2
 text = "主题重置"
 
-[node name="RichTextLabel7" type="RichTextLabel" parent="diy" unique_id=2141350527]
+[node name="RichTextLabel7" type="RichTextLabel" parent="a/diy" unique_id=2141350527]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -279,11 +324,11 @@ bbcode_enabled = true
 text = "背景"
 scroll_active = false
 
-[node name="OptionButton2" type="OptionButton" parent="diy" unique_id=1235452960]
+[node name="OptionButton2" type="OptionButton" parent="a/diy" unique_id=1235452960]
 layout_mode = 2
 selected = 1
 search_bar_enabled = true
-item_count = 4
+item_count = 5
 popup/item_0/text = "本地"
 popup/item_0/id = 0
 popup/item_0/disabled = true
@@ -293,19 +338,21 @@ popup/item_2/text = "都市地图"
 popup/item_2/id = 2
 popup/item_3/text = "脑叶办公室"
 popup/item_3/id = 3
+popup/item_4/text = "提取"
+popup/item_4/id = 4
 
-[node name="back_button" type="Button" parent="diy" unique_id=1070287279]
+[node name="back_button" type="Button" parent="a/diy" unique_id=1070287279]
 layout_mode = 2
 text = "本地背景"
 
-[node name="FileDialog" type="FileDialog" parent="diy/back_button" unique_id=1431092653]
+[node name="FileDialog" type="FileDialog" parent="a/diy/back_button" unique_id=1431092653]
 title = "Open a File"
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.png", "*.jpeg", "*.jpg", "*.webp")
 use_native_dialog = true
 
-[node name="mht" type="RichTextLabel" parent="diy" unique_id=2065305341]
+[node name="mht" type="RichTextLabel" parent="a/diy" unique_id=2065305341]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -313,13 +360,13 @@ bbcode_enabled = true
 text = "背景模糊度:1.2"
 scroll_active = false
 
-[node name="mh" type="HSlider" parent="diy" unique_id=1453023117]
+[node name="mh" type="HSlider" parent="a/diy" unique_id=1453023117]
 layout_mode = 2
 max_value = 5.0
 step = 0.01
 value = 1.2
 
-[node name="darkt" type="RichTextLabel" parent="diy" unique_id=921932101]
+[node name="darkt" type="RichTextLabel" parent="a/diy" unique_id=921932101]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("2_qdldw")
@@ -327,56 +374,28 @@ bbcode_enabled = true
 text = "背景暗度:0.8"
 scroll_active = false
 
-[node name="dark" type="HSlider" parent="diy" unique_id=2127779671]
+[node name="dark" type="HSlider" parent="a/diy" unique_id=2127779671]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 0.8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=570646957]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 735.0
-offset_right = 247.0
-offset_bottom = 935.0
-theme_override_constants/separation = 12
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="VBoxContainer" unique_id=928506604]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("2_qdldw")
-bbcode_enabled = true
-text = "文本配置
-[font size=15]tip：loading文本的配置在重启后生效"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=848481711]
-layout_mode = 2
-theme = ExtResource("2_qdldw")
-text = "配置指令文本"
-
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=589729401]
-layout_mode = 2
-theme = ExtResource("2_qdldw")
-text = "配置loading文本"
-
-[connection signal="toggled" from="system/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="toggled" from="system/CheckBox2" to="." method="_on_check_box_2_toggled"]
-[connection signal="item_selected" from="system/OptionButton2" to="." method="_on_option_button_2_item_selected"]
-[connection signal="toggled" from="system/text_s" to="." method="_on_text_s_toggled"]
-[connection signal="item_selected" from="system/lmode" to="." method="_on_lmode_item_selected"]
-[connection signal="item_selected" from="diy/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="toggled" from="diy/CheckBox3" to="." method="_on_check_box_3_toggled"]
-[connection signal="button_down" from="diy/load_button" to="." method="_on_load_button_button_down"]
-[connection signal="file_selected" from="diy/load_button/FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="button_down" from="diy/back" to="." method="_on_back_button_down"]
-[connection signal="item_selected" from="diy/OptionButton2" to="." method="_on_option_back_item_selected"]
-[connection signal="button_down" from="diy/back_button" to="." method="_on_back_button_button_down"]
-[connection signal="dir_selected" from="diy/back_button/FileDialog" to="." method="_on_file_dialog_dir_selected"]
-[connection signal="file_selected" from="diy/back_button/FileDialog" to="." method="_on_file_dialog2_file_selected"]
-[connection signal="value_changed" from="diy/mh" to="." method="_on_mh_value_changed"]
-[connection signal="value_changed" from="diy/dark" to="." method="_on_dark_value_changed"]
-[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
-[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="toggled" from="a/system/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="a/system/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="item_selected" from="a/system/OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="toggled" from="a/system/text_s" to="." method="_on_text_s_toggled"]
+[connection signal="item_selected" from="a/system/lmode" to="." method="_on_lmode_item_selected"]
+[connection signal="toggled" from="a/system/debug2" to="." method="_on_debug_2_toggled"]
+[connection signal="button_down" from="a/text/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="a/text/Button" to="." method="_on_button_button_down"]
+[connection signal="item_selected" from="a/diy/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="a/diy/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="button_down" from="a/diy/load_button" to="." method="_on_load_button_button_down"]
+[connection signal="file_selected" from="a/diy/load_button/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="button_down" from="a/diy/back" to="." method="_on_back_button_down"]
+[connection signal="item_selected" from="a/diy/OptionButton2" to="." method="_on_option_back_item_selected"]
+[connection signal="button_down" from="a/diy/back_button" to="." method="_on_back_button_button_down"]
+[connection signal="dir_selected" from="a/diy/back_button/FileDialog" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="a/diy/back_button/FileDialog" to="." method="_on_file_dialog2_file_selected"]
+[connection signal="value_changed" from="a/diy/mh" to="." method="_on_mh_value_changed"]
+[connection signal="value_changed" from="a/diy/dark" to="." method="_on_dark_value_changed"]
