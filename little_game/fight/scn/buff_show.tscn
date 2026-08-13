@@ -15,14 +15,14 @@ func _ready() -> void:
 	$Label.text=str(buff.eff.x)
 	var types:String=\"\"
 	for i in buff.type:
-		types+=\"-\"+i+\"\\n\"
-	$Button/Window2/Panel/RichTextLabel.text=\"{name}  {now}/{max}
+		types+=\"-\"+tr(i)+\"\\n\"
+	$Button/Window2/Panel/RichTextLabel.text=tr(\"{name}  {now}/{max}
 效果:
 {de}
 
 标签:
 {type}
-\".format({\"name\":buff.name_,\"now\":buff.eff.x,\"max\":buff.eff.most_x,\"de\":buff.description,\"type\":types})
+\").format({\"name\":buff.name_,\"now\":buff.eff.x,\"max\":buff.eff.most_x,\"de\":buff.description,\"type\":types})
 
 
 

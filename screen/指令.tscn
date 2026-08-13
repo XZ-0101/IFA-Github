@@ -79,7 +79,7 @@ func _on_texture_rect_button_down() -> void:
 		print(\"emp\")
 		zl_.append_array(zl_ar)
 	var b=zl_.pick_random()
-	var a=\"致使用该软件的用户：\\n\"+b
+	var a=tr(\"致使用该软件的用户：\\n\")+tr(b)
 	if ani==0:
 		$Label.hide()
 		$Label.text=a

@@ -29,8 +29,8 @@ func show_it():
 	
 	if ind_ !=-1:
 		var gift=LittleGameFight.gift_eff_arr[ind_]
-		$Button2/Window2/RichTextLabel.text+=\"价格：\"+str(gift.gift_price)+\"\\n\\n\"
-		$Button2/Window2/RichTextLabel.text+=\"战斗效果\\n\"+gift.de+\"\\n\\n\"
+		$Button2/Window2/RichTextLabel.text+=tr(\"价格：\")+str(gift.gift_price)+\"\\n\\n\"
+		$Button2/Window2/RichTextLabel.text+=tr(\"战斗效果\\n\")+tr(gift.de)+\"\\n\\n\"
 		var shader=preload(\"res://little_game/fight/res/new_shader_material.tres\")
 		var m =shader.duplicate()
 		var c:Color
@@ -55,13 +55,13 @@ func show_it():
 				t = \"[color=#FF3232]EX[/color]\"
 				c = Color(\"#FF3232\")
 
-		$Button2/Window2/RichTextLabel.text+=\"等级\\n\"+t+\"\\n\\n\"
+		$Button2/Window2/RichTextLabel.text+=tr(\"等级\\n\")+tr(t)+\"\\n\\n\"
 		m.set_shader_parameter(\"outline_color\",c)
 		$TextureRect.material=m
 
 	if gift_ in LittleGameCtrl.useful_gift_arr:
 		var ind = LittleGameCtrl.useful_gift_arr.find(gift_)
-		$Button2/Window2/RichTextLabel.text+=\"事件效果\\n\"+LittleGameCtrl.gift_text[ind]+\"\\n\\n\"
+		$Button2/Window2/RichTextLabel.text+=tr(\"事件效果\\n\")+tr(LittleGameCtrl.gift_text[ind])+\"\\n\\n\"
 	
 	
 
@@ -77,10 +77,10 @@ func _on_button_button_down() -> void:
 		$AnimationPlayer.play(\"new_animation\")
 		await  $AnimationPlayer.animation_finished
 		queue_free()
-		OS.alert(\"获得了{x}正义等级！\".format({\"x\":str(gift.gift_price)}),\"成功\")
+		OS.alert(tr(\"获得了{x}正义等级！\").format({\"x\":str(gift.gift_price)}),tr(\"成功\"))
 		
 	else:
-		OS.alert(\"不可售卖！\")
+		OS.alert(tr(\"不可售卖！\"))
 	pass # Replace with function body.
 
 

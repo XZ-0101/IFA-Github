@@ -106,9 +106,9 @@ func load_test():
 		basic_risk_icon.texture = load("res://img2/UI/undef_risk.tres")
 
 	basic_icon.texture = a.icon
-	basic_info_label.text = "[url=show]全屏[/url]\n" + a.info_
+	basic_info_label.text = tr("[url=show]全屏[/url]\n" )+ tr(a.info_)
 	basic_ob_name_label.text = a.ob_name
-	basic_subject_label.text = a.color + "的" + a.time + "  " + a.name_
+	basic_subject_label.text = tr(a.color) + tr("的") + tr(a.time) + "  " + tr(a.name_)
 
 	# 时间图标
 	if a.time == "黎明" or a.time == "午夜":
@@ -131,18 +131,17 @@ func load_test():
 	if a.color == "靛蓝色":
 		basic_subject_label.modulate = Color(0.227, 0.373, 0.804, 1.0)
 		basic_time_icon.modulate = Color(0.227, 0.373, 0.804, 1.0)
-	# 原代码有两次靛蓝色，第二次是白色，可能是错误？保留原逻辑，但第二次覆盖了第一次，我们保留后一个
-	# 但根据原代码，靛蓝色之后又出现一个判断靛蓝色（重复），第二次设为白色，可能是 bug，但保持原样
-	if a.color == "靛蓝色":   # 第二次，设为白色
+	
+	if a.color == "惨白":   
 		basic_subject_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		basic_time_icon.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	if a.color == "惨白":
+	if a.color == "血色":
 		basic_subject_label.modulate = Color(0.863, 0.078, 0.235, 1.0)
 		basic_time_icon.modulate = Color(0.863, 0.078, 0.235, 1.0)
 
 	# 考验介绍与解析
-	ordeal_info_label.text = "[url=show]全屏[/url]\n" + a.other_info
-	ordeal_analysis_label.text = "[url=show]全屏[/url]\n" + a.other_info_act
+	ordeal_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.other_info)
+	ordeal_analysis_label.text = tr("[url=show]全屏[/url]\n") + tr(a.other_info_act)
 
 	# 属性
 	red_def_label.text = "[img,size=30]res://img/RedDamageTypeIcon.webp[color=#cd2744](" + f_to_string(a.red_def) + ")" + d_to_string(a.red_def)
@@ -184,21 +183,21 @@ func clear_children(container: Node):
 # ========== 原有辅助函数（未改动） ==========
 func d_to_string(x: float):
 	if 1.5 < x and x <= 2.0:
-		return "抗性极低"
+		return tr("抗性极低")
 	if 1.0 < x and x <= 1.5:
-		return "抗性较低"
+		return tr("抗性较低")
 	if x == 1.0:
-		return "抗性一般"
+		return tr("抗性一般")
 	if 1.0 > x and x >= 0.5:
-		return "抗性较高"
+		return tr("抗性较高")
 	if 0.5 > x and x > 0.0:
-		return "抗性极高"
+		return tr("抗性极高")
 	if x == 0.0:
-		return "免疫"
+		return tr("免疫")
 	if x < 0.0:
-		return "伤害吸收"
+		return tr("伤害吸收")
 	if x == 11.4514:
-		return "未知"
+		return tr("未知")
 	return ""  # fallback
 
 func f_to_string(x: float):

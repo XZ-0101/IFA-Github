@@ -10,7 +10,7 @@ script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$RichTextLabel.text=$RichTextLabel.text.format({\"v\":Get.v})
+	$RichTextLabel.text=tr($RichTextLabel.text).format({\"v\":Get.v})
 	pass # Replace with function body.
 
 

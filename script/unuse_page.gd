@@ -82,9 +82,9 @@ func load_Unreleased():
 		basic_risk_icon.texture = load("res://img2/UI/undef_risk.tres")
 	
 	basic_icon.texture = a.icon
-	basic_info_label.text = "[url=show]全屏[/url]\n" + a.info_
+	basic_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.info_)
 	basic_status_label.text = a.现状
-	analysis_label.text = "[url=show]全屏[/url]\n" + a.介绍
+	analysis_label.text = tr("[url=show]全屏[/url]\n") + tr(a.介绍)
 	basic_subject_label.text = a.subject
 
 	# 跳转相关

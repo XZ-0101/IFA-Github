@@ -77,9 +77,9 @@ func load_me():
 	ma.set_shader_parameter(\"scale_x\",deck.img_sx)
 	
 	if deck.is_trun:
-		$Panel/type.append_text(\"-故事\\n\")
+		$Panel/type.append_text(tr(\"-故事\\n\"))
 	for i in deck.type:
-		$Panel/type.append_text(\"-\"+i+\"\\n\")
+		$Panel/type.append_text(\"-\"+tr(i)+\"\\n\")
 "
 
 [sub_resource type="Resource" id="Resource_7ym4s"]

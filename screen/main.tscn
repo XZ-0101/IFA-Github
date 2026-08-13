@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dgx883exphhtn" path="res://img/3F3F%3Fwiki.webp" id="5_3ksnr"]
 [ext_resource type="Texture2D" uid="uid://270xip01uqdi" path="res://img/屏幕截图_20-2-2025_232010_.png" id="6_fnyh7"]
 [ext_resource type="Script" uid="uid://uvdae4ik8dav" path="res://script/button.gd" id="7_frhm7"]
+[ext_resource type="Script" uid="uid://bkc7bmj2tl4rh" path="res://screen/tr_option_button.gd" id="8_x2vkp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frhm7"]
 atlas = ExtResource("6_fnyh7")
@@ -340,6 +341,15 @@ offset_top = 903.0
 offset_right = 359.0
 offset_bottom = 951.0
 text = "进入"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=531502842]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 88.0
+offset_right = 69.0
+offset_bottom = 108.0
+theme = ExtResource("2_nmfe7")
+script = ExtResource("8_x2vkp")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
 [connection signal="button_down" from="LittleGameVersion/Button" to="LittleGameVersion" method="_on_button_button_down"]

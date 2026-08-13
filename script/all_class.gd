@@ -102,11 +102,11 @@ func load_basic_class():
 	if a.level == "?":
 		basic_risk_icon.texture = load("res://img2/UI/undef_risk.tres")
 	basic_icon.texture = a.icon
-	basic_info_label.text = "[url=show]全屏[/url]\n" + a.info_
+	basic_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.info_)
 	basic_subject_label.text = a.subject
 
 	# 介绍
-	lobotomy2_intro_label.text = "[url=show]全屏[/url]\n" + a.d_text
+	lobotomy2_intro_label.text = tr("[url=show]全屏[/url]\n") + tr(a.d_text)
 
 	# 加载各个跳转容器
 	load_jump_array(a.lca_jump, jump_lca_container)

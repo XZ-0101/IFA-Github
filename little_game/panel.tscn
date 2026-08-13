@@ -49,14 +49,14 @@ func read_v():
 	$Panel/TabContainer/基础/HBoxContainer/hp_.max_value=LittleGameCtrl.hp
 	$Panel/TabContainer/基础/HBoxContainer/hp_.value=LittleGameCtrl.n_hp
 	
-	$Panel/TabContainer/基础/GridContainer/HBoxContainer/v0.text=\"勇气等级\\n\"+str(LittleGameCtrl.n_value_array[0])
-	$Panel/TabContainer/基础/GridContainer/HBoxContainer2/v1.text=\"谨慎等级\\n\"+str(LittleGameCtrl.n_value_array[1])
-	$Panel/TabContainer/基础/GridContainer/HBoxContainer3/v2.text=\"自律等级\\n\"+str(LittleGameCtrl.n_value_array[2])
-	$Panel/TabContainer/基础/GridContainer/HBoxContainer4/v3.text=\"正义等级\\n\"+str(LittleGameCtrl.n_value_array[3])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer/v0.text=tr(\"勇气等级\\n\")+str(LittleGameCtrl.n_value_array[0])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer2/v1.text=tr(\"谨慎等级\\n\")+str(LittleGameCtrl.n_value_array[1])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer3/v2.text=tr(\"自律等级\\n\")+str(LittleGameCtrl.n_value_array[2])
+	$Panel/TabContainer/基础/GridContainer/HBoxContainer4/v3.text=tr(\"正义等级\\n\")+str(LittleGameCtrl.n_value_array[3])
 	pass
 	$Panel/TabContainer/基础/text_and_texture/gift.text=\"\"#EGO饰品效果\\n
 	for i in LittleGameCtrl.gift_text_arr:
-		$Panel/TabContainer/基础/text_and_texture/gift.append_text(i+\"\\n\")
+		$Panel/TabContainer/基础/text_and_texture/gift.append_text(tr(i)+\"\\n\")
 func read_v1():
 	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill\".skill=LittleGameFight.skill_arr[0]
 	$\"Panel/TabContainer/战斗信息/ScrollContainer/VBoxContainer/skill\".show_it()
@@ -71,7 +71,7 @@ func read_v1():
 	$\"Panel/TabContainer/战斗信息/RichTextLabel\".text=\"\"
 	for i in LittleGameFight.gift_eff_arr:
 		if i.gift_jumper in LittleGameCtrl.gift_array:
-			$\"Panel/TabContainer/战斗信息/RichTextLabel\".text+=i.de+\"\\n\"
+			$\"Panel/TabContainer/战斗信息/RichTextLabel\".text+=tr(i.de)+\"\\n\"
 			
 	pass
 func read_v2():

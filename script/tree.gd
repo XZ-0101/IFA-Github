@@ -15,7 +15,7 @@ func load_tree(root:TreeItem,q):
 	c.set_text(0,q.问题)
 	for i in q.item:
 		var new = create_item(c)
-		new.set_text(0,i.name_+'\n'+i.结果)
+		new.set_text(0,tr(i.name_)+'\n'+tr(i.结果))
 		if i.分支问题:
 			var new_q= i.分支问题
 			load_tree(new,new_q)

@@ -112,7 +112,7 @@ func turn_start():
 		fight.enemy_sp=fight.enemy.sp
 	if fight.fight_sp>fight.fight_sp_max:
 		fight.fight_sp=fight.fight_sp_max
-	$turn_anima/RichTextLabel.text=\"回合\"+str(fight.true_turn_num)
+	$turn_anima/RichTextLabel.text=tr(\"回合\")+str(fight.true_turn_num)
 	$turn_anima/AnimationPlayer.play(\"new_animation\")
 	await $turn_anima/AnimationPlayer.animation_finished
 	return
@@ -276,15 +276,15 @@ func will_we_win(skill: skill_lt, skill2: skill_lt) -> String:
 	
 	# 五档判定（可根据游戏设计调整阈值）
 	if effective_prob >= 0.9:
-		return \"绝对优势\"
+		return tr(\"绝对优势\")
 	elif effective_prob >= 0.6:
-		return \"优势\"
+		return tr(\"优势\")
 	elif effective_prob >= 0.4:
-		return \"均势\"
+		return tr(\"均势\")
 	elif effective_prob >= 0.1:
-		return \"劣势\"
+		return tr(\"劣势\")
 	else:
-		return \"绝对劣势\"
+		return tr(\"绝对劣势\")
 
 
 # 辅助函数：根据技能和概率 p 计算点数分布
@@ -387,14 +387,14 @@ func show_enemy_info():
 	buff_text.text=\"\"
 	for i in skill.get_children():
 		i.queue_free()
-	base.text=\"名字:{name}\\n[color=red]HP[/color]:{hp}\\n[color=cyan]SP[/color]:{sp}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":enemy.name_,\"hp\":str(enemy.hp),\"sp\":str(enemy.sp)})+enemy.description
+	base.text=tr(\"名字:{name}\\n[color=red]HP[/color]:{hp}\\n[color=cyan]SP[/color]:{sp}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\").format({\"name\":tr(enemy.name_),\"hp\":str(enemy.hp),\"sp\":str(enemy.sp)})+tr(enemy.description)
 	for i in enemy.passives:
-		passive.text+=\"[color=white]{name}[/color]\\n{d}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":i.name_,\"d\":i.description})
+		passive.text+=tr(\"[color=white]{name}[/color]\\n{d}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\").format({\"name\":tr(i.name_),\"d\":tr(i.description)})
 	for i in enemy.buff_arr:
 		var result=\"\"
 		if i.type:
 			result = JSON.stringify(i.type)
-		buff_text.text+=\"[color=white]{name}[/color]\\n最大值:{most}\\n{d}\\n类型:{type}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\".format({\"name\":i.name_,\"d\":i.description,\"most\":i.eff.most_x,\"type\":result})
+		buff_text.text+=tr(\"[color=white]{name}[/color]\\n最大值:{most}\\n{d}\\n类型:{type}\\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\n\").format({\"name\":tr(i.name_),\"d\":tr(i.description),\"most\":i.eff.most_x,\"type\":tr(result)})
 	for i in enemy.skill_array:
 		skill.add_child(build_skill_show(i))
 	skill.add_child(build_skill_show(enemy.panic_skill,2))
@@ -598,7 +598,7 @@ func win():
 				
 				#
 					LittleGameCtrl.gift_array.append(i_)
-					text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+					text.append(tr(\"你获得了[color=yellow]\")+tr(i_.name_)+\"[/color]\")
 
 				
 
@@ -620,10 +620,10 @@ func win():
 				if not i_ in LittleGameCtrl.skill_arr_a:
 					LittleGameCtrl.skill_arr_a.append(i_)
 							
-					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+					text.append(tr(\"你获得了[color=red]\")+tr(i.gift.skill.name_)+\"[/color]\")
 		$win.show_(text)
 	else:
-		text.append(\"没有奖励\")
+		text.append(tr(\"没有奖励\"))
 		$win.show_(text)
 		
 	pass

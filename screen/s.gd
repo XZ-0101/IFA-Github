@@ -7,7 +7,7 @@ func ss(a_:Array,mode:String,what:String):
 	exit()
 	if mode=="music":
 		for i in a_:
-			if i.name_.containsn(what):
+			if tr(i.name_).containsn(tr(what)):
 				ar.append(i)
 		var n=preload("res://screen/a_music_button.tscn")
 		for i in ar:
@@ -16,7 +16,7 @@ func ss(a_:Array,mode:String,what:String):
 			$ScrollContainer/VBoxContainer.add_child(n_)
 	elif mode=="lobotomyA":
 		for i in a_:
-			if i.name_.containsn(what):
+			if tr(i.name_).containsn(tr(what)):
 				ar.append(i)
 		if what=="小张" and Get.fun_mode:
 			ar.append(load("res://res/fun/me-j.tres"))
@@ -36,11 +36,11 @@ func ss(a_:Array,mode:String,what:String):
 			n_.jumper=i
 			$ScrollContainer/VBoxContainer.add_child(n_)
 	if ar ==[] and mode !="type":
-		OS.alert("没有找到啊（；´д｀）ゞ","警告")
+		OS.alert(tr("没有找到啊（；´д｀）ゞ"),tr("警告"))
 	elif mode=="type":
 		
 		var l = preload("res://screen/type_label.tscn").instantiate()
-		l.get_child(0).name_=what
+		l.get_child(0).name_=tr(what)
 		$type/HBoxContainer.add_child(l)
 		
 		
@@ -72,7 +72,7 @@ func _process(delta: float) -> void:
 	pass
 			
 func has_common_elements_any(array_a: Array, array_b: Array) -> bool:
-	return array_a.all(func(element): return element in array_b)#ok
+	return array_a.all(func(element): return tr(element) in array_b)#ok
 
 
 func _on_button_2_button_down() -> void:
@@ -92,4 +92,4 @@ func _on_button_2_button_down() -> void:
 		n_.jumper=i
 		$ScrollContainer/VBoxContainer.add_child(n_)
 	if ar ==[]:
-		OS.alert("没有找到啊（；´д｀）ゞ","警告")
+		OS.alert(tr("没有找到啊（；´д｀）ゞ"),tr("警告"))

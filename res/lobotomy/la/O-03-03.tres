@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="lobotomy" load_steps=11 format=3 uid="uid://ckd8wkkx063qv"]
+[gd_resource type="Resource" script_class="lobotomy" format=3 uid="uid://ckd8wkkx063qv"]
 
 [ext_resource type="Texture2D" uid="uid://ndmteyqra6q4" path="res://img/lc-a/o-03-03/I.webp" id="1_g8rjh"]
 [ext_resource type="Script" uid="uid://qdcjcgqeopeb" path="res://script/LOBOTOMY.gd" id="1_ifi5c"]

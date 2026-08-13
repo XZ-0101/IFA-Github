@@ -17,10 +17,10 @@ func _ready() -> void:
 	mode=LittleGameCtrl.over_mode
 	if mode ==0:
 		$win/AudioStreamPlayer.play()
-		$win/win_text.text=win_text.pick_random()
+		$win/win_text.text=tr(win_text.pick_random())
 		$win.show()
 	else:
-		$lose/lose_text.text=lose_text.pick_random()
+		$lose/lose_text.text=tr(lose_text.pick_random())
 		$lose.show()
 	pass # Replace with function body.
 
@@ -36,7 +36,7 @@ func _on_win_b_button_down() -> void:
 			LittleGameCtrl.got_gift_array.append(i)
 	jumper.show_()
 	jumper.jump_to(load(\"res://little_game/enter.tscn\"))
-	OS.alert(\"别忘了去藏品中保存你收集到的资料哦\")
+	OS.alert(tr(\"别忘了去藏品中保存你收集到的资料哦\"))
 	pass # Replace with function body.
 
 

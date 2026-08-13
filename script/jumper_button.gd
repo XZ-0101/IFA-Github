@@ -4,7 +4,7 @@ extends Control
 var has_me:bool=false
 func _ready() -> void:
 	$TextureProgressBar.hide()
-	$Button.tooltip_text="类型:["+jumper.mode+"]\n"
+	$Button.tooltip_text=tr("类型:[")+jumper.mode+"]\n"
 	if  not jumper.s=="None":
 		$Label.text=jumper.s
 	else :
@@ -12,28 +12,28 @@ func _ready() -> void:
 	$TextureRect3/Label.text=jumper.name_
 	$TextureRect.texture=jumper.texture
 	if jumper.level=="Z"or  jumper.level=="z":
-		$Button.tooltip_text+="等级:ZAYIN"
+		$Button.tooltip_text+=tr("等级:ZAYIN")
 		$TextureRect3.self_modulate=Color("green")
 		$TextureRect2.self_modulate=Color("green")
 	elif jumper.level=="T"or  jumper.level=="t":
-		$Button.tooltip_text+="等级:TETH"
+		$Button.tooltip_text+=tr("等级:TETH")
 		$TextureRect3.self_modulate=Color("#229ff6")
 		$TextureRect2.self_modulate=Color("#229ff6")
 	#229ff6
 	elif jumper.level=="H"or  jumper.level=="h":
-		$Button.tooltip_text+="等级:HE"
+		$Button.tooltip_text+=tr("等级:HE")
 		$TextureRect3.self_modulate=Color("yellow")
 		$TextureRect2.self_modulate=Color("yellow")
 	elif jumper.level=="W"or  jumper.level=="w":
-		$Button.tooltip_text+="等级:WAW"
+		$Button.tooltip_text+=tr("等级:WAW")
 		$TextureRect3.self_modulate=Color("purple")
 		$TextureRect2.self_modulate=Color("purple")
 	elif jumper.level=="A" or  jumper.level=="a":
-		$Button.tooltip_text+="等级:AELPH"
+		$Button.tooltip_text+=tr("等级:AELPH")
 		$TextureRect3.self_modulate=Color("red")
 		$TextureRect2.self_modulate=Color("red")
 	else :
-		$Button.tooltip_text+="等级:UNDEF."
+		$Button.tooltip_text+=tr("等级:UNDEF.")
 	for i in Get.收藏夹:
 		if i ==jumper:
 			has_me=true
@@ -80,7 +80,7 @@ func build_jumper_saver(mode):
 
 
 func _on_timer_timeout() -> void:
-	if jumper.name_=="别碰我" and Get.fun_mode:
+	if jumper.name_==tr("别碰我") and Get.fun_mode:
 		$TextureRect.texture=Get.a_fun_list.pick_random()
 	pass # Replace with function body.
 
@@ -98,7 +98,7 @@ func _on_timer_2_timeout() -> void:
 		j()
 	pass # Replace with function body.
 func j():
-	if jumper.name_=="别碰我" and Get.fun_mode:
+	if jumper.name_==tr("别碰我") and Get.fun_mode:
 		var a=preload("res://screen/dtm.tscn").instantiate()
 		add_child(a)
 		a.play()

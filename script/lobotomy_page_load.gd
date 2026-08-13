@@ -265,8 +265,8 @@ func load_lobotomy(mode:int):
 			if a.level=="?":
 				basic_risk_icon.texture=load("res://img2/UI/undef_risk.tres")
 				basic_risk_label.text="[b][color=white]UNDEF.[/color][/b]"
-			basic_name_label.text=a.name_
-			basic_info_label.text="[url=show]全屏[/url]\n"+a.info_
+			basic_name_label.text=tr(a.name_)
+			basic_info_label.text=tr("[url=show]全屏[/url]\n")+tr(a.info_)
 			basic_subject_label.text=a.subject
 			var lobotomy_=a as lobotomy
 			
@@ -297,10 +297,10 @@ func load_lobotomy(mode:int):
 			lobotomy2_prob_attachment.text=c_Probabilities(3)
 			lobotomy2_prob_repression.text=c_Probabilities(2)
 			
-			lobotomy2_instinct_detail.text="[color=#cd2744]本能偏好[/color]\n"+c_Probabilities(0,114514)
-			lobotomy2_insight_detail.text="[color=#f0ebbf]洞察偏好[/color]\n"+c_Probabilities(1,114514)
-			lobotomy2_attachment_detail.text="[color=#824b84]沟通偏好[/color]\n"+c_Probabilities(2,114514)
-			lobotomy2_repression_detail.text="[color=3fcdbd]压迫偏好[/color]\n"+c_Probabilities(3,114514)
+			lobotomy2_instinct_detail.text=tr("[color=#cd2744]本能偏好[/color]\n")+c_Probabilities(0,114514)
+			lobotomy2_insight_detail.text=tr("[color=#f0ebbf]洞察偏好[/color]\n")+c_Probabilities(1,114514)
+			lobotomy2_attachment_detail.text=tr("[color=#824b84]沟通偏好[/color]\n")+c_Probabilities(2,114514)
+			lobotomy2_repression_detail.text=tr("[color=3fcdbd]压迫偏好[/color]\n")+c_Probabilities(3,114514)
 			if lobotomy_.will_Breakthrough_containment:
 				lobotomy3_breakthrough_grid.show()
 				lobotomy3_breakthrough_label.hide()
@@ -310,7 +310,7 @@ func load_lobotomy(mode:int):
 			else :
 				lobotomy3_breakthrough_grid.hide()
 				lobotomy3_breakthrough_label.show()
-				lobotomy3_counter_label.text="此异想体不可\n突破收容"
+				lobotomy3_counter_label.text=tr("此异想体不可\n突破收容")
 				if lobotomy_.Qliphoth_Counter=="X":
 					lobotomy3_counter_label2.text="X"
 				else :
@@ -333,14 +333,14 @@ func load_lobotomy(mode:int):
 				glxz.add_child(glxz_item)
 			glxz.add_child(Control.new())
 			
-			lobotomy5_observation_label.text="[url=show]全屏[/url]\n"+lobotomy_.Observation_level
-			lobotomy5_price_label.text="[url=show]全屏[/url]\n"+lobotomy_.price
-			lobotomy6_story_label.text="[url=show]全屏[/url]\n"+lobotomy_.story
-			lobotomy7_act_label.text="[url=show]全屏[/url]\n"+lobotomy_.other_info_act
-			lobotomy7_other_label.text="[url=show]全屏[/url]\n"+lobotomy_.other_info
-			lobotomy6_work_log_label.text="[url=show]全屏[/url]\n"
+			lobotomy5_observation_label.text=tr("[url=show]全屏[/url]\n")+tr(lobotomy_.Observation_level)
+			lobotomy5_price_label.text=tr("[url=show]全屏[/url]\n")+tr(lobotomy_.price)
+			lobotomy6_story_label.text=tr("[url=show]全屏[/url]\n")+tr(lobotomy_.story)
+			lobotomy7_act_label.text=tr("[url=show]全屏[/url]\n")+tr(lobotomy_.other_info_act)
+			lobotomy7_other_label.text=tr("[url=show]全屏[/url]\n")+tr(lobotomy_.other_info)
+			lobotomy6_work_log_label.text=tr("[url=show]全屏[/url]\n")
 			for i in lobotomy_.flavour_text.size():
-				lobotomy6_work_log_label.text+="○"+lobotomy_.flavour_text[i]+"\n"
+				lobotomy6_work_log_label.text+="○"+tr(lobotomy_.flavour_text[i])+"\n"
 			# 清空 JUMP 容器（避免重复添加）
 			clear_children(jump_related_container)
 			for i in a.jump:
@@ -372,7 +372,7 @@ func load_lobotomy(mode:int):
 			clear_children(jump_type_container)
 			for i in lobotomy_.jumper.type:
 				var b=preload("res://screen/type_jump_button.tscn").instantiate()
-				b.text=i
+				b.text=tr(i)
 				jump_type_container.add_child(b)
 			var c2 = Control.new()
 			jump_type_container.add_child(c2)
@@ -383,7 +383,7 @@ func load_lobotomy(mode:int):
 		lobotomyS_show()
 		suit_cost_label.text=s.Cost
 		ego_icon.texture=s.texture
-		ego_name_label.text=s.name_
+		ego_name_label.text=tr(s.name_)
 		if s.level=="z":
 				ego_level_icon.texture=load("res://img/Risk_Zayin.webp")
 				ego_level_label.text="[b][color=green]ZAYIN[/color][/b]"
@@ -402,14 +402,14 @@ func load_lobotomy(mode:int):
 		if s.level=="?":
 				ego_level_icon.texture=load("res://img2/UI/undef_risk.tres")
 				ego_level_label.text="[b][color=white]UNDEF.[/color][/b]"
-		suit_amount_label.text=s.Max_Amount+"件"
-		ego_info_label.text="[url=show]全屏[/url]\n"+s.info
-		suit_requirement_label.text="[url=show]全屏[/url]\n"+s.Requirements
+		suit_amount_label.text=s.Max_Amount+tr("件")
+		ego_info_label.text=tr("[url=show]全屏[/url]\n")+tr(s.info)
+		suit_requirement_label.text=tr("[url=show]全屏[/url]\n")+tr(s.Requirements)
 		suit_red_def.text="[img,size=30]res://img/RedDamageTypeIcon.webp[color=#cd2744]("+f_to_string(s.red_def)+")"+d_to_string(s.red_def)
 		suit_white_def.text="[img,size=30]res://img/WhiteDamageTypeIcon.webp[color=#f0ebbf]("+f_to_string(s.white_def)+")"+d_to_string(s.white_def)
 		suit_black_def.text="[img,size=30]res://img/BlackDamageTypeIcon.webp[color=#824b84]("+f_to_string(s.black_def)+")"+d_to_string(s.black_def)
 		suit_pale_def.text="[img,size=30]res://img/PaleDamageTypeIcon.webp[color=3fcdbd]("+f_to_string(s.pale_def)+")"+d_to_string(s.pale_def)
-		suit_other_label.text="*需要观察等级"+s.Observation_Level+"才可研发"+"\n"+"\n*特殊资料：\n"+s.other
+		suit_other_label.text=tr("*需要观察等级")+s.Observation_Level+tr("才可研发")+"\n"+tr("\n*特殊资料：\n")+tr(s.other)
 		
 		clear_children(ego_jump_related_container)
 		for i in s.jump:
@@ -436,7 +436,7 @@ func load_lobotomy(mode:int):
 		lobotomyS_hide()
 		lobotomyW_show()
 		ego_icon.texture=w.texture
-		ego_name_label.text=w.name_
+		ego_name_label.text=tr(w.name_)
 		if w.level=="z":
 				ego_level_icon.texture=load("res://img/Risk_Zayin.webp")
 				ego_level_label.text="[b][color=green]ZAYIN[/color][/b]"
@@ -455,10 +455,10 @@ func load_lobotomy(mode:int):
 		if w.level=="?":
 				ego_level_icon.texture=load("res://img2/UI/undef_risk.tres")
 				ego_level_label.text="[b][color=white]UNDEF.[/color][/b]"
-		ego_info_label.text="[url=show]全屏[/url]\n"+w.info
+		ego_info_label.text=tr("[url=show]全屏[/url]\n")+tr(w.info)
 		weapon_cost_label.text=w.Cost
-		weapon_amount_label.text=w.Max_Amount+"件"
-		weapon_requirement_label.text="[url=show]全屏[/url]\n"+w.Requirements
+		weapon_amount_label.text=w.Max_Amount+tr("件")
+		weapon_requirement_label.text=tr("[url=show]全屏[/url]\n")+tr(w.Requirements)
 		if w.Damage_type == 1:
 				weapon_type_label.text="RED"
 				weapon_type_icon.texture=load("res://img/RedDamageTypeIcon.webp")
@@ -483,9 +483,9 @@ func load_lobotomy(mode:int):
 		weapon_type_number.text=w.Damage
 		weapon_attack_speed.text=w.Attack_Speed
 		weapon_range.text=w.Range_
-		weapon_template.text="*武器模板：\n"+w.m_ban
-		weapon_dps.text="*武器基础期望DPS："+w.dps
-		weapon_other_label.text="[url=show]全屏[/url]\n"+"*需要观察等级"+w.Observation_Level+"才可研发"+"\n"+"\n*特殊资料：\n"+w.other
+		weapon_template.text=tr("*武器模板：\n")+tr(w.m_ban)
+		weapon_dps.text=tr("*武器基础期望DPS：")+w.dps
+		weapon_other_label.text=tr("[url=show]全屏[/url]\n")+tr("*需要观察等级")+w.Observation_Level+tr("才可研发")+"\n"+tr("\n*特殊资料：\n")+tr(w.other)
 		
 		clear_children(ego_jump_related_container)
 		for i in w.jump:
@@ -503,7 +503,7 @@ func load_lobotomy(mode:int):
 		clear_children(ego_jump_type_container)
 		for i in w.jumper.type:
 			var b=preload("res://screen/type_jump_button.tscn").instantiate()
-			b.text=i
+			b.text=tr(i)
 			ego_jump_type_container.add_child(b)
 		
 	elif mode==3:
@@ -515,9 +515,9 @@ func load_lobotomy(mode:int):
 		ego_level_label.hide()
 		ego_icon.hide()
 		gift_icon2.show()
-		gift_name_label.text=g.name_
+		gift_name_label.text=tr(g.name_)
 		gift_icon2.get_child(0).texture=g.texture
-		gift_info_label.text="[url=show]全屏[/url]\n"+g.info
+		gift_info_label.text=tr("[url=show]全屏[/url]\n")+tr(g.info)
 		
 		clear_children(ego_jump_related_container)
 		for i in g.jump:
@@ -535,7 +535,7 @@ func load_lobotomy(mode:int):
 		clear_children(ego_jump_type_container)
 		for i in g.jumper.type:
 			var b=preload("res://screen/type_jump_button.tscn").instantiate()
-			b.text=i
+			b.text=tr(i)
 			ego_jump_type_container.add_child(b)
 
 # 辅助函数：清空容器子节点（保留可能需要的 Control 占位？但原逻辑最后添加 Control，我们清空后重新添加）
@@ -549,15 +549,15 @@ func number_to_string(n:int):
 	if n==-1000:
 		return "/"
 	elif 15>=n:
-		return "极低"
+		return tr("极低")
 	elif 15 < n and n <40:
-		return "低"
+		return tr("低")
 	elif 40<=n and n<60:
-		return "一般"
+		return tr("一般")
 	elif 60<=n and n<=70:
-		return "高"
+		return tr("高")
 	elif 70<n and n<=100:
-		return "极高"
+		return tr("极高")
 
 func c_Probabilities(index:int,mode:int=0):
 	var p =a.Probabilities_.Probabilities
@@ -568,21 +568,21 @@ func c_Probabilities(index:int,mode:int=0):
 	
 func  d_to_string(x:float):
 	if 1.5< x and x<=2.0:
-		return "抗性极低"
+		return tr("抗性极低")
 	if 1.0 <x and x<=1.5:
-		return "抗性较低"
+		return tr("抗性较低")
 	if x==1.0:
-		return "抗性一般"
+		return tr("抗性一般")
 	if 1.0>x and x>=0.5:
-		return "抗性较高"
+		return tr("抗性较高")
 	if 0.5>x and x>0.0:
-		return "抗性极高"
+		return tr("抗性极高")
 	if x==0.0:
-		return "免疫"
+		return tr("免疫")
 	if x<0.0:
-		return "伤害吸收"
+		return tr("伤害吸收")
 	if x == 11.451:
-		return "未知"
+		return tr("未知")
 func f_to_string2(x:int):
 	if x != -1000:
 		return str(x)

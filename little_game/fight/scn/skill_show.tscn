@@ -66,12 +66,12 @@ func show_it():
 		coin.add_child(creat_coin())
 	if mode!=1:
 		
-		var text1=\"技能效果\\n\"
+		var text1=tr(\"技能效果\\n\")
 		for i in skill.description:
-			text1+=i+'\\n'
-		var text2=\"标签\\n\"
+			text1+=tr(i)+'\\n'
+		var text2=tr(\"标签\\n\")
 		for i in skill.type:
-			text2+=\"-\"+i+\"\\n\"
+			text2+=\"-\"+tr(i)+\"\\n\"
 		de.text=text1+\"\\n\"+text2
 	if mode ==1:
 		$Button.hide()

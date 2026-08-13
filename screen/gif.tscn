@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq111edix4bmu"]
+[gd_scene format=3 uid="uid://bq111edix4bmu"]
 
 [ext_resource type="Script" uid="uid://qdw2aadfyqbp" path="res://screen/gif.gd" id="1_f2374"]
 [ext_resource type="Texture2D" uid="uid://cu3cu5i6m0pxc" path="res://img/ui/New Piskel.png" id="2_62xsf"]
@@ -6,13 +6,13 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f2374"]
 
-[node name="Control2" type="Control"]
+[node name="Control2" type="Control" unique_id=1274291129]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 script = ExtResource("1_f2374")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1469997030]
 texture_filter = 1
 layout_mode = 0
 offset_top = 3.0
@@ -26,20 +26,20 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 metadata/_tab_index = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=691827900]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 13.0
 offset_right = 335.0
 offset_bottom = 177.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7582466]
 position = Vector2(78, 37)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_f2374")
 offset = Vector2(257, 144)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1345287332]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 143.0
@@ -50,7 +50,7 @@ text = "【1】nameaa"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=852859592]
 layout_mode = 0
 offset_left = 146.0
 offset_top = 229.0

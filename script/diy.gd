@@ -36,9 +36,9 @@ func _on_get_file_file_selected(path: String) -> void:
 	if OS.get_name()=="Android":
 		if OS.request_permissions():
 			read_res(path)
-			$RichTextLabel3.text="资源文件创建成功"
+			$RichTextLabel3.text=tr("资源文件创建成功")
 		else :
-			$RichTextLabel3.text="无权限"
+			$RichTextLabel3.text=tr("无权限")
 	else :
 		read_res(path)
 		$RichTextLabel3.text="资源文件创建成功"

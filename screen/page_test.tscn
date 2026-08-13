@@ -531,7 +531,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var dic=Time.get_datetime_dict_from_system()
 	$Label.text=time_to_str(dic.hour)+\":\"+time_to_str(dic.minute)
-	$Label2.text=str(dic.year)+\"年 \"+str(dic.month)+\"月\"+str(dic.day)+\"日\"+\"\\n[right]星期\"+dic_week.get(dic.weekday)
+	$Label2.text=str(dic.year)+tr(\"年 \")+str(dic.month)+tr(\"月\")+str(dic.day)+tr(\"日\")+tr(\"\\n[right]星期\")+dic_week.get(dic.weekday)
 	$Label3.text=\"SC\\n\"+time_to_str(dic.second)
 	pass
 func time_to_str(time:int):

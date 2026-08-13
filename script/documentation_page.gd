@@ -3,7 +3,7 @@ extends Control
 
 func _ready() -> void:
 	load_Documentation()
-	$Window/Panel/nr.text ="[center][font_size=40]"+Documentation.name_+"[/font_size][/center]\n[font_size=35][center]"+Documentation.by+"[/center][/font_size]\n"+$NinePatchRect3/nr.text
+	$Window/Panel/nr.text ="[center][font_size=40]"+tr(Documentation.name_)+"[/font_size][/center]\n[font_size=35][center]"+tr(Documentation.by)+"[/center][/font_size]\n"+$NinePatchRect3/nr.text
 	pass
 
 

@@ -2,7 +2,7 @@ extends Control
 @export var gif :a_gif
 
 func  _ready() -> void:
-	$Label.text="["+str(gif.index)+"]"+gif.name_
+	$Label.text="["+str(gif.index)+"]"+tr(gif.name_)
 	$ColorRect.color=gif.back
 	$AnimatedSprite2D.sprite_frames=gif.texture
 	$AnimatedSprite2D.scale=gif.size
@@ -17,8 +17,8 @@ func _on_button_button_down() -> void:
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		$AnimatedSprite2D.stop()
-		$Button.text="播放"
+		$Button.text=tr("播放")
 	else :
 		$AnimatedSprite2D.play("gif")
-		$Button.text="暂停"
+		$Button.text=tr("暂停")
 	pass # Replace with function body.

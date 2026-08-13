@@ -149,21 +149,21 @@ func _on_button_button_down() -> void:
 			$AudioStreamPlayer.play()
 			match r[0]:
 				\"1\":
-					$\"Panel/结果\".append_text(\"[color=#694324]\"+\"θ \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=#694324]\"+\"θ \"+tr(r[1])+\"[/color]\\n\")
 				\"2\":
-					$\"Panel/结果\".append_text(\"[color=#600000]\"+\"θθ \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=#600000]\"+\"θθ \"+tr(r[1])+\"[/color]\\n\")
 				\"3\":
-					$\"Panel/结果\".append_text(\"[color=#e29502]\"+\"θθθ \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=#e29502]\"+\"θθθ \"+tr(r[1])+\"[/color]\\n\")
 				\"z\":
-					$\"Panel/结果\".append_text(\"[color=green]\"+\"ZAYIN \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=green]\"+\"ZAYIN \"+tr(r[1])+\"[/color]\\n\")
 				\"t\":
-					$\"Panel/结果\".append_text(\"[color=blue]\"+\"TETH \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=blue]\"+\"TETH \"+tr(r[1])+\"[/color]\\n\")
 				\"h\":
-					$\"Panel/结果\".append_text(\"[color=yellow]\"+\"HE \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=yellow]\"+\"HE \"+tr(r[1])+\"[/color]\\n\")
 				\"w\":
-					$\"Panel/结果\".append_text(\"[color=purple]\"+\"WAW \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=purple]\"+\"WAW \"+tr(r[1])+\"[/color]\\n\")
 				\"a\":
-					$\"Panel/结果\".append_text(\"[color=red]\"+\"ALEPH \"+r[1]+\"[/color]\\n\")
+					$\"Panel/结果\".append_text(\"[color=red]\"+\"ALEPH \"+tr(r[1])+\"[/color]\\n\")
 			$Timer.start()
 			await $Timer.timeout
 		is_gacha=false

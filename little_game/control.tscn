@@ -92,12 +92,12 @@ func _a_choiced(index:int):
 			print(c)
 			text=[]
 			for i_ in i.need:
-				$text_and_texture/text/RichTextLabel.append_text(\"->  \"+\"你需要携带有[color=yellow]{s}[/color]\".format({\"s\":i_.name_})+'\\n')
+				$text_and_texture/text/RichTextLabel.append_text(\"->  \"+tr(\"你需要携带有[color=yellow]{s}[/color]\").format({\"s\":i_.name_})+'\\n')
 			if c==\"win\":
-				$text_and_texture/text/RichTextLabel.append_text(\"->  [color=green]判定成功[/color]\"+'\\n')
+				$text_and_texture/text/RichTextLabel.append_text(tr(\"->  [color=green]判定成功[/color]\")+'\\n')
 				
 			else:
-				$text_and_texture/text/RichTextLabel.append_text(\"->  [color=red]判定失败[/color]\"+'\\n')
+				$text_and_texture/text/RichTextLabel.append_text(tr(\"->  [color=red]判定失败[/color]\")+'\\n')
 				
 			$Timer.wait_time=1
 			$Timer.start()
@@ -107,7 +107,7 @@ func _a_choiced(index:int):
 #region win
 		if c==\"win\":
 			text=i.win_text.split(\"$s\")
-			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+tr(text[0])+'\\n')
 			if i.gift:
 #region 物品奖励
 				if i.gift.get_gift:
@@ -118,7 +118,7 @@ func _a_choiced(index:int):
 						
 						#
 							LittleGameCtrl.gift_array.append(i_)
-							text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+							text.append(tr(\"你获得了[color=yellow]\")+tr(i_.name_)+\"[/color]\")
 #endregion
 						
 #region 数值奖励
@@ -126,17 +126,17 @@ func _a_choiced(index:int):
 					if i.gift.value_object>=4:
 						if i.gift.value_object==4:
 							LittleGameCtrl.n_hp+=i.gift.add_valua
-							text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+							text.append(tr(value_get_text_array[i.gift.value_object]).format({\"n\":str(i.gift.add_valua)}))
 						if i.gift.value_object==5:
 							LittleGameCtrl.n_sp+=i.gift.add_valua
-							text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(i.gift.add_valua)}))
+							text.append(tr(value_get_text_array[i.gift.value_object]).format({\"n\":str(i.gift.add_valua)}))
 					else :
 						LittleGameCtrl.value_array[i.gift.value_object]+=i.gift.add_valua
 						if i.gift.value_object==0:
 							LittleGameCtrl.n_hp+=i.gift.add_valua
 						if i.gift.value_object==1:
 							LittleGameCtrl.n_sp+=i.gift.add_valua
-						text.append(value_get_text_array[i.gift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
+						text.append(tr(value_get_text_array[i.gift.value_object]).format({\"n\":str(LittleGameCtrl.value_array[i.gift.value_object])}))
 #endregion
 				if i.gift.skill:
 				
@@ -144,9 +144,9 @@ func _a_choiced(index:int):
 						if not i_ in LittleGameCtrl.skill_arr_a:
 							LittleGameCtrl.skill_arr_a.append(i_)
 							
-					text.append(\"你获得了[color=red]\"+i.gift.skill.name_+\"[/color]\")
+					text.append(tr(\"你获得了[color=red]\")+tr(i.gift.skill.name_)+\"[/color]\")
 				if i.gift.to_fight!=\"\":
-					text.append(\"遭遇战！\")
+					text.append(tr(\"遭遇战！\"))
 					fight(i.gift.to_fight)
 			can_next=true
 			print(\"text_size:\",text.size())
@@ -178,7 +178,7 @@ func _a_choiced(index:int):
 
 		if c==\"lose\":
 			text=i.lose_text.split(\"$s\")
-			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[0]+'\\n')
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+tr(text[0])+'\\n')
 			if i.losegift:
 #region 物品奖励
 				if i.losegift.get_gift:
@@ -186,17 +186,17 @@ func _a_choiced(index:int):
 						if not i_ in LittleGameCtrl.gift_array:
 							
 							LittleGameCtrl.gift_array.append(i_)
-							text.append(\"你获得了[color=yellow]\"+i_.name_+\"[/color]\")
+							text.append(tr(\"你获得了[color=yellow]\")+tr(i_.name_)+\"[/color]\")
 #endregion
 #region 数值奖励
 				if i.losegift.add_valua!=0 :
 					if i.losegift.value_object>=4:
 						if i.losegift.value_object==4:
 							LittleGameCtrl.n_hp+=i.losegift.add_valua
-							text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(i.losegift.add_valua)}))
+							text.append(tr(value_get_text_array[i.losegift.value_object]).format({\"n\":str(i.losegift.add_valua)}))
 						if i.losegift.value_object==5:
 							LittleGameCtrl.n_sp+=i.losegift.add_valua
-							text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(i.losegift.add_valua)}))
+							text.append(tr(value_get_text_array[i.losegift.value_object]).format({\"n\":str(i.losegift.add_valua)}))
 					else :
 						
 						LittleGameCtrl.value_array[i.losegift.value_object]+=i.losegift.add_valua
@@ -204,13 +204,13 @@ func _a_choiced(index:int):
 							LittleGameCtrl.n_hp+=i.losegift.add_valua
 						if i.losegift.value_object==1:
 							LittleGameCtrl.n_sp+=i.losegift.add_valua
-						text.append(value_get_text_array[i.losegift.value_object].format({\"n\":str(LittleGameCtrl.value_array[i.losegift.value_object])}))
+						text.append(tr(value_get_text_array[i.losegift.value_object]).format({\"n\":str(LittleGameCtrl.value_array[i.losegift.value_object])}))
 #endregion
 				if i.losegift.skill:
 					for i_ in i.losegift.skill:
 						if not i_ in LittleGameCtrl.skill_arr_a:
 							LittleGameCtrl.skill_arr_a.append(i_)
-					text.append(\"你获得了[color=red]\"+i.losegift.skill.name_+\"[/color]\")
+					text.append(tr(\"你获得了[color=red]\")+tr(i.losegift.skill.name_)+\"[/color]\")
 				if i.losegift.to_fight!=\"\":
 					fight(i.losegift.to_fight)
 
@@ -267,7 +267,7 @@ func _on_button_button_down() -> void:
 				emit_signal(\"text_over\")
 			
 			text_ind+=1
-			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+text[text_ind]+'\\n')
+			$text_and_texture/text/RichTextLabel.append_text(\"->  \"+tr(text[text_ind])+'\\n')
 			
 		else :
 			

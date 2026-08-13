@@ -22,14 +22,14 @@ func _set(property: StringName, value: Variant) -> bool:
 		var clean := raw.replace(WITHOUT_FULL, "").replace(WITHOUT_COPY, "")
 		
 		# 检测原始文本中是否已经包含链接（避免重复添加）
-		var has_full_link := FULL_LINK in clean
-		var has_copy_link := COPY_LINK in clean
+		var has_full_link := tr(FULL_LINK) in clean
+		var has_copy_link := tr(COPY_LINK) in clean
 		
 		var final_text := ""
 		if auto_add_full and not skip_full and not has_full_link:
-			final_text += FULL_LINK + "\n"
+			final_text += tr(FULL_LINK) + "\n"
 		if auto_add_copy and not skip_copy and not has_copy_link:
-			final_text += COPY_LINK + "\n"
+			final_text += tr(COPY_LINK) + "\n"
 		final_text += clean
 		
 		set_text(final_text)

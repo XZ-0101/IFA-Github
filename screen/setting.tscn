@@ -78,7 +78,7 @@ offset_top = 24.0
 offset_right = 444.0
 offset_bottom = 66.0
 theme = ExtResource("2_qdldw")
-text = "设置里其实只有9个选项"
+text = "设置里现在有三个标签页"
 
 [node name="a" type="TabContainer" parent="." unique_id=743074773]
 layout_mode = 0
@@ -86,9 +86,10 @@ offset_left = 14.0
 offset_top = 91.0
 offset_right = 626.0
 offset_bottom = 1059.0
-current_tab = 0
+current_tab = 2
 
 [node name="system" type="VBoxContainer" parent="a" unique_id=953077948]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 metadata/_tab_index = 0
@@ -117,6 +118,19 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("2_qdldw")
 theme_override_colors/font_color = Color(1, 1, 0.631373, 1)
 text = "是否静音"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="a/system" unique_id=825347277]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_qdldw")
+bbcode_enabled = true
+text = "音量"
+scroll_active = false
+
+[node name="HSlider" type="HSlider" parent="a/system" unique_id=988023186]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="a/system" unique_id=271498161]
 custom_minimum_size = Vector2(0, 50)
@@ -235,9 +249,8 @@ theme = ExtResource("2_qdldw")
 text = "配置loading文本"
 
 [node name="diy" type="VBoxContainer" parent="a" unique_id=1034226576]
-visible = false
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 7
 metadata/_tab_index = 2
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="a/diy" unique_id=2097969325]
@@ -301,9 +314,20 @@ text = "主题
 [font_size=20]注意：部分资源无法被替换"
 scroll_active = false
 
+[node name="load_button2" type="Button" parent="a/diy" unique_id=1727369923]
+layout_mode = 2
+text = "读取并替换新主题"
+
+[node name="FileDialog2" type="FileDialog" parent="a/diy/load_button2" unique_id=293013812]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.tres", "*.theme", "*.res")
+use_native_dialog = true
+
 [node name="load_button" type="Button" parent="a/diy" unique_id=1597418871]
 layout_mode = 2
-text = "读取主题"
+text = "读取并替换旧主题"
 
 [node name="FileDialog" type="FileDialog" parent="a/diy/load_button" unique_id=641475189]
 title = "Open a File"
@@ -381,6 +405,7 @@ step = 0.01
 value = 0.8
 
 [connection signal="toggled" from="a/system/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="value_changed" from="a/system/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="a/system/CheckBox2" to="." method="_on_check_box_2_toggled"]
 [connection signal="item_selected" from="a/system/OptionButton2" to="." method="_on_option_button_2_item_selected"]
 [connection signal="toggled" from="a/system/text_s" to="." method="_on_text_s_toggled"]
@@ -390,6 +415,8 @@ value = 0.8
 [connection signal="button_down" from="a/text/Button" to="." method="_on_button_button_down"]
 [connection signal="item_selected" from="a/diy/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="a/diy/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="button_down" from="a/diy/load_button2" to="." method="_on_load_button_2_button_down"]
+[connection signal="file_selected" from="a/diy/load_button2/FileDialog2" to="." method="_on_file_dialog_2_file_selected"]
 [connection signal="button_down" from="a/diy/load_button" to="." method="_on_load_button_button_down"]
 [connection signal="file_selected" from="a/diy/load_button/FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="button_down" from="a/diy/back" to="." method="_on_back_button_down"]

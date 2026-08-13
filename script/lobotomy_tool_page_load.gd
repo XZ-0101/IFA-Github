@@ -97,7 +97,7 @@ func load_tool():
 		basic_risk_label.text = "[b][color=white]UNDEF.[/color][/b]"
 
 	basic_name_label.text = a.name_
-	basic_info_label.text = "[url=show]全屏[/url]\n" + a.info_
+	basic_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.info_)
 	basic_subject_label.text = a.subject
 	basic_tool_type_label.text = a.tool_type
 
@@ -121,8 +121,8 @@ func load_tool():
 	precautions_container.add_child(Control.new())
 
 	# 工具介绍与解析
-	tool_info_label.text = "[url=show]全屏[/url]\n" + a.tool_info
-	tool_analysis_label.text = "[url=show]全屏[/url]\n" + a.tool_e
+	tool_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.tool_info)
+	tool_analysis_label.text = tr("[url=show]全屏[/url]\n") + tr(a.tool_e)
 
 	# 跳转相关（相关跳转）
 	clear_children(jump_related_container)
@@ -141,7 +141,7 @@ func load_tool():
 	clear_children(jump_type_container)
 	for i in a.jumper.type:
 		var btn = preload("res://screen/type_jump_button.tscn").instantiate()
-		btn.text = i
+		btn.text = tr(i)
 		jump_type_container.add_child(btn)
 	jump_type_container.add_child(Control.new())
 

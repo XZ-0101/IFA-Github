@@ -125,7 +125,7 @@ func write_documentation_value():
 				ImportedResArray.append(v)
 				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
 			else:
-				OS.alert("请导入图标资源!")
+				OS.alert(tr("请导入图标资源!"))
 		2:  # 文档内容（保留换行）
 			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
 		3:  # 作者
@@ -140,7 +140,7 @@ func write_ego_weapon_value():
 				ImportedResArray.append(v)
 				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
 			else:
-				OS.alert("请导入图标资源!")
+				OS.alert(tr("请导入图标资源!"))
 		2:  # 介绍/相关（保留换行）
 			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
 		3:  # 所需PEBOX
@@ -178,7 +178,7 @@ func write_ego_suit_value():
 				ImportedResArray.append(v)
 				CsvDataArray[1] = project_name + "/" + v.name_ + "." + v.type
 			else:
-				OS.alert("请导入图标资源!")
+				OS.alert(tr("请导入图标资源!"))
 		2:  # 介绍/相关（保留换行）
 			CsvDataArray[2] = StringEdit.text.replace("\n", "{n}").replace(",", "{e1}").replace('"', '{e2}')
 		3:  # 所需PEBOX
@@ -241,7 +241,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	#项目名称
 	project_name=new_text
-	OS.alert("命名成功!")
+	OS.alert(tr("命名成功!"))
 	
 	
 	pass # Replace with function body.
@@ -264,7 +264,7 @@ func _on_sc_button_down() -> void:
 func a_res_file_sc(ind):
 	print(ind)
 	select_res=ind
-	$writer/VBoxContainer/sc_res_text.text="已选择资源:"+ReadyResArray[ind].name_+"."+ReadyResArray[ind].type
+	$writer/VBoxContainer/sc_res_text.text=tr("已选择资源:")+ReadyResArray[ind].name_+"."+ReadyResArray[ind].type
 func _on_sc_panel_exit_button_down() -> void:
 	$sc_panel.hide()
 	pass # Replace with function body.
@@ -314,16 +314,16 @@ func _on_bulid_button_down() -> void:
 			"eg":
 				build_ego_gift_res_op()
 	else :
-		OS.alert("请填写项目名称或项目类型")
+		OS.alert(tr("请填写项目名称或项目类型"))
 	pass # Replace with function body.
 	
 #region 新建代码区域
 func build_documentation_res_op():
 	value_choice_node.clear()
-	value_choice_node.add_item("名称")
-	value_choice_node.add_item("图标")
-	value_choice_node.add_item("文档内容")
-	value_choice_node.add_item("作者")
+	value_choice_node.add_item(tr("名称"))
+	value_choice_node.add_item(tr("图标"))
+	value_choice_node.add_item(tr("文档内容"))
+	value_choice_node.add_item(tr("作者"))
 	CsvDataArray = ["", "", "", "","doc"]
 func build_ego_weapon_res_op():
 	value_choice_node.clear()

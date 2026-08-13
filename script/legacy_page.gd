@@ -171,15 +171,15 @@ func load_legacy():
 		basic_risk_icon.texture = load("res://img2/UI/undef_risk.tres")
 		basic_risk_label.text = "[b][color=white]UNDEF.[/color][/b]"
 	basic_name_label.text = a.name_
-	basic_info_label.text = "[url=show]全屏[/url]\n" + a.info_
+	basic_info_label.text = tr("[url=show]全屏[/url]\n") + tr(a.info_)
 	basic_subject_label.text = a.subject
 
 	# 异想体信息
 	lobotomy_type_label.text = a.Attack_Type.format({
-		"0": "[color=red]物理[/color]",
-		"1": "[color=white]精神[/color]",
-		"2": "[color=purple]侵蚀[/color]",
-		"3": "[color=cyan]灵魂[/color]"
+		"0": tr("[color=red]物理[/color]"),
+		"1": tr("[color=white]精神[/color]"),
+		"2": tr("[color=purple]复合[/color]"),
+		"3": tr("[color=cyan]灵魂[/color]")
 	})
 	lobotomy_fear_level.text = "Lv." + str(a.a_lv)
 	lobotomy_type2_label.text = a.type
@@ -189,7 +189,7 @@ func load_legacy():
 	var line1 = inf[0].split(',')
 	var line2 = inf[1].split(',')
 	var line3 = inf[2].split(',')
-	lobotomy_mood_table.text = '''
+	lobotomy_mood_table.text =tr( '''
 [center]
 [table=5]
 [cell border=#ffffa1]心情[/cell][cell border=#ffffa1]最大[/cell][cell border=#ffffa1]优[/cell][cell border=#ffffa1]良[/cell][cell border=#ffffa1]差[/cell]
@@ -198,7 +198,7 @@ func load_legacy():
 [cell border=#ffffa1]伤害类型[/cell][cell border=#ffffa1]{x8}[/cell][cell border=#ffffa1]{x9}[/cell][cell border=#ffffa1]{x10}[/cell][cell border=#ffffa1]{x11}[/cell]
 [/table]
 [/center]
-'''.format({
+''').format({
 		"x0": line1[0], "x1": line1[1], "x2": line1[2], "x3": line1[3],
 		"x4": line2[0], "x5": line2[1], "x6": line2[2], "x7": line2[3],
 		"x8": line3[0], "x9": line3[1], "x10": line3[2], "x11": line3[3]
@@ -206,20 +206,20 @@ func load_legacy():
 
 	# 工作偏好
 	lobotomy2_preference_label.text = a.喜好.format({
-		"暴力": "[img,size=50]res://img2/LEGACY/3F.webp[color=red]暴力[/color]",
-		"喂食": "[img,size=50]res://img2/LEGACY/3F1.webp[color=orange]喂食[/color]",
-		"清洁": "[img,size=50]res://img2/LEGACY/3F2.webp[color=green]清洁[/color]",
-		"沟通": "[img,size=50]res://img2/LEGACY/3F3.webp[color=cyan]沟通[/color]",
-		"娱乐": "[img,size=40]res://img2/LEGACY/3F4.webp[color=pink]娱乐[/color]"
+		"暴力": tr("[img,size=50]res://img2/LEGACY/3F.webp[color=red]暴力[/color]"),
+		"喂食": tr("[img,size=50]res://img2/LEGACY/3F1.webp[color=orange]喂食[/color]"),
+		"清洁": tr("[img,size=50]res://img2/LEGACY/3F2.webp[color=green]清洁[/color]"),
+		"沟通": tr("[img,size=50]res://img2/LEGACY/3F3.webp[color=cyan]沟通[/color]"),
+		"娱乐": tr("[img,size=40]res://img2/LEGACY/3F4.webp[color=pink]娱乐[/color]")
 	})
 
 	# 观察等级
-	var o_text = '''[center]
+	var o_text = tr('''[center]
 [table=8]
 [cell border=#ffffa1]工作成功率加成[/cell][cell border=#ffffa1]心情减少速度减缓[/cell][cell border=#ffffa1]一天开始时异想体的初始心情[/cell][cell border=#ffffa1]图鉴解锁[/cell][cell border=#ffffa1]背景故事解锁[/cell][cell border=#ffffa1]工作偏好解锁[/cell][cell border=#ffffa1]能源产量信息[/cell][cell border=#ffffa1]杂项[/cell]
 [cell border=#ffffa1]{x0}[/cell][cell border=#ffffa1]{x1}[/cell][cell border=#ffffa1]{x2}[/cell][cell border=#ffffa1]{x3}[/cell][cell border=#ffffa1]{x4}[/cell][cell border=#ffffa1]{x5}[/cell][cell border=#ffffa1]{x6}[/cell][cell border=#ffffa1]{x7}[/cell]
 [/table]
-[/center]'''
+[/center]''')
 	var o1 = a.o[0].split(",")
 	var o2 = a.o[1].split(",")
 	var o3 = a.o[2].split(",")
@@ -243,19 +243,19 @@ func load_legacy():
 
 	# 特质
 	if not a.特质:
-		lobotomy9_trait_label.text = "无"
+		lobotomy9_trait_label.text = tr("无")
 	else:
-		lobotomy9_trait_label.text = "[url=show]全屏[/url]\n" + "名字:" + a.特质.name_ + "\n" + a.特质.详细
+		lobotomy9_trait_label.text = tr("[url=show]全屏[/url]\n") + tr("名字:") + tr(a.特质.name_) + "\n" + tr(a.特质.详细)
 
 	# 故事与日志
-	lobotomy6_story_label.text = "[url=show]全屏[/url]\n" + a.story
-	lobotomy6_work_log_label.text = "[url=show]全屏[/url]\n"
+	lobotomy6_story_label.text = tr("[url=show]全屏[/url]\n") + tr(a.story)
+	lobotomy6_work_log_label.text = tr("[url=show]全屏[/url]\n")
 	for line in a.flavour_text:
-		lobotomy6_work_log_label.text += "○" + line + "\n"
+		lobotomy6_work_log_label.text += "○" + tr(line) + "\n"
 
 	# 行为与解析
-	lobotomy7_act_label.text = "[url=show]全屏[/url]\n" + a.other_info_act
-	lobotomy7_other_label.text = "[url=show]全屏[/url]\n" + a.other_info
+	lobotomy7_act_label.text = tr("[url=show]全屏[/url]\n") + tr(a.other_info_act)
+	lobotomy7_other_label.text = tr("[url=show]全屏[/url]\n") + tr(a.other_info)
 
 	# 最终观测
 	var tree = lobotomy8_tree_container

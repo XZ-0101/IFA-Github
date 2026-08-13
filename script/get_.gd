@@ -26,6 +26,9 @@ var is_fast_version:bool=false
 var is_changed_theme:bool
 var debug:bool=false
 var now_theme:Theme =load("res://res/theme.tres")
+var used_theme:Theme =load("res://res/theme.tres")
+var now_new_theme:Theme =load("res://res/better_theme.tres")
+var used_new_theme:Theme =load("res://res/better_theme.tres")
 var our_dir:String=OS.get_executable_path().get_base_dir()
 signal music_over
 var 收藏夹:Array[jumper_class]=[]
@@ -189,10 +192,11 @@ var back_index:int=1
 var is_select_text:bool=false
 var l_mode:=1
 func _ready() -> void:
-	
+	is_fast_version=not FileAccess.file_exists("res://mode_config_file/fast_mode.cfg")
 	is_lg_version=not FileAccess.file_exists("res://mode_config_file/not_only_little_game.cfg")
 	if OS.is_debug_build():
 		debug=true
+	load_all_settings()
 func jump_to(jumper:jumper_class):
 	if jumper.mode=="lobotomyA":
 		
@@ -277,3 +281,132 @@ func try_():
 				break
 			else :
 				Get.is_going_to_load_jump_saver=false
+
+func load_all_settings():
+	var config = ConfigFile.new()
+	var path = "user://settings.cfg"
+
+	if config.load(path) != OK:
+		print("[设置] 配置文件不存在，使用默认值")
+		return
+
+	# 鼠标指针
+	mouse_index = config.get_value("settings", "mouse_index", 0)
+	apply_mouse_cursor(mouse_index)
+
+	# 音量和静音
+	var volume = config.get_value("settings", "volume", 0.8)
+	var is_muted = config.get_value("settings", "is_muted", false)
+	AudioServer.set_bus_mute(0, is_muted)
+	var bus_index = AudioServer.get_bus_index("Master")
+	var volume_db = linear_to_db(maxf(volume, 0.001))
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
+
+	# H2D模式
+	h2d = config.get_value("settings", "h2d", false)
+
+	# 字体（修正部分）
+	f_index = config.get_value("settings", "f_index", 0)
+	var font_path = config.get_value("settings", "f_path", "res://res/Font/n.tres")
+	if FileAccess.file_exists(font_path):
+		var font = load(font_path)
+		now_theme.default_font = font
+	f_path = font_path
+
+	# 功能模式
+	fun_mode = config.get_value("settings", "fun_mode", false)
+
+	# 背景选择
+	back_index = config.get_value("settings", "back_index", 0)
+	is_back = config.get_value("settings", "is_back", false)
+	var back_tex_path = config.get_value("settings", "back_texture_path", "")
+	if back_tex_path != "" and FileAccess.file_exists(back_tex_path):
+		back_texture = load(back_tex_path)
+
+	# 背景模糊度和暗度
+	Back.mh = config.get_value("settings", "mh", 0.5)
+	Back.darkness = config.get_value("settings", "darkness", 0.3)
+
+	# 文本选择
+	is_select_text = config.get_value("settings", "is_select_text", false)
+
+	# 调试模式
+	debug = config.get_value("settings", "debug", false)
+
+	# 布局模式
+	l_mode = config.get_value("settings", "l_mode", 0)
+
+	# 主题（如果加载了主题文件）
+	var theme_path = config.get_value("settings", "now_theme_path", "")
+	if theme_path != "" and FileAccess.file_exists(theme_path):
+		now_theme.merge_with(load(theme_path))
+
+	var new_theme_path = config.get_value("settings", "now_new_theme_path", "")
+	if new_theme_path != "" and FileAccess.file_exists(new_theme_path):
+		now_new_theme.merge_with(load(new_theme_path))
+
+	print("[设置] 加载完成")
+
+func save_all_settings():
+	var config = ConfigFile.new()
+	var path = "user://settings.cfg"
+
+	# 鼠标指针
+	config.set_value("settings", "mouse_index", mouse_index)
+
+	# 音量和静音
+	var bus_index = AudioServer.get_bus_index("Master")
+	var current_volume_db = AudioServer.get_bus_volume_db(bus_index)
+	var volume = db_to_linear(current_volume_db)
+	config.set_value("settings", "volume", volume)
+	config.set_value("settings", "is_muted", AudioServer.is_bus_mute(0))
+
+	# H2D模式
+	config.set_value("settings", "h2d", h2d)
+
+	# 字体
+	config.set_value("settings", "f_index", f_index)
+	config.set_value("settings", "f_path", f_path)
+
+	# 功能模式
+	config.set_value("settings", "fun_mode", fun_mode)
+
+	# 背景选择
+	config.set_value("settings", "back_index", back_index)
+	config.set_value("settings", "is_back", is_back)
+	if back_texture and back_texture.has_method("get_path"):
+		config.set_value("settings", "back_texture_path", back_texture.get_path())
+
+	# 背景模糊度和暗度
+	config.set_value("settings", "mh", Back.mh)
+	config.set_value("settings", "darkness", Back.darkness)
+
+	# 文本选择
+	config.set_value("settings", "is_select_text", is_select_text)
+
+	# 调试模式
+	config.set_value("settings", "debug", debug)
+
+	# 布局模式
+	config.set_value("settings", "l_mode", l_mode)
+
+	# 主题（保存路径）
+	if now_theme and now_theme.has_method("get_path"):
+		config.set_value("settings", "now_theme_path", now_theme.get_path())
+	if now_new_theme and now_new_theme.has_method("get_path"):
+		config.set_value("settings", "now_new_theme_path", now_new_theme.get_path())
+
+	config.save(path)
+	print("[设置] 保存完成")
+
+func apply_mouse_cursor(index: int):
+	match index:
+		0:
+			Input.set_custom_mouse_cursor(load("res://img/3F3F-3F.webp"), Input.CURSOR_POINTING_HAND)
+			Input.set_custom_mouse_cursor(load("res://img/3F3F.webp"), Input.CURSOR_ARROW)
+		1:
+			Input.set_custom_mouse_cursor(load("res://img/MouseA.webp"), Input.CURSOR_POINTING_HAND)
+			Input.set_custom_mouse_cursor(load("res://img/Mouse.webp"), Input.CURSOR_ARROW)
+		2:
+			Input.set_custom_mouse_cursor(load("res://img/鼠标指针ON.png"), Input.CURSOR_POINTING_HAND)
+			Input.set_custom_mouse_cursor(load("res://img/鼠标指针.png"), Input.CURSOR_ARROW)

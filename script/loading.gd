@@ -13,17 +13,18 @@ var can_show_loading_text:bool=false
 @export var test_mode:bool
 var mode:int=0
 func load_to(path__:String,mode_:int=0):
-	$ProgressBar.indeterminate=true
-	$ProgressBar.self_modulate.a=1
-	mode=mode_
-	show()
-	$Control/ColorRect3/Label.text="loading..."
-	var next_text=loading_text_.pick_random()
-	$ProgressBar/Label.text=next_text
-	can_show_loading_text=true
-	path_=path__
-	ResourceLoader.load_threaded_request(path_)
-	print(path_)
+	if  not (mode==0 and Get.is_fast_version):
+		$ProgressBar.indeterminate=true
+		$ProgressBar.self_modulate.a=1
+		mode=mode_
+		show()
+		$Control/ColorRect3/Label.text=tr("loading...")
+		var next_text=loading_text_.pick_random()
+		$ProgressBar/Label.text=tr(next_text)
+		can_show_loading_text=true
+		path_=path__
+		ResourceLoader.load_threaded_request(path_)
+		print(path_)
 
 
 func _ready() -> void:
@@ -104,5 +105,5 @@ func _on_timer_timeout() -> void:
 func complete():
 	$ProgressBar.indeterminate=false
 	$ProgressBar.self_modulate.a=0
-	$Control/ColorRect3/Label.text="Complete!"
-	$ProgressBar/Label.text="Complete!"
+	$Control/ColorRect3/Label.text=tr("Complete!")
+	$ProgressBar/Label.text=tr("Complete!")

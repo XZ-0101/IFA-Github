@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func show_panel(str:String,pos:Vector2=Vector2(0,0)):
 	if not is_open:
 		is_open=true
-		$Panel/RichTextLabel.text=str
+		$Panel/RichTextLabel.text=tr(str)
 		if not  is_up:
 			if get_viewport().get_mouse_position().x>=400:
 				$Panel.global_position=get_viewport().get_mouse_position()+Vector2(-100,10)
@@ -43,8 +43,7 @@ func _on_panel_mouse_exited() -> void:
 	
 	pass # Replace with function body.
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_left"):
-		print(get_viewport().get_mouse_position()+Vector2(10,10))
+	pass
 
 
 func _on_timer_timeout() -> void:

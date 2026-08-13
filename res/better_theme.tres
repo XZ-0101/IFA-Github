@@ -16,6 +16,9 @@ color = Color(0.078431375, 0.105882354, 0.1764706, 1)
 bg_color = Color(0.019607844, 0.043137256, 0.078431375, 0.92156863)
 border_color = Color(0.54509807, 0.6392157, 0.78039217, 1)
 border_blend = true
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
@@ -23,49 +26,34 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4e030"]
 bg_color = Color(0.078431375, 0.043137256, 0.078431375, 0.92156863)
-border_width_top = 1
-border_width_bottom = 1
 border_color = Color(0.54509807, 0.6392157, 0.78039217, 1)
 border_blend = true
-expand_margin_left = 5.0
-expand_margin_top = 2.0
-expand_margin_right = 5.0
-expand_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ac0u"]
-bg_color = Color(0.050051115, 0.09092783, 0.14330235, 1)
-border_width_top = 1
-border_width_bottom = 1
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab0bi"]
-bg_color = Color(0.050051115, 0.09092783, 0.14330235, 1)
-border_width_top = 1
-border_width_bottom = 1
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+bg_color = Color(0.019607844, 0.043137256, 0.078431375, 0.92156863)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7868"]
 bg_color = Color(0.100295566, 0.15737209, 0.23728463, 1)
-border_width_top = 2
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+border_width_bottom = 3
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pe51"]
-bg_color = Color(0.070379294, 0.11444069, 0.18053392, 1)
-border_width_top = 1
-border_width_bottom = 1
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+bg_color = Color(0.019607844, 0.043137256, 0.078431375, 0.92156863)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [resource]
 default_font = ExtResource("1_0pe51")
@@ -80,6 +68,6 @@ TabContainer/font_sizes/font_size = 30
 TabContainer/styles/panel = SubResource("StyleBoxFlat_02dep")
 TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_4e030")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_3ac0u")
-TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ab0bi")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_3ac0u")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_f7868")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_0pe51")

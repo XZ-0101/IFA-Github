@@ -13,7 +13,7 @@ func _ready() -> void:
 		%RichTextLabel3.hide()
 		%RichTextLabel2.hide()
 		%TextureRect2.hide
-		%RichTextLabel.text="[url=show]全屏[/url]\n"+text
+		%RichTextLabel.text=tr("[url=show]全屏[/url]\n")+tr(text)
 		%Label.text="管理须知"+str(index)
 	elif mode==2 :
 		%TextureRect.show()
@@ -23,8 +23,8 @@ func _ready() -> void:
 		%NinePatchRect.hide()
 		%TextureRect2.hide()
 		%Label.hide()
-		%RichTextLabel2.text="[url=show]全屏[/url]\n"+text
-		%RichTextLabel3.text="[url=show]全屏[/url]\n"+text2
+		%RichTextLabel2.text=tr("[url=show]全屏[/url]\n")+tr(text)
+		%RichTextLabel3.text=tr("[url=show]全屏[/url]\n")+tr(text2)
 	else :
 		%TextureRect.hide()
 		%RichTextLabel3.show()
@@ -33,7 +33,7 @@ func _ready() -> void:
 		%NinePatchRect.hide()
 		%TextureRect2.show()
 		%Label.hide()
-		%RichTextLabel3.text="[url=show]全屏[/url]\n"+text2
+		%RichTextLabel3.text=tr("[url=show]全屏[/url]\n")+tr(text2)
 		pass
 
 

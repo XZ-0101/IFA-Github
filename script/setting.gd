@@ -17,12 +17,16 @@ func _on_option_button_item_selected(index: int) -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
+	
 	if toggled_on:
 		AudioServer.set_bus_mute(0,true)
 		
 	else :
 		
 		AudioServer.set_bus_mute(0,false)
+	var bus_index = AudioServer.get_bus_index("Master")
+	var current_volume_db = AudioServer.get_bus_volume_db(bus_index)
+	$a/system/HSlider.value = db_to_linear(current_volume_db)
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
@@ -66,11 +70,14 @@ func _ready() -> void:
 	$a/system/lmode.selected=Get.l_mode
 	$a/diy/OptionButton2.selected=Get.back_index
 	$a/diy/mh.value=Back.mh
-	$a/diy/mht.text="背景模糊度:"+str($a/diy/mh.value)
+	$a/diy/mht.text=tr("背景模糊度:")+str($a/diy/mh.value)
 	$a/diy/dark.value=Back.darkness
-	$a/diy/darkt.text="背景暗度:"+str($a/diy/dark.value)
+	$a/diy/darkt.text=tr("背景暗度:")+str($a/diy/dark.value)
 	$a/system/text_s.button_pressed=Get.is_select_text
 	$a/system/debug2.button_pressed=Get.debug
+	var bus_index = AudioServer.get_bus_index("Master")
+	var current_volume_db = AudioServer.get_bus_volume_db(bus_index)
+	$a/system/HSlider.value = db_to_linear(current_volume_db)
 
 func _on_check_box_3_toggled(toggled_on: bool) -> void:
 	Get.fun_mode=toggled_on
@@ -95,7 +102,8 @@ func _on_button_2_button_down() -> void:
 
 
 func _on_back_button_down() -> void:
-	Get.now_theme.merge_with(load("res://res/theme_base.tres"))
+	Get.now_theme.merge_with(Get.used_theme)
+	Get.now_new_theme.merge_with(Get.used_new_theme)
 	Get.is_changed_theme=false
 	pass # Replace with function body.
 
@@ -107,6 +115,15 @@ func _on_load_button_button_down() -> void:
 
 func _on_file_dialog_file_selected(path: String) -> void:
 	Get.now_theme.merge_with(load(path))
+	Get.is_changed_theme=true
+	pass # Replace with function body.
+func _on_load_button_2_button_down() -> void:
+	$a/diy/load_button/FileDialog.popup()
+	pass # Replace with function body.
+
+
+func _on_file_dialog_2_file_selected(path: String) -> void:
+	Get.now_now_theme.merge_with(load(path))
 	Get.is_changed_theme=true
 	pass # Replace with function body.
 
@@ -177,13 +194,13 @@ func load_img_file(path:String):
 
 func _on_mh_value_changed(value: float) -> void:
 	Back.mh=$a/diy/mh.value
-	$a/diy/mht.text="背景模糊度:"+str($a/diy/mh.value)
+	$a/diy/mht.text=tr("背景模糊度:")+str($a/diy/mh.value)
 	pass # Replace with function body.
 
 
 func _on_dark_value_changed(value: float) -> void:
 	Back.darkness=$a/diy/dark.value
-	$a/diy/darkt.text="背景暗度:"+str($a/diy/dark.value)
+	$a/diy/darkt.text=tr("背景暗度:")+str($a/diy/dark.value)
 	pass # Replace with function body.
 
 
@@ -200,3 +217,16 @@ func _on_lmode_item_selected(index: int) -> void:
 func _on_debug_2_toggled(toggled_on: bool) -> void:
 	Get.debug=toggled_on
 	pass # Replace with function body.
+
+
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("Master")
+	# 将滑块的线性值 (0-1) 转换为分贝 (dB) 并应用[reference:9]
+	# 用 maxf 防止滑块为0时出现负无穷大
+	var volume_db = linear_to_db(maxf(value, 0.001)) 
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
+	pass # Replace with function body.
+func  _exit_tree() -> void:
+	Get.save_all_settings()
