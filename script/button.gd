@@ -38,3 +38,7 @@ func _on_button_down() -> void:
 	Get.jump_saver_list.append(jump_saver.new())
 	get_tree().change_scene_to_packed(a)
 	pass # Replace with function body.
+
+
+func _on_file_dialog_file_selected(path: String) -> void:
+	pass # Replace with function body.

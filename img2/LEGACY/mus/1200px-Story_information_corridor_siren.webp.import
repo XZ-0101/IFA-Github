@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nrkdp2ll8xh2"
-path="res://.godot/imported/3F-Day10-2.jpg-d1d8016cde6d30bb724c1fd85f739f63.ctex"
+uid="uid://dkaqppr5olgdq"
+path="res://.godot/imported/1200px-Story_information_corridor_siren.webp-bd364e46b4931af34cee0c17de55816e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img2/mus/3F-Day10-2.jpg"
-dest_files=["res://.godot/imported/3F-Day10-2.jpg-d1d8016cde6d30bb724c1fd85f739f63.ctex"]
+source_file="res://img2/LEGACY/mus/1200px-Story_information_corridor_siren.webp"
+dest_files=["res://.godot/imported/1200px-Story_information_corridor_siren.webp-bd364e46b4931af34cee0c17de55816e.ctex"]
 
 [params]
 

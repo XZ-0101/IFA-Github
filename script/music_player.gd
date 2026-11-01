@@ -8,6 +8,7 @@ var song:AudioStream
 var lr:String
 var mode_:int=0
 var wait_:int
+const RPATH:String="res://screen/music_effect/node_2d.tscn"
 @onready var Typer=$CanvasLayer
 @export var music:music_class
 func  _process(delta: float) -> void:
@@ -106,6 +107,10 @@ func _ready() -> void:
 		$Control7.show()
 	if music.name_=="梅厄斯，羡望漂流":
 		$Control3.show()
+	if music.name_=="Rendezvous" and Get.fun_mode:
+		var a =load(RPATH) as PackedScene
+		
+		add_child(a.instantiate())
 	
 	if music.ge_ci_path:
 		if not music.ge_ci_path.begins_with("p"):

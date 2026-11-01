@@ -1,4 +1,4 @@
-extends TabContainer
+extends Control
 
 
 @export var a:Unreleased
@@ -9,10 +9,14 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 func load_Unreleased():
-	old.a=a
-	old.gif=gif
-	old.load_Unreleased()
-	pass
+	if not Get.use_new:
+		var page= load("res://screen/old_page/unuse_old.tscn").instantiate()
+		add_child(page)
+		old=page
+		old.a=a
+		old.gif=gif
+		old.load_Unreleased()
+		pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

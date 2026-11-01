@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brmap7i0bhqve"
-path="res://.godot/imported/PlayerAlbumCover_16900525271768593100999.webp-d4819f6adfb610ea8f5988e02718e72c.ctex"
+uid="uid://wywp4ppbeuji"
+path="res://.godot/imported/1200px-Story_central_command_team_broken.webp-b290108bace55587e2a5387140e0da12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img2/mus/PlayerAlbumCover_16900525271768593100999.webp"
-dest_files=["res://.godot/imported/PlayerAlbumCover_16900525271768593100999.webp-d4819f6adfb610ea8f5988e02718e72c.ctex"]
+source_file="res://img2/LEGACY/mus/1200px-Story_central_command_team_broken.webp"
+dest_files=["res://.godot/imported/1200px-Story_central_command_team_broken.webp-b290108bace55587e2a5387140e0da12.ctex"]
 
 [params]
 

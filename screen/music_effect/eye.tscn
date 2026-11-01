@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dsv6jhjexifss"]
+
+[ext_resource type="Texture2D" uid="uid://c21163i86nbdp" path="res://img/music/fun/p1.png" id="1_1spxg"]
+[ext_resource type="Texture2D" uid="uid://btu25b3g47eop" path="res://img/music/fun/p2.png" id="2_2061v"]
+
+[sub_resource type="GDScript" id="GDScript_1spxg"]
+script/source = "extends Sprite2D
+
+@export var offset_distance: float = 5.0 # 偏移的最大距离
+
+func _process(delta):
+	# 1. 算出从精灵指向鼠标的“方向向量”
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	
+	# 2. 让 Sprite2D 的 offset 属性等于“方向 * 偏移距离”
+	# 这样它就会在自己的原始位置上，朝着鼠标的方向偏移一点点
+	offset = direction * offset_distance
+"
+
+[sub_resource type="Gradient" id="Gradient_1spxg"]
+offsets = PackedFloat32Array(0, 0.5896226, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2061v"]
+gradient = SubResource("Gradient_1spxg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.2, 0.8)
+metadata/_snap_enabled = true
+
+[node name="P1" type="Sprite2D" unique_id=1139126731]
+texture_filter = 1
+scale = Vector2(1.4166666, 1.4506173)
+texture = ExtResource("1_1spxg")
+
+[node name="P2" type="Sprite2D" parent="." unique_id=476990126]
+scale = Vector2(0.71241826, 0.75319153)
+texture = ExtResource("2_2061v")
+script = SubResource("GDScript_1spxg")
+
+[node name="PointLight2D" type="PointLight2D" parent="P2" unique_id=1642870139]
+position = Vector2(-7.926607, 1.9073486e-06)
+scale = Vector2(2.1983945, 1.5444912)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_2061v")

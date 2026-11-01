@@ -121,6 +121,10 @@ func exec_comd(comd:String):
 		"echo":
 			text_node.append_text("in the mirror?\n")
 			text_node.append_text("[color=red]ERR:AndPlzUsePrint[/color]\n")
+		"make":
+			if arr.size()==2:
+				if arr[1]=="love":
+					text_node.append_text("not war?\n")
 		"show":
 			if arr.size()==2:
 				$CanvasLayer.show_text(arr[1])

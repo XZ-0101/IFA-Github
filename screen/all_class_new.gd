@@ -1,4 +1,4 @@
-extends TabContainer
+extends Control
 
 
 @export var a:basic_class
@@ -14,6 +14,10 @@ func _process(delta: float) -> void:
 	pass
 
 func load_basic_class():
-	old.a=a
-	old.gif=gif
-	old.load_basic_class()
+	if not Get.use_new:
+		var page= load("res://screen/old_page/all_class_old.tscn").instantiate()
+		add_child(page)
+		old=page
+		old.a=a
+		old.gif=gif
+		old.load_basic_class()

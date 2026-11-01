@@ -146,6 +146,9 @@ func _ready() -> void:
 		lobotomy8_container = $VBoxContainer/lobotomy8
 		lobotomy9_container = $VBoxContainer/lobotomy9
 		jump_container = $VBoxContainer/JUMP
+	else:
+		lobotomy7_video_button.button_down.connect(_on_button_button_down)
+		lobotomy7_gallery_button.button_down.connect(_on_button_2_button_down)
 
 # ==================== 主要加载函数 ====================
 func load_legacy():

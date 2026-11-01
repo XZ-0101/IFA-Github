@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cnhctprv7es1e" path="res://img/Rnfmabj3F3F.webp" id="22_6dmg2"]
 [ext_resource type="Resource" uid="uid://cc4q6abutidxt" path="res://res/music/saikai.tres" id="25_eb3n3"]
 [ext_resource type="Resource" uid="uid://chs8yv1hyrcl8" path="res://res/music/aly.tres" id="26_atn8b"]
+[ext_resource type="Resource" uid="uid://blkur8ub4i1q3" path="res://res/music/R.tres" id="27_s0ppm"]
 
 [sub_resource type="Resource" id="Resource_5n8uu"]
 script = ExtResource("2_75miy")
@@ -109,7 +110,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8swco")
-music_array = Array[ExtResource("2_75miy")]([ExtResource("3_qh51l"), ExtResource("8_dlbhp"), ExtResource("9_fp1yv"), SubResource("Resource_5n8uu"), SubResource("Resource_y2prv"), SubResource("Resource_8131a"), SubResource("Resource_e82bw"), ExtResource("6_75miy"), ExtResource("7_qh51l"), ExtResource("13_vcd5a"), SubResource("Resource_dbfbh"), SubResource("Resource_vcd5a"), ExtResource("5_fp1yv"), ExtResource("4_dlbhp"), ExtResource("12_5n8uu"), ExtResource("14_k24gh"), ExtResource("15_t3jj0"), ExtResource("16_ncrfh"), ExtResource("17_sariu"), SubResource("Resource_2vt0g"), ExtResource("25_eb3n3"), ExtResource("26_atn8b")])
+music_array = Array[ExtResource("2_75miy")]([ExtResource("3_qh51l"), ExtResource("8_dlbhp"), ExtResource("9_fp1yv"), SubResource("Resource_5n8uu"), SubResource("Resource_y2prv"), SubResource("Resource_8131a"), SubResource("Resource_e82bw"), ExtResource("6_75miy"), ExtResource("7_qh51l"), ExtResource("13_vcd5a"), SubResource("Resource_dbfbh"), SubResource("Resource_vcd5a"), ExtResource("5_fp1yv"), ExtResource("4_dlbhp"), ExtResource("12_5n8uu"), ExtResource("14_k24gh"), ExtResource("15_t3jj0"), ExtResource("16_ncrfh"), ExtResource("17_sariu"), SubResource("Resource_2vt0g"), ExtResource("25_eb3n3"), ExtResource("26_atn8b"), ExtResource("27_s0ppm")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=443524011]
 layout_mode = 1

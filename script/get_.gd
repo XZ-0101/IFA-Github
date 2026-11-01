@@ -33,6 +33,7 @@ var our_dir:String=OS.get_executable_path().get_base_dir()
 signal music_over
 var 收藏夹:Array[jumper_class]=[]
 var a_fun_list
+var use_new=false
 var gif_list={
 	"n1":"res://res/lobotomy/n1.tres",
 	"n2":"res://res/lobotomy/n2.tres",

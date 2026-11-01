@@ -72,7 +72,9 @@ func _ready() -> void:
 		jump_container = $VBoxContainer/JUMP
 		jump_related_container = $VBoxContainer/JUMP/TabContainer/相关/ScrollContainer/HBoxContainer
 		jump_type_container = $VBoxContainer/JUMP/TabContainer/标签/ScrollContainer/HBoxContainer
-
+	else:
+		video_button.button_down.connect(_on_button_2_button_down)
+		gallery_button.button_down.connect(_on_button_button_down)
 # ========== 主要加载函数 ==========
 func load_tool():
 	# 基础信息

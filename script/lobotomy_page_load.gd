@@ -1,4 +1,4 @@
-extends ScrollContainer
+extends Control
 @export var a:bacis_info
 @export var s:lobotomy_ego_Suit
 @export var w:lobotomy_ego_Weapon
@@ -11,12 +11,13 @@ extends ScrollContainer
 # 新增导出开关：是否启用默认节点路径（即原硬编码路径）
 @export var use_default_node_paths: bool = true
 
+#region 新建代码区域
 # ==================== 导出所有节点引用（静态路径） ====================
 
 @export var basic_icon: TextureRect
 @export var basic_risk_icon: TextureRect
 @export var basic_risk_label: RichTextLabel
-@export var basic_name_label: RichTextLabel
+@export var basic_name_label: Control
 @export var basic_info_label: RichTextLabel
 @export var basic_subject_label: Label
 
@@ -109,7 +110,7 @@ extends ScrollContainer
 
 # EGO Gift 专用
 @export var gift_icon2: TextureRect
-@export var gift_name_label: RichTextLabel
+@export var gift_name_label: Control
 @export var gift_info_label: RichTextLabel
 
 # EGO JUMP (suit/weapon/gift 共用)
@@ -121,8 +122,10 @@ extends ScrollContainer
 @export var ego_gallery_label: Label
 @export var ego_gallery_container: HBoxContainer
 @export var ego_analysis_label: RichTextLabel
+#endregion
 
 # ==================== _ready 函数：根据开关赋予默认路径 ====================
+#region 新建代码区域
 func _ready() -> void:
 	if use_default_node_paths:
 		# 基础信息
@@ -234,17 +237,24 @@ func _ready() -> void:
 		ego_gallery_label = $VBoxContainer/lobotomy_ego2/TabContainer/EGO图册/Label
 		ego_gallery_container = $VBoxContainer/lobotomy_ego2/TabContainer/EGO图册/ScrollContainer/HBoxContainer
 		ego_analysis_label = $VBoxContainer/lobotomy_ego2/TabContainer/EGO解析/RichTextLabel
-
+	else:
+		#ego_gallery_button.button_down.connect(_on_button1_button_down)
+		lobotomy7_video_button.button_down.connect(_on_button_button_down)
+		lobotomy7_gallery_button.button_down.connect(_on_button_2_button_down)
+		
+		pass
 	# 其余原有 _ready 逻辑（若有）可保留，但原脚本中已注释掉，故略
+#endregion
 
 # ==================== 原函数（所有 $ 已替换为属性） ====================
 func load_lobotomy(mode:int):
 	mode_=mode
 	if mode == 0:
-			lobotomyA_show()
-			lobotomyS_hide()
-			lobotomyW_hide()
-			lobotomyG_hide()
+			if use_default_node_paths:
+				lobotomyA_show()
+				lobotomyS_hide()
+				lobotomyW_hide()
+				lobotomyG_hide()
 			basic_icon.texture=a.icon
 			if a.level=="z":
 				print("z")
@@ -377,10 +387,11 @@ func load_lobotomy(mode:int):
 			var c2 = Control.new()
 			jump_type_container.add_child(c2)
 	elif mode==1:
-		lobotomyA_hide()
-		lobotomyW_hide()
-		lobotomyG_hide()
-		lobotomyS_show()
+		if use_default_node_paths:
+			lobotomyA_hide()
+			lobotomyW_hide()
+			lobotomyG_hide()
+			lobotomyS_show()
 		suit_cost_label.text=s.Cost
 		ego_icon.texture=s.texture
 		ego_name_label.text=tr(s.name_)
@@ -431,10 +442,11 @@ func load_lobotomy(mode:int):
 			ego_jump_type_container.add_child(b)
 		
 	elif mode==2:
-		lobotomyA_hide()
-		lobotomyG_hide()
-		lobotomyS_hide()
-		lobotomyW_show()
+		if use_default_node_paths:
+			lobotomyA_hide()
+			lobotomyG_hide()
+			lobotomyS_hide()
+			lobotomyW_show()
 		ego_icon.texture=w.texture
 		ego_name_label.text=tr(w.name_)
 		if w.level=="z":
@@ -507,10 +519,11 @@ func load_lobotomy(mode:int):
 			ego_jump_type_container.add_child(b)
 		
 	elif mode==3:
-		lobotomyA_hide()
-		lobotomyS_hide()
-		lobotomyW_hide()
-		lobotomyG_show()
+		if use_default_node_paths:
+			lobotomyA_hide()
+			lobotomyS_hide()
+			lobotomyW_hide()
+			lobotomyG_show()
 		ego_level_icon.hide()
 		ego_level_label.hide()
 		ego_icon.hide()

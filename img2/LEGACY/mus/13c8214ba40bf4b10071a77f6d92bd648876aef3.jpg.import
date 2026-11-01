@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ymmjgvgnd60s"
-path="res://.godot/imported/1200px-Story_central_corridor_red.webp-c00df541a8a4dab43459926cf5e17f52.ctex"
+uid="uid://0f3yl0pgqwy6"
+path="res://.godot/imported/13c8214ba40bf4b10071a77f6d92bd648876aef3.jpg-529c27009dc77ad16dd8b6160149a871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img2/mus/1200px-Story_central_corridor_red.webp"
-dest_files=["res://.godot/imported/1200px-Story_central_corridor_red.webp-c00df541a8a4dab43459926cf5e17f52.ctex"]
+source_file="res://img2/LEGACY/mus/13c8214ba40bf4b10071a77f6d92bd648876aef3.jpg"
+dest_files=["res://.godot/imported/13c8214ba40bf4b10071a77f6d92bd648876aef3.jpg-529c27009dc77ad16dd8b6160149a871.ctex"]
 
 [params]
 

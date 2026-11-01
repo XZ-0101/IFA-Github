@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="music_class" load_steps=4 format=3 uid="uid://cc4q6abutidxt"]
+[gd_resource type="Resource" script_class="music_class" format=3 uid="uid://cc4q6abutidxt"]
 
 [ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_cb4t2"]
-[ext_resource type="Texture2D" uid="uid://brmap7i0bhqve" path="res://img2/mus/PlayerAlbumCover_16900525271768593100999.webp" id="2_1704a"]
-[ext_resource type="Texture2D" uid="uid://dsbumxssrhb0y" path="res://img2/mus/68ab0c0d7328dacd56cc3a05d1299031fff4d2ec.jpg" id="3_cb4t2"]
+[ext_resource type="Texture2D" uid="uid://brmap7i0bhqve" path="res://img2/LEGACY/mus/PlayerAlbumCover_16900525271768593100999.webp" id="2_1704a"]
+[ext_resource type="Texture2D" uid="uid://dsbumxssrhb0y" path="res://img2/LEGACY/mus/68ab0c0d7328dacd56cc3a05d1299031fff4d2ec.jpg" id="3_cb4t2"]
 
 [resource]
 script = ExtResource("1_cb4t2")

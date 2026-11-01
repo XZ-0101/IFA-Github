@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_pxi7d"]
 [ext_resource type="Texture2D" uid="uid://b523m64t1gtbn" path="res://img/100px-Logo_Limbus.png" id="2_ta4l4"]
-[ext_resource type="Texture2D" uid="uid://dwqlyxvsfd5io" path="res://img2/mus/600px-Battle_house_spiders_rooftop_burn.webp" id="3_pxi7d"]
+[ext_resource type="Texture2D" uid="uid://dwqlyxvsfd5io" path="res://img2/LEGACY/mus/600px-Battle_house_spiders_rooftop_burn.webp" id="3_pxi7d"]
 
 [resource]
 script = ExtResource("1_pxi7d")

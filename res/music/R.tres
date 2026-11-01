@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="music_class" format=3 uid="uid://blkur8ub4i1q3"]
+
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="1_742vn"]
+[ext_resource type="Texture2D" uid="uid://kenl1ehm8dee" path="res://img/music/3312353B1D4440F7A92B68749561293D.jpg" id="2_742vn"]
+[ext_resource type="Texture2D" uid="uid://f1xoqt2dmqej" path="res://img/music/R.jpg" id="2_b243f"]
+
+[resource]
+script = ExtResource("1_742vn")
+name_ = "Rendezvous"
+zuo_zhe = "Mili"
+texture = ExtResource("2_742vn")
+texture1 = ExtResource("2_b243f")
+music_path = "res://mus/Mili - Rendezvous.ogg"
+ge_ci_path = "res://res/music/l12_r.tres"
+metadata/_custom_type_script = "uid://jie20fpxgk32"

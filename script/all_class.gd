@@ -84,6 +84,9 @@ func _ready() -> void:
 		jump_container = $VBoxContainer/JUMP
 		jump2_container = $VBoxContainer/JUMP2
 		jump3_container = $VBoxContainer/JUMP3
+	else :
+		video_button.button_down.connect(_on_button_button_down)
+		gallery_button.button_down.connect(_on_button_2_button_down)
 
 # ==================== 主要加载函数 ====================
 func load_basic_class():

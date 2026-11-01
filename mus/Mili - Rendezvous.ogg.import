@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0ma1j0hji8j3"
+path="res://.godot/imported/Mili - Rendezvous.ogg-365ea4de15cd4bad28e7e6700a3570d6.oggvorbisstr"
+
+[deps]
+
+source_file="res://mus/Mili - Rendezvous.ogg"
+dest_files=["res://.godot/imported/Mili - Rendezvous.ogg-365ea4de15cd4bad28e7e6700a3570d6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

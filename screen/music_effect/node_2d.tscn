@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://by5wb17s830ms"]
+
+[ext_resource type="PackedScene" uid="uid://dsv6jhjexifss" path="res://screen/music_effect/eye.tscn" id="1_ikg14"]
+
+[sub_resource type="GDScript" id="GDScript_ikg14"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$AnimationPlayer.play(\"new_animation\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Gradient" id="Gradient_vjq7w"]
+offsets = PackedFloat32Array(0, 0.5896226, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hlk45"]
+gradient = SubResource("Gradient_vjq7w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.2, 0.8)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_76fnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rul1q"]
+resource_name = "new_animation"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 16.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cxhd"]
+_data = {
+&"RESET": SubResource("Animation_76fnh"),
+&"new_animation": SubResource("Animation_rul1q")
+}
+
+[node name="Node2D" type="Node2D" unique_id=914822652]
+script = SubResource("GDScript_ikg14")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=907264474]
+color = Color(0.22310299, 0.22310287, 0.22310284, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=28126910]
+scale = Vector2(16.21094, 14.322267)
+energy = 0.0
+blend_mode = 2
+texture = SubResource("GradientTexture2D_hlk45")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1550091902]
+libraries/ = SubResource("AnimationLibrary_5cxhd")
+
+[node name="eye" type="Node2D" parent="." unique_id=1333175666]
+z_index = 5
+
+[node name="P12" parent="eye" unique_id=1139126731 instance=ExtResource("1_ikg14")]
+position = Vector2(547, 151)
+scale = Vector2(1.5109946, 1.544592)
+
+[node name="P1" parent="eye" unique_id=94488614 instance=ExtResource("1_ikg14")]
+position = Vector2(521.00006, 383)
+scale = Vector2(1.5972217, 1.7870368)
+
+[node name="P2" parent="eye" unique_id=9541952 instance=ExtResource("1_ikg14")]
+position = Vector2(60, 721.00006)
+scale = Vector2(1.3101852, 1.132716)
+
+[node name="P3" parent="eye" unique_id=390133666 instance=ExtResource("1_ikg14")]
+position = Vector2(615, 303)
+scale = Vector2(1.2453705, 1.2561728)
+
+[node name="P14" parent="eye" unique_id=604378684 instance=ExtResource("1_ikg14")]
+position = Vector2(610, 675)
+scale = Vector2(1.2453705, 1.2561728)
+
+[node name="P4" parent="eye" unique_id=500774402 instance=ExtResource("1_ikg14")]
+position = Vector2(515.00006, 631)
+rotation = -0.043970946
+scale = Vector2(1.6203706, 1.6666662)
+
+[node name="P5" parent="eye" unique_id=1784812786 instance=ExtResource("1_ikg14")]
+position = Vector2(103.00001, 612)
+scale = Vector2(1.5972223, 1.6635801)
+
+[node name="P6" parent="eye" unique_id=699116565 instance=ExtResource("1_ikg14")]
+position = Vector2(131.99998, 924.99994)
+rotation = -0.5261096
+scale = Vector2(1.5601853, 1.6759257)
+
+[node name="P13" parent="eye" unique_id=101377530 instance=ExtResource("1_ikg14")]
+position = Vector2(144, 237)
+rotation = 0.39680254
+scale = Vector2(1.7118053, 1.893861)
+
+[node name="P7" parent="eye" unique_id=2122014407 instance=ExtResource("1_ikg14")]
+position = Vector2(62, 128)
+scale = Vector2(1.2083333, 1.3055552)
+
+[node name="P8" parent="eye" unique_id=341457404 instance=ExtResource("1_ikg14")]
+position = Vector2(576, 1064)
+rotation = 0.19427449
+scale = Vector2(1.2546296, 1.2561733)
+
+[node name="P9" parent="eye" unique_id=1628444326 instance=ExtResource("1_ikg14")]
+position = Vector2(77.00003, 1033)
+rotation = -0.37783346
+scale = Vector2(1.2175927, 1.2561724)
+
+[node name="P10" parent="eye" unique_id=734570561 instance=ExtResource("1_ikg14")]
+position = Vector2(67, 393)
+rotation = 0.35753912
+scale = Vector2(1.2453705, 1.2685186)
+
+[node name="P11" parent="eye" unique_id=1692502115 instance=ExtResource("1_ikg14")]
+position = Vector2(468.99997, 982)
+rotation = 0.25958374
+scale = Vector2(1.9953703, 2.083333)
