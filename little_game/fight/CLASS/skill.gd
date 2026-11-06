@@ -8,6 +8,7 @@ class_name skill_lt
 @export var base_point:int
 @export var at:int
 @export var def:int
+@export var fightback:skill_lt
 @export_multiline var description:Array[String]
 @export var eff_arr:Array[Executer]
 @export var type:Array[String]

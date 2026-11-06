@@ -216,7 +216,7 @@ theme = ExtResource("2_nmfe7")
 theme_override_colors/default_color = Color(1, 1, 0.631373, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "Ignorance the [color=red]fear[/color]，write the [color=red]illustrated[/color]"
+text = "Ignore the [color=red]fear[/color]，write the [color=red]illustration[/color]"
 fit_content = true
 autowrap_mode = 0
 

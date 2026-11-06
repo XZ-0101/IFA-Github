@@ -53,6 +53,30 @@ is_who = true
 one_time = true
 metadata/_custom_type_script = "uid://skro7sm8drh8"
 
+[sub_resource type="Resource" id="Resource_6a2gw"]
+script = ExtResource("6_6a2gw")
+code = "
+Fight.add_buff_path(\"res://little_game/fight/res/buff/zhenchan.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_f32vx"]
+script = ExtResource("3_umaqb")
+name_ = "我来反击"
+icon = ExtResource("9_rsohl")
+level = 1
+change_Point = 1
+coin_n = 3
+base_point = 2
+at = 1
+description = Array[String](["[命中时]施加1层震颤"])
+eff_arr = Array[ExtResource("6_6a2gw")]([SubResource("Resource_6a2gw")])
+type = Array[String](["反击"])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
 [sub_resource type="Resource" id="Resource_yf31k"]
 script = ExtResource("3_umaqb")
 name_ = "巴勒莫剑术-NULL"
@@ -63,6 +87,7 @@ coin_n = 2
 base_point = 4
 at = 3
 def = 15
+fightback = SubResource("Resource_f32vx")
 description = Array[String](["[命中时]施加2层烧伤
 [命中时]施加3层震颤"])
 eff_arr = Array[ExtResource("6_6a2gw")]([SubResource("Resource_1mcfu")])
@@ -73,8 +98,34 @@ metadata/_custom_type_script = "uid://bj8vuop3720um"
 script = ExtResource("2_owuc7")
 name_ = "折射错误的卢西奥"
 img = ExtResource("1_rsohl")
-description = "[NULL]
-[NULL]"
+description = "观察等级1
+[NULL]
+[NULL]
+
+观察等级2
+该个体已被确认为“折射错误”。
+相较原个体，该个体的大部分已被大量清除。
+所以，这是一场轻松的镇压，速战速决。
+
+观察等级3
+-将镜世界的物体直接返回到目标世界的技术，“广播局”已经成功掌握。
+-但，风险是永远伴随着技术的。
+-当冲突发生时，这台机器更倾向于清除此类对象。
+-原物体“发光”会导致超阈值的“光”无法进入虚像，导致被镜子反射超出正常范围，会成像，而原本“发光”的虚像折射出来的像与反射出来的像如果重叠，这将会发生矛盾...这便是一种“折射错误”。
+-机器为了解决这矛盾，会清除矛盾之处，而剩下的，就站在你面前。
+-嘛，这台机器会尽量避免重叠的，所以还是很安全的。
+-好了，我的解释说完了。
+
+评论：
+-这不都是谜语吗？
+--你没有读过员工手册？里面有对基础术语的解释。
+--没有。
+--...
+
+-如果原本“发光”的虚像折射出来的像与反射出来的像不重叠会发生什么？
+--这种错误机器可以处理。
+--那看来重叠的概率并不大啊。
+--我知道你想干什么，不要去赌。"
 hp = 30
 sp = 30
 passives = Array[ExtResource("1_5kot8")]([SubResource("Resource_edqnw")])

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bm6qe6p7jnkaw" path="res://little_game/fight/img/ui/Texture2D/BattleUI_CoinPopup_1.png" id="1_rk3vd"]
 [ext_resource type="Texture2D" uid="uid://cs2u1xeusrfw8" path="res://little_game/fight/res/skill/skill_img/d_s.png" id="2_yp5n3"]
+[ext_resource type="Texture2D" uid="uid://vscvgvvpl4qv" path="res://little_game/fight/img/ui/Sprite/Icon_AttackType_counter.png" id="3_dpubc"]
 [ext_resource type="Theme" uid="uid://w2xeqa117x5r" path="res://res/theme.tres" id="4_dpubc"]
 [ext_resource type="Texture2D" uid="uid://s4u41ung4lub" path="res://little_game/Sprite/Anger_Panic.png" id="5_e4wgj"]
 [ext_resource type="Texture2D" uid="uid://boq3ccg55ed4b" path="res://little_game/fight/img/ui/Texture2D/BattleUI_InfoPopup_new_1.png" id="5_n7p26"]
@@ -17,7 +18,7 @@ signal coin_over
 signal coin_out(is_f:bool)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+
 	
 	pass # Replace with function body.
 
@@ -62,6 +63,11 @@ func show_it():
 	change.text = str(skill.change_Point) if  skill.change_Point<0 else \"+\"+str(skill.change_Point)
 	at.text=str(skill.at)
 	def.text =str(skill.def)
+	if skill.fightback:
+		$TextureRect2.show()
+		
+	else:
+		$TextureRect2.hide()
 	for i in skill.coin_n:
 		coin.add_child(creat_coin())
 	if mode!=1:
@@ -69,10 +75,11 @@ func show_it():
 		var text1=tr(\"技能效果\\n\")
 		for i in skill.description:
 			text1+=tr(i)+'\\n'
+		var text3=if_fight_back()
 		var text2=tr(\"标签\\n\")
 		for i in skill.type:
 			text2+=\"-\"+tr(i)+\"\\n\"
-		de.text=text1+\"\\n\"+text2
+		de.text=text1+\"\\n\"+text3+\"\\n\"+text2
 	if mode ==1:
 		$Button.hide()
 	if mode==2:
@@ -126,6 +133,23 @@ func creat_p(c):
 func remove_coin():
 	for i in $coin.get_children():
 		i.queue_free()
+		
+func if_fight_back():
+	if skill.fightback:
+		var fsk=skill.fightback
+		var text3=tr(\"反击技能\\n\")
+		var skname=fsk.name_
+		var change
+		change=\"+\"+str(fsk.change_Point) if fsk.change_Point>0  else str(fsk.change_Point)
+			
+		var skpoint=str(fsk.base_point)+change.repeat(fsk.coin_n)
+		var skatk=str(fsk.at)
+		var skdef=str(fsk.def)
+		var skde=fsk.description
+		text3+=tr(\"名称:{name} 点数:{point}\\nATK:{atk} DEF:{def}\\n描述:\\n{de}\\n\").format({\"name\":skname,\"point\":skpoint,\"atk\":skatk,\"def\":skdef,\"de\":skde})
+		return text3
+	else:
+		return \"\"
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3qh8"]
@@ -275,6 +299,28 @@ texture = ExtResource("2_yp5n3")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1927111038]
+self_modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 61.0
+offset_right = 100.0
+offset_bottom = 140.0
+texture = ExtResource("3_dpubc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1156917519]
+self_modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 61.0
+offset_right = 100.0
+offset_bottom = 140.0
+texture = ExtResource("3_dpubc")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="coin" type="HBoxContainer" parent="." unique_id=155267181]
 layout_mode = 0
 offset_left = 150.0
@@ -401,10 +447,10 @@ grow_vertical = 2
 theme = ExtResource("4_dpubc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Window" unique_id=72535806]
-offset_left = 20.0
-offset_top = 17.0
-offset_right = 485.0
-offset_bottom = 287.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 490.0
+offset_bottom = 295.0
 theme = ExtResource("4_dpubc")
 bbcode_enabled = true
 

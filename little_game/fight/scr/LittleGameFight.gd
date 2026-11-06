@@ -148,7 +148,32 @@ func add_one_to_time_list(i:Executer):
 			#after_under_hit.append(i)
 		#"before_under_hit":
 			#before_under_hit.append(i)
-
+func hit_unital(team:int):
+	match team:
+		0:
+			var p=roundi(float(max_point)/2)
+			var hit_num
+			if now_skill.at!=0:
+				hit_num =roundi( (now_skill.at + p) * hit_area)
+			else:
+				hit_num=0
+			
+			print("ourhit:(",now_skill.at,"+",p,")*",hit_area,"=",hit_num)
+			hit_num_=hit_num if hit_num >=0 else 0
+			enemy_hp-=hit_num if hit_num >=0 else 0
+			play_anima("text",1,"hit,"+str(hit_num)+",hp")
+		1:
+			var p=roundi(float(enemy_max_point)/2)
+			var hit_num
+			if now_enemy_skill.at!=0:
+				hit_num =roundi( (now_enemy_skill.at + p) * enemy_hit_area  )
+			else:
+				hit_num=0
+			
+			print("enemyhit:(",now_enemy_skill.at,"+",p,")*",enemy_hit_area,"=",hit_num)
+			hit_num_=hit_num if hit_num >=0 else 0
+			fight_hp-=hit_num if hit_num >=0 else 0
+			play_anima("text",0,"hit,"+str(hit_num)+",hp")
 func hit(team:int):
 	match team:
 		0:
@@ -180,7 +205,7 @@ func hit(team:int):
 			hit_num_=hit_num if hit_num >=0 else 0
 			fight_hp-=hit_num if hit_num >=0 else 0
 			play_anima("text",0,"hit,"+str(hit_num)+",hp")
-	
+		
 
 func change_value(team:int,value:String,final):
 	var hp= "fight_hp" if team==0 else "enemy_hp"

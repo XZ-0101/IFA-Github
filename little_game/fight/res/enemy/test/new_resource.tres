@@ -229,14 +229,26 @@ metadata/_custom_type_script = "uid://bj8vuop3720um"
 script = ExtResource("6_81idx")
 name_ = "折射错误的瓦伦希纳"
 img = ExtResource("1_e1uqh")
-description = "[NULL]的拇指护父
+description = "观察等级1
+[NULL]的拇指护父
 烦死[NULL],你们和[NULL]都[NULL]了
-
 -闻起来像折射错误的[NULL]
+
+观察等级2
+该个体保留原个体的大部分，与一般的折射错误来说实在是太奇怪了。
+不过，它还是折射错误。与原个体的实力还是相差很远。
+加油。
+
+观察等级3
 -Crossy，你能解释一下吗
 -它出现在这里的情况，我也是第一次遇见
 -按道理，它不可能出现在这台机器上
--..."
+-...
+-我看看，重叠发生了...为什么？
+-...上报。这种情况不来自机器。
+-是怎么了？
+-节点提供的端口报错了...而它不完全来自重叠。
+"
 hp = 100
 sp = 60
 passives = Array[ExtResource("5_k2rr2")]([SubResource("Resource_1mn15"), SubResource("Resource_if328"), SubResource("Resource_m0kvj"), SubResource("Resource_f32vx")])

@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://boq3ccg55ed4b" path="res://little_game/fight/img/ui/Texture2D/BattleUI_InfoPopup_new_1.png" id="14_7uibp"]
 [ext_resource type="PackedScene" uid="uid://dghrp05v722lv" path="res://little_game/fight/scn/connect.tscn" id="14_if328"]
 [ext_resource type="PackedScene" uid="uid://baxolgn2cg7dg" path="res://little_game/fight/scn/atk.tscn" id="14_m0kvj"]
+[ext_resource type="Texture2D" uid="uid://vscvgvvpl4qv" path="res://little_game/fight/img/ui/Sprite/Icon_AttackType_counter.png" id="17_f32vx"]
 [ext_resource type="PackedScene" uid="uid://lilepq8qiek4" path="res://screen/TX6.tscn" id="17_rxe5j"]
 [ext_resource type="AudioStream" uid="uid://dfoontq5be7f1" path="res://little_game/AudioClip/Parry_Atk.wav" id="20_rxe5j"]
 [ext_resource type="PackedScene" uid="uid://nrulnhqc6fk4" path="res://screen/typer.tscn" id="21_rxe5j"]
@@ -493,7 +494,47 @@ func start_point():
 		$Panel_point.show()
 		$Panel_point.point(arr,s1,arr2,s2)
 	pass
-
+func start_point_e(skill_back:skill_lt):
+	
+	
+		
+		fight.now_enemy_skill=skill_back.duplicate()
+		var enemy_s=fight.now_enemy_skill
+	
+		fight.add_to_time_list(enemy_s.eff_arr.map(fight.eff_to_team_1))
+		fight.do_it(\"before_point\")
+		
+		var s2=fight.now_enemy_skill
+		
+		var espc= float(fight.enemy_sp) / max(float(fight.enemy.sp), 0.01)
+		
+		
+		
+		var arr2=toss_coins(s2.coin_n,espc)
+		$Panel_point.show()
+		$Panel_point.unilat_point_e(arr2,s2)
+	
+func start_point_s(skill_back:skill_lt):
+	
+		
+		
+		fight.now_skill=skill_back.duplicate()
+		var our_s=fight.now_skill
+		
+		fight.add_to_time_list(our_s.eff_arr.map(fight.eff_to_team_0))
+		
+		fight.do_it(\"before_point\")
+		var s1=fight.now_skill
+		
+		var spc=float(fight.fight_sp) / max(float(fight.fight_sp_max), 0.01)
+		
+		
+		
+		var arr=toss_coins(s1.coin_n,spc)
+		
+		$Panel_point.show()
+		$Panel_point.unilat_point_s(arr,s1)
+	
 func _on_control_skill_choice(ind: int) -> void:
 	if choised_skill_ind==ind+1:
 		skill_up()
@@ -526,14 +567,53 @@ func _on_panel_point_point_over(who_win:int) -> void:
 		fight.enemy_sp+=5
 		fight.play_anima(\"text\",0,\"hit,5,sp\")
 		fight.play_anima(\"text\",1,\"hel,5,sp\")
+	
+		
 	await get_tree().create_timer(0.7).timeout
-	if who_win!=2:
+	
+	if who_win==3:
+		fight.who_win=0
+		use_skill_unilat_s()
+		
+	elif who_win==4:
+		fight.who_win=1
+		use_skill_unilat_e()
+		
+	elif who_win!=2:
 		use_skill()
 	else :
 		fight.clear_executer_queue()
 		next_turn()
 	pass # Replace with function body.
-
+func use_skill_unilat_s():
+	
+	fight.do_it(\"before_under_hit\")
+	fight.do_it(\"before_hit\")
+	
+	fight.hit_unital(fight.who_win)
+	var an=$enemy/AnimatedSprite2D as AnimatedSprite2D
+	var an2=enemy_anima_node.get_child(0) as AnimationPlayer
+	an2.play(\"1\")
+	$sound/KaliSpecialVertHit.play()
+	an.play(\"1\")
+	fight.do_it(\"after_under_hit\")
+	fight.do_it(\"after_hit\")
+	await get_tree().create_timer(1.5).timeout
+	next_turn()
+	pass
+func use_skill_unilat_e():
+	
+	fight.do_it(\"before_under_hit\")
+	fight.do_it(\"before_hit\")
+	
+	fight.hit_unital(fight.who_win)
+	fight.play_anima(\"self_hit\",0,\"\")
+	fight.do_it(\"after_under_hit\")
+	fight.do_it(\"after_hit\")
+	await get_tree().create_timer(1.5).timeout
+	next_turn()
+	pass
+	
 func use_skill():
 	
 	var our_s=fight.now_skill
@@ -559,6 +639,7 @@ func use_skill():
 			$sound/KaliSpecialVertHit.play()
 		an.play(\"1\")
 		
+			
 	else:
 		if \"防御\" in our_s.type:
 			fight.play_anima(\"self_d\",0,\"\")
@@ -569,8 +650,25 @@ func use_skill():
 			fight.play_anima(\"self_hit\",0,\"\")
 	fight.do_it(\"after_under_hit\")
 	fight.do_it(\"after_hit\")
-	await get_tree().create_timer(1.5).timeout
-	next_turn()
+	await get_tree().create_timer(0.5).timeout
+	if fight.who_win==1 and our_s.fightback:
+		$fight_back.show()
+		$fight_back/AnimationPlayer.play(\"show\")
+		await $fight_back/AnimationPlayer.animation_finished
+		$fight_back.hide()
+		start_point_s(our_s.fightback)
+		pass
+	elif fight.who_win==0 and enemy_s.fightback:
+		$fight_back.show()
+		$fight_back/AnimationPlayer.play(\"show\")
+		await $fight_back/AnimationPlayer.animation_finished
+		$fight_back.hide()
+		start_point_e(enemy_s.fightback)
+		pass
+	else:
+		await get_tree().create_timer(1).timeout
+		next_turn()
+
 func next_turn():
 	fight.do_it(\"turn_end\")
 	turn_start()
@@ -970,16 +1068,20 @@ _data = {
 script/source = "extends Panel
 @export var skill_show:Node
 @export var skill_show2:Node
+@export var skill_show_u:Node
 @export var skill_point:Node
 @export var skill_point2:Node
 @export var skill_point_num:Label
 @export var skill_point_num2:Label
+
+@export var skill_point_unum:Label
 var s1:skill_lt
 var s2:skill_lt
 var p:int
 var p2:int
 signal point_over(who_win:int)
 var can_next=false
+var unital_who:int
 var who_win:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -993,6 +1095,8 @@ func _process(delta: float) -> void:
 func point(arr:Array[bool],skill:skill_lt,arr2:Array[bool],skill2:skill_lt):
 	can_next=false
 	$partic/GPUParticles2D.emitting=true
+	$u_skill.hide()
+	$VBoxContainer.show()
 	skill_show.skill=skill
 	skill_show2.skill=skill2
 	s1=skill
@@ -1031,8 +1135,84 @@ func point(arr:Array[bool],skill:skill_lt,arr2:Array[bool],skill2:skill_lt):
 	$ParryAtk.play()
 	$partic/GPUParticles2D2.emitting=true
 	can_next=true
+
+func unilat_point_s(arr:Array[bool],skill:skill_lt):
+	can_next=false
+	unital_who=0
+	$partic/GPUParticles2D.emitting=true
+	$u_skill.show()
+	$VBoxContainer.hide()
+	skill_show_u.skill=skill
+	
+	s1=skill
+	
+	skill_show_u.show_it()
 	
 	
+	
+	skill_point_unum.text=str(skill.base_point)
+	
+	p=skill.base_point
+	
+	
+	
+	$Timer.start()
+	await  $Timer.timeout
+	
+	skill_show_u.coin_show(arr)
+	await  skill_show_u.coin_over
+	
+	LittleGameFight.max_point=p
+	
+	
+	
+	skill_point_unum.text=str(LittleGameFight.max_point)
+	
+	
+	who_win=3
+	
+	$partic/GPUParticles2D.emitting=false
+	$ParryAtk.play()
+	$partic/GPUParticles2D2.emitting=true
+	can_next=true
+
+	
+func unilat_point_e(arr2:Array[bool],skill2:skill_lt):
+	can_next=false
+	unital_who=1
+	$partic/GPUParticles2D.emitting=true
+	$u_skill.show()
+	$VBoxContainer.hide()
+	skill_show_u.skill=skill2
+	
+	s2=skill2
+	
+	skill_show_u.show_it()
+	
+	
+	
+	skill_point_unum.text=str(skill2.base_point)
+	
+	p2=skill2.base_point
+	$Timer.start()
+	await  $Timer.timeout
+	skill_show_u.coin_show(arr2)
+	await  skill_show_u.coin_over
+	
+	
+	
+	
+	LittleGameFight.enemy_max_point=p2
+	
+	skill_point_unum.text=str(LittleGameFight.enemy_max_point)
+	
+
+	who_win=4
+	$partic/GPUParticles2D.emitting=false
+	$ParryAtk.play()
+	$partic/GPUParticles2D2.emitting=true
+	can_next=true
+
 func _on_skill_coin_out(is_f:bool) -> void:
 	if is_f:
 		p2+=s2.change_Point
@@ -1050,11 +1230,59 @@ func  _input(event: InputEvent) -> void:
 		can_next=false
 		hide()
 		emit_signal(\"point_over\",who_win)
+
+
+func _on_skillu_coin_out(is_f: bool) -> void:
+	if unital_who==1:
+		if is_f:
+			p2+=s2.change_Point
+		skill_point_unum.text=str(p2)
+	else:
+		if is_f:
+			p+=s1.change_Point
+		skill_point_unum.text=str(p)
+	pass # Replace with function body.
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uibp"]
 atlas = ExtResource("11_fb4jk")
 region = Rect2(1279, 280, 230, 245)
+
+[sub_resource type="Animation" id="Animation_d07j6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fight_back:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_frc15"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fight_back:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6muwn"]
+_data = {
+&"RESET": SubResource("Animation_d07j6"),
+&"show": SubResource("Animation_frc15")
+}
 
 [sub_resource type="GDScript" id="GDScript_n15yu"]
 script/source = "extends Panel
@@ -1741,7 +1969,7 @@ color = Color(1, 1, 1, 0)
 libraries/ = SubResource("AnimationLibrary_d07j6")
 speed_scale = 2.0
 
-[node name="Panel_point" type="Panel" parent="." unique_id=1732484425 node_paths=PackedStringArray("skill_show", "skill_show2", "skill_point", "skill_point2", "skill_point_num", "skill_point_num2")]
+[node name="Panel_point" type="Panel" parent="." unique_id=1732484425 node_paths=PackedStringArray("skill_show", "skill_show2", "skill_show_u", "skill_point", "skill_point2", "skill_point_num", "skill_point_num2", "skill_point_unum")]
 visible = false
 layout_mode = 0
 offset_left = -1.0
@@ -1752,12 +1980,15 @@ theme = ExtResource("2_2fnmu")
 script = SubResource("GDScript_66qcp")
 skill_show = NodePath("VBoxContainer/our_skill/skill")
 skill_show2 = NodePath("VBoxContainer/enemy_skill/skill")
+skill_show_u = NodePath("u_skill/skill")
 skill_point = NodePath("VBoxContainer/HBoxContainer/icon1")
 skill_point2 = NodePath("VBoxContainer/HBoxContainer/icon2")
 skill_point_num = NodePath("VBoxContainer/HBoxContainer/icon1/num1")
 skill_point_num2 = NodePath("VBoxContainer/HBoxContainer/icon2/num2")
+skill_point_unum = NodePath("u_skill/skill/num2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel_point" unique_id=517432478]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1854,6 +2085,33 @@ offset_bottom = 323.0
 
 [node name="GPUParticles2D2" parent="Panel_point/partic" unique_id=837090751 instance=ExtResource("13_if328")]
 
+[node name="u_skill" type="CenterContainer" parent="Panel_point" unique_id=1878801666]
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 530.0
+
+[node name="skill" parent="Panel_point/u_skill" unique_id=1434575751 instance=ExtResource("9_1peb1")]
+layout_mode = 2
+mode = 1
+
+[node name="num2" type="Label" parent="Panel_point/u_skill/skill" unique_id=1975194458]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -32.0
+offset_right = -128.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fnmu")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "30"
+
 [node name="Timer" type="Timer" parent="Panel_point" unique_id=118359117]
 wait_time = 0.3
 
@@ -1870,6 +2128,41 @@ offset_left = 818.0
 offset_top = 1452.0
 offset_right = 858.0
 offset_bottom = 1492.0
+
+[node name="fight_back" type="Control" parent="." unique_id=1728224774]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fight_back" unique_id=905564957]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_6muwn")
+speed_scale = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="fight_back" unique_id=1179494086]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39427269, 6.5277334e-07, 2.1658838e-07, 1)
+
+[node name="TextureRect" type="TextureRect" parent="fight_back" unique_id=195085145]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_f32vx")
+stretch_mode = 3
 
 [node name="sound" type="Control" parent="." unique_id=1387815184]
 anchors_preset = 0
@@ -1974,6 +2267,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="turn_anima" type="TextureRect" parent="." unique_id=214506453]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = -30.0
@@ -2020,6 +2314,7 @@ parameters/looping = true
 [connection signal="point_over" from="Panel_point" to="." method="_on_panel_point_point_over"]
 [connection signal="coin_out" from="Panel_point/VBoxContainer/enemy_skill/skill" to="Panel_point" method="_on_skill_coin_out"]
 [connection signal="coin_out" from="Panel_point/VBoxContainer/our_skill/skill" to="Panel_point" method="_on_skil2l_coin_out"]
+[connection signal="coin_out" from="Panel_point/u_skill/skill" to="Panel_point" method="_on_skillu_coin_out"]
 [connection signal="button_down" from="win/Button" to="win" method="_on_button_button_down"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="button_down" from="efflog" to="." method="_on_efflog_button_down"]
