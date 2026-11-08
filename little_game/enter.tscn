@@ -9,10 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://2hkdlqpfxmsv" path="res://img2/UI/star2.png" id="4_7f5x4"]
 [ext_resource type="Resource" uid="uid://260nlqqkrop7" path="res://little_game/gift/milk_coffe-j.tres" id="4_13mvh"]
 [ext_resource type="Resource" uid="uid://27vedc843xyj" path="res://little_game/gift/kml-g.tres" id="5_ujrtb"]
-[ext_resource type="Resource" uid="uid://cbu888j2r2pq" path="res://little_game/box/new_resource1.tres" id="6_13mvh"]
 [ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="6_ujrtb"]
-[ext_resource type="Resource" uid="uid://b0cll1vd06fn1" path="res://little_game/box/new_resource.tres" id="7_ujrtb"]
-[ext_resource type="Resource" uid="uid://c7br35u7pfil8" path="res://little_game/box/new_resource2.tres" id="8_ehf87"]
+[ext_resource type="Resource" uid="uid://bstk26fekh56a" path="res://little_game/box/deltaforce/a.tres" id="7_srfm3"]
 [ext_resource type="Resource" uid="uid://crd50qap226ea" path="res://little_game/box/fight_to_end.tres" id="10_2kcq8"]
 [ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="10_dd6e7"]
 [ext_resource type="Resource" uid="uid://5af2k1dficjy" path="res://little_game/box/a.tres" id="10_hfb7x"]
@@ -184,7 +182,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_ygh6a")
 useful_gift_arr_ = Array[ExtResource("1_lvrnh")]([ExtResource("2_x0pi2"), ExtResource("3_j52rh"), ExtResource("4_13mvh"), ExtResource("5_ujrtb")])
-deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("6_13mvh"), ExtResource("7_ujrtb"), ExtResource("8_ehf87"), ExtResource("10_2kcq8")])
+deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("7_srfm3")])
 hard_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x"), ExtResource("10_2kcq8")])
 nm_deck_pool_ = Array[ExtResource("6_ujrtb")]([ExtResource("10_hfb7x")])
 skill_dic = Dictionary[int, ExtResource("10_dd6e7")]({

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cgpyyhhiksvc2"]
+
+[ext_resource type="Texture2D" uid="uid://dcivm7p8wyoeb" path="res://little_game/fight/res/skill/delta/mxs/p4_icon1.png" id="1_frwnw"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_m5wlx"]
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_w52fb"]
+
+[sub_resource type="Resource" id="Resource_w52fb"]
+script = ExtResource("1_w52fb")
+most_x = 10
+code = "
+var p = \"res://little_game/fight/res/skill/delta/mxs/digital_goal.tres\"
+if Fight.get_buff_x_with_res(team,p) ==10:
+	sp-=10
+	Fight.remove_buff_path(p,team)
+	"
+exe_time = "turn_strat"
+is_who = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_m5wlx")
+eff = SubResource("Resource_w52fb")
+icon = ExtResource("1_frwnw")
+id = "digital_goal"
+type = Array[String](["debuff"])
+name_ = "电子标记"
+description = "特殊标记
+[回合开始时]失去2点SP
+如果层数到达峰值，清除本效果"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

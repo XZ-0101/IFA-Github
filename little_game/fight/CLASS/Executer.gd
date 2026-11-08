@@ -1,7 +1,7 @@
 extends Resource
 class_name Executer
 @export_multiline var code:String
-@export_enum("fight_strat","turn_strat","when_point","before_point","before_hit","after_hit","before_under_hit","after_under_hit","turn_end") var exe_time:String
+@export_enum("fight_strat","turn_strat","when_point","when_unital_point","before_point","before_unital_point","before_hit","after_hit","before_under_hit","after_under_hit","turn_end") var exe_time:String
 @export var who:String
 @export var is_who:bool
 @export var one_time:bool

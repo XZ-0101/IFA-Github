@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://cri4fo3urb78a"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_y5er5"]
+[ext_resource type="Texture2D" uid="uid://bondatektutgk" path="res://little_game/fight/res/skill/delta/mxs/mxs1.png" id="2_tstla"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_ua6v3"]
+
+[sub_resource type="Resource" id="Resource_lsrjf"]
+script = ExtResource("1_y5er5")
+code = "var p=\"res://little_game/fight/res/buff/polie.tres\"
+var p1=\"res://little_game/fight/res/skill/delta/mxs/digital_goal.tres\"
+Fight.add_buff_path(p,3,get_enemy(team))
+Fight.add_buff_path(p1,1,get_enemy(team))
+if Fight.get_buff_x_with_res(team,p1) >=6:
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/mabi.tres\",1,get_enemy(team))
+	Fight.add_buff_path(p,2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("3_ua6v3")
+name_ = "数据飞刀"
+icon = ExtResource("2_tstla")
+level = 1
+change_Point = 3
+coin_n = 2
+base_point = 6
+at = 20
+def = 25
+description = Array[String](["[攻击后]施加3层破裂
+施加1层电子标记
+如果电子标记大于6层，则施加1层麻痹，2层破裂"])
+eff_arr = Array[ExtResource("1_y5er5")]([SubResource("Resource_lsrjf")])
+sin_color = Color(0.8901961, 0.3764706, 0.16470589, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

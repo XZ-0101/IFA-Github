@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://ch243xhbi7f1f"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_s5o0v"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_cveyh"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_ui4g4"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_1jclb"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="3_knpio"]
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="4_8fxbp"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="5_sixrt"]
+[ext_resource type="Resource" uid="uid://cri4fo3urb78a" path="res://little_game/fight/res/skill/delta/mxs/sk1.tres" id="6_yblks"]
+[ext_resource type="Resource" uid="uid://c1rt60bybf4dp" path="res://little_game/fight/res/skill/delta/mxs/sk2.tres" id="8_8fxbp"]
+[ext_resource type="Resource" uid="uid://dj81etoj4j0px" path="res://little_game/fight/res/skill/delta/mxs/sk3.tres" id="9_sixrt"]
+
+[sub_resource type="Resource" id="Resource_3mnuf"]
+script = ExtResource("4_8fxbp")
+name_ = "数据飞刀"
+skill_arr = Array[ExtResource("5_sixrt")]([ExtResource("6_yblks")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_uehqs"]
+script = ExtResource("3_1jclb")
+skill = SubResource("Resource_3mnuf")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_cveyh"]
+script = ExtResource("3_knpio")
+"介绍" = "获得技能"
+win_text = "一把小刀，可以用于投掷$s似乎对电子设备有干扰作用"
+gift = SubResource("Resource_uehqs")
+name_ = "拿起小刀"
+"结果" = "来$s拿上吧"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_sixrt"]
+script = ExtResource("4_8fxbp")
+name_ = "闪光巡飞器"
+skill_arr = Array[ExtResource("5_sixrt")]([ExtResource("8_8fxbp")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_8fxbp"]
+script = ExtResource("3_1jclb")
+skill = SubResource("Resource_sixrt")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_1jclb"]
+script = ExtResource("3_knpio")
+"介绍" = "获得技能"
+win_text = "光球？好像是闪光弹？$s是可以巡航的闪光弹"
+gift = SubResource("Resource_8fxbp")
+name_ = "拿起光球"
+"结果" = "来$s拿上吧"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[sub_resource type="Resource" id="Resource_n3iix"]
+script = ExtResource("4_8fxbp")
+name_ = "骇爪技能组"
+skill_arr = Array[ExtResource("5_sixrt")]([ExtResource("6_yblks"), ExtResource("8_8fxbp"), ExtResource("9_sixrt")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_t1wqx"]
+script = ExtResource("3_1jclb")
+skill = SubResource("Resource_n3iix")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_yblks"]
+script = ExtResource("3_knpio")
+"介绍" = "获得技能"
+win_text = "你把三件物品都带上了$s你的视线有些恍惚$s战火纷飞的土地出现在你面前$s骇爪在眼前留下刻痕"
+gift = SubResource("Resource_t1wqx")
+name_ = "拿起一地东西"
+"结果" = "来$s都拿上"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_ui4g4")
+"问题" = "实验性提取到的人格数据，但其聚焦在科技属性上……$s为什么我们没试过观测更多的新材料方向？$s这点玩意你挑吧"
+item = Array[ExtResource("1_s5o0v")]([SubResource("Resource_cveyh"), SubResource("Resource_1jclb"), SubResource("Resource_yblks")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

@@ -21,7 +21,7 @@ func show_panel(str:String,pos:Vector2=Vector2(0,0)):
 			else :
 				$Panel.global_position=get_viewport().get_mouse_position()+Vector2(10,10)
 		else :
-			$Panel.global_position=pos+Vector2(0,100)
+			$Panel.global_position=pos+Vector2(0,200)
 		if is_start_timer:
 			$Timer.start()
 	$Panel.show()

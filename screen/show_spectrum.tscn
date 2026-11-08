@@ -497,6 +497,10 @@ theme = ExtResource("4_amjka")
 text = "开启工具栏
 "
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1404016380]
+visible = false
+color = Color(0.39498678, 0.3949867, 0.3949867, 1)
+
 [connection signal="drag_ended" from="Control2/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="drag_started" from="Control2/HSlider" to="." method="_on_h_slider_drag_started"]
 [connection signal="value_changed" from="Control2/HSlider" to="." method="_on_h_slider_value_changed"]

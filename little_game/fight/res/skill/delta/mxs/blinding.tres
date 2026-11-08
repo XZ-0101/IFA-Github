@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cau8ff0ypogv"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_4jjlb"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_inoma"]
+[ext_resource type="Texture2D" uid="uid://b6cvm2me7aamg" path="res://little_game/fight/res/skill/delta/mxs/b.png" id="1_r6dns"]
+
+[sub_resource type="Resource" id="Resource_vwp5y"]
+script = ExtResource("1_4jjlb")
+most_x = 1
+code = "var p = \"res://little_game/fight/res/buff/polie.tres\"
+if Fight.get_buff_x_with_res(team,p) >=12:
+	Fight.minus_buff_path(p,team,12)
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/mabi.tres\",3,team)
+	Fight.remove_buff_path(\"res://little_game/fight/res/skill/delta/mxs/blinding.tres\",team)"
+exe_time = "turn_strat"
+is_who = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_inoma")
+eff = SubResource("Resource_vwp5y")
+icon = ExtResource("1_r6dns")
+id = "blinding"
+name_ = "致盲"
+description = "[回合结束时]如果破裂大于等于12层，则失去12层破裂，获得3层麻痹，清除本效果
+
+[color=white]-当心眼睛[/color]"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

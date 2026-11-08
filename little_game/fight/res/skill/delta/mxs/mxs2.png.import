@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://10agk5tflyn6"
-path="res://.godot/imported/dr1 (1).png-71ef54214b6a05bb1c184e85bba5ca4b.ctex"
+uid="uid://dne8r8hjbnh03"
+path="res://.godot/imported/mxs2.png-90968b55d4d02ec27d4b1e1357150644.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/skill/skill_img/dr1 (1).png"
-dest_files=["res://.godot/imported/dr1 (1).png-71ef54214b6a05bb1c184e85bba5ca4b.ctex"]
+source_file="res://little_game/fight/res/skill/delta/mxs/mxs2.png"
+dest_files=["res://.godot/imported/mxs2.png-90968b55d4d02ec27d4b1e1357150644.ctex"]
 
 [params]
 

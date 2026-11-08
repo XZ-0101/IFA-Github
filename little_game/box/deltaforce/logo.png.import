@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fag7ac1khloh"
-path="res://.godot/imported/msx3.png-c74fafbb17121abf05d21f1c9d9a7f07.ctex"
+uid="uid://vbx1pgfuxoxd"
+path="res://.godot/imported/logo.png-42f5d019fbce233e3d3295db85b96762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/skill/delta/msx3.png"
-dest_files=["res://.godot/imported/msx3.png-c74fafbb17121abf05d21f1c9d9a7f07.ctex"]
+source_file="res://little_game/box/deltaforce/logo.png"
+dest_files=["res://.godot/imported/logo.png-42f5d019fbce233e3d3295db85b96762.ctex"]
 
 [params]
 

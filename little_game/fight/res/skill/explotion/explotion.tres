@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://coucauafxpfr3"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_rlshy"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_8o7lw"]
+[ext_resource type="Texture2D" uid="uid://cmvqf6ie3sw5r" path="res://little_game/fight/res/skill/explotion/explosion.png" id="2_ajnng"]
+
+[sub_resource type="Resource" id="Resource_6n6vu"]
+script = ExtResource("1_rlshy")
+code = "var buff=\"res://little_game/fight/res/buff/yingchang.tres\"
+var p = Fight.get_buff_x_with_res(team, buff)
+p = clampi(p, 0, 4)
+now_skill.coin_n = 2 * p
+now_skill.at += 10 * p
+Fight.minus_buff_path(buff, team, p)"
+exe_time = "before_point"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_ngti8"]
+script = ExtResource("1_rlshy")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/new_resource.tres\",5,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/buff/mabi.tres\",2,team)
+Fight.add_buff_path(\"res://little_game/fight/res/buff/absorption-mc.tres\",5,team)"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_8o7lw")
+name_ = "爆裂魔法[Explotin]"
+icon = ExtResource("2_ajnng")
+level = 3
+change_Point = 5
+coin_n = 1
+base_point = 5
+at = 10
+def = 10
+description = Array[String](["[拼点前]每有一层吟唱，则使硬币数加2（最多4次）
+每有一层吟唱，ATK+10（最多4次）
+失去使用的吟唱", "[攻击后]施加5层烧伤
+对自己施加2层麻痹，2层伤害吸收
+"])
+eff_arr = Array[ExtResource("1_rlshy")]([SubResource("Resource_6n6vu"), SubResource("Resource_ngti8")])
+sin_color = Color(0.9843137, 0.003921569, 0.003921569, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

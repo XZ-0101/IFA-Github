@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://d4l8r8yganvxo"]
+
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="1_1k1p5"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="2_4i8kk"]
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="2_8x50h"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="3_jj8e1"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="3_wj836"]
+
+[sub_resource type="Resource" id="Resource_wj836"]
+script = ExtResource("3_wj836")
+to_fight = "res://little_game/fight/res/enemy/test_body/e.tres"
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_4i8kk"]
+script = ExtResource("3_jj8e1")
+"介绍" = "战斗"
+win_text = "来吧"
+gift = SubResource("Resource_wj836")
+name_ = "yes"
+"结果" = "来$s来"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("2_8x50h")
+"问题" = "牛逼666"
+item = Array[ExtResource("1_1k1p5")]([SubResource("Resource_4i8kk")])
+metadata/_custom_type_script = "uid://y1osmarxqm3p"

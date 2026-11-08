@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="skill_lt" format=3 uid="uid://c1rt60bybf4dp"]
+
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_plo0p"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="2_15vkk"]
+[ext_resource type="Texture2D" uid="uid://dne8r8hjbnh03" path="res://little_game/fight/res/skill/delta/mxs/mxs2.png" id="2_w2uxg"]
+
+[sub_resource type="Resource" id="Resource_y5er5"]
+script = ExtResource("1_plo0p")
+code = "var p = \"res://little_game/fight/res/skill/delta/mxs/digital_goal.tres\"
+if Fight.get_buff_x_with_res(get_enemy(team),p) >=6:
+	Fight.add_buff_path(\"res://little_game/fight/res/skill/delta/mxs/blinding.tres\",get_enemy(team),1)"
+exe_time = "before_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_15vkk"]
+script = ExtResource("1_plo0p")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/polie.tres\",3,get_enemy(team))
+Fight.add_buff_path(\"res://little_game/fight/res/skill/delta/mxs/digital_goal.tres\",2,get_enemy(team))
+if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/skill/delta/mxs/digital_goal.tres\") >=6:
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/polie.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[resource]
+script = ExtResource("2_15vkk")
+name_ = "闪光巡飞器"
+icon = ExtResource("2_w2uxg")
+level = 2
+change_Point = 10
+coin_n = 1
+base_point = 6
+at = 30
+def = 40
+description = Array[String](["[攻击前]若敌方的电子标记层数大于等于6，则施加1层致盲。
+", "[攻击后]施加3层破裂，施加2层电子标记
+如果电子标记大于6层，]施加1层破裂，"])
+eff_arr = Array[ExtResource("1_plo0p")]([SubResource("Resource_y5er5"), SubResource("Resource_15vkk")])
+sin_color = Color(0.09803922, 0.28235295, 0.47058824, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"

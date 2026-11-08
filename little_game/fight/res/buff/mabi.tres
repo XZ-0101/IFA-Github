@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://ifctv60pmtmw"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_22fd4"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_f2c1m"]
+[ext_resource type="Texture2D" uid="uid://cxgxew2wmsoie" path="res://little_game/fight/res/buff/buff_img/60px-麻痹.webp" id="2_rulc3"]
+
+[sub_resource type="Resource" id="Resource_ad2vw"]
+script = ExtResource("1_22fd4")
+most_x = 3
+code = "now_skill.change_Point=0"
+exe_time = "before_point"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_f2c1m")
+eff = SubResource("Resource_ad2vw")
+icon = ExtResource("2_rulc3")
+id = "lull"
+type = Array[String](["debuff"])
+name_ = "麻痹"
+description = "[拼点前]使技能变动值为0。"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

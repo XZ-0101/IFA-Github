@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="buff_lg" format=3 uid="uid://cwqumyguua830"]
+
+[ext_resource type="Script" uid="uid://ctrx1ds1ue26q" path="res://little_game/fight/CLASS/buff_exe.gd" id="1_d3t7r"]
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_sj474"]
+[ext_resource type="Texture2D" uid="uid://dcdyx58fkehxh" path="res://little_game/fight/res/buff/buff_img/yinchang.png" id="2_rabgh"]
+
+[sub_resource type="Resource" id="Resource_b8e2h"]
+script = ExtResource("1_d3t7r")
+most_x = 20
+code = "print(\"\")"
+exe_time = "fight_strat"
+is_who = true
+metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
+
+[resource]
+script = ExtResource("1_sj474")
+eff = SubResource("Resource_b8e2h")
+icon = ExtResource("2_rabgh")
+id = "yingchang"
+type = Array[String](["buff", "充能"])
+name_ = "吟唱"
+description = "特殊充能
+特殊计数"
+metadata/_custom_type_script = "uid://d2rkcsi2mn0ps"

@@ -23,17 +23,18 @@ metadata/_custom_type_script = "uid://skro7sm8drh8"
 
 [sub_resource type="Resource" id="Resource_dpubc"]
 script = ExtResource("2_0faao")
-name_ = "反击"
+name_ = "炽焰反击"
 icon = ExtResource("2_hufsq")
 level = 1
-change_Point = 3
+change_Point = 1
 coin_n = 2
-base_point = 1
-at = 10
+base_point = 3
+at = 1
 def = 10
 description = Array[String](["[命中时]施加1层烧伤"])
 eff_arr = Array[ExtResource("1_cyur8")]([SubResource("Resource_24p4r")])
 type = Array[String](["反击"])
+sin_color = Color(0.5686275, 0.36078432, 0.20784314, 1)
 metadata/_custom_type_script = "uid://bj8vuop3720um"
 
 [resource]

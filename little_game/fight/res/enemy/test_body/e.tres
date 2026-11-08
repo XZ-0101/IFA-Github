@@ -1,0 +1,184 @@
+[gd_resource type="Resource" script_class="enemy_lg" format=3 uid="uid://05psno305g0r"]
+
+[ext_resource type="Script" uid="uid://d2rkcsi2mn0ps" path="res://little_game/fight/CLASS/buff.gd" id="1_rjvbl"]
+[ext_resource type="Resource" uid="uid://b7jy2g0nayvej" path="res://little_game/fight/res/buff/zhenchan.tres" id="2_vkgg1"]
+[ext_resource type="Resource" uid="uid://bv5kjqyww0ytv" path="res://little_game/fight/res/buff/new_resource.tres" id="3_axhgr"]
+[ext_resource type="Texture2D" uid="uid://nweatlvlhngg" path="res://img/icon.svg" id="4_tagk2"]
+[ext_resource type="Resource" uid="uid://blkur8ub4i1q3" path="res://res/music/R.tres" id="5_35vxa"]
+[ext_resource type="Resource" uid="uid://c3a7fhdxy7g6i" path="res://little_game/fight/res/enemy/redmist/buff/jq.tres" id="6_lcj6f"]
+[ext_resource type="Resource" uid="uid://dq05myfunbsbs" path="res://little_game/fight/res/enemy/redmist/buff/xw.tres" id="7_4ih6v"]
+[ext_resource type="Resource" uid="uid://2jqh45mkkrgn" path="res://little_game/fight/res/buff/blood.tres" id="8_1u8q5"]
+[ext_resource type="Resource" uid="uid://cql5d872fsp3t" path="res://little_game/fight/res/buff/powerful.tres" id="9_yoxwv"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="10_nrd4b"]
+[ext_resource type="Resource" uid="uid://dx8e8ecv61b1e" path="res://little_game/fight/res/enemy/redmist/gift/gj.tres" id="11_xhkqh"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="12_pld4i"]
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="13_2ypbn"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="14_stail"]
+[ext_resource type="Resource" uid="uid://cyrijju7x5ckr" path="res://little_game/fight/res/enemy/redmist/sk/sk3.tres" id="15_mb5yd"]
+[ext_resource type="Texture2D" uid="uid://dis6e0fak6msf" path="res://little_game/fight/res/enemy/redmist/img/retouch_2026072117071990.png" id="16_ehc48"]
+[ext_resource type="Script" uid="uid://jie20fpxgk32" path="res://script/music_class.gd" id="17_pf784"]
+[ext_resource type="Resource" uid="uid://eva012ty47fu" path="res://little_game/fight/res/enemy/redmist/sk/panic.tres" id="18_4sttu"]
+[ext_resource type="Script" uid="uid://dlbwxbchhwd4o" path="res://little_game/fight/CLASS/passive.gd" id="19_hls36"]
+[ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="20_phqsb"]
+[ext_resource type="Script" uid="uid://d3sn4qcqke5v8" path="res://little_game/fight/CLASS/enemy.gd" id="21_icrxl"]
+[ext_resource type="Resource" uid="uid://c0lphm8hg527x" path="res://little_game/fight/res/enemy/redmist/sk/sk1.tres" id="22_a0q6t"]
+[ext_resource type="Resource" uid="uid://dnic052l6wcdm" path="res://little_game/fight/res/enemy/redmist/sk/sk2.tres" id="23_uuean"]
+[ext_resource type="Resource" uid="uid://dcjlbfywurkr8" path="res://little_game/fight/res/enemy/redmist/sk/def.tres" id="24_x7owv"]
+[ext_resource type="Texture2D" uid="uid://bb4af7u1lly1k" path="res://little_game/fight/res/skill/skill_img/exported_image (21).png" id="25_nij1s"]
+
+[sub_resource type="Resource" id="Resource_f8s1j"]
+script = ExtResource("13_2ypbn")
+name_ = "血雾弥漫"
+skill_arr = Array[ExtResource("14_stail")]([ExtResource("15_mb5yd")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_0sfar"]
+script = ExtResource("12_pld4i")
+get_gift = Array[ExtResource("10_nrd4b")]([ExtResource("11_xhkqh")])
+skill = SubResource("Resource_f8s1j")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_lhrmy"]
+script = ExtResource("17_pf784")
+music_path = "res://little_game/fight/res/enemy/redmist/殷红迷雾背景音乐.ogg"
+metadata/_custom_type_script = "uid://jie20fpxgk32"
+
+[sub_resource type="Resource" id="Resource_4wkqd"]
+script = ExtResource("20_phqsb")
+code = "max_point+=1"
+exe_time = "when_point"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_sedlp"]
+script = ExtResource("19_hls36")
+eff = SubResource("Resource_4wkqd")
+description = "[拼点时]使自身拼点威力+1"
+name_ = "最强之人"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_0wkv3"]
+script = ExtResource("20_phqsb")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",1,get_enemy(team))
+if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/redmist/buff/jq.tres\")!=0:
+	Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",1,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_slf4w"]
+script = ExtResource("19_hls36")
+eff = SubResource("Resource_0wkv3")
+description = "[受到攻击后]施加1层流血
+若自身带有过人的技巧，则额外施加1层流血"
+name_ = "后发制人"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_mwmma"]
+script = ExtResource("20_phqsb")
+code = "
+if Fight.get_buff_x_with_res(team,\"res://little_game/fight/res/enemy/redmist/buff/rmb3.tres\")==0:
+	if hp==hp_max*0.5:
+		hp=hp_max*0.65
+		Fight.add_buff_path(\"res://little_game/fight/res/enemy/redmist/buff/rmb3.tres\",1,team)"
+exe_time = "turn_strat"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_8jgyy"]
+script = ExtResource("19_hls36")
+eff = SubResource("Resource_mwmma")
+description = "[回合开始时]自身生命值低于50%时，使自身生命值恢复到65%，并获得1层 失去严厉的话语 (若带有 失去严厉的话语 ，则无视此被动)"
+name_ = "■红■■"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_ic46t"]
+script = ExtResource("20_phqsb")
+code = "now_skill.change_Point-=2
+now_skill.base_point-=4
+now_skill.at-=20
+now_skill.def-=15"
+exe_time = "before_point"
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_f3gwi"]
+script = ExtResource("19_hls36")
+eff = SubResource("Resource_ic46t")
+description = "[拼点前]自身技能的基础威力-4，硬币威力-2，atk-20，def-15"
+name_ = "调谐"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_wwhqe"]
+script = ExtResource("21_icrxl")
+name_ = "极端折射错误的收尾人"
+img = ExtResource("16_ehc48")
+description = "-投稿-鱼翅-01
+-血雾弥漫，尸横遍野"
+hp = 1000
+sp = 35
+passives = Array[ExtResource("19_hls36")]([SubResource("Resource_sedlp"), SubResource("Resource_slf4w"), SubResource("Resource_8jgyy"), SubResource("Resource_f3gwi")])
+skill_array = Array[ExtResource("14_stail")]([ExtResource("22_a0q6t"), ExtResource("23_uuean"), ExtResource("15_mb5yd"), ExtResource("24_x7owv")])
+panic_skill = ExtResource("18_4sttu")
+action_play = Array[String](["r"])
+music = SubResource("Resource_lhrmy")
+gift = SubResource("Resource_0sfar")
+buff_arr = Array[ExtResource("1_rjvbl")]([ExtResource("6_lcj6f"), ExtResource("7_4ih6v"), ExtResource("8_1u8q5"), ExtResource("9_yoxwv")])
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"
+
+[sub_resource type="Resource" id="Resource_treh6"]
+script = ExtResource("14_stail")
+name_ = "6"
+icon = ExtResource("25_nij1s")
+level = 1
+change_Point = 1
+coin_n = 1
+base_point = 3
+at = 10
+type = Array[String](["恐慌"])
+sin_color = Color(0.5686275, 0.36078432, 0.20784314, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[sub_resource type="Resource" id="Resource_ofvjh"]
+script = ExtResource("20_phqsb")
+code = "sp+=1"
+exe_time = "turn_strat"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_7w7s7"]
+script = ExtResource("19_hls36")
+eff = SubResource("Resource_ofvjh")
+description = "[开始一些回合]恢复一些HP"
+name_ = "何为被动"
+metadata/_custom_type_script = "uid://dlbwxbchhwd4o"
+
+[sub_resource type="Resource" id="Resource_5l0e5"]
+script = ExtResource("14_stail")
+name_ = "给了给了"
+icon = ExtResource("25_nij1s")
+level = 1
+change_Point = 1
+coin_n = 1
+base_point = 3
+type = Array[String](["恐慌"])
+sin_color = Color(0.5686275, 0.36078432, 0.20784314, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
+[resource]
+script = ExtResource("21_icrxl")
+name_ = "GODOT"
+img = ExtResource("4_tagk2")
+description = "观察等级1
+这个测试的
+
+观察等级2
+对"
+hp = 1000
+sp = 50
+passives = Array[ExtResource("19_hls36")]([SubResource("Resource_7w7s7")])
+skill_array = Array[ExtResource("14_stail")]([SubResource("Resource_5l0e5")])
+panic_skill = SubResource("Resource_treh6")
+action_play = Array[String](["r"])
+music = ExtResource("5_35vxa")
+next_enemy = SubResource("Resource_wwhqe")
+buff_arr = Array[ExtResource("1_rjvbl")]([ExtResource("2_vkgg1"), ExtResource("3_axhgr")])
+metadata/_custom_type_script = "uid://d3sn4qcqke5v8"

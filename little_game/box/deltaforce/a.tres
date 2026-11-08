@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="deck_box" format=3 uid="uid://bstk26fekh56a"]
+
+[ext_resource type="Script" uid="uid://y1osmarxqm3p" path="res://script/question.gd" id="1_0eank"]
+[ext_resource type="Resource" uid="uid://ch243xhbi7f1f" path="res://little_game/fight/res/skill/delta/mxs/mxs.tres" id="2_6cvsl"]
+[ext_resource type="Script" uid="uid://b8rki7fa01jly" path="res://little_game/sc/card.gd" id="2_38qqd"]
+[ext_resource type="Resource" uid="uid://d4l8r8yganvxo" path="res://little_game/fight/res/enemy/test_body/q.tres" id="3_lkiy1"]
+[ext_resource type="Texture2D" uid="uid://vbx1pgfuxoxd" path="res://little_game/box/deltaforce/logo.png" id="3_sknj7"]
+
+[resource]
+script = ExtResource("2_38qqd")
+name_ = "三角力量"
+type = Array[String](["游戏", "战争"])
+card = Array[ExtResource("1_0eank")]([ExtResource("2_6cvsl"), ExtResource("3_lkiy1")])
+is_trun = true
+img = ExtResource("3_sknj7")
+metadata/_custom_type_script = "uid://b8rki7fa01jly"

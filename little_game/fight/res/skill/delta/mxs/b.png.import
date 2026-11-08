@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bondatektutgk"
-path="res://.godot/imported/mxs1.png-7a65557e26ab052aba274bdb3de7703f.ctex"
+uid="uid://b6cvm2me7aamg"
+path="res://.godot/imported/b.png-c2fb60c008716376b507acfc544e4be9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://little_game/fight/res/skill/delta/mxs1.png"
-dest_files=["res://.godot/imported/mxs1.png-7a65557e26ab052aba274bdb3de7703f.ctex"]
+source_file="res://little_game/fight/res/skill/delta/mxs/b.png"
+dest_files=["res://.godot/imported/b.png-c2fb60c008716376b507acfc544e4be9.ctex"]
 
 [params]
 

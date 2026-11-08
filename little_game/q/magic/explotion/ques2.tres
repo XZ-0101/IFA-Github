@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="question_with_img" format=3 uid="uid://d0bj801k4yyru"]
+
+[ext_resource type="Texture2D" uid="uid://drcgtsm255wdh" path="res://little_game/q/magic/explotion/img.png" id="1_ouwjn"]
+[ext_resource type="Script" uid="uid://d33or61wn0aky" path="res://script/c_item.gd" id="2_fbkg4"]
+[ext_resource type="Script" uid="uid://ca35eduysd8ex" path="res://script/jumper_class.gd" id="3_gtgww"]
+[ext_resource type="Script" uid="uid://cj26xco6sp15k" path="res://script/c_item_gift.gd" id="4_4n2dy"]
+[ext_resource type="Script" uid="uid://bkmu8rjaae4nu" path="res://script/c_item_rich.gd" id="4_0168m"]
+[ext_resource type="Script" uid="uid://cm1g2p3y1vl0v" path="res://script/new_script.gd" id="5_4fpr7"]
+[ext_resource type="Script" uid="uid://dj2tn7ou5dud6" path="res://little_game/fight/CLASS/skill_arr.gd" id="5_f3naw"]
+[ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="6_vmjcf"]
+[ext_resource type="Resource" uid="uid://coucauafxpfr3" path="res://little_game/fight/res/skill/explotion/explotion.tres" id="7_6xgll"]
+[ext_resource type="Resource" uid="uid://x6r8b6wl7ilr" path="res://little_game/fight/res/skill/magic.tres" id="8_gbyjb"]
+
+[sub_resource type="Resource" id="Resource_gtgww"]
+script = ExtResource("5_f3naw")
+name_ = "爆裂魔法"
+skill_arr = Array[ExtResource("6_vmjcf")]([ExtResource("7_6xgll"), ExtResource("8_gbyjb")])
+metadata/_custom_type_script = "uid://dj2tn7ou5dud6"
+
+[sub_resource type="Resource" id="Resource_ouwjn"]
+script = ExtResource("4_4n2dy")
+skill = SubResource("Resource_gtgww")
+metadata/_custom_type_script = "uid://cj26xco6sp15k"
+
+[sub_resource type="Resource" id="Resource_4n2dy"]
+script = ExtResource("4_0168m")
+"介绍" = "获得技能"
+win_text = "“那个魔法，我实在不推荐你学。”$s没事$s我要学习爆裂魔法$s不知道为什么你如此想到$s总而言之，种子埋下了..."
+gift = SubResource("Resource_ouwjn")
+name_ = "学习“爆裂魔法”"
+"结果" = "“唉？你可想好了？”$s"
+metadata/_custom_type_script = "uid://bkmu8rjaae4nu"
+
+[resource]
+script = ExtResource("5_4fpr7")
+img = ExtResource("1_ouwjn")
+name_ = "某个森林"
+subject = "-"
+"问题" = "“抱歉，这个还真办不到...”$s“你再想想没有其他愿望了吗”"
+item = Array[ExtResource("2_fbkg4")]([SubResource("Resource_4n2dy")])
+metadata/_custom_type_script = "uid://cm1g2p3y1vl0v"

@@ -15,7 +15,7 @@ var num= ceili(a/3)
 print(\"ss\",num)
 Fight.minus_buff_path(zc,team,num)
 Fight.play_anima(\"text\",team,\"do_buff,燃烧！,烧伤,\"+str(x))"
-exe_time = "turn_strat"
+exe_time = "turn_end"
 metadata/_custom_type_script = "uid://ctrx1ds1ue26q"
 
 [resource]

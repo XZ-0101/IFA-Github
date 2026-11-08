@@ -32,7 +32,14 @@ var after_hit:Array[Executer]
 var before_under_hit:Array[Executer]
 var after_under_hit:Array[Executer]
 var turn_end:Array[Executer]
-
+#var after_unital_hit:Array[Executer]
+#var before_unital_hit:Array[Executer]
+#var after_under_unital_hit:Array[Executer]
+#var before_under_unital_hit:Array[Executer]
+var when_unital_point:Array[Executer]
+var before_unital_point:Array[Executer]
+#"after_unital_hit","before_unital_hit"when_unital_point
+#after_under_unital_hit","before_under_unital_hit
 var gift_eff_arr:Array[gift_value]
 var enemy_anima:Node
 var self_anima:Node

@@ -191,8 +191,10 @@ func _on_check_button_2_toggled(toggled_on: bool) -> void:
 
 func _on_check_button_3_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		$CanvasModulate.show()
 		$Control2/TextureRect.self_modulate=Color(0.631, 0.631, 0.631)
 	else :
+		$CanvasModulate.hide()
 		$Control2/TextureRect.self_modulate=Color(1,1,1)
 	pass # Replace with function body.
 

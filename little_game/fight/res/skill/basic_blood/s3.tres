@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://skro7sm8drh8" path="res://little_game/fight/CLASS/Executer.gd" id="1_h6w0o"]
 [ext_resource type="Texture2D" uid="uid://535vuj4i77ec" path="res://little_game/fight/res/skill/skill_img/exported_image (5).png" id="2_h6w0o"]
+[ext_resource type="Texture2D" uid="uid://btlu4q25cd3cq" path="res://little_game/fight/res/skill/skill_img/exported_image (3).png" id="2_ks752"]
 [ext_resource type="Script" uid="uid://bj8vuop3720um" path="res://little_game/fight/CLASS/skill.gd" id="3_okelx"]
 
 [sub_resource type="Resource" id="Resource_h6w0o"]
@@ -23,6 +24,29 @@ is_who = true
 one_time = true
 metadata/_custom_type_script = "uid://skro7sm8drh8"
 
+[sub_resource type="Resource" id="Resource_7yrct"]
+script = ExtResource("1_h6w0o")
+code = "Fight.add_buff_path(\"res://little_game/fight/res/buff/blood.tres\",2,get_enemy(team))"
+exe_time = "after_hit"
+is_who = true
+one_time = true
+metadata/_custom_type_script = "uid://skro7sm8drh8"
+
+[sub_resource type="Resource" id="Resource_okelx"]
+script = ExtResource("3_okelx")
+name_ = "致血"
+icon = ExtResource("2_ks752")
+level = 1
+change_Point = 2
+coin_n = 2
+base_point = 5
+at = 2
+def = 30
+description = Array[String](["[命中时]施加2层流血"])
+eff_arr = Array[ExtResource("1_h6w0o")]([SubResource("Resource_7yrct")])
+sin_color = Color(0.9019608, 0.39607844, 0.15686275, 1)
+metadata/_custom_type_script = "uid://bj8vuop3720um"
+
 [resource]
 script = ExtResource("3_okelx")
 name_ = "呕心沥血"
@@ -33,6 +57,7 @@ coin_n = 1
 base_point = 2
 at = 10
 def = 40
+fightback = SubResource("Resource_okelx")
 description = Array[String](["[拼点前]恢复5hp
 [命中时]施加4层流血
 若敌方hp不低于其70%，则额外施加5层流血
